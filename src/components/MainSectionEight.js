@@ -28,7 +28,7 @@ const SectionEight = () => {
             <p className="dish-details-pricing">
               <span>$</span>5.00
             </p>
-            <a className="txt-white" href>
+            <a className="txt-white" href="/">
               Add to cart
             </a>
           </div>
@@ -43,7 +43,7 @@ const SectionEight = () => {
             <p className="dish-details-pricing">
               <span>$</span>10.00
             </p>
-            <a className="txt-white" href>
+            <a className="txt-white" href="/">
               Add to cart
             </a>
           </div>
@@ -58,7 +58,7 @@ const SectionEight = () => {
             <p className="dish-details-pricing">
               <span>$</span>5.00
             </p>
-            <a className="txt-white" href>
+            <a className="txt-white" href="/">
               Add to cart
             </a>
           </div>

@@ -32,7 +32,7 @@ const SectionFour = () => {
               <p>
                 <span>$</span>5.00
               </p>
-              <a className="txt-white" href>
+              <a className="txt-white" href="/">
                 Order
               </a>
             </div>
@@ -52,7 +52,7 @@ const SectionFour = () => {
               <p>
                 <span>$</span>9.00
               </p>
-              <a className="txt-white" href>
+              <a className="txt-white" href="/">
                 Order
               </a>
             </div>
@@ -71,7 +71,7 @@ const SectionFour = () => {
               <p>
                 <span>$</span>5.00
               </p>
-              <a className="txt-white" href>
+              <a className="txt-white" href="/">
                 Order
               </a>
             </div>
@@ -90,7 +90,7 @@ const SectionFour = () => {
               <p>
                 <span>$</span>10.00
               </p>
-              <a className="txt-white" href>
+              <a className="txt-white" href="/">
                 Order
               </a>
             </div>
@@ -110,7 +110,7 @@ const SectionFour = () => {
               <p>
                 <span>$</span>8.00
               </p>
-              <a className="txt-white" href>
+              <a className="txt-white" href="/">
                 Order
               </a>
             </div>
@@ -130,7 +130,7 @@ const SectionFour = () => {
               <p>
                 <span>$</span>10.00
               </p>
-              <a className="txt-white" href>
+              <a className="txt-white" href="/">
                 Order
               </a>
             </div>

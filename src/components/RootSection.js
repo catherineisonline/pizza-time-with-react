@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import SectionOne from "./MainSectionOne";
 import SectionTwo from "./MainSectionTwo";
 import SectionThree from "./MainSectionThree";
@@ -17,7 +16,6 @@ class RootSection extends React.Component {
   render() {
     return (
       <>
-        <Header />
         <SectionOne />
         <SectionTwo />
         <SectionThree />

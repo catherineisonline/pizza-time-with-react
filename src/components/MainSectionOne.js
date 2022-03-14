@@ -24,17 +24,17 @@ const SectionOne = () => {
         </section>
 
         <section className="social-media flex-container flex-row txt-white">
-          <a href>
-            <img src={facebook}></img>
+          <a href="/">
+            <img src={facebook} alt="facebook"></img>
           </a>
-          <a href>
-            <img src={instagram}></img>
+          <a href="/">
+            <img src={instagram} alt="instagram"></img>
           </a>
-          <a href>
-            <img src={twitter}></img>
+          <a href="/">
+            <img src={twitter} alt="twitter"></img>
           </a>
-          <a href>
-            <img src={youtube}></img>
+          <a href="/">
+            <img src={youtube} alt="youtube"></img>
           </a>
         </section>
       </article>

@@ -6,22 +6,22 @@ const Footer = () => {
     <footer className=" flex-container flex-column txt-center txt-white pop-font">
       <ul className="footer-menu  flex-container flex-column">
         <li>
-          <a href>Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
-          <a href>Menu</a>
+          <a href="/">Menu</a>
         </li>
         <li>
-          <a href>Services</a>
+          <a href="/">Services</a>
         </li>
         <li>
-          <a href>Blog</a>
+          <a href="/">Blog</a>
         </li>
         <li>
-          <a href>About</a>
+          <a href="/">About</a>
         </li>
         <li>
-          <a href>Contact</a>
+          <a href="/">Contact</a>
         </li>
       </ul>
       <hr />
