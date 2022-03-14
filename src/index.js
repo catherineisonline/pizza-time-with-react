@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar.tsx";
-import Menu from "./components/Menu";
+import MenuRoot from "./components/MenuRoot";
 
 import "./index.css";
 import "./App.css";
@@ -19,10 +19,10 @@ ReactDOM.render(
       <NavBar />
       <Routes>
         <Route path="/" element={<RootSection />} />
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/menu" element={<MenuRoot />} />
       </Routes>
     </Router>
-    <RootSection />
+    {/* <RootSection /> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

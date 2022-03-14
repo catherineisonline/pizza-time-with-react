@@ -75,7 +75,7 @@ img {
   font-family: var(--poppins-font);
 }
 /* Header */
-header {
+.header-section {
   background-image: url("./images/header-pizza-one.avif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,18 +84,17 @@ header {
   height: 40rem;
   max-height: 80%;
 }
-nav {
+.main-nav {
   justify-content: space-between;
   align-items: center;
-
   background-color: var(--light-black);
   padding: 1.5rem;
   height: 5rem;
+  margin-top: 0;
 }
 /* Logo */
 .logo-styling {
   align-items: center;
-
   gap: 1rem;
   width: 7rem;
   height: 3rem;
@@ -119,7 +118,6 @@ nav {
 .menu {
   display: none;
   gap: 2rem;
-
   font-weight: 400;
   font-size: 1.2rem;
 }
@@ -133,7 +131,6 @@ nav {
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-
   text-transform: uppercase;
   font-size: 1.2rem;
   cursor: pointer;
@@ -690,7 +687,7 @@ hr {
 .more-pizza,
 .dish-categories h3,
 .dish-details a,
-.form-btn {
+.form-btn, .txt-white {
   transition: all ease-in-out 0.2s;
 }
 
