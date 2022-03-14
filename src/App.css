@@ -64,6 +64,11 @@ img {
 .txt-center {
   text-align: center;
 }
+
+/* Poppins Font */
+.pop-font {
+  font-family: var(--poppins-font);
+}
 /* Header */
 header {
   background-image: url("./images/header-pizza-one.avif");
@@ -109,9 +114,8 @@ nav {
 /* Menu */
 .menu {
   display: none;
-
   gap: 2rem;
-  font-family: var(--poppins-font);
+
   font-weight: 400;
   font-size: 1.2rem;
 }
@@ -127,7 +131,6 @@ nav {
   justify-content: center;
   align-items: center;
   color: var(--white);
-  font-family: var(--poppins-font);
   text-transform: uppercase;
   font-size: 1.2rem;
   cursor: pointer;
@@ -154,7 +157,7 @@ nav {
 .header-info h1 {
   color: var(--white);
   text-transform: uppercase;
-  font-family: var(--poppins-font);
+
   font-size: 3rem;
   line-height: 3rem;
 }
@@ -237,7 +240,7 @@ nav {
 }
 .section-2-info h2 {
   color: var(--white);
-  font-family: var(--poppins-font);
+
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -263,13 +266,9 @@ nav {
   padding: 2rem;
 }
 .section-3 h2 {
-  font-family: var(--poppins-font);
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
-}
-.section-3 p {
-  font-family: var(--poppins-font);
 }
 
 .services-grid {
@@ -289,7 +288,6 @@ nav {
 }
 
 .services-grid h3 {
-  font-family: var(--poppins-font);
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -307,7 +305,6 @@ nav {
 }
 .section-4-info h2 {
   color: var(--white);
-  font-family: var(--poppins-font);
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -326,7 +323,6 @@ nav {
 }
 .meal-item h3 {
   color: var(--white);
-  font-family: var(--poppins-font);
   font-weight: 400;
 }
 .meal-item img {
@@ -377,7 +373,7 @@ nav {
 }
 .section-5 h2 {
   color: var(--white);
-  font-family: var(--poppins-font);
+
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -417,7 +413,7 @@ nav {
 .name-and-price h3 {
   position: relative;
   color: var(--whitish-gray);
-  font-family: var(--poppins-font);
+
   font-weight: 400;
 }
 
@@ -482,7 +478,6 @@ nav {
   font-size: 3rem;
 }
 .highlights p {
-  font-family: var(--poppins-font);
   font-weight: 600;
   color: var(--white);
   font-size: 1.5rem;
@@ -531,13 +526,12 @@ nav {
 
 .dish-details h3 {
   color: var(--white);
-  font-family: var(--poppins-font);
+
   font-weight: 400;
 }
 
 .dish-details-desc {
   color: var(--whitish-gray);
-  font-family: var(--poppins-font);
 }
 
 .dish-details-pricing {
@@ -559,7 +553,7 @@ nav {
 
 .section-9 h2 {
   color: var(--white);
-  font-family: var(--poppins-font);
+
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -577,7 +571,6 @@ nav {
 
 .blog-posts h3 {
   color: var(--white);
-  font-family: var(--poppins-font);
   font-weight: 500;
 }
 .blog-posts img {
@@ -601,7 +594,6 @@ nav {
 
 .section-10 h2 {
   color: var(--white);
-  font-family: var(--poppins-font);
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -628,7 +620,6 @@ nav {
 .contact-form input,
 textarea {
   background-color: var(--light-black);
-  font-family: var(--poppins-font);
   font-weight: 400;
   font-size: 1rem;
   border: none;
@@ -669,7 +660,7 @@ input[type="text"] {
 }
 .section-11 h2 {
   color: var(--white);
-  font-family: var(--poppins-font);
+
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -686,7 +677,6 @@ footer {
 
 .footer-menu {
   gap: 1rem;
-  font-family: var(--poppins-font);
   font-weight: 400;
   font-size: 1rem;
 }
@@ -699,7 +689,6 @@ footer {
 
 .footer-contact {
   gap: 1rem;
-  font-family: var(--poppins-font);
   font-weight: 400;
   font-size: 1rem;
   color: var(--white);

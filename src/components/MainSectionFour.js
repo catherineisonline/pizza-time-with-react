@@ -10,7 +10,7 @@ const SectionFour = () => {
   return (
     <article className="section-4 flex-container flex-column">
       <section className="section-4-info txt-center">
-        <h2>Hot Pizza Meals</h2>
+        <h2 className="pop-font">Hot Pizza Meals</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
           consequat nibh qua
@@ -22,7 +22,7 @@ const SectionFour = () => {
         <div className="meal-item flex-container flex-row">
           <img src={CheesePizza} alt="cheese pizza" />
           <div className="meal-item-details flex-container flex-column">
-            <h3> Cheese Pizza</h3>
+            <h3 className="meal-item"> Cheese Pizza</h3>
             <p>
               It should be no shocker that a classic is the statistical
               favorite. Cheese pizza is one of the most popular choices. It will
@@ -40,7 +40,7 @@ const SectionFour = () => {
         <div className="meal-item flex-container flex-row">
           <img src={VeggiePizza} alt="veggie pizza" />
           <div className="meal-item-details flex-container flex-column">
-            <h3> Veggie Pizza</h3>
+            <h3 className="meal-item"> Veggie Pizza</h3>
             <p>
               When you want to jazz up your cheese pizza with color and texture,
               veggies are the perfect topping. And you’re only limited by your
@@ -58,7 +58,7 @@ const SectionFour = () => {
         <div className="meal-item flex-container flex-row">
           <img src={PepperoniPizza} alt="pepperoni pizza" />
           <div className="meal-item-details flex-container flex-column">
-            <h3> Pepperoni Pizza</h3>
+            <h3 className="meal-item"> Pepperoni Pizza</h3>
             <p>
               There’s a reason this is one of the most popular types of pizza.
               Who doesn’t love biting into a crispy, salty round of pepperoni?
@@ -75,7 +75,7 @@ const SectionFour = () => {
         <div className="meal-item flex-container flex-row">
           <img src={MeatPizza} alt="meat pizza" />
           <div className="meal-item-details flex-container flex-column">
-            <h3>Meat Pizza</h3>
+            <h3 className="meal-item">Meat Pizza</h3>
             <p>
               If pepperoni just isn’t enough, and you’re looking for a pie with
               a bit more heft, a meat pizza is a perfect and popular choice.{" "}
@@ -92,7 +92,7 @@ const SectionFour = () => {
         <div className="meal-item flex-container flex-row">
           <img src={MargheritaPizza} alt="margherita pizza" />
           <div className="meal-item-details flex-container flex-column">
-            <h3>Margherita Pizza</h3>
+            <h3 className="meal-item">Margherita Pizza</h3>
             <p>
               Deceptively simple, the Margherita pizza is made with basil, fresh
               mozzarella, and tomatoes. There’s a reason it’s an Italian staple
@@ -110,7 +110,7 @@ const SectionFour = () => {
         <div className="meal-item flex-container flex-row">
           <img src={BBQPizza} alt="bbq pizza" />
           <div className="meal-item-details flex-container flex-column">
-            <h3>BBQ Chicken Pizza</h3>
+            <h3 className="meal-item">BBQ Chicken Pizza</h3>
             <p>
               If you love BBQ chicken and you love pizza, why not put them
               together? This has long been a cult favorite of sports fans and

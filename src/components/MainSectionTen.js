@@ -39,11 +39,11 @@ const SectionTen = () => {
         {/* <div id="map" /> */}
       </section>
       <section className="contact-section">
-        <h2 className="txt-center">Contact Us</h2>
+        <h2 className="txt-center pop-font">Contact Us</h2>
         <form className="contact-form  flex-container flex-column" action>
-          <input type="text" name id placeholder="First Name" />
-          <input type="text" name id placeholder="Last Name" />
-          <textarea name id placeholder="Message" defaultValue={""} />
+          <input className="pop-font" type="text" name id placeholder="First Name" />
+          <input className="pop-font" type="text" name id placeholder="Last Name" />
+          <textarea className="pop-font" name id placeholder="Message" defaultValue={""} />
           <button className="form-btn" type="submit">
             Send
           </button>

@@ -2,13 +2,13 @@ import React from "react";
 import facebook from "../images/facebook.svg";
 import instagram from "../images/instagram.svg";
 import twitter from "../images/twitter.svg";
-import youtube from "../images/youtube.svg"
+import youtube from "../images/youtube.svg";
 
 const SectionEleven = () => {
   return (
     <article className="section-11  flex-container flex-column">
       <section className="section-11 heading flex-column">
-        <h2 className="txt-center">About Us</h2>
+        <h2 className="txt-center pop-font">About Us</h2>
         <p className="txt-center">
           Vivamus vel varius nisl. Suspendisse blandit augue at enim varius,
           quis molestie velit pulvinar. In nec lacus rutrum, pellentesque erat
@@ -29,7 +29,7 @@ const SectionEleven = () => {
           <img src={twitter}></img>
         </a>
         <a href>
-        <img src={ youtube}></img>
+          <img src={youtube}></img>
         </a>
       </section>
     </article>

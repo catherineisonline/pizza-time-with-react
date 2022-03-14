@@ -15,7 +15,7 @@ const Header = () => {
           </p>
         </a>
         <menuLinks />
-        {/* <ul className="menu flex-row">
+        {/* <ul className="menu flex-row pop-font">
           <li>
      
             <a href>Home</a>
@@ -36,13 +36,13 @@ const Header = () => {
             <a href>Contact</a>
           </li>
         </ul> */}
-        <div className="burger-menu flex-container flex-row txt-center">
+        <div className="burger-menu flex-container flex-row txt-center pop-font">
           <img className="burger-bars" src={burger} alt=""></img>
           {/* <i className="fa-solid fa-bars" /> */}
           <p>Menu</p>
         </div>
       </nav>
-      <section className="header-info flex-container flex-column txt-center">
+      <section className="header-info flex-container flex-column txt-center pop-font">
         <span>Welcome</span>
         <h1>try something amazing</h1>
         <p>

@@ -4,7 +4,7 @@ import logo from "../images/logo.png";
 const Footer = () => {
   return (
     <footer className=" flex-container flex-column txt-center">
-      <ul className="footer-menu  flex-container flex-column">
+      <ul className="footer-menu  flex-container flex-column pop-font">
         <li>
           <a href>Home</a>
         </li>
@@ -25,7 +25,7 @@ const Footer = () => {
         </li>
       </ul>
       <hr />
-      <section className="footer-contact  flex-container flex-column">
+      <section className="footer-contact  flex-container flex-column pop-font">
         <h3>Have questions?</h3>
         <div>
           <p>000 (000) 123 4567</p>
@@ -36,7 +36,10 @@ const Footer = () => {
         <div>
           <p>8:00am - 9:00pm</p>
         </div>
-        <a className="logo-styling footer flex-container flex-row txt-center" href="index.html">
+        <a
+          className="logo-styling footer flex-container flex-row txt-center"
+          href="index.html"
+        >
           <img className="logo" src={logo} alt="pizza time logo" />
           <p>
             Pizza <span>Time</span>

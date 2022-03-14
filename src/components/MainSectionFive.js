@@ -9,7 +9,7 @@ import BBQPizza from "../images/BBQ-chicken-pizza.avif";
 const SectionFive = () => {
   return (
     <article className="section-5 flex-container">
-      <h2 className="txt-center">Menu Pricing</h2>
+      <h2 className="txt-center pop-font">Menu Pricing</h2>
       <p className="txt-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         consequat nibh qua
@@ -20,7 +20,7 @@ const SectionFive = () => {
           <img className="pricing-img" src={CheesePizza} alt="Cheese Pizza" />
           <div className="pricing-details flex-container flex-column">
             <div className="name-and-price flex-container flex-row txt-center">
-              <h3>Cheese Pizza</h3>
+              <h3 className="pop-font">Cheese Pizza</h3>
               <p>
                 <span>$</span>5.00
               </p>
@@ -36,7 +36,7 @@ const SectionFive = () => {
           <img className="pricing-img" src={VeggiePizza} alt="eggie Pizza" />
           <div className="pricing-details flex-container flex-column">
             <div className="name-and-price flex-container flex-row txt-center">
-              <h3>Veggie Pizza</h3>
+              <h3 className="pop-font">Veggie Pizza</h3>
               <p>
                 <span>$</span>9.00
               </p>
@@ -56,7 +56,7 @@ const SectionFive = () => {
           />
           <div className="pricing-details flex-container flex-column">
             <div className="name-and-price flex-container flex-row txt-center">
-              <h3> Pepperoni Pizza</h3>
+              <h3 className="pop-font"> Pepperoni Pizza</h3>
               <p>
                 <span>$</span>5.00
               </p>
@@ -72,7 +72,7 @@ const SectionFive = () => {
           <img className="pricing-img" src={MeatPizza} alt="Meat Pizza" />
           <div className="pricing-details flex-container flex-column">
             <div className="name-and-price flex-container flex-row txt-center">
-              <h3>Meat Pizza</h3>
+              <h3 className="pop-font">Meat Pizza</h3>
               <p>
                 <span>$</span>10.00
               </p>
@@ -93,7 +93,7 @@ const SectionFive = () => {
           />
           <div className="pricing-details flex-container flex-column">
             <div className="name-and-price flex-container flex-row txt-center">
-              <h3>Margherita Pizza</h3>
+              <h3 className="pop-font">Margherita Pizza</h3>
               <p>
                 <span>$</span>8.00
               </p>
@@ -110,7 +110,7 @@ const SectionFive = () => {
           <img className="pricing-img" src={BBQPizza} alt="BBQ Chicken Pizza" />
           <div className="pricing-details flex-container flex-column">
             <div className="name-and-price flex-container flex-row txt-center">
-              <h3>BBQ Chicken Pizza</h3>
+              <h3 className="pop-font">BBQ Chicken Pizza</h3>
               <p>
                 <span>$</span>10.00
               </p>

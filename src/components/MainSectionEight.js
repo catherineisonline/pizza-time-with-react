@@ -20,8 +20,8 @@ const SectionEight = () => {
           {/* Dish 1 */}
           <div className="dish-details flex-container flex-column txt-center">
             <img src={PepperoniPizza} alt="pepperoni pizza" />
-            <h3>Pepperoni Pizza</h3>
-            <p className="dish-details-desc">
+            <h3 className="pop-font">Pepperoni Pizza</h3>
+            <p className="dish-details-desc pop-font">
               There’s a reason this is one of the most popular types of pizza.
               Who doesn’t love biting into a crispy, salty round of pepperoni?
             </p>
@@ -33,8 +33,8 @@ const SectionEight = () => {
           {/* Dish 2 */}
           <div className="dish-details flex-container flex-column txt-center">
             <img src={BBQPizza} alt="bbq pizza" />
-            <h3>BBQ Chicken Pizza</h3>
-            <p className="dish-details-desc">
+            <h3 className="pop-font">BBQ Chicken Pizza</h3>
+            <p className="dish-details-desc pop-font">
               If you love BBQ chicken and you love pizza, why not put them
               together? This has long been a cult favorite of sports fans.
             </p>
@@ -46,8 +46,8 @@ const SectionEight = () => {
           {/* Dish 3 */}
           <div className="dish-details flex-container flex-column txt-center">
             <img src={CheesePizza} alt="cheese pizza" />
-            <h3> Cheese Pizza</h3>
-            <p className="dish-details-desc">
+            <h3 className="pop-font"> Cheese Pizza</h3>
+            <p className="dish-details-desc pop-font">
               It should be no shocker that a classic is the statistical
               favorite. Cheese pizza is one of the most popular choices.
             </p>

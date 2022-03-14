@@ -10,7 +10,7 @@ const SectionSeven = () => {
             alt=""
           />
           <h3>50</h3>
-          <p>Pizza Branches</p>
+          <p className="pop-font">Pizza Branches</p>
         </div>
         {/* Highlight 2 */}
         <div>
@@ -19,7 +19,7 @@ const SectionSeven = () => {
             alt=""
           />
           <h3>200</h3>
-          <p>Number of Awards</p>
+          <p className="pop-font">Number of Awards</p>
         </div>
         {/* Highlight 3 */}
         <div>
@@ -28,7 +28,7 @@ const SectionSeven = () => {
             alt=""
           />
           <h3>10.485</h3>
-          <p>Happy Customers</p>
+          <p className="pop-font">Happy Customers</p>
         </div>
         {/* Highlight 4 */}
         <div>
@@ -37,7 +37,7 @@ const SectionSeven = () => {
             alt=""
           />
           <h3>400</h3>
-          <p>Staff</p>
+          <p className="pop-font">Staff</p>
         </div>
       </section>
     </article>
