@@ -20,7 +20,6 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 #### Landing Page
 
-
 1. <del>Create main landing page</del>
 2. Carousel to header container
 3. Animation effect on landing page for Services & Image Grid section
@@ -98,6 +97,12 @@ I want to be able to sort the menu by categories, as well as be able to find som
 1. JSX - in React I cannot use simple HTML, I have to use JSX which stands for JavaScript XML. The JSX is translated by Babel (a JavaScript compiler), converted to plain JavaScript. There is no huge difference between JSX and HTML but there is still some. To make my life easier I just use online <a href="https://magic.reactjs.net/htmltojsx.htm">HTML to JSX Compiler</a>. I started my project with simple HTMl so I had to compile everything.
 2. Just like in Vue, images and links work a bit differently. Maybe it also depends how I have everything organized, however src and href did not work for me as it usually does. Usually when using img src you write src="/images/myimg.png". To use an image in component I have to impoty the image first and then use it. I have to import MyImg from "../images/myimg.png" and then use src={MyImg}.
 3. FontAwesome also works differently, you need to install library for that which you can read more about right <a href="https://fontawesome.com/v5/docs/web/use-with/react">here</a>.
+
+#### Day 2
+
+- Finally made the navigation menu work, specifically links! It's still not 100% clear however it is the first time I heard about Routers and Link tags. I had navigation inside header which caused me a problem so if it's your first time working with React, it's much easier to have navigation menu component separately.
+- Instead of JS I used TypeScript for navigation. I am not sure exactly why it wasn't working with JS and the tutorial I used was also based on TypeScript, so I decided to try it out.
+- I started working with Menu page now and created an object of menu items. Working with objects is also a little but more different and it's wasn't as easy to take out the values. The best method I found is using a map method. Still have to look into this more.
 
 ## Useful Resources
 
