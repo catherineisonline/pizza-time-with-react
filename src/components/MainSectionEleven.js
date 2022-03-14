@@ -8,7 +8,7 @@ const SectionEleven = () => {
   return (
     <article className="section-11  flex-container flex-column">
       <section className="section-11 heading flex-column">
-        <h2 className="txt-center pop-font">About Us</h2>
+        <h2 className="txt-center pop-font txt-white">About Us</h2>
         <p className="txt-center">
           Vivamus vel varius nisl. Suspendisse blandit augue at enim varius,
           quis molestie velit pulvinar. In nec lacus rutrum, pellentesque erat

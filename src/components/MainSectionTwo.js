@@ -10,7 +10,7 @@ const SectionTwo = () => {
         alt="restaurant interior"
       />
       <section className="section-2-info flex-container flex-column txt-center pop-font">
-        <h2>
+        <h2 className="txt-white">
           Welcome to <span>Pizza Time</span> restaurant
         </h2>
         <p>

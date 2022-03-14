@@ -12,7 +12,7 @@ const Links = {
 
 const menuLinks = () => {
   return (
-    <ul className="menu flex-row pop-font">
+    <ul className="menu flex-row pop-font txt-white">
       <li>
         <Link to={Links.menu}>Menu</Link>
         <a href>Home</a>

@@ -8,7 +8,7 @@ const SectionOne = () => {
   return (
     <>
       <article className="section-1">
-        <section className="company-details flex-container flex-row">
+        <section className="company-details flex-container flex-row txt-white">
           <div>
             <h2>000 (000) 123 4567</h2>
             <p>Contact us if you have any questions</p>
@@ -23,7 +23,7 @@ const SectionOne = () => {
           </div>
         </section>
 
-        <section className="social-media flex-container flex-row">
+        <section className="social-media flex-container flex-row txt-white">
           <a href>
             <img src={facebook}></img>
           </a>

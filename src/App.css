@@ -65,6 +65,12 @@ img {
   text-align: center;
 }
 
+/* White */
+
+.txt-white {
+  color: var(--white);
+}
+
 /* Poppins Font */
 .pop-font {
   font-family: var(--poppins-font);
@@ -100,7 +106,6 @@ nav {
   transition: all ease-in-out 0.2s;
 }
 .logo-styling p {
-  color: var(--white);
   font-size: 1.5rem;
   font-family: var(--josefin-font);
   line-height: 2rem;
@@ -121,7 +126,6 @@ nav {
 }
 
 .menu a {
-  color: var(--white);
   transition: all ease-in-out 0.2s;
 }
 
@@ -130,7 +134,7 @@ nav {
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  color: var(--white);
+
   text-transform: uppercase;
   font-size: 1.2rem;
   cursor: pointer;
@@ -155,7 +159,6 @@ nav {
 }
 
 .header-info h1 {
-  color: var(--white);
   text-transform: uppercase;
 
   font-size: 3rem;
@@ -163,7 +166,6 @@ nav {
 }
 
 .header-info p {
-  color: var(--white);
   font-size: 1.5rem;
 }
 
@@ -185,7 +187,6 @@ nav {
 
 .header-btns a:last-child {
   border-radius: 1px;
-  color: var(--white);
   border-color: var(--white);
   background-color: transparent;
 }
@@ -200,7 +201,6 @@ nav {
 }
 
 .company-details h2 {
-  color: var(--white);
   font-family: var(--josefin-font);
 }
 
@@ -223,7 +223,6 @@ nav {
 }
 
 .social-media a {
-  color: var(--white);
   font-size: 1.2rem;
 }
 
@@ -239,8 +238,6 @@ nav {
   padding: 1.5rem;
 }
 .section-2-info h2 {
-  color: var(--white);
-
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -304,7 +301,6 @@ nav {
   padding: 2rem;
 }
 .section-4-info h2 {
-  color: var(--white);
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -322,7 +318,6 @@ nav {
   align-items: center;
 }
 .meal-item h3 {
-  color: var(--white);
   font-weight: 400;
 }
 .meal-item img {
@@ -349,7 +344,6 @@ nav {
 }
 
 .meal-item-order a {
-  color: var(--white);
   border: solid 1px var(--white);
   padding: 0.5rem 1rem;
   letter-spacing: 1.5px;
@@ -358,7 +352,6 @@ nav {
 
 .more-pizza {
   border: solid 1px var(--white);
-  color: var(--white);
   padding: 0.5rem 1rem;
   width: max-content;
   margin: 0 auto;
@@ -372,8 +365,6 @@ nav {
   padding: 2rem;
 }
 .section-5 h2 {
-  color: var(--white);
-
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -479,7 +470,6 @@ nav {
 }
 .highlights p {
   font-weight: 600;
-  color: var(--white);
   font-size: 1.5rem;
 }
 
@@ -525,8 +515,6 @@ nav {
 }
 
 .dish-details h3 {
-  color: var(--white);
-
   font-weight: 400;
 }
 
@@ -539,7 +527,6 @@ nav {
 }
 
 .dish-details a {
-  color: var(--white);
   border: 1px solid var(--whitish-gray);
   padding: 0.5rem;
   width: 40%;
@@ -552,8 +539,6 @@ nav {
 }
 
 .section-9 h2 {
-  color: var(--white);
-
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -570,7 +555,6 @@ nav {
 }
 
 .blog-posts h3 {
-  color: var(--white);
   font-weight: 500;
 }
 .blog-posts img {
@@ -593,7 +577,6 @@ nav {
 }
 
 .section-10 h2 {
-  color: var(--white);
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -659,8 +642,6 @@ input[type="text"] {
   gap: 2rem;
 }
 .section-11 h2 {
-  color: var(--white);
-
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
@@ -682,7 +663,6 @@ footer {
 }
 
 .footer-menu a {
-  color: var(--white);
   transition: all ease-in-out 0.2s;
   letter-spacing: 1.5px;
 }
@@ -691,7 +671,6 @@ footer {
   gap: 1rem;
   font-weight: 400;
   font-size: 1rem;
-  color: var(--white);
 }
 .logo-styling.footer {
   margin: 0 auto;

@@ -8,8 +8,8 @@ import BBQPizza from "../images/BBQ-chicken-pizza.avif";
 
 const SectionFive = () => {
   return (
-    <article className="section-5 flex-container">
-      <h2 className="txt-center pop-font">Menu Pricing</h2>
+    <article className="section-5 flex-container ">
+      <h2 className="txt-center pop-font txt-white">Menu Pricing</h2>
       <p className="txt-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         consequat nibh qua

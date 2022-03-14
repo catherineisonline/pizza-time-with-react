@@ -20,7 +20,7 @@ const SectionEight = () => {
           {/* Dish 1 */}
           <div className="dish-details flex-container flex-column txt-center">
             <img src={PepperoniPizza} alt="pepperoni pizza" />
-            <h3 className="pop-font">Pepperoni Pizza</h3>
+            <h3 className="pop-font txt-white">Pepperoni Pizza</h3>
             <p className="dish-details-desc pop-font">
               There’s a reason this is one of the most popular types of pizza.
               Who doesn’t love biting into a crispy, salty round of pepperoni?
@@ -28,12 +28,14 @@ const SectionEight = () => {
             <p className="dish-details-pricing">
               <span>$</span>5.00
             </p>
-            <a href>Add to cart</a>
+            <a className="txt-white" href>
+              Add to cart
+            </a>
           </div>
           {/* Dish 2 */}
           <div className="dish-details flex-container flex-column txt-center">
             <img src={BBQPizza} alt="bbq pizza" />
-            <h3 className="pop-font">BBQ Chicken Pizza</h3>
+            <h3 className="pop-font txt-white">BBQ Chicken Pizza</h3>
             <p className="dish-details-desc pop-font">
               If you love BBQ chicken and you love pizza, why not put them
               together? This has long been a cult favorite of sports fans.
@@ -41,12 +43,14 @@ const SectionEight = () => {
             <p className="dish-details-pricing">
               <span>$</span>10.00
             </p>
-            <a href>Add to cart</a>
+            <a className="txt-white" href>
+              Add to cart
+            </a>
           </div>
           {/* Dish 3 */}
           <div className="dish-details flex-container flex-column txt-center">
             <img src={CheesePizza} alt="cheese pizza" />
-            <h3 className="pop-font"> Cheese Pizza</h3>
+            <h3 className="pop-font txt-white"> Cheese Pizza</h3>
             <p className="dish-details-desc pop-font">
               It should be no shocker that a classic is the statistical
               favorite. Cheese pizza is one of the most popular choices.
@@ -54,7 +58,9 @@ const SectionEight = () => {
             <p className="dish-details-pricing">
               <span>$</span>5.00
             </p>
-            <a href>Add to cart</a>
+            <a className="txt-white" href>
+              Add to cart
+            </a>
           </div>
         </div>
       </section>

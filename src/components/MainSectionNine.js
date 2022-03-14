@@ -7,7 +7,7 @@ import Leftover from "../images/pizza-leftover.avif";
 const SectionNine = () => {
   return (
     <article className="section-9 flex-container flex-column">
-      <h2 className="txt-center pop-font">Recent from blog</h2>
+      <h2 className="txt-center pop-font txt-white">Recent from blog</h2>
       <p className="section-9-desc txt-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         consequat nibh qua
@@ -18,7 +18,7 @@ const SectionNine = () => {
           <img src={PizzaCrust} alt="pizzaon the table" />
           <p className="blog-date">December 7, 2022</p>
           <div>
-            <h3 className="pop-font">Pizza Crust Types: Self-Rising and Par-Baked</h3>
+            <h3 className="pop-font txt-white">Pizza Crust Types: Self-Rising and Par-Baked</h3>
             <p className="blog-snippet">
               Maecenas interdum erat justo, eget posuere mi vehicula et. Fusce
               ut elit ex.
@@ -29,7 +29,7 @@ const SectionNine = () => {
         <div className="blog-post flex-container flex-column">
           <img src={ThickAndThin} alt="a person placing pizza in an over" />
           <p className="blog-date">November 1, 2022</p>
-          <h3 className="pop-font">
+          <h3 className="pop-font txt-white">
             Thick or Thin: Different Styles of Pizza Crust for 8 Classic Pies
           </h3>
           <p className="blog-snippet">
@@ -40,14 +40,14 @@ const SectionNine = () => {
         <div className="blog-post flex-container flex-column">
           <img src={Leftover} alt="pizza near fireplace" />
           <p className="blog-date">November 16, 2022</p>
-          <h3 className="pop-font">What To Do With Leftover Pizza Dough</h3>
+          <h3 className="pop-font txt-white">What To Do With Leftover Pizza Dough</h3>
           <p className="blog-snippet">
             Nullam sit amet semper est. Proin laoreet diam quis tortor
             malesuada, eget mattis orci vulputate.
           </p>
         </div>
       </section>
-      <a className="more-pizza" href="/">
+      <a className="more-pizza txt-white" href="/">
         More Posts
       </a>
     </article>
