@@ -9,7 +9,7 @@ const SectionTwo = () => {
         src={SectionOneImg}
         alt="restaurant interior"
       />
-      <section className="section-2-info">
+      <section className="section-2-info flex-container flex-column txt-center">
         <h2>
           Welcome to <span>Pizza Time</span> restaurant
         </h2>

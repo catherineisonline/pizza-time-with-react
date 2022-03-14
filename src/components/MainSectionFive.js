@@ -6,25 +6,20 @@ import MeatPizza from "../images/meat-pizza.avif";
 import MargheritaPizza from "../images/margherita-pizza.avif";
 import BBQPizza from "../images/BBQ-chicken-pizza.avif";
 
-
 const SectionFive = () => {
   return (
-    <article className="section-5">
-      <h2>Menu Pricing</h2>
-      <p>
+    <article className="section-5 flex-container">
+      <h2 className="txt-center">Menu Pricing</h2>
+      <p className="txt-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         consequat nibh qua
       </p>
-      <section className="pricing-grid">
+      <section className="pricing-grid flex-container flex-column">
         {/* Pizza 1 */}
-        <div className="pricing-grid-item">
-          <img
-            className="pricing-img"
-            src={CheesePizza}
-            alt="Cheese Pizza"
-          />
-          <div className="pricing-details">
-            <div className="name-and-price">
+        <div className="pricing-grid-item flex-container flex-row">
+          <img className="pricing-img" src={CheesePizza} alt="Cheese Pizza" />
+          <div className="pricing-details flex-container flex-column">
+            <div className="name-and-price flex-container flex-row txt-center">
               <h3>Cheese Pizza</h3>
               <p>
                 <span>$</span>5.00
@@ -37,14 +32,10 @@ const SectionFive = () => {
           </div>
         </div>
         {/* Pizza 2 */}
-        <div className="pricing-grid-item">
-          <img
-            className="pricing-img"
-            src={VeggiePizza}
-            alt="eggie Pizza"
-          />
-          <div className="pricing-details">
-            <div className="name-and-price">
+        <div className="pricing-grid-item flex-container flex-row">
+          <img className="pricing-img" src={VeggiePizza} alt="eggie Pizza" />
+          <div className="pricing-details flex-container flex-column">
+            <div className="name-and-price flex-container flex-row txt-center">
               <h3>Veggie Pizza</h3>
               <p>
                 <span>$</span>9.00
@@ -57,14 +48,14 @@ const SectionFive = () => {
           </div>
         </div>
         {/* Pizza 3 */}
-        <div className="pricing-grid-item">
+        <div className="pricing-grid-item flex-container flex-row">
           <img
             className="pricing-img"
             src={PepperoniPizza}
             alt="Pepperoni Pizza"
           />
-          <div className="pricing-details">
-            <div className="name-and-price">
+          <div className="pricing-details flex-container flex-column">
+            <div className="name-and-price flex-container flex-row txt-center">
               <h3> Pepperoni Pizza</h3>
               <p>
                 <span>$</span>5.00
@@ -77,14 +68,10 @@ const SectionFive = () => {
           </div>
         </div>
         {/* Pizza 4 */}
-        <div className="pricing-grid-item">
-          <img
-            className="pricing-img"
-            src={MeatPizza}
-            alt="Meat Pizza"
-          />
-          <div className="pricing-details">
-            <div className="name-and-price">
+        <div className="pricing-grid-item flex-container flex-row">
+          <img className="pricing-img" src={MeatPizza} alt="Meat Pizza" />
+          <div className="pricing-details flex-container flex-column">
+            <div className="name-and-price flex-container flex-row txt-center">
               <h3>Meat Pizza</h3>
               <p>
                 <span>$</span>10.00
@@ -98,14 +85,14 @@ const SectionFive = () => {
           </div>
         </div>
         {/* Pizza 5 */}
-        <div className="pricing-grid-item">
+        <div className="pricing-grid-item flex-container flex-row">
           <img
             className="pricing-img"
             src={MargheritaPizza}
             alt="Margherita Pizza"
           />
-          <div className="pricing-details">
-            <div className="name-and-price">
+          <div className="pricing-details flex-container flex-column">
+            <div className="name-and-price flex-container flex-row txt-center">
               <h3>Margherita Pizza</h3>
               <p>
                 <span>$</span>8.00
@@ -119,14 +106,10 @@ const SectionFive = () => {
           </div>
         </div>
         {/* Pizza 6 */}
-        <div className="pricing-grid-item">
-          <img
-            className="pricing-img"
-            src={BBQPizza}
-            alt="BBQ Chicken Pizza"
-          />
-          <div className="pricing-details">
-            <div className="name-and-price">
+        <div className="pricing-grid-item flex-container flex-row">
+          <img className="pricing-img" src={BBQPizza} alt="BBQ Chicken Pizza" />
+          <div className="pricing-details flex-container flex-column">
+            <div className="name-and-price flex-container flex-row txt-center">
               <h3>BBQ Chicken Pizza</h3>
               <p>
                 <span>$</span>10.00

@@ -7,7 +7,7 @@ import ImgFour from "../images/img-grid-4.avif";
 const SectionSix = () => {
   return (
     <article>
-      <section className="img-grid">
+      <section className="img-grid flex-container flex-column">
         <div>
           <i className="fa-solid fa-magnifying-glass" />
           <img src={ImgOne} alt="table in the street" />

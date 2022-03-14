@@ -6,10 +6,10 @@ import youtube from "../images/youtube.svg"
 
 const SectionEleven = () => {
   return (
-    <article className="section-11">
-      <section className="section-11 heading">
-        <h2>About Us</h2>
-        <p>
+    <article className="section-11  flex-container flex-column">
+      <section className="section-11 heading flex-column">
+        <h2 className="txt-center">About Us</h2>
+        <p className="txt-center">
           Vivamus vel varius nisl. Suspendisse blandit augue at enim varius,
           quis molestie velit pulvinar. In nec lacus rutrum, pellentesque erat
           ut, elementum enim. Nullam commodo lacinia dui non tempor. Vestibulum
@@ -18,7 +18,7 @@ const SectionEleven = () => {
         </p>
       </section>
       {/* Socials */}
-      <section className="social-media second">
+      <section className="social-media second flex-container flex-row">
         <a href>
           <img src={facebook}></img>
         </a>

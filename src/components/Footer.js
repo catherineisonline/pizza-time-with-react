@@ -3,8 +3,8 @@ import logo from "../images/logo.png";
 
 const Footer = () => {
   return (
-    <footer>
-      <ul className="footer-menu">
+    <footer className=" flex-container flex-column txt-center">
+      <ul className="footer-menu  flex-container flex-column">
         <li>
           <a href>Home</a>
         </li>
@@ -25,7 +25,7 @@ const Footer = () => {
         </li>
       </ul>
       <hr />
-      <section className="footer-contact">
+      <section className="footer-contact  flex-container flex-column">
         <h3>Have questions?</h3>
         <div>
           <p>000 (000) 123 4567</p>
@@ -36,7 +36,7 @@ const Footer = () => {
         <div>
           <p>8:00am - 9:00pm</p>
         </div>
-        <a className="logo-styling footer" href="index.html">
+        <a className="logo-styling footer flex-container flex-row txt-center" href="index.html">
           <img className="logo" src={logo} alt="pizza time logo" />
           <p>
             Pizza <span>Time</span>

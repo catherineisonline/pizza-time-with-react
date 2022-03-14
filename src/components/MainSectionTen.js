@@ -17,7 +17,7 @@ const position = [37.0902, -93.7129];
 
 const SectionTen = () => {
   return (
-    <article className="section-10">
+    <article className="section-10  flex-container flex-column">
       <section className="map">
         <MapContainer
           id="map"
@@ -39,8 +39,8 @@ const SectionTen = () => {
         {/* <div id="map" /> */}
       </section>
       <section className="contact-section">
-        <h2>Contact Us</h2>
-        <form className="contact-form" action>
+        <h2 className="txt-center">Contact Us</h2>
+        <form className="contact-form  flex-container flex-column" action>
           <input type="text" name id placeholder="First Name" />
           <input type="text" name id placeholder="Last Name" />
           <textarea name id placeholder="Message" defaultValue={""} />

@@ -9,16 +9,16 @@ const SectionEight = () => {
   return (
     <article className="section-8">
       <img src={SectionEightImg} alt="restaurant interior" />
-      <section className="dish-slider">
-        <div className="dish-categories">
+      <section className="dish-slider  flex-container flex-column txt-center">
+        <div className="dish-categories flex-container flex-column">
           <h3>Pizza</h3>
           <h3>Drinks</h3>
           <h3>Burgers</h3>
           <h3>Pasta</h3>
         </div>
-        <div className="all-dishes">
+        <div className="all-dishes flex-container flex-column">
           {/* Dish 1 */}
-          <div className="dish-details">
+          <div className="dish-details flex-container flex-column txt-center">
             <img src={PepperoniPizza} alt="pepperoni pizza" />
             <h3>Pepperoni Pizza</h3>
             <p className="dish-details-desc">
@@ -31,7 +31,7 @@ const SectionEight = () => {
             <a href>Add to cart</a>
           </div>
           {/* Dish 2 */}
-          <div className="dish-details">
+          <div className="dish-details flex-container flex-column txt-center">
             <img src={BBQPizza} alt="bbq pizza" />
             <h3>BBQ Chicken Pizza</h3>
             <p className="dish-details-desc">
@@ -44,7 +44,7 @@ const SectionEight = () => {
             <a href>Add to cart</a>
           </div>
           {/* Dish 3 */}
-          <div className="dish-details">
+          <div className="dish-details flex-container flex-column txt-center">
             <img src={CheesePizza} alt="cheese pizza" />
             <h3> Cheese Pizza</h3>
             <p className="dish-details-desc">

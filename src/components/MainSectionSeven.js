@@ -1,8 +1,8 @@
 import React from "react";
 const SectionSeven = () => {
   return (
-    <article className="section-7">
-      <section className="highlights">
+    <article className="section-7 flex-container flex-column txt-center">
+      <section className="highlights flex-container flex-column">
         {/* Highlight 1 */}
         <div>
           <img

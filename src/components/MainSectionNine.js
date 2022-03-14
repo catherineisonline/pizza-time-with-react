@@ -6,15 +6,15 @@ import Leftover from "../images/pizza-leftover.avif";
 
 const SectionNine = () => {
   return (
-    <article className="section-9">
-      <h2>Recent from blog</h2>
-      <p className="section-9-desc">
+    <article className="section-9 flex-container flex-column">
+      <h2 className="txt-center">Recent from blog</h2>
+      <p className="section-9-desc txt-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         consequat nibh qua
       </p>
-      <section className="blog-posts">
+      <section className="blog-posts flex-container flex-column">
         {/* Post 1 */}
-        <div className="blog-post">
+        <div className="blog-post flex-container flex-column">
           <img src={PizzaCrust} alt="pizzaon the table" />
           <p className="blog-date">December 7, 2022</p>
           <div>
@@ -26,7 +26,7 @@ const SectionNine = () => {
           </div>
         </div>
         {/* Post 2 */}
-        <div className="blog-post">
+        <div className="blog-post flex-container flex-column">
           <img src={ThickAndThin} alt="a person placing pizza in an over" />
           <p className="blog-date">November 1, 2022</p>
           <h3>
@@ -37,7 +37,7 @@ const SectionNine = () => {
           </p>
         </div>
         {/* Post 3 */}
-        <div className="blog-post">
+        <div className="blog-post flex-container flex-column">
           <img src={Leftover} alt="pizza near fireplace" />
           <p className="blog-date">November 16, 2022</p>
           <h3>What To Do With Leftover Pizza Dough</h3>
