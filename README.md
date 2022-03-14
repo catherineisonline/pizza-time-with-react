@@ -20,7 +20,8 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 #### Landing Page
 
-1. Create main landing page
+
+1. <del>Create main landing page</del>
 2. Carousel to header container
 3. Animation effect on landing page for Services & Image Grid section
 4. Interactivity to food categories on landing page - e.g. Pizza, Drinks, Burgers, Pasta
@@ -56,6 +57,8 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - Order button
 - Total amount
 
+5. <del>Menu side-cotainer</del>
+
 #### Blog
 
 1. Grid of blog posts
@@ -77,7 +80,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 1. Create sub-pages
 
-- Menu
+- <del>Menu</del>
 - Services
 - Blog
 - About

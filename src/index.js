@@ -3,19 +3,14 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar.tsx";
 import MenuRoot from "./components/MenuRoot";
+import reportWebVitals from "./reportWebVitals";
+import RootSection from "./components/RootSection";
 
 import "./index.css";
 import "./App.css";
 import "./Responsive.css";
 import "./leaflet.css";
-
-import reportWebVitals from "./reportWebVitals";
-
-//component file
-import RootSection from "./components/RootSection";
-
-
-
+import "./MenuStyles.css"
 
 ReactDOM.render(
   <React.StrictMode>
