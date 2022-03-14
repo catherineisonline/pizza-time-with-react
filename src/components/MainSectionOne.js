@@ -1,0 +1,45 @@
+import React from "react";
+import facebook from "../images/facebook.svg";
+import instagram from "../images/instagram.svg";
+import twitter from "../images/twitter.svg";
+import youtube from "../images/youtube.svg";
+
+const SectionOne = () => {
+  return (
+    <>
+      <article className="section-1">
+        <section className="company-details">
+          <div>
+            <h2>000 (000) 123 4567</h2>
+            <p>Contact us if you have any questions</p>
+          </div>
+          <div>
+            <h2>506 Roy Alley 80202 </h2>
+            <p>Colorado, Denver</p>
+          </div>
+          <div>
+            <h2>Open Monday-Friday</h2>
+            <p>8:00am - 9:00pm</p>
+          </div>
+        </section>
+
+        <section className="social-media">
+          <a href>
+            <img src={facebook}></img>
+          </a>
+          <a href>
+            <img src={instagram}></img>
+          </a>
+          <a href>
+            <img src={twitter}></img>
+          </a>
+          <a href>
+            <img src={youtube}></img>
+          </a>
+        </section>
+      </article>
+    </>
+  );
+};
+
+export default SectionOne;

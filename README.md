@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Pizza Time
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Pizza Time, a pizza restaurant that offers online order services, is one of the biggest projects I am planning to implement. The goal of this project is to make this restaurant landing page look almost like an actual working bussiness. It should have all the interactivity usale-commerce websites have.  
+</p>
 
-## Available Scripts
+# Goals
 
-In the project directory, you can run:
+<p>The goal of this project is to learn React and become a bit closer to real life projects. Most of the projects I worked with are only small pieces that are not much useful on it's own. By doing this project I will have to think not only as a developer but as a business and a customer. I will be updating the project time to time and adding information on what I did, what I learned, change of the plans and etc. Let's dive into details of this project! </p>
 
-### `npm start`
+# Plan
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p>When working on a big project it defininetly gets harder to have all the ideas and plans in your head. It helps a lot when you can simply write everything down and follow the to do list. In this section, I will be adding everything I want to be happening on the website, whether it's backend or frontend. Yes, eventually I will need backend as well.</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### User Story
 
-### `npm test`
+As a user, I want to be able to make an order without registration. When navigating to the menu page, I want to see menu items that have pictures, name, ingredients, pricing.
+I want to be able to sort the menu by categories, as well as be able to find something specific by writing it in the search bar. I want to be able to add items to cart, indicate the amount or delete the items from the cart. In cart sections, I want to be able to see how muhc I have to pay total and have the possibility to navigate to payments. Before paying, I want to add a special request to my order, like, "no spicy, please".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### To-do
 
-### `npm run build`
+#### Landing Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Create main landing page
+2. Carousel to header container
+3. Animation effect on landing page for Services & Image Grid section
+4. Interactivity to food categories on landing page - e.g. Pizza, Drinks, Burgers, Pasta
+5. Contact Form validation on main page
+6. Let the visitor scroll to the top of the page with one click
+7. Email subscribtion section
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Menu Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Sortable by categories
 
-### `npm run eject`
+- Pizza category
+- Burgers category
+- Drinks category
+- Pasta category
+- Sale category
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Search input available
+3. Menu items have
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Pricing
+- Name
+- Ingredients
+- Categories
+- Image
+- Sizings (in case of pizza)
+- Add to cart button
+- Amount of items added
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Cart Section
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Choose between delivery or takeaway
+- Order button
+- Total amount
 
-## Learn More
+#### Blog
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Grid of blog posts
+2. Each post contains
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Name
+- Picture
+- Description
+- Date
+- Author
 
-### Code Splitting
+2. Sortable by date
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Contact
 
-### Analyzing the Bundle Size
+1. Contact form with validations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Other
 
-### Making a Progressive Web App
+1. Create sub-pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Menu
+- Services
+- Blog
+- About
+- Contact
 
-### Advanced Configuration
+2. Create database or simple object for Menu
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Progress
 
-### Deployment
+#### Day 1
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Created the landing page using some pizza restaurant template. Created everything from scratch as I also wan to keep practicing HTML and CSS. Installed the React and started my first project. It all doesn't seem very difficult because I already tried working with Vue and the process looks very similar.
+- There are many new things I learned:
 
-### `npm run build` fails to minify
+1. JSX - in React I cannot use simple HTML, I have to use JSX which stands for JavaScript XML. The JSX is translated by Babel (a JavaScript compiler), converted to plain JavaScript. There is no huge difference between JSX and HTML but there is still some. To make my life easier I just use online <a href="https://magic.reactjs.net/htmltojsx.htm">HTML to JSX Compiler</a>. I started my project with simple HTMl so I had to compile everything.
+2. Just like in Vue, images and links work a bit differently. Maybe it also depends how I have everything organized, however src and href did not work for me as it usually does. Usually when using img src you write src="/images/myimg.png". To use an image in component I have to impoty the image first and then use it. I have to import MyImg from "../images/myimg.png" and then use src={MyImg}.
+3. FontAwesome also works differently, you need to install library for that which you can read more about right <a href="https://fontawesome.com/v5/docs/web/use-with/react">here</a>.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Useful Resources
+
+- <a href="https://magic.reactjs.net/htmltojsx.htm">HTML to JSX</a> - a great tool to compile HTML to JSX.
+- <a href="https://www.lipsum.com/feed/html">Lorem Ipsum</a> - dummy text generator, there no need to think of big articles on your own.
+- <a href="https://react-leaflet.js.org/">Leaflet</a> - map API. It's a second project where I use it and I like it a lot. It's free and doesn't require any credit card info if you want to use it for some small projects.
+- <a href="https://icons8.com/">Icons8</a> - very good collection of icons, in case you cannot find what you needed on FontAwesome.
