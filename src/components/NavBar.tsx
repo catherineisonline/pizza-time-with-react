@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 import burger from "../images/burger-menu.svg";
+import { NavLink } from "react-router-dom";
 
 class NavBar extends Component {
   render() {
@@ -18,34 +19,100 @@ class NavBar extends Component {
         </a>
         <ul className="menu flex-row pop-font">
           <li>
-            <Link className="txt-white" to="/">
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
+                  : {}
+              }
+              className="txt-white"
+              to="/"
+            >
               <>Home</>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="txt-white" to="/menu">
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
+                  : {}
+              }
+              className="txt-white"
+              to="/menu"
+            >
               <>Menu</>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="txt-white" to="/services">
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
+                  : {}
+              }
+              className="txt-white"
+              to="/services"
+            >
               <>Services</>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="txt-white" to="/blog">
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
+                  : {}
+              }
+              className="txt-white"
+              to="/blog"
+            >
               <>Blog</>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="txt-white" to="/about">
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
+                  : {}
+              }
+              className="txt-white"
+              to="/about"
+            >
               <>About</>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="txt-white" to="/contact">
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
+                  : {}
+              }
+              className="txt-white"
+              to="/contact"
+            >
               <>Contact</>
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <div className="burger-menu flex-container flex-row txt-center pop-font txt-white">

@@ -14,8 +14,87 @@
   --pizza-red: #ff6240;
 }
 
+li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+
+main {
+  /* display: grid;
+  grid-area: "aside", "pizza-section"; */
+  margin-top: 2rem;
+}
+.side-menu h1 {
+  font-family: var(--josefin-font);
+  text-align: left;
+}
+.side-menu {
+  position: fixed;
+  z-index: 1; /* Stay on top */
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-x: hidden;
+  color: var(--whitish-gray);
+  font-size: 1.8rem;
+  text-align: left;
+  line-height: 5rem;
+  border: 1px solid var(--yellow);
+  font-family: var(--poppins-font);
+  padding: 2rem;
+}
+.side-menu li {
+  border-bottom: 1px solid var(--yellow);
+}
+
+.pizza-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  width: 70%;
+  margin: 0 auto;
+  right: 0;
+}
+.pizza-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.pizza-section img {
+  object-fit: cover;
+  max-width: 100%;
+}
 .price {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.price-num {
+  color: var(--yellow);
+}
+
+.price button {
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  border: solid 1px var(--white);
+  padding: 0.5rem 1rem;
+  letter-spacing: 1.3px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+@media (hover: hover) {
+  .price button:hover {
+    background-color: var(--yellow);
+    border: 1px solid transparent;
+    color: var(--light-black);
+    transition: all ease-in-out 0.2s;
+  }
 }

@@ -70,19 +70,6 @@ img {
   color: var(--white);
 }
 
-.side-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.pizza-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  font-size: 2rem;
-  width: 90%;
-  margin: 0 auto;
-}
 /* Poppins Font */
 .pop-font {
   font-family: var(--poppins-font);
