@@ -13,6 +13,10 @@ import reportWebVitals from "./reportWebVitals";
 
 //component file
 import RootSection from "./components/RootSection";
+
+
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
