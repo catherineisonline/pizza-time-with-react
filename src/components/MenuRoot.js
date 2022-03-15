@@ -4,10 +4,8 @@ import PizzaRoot from "./PizzaRoot";
 
 
 class MenuRoot extends React.Component {
-  componentDidUpdate() {
-    window.scrollTo(0, 0);
-  }
   render() {
+    document.title ="Pizza | Pizza Time"; 
     return (
       
       <main>

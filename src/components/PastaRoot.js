@@ -5,6 +5,7 @@ import PastaMenu from "./PastaMenu";
 
 class PastaRoot extends React.Component {
   render() {
+    document.title ="Pasta | Pizza Time"; 
     return (
 
       <main>

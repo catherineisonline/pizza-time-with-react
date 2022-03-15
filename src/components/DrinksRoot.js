@@ -4,6 +4,7 @@ import DrinksMenu from "./DrinksMenu";
 
 class DrinksRoot extends React.Component {
   render() {
+    document.title ="Drinks | Pizza Time"; 
     return (
       <main>
         <MenuNavBar />

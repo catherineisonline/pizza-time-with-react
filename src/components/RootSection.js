@@ -689,6 +689,7 @@ class RootSection extends React.Component {
     window.scrollTo(0, 0);
   }
   render() {
+    document.title ="Pizza Time"; 
     return (
       <>
         <Header />

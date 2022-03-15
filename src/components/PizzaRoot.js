@@ -3,6 +3,7 @@ import PizzaMenu from "./PizzaMenu";
 
 class PizzaRoot extends React.Component {
   render() {
+    document.title ="Pizza | Pizza Time"; 
     return (
       <article className="pizza-section">
         {Object.keys(PizzaMenu).map((obj) => (

@@ -4,6 +4,7 @@ import BurgerMenu from "./SushiMenu";
 
 class SushiRoot extends React.Component {
   render() {
+    document.title ="Sushi | Pizza Time"; 
     return (
       <main>
         <MenuNavBar />

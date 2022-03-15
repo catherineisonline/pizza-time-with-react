@@ -4,6 +4,7 @@ import SaleMenu from "./SaleMenu";
 
 class SaleRoot extends React.Component {
   render() {
+    document.title ="Sale | Pizza Time"; 
     return (
       <main>
         <MenuNavBar />

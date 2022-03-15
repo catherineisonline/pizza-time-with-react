@@ -90,6 +90,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 2. <del>Create database or simple object for Menu<del>
 3. <del>Scroll to top when navigating to another page<del>
+4. <del>Update meta title depending on the current page<del>
 
 ## Progress
 
@@ -117,6 +118,8 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - I also had an issue with importing function as simply as I can with image, for instance. If I declared some function with const SomeFunction, for example and imported it, it didn't work. I decided to go easy way and repeat the function in several components instead. I will definitely get back to this.
 
 - I also moved main page components into one file. I do love having everything as separate as possible so I can understand the workflow better, however I ended up having too many files and it got messy. The components did remain separate however they are just located in the same file now.
+
+- Added a very easy piece of code that changes the title tag depending on the page I am on. There are more advance ways like React Helmet or React meta tags however I don't need it right now, works perfect as it is now.
 
 ## Useful Resources
 

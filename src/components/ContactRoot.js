@@ -2,6 +2,7 @@ import React from "react";
 
 class ContactRoot extends React.Component {
   render() {
+    document.title ="Contact | Pizza Time"; 
     return (
       <main>
         <section className="contact-section">
