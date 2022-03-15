@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar.tsx";
+import HeaderNav from "./components/HeaderNav.tsx";
+import FooterNav from "./components/FooterNav.tsx";
 import MenuRoot from "./components/MenuRoot";
 import reportWebVitals from "./reportWebVitals";
 import RootSection from "./components/RootSection";
@@ -16,10 +17,11 @@ import "./assets/Responsive.css";
 import "./assets/leaflet.css";
 import "./assets/MenuStyles.css";
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <NavBar />
+      <HeaderNav />
       <Routes>
         <Route path="/" element={<RootSection />} />
         <Route path="/pizza" element={<MenuRoot />} />
@@ -29,6 +31,7 @@ ReactDOM.render(
         <Route path="/pasta" element={<PastaRoot />} />
         <Route path="/drinks" element={<DrinksRoot />} />
       </Routes>
+      <FooterNav />
     </Router>
     {/* <RootSection /> */}
   </React.StrictMode>,
@@ -36,3 +39,5 @@ ReactDOM.render(
 );
 
 reportWebVitals();
+
+

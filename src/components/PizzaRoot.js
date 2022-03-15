@@ -1,7 +1,6 @@
 import React from "react";
 import PizzaMenu from "./PizzaMenu";
 
-
 class PizzaRoot extends React.Component {
   render() {
     return (

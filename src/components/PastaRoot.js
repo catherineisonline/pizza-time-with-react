@@ -2,9 +2,11 @@ import React from "react";
 import MenuNavBar from "./MenuNavBar.tsx";
 import PastaMenu from "./PastaMenu";
 
+
 class PastaRoot extends React.Component {
   render() {
     return (
+
       <main>
         <MenuNavBar />
         <article className="pizza-section">
@@ -24,6 +26,7 @@ class PastaRoot extends React.Component {
           ))}
         </article>
       </main>
+      
     );
   }
 }

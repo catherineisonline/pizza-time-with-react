@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,9 +13,9 @@ const Header = () => {
         </p>
         <div className="header-btns flex-container flex-row">
           <a href="/">Order Now</a>
-          <a className="txt-white" href="/" rel="noreferrer">
+          <Link to="/pizza" className="txt-white" href="/">
             View Menu
-          </a>
+          </Link>
         </div>
       </section>
     </section>

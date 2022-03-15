@@ -22,22 +22,24 @@ img {
 }
 
 main {
-  /* display: grid;
-  grid-area: "aside", "pizza-section"; */
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem 1rem;
 }
 .side-menu h1 {
   font-family: var(--josefin-font);
   text-align: left;
 }
 .side-menu {
-  position: fixed;
-  z-index: 1; /* Stay on top */
-  left: 0;
+  grid-column: span 1;
+  position: sticky;
+  height: max-content;
+  /* z-index: 1; */
+  top: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  overflow-x: hidden;
   color: var(--whitish-gray);
   font-size: 1.8rem;
   text-align: left;
@@ -51,12 +53,11 @@ main {
 }
 
 .pizza-section {
+  grid-column: span 3;
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  width: 70%;
-  margin: 0 auto;
-  right: 0;
+  gap: 2rem;
 }
 .pizza-item {
   display: flex;
@@ -68,7 +69,9 @@ main {
 
 .pizza-item h3 {
   font-size: 1.7rem;
-  font-family: var(--josefin-font);
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 .pizza-section img {
   object-fit: cover;

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 // Images for Section One and Eleven
 import facebook from "../images/facebook.svg";
 import instagram from "../images/instagram.svg";
@@ -40,8 +41,6 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const position = [37.0902, -93.7129];
 
-// Images for Section 
-
 //Section One
 const SectionOne = () => {
   return (
@@ -63,16 +62,32 @@ const SectionOne = () => {
         </section>
 
         <section className="social-media flex-container flex-row txt-white">
-          <a href="/">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={facebook} alt="facebook"></img>
           </a>
-          <a href="/">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={instagram} alt="instagram"></img>
           </a>
-          <a href="/">
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={twitter} alt="twitter"></img>
           </a>
-          <a href="/">
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={youtube} alt="youtube"></img>
           </a>
         </section>
@@ -282,10 +297,9 @@ const SectionFour = () => {
           </div>
         </div>
       </section>
-
-      <a className="more-pizza txt-white" href="/">
+      <Link to="/pizza" className="more-pizza txt-white" href="/">
         More Pizza
-      </a>
+      </Link>
     </article>
   );
 };
@@ -639,7 +653,6 @@ const SectionTen = () => {
   );
 };
 
-
 const SectionEleven = () => {
   return (
     <article className="section-11  flex-container flex-column">
@@ -672,6 +685,9 @@ const SectionEleven = () => {
   );
 };
 class RootSection extends React.Component {
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <>
@@ -687,7 +703,7 @@ class RootSection extends React.Component {
         <SectionNine />
         <SectionTen />
         <SectionEleven />
-        <Footer />
+        {/* <Footer /> */}
       </>
     );
   }

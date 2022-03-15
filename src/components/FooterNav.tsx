@@ -1,16 +1,15 @@
 import React, { Component } from "react";
+import logo from "../images/logo.png";
 import { NavLink } from "react-router-dom";
 const ResetLocation = () => window.scrollTo(0, 0);
 
-class HeaderNav extends Component {
+class FooterNav extends Component {
   render() {
     return (
-      <article className="side-menu">
-        <ul>
-          <h1 className="txt-center txt-white">Menu</h1>
+      <footer className=" flex-container flex-column txt-center txt-white pop-font">
+        <ul className="footer-menu  flex-container flex-column">
           <li>
             <NavLink
-              onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -19,15 +18,32 @@ class HeaderNav extends Component {
                     }
                   : {}
               }
+              onClick={ResetLocation}
+              className="txt-white"
+              to="/"
+            >
+              <>Home</>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
+                  : {}
+              }
+              onClick={ResetLocation}
               className="txt-white"
               to="/pizza"
             >
-              Pizza
+              <>Menu</>
             </NavLink>
           </li>
           <li>
             <NavLink
-              onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -36,15 +52,15 @@ class HeaderNav extends Component {
                     }
                   : {}
               }
+              onClick={ResetLocation}
               className="txt-white"
-              to="/sale"
+              to="/services"
             >
-              Sale
+              <>Services</>
             </NavLink>
           </li>
           <li>
             <NavLink
-              onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -53,15 +69,15 @@ class HeaderNav extends Component {
                     }
                   : {}
               }
+              onClick={ResetLocation}
               className="txt-white"
-              to="/sushi"
+              to="/blog"
             >
-              Sushi
+              <>Blog</>
             </NavLink>
           </li>
           <li>
             <NavLink
-              onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -70,15 +86,15 @@ class HeaderNav extends Component {
                     }
                   : {}
               }
+              onClick={ResetLocation}
               className="txt-white"
-              to="/pasta"
+              to="/about"
             >
-              Pasta
+              <>About</>
             </NavLink>
           </li>
           <li>
             <NavLink
-              onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -87,16 +103,40 @@ class HeaderNav extends Component {
                     }
                   : {}
               }
+              onClick={ResetLocation}
               className="txt-white"
-              to="/drinks"
+              to="/contact"
             >
-              Drinks
+              <>Contact</>
             </NavLink>
           </li>
         </ul>
-      </article>
+        <hr />
+        <section className="footer-contact  flex-container flex-column">
+          <h3>Have questions?</h3>
+          <div>
+            <p>000 (000) 123 4567</p>
+          </div>
+          <div>
+            <p>pizza@pizzatime.com</p>
+          </div>
+          <div>
+            <p>8:00am - 9:00pm</p>
+          </div>
+          <NavLink
+            onClick={ResetLocation}
+            to="/"
+            className="logo-styling flex-container flex-row txt-center txt-white"
+          >
+            <img className="logo" src={logo} alt="pizza time logo" />
+            <p>
+              Pizza <span>Time</span>
+            </p>
+          </NavLink>
+        </section>
+      </footer>
     );
   }
 }
 
-export default HeaderNav;
+export default FooterNav;

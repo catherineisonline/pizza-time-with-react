@@ -18,7 +18,7 @@
   .section-10,
   footer,
   .dish-categories {
-    flex-direction: row;
+    flex-direction: row !important;
   }
 
   .blog-posts {

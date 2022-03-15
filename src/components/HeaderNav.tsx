@@ -1,25 +1,28 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 import burger from "../images/burger-menu.svg";
 import { NavLink } from "react-router-dom";
+const ResetLocation = () => window.scrollTo(0, 0);
+
 
 class NavBar extends Component {
   render() {
     return (
       <nav className="main-nav flex-container flex-row txt-center">
-        <a
+        <NavLink
+        onClick={ResetLocation}
+          to="/"
           className="logo-styling flex-container flex-row txt-center txt-white"
-          href="index.html"
         >
           <img className="logo" src={logo} alt="pizza time logo" />
           <p>
             Pizza <span>Time</span>
           </p>
-        </a>
+        </NavLink>
         <ul className="menu flex-row pop-font">
           <li>
             <NavLink
+            onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -36,6 +39,7 @@ class NavBar extends Component {
           </li>
           <li>
             <NavLink
+            onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -52,6 +56,7 @@ class NavBar extends Component {
           </li>
           <li>
             <NavLink
+            onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -68,6 +73,7 @@ class NavBar extends Component {
           </li>
           <li>
             <NavLink
+            onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -84,6 +90,7 @@ class NavBar extends Component {
           </li>
           <li>
             <NavLink
+            onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -100,6 +107,7 @@ class NavBar extends Component {
           </li>
           <li>
             <NavLink
+            onClick={ResetLocation}
               style={({ isActive }) =>
                 isActive
                   ? {
