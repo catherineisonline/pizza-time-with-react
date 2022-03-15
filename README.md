@@ -27,27 +27,28 @@ I want to be able to sort the menu by categories, as well as be able to find som
 5. Contact Form validation on main page
 6. Let the visitor scroll to the top of the page with one click
 7. Email subscribtion section
+8. Add accepted payments 
 
 #### Menu Page
 
-1. Sortable by categories - category navigation on the side
+1. <del>Sortable by categories - category navigation on the side
 
-- Pizza category
-- Burgers category
-- Drinks category
+- <del>Pizza category</del>
+- <del>Sushi category</del>
+- <del>Drinks category</del>
 - Pasta category
 - Sale category
 
 2. Search input available
 3. Menu items have
 
-- Pricing
-- Name
-- Ingredients
+- <del>Pricing</del>
+- <del>Name</del>
+- <del>Ingredients</del>
 - Categories
-- Image
+- <del>Image</del>
 - Sizings (in case of pizza)
-- Add to cart button
+- <del>Add to cart button</del>
 
 4. Cart Section
 
@@ -55,7 +56,9 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - Order button
 - Amount of items added
 
-5. <del>Menu side-cotainer</del>
+5. Add pagination
+
+6. <del>Menu side-cotainer</del>
 
 #### Blog
 
@@ -69,6 +72,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - Author
 
 2. Sortable by date
+3. Add pagination
 
 #### Contact
 
@@ -78,13 +82,13 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 1. Create sub-pages
 
-- <del>Menu</del>
+- <del>Menu<del>
 - Services
 - Blog
 - About
 - Contact
 
-2. Create database or simple object for Menu
+2. <del>Create database or simple object for Menu<del>
 
 ## Progress
 
