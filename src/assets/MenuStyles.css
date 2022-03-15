@@ -65,9 +65,16 @@ main {
   justify-content: space-between;
   align-items: stretch;
 }
+
+.pizza-item h3 {
+  font-size: 1.7rem;
+  font-family: var(--josefin-font);
+}
 .pizza-section img {
   object-fit: cover;
   max-width: 100%;
+  height: 15rem;
+  max-height: 70%;
 }
 .price {
   display: flex;

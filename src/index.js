@@ -5,12 +5,14 @@ import NavBar from "./components/NavBar.tsx";
 import MenuRoot from "./components/MenuRoot";
 import reportWebVitals from "./reportWebVitals";
 import RootSection from "./components/RootSection";
+import ContactRoot from "./components/ContactRoot";
 
-import "./index.css";
-import "./App.css";
-import "./Responsive.css";
-import "./leaflet.css";
-import "./MenuStyles.css"
+
+// import "../assets/index.css";
+import "./assets/App.css";
+import "./assets/Responsive.css";
+import "./assets/leaflet.css";
+import "./assets/MenuStyles.css";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,7 +20,8 @@ ReactDOM.render(
       <NavBar />
       <Routes>
         <Route path="/" element={<RootSection />} />
-        <Route path="/menu" element={<MenuRoot />} />
+        <Route path="/pizza" element={<MenuRoot />} />
+        <Route path="/contact" element={<ContactRoot />} />
       </Routes>
     </Router>
     {/* <RootSection /> */}

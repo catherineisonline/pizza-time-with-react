@@ -76,7 +76,7 @@ img {
 }
 /* Header */
 .header-section {
-  background-image: url("./images/header-pizza-one.avif");
+  background-image: url("../images/header-pizza-one.avif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -252,7 +252,7 @@ img {
 /* Section 3 */
 .section-3 {
   gap: 1rem;
-  background-image: url("./images/section-3-img.png");
+  background-image: url("../images/section-3-img.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 2rem;
@@ -429,7 +429,7 @@ img {
 /* Section 7 */
 .section-7 {
   position: relative;
-  background-image: url("./images/section-7-bg.avif");
+  background-image: url("../images/section-7-bg.avif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

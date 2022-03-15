@@ -1,5 +1,5 @@
 import React from "react";
-import PizzaMenu from "./MenuItems";
+import PizzaMenu from "./PizzaMenu";
 import { NavLink } from "react-router-dom";
 
 class MenuRoot extends React.Component {
