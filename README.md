@@ -27,7 +27,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 5. Contact Form validation on main page
 6. Let the visitor scroll to the top of the page with one click
 7. Email subscribtion section
-8. Add accepted payments 
+8. Add accepted payments
 
 #### Menu Page
 
@@ -89,6 +89,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - Contact
 
 2. <del>Create database or simple object for Menu<del>
+3. <del>Scroll to top when navigating to another page<del>
 
 ## Progress
 
@@ -106,6 +107,16 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - Finally made the navigation menu work, specifically links! It's still not 100% clear however it is the first time I heard about Routers and Link tags. I had navigation inside header which caused me a problem so if it's your first time working with React, it's much easier to have navigation menu component separately.
 - Instead of JS I used TypeScript for navigation. I am not sure exactly why it wasn't working with JS and the tutorial I used was also based on TypeScript, so I decided to try it out.
 - I started working with Menu page now and created an object of menu items. Working with objects is also a little but more different and it's wasn't as easy to take out the values. The best method I found is using a map method. Still have to look into this more.
+
+#### Day 3
+
+- Today I finally finished most of the clickable links. Now you are able to move to another page where only two components remain consistant - header and footer navigation. I also added functionality - everytime you move to another page you will end up at the top of the page. So, if you click on any link in footer, next page will start at the top. Previously it would start at the bottom.
+
+- I also added a lot of new items to menu categories. I decided not to spend too much time on content(even though I am having fun with it) and duplicated it 2x times in order to I have a lot of items on the menu. So if you see some items repeating, it was made on purpose.
+
+- I also had an issue with importing function as simply as I can with image, for instance. If I declared some function with const SomeFunction, for example and imported it, it didn't work. I decided to go easy way and repeat the function in several components instead. I will definitely get back to this.
+
+- I also moved main page components into one file. I do love having everything as separate as possible so I can understand the workflow better, however I ended up having too many files and it got messy. The components did remain separate however they are just located in the same file now.
 
 ## Useful Resources
 
