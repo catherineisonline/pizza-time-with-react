@@ -1,39 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
-import burger from "../images/burger-menu.svg";
 import { NavLink } from "react-router-dom";
 
-class NavBar extends Component {
+class MenuNavBar extends Component {
   render() {
     return (
-      <nav className="main-nav flex-container flex-row txt-center">
-        <a
-          className="logo-styling flex-container flex-row txt-center txt-white"
-          href="index.html"
-        >
-          <img className="logo" src={logo} alt="pizza time logo" />
-          <p>
-            Pizza <span>Time</span>
-          </p>
-        </a>
-        <ul className="menu flex-row pop-font">
-          <li>
-            <NavLink
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
-                  : {}
-              }
-              className="txt-white"
-              to="/"
-            >
-              <>Home</>
-            </NavLink>
-          </li>
+      <article className="side-menu">
+        <ul>
+          <h1 className="txt-center txt-white">Menu</h1>
           <li>
             <NavLink
               style={({ isActive }) =>
@@ -47,7 +20,7 @@ class NavBar extends Component {
               className="txt-white"
               to="/pizza"
             >
-              <>Menu</>
+              Pizza
             </NavLink>
           </li>
           <li>
@@ -61,9 +34,9 @@ class NavBar extends Component {
                   : {}
               }
               className="txt-white"
-              to="/services"
+              to="/sale"
             >
-              <>Services</>
+              Sale
             </NavLink>
           </li>
           <li>
@@ -77,9 +50,9 @@ class NavBar extends Component {
                   : {}
               }
               className="txt-white"
-              to="/blog"
+              to="/burgers"
             >
-              <>Blog</>
+              Burgers
             </NavLink>
           </li>
           <li>
@@ -93,9 +66,9 @@ class NavBar extends Component {
                   : {}
               }
               className="txt-white"
-              to="/about"
+              to="/pasta"
             >
-              <>About</>
+              Pasta
             </NavLink>
           </li>
           <li>
@@ -109,20 +82,15 @@ class NavBar extends Component {
                   : {}
               }
               className="txt-white"
-              to="/contact"
+              to="/drinks"
             >
-              <>Contact</>
+              Drinks
             </NavLink>
           </li>
         </ul>
-        <div className="burger-menu flex-container flex-row txt-center pop-font txt-white">
-          <img className="burger-bars" src={burger} alt=""></img>
-          {/* <i className="fa-solid fa-bars" /> */}
-          <p>Menu</p>
-        </div>
-      </nav>
+      </article>
     );
   }
 }
 
-export default NavBar;
+export default MenuNavBar;

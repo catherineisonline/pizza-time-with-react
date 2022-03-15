@@ -30,7 +30,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 #### Menu Page
 
-1. Sortable by categories
+1. Sortable by categories - category navigation on the side
 
 - Pizza category
 - Burgers category
@@ -48,13 +48,12 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - Image
 - Sizings (in case of pizza)
 - Add to cart button
-- Amount of items added
 
 4. Cart Section
 
 - Choose between delivery or takeaway
 - Order button
-- Total amount
+- Amount of items added
 
 5. <del>Menu side-cotainer</del>
 
