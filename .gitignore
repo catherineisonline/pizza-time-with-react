@@ -10,6 +10,7 @@
 
 # production
 # /build
+#  "deploy": "node --version"
 
 # misc
 .DS_Store
