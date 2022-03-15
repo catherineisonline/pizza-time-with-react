@@ -50,9 +50,9 @@ class MenuNavBar extends Component {
                   : {}
               }
               className="txt-white"
-              to="/burgers"
+              to="/sushi"
             >
-              Burgers
+              Sushi
             </NavLink>
           </li>
           <li>

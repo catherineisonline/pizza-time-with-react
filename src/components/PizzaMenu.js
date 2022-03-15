@@ -236,6 +236,212 @@ const PizzaMenu = {
     PizzaIngredients: "Fresh mozzarella, bread flour, tomato, olive oil, yeast",
     PizzaPrice: (11).toFixed(2),
   },
+  31: {
+    PizzaImg: CheesePizza,
+    PizzaName: "Cheese Pizza",
+    PizzaIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
+    PizzaPrice: (2).toFixed(2),
+  },
+
+  32: {
+    PizzaImg: VeggiePizza,
+    PizzaName: "Veggie Pizza",
+    PizzaIngredients:
+      "Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.",
+    PizzaPrice: (9).toFixed(2),
+  },
+  33: {
+    PizzaImg: PepperoniPizza,
+    PizzaName: "Pepperoni Pizza",
+    PizzaIngredients:
+      "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
+    PizzaPrice: (5).toFixed(2),
+  },
+  34: {
+    PizzaImg: MeatPizza,
+    PizzaName: "Meat Pizza",
+    PizzaIngredients:
+      "Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.",
+    PizzaPrice: (10).toFixed(2),
+  },
+  35: {
+    PizzaImg: MargheritaPizza,
+    PizzaName: "Margherita Pizza",
+    PizzaIngredients:
+      "Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.",
+    PizzaPrice: (8).toFixed(2),
+  },
+  36: {
+    PizzaImg: BBQPizza,
+    PizzaName: "BBQ Chicken Pizza",
+    PizzaIngredients:
+      "Rotisserie chicken, pizza dough, bbq sauce, smoked cheddar cheese, mozzarella cheese.",
+    PizzaPrice: (10).toFixed(2),
+  },
+  37: {
+    PizzaImg: AllaPalla,
+    PizzaName: "Pizza alla pala",
+    PizzaIngredients: "Cheese, cherry tomatoes, arugula, olive oil, yeast.",
+    PizzaPrice: (12).toFixed(2),
+  },
+  38: {
+    PizzaImg: Prosciutto,
+    PizzaName: "Prosciutto e Funghi Pizza",
+    PizzaIngredients:
+      "Italian sausage meat, truffle oil, pizza dough, san marzano tomatoes, bocconcini cheese.",
+    PizzaPrice: (8).toFixed(2),
+  },
+  39: {
+    PizzaImg: DetroitStyle,
+    PizzaName: "Detroit-Style Pizza",
+    PizzaIngredients:
+      "Pizza dough, pizza sauce, brick cheese, rapid rise yeast, olive oil.",
+    PizzaPrice: (11).toFixed(2),
+  },
+  40: {
+    PizzaImg: GarlicFingers,
+    PizzaName: "Garlic Fingers",
+    PizzaIngredients:
+      "Bread flour, mozzarella cheese, butter, olive oil, instant yeast.",
+    PizzaPrice: (7).toFixed(2),
+  },
+  41: {
+    PizzaImg: StLous,
+    PizzaName: "St. Louis-Style Pizza",
+    PizzaIngredients:
+      "Liquid smoke, swiss cheese, white cheddar cheese, light corn syrup, pizza sauce.",
+    PizzaPrice: (13).toFixed(2),
+  },
+  42: {
+    PizzaImg: Rustica,
+    PizzaName: "Pizza Rustica",
+    PizzaIngredients: "Prosciutto, pepperoni, mozzarella, crust, eggs.",
+    PizzaPrice: (13).toFixed(2),
+  },
+  43: {
+    PizzaImg: Genovese,
+    PizzaName: "Pizza pesto Genovese",
+    PizzaIngredients:
+      "Pine nuts, baby potatoes, snow pea shoots, lemon, buffalo mozzarella.",
+    PizzaPrice: (13).toFixed(2),
+  },
+  44: {
+    PizzaImg: Efichi,
+    PizzaName: "Pizza e fichi",
+    PizzaIngredients:
+      "Coconut flour, truffle oil, fig jam, cheese, prosciutto.",
+    PizzaPrice: (12).toFixed(2),
+  },
+  45: {
+    PizzaImg: Apizza,
+    PizzaName: "Apizza",
+    PizzaIngredients:
+      "Ricotta cheese, tomato sauce, fresh basil pesto, fresh mozzarella cheese, semolina flour.",
+    PizzaPrice: (11).toFixed(2),
+  },
+  46: {
+    PizzaImg: StuffedPizza,
+    PizzaName: "Stuffed Pizza",
+    PizzaIngredients:
+      "Hot italian sausage, sweet italian sausage, pizza dough, red pepper flakes, olive oil.",
+    PizzaPrice: (13).toFixed(2),
+  },
+  47: {
+    PizzaImg: Pugliese,
+    PizzaName: "Pugliese Pizza",
+    PizzaIngredients:
+      "Sloppy joe, banana peppers, ground beef, pizza dough, ricotta cheese.",
+    PizzaPrice: (9).toFixed(2),
+  },
+  48: {
+    PizzaImg: TomatoPie,
+    PizzaName: "Tomato Pie",
+    PizzaIngredients:
+      "Pizza dough, san marzano, red pepper flakes, pizza stone, olive oil.",
+    PizzaPrice: (15).toFixed(2),
+  },
+  49: {
+    PizzaImg: Fugaza,
+    PizzaName: "Fugazza",
+    PizzaIngredients: "Mozzarella cheese, sugar, dry yeast, all purpose flour.",
+    PizzaPrice: (10).toFixed(2),
+  },
+  50: {
+    PizzaImg: DiZucca,
+    PizzaName: "Pizza fiori di zucca",
+    PizzaIngredients:
+      "Zucchini blossoms, pizza dough, buffalo mozzarella, olive oil.",
+    PizzaPrice: (8).toFixed(2),
+  },
+  51: {
+    PizzaImg: Fugazeta,
+    PizzaName: "Fugazzeta",
+    PizzaIngredients:
+      "Feta cheese, mozzarella cheese, parmesan cheese, olive oil, yeast.",
+    PizzaPrice: (9).toFixed(2),
+  },
+  52: {
+    PizzaImg: Carbonara,
+    PizzaName: "Pizza Carbonara",
+    PizzaIngredients:
+      "Refrigerated pizza crust, monterey jack cheese, parmesan cheese, butter, chicken bouillon.",
+    PizzaPrice: (8).toFixed(2),
+  },
+  53: {
+    PizzaImg: GranmaPie,
+    PizzaName: "Grandma Pie",
+    PizzaIngredients:
+      "Dark brown sugar, san marzano tomatoes, tomato paste, bread flour, red pepper flakes.",
+    PizzaPrice: (11).toFixed(2),
+  },
+  54: {
+    PizzaImg: Padellino,
+    PizzaName: "Pizza al padellino",
+    PizzaIngredients:
+      "Mozzarella cheese, prosciutto di parma, dough, baby arugula, black pepper",
+    PizzaPrice: (10).toFixed(2),
+  },
+  55: {
+    PizzaImg: CaliforniaStyle,
+    PizzaName: "California-Style Pizza",
+    PizzaIngredients:
+      "Feta cheese, marinated artichoke hearts, pizza crust, red bell pepper, red onion.",
+    PizzaPrice: (15).toFixed(2),
+  },
+  56: {
+    PizzaImg: Fritta,
+    PizzaName: "Pizza fritta",
+    PizzaIngredients:
+      "Ricotta cheese, tomato sauce, tipo 00, neapolitan pizza base, mozzarella cheese.",
+    PizzaPrice: (8).toFixed(2),
+  },
+  57: {
+    PizzaImg: Romana,
+    PizzaName: "Pinsa romana",
+    PizzaIngredients:
+      "Rice flour, olive oil, plain flour, sea salt, dried yeast.",
+    PizzaPrice: (5).toFixed(2),
+  },
+  58: {
+    PizzaImg: ThinCrust,
+    PizzaName: "Chicago Thin Crust Pizza",
+    PizzaIngredients:
+      "Sweet italian sausage, semolina flour, pizza sauce, giardiniera, sugar.",
+    PizzaPrice: (13).toFixed(2),
+  },
+  59: {
+    PizzaImg: GreekStyle,
+    PizzaName: "Greek-Style Pizza",
+    PizzaIngredients:
+      "White cheddar, sauce, tomato paste, bread flour, red pepper flakes.",
+    PizzaPrice: (8).toFixed(2),
+  },
+  60: {
+    PizzaImg: PizzaRomana,
+    PizzaName: "Pizza Romana",
+    PizzaIngredients: "Fresh mozzarella, bread flour, tomato, olive oil, yeast",
+    PizzaPrice: (11).toFixed(2),
+  },
 };
 
 export default PizzaMenu;

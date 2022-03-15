@@ -1,8 +1,8 @@
 import React from "react";
 import MenuNavBar from "./MenuNavBar.tsx";
-import BurgerMenu from "./BurgerMenu";
+import BurgerMenu from "./SushiMenu";
 
-class BurgerRoot extends React.Component {
+class SushiRoot extends React.Component {
   render() {
     return (
       <main>
@@ -28,4 +28,4 @@ class BurgerRoot extends React.Component {
   }
 }
 
-export default BurgerRoot;
+export default SushiRoot;
