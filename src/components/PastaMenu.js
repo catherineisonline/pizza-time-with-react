@@ -209,7 +209,7 @@ const PastaMenu = {
       "Bulk italian sausage, ricotta cheese, tomato sauce, red pepper flakes, mozzarella cheese.",
     PizzaPrice: (12).toFixed(2),
   },
-  8: {
+  28: {
     PizzaImg: CacioPepe,
     PizzaName: "Cacio e Pepe",
     PizzaIngredients: "Spaghetti, parmesan, butter, black pepper.",

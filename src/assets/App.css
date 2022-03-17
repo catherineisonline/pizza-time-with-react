@@ -75,21 +75,13 @@ img {
   font-family: var(--poppins-font);
 }
 /* Header */
-.header-section {
-  background-image: url("../images/header-pizza-one.avif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: var(--light-black);
-  height: 40rem;
-  max-height: 80%;
-}
+
 .main-nav {
   justify-content: space-between;
   align-items: center;
   background-color: var(--light-black);
   padding: 1.5rem;
-  height: 5rem;
+  height: 2rem;
   margin-top: 0;
 }
 /* Logo */
@@ -138,13 +130,44 @@ img {
 .burger-bars {
   width: 2rem;
 }
-/* Header Ingo */
+/* Header Info */
+.header-section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--light-black);
+  height: 40rem;
+  max-height: 80%;
+}
+.header-section.slider-one {
+  background-image: url("../images/header-pizza-one.avif");
+}
+.header-section.slider-two {
+  background-image: url("../images/img-grid-2.avif");
+}
+.header-section.slider-three {
+  background-image: url("../images/sushi-images/Burning\ Taisho.avif");
+}
 
+.alice-carousel__dots {
+  position: relative;
+  margin: 0;
+  margin-top: -2rem;
+}
+
+.alice-carousel__dots-item:not(.__custom) {
+  width: 20px;
+  height: 20px;
+  background-color: var(--light-black);
+  opacity: 0.8;
+}
+.alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active {
+  background-color: var(--white);
+}
 .header-info {
   justify-content: center;
   gap: 1.5rem;
   align-items: center;
-
   padding: 2rem;
 }
 
@@ -162,6 +185,7 @@ img {
 
 .header-info p {
   font-size: 1.5rem;
+  
 }
 
 .header-btns {
@@ -253,8 +277,8 @@ img {
 .section-3 {
   gap: 1rem;
   background-image: url("../images/section-3-img.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: contain;
   padding: 2rem;
 }
 .section-3 h2 {

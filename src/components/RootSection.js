@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 // Images for Section One and Eleven
 import facebook from "../images/facebook.svg";
 import instagram from "../images/instagram.svg";
@@ -40,6 +40,28 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const position = [37.0902, -93.7129];
+//Reset Location
+const ResetLocation = () => window.scrollTo(0, 0);
+
+//Render with delay (place in Delayed tag)
+
+// type Props = {
+//   children: React.ReatNode,
+//   waitBeforeShow?: number,
+// };
+
+// const Delayed = ({ children, waitBeforeShow = 1000 }: Props) => {
+//   const [isShown, setIsShown] = useState(false);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setIsShown(true);
+//     }, waitBeforeShow);
+//     return () => clearTimeout(timer);
+//   }, [waitBeforeShow]);
+
+//   return isShown ? children : null;
+// };
 
 //Section One
 const SectionOne = () => {
@@ -98,25 +120,27 @@ const SectionOne = () => {
 
 const SectionTwo = () => {
   return (
-    <article className="section-2">
-      <img
-        className="section-two-img"
-        src={SectionOneImg}
-        alt="restaurant interior"
-      />
-      <section className="section-2-info flex-container flex-column txt-center pop-font">
-        <h2 className="txt-white">
-          Welcome to <span>Pizza Time</span> restaurant
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          consequat nibh quam, sit amet luctus mauris convallis in. Mauris ac
-          erat mollis, eleifend tellus quis, faucibus eros. In aliquam orci mi.
-          Mauris varius turpis a lectus eleifend iaculis. Donec aliquam orci eu
-          justo porttitor, eget ultricies magna facilisis.{" "}
-        </p>
-      </section>
-    </article>
+   
+      <article className="section-2">
+        <img
+          className="section-two-img"
+          src={SectionOneImg}
+          alt="restaurant interior"
+        />
+        <section className="section-2-info flex-container flex-column txt-center pop-font">
+          <h2 className="txt-white">
+            Welcome to <span>Pizza Time</span> restaurant
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            consequat nibh quam, sit amet luctus mauris convallis in. Mauris ac
+            erat mollis, eleifend tellus quis, faucibus eros. In aliquam orci
+            mi. Mauris varius turpis a lectus eleifend iaculis. Donec aliquam
+            orci eu justo porttitor, eget ultricies magna facilisis.{" "}
+          </p>
+        </section>
+      </article>
+ 
   );
 };
 
@@ -297,7 +321,12 @@ const SectionFour = () => {
           </div>
         </div>
       </section>
-      <Link to="/pizza" className="more-pizza txt-white" href="/">
+      <Link
+        onClick={ResetLocation}
+        to="/pizza"
+        className="more-pizza txt-white"
+        href="/"
+      >
         More Pizza
       </Link>
     </article>
@@ -604,9 +633,10 @@ const SectionNine = () => {
           </p>
         </div>
       </section>
-      <a className="more-pizza txt-white" href="/">
+
+      <Link onClick={ResetLocation} to="/blog" className="more-pizza txt-white">
         More Posts
-      </a>
+      </Link>
     </article>
   );
 };
@@ -668,16 +698,32 @@ const SectionEleven = () => {
       </section>
       {/* Socials */}
       <section className="social-media second flex-container flex-row">
-        <a href="/">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={facebook} alt="facebook"></img>
         </a>
-        <a href="/">
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={instagram} alt="instagram"></img>
         </a>
-        <a href="/">
+        <a
+          href="https://twitter.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={twitter} alt="twitter"></img>
         </a>
-        <a href="/">
+        <a
+          href="https://www.youtube.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={youtube} alt="youtube"></img>
         </a>
       </section>
@@ -689,7 +735,7 @@ class RootSection extends React.Component {
     window.scrollTo(0, 0);
   }
   render() {
-    document.title ="Pizza Time"; 
+    document.title = "Pizza Time";
     return (
       <>
         <Header />

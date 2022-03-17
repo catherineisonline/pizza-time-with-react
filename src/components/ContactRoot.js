@@ -2,10 +2,10 @@ import React from "react";
 
 class ContactRoot extends React.Component {
   render() {
-    document.title ="Contact | Pizza Time"; 
+    document.title = "Contact | Pizza Time";
     return (
       <main>
-        <section className="contact-section">
+        <section className="contact-section-comp">
           <h2 className="txt-center pop-font txt-white">Contact Us</h2>
           <form
             className="contact-form  flex-container flex-column"

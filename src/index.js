@@ -16,7 +16,7 @@ import "./assets/App.css";
 import "./assets/Responsive.css";
 import "./assets/leaflet.css";
 import "./assets/MenuStyles.css";
-
+import "./assets/Contact.css";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -39,5 +39,3 @@ ReactDOM.render(
 );
 
 reportWebVitals();
-
-

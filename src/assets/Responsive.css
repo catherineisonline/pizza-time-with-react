@@ -49,6 +49,10 @@
   .burger-menu {
     display: none;
   }
+  .header-info p  {
+    width: 40%;
+  margin: 0 auto;
+  }
   .section-1,
   .company-details,
   .social-media,
