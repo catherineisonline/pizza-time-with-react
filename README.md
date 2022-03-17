@@ -21,13 +21,14 @@ I want to be able to sort the menu by categories, as well as be able to find som
 #### Landing Page
 
 1. <del>Create main landing page</del>
-2. Carousel to header container
+2. <del>Carousel to header container<del>
 3. Animation effect on landing page for Services & Image Grid section
 4. Interactivity to food categories on landing page - e.g. Pizza, Drinks, Burgers, Pasta
 5. Contact Form validation on main page
 6. Let the visitor scroll to the top of the page with one click
 7. Email subscribtion section
 8. Add accepted payments
+9. Smooth component loading effect
 
 #### Menu Page
 
@@ -121,9 +122,14 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 - Added a very easy piece of code that changes the title tag depending on the page I am on. There are more advance ways like React Helmet or React meta tags however I don't need it right now, works perfect as it is now.
 
+### Day 4
+
+- I added slider to the header section. I was planning to make it with good old JavaScript however I learned about awesome React component called React Alice Carousel. React Alice Carousel is a React component for building content galleries, content rotators and any React carousels. I didn't have spend a lot of time and code to create the carousel and it is something I will definitely will use a lot from now on. It's very easy to install and use. Feel free to check it out <a href="https://www.npmjs.com/package/react-alice-carousel">here</a> and other awesome resources at the end of this file
+
 ## Useful Resources
 
 - <a href="https://magic.reactjs.net/htmltojsx.htm">HTML to JSX</a> - a great tool to compile HTML to JSX.
 - <a href="https://www.lipsum.com/feed/html">Lorem Ipsum</a> - dummy text generator, there no need to think of big articles on your own.
 - <a href="https://react-leaflet.js.org/">Leaflet</a> - map API. It's a second project where I use it and I like it a lot. It's free and doesn't require any credit card info if you want to use it for some small projects.
 - <a href="https://icons8.com/">Icons8</a> - very good collection of icons, in case you cannot find what you needed on FontAwesome.
+- <a href="https://www.npmjs.com/package/react-alice-carousel">React Alice Carousel</a> - React Alice Carousel is a React component for building content galleries, content rotators and any React carousels.
