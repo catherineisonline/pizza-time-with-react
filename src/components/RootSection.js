@@ -1,9 +1,6 @@
 import React from "react";
 import Header from "./Header";
 import { Link } from "react-router-dom";
-import DishSwitchItem from "./CategorySwitcher";
-
-import { Component } from "react";
 // import { useState, useEffect } from "react";
 // Images for Section One and Eleven
 import facebook from "../images/facebook.svg";
@@ -521,21 +518,21 @@ function Drinks() {
 function Burgers() {
   function sayHello() {
     // alert("Hello!");
-    
+
     <div className="dish-details flex-container flex-column txt-center">
-    <img src={PepperoniPizza} alt="pepperoni pizza" />
-    <h3 className="pop-font txt-white">Pepperoni Pizza</h3>
-    <p className="dish-details-desc pop-font">
-      There’s a reason this is one of the most popular types of pizza.
-      Who doesn’t love biting into a crispy, salty round of pepperoni?
-    </p>
-    <p className="dish-details-pricing">
-      <span>$</span>5.00
-    </p>
-    <a className="txt-white" href="/">
-      Add to cart
-    </a>
-  </div>
+      <img src={PepperoniPizza} alt="pepperoni pizza" />
+      <h3 className="pop-font txt-white">Pepperoni Pizza</h3>
+      <p className="dish-details-desc pop-font">
+        There’s a reason this is one of the most popular types of pizza. Who
+        doesn’t love biting into a crispy, salty round of pepperoni?
+      </p>
+      <p className="dish-details-pricing">
+        <span>$</span>5.00
+      </p>
+      <a className="txt-white" href="/">
+        Add to cart
+      </a>
+    </div>;
   }
   return <h3 onClick={sayHello}>Burgers</h3>;
 }
@@ -558,7 +555,6 @@ const SectionEight = () => {
           <Burgers />
           <Pasta />
         </div>
-        {/* <DishSwitchItem /> */}
         <div className="all-dishes flex-container flex-column">
           <div className="dish-details flex-container flex-column txt-center">
             <img src={PepperoniPizza} alt="pepperoni pizza" />
