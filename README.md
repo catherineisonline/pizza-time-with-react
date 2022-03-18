@@ -37,7 +37,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - <del>Pizza category</del>
 - <del>Sushi category</del>
 - <del>Drinks category</del>
-- Pasta category
+- <del>Pasta category<del>
 - Sale category
 
 2. Search input available
@@ -46,7 +46,6 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - <del>Pricing</del>
 - <del>Name</del>
 - <del>Ingredients</del>
-- Categories
 - <del>Image</del>
 - Sizings (in case of pizza)
 - <del>Add to cart button</del>

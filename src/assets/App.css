@@ -164,6 +164,10 @@ img {
 .alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active {
   background-color: var(--white);
 }
+/* 
+.section-8 .alice-carousel__slide-info{
+content: "test";
+} */
 .header-info {
   justify-content: center;
   gap: 1.5rem;
