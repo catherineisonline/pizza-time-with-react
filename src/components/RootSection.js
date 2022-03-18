@@ -2,6 +2,8 @@ import React from "react";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import DishSwitchItem from "./CategorySwitcher";
+
+import { Component } from "react";
 // import { useState, useEffect } from "react";
 // Images for Section One and Eleven
 import facebook from "../images/facebook.svg";
@@ -43,8 +45,6 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const position = [37.0902, -93.7129];
 //Reset Location
 const ResetLocation = () => window.scrollTo(0, 0);
-
-
 
 //Section One
 const SectionOne = () => {
@@ -103,27 +103,25 @@ const SectionOne = () => {
 
 const SectionTwo = () => {
   return (
-   
-      <article className="section-2">
-        <img
-          className="section-two-img"
-          src={SectionOneImg}
-          alt="restaurant interior"
-        />
-        <section className="section-2-info flex-container flex-column txt-center pop-font">
-          <h2 className="txt-white">
-            Welcome to <span>Pizza Time</span> restaurant
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            consequat nibh quam, sit amet luctus mauris convallis in. Mauris ac
-            erat mollis, eleifend tellus quis, faucibus eros. In aliquam orci
-            mi. Mauris varius turpis a lectus eleifend iaculis. Donec aliquam
-            orci eu justo porttitor, eget ultricies magna facilisis.{" "}
-          </p>
-        </section>
-      </article>
- 
+    <article className="section-2">
+      <img
+        className="section-two-img"
+        src={SectionOneImg}
+        alt="restaurant interior"
+      />
+      <section className="section-2-info flex-container flex-column txt-center pop-font">
+        <h2 className="txt-white">
+          Welcome to <span>Pizza Time</span> restaurant
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          consequat nibh quam, sit amet luctus mauris convallis in. Mauris ac
+          erat mollis, eleifend tellus quis, faucibus eros. In aliquam orci mi.
+          Mauris varius turpis a lectus eleifend iaculis. Donec aliquam orci eu
+          justo porttitor, eget ultricies magna facilisis.{" "}
+        </p>
+      </section>
+    </article>
   );
 };
 
@@ -505,21 +503,63 @@ const SectionSeven = () => {
     </article>
   );
 };
+const Wow = () => {
+  return <div>Test</div>;
+};
+function Pizza() {
+  function sayHello() {
+    alert("Hello!");
+  }
+  return <h3 onClick={sayHello}>Pizza</h3>;
+}
+function Drinks() {
+  function sayHello() {
+    <Wow />;
+  }
+  return <h3 onClick={sayHello}>Drinks</h3>;
+}
+function Burgers() {
+  function sayHello() {
+    // alert("Hello!");
+    
+    <div className="dish-details flex-container flex-column txt-center">
+    <img src={PepperoniPizza} alt="pepperoni pizza" />
+    <h3 className="pop-font txt-white">Pepperoni Pizza</h3>
+    <p className="dish-details-desc pop-font">
+      There’s a reason this is one of the most popular types of pizza.
+      Who doesn’t love biting into a crispy, salty round of pepperoni?
+    </p>
+    <p className="dish-details-pricing">
+      <span>$</span>5.00
+    </p>
+    <a className="txt-white" href="/">
+      Add to cart
+    </a>
+  </div>
+  }
+  return <h3 onClick={sayHello}>Burgers</h3>;
+}
+
+function Pasta() {
+  function sayHello() {
+    alert("Hello!");
+  }
+  return <h3 onClick={sayHello}>Burgers</h3>;
+}
 
 const SectionEight = () => {
   return (
     <article className="section-8">
       <img src={SectionEightImg} alt="restaurant interior" />
-      {/* <section className="dish-slider  flex-container flex-column txt-center"> */}
-        {/* <div className="dish-categories flex-container flex-column">
-          <h3>Pizza</h3>
-          <h3>Drinks</h3>
-          <h3>Burgers</h3>
-          <h3>Pasta</h3>
-        </div> */}
-        <DishSwitchItem />
-        {/* <div className="all-dishes flex-container flex-column">
-   
+      <section className="dish-slider  flex-container flex-column txt-center">
+        <div className="dish-categories flex-container flex-column">
+          <Pizza />
+          <Drinks />
+          <Burgers />
+          <Pasta />
+        </div>
+        {/* <DishSwitchItem /> */}
+        <div className="all-dishes flex-container flex-column">
           <div className="dish-details flex-container flex-column txt-center">
             <img src={PepperoniPizza} alt="pepperoni pizza" />
             <h3 className="pop-font txt-white">Pepperoni Pizza</h3>
@@ -534,7 +574,7 @@ const SectionEight = () => {
               Add to cart
             </a>
           </div>
-        
+
           <div className="dish-details flex-container flex-column txt-center">
             <img src={BBQPizza} alt="bbq pizza" />
             <h3 className="pop-font txt-white">BBQ Chicken Pizza</h3>
@@ -549,7 +589,7 @@ const SectionEight = () => {
               Add to cart
             </a>
           </div>
-         
+
           <div className="dish-details flex-container flex-column txt-center">
             <img src={CheesePizza} alt="cheese pizza" />
             <h3 className="pop-font txt-white"> Cheese Pizza</h3>
@@ -564,8 +604,8 @@ const SectionEight = () => {
               Add to cart
             </a>
           </div>
-        </div> */}
-      {/* </section> */}
+        </div>
+      </section>
     </article>
   );
 };
@@ -723,6 +763,7 @@ class RootSection extends React.Component {
     return (
       <>
         <Header />
+
         <SectionOne />
         <SectionTwo />
         <SectionThree />
