@@ -1,10 +1,20 @@
 {
   "files": {
-    "main.css": "/pizza-time-with-react/static/css/main.a598998b.css",
-    "main.js": "/pizza-time-with-react/static/js/main.b6a1dcd1.js",
+    "main.css": "/pizza-time-with-react/static/css/main.50a02595.css",
+    "main.js": "/pizza-time-with-react/static/js/main.49ff8eba.js",
     "static/js/787.a2bf511c.chunk.js": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js",
+    "static/media/post-3.jpeg": "/pizza-time-with-react/static/media/post-3.7b7183c19034cb910d10.jpeg",
+    "static/media/post-10.jpeg": "/pizza-time-with-react/static/media/post-10.3f112bfc16fcd892750b.jpeg",
+    "static/media/post-5.jpeg": "/pizza-time-with-react/static/media/post-5.7736b17e606cf13ce60e.jpeg",
+    "static/media/post-6.jpeg": "/pizza-time-with-react/static/media/post-6.3cf9f13038c49fae3e83.jpeg",
+    "static/media/post-4.jpeg": "/pizza-time-with-react/static/media/post-4.fb58216238d186b65e32.jpeg",
+    "static/media/post-8.jpeg": "/pizza-time-with-react/static/media/post-8.04295707174953a53816.jpeg",
     "static/media/Sams Cola Soda.jpeg": "/pizza-time-with-react/static/media/Sams Cola Soda.5529523e7dde31b0f6ce.jpeg",
+    "static/media/post-9.jpeg": "/pizza-time-with-react/static/media/post-9.f0448958f5a6d37b3da4.jpeg",
+    "static/media/post-1.jpeg": "/pizza-time-with-react/static/media/post-1.4f94cb3f738010bdf7f3.jpeg",
+    "static/media/post-7.jpeg": "/pizza-time-with-react/static/media/post-7.339a9316dfee50815387.jpeg",
     "static/media/Lipton Green Tea.jpeg": "/pizza-time-with-react/static/media/Lipton Green Tea.468aa016cc41286180e6.jpeg",
+    "static/media/post-2.jpeg": "/pizza-time-with-react/static/media/post-2.70fa1607c573c6a6b8ec.jpeg",
     "static/media/img-grid-2.jpg": "/pizza-time-with-react/static/media/img-grid-2.5c1adbccb311f602841c.jpg",
     "static/media/Apizza.jpg": "/pizza-time-with-react/static/media/Apizza.72e18c3c600bfa77e958.jpg",
     "static/media/St-Louis-Style-Pizza.jpg": "/pizza-time-with-react/static/media/St-Louis-Style-Pizza.3ba5a471314e9e3a4e8f.jpg",
@@ -118,18 +128,22 @@
     "static/media/Baked Spaghetti.jpeg": "/pizza-time-with-react/static/media/Baked Spaghetti.2fad6a1730dbe2177702.jpeg",
     "static/media/Sunkist Orange.jpeg": "/pizza-time-with-react/static/media/Sunkist Orange.9949ca21181f367569e2.jpeg",
     "static/media/Cacio e Pepe.jpeg": "/pizza-time-with-react/static/media/Cacio e Pepe.e4795f6c09bdaff2ce64.jpeg",
+    "static/media/applepay-icon.svg": "/pizza-time-with-react/static/media/applepay-icon.d86825ec989437ec2bcdcddee0aa695a.svg",
+    "static/media/googlepay-icon.svg": "/pizza-time-with-react/static/media/googlepay-icon.bba8766b93fa9e485d769f3377a30f10.svg",
     "static/media/instagram.svg": "/pizza-time-with-react/static/media/instagram.cc4b14fa5006a71262de3612a94ae4f6.svg",
     "static/media/twitter.svg": "/pizza-time-with-react/static/media/twitter.7d457bf98b86fb4d7247442f208a5a07.svg",
+    "static/media/visa-icon.svg": "/pizza-time-with-react/static/media/visa-icon.2a2de0f6ffb5dac7dea47b8594642fd6.svg",
     "static/media/youtube.svg": "/pizza-time-with-react/static/media/youtube.4d603278cd2f75b7ec86f5af71ae6a0e.svg",
+    "static/media/mastercard-icon.svg": "/pizza-time-with-react/static/media/mastercard-icon.c66dbbec26938c040843d4706a1965e1.svg",
     "static/media/burger-menu.svg": "/pizza-time-with-react/static/media/burger-menu.3fd5cfb7747ba533b53ac919f3de692f.svg",
     "index.html": "/pizza-time-with-react/index.html",
     "static/media/facebook.svg": "/pizza-time-with-react/static/media/facebook.4fb9beab599f181e1d1fac61c70ef89f.svg",
-    "main.a598998b.css.map": "/pizza-time-with-react/static/css/main.a598998b.css.map",
-    "main.b6a1dcd1.js.map": "/pizza-time-with-react/static/js/main.b6a1dcd1.js.map",
+    "main.50a02595.css.map": "/pizza-time-with-react/static/css/main.50a02595.css.map",
+    "main.49ff8eba.js.map": "/pizza-time-with-react/static/js/main.49ff8eba.js.map",
     "787.a2bf511c.chunk.js.map": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a598998b.css",
-    "static/js/main.b6a1dcd1.js"
+    "static/css/main.50a02595.css",
+    "static/js/main.49ff8eba.js"
   ]
 }
