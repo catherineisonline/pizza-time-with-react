@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pizza-time-with-react/static/css/main.f3d8ea53.css",
-    "main.js": "/pizza-time-with-react/static/js/main.af0d69b5.js",
+    "main.css": "/pizza-time-with-react/static/css/main.a5bec79e.css",
+    "main.js": "/pizza-time-with-react/static/js/main.9a2fb193.js",
     "static/js/787.a2bf511c.chunk.js": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js",
     "static/media/post-3.jpeg": "/pizza-time-with-react/static/media/post-3.7b7183c19034cb910d10.jpeg",
     "static/media/post-10.jpeg": "/pizza-time-with-react/static/media/post-10.3f112bfc16fcd892750b.jpeg",
@@ -139,12 +139,12 @@
     "static/media/burger-menu.svg": "/pizza-time-with-react/static/media/burger-menu.3fd5cfb7747ba533b53ac919f3de692f.svg",
     "index.html": "/pizza-time-with-react/index.html",
     "static/media/facebook.svg": "/pizza-time-with-react/static/media/facebook.4fb9beab599f181e1d1fac61c70ef89f.svg",
-    "main.f3d8ea53.css.map": "/pizza-time-with-react/static/css/main.f3d8ea53.css.map",
-    "main.af0d69b5.js.map": "/pizza-time-with-react/static/js/main.af0d69b5.js.map",
+    "main.a5bec79e.css.map": "/pizza-time-with-react/static/css/main.a5bec79e.css.map",
+    "main.9a2fb193.js.map": "/pizza-time-with-react/static/js/main.9a2fb193.js.map",
     "787.a2bf511c.chunk.js.map": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3d8ea53.css",
-    "static/js/main.af0d69b5.js"
+    "static/css/main.a5bec79e.css",
+    "static/js/main.9a2fb193.js"
   ]
 }
