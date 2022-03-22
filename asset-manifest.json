@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pizza-time-with-react/static/css/main.50a02595.css",
-    "main.js": "/pizza-time-with-react/static/js/main.49ff8eba.js",
+    "main.css": "/pizza-time-with-react/static/css/main.d516af53.css",
+    "main.js": "/pizza-time-with-react/static/js/main.ee9ddcef.js",
     "static/js/787.a2bf511c.chunk.js": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js",
     "static/media/post-3.jpeg": "/pizza-time-with-react/static/media/post-3.7b7183c19034cb910d10.jpeg",
     "static/media/post-10.jpeg": "/pizza-time-with-react/static/media/post-10.3f112bfc16fcd892750b.jpeg",
@@ -29,6 +29,7 @@
     "static/media/section-1-img.jpg": "/pizza-time-with-react/static/media/section-1-img.1d5e1baa31943bffad84.jpg",
     "static/media/Tomato-Pie.jpg": "/pizza-time-with-react/static/media/Tomato-Pie.dd876e3962d7948c753b.jpg",
     "static/media/veggie-pizza.jpg": "/pizza-time-with-react/static/media/veggie-pizza.4de32a64d32863592045.jpg",
+    "static/media/landing-bg.jpg": "/pizza-time-with-react/static/media/landing-bg.1016007dcbe4031ed5ad.jpg",
     "static/media/Pizza-Rustica.jpg": "/pizza-time-with-react/static/media/Pizza-Rustica.a0502e151256476a0d75.jpg",
     "static/media/office-1.jpeg": "/pizza-time-with-react/static/media/office-1.ca0f61c8924769f3de57.jpeg",
     "static/media/romana.jpg": "/pizza-time-with-react/static/media/romana.c3e00a296cf467634a2b.jpg",
@@ -138,12 +139,12 @@
     "static/media/burger-menu.svg": "/pizza-time-with-react/static/media/burger-menu.3fd5cfb7747ba533b53ac919f3de692f.svg",
     "index.html": "/pizza-time-with-react/index.html",
     "static/media/facebook.svg": "/pizza-time-with-react/static/media/facebook.4fb9beab599f181e1d1fac61c70ef89f.svg",
-    "main.50a02595.css.map": "/pizza-time-with-react/static/css/main.50a02595.css.map",
-    "main.49ff8eba.js.map": "/pizza-time-with-react/static/js/main.49ff8eba.js.map",
+    "main.d516af53.css.map": "/pizza-time-with-react/static/css/main.d516af53.css.map",
+    "main.ee9ddcef.js.map": "/pizza-time-with-react/static/js/main.ee9ddcef.js.map",
     "787.a2bf511c.chunk.js.map": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.50a02595.css",
-    "static/js/main.49ff8eba.js"
+    "static/css/main.d516af53.css",
+    "static/js/main.ee9ddcef.js"
   ]
 }
