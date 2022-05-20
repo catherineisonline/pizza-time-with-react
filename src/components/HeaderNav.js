@@ -79,7 +79,7 @@ export default class NavBar extends React.Component {
                   : {}
               }
               className="txt-white"
-              to="/pizza"
+              to="/menu"
             >
               <>Menu</>
             </NavLink>

@@ -1,7 +1,7 @@
 import React from "react";
 import PizzaMenu from "./PizzaMenu";
-import ScrollBtn from "./ScrollBtn";
-import AddItemsToCart from "./AddItemsToCart";
+import ScrollBtn from "../ScrollBtn";
+import AddItemsToCart from "../AddItemsToCart";
 
 export default class PizzaRoot extends React.Component {
   render() {

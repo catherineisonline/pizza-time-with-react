@@ -1,29 +1,118 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 //Componnets
-import HeaderNav from "./components/HeaderNav.tsx";
-import FooterNav from "./components/FooterNav.tsx";
+import HeaderNav from "./components/HeaderNav.js";
+import FooterNav from "./components/FooterNav.js";
 import MenuRoot from "./components/MenuRoot";
 import RootSection from "./components/RootSection";
 import ContactRoot from "./components/ContactRoot";
-import SushiRoot from "./components/SushiRoot";
-import SaleRoot from "./components/SaleRoot";
-import PastaRoot from "./components/PastaRoot";
-import DrinksRoot from "./components/DrinksRoot";
+// import SushiRoot from "./components/SushiRoot";
+// import SaleRoot from "./components/SaleRoot";
+// import PastaRoot from "./components/PastaRoot";
+// import DrinksRoot from "./components/DrinksRoot";
 import AboutUs from "./components/AboutUs";
 import Blog from "./components/Blog";
 import Cart from "./components/Cart";
 import PasswordRecovery from "./components/PasswordRecovery.js";
 import Register from "./components/Register";
 //Data
-import { allProducts } from "./data/AllProducts";
+import { allProductsData } from "./data/AllProductsData.js";
+import { AllCategories } from "./data/AllCategories";
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      allCategories: [],
+      activeCategory: "Menu",
       cartItems: [],
+      allProducts: [],
     };
+    this.getProductsByCategory = this.getProductsByCategory.bind(this);
+    this.changeCategory = this.changeCategory.bind(this);
   }
+
+  // GET DATA
+  /*******************************************************/
+  allCategoriesData = new Promise((resolve, reject) => {
+    if (true) {
+      resolve(AllCategories);
+      return;
+    }
+    reject("error, check the code!");
+  });
+  allProductsData = new Promise((resolve, reject) => {
+    if (true) {
+      resolve(allProductsData);
+      return;
+    }
+    reject("error, check the code!");
+  });
+
+  getCategories = async () => {
+    try {
+      const result = await this.allCategoriesData;
+      this.setState({ allCategories: result });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getAllProducts = async () => {
+    try {
+      const result = await this.allProductsData;
+      this.setState({ allProducts: result });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // HANDLE CHANGE
+  /*******************************************************/
+  changeCategory = async (newCategory) => {
+    this.setState({ activeCategory: newCategory });
+    this.getProductsByCategory(newCategory);
+  };
+
+  getProductsByCategory = async (category) => {
+    let separateCategoriesByname = [];
+    //Separate arrays by category names
+    const separateCategories = allProductsData.reduce(function (
+      singleCategory,
+      singleItem
+    ) {
+      separateCategoriesByname = Object.keys(singleCategory);
+
+      if (!singleCategory[singleItem.Category])
+        singleCategory[singleItem.Category] = singleItem;
+      else
+        singleCategory[singleItem.Category] = Array.isArray(
+          singleCategory[singleItem.Category]
+        )
+          ? singleCategory[singleItem.Category].concat(singleItem)
+          : [singleCategory[singleItem.Category]].concat(singleItem);
+      return singleCategory;
+    },
+    {});
+
+    const result = Object.keys(separateCategories).map(
+      (e) => separateCategories[e]
+    );
+
+    let singleCategoryArray = [];
+    result.map((categories) => {
+      singleCategoryArray = categories;
+    });
+    //Change products by category
+    separateCategoriesByname.forEach((cate) => {
+      if (cate === category) {
+        this.setState({ allProducts: separateCategories[category] });
+      }
+      if (category === "Menu") {
+        this.setState({ allProducts: allProductsData });
+      }
+    });
+  };
+
   CheckRepeatableProducts = (
     cartItems,
     targetProduct,
@@ -172,25 +261,37 @@ export default class App extends React.Component {
     }
   };
   componentDidMount() {
-      console.log(allProducts)
+    this.getCategories();
+    this.getAllProducts();
+    this.getProductsByCategory(this.state.activeCategory);
   }
   render() {
-    console.log(this.state.cartItems);
+    // console.log(this.state.cartItems);
     return (
       <BrowserRouter>
         <HeaderNav />
-        <RootSection />
         <Routes>
           <Route path="/pizza-time-with-react" element={<RootSection />} />
-          <Route path="/pizza" element={<MenuRoot />} />
+          <Route
+            path="/menu"
+            element={
+              <MenuRoot
+                allProducts={this.state.allProducts}
+                allCategories={this.state.allCategories}
+                activeCategory={this.state.activeCategory}
+                changeCategory={this.changeCategory}
+              />
+            }
+          />
+          {/* <Route path="/pizza" element={<MenuRoot />} /> */}
           <Route path="/contact" element={<ContactRoot />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/sushi" element={<SushiRoot />} />
+          {/* <Route path="/sushi" element={<SushiRoot />} />
           <Route path="/sale" element={<SaleRoot />} />
           <Route path="/pasta" element={<PastaRoot />} />
-          <Route path="/drinks" element={<DrinksRoot />} />
+          <Route path="/drinks" element={<DrinksRoot />} /> */}
           <Route path="/register" element={<Register />} />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>

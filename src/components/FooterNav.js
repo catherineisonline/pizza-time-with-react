@@ -42,7 +42,7 @@ export default class FooterNav extends React.Component {
               }
               onClick={ResetLocation}
               className="txt-white"
-              to="/pizza"
+              to="/menu"
             >
               <>Menu</>
             </NavLink>
@@ -123,5 +123,3 @@ export default class FooterNav extends React.Component {
     );
   }
 }
-
-
