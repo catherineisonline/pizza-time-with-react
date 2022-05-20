@@ -32,7 +32,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import { render } from "@testing-library/react";
+// import { render } from "@testing-library/react";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -848,7 +848,7 @@ class SectionTen extends React.Component {
     return (
       <article className="section-10  flex-container flex-column">
         <section className="map">
-          <MapContainer
+          {/* <MapContainer
             id="map"
             center={position}
             zoom={9}
@@ -863,7 +863,7 @@ class SectionTen extends React.Component {
                 A pretty CSS3 popup. <br /> Easily customizable.
               </Popup>
             </Marker>
-          </MapContainer>
+          </MapContainer> */}
         </section>
         <section className="contact-section">
           <form className="contact-form  flex-container flex-column">
