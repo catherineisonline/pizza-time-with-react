@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import logo from "../images/logo.png";
 import burger from "../images/burger-menu.svg";
@@ -9,7 +9,7 @@ import Cart from "../images/cart-icon.png";
 const ResetLocation = () => window.scrollTo(0, 0);
 
 
-class NavBar extends Component {
+export default class NavBar extends React.Component {
   HideModal() {
     const hiddenModal = document.querySelector(".modal");
     hiddenModal.classList.remove("active-modal");
@@ -184,4 +184,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+

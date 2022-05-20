@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class PasswordRecovery extends React.Component {
+export default class PasswordRecovery extends React.Component {
   render() {
     document.title = "Password Recovery | Pizza Time";
     return (
@@ -25,4 +25,3 @@ class PasswordRecovery extends React.Component {
   }
 }
 
-export default PasswordRecovery;

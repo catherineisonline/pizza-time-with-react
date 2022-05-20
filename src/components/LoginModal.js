@@ -2,7 +2,7 @@ import React from "react";
 import "../assets/LoginModal.css";
 import { Link } from "react-router-dom";
 
-class LoginModal extends React.Component {
+export default class LoginModal extends React.Component {
   HideModal() {
     const hiddenModal = document.querySelector(".modal");
     hiddenModal.classList.remove("active-modal");
@@ -63,4 +63,4 @@ class LoginModal extends React.Component {
     );
   }
 }
-export default LoginModal;
+

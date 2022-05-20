@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import React from "react";
 import ScrollBtn from "./ScrollBtn";
 
-class Cart extends React.Component {
+export default  class Cart extends React.Component {
   render() {
     document.title = "Cart | Pizza Time";
     return (
@@ -22,4 +22,4 @@ class Cart extends React.Component {
   }
 }
 
-export default Cart;
+// export default Cart;

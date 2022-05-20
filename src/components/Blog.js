@@ -5,7 +5,7 @@ import ScrollBtn from "./ScrollBtn";
 
 
 
-class Blog extends React.Component {
+export default  class Blog extends React.Component {
   render() {
     document.title = "Blog | Pizza Time";
     return (
@@ -38,4 +38,4 @@ class Blog extends React.Component {
   }
 }
 
-export default Blog;
+// export default Blog;

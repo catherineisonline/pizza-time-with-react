@@ -3,7 +3,7 @@ import PizzaMenu from "./PizzaMenu";
 import ScrollBtn from "./ScrollBtn";
 import AddItemsToCart from "./AddItemsToCart";
 
-class PizzaRoot extends React.Component {
+export default class PizzaRoot extends React.Component {
   render() {
     document.title = "Pizza | Pizza Time";
     return (
@@ -32,4 +32,4 @@ class PizzaRoot extends React.Component {
   }
 }
 
-export default PizzaRoot;
+

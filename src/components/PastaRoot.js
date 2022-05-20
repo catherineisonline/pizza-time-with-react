@@ -4,7 +4,7 @@ import PastaMenu from "./PastaMenu";
 import ScrollBtn from "./ScrollBtn";
 import AddItemsToCart from "./AddItemsToCart";
 
-class PastaRoot extends React.Component {
+export default class PastaRoot extends React.Component {
   render() {
     document.title = "Pasta | Pizza Time";
     return (
@@ -32,4 +32,4 @@ class PastaRoot extends React.Component {
   }
 }
 
-export default PastaRoot;
+

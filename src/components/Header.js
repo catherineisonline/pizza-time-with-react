@@ -14,7 +14,7 @@ const items = [
         website.
       </p>
       <div className="header-btns flex-container flex-row">
-      <Link className="btn-link" to="/blog">
+        <Link className="btn-link" to="/blog">
           Read Blog
         </Link>
         <Link className="btn-link txt-white " to="/pizza">
@@ -52,7 +52,7 @@ const items = [
         Fortunately for you, we have everything you need.
       </p>
       <div className="header-btns flex-container flex-row">
-      <Link className="btn-link" to="/blog">
+        <Link className="btn-link" to="/blog">
           Read Blog
         </Link>
         <Link className="btn-link txt-white " to="/pizza">
@@ -63,20 +63,19 @@ const items = [
   </section>,
 ];
 
-const Header = () => {
-  return (
-    <>
-      <AliceCarousel
-        // mouseTracking
-        items={items}
-        autoPlay
-        infinite
-        autoPlayInterval="3000"
-        autoPlayStrategy="none"
-        disableButtonsControls
-      />
-    </>
-  );
-};
-
-export default Header;
+export default class Header extends React.Component {
+  render() {
+    return (
+      <>
+        <AliceCarousel
+          items={items}
+          autoPlay
+          infinite
+          autoPlayInterval="3000"
+          autoPlayStrategy="none"
+          disableButtonsControls
+        />
+      </>
+    );
+  }
+}

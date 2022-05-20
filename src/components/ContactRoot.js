@@ -1,6 +1,6 @@
 import React from "react";
 
-class ContactRoot extends React.Component {
+export default  class ContactRoot extends React.Component {
   render() {
     document.title = "Contact | Pizza Time";
     function SubmitContactForm(e) {
@@ -146,4 +146,4 @@ class ContactRoot extends React.Component {
   }
 }
 
-export default ContactRoot;
+// export default ContactRoot;

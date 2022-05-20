@@ -5,7 +5,8 @@ import ScrollBtn from "./ScrollBtn";
 import AddItemsToCart from "./AddItemsToCart";
 
 
-class SaleRoot extends React.Component {
+
+export default class SaleRoot extends React.Component {
  
   render() {
     document.title = "Sale | Pizza Time";
@@ -35,4 +36,4 @@ class SaleRoot extends React.Component {
   }
 }
 
-export default SaleRoot;
+

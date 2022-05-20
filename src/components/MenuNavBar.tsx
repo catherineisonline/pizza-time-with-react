@@ -1,36 +1,10 @@
-import React, { Component } from "react";
-// import { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import SearchIcon from "../images/search-icon.png";
 
-// import PizzaMenu from "./PizzaMenu.js";
-// import Sushimenu from "./SushiMenu.js";
-// import PastaMenu from "./PastaMenu.js";
-// import DrinksMenu from "./DrinksMenu.js";
-
 const ResetLocation = () => window.scrollTo(0, 0);
 
-// const MenuObject = Object.assign(PizzaMenu, Sushimenu, PastaMenu, DrinksMenu);
-// const MenuArr = Object.values(MenuObject);
-
-class HeaderNav extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     value: String,
-  //   };
-  //   this.handleChange = this.handleChange.bind(this);
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  // }
-  // handleChange(event) {
-  //   this.setState({value: event.target.value });
-  // }
-
-  // handleSubmit(event) {
-  //   MenuArr.filter((MenuItem) => MenuItem.ItemName === this.state.value).map(
-  //     (MenuItem) => <p key={MenuItem.ItemName}>{MenuItem.ItemName}</p>
-  //   );
-  // }
+export default class HeaderNav extends React.Component {
   render() {
     return (
       <>
@@ -40,15 +14,8 @@ class HeaderNav extends Component {
               type="text"
               className="menu-search"
               placeholder="search..."
-              // value={this.state.value}
-              // onChange={this.handleChange}
             ></input>
-            <img
-              src={SearchIcon}
-              alt=""
-              className="menu-search-icon"
-              // onClick={this.handleSubmit}
-            ></img>
+            <img src={SearchIcon} alt="" className="menu-search-icon"></img>
           </section>
 
           <ul>
@@ -144,5 +111,3 @@ class HeaderNav extends Component {
     );
   }
 }
-
-export default HeaderNav;

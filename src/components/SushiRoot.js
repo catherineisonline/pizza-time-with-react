@@ -4,7 +4,7 @@ import BurgerMenu from "./SushiMenu";
 import ScrollBtn from "./ScrollBtn";
 import AddItemsToCart from "./AddItemsToCart";
 
-class SushiRoot extends React.Component {
+export default class SushiRoot extends React.Component {
   render() {
     document.title = "Sushi | Pizza Time";
     return (
@@ -31,5 +31,3 @@ class SushiRoot extends React.Component {
     );
   }
 }
-
-export default SushiRoot;

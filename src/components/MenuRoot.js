@@ -3,7 +3,7 @@ import MenuNavBar from "./MenuNavBar.tsx";
 import PizzaRoot from "./PizzaRoot";
 
 
-class MenuRoot extends React.Component {
+export default class MenuRoot extends React.Component {
   render() {
     document.title ="Pizza | Pizza Time"; 
     return (
@@ -19,4 +19,4 @@ class MenuRoot extends React.Component {
   }
 }
 
-export default MenuRoot;
+

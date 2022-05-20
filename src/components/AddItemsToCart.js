@@ -1,6 +1,6 @@
 import React from "react";
 
-class AddItemsToCart extends React.Component {
+export default  class AddItemsToCart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,4 +39,4 @@ class AddItemsToCart extends React.Component {
   }
 }
 
-export default AddItemsToCart;
+// export default AddItemsToCart;

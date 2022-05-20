@@ -1,6 +1,6 @@
 import React from "react";
 
-class Register extends React.Component {
+export default class Register extends React.Component {
   render() {
     document.title = "Register | Pizza Time";
 
@@ -233,4 +233,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+

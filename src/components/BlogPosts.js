@@ -9,25 +9,7 @@ import Img8 from "../images/blog/post-8.jpeg";
 import Img9 from "../images/blog/post-9.jpeg";
 import Img10 from "../images/blog/post-10.jpeg";
 
-// const dateArray = [];
 
-// function randomDate(start, end) {
-//   for (let i = 0; i < 10; i++)
-//     dateArray.push(
-//       new Date(
-//         start.getTime() + Math.random() * (end.getTime() - start.getTime())
-//       )
-//     );
-// }
-// randomDate(new Date(2021, 0, 1), new Date());
-
-// for (let i = 0; i < 10; i++) var randomDay = dateArray[i].getDay();
-// for (let i = 0; i < 10; i++) var randomMonth = dateArray[i].getMonth();
-// for (let i = 0; i < 10; i++) var randomYear = dateArray[i].getFullYear();
-
-// console.log(randomDay, randomMonth, randomYear);
-// console.log(randomDay, randomMonth, randomYear);
-// console.log(this.BlogName)
 const BlogPosts = {
   1: {
     BlogImg: Img1,
