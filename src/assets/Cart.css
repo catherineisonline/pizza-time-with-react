@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Nothing+You+Could+Do&display=swap");
+:root {
+  --poppins-font: "Poppins", sans-serif;
+  --josefin-font: "Sansita Swashed", cursive;
+  --nothing-font: "Nothing You Could Do", cursive;
+  --white: white;
+  --light-gray: #919191;
+  --whitish-gray: #bfbfbf;
+  --light-black: #121618;
+  --pizza-yellow: #ffe600;
+  --yellow: #fac564;
+  --pizza-red: #ff6240;
+}
+
+.cart-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--light-black);
+  min-height: 100vh;
+}
+
+.cart-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem;
+  align-items: center;
+}
+
+.cart-title-section h3 {
+  color: var(--white);
+  font-family: var(--nothing-font);
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.cart-title-section p {
+  color: var(--whitish-gray);
+  font-family: var(--poppins-font);
+}
+
+.back-to-menu {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  color: var(--light-black);
+  background-color: var(--yellow);
+  border-radius: 5px;
+  border-color: var(--yellow);
+  border-width: 1px;
+  padding: 1rem;
+  letter-spacing: 1px;
+  min-width: 50%;
+
+  transition: all ease-in-out 0.3s;
+}
+
+@media (hover: hover) {
+  .back-to-menu:hover {
+    opacity: 0.8;
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .cart-title-sectionr {
+    width: 80%;
+  }
+  
+}

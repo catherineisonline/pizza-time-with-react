@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Nothing+You+Could+Do&display=swap");
+:root {
+  --poppins-font: "Poppins", sans-serif;
+  --josefin-font: "Sansita Swashed", cursive;
+  --nothing-font: "Nothing You Could Do", cursive;
+  --white: white;
+  --light-gray: #919191;
+  --whitish-gray: #bfbfbf;
+  --light-black: #121618;
+  --pizza-yellow: #ffe600;
+  --yellow: #fac564;
+  --pizza-red: #ff6240;
+}
+
+.blog-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-image: url("../images/landing-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.blog-section h1,
+.blog-intro,
+.blog-posts {
+  font-family: var(--poppins-font);
+}
+
+.blog-section h1,
+.blog-posts h3 {
+  color: var(--white);
+}
+.blog-section h1 {
+  font-size: 4rem;
+}
+.blog-intro {
+  color: var(--whitish-gray);
+  font-size: 1.3rem;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.blog-posts {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 4rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.img-link {
+  width: 100%;
+  height: 50%;
+}
+
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blog-posts h3 {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.blog-details {
+  color: var(--whitish-gray);
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.blog-snippet {
+  color: var(--whitish-gray);
+}
+
+/***************  RESPONSIVE ***************/
+
+@media screen and (min-width: 700px) {
+  .blog-posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .blog-intro {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .blog-posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

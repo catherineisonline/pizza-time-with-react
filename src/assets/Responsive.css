@@ -1,0 +1,118 @@
+@media screen and (min-width: 700px) {
+  .section-description {
+    font-size: 1.3rem;
+  }
+
+ 
+  .pricing-grid {
+    gap: 2.5rem;
+  }
+  .img-grid,
+  .highlights,
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dish-categories {
+    display: flex;
+    margin: 0 auto;
+  }
+  .all-dishes,
+  .section-10,
+  footer,
+  .dish-categories {
+    flex-direction: row !important;
+  }
+  .blog-posts-landing {
+    flex-direction: row;
+  }
+
+  .blog-posts {
+    padding-top: 3rem;
+  }
+  .section-10 {
+    justify-content: space-evenly;
+    gap: 5rem;
+  }
+  .map {
+    height: auto;
+    width: 80%;
+  }
+
+  footer {
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .menu {
+    display: flex;
+  }
+  .burger-menu {
+    display: none;
+  }
+  .header-info p {
+    width: 40%;
+    margin: 0 auto;
+  }
+  .section-1,
+  .company-details,
+  .social-media,
+  .section-2,
+  .services-grid {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .social-media,
+  .company-details {
+    align-items: center;
+    width: 100%;
+  }
+  .section-2 img {
+    max-width: 51.2%;
+  }
+  .meals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .meal-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .img-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .highlights {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .section-8 {
+    display: flex;
+    flex-direction: row;
+  }
+  .section-8 img {
+    max-width: 40%;
+    object-fit: cover;
+  }
+  .all-dishes {
+    padding: 0 1rem;
+    align-items: flex-end;
+  }
+  .dish-details a {
+    width: 50%;
+  }
+
+  .section-11 {
+    display: flex;
+    flex-direction: row;
+  }
+  .section-11.heading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+}
