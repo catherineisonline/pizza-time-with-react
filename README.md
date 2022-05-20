@@ -52,14 +52,14 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [x] Sale category
 
 2. [x] Search input available
-3. [x] Menu items have
-
+       Menu items have:
 - [x] Pricing
 - [x] Name
 - [x] Ingredients
 - [x] Image
 - [x] Sizings (in case of pizza)
 - [x] Add to cart button
+
 
 5. [ ] Add pagination
 6. [x] Menu side-cotainer
@@ -102,6 +102,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [ ] Total amount of items
 - [ ] Total price
 - [ ] Buttons to cart/checkout page
+- [ ] Disable cart overlay on mobile version and direct the visitor straight to the cart page
 
 #### Blog
 
@@ -214,6 +215,8 @@ First, I will change everything to CLASS COMPONENTS because I have been mostly w
 Secondly, I will add more interactivity this time, like adding items to the cart and removing it. I had a very hard time doing it last time, let's see how my learning paid off!
 
 #### Day 1
+
+I created a separate file for all menu items and categories which saved me tons of space. Instead of having separate data for each category, I created just one and added the possibility to filter each of them by category. This helped me to get rid of 10 extra components! I do not want to do this now however I would gladly also make a GraphQL for this data. Now, I do not have to load different components every time I change a category. I simply render different data. This was remade to make the add to cart function and separate menu item page easier to create.
 
 ## Useful Resources
 
