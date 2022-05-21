@@ -14,7 +14,7 @@ export default class Cart extends React.Component {
             <section className="cart-title-section">
               <h3>Oh, no, your cart is empty</h3>
               <p>Seems like you have not added anything to your cart yet.</p>
-              <NavLink to="/pizza" className="back-to-menu">
+              <NavLink to="/menu" className="back-to-menu">
                 Check out menu
               </NavLink>
             </section>

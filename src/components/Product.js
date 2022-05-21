@@ -9,7 +9,6 @@ export default class Product extends React.Component {
       pricing: "",
       selectedAttributes: [],
       allAttributesAreSelected: false,
-      singleSelectedAttribute: [],
     };
     this.handleSelectedAttributes = this.handleSelectedAttributes.bind(this);
   }
@@ -36,6 +35,7 @@ export default class Product extends React.Component {
     } else {
       userSelectedAttributes.push(newSelectedAttribute);
     }
+    // console.log(userSelectedAttributes)
     this.setState({ selectedAttributes: userSelectedAttributes });
   };
   // Check if attributes are selected
@@ -81,11 +81,13 @@ export default class Product extends React.Component {
         <img src={singleProduct.ItemImg} alt="pizza"></img>
         <h3>{singleProduct.ItemName}</h3>
         <p>{singleProduct.ItemIngredients}</p>
-        {singleProduct?.attributes?.map((attribute, index) => (
+        {singleProduct?.attributes?.map((attribute) => (
           <Attribute
+            key={attribute.id}
             className="menu-attributes"
             handleSelectedAttributes={this.handleSelectedAttributes}
             attribute={attribute}
+            // selectedAttributes={this.state.selectedAttributes}
           />
         ))}
         <div className="price">

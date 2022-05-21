@@ -17,7 +17,7 @@ const items = [
         <Link className="btn-link" to="/blog">
           Read Blog
         </Link>
-        <Link className="btn-link txt-white " to="/pizza">
+        <Link className="btn-link txt-white " to="/menu">
           View Menu
         </Link>
       </div>
@@ -36,7 +36,7 @@ const items = [
         <Link className="btn-link" to="/blog">
           Read Blog
         </Link>
-        <Link className="btn-link txt-white " to="/pizza">
+        <Link className="btn-link txt-white " to="/menu">
           View Menu
         </Link>
       </div>
@@ -55,7 +55,7 @@ const items = [
         <Link className="btn-link" to="/blog">
           Read Blog
         </Link>
-        <Link className="btn-link txt-white " to="/pizza">
+        <Link className="btn-link txt-white " to="/menu">
           View Menu
         </Link>
       </div>

@@ -25,9 +25,9 @@ export default class MenuRoot extends React.Component {
           changeCategory={changeCategory}
         />
         <article className="pizza-section">
-          {allProducts.map((singleProduct, index) => (
+          {allProducts.map((singleProduct) => (
             <Product
-              // key={index}
+              key={singleProduct.id}
               singleProduct={singleProduct}
               handleAddProduct={handleAddProduct}
               handleRemoveProduct={handleRemoveProduct}

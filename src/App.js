@@ -26,6 +26,8 @@ export default class App extends React.Component {
     };
     this.getProductsByCategory = this.getProductsByCategory.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
+    this.handleAddProduct = this.handleAddProduct.bind(this);
+    this.handleRemoveProduct = this.handleRemoveProduct.bind(this);
   }
 
   // GET DATA
@@ -102,10 +104,10 @@ export default class App extends React.Component {
     //Change products by category
     separateCategoriesByname.forEach((cate) => {
       if (cate === category) {
-        this.setState({ allProducts: separateCategories[category] });
+        return this.setState({ allProducts: separateCategories[category] });
       }
       if (category === "Menu") {
-        this.setState({ allProducts: allProductsData });
+        return this.setState({ allProducts: allProductsData });
       }
     });
   };
@@ -129,7 +131,7 @@ export default class App extends React.Component {
     const attributesMatch = (groupOne, groupTwo) => {
       return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
     };
-
+    console.log(userSelectedAttributes);
     let truthyValuesCounter = 0;
     let i = 0;
     while (i < userSelectedAttributes.length) {
@@ -219,7 +221,7 @@ export default class App extends React.Component {
       ];
     }
     this.setState({ cartItems: updatedProductList });
-    
+
     //save to local storage
     // localStorage.setItem("cartItems", JSON.stringify(updatedProductList));
     //Update cart amount

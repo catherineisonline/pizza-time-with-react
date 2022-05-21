@@ -217,7 +217,7 @@ Secondly, I will add more interactivity this time, like adding items to the cart
 #### Day 1
 
 I created a separate file for all menu items and categories which saved me tons of space. Instead of having separate data for each category, I created just one and added the possibility to filter each of them by category. This helped me to get rid of 10 extra components! I do not want to do this now however I would gladly also make a GraphQL for this data. Now, I do not have to load different components every time I change a category. I simply render different data. This was remade to make the add to cart function and separate menu item page easier to create. 
-Started cart interactivity by adding add to cart option on the menu page along with the attributes. This time, I added size attributes only to the pizza. The customer shouldn't be able to add items to cart until they chose size option and should be able to add products to cart if there are no attributes. 
+Started cart interactivity by adding add to cart option on the menu page along with the attributes. This time, I added size attributes only to the pizza. The customer shouldn't be able to add items to cart until they chose size option and should be able to add products to cart if there are no attributes. Now, you can also see cart item count on navigation cart icon.
 
 ## Useful Resources
 

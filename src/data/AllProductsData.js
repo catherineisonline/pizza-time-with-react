@@ -730,7 +730,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "cheese-pizza",
+    id: "cheese-pizza-second",
     ItemImg: CheesePizza,
     ItemName: "Cheese Pizza",
     ItemIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
@@ -751,7 +751,7 @@ export const allProductsData = [
   },
 
   {
-    id: "veggie-pizza",
+    id: "veggie-pizza-second",
     ItemImg: VeggiePizza,
     ItemName: "Veggie Pizza",
     ItemIngredients:
@@ -772,7 +772,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "pepperoni-pizza",
+    id: "pepperoni-pizza-second",
     ItemImg: PepperoniPizza,
     ItemName: "Pepperoni Pizza",
     ItemIngredients:
@@ -793,7 +793,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "meat-pizza",
+    id: "meat-pizza-second",
     ItemImg: MeatPizza,
     ItemName: "Meat Pizza",
     ItemIngredients:
@@ -814,7 +814,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "margherita-pizza",
+    id: "margherita-pizza-second",
     ItemImg: MargheritaPizza,
     ItemName: "Margherita Pizza",
     ItemIngredients:
@@ -835,7 +835,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "bbq-chicken-pizza",
+    id: "bbq-chicken-pizza-second",
     ItemImg: BBQPizza,
     ItemName: "BBQ Chicken Pizza",
     ItemIngredients:
@@ -856,7 +856,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "alla-pala-pizza",
+    id: "alla-pala-pizza-second",
     ItemImg: AllaPalla,
     ItemName: "Pizza alla pala",
     ItemIngredients: "Cheese, cherry tomatoes, arugula, olive oil, yeast.",
@@ -876,7 +876,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "prosciutto-e-funghi-pizza",
+    id: "prosciutto-e-funghi-pizza-second",
     ItemImg: Prosciutto,
     ItemName: "Prosciutto e Funghi Pizza",
     ItemIngredients:
@@ -897,7 +897,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "detroit-style-pizza",
+    id: "detroit-style-pizza-second",
     ItemImg: DetroitStyle,
     ItemName: "Detroit-Style Pizza",
     ItemIngredients:
@@ -918,7 +918,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "garlic-fingers",
+    id: "garlic-fingers-second",
     ItemImg: GarlicFingers,
     ItemName: "Garlic Fingers",
     ItemIngredients:
@@ -939,7 +939,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "st-ouis-style-pizza",
+    id: "st-ouis-style-pizza-second",
     ItemImg: StLous,
     ItemName: "St. Louis-Style Pizza",
     ItemIngredients:
@@ -960,7 +960,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "rustica-pizza",
+    id: "rustica-pizza-second",
     ItemImg: Rustica,
     ItemName: "Pizza Rustica",
     ItemIngredients: "Prosciutto, pepperoni, mozzarella, crust, eggs.",
@@ -980,7 +980,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "pesto-genovese-pizza",
+    id: "pesto-genovese-pizza-second",
     ItemImg: Genovese,
     ItemName: "Pizza pesto Genovese",
     ItemIngredients:
@@ -1001,7 +1001,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "e-fichi-pizza",
+    id: "e-fichi-pizza-second",
     ItemImg: Efichi,
     ItemName: "Pizza e fichi",
     ItemIngredients: "Coconut flour, truffle oil, fig jam, cheese, prosciutto.",
@@ -1021,7 +1021,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "apizza-pizza",
+    id: "apizza-pizza-second",
     ItemImg: Apizza,
     ItemName: "Apizza",
     ItemIngredients:
@@ -1042,7 +1042,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "stuffed-pizza",
+    id: "stuffed-pizza-second",
     ItemImg: StuffedPizza,
     ItemName: "Stuffed Pizza",
     ItemIngredients:
@@ -1063,7 +1063,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "pugliese-pizza",
+    id: "pugliese-pizza-second",
     ItemImg: Pugliese,
     ItemName: "Pugliese Pizza",
     ItemIngredients:
@@ -1084,7 +1084,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "tomato-pie",
+    id: "tomato-pie-second",
     ItemImg: TomatoPie,
     ItemName: "Tomato Pie",
     ItemIngredients:
@@ -1105,7 +1105,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "fugazza",
+    id: "fugazza-second",
     ItemImg: Fugaza,
     ItemName: "Fugazza",
     ItemIngredients: "Mozzarella cheese, sugar, dry yeast, all purpose flour.",
@@ -1125,7 +1125,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "fiori-di-zucca",
+    id: "fiori-di-zucca-second",
     ItemImg: DiZucca,
     ItemName: "Pizza fiori di zucca",
     ItemIngredients:
@@ -1146,7 +1146,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "fugazzeta",
+    id: "fugazzeta-second",
     ItemImg: Fugazeta,
     ItemName: "Fugazzeta",
     ItemIngredients:
@@ -1167,7 +1167,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "carbonara-pizza",
+    id: "carbonara-pizza-second",
     ItemImg: Carbonara,
     ItemName: "Pizza Carbonara",
     ItemIngredients:
@@ -1188,7 +1188,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "grandma-pie",
+    id: "grandma-pie-second",
     ItemImg: GranmaPie,
     ItemName: "Grandma Pie",
     ItemIngredients:
@@ -1209,7 +1209,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "pizza-al-padellino",
+    id: "pizza-al-padellino-second",
     ItemImg: Padellino,
     ItemName: "Pizza al padellino",
     ItemIngredients:
@@ -1230,7 +1230,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "california-style-pizza",
+    id: "california-style-pizza-second",
     ItemImg: CaliforniaStyle,
     ItemName: "California-Style Pizza",
     ItemIngredients:
@@ -1251,7 +1251,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "pizza-fritta",
+    id: "pizza-fritta-second",
     ItemImg: Fritta,
     ItemName: "Pizza fritta",
     ItemIngredients:
@@ -1272,7 +1272,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "pinsa-romana",
+    id: "pinsa-romana-second",
     ItemImg: Romana,
     ItemName: "Pinsa romana",
     ItemIngredients:
@@ -1293,7 +1293,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "chicago-thin-crust-pizza",
+    id: "chicago-thin-crust-pizza-second",
     ItemImg: ThinCrust,
     ItemName: "Chicago Thin Crust Pizza",
     ItemIngredients:
@@ -1314,7 +1314,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "greek-style-pizza",
+    id: "greek-style-pizza-second",
     ItemImg: GreekStyle,
     ItemName: "Greek-Style Pizza",
     ItemIngredients:
@@ -1335,7 +1335,7 @@ export const allProductsData = [
     ],
   },
   {
-    id: "pizza-romana",
+    id: "pizza-romana-second",
     ItemImg: PizzaRomana,
     ItemName: "Pizza Romana",
     ItemIngredients: "Fresh mozzarella, bread flour, tomato, olive oil, yeast",
@@ -1553,7 +1553,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "chicken-alfredo",
+    id: "chicken-alfredo-second",
     ItemImg: ChickenAlfredo,
     ItemName: "Chicken Alfredo",
     ItemIngredients:
@@ -1563,7 +1563,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "pasta-alla-gricia",
+    id: "pasta-alla-gricia-second",
     ItemImg: AllaGricia,
     ItemName: "Pasta Alla Gricia",
     ItemIngredients:
@@ -1573,7 +1573,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "sheet-pan-burrata-caprese-gnocchi",
+    id: "sheet-pan-burrata-caprese-gnocchi-second",
     ItemImg: SheetPan,
     ItemName: "Sheet-Pan Burrata Caprese Gnocchi",
     ItemIngredients:
@@ -1583,7 +1583,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "penne-alla-vodka",
+    id: "penne-alla-vodka-second",
     ItemImg: AllaVodka,
     ItemName: "Penne Alla Vodka",
     ItemIngredients:
@@ -1593,7 +1593,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "baked-spaghetti",
+    id: "baked-spaghetti-second",
     ItemImg: BakedSpaghetti,
     ItemName: "Baked Spaghetti",
     ItemIngredients:
@@ -1603,7 +1603,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "cacio-e-pepe-potato-gnocchi",
+    id: "cacio-e-pepe-potato-gnocchi-second",
     ItemImg: PotatoGnocchi,
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
@@ -1613,7 +1613,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "ultimate-baked-ziti",
+    id: "ultimate-baked-ziti-second",
     ItemImg: BakedZiti,
     ItemName: "Ultimate Baked Ziti",
     ItemIngredients:
@@ -1623,7 +1623,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "cacio-e-pepe",
+    id: "cacio-e-pepe-second",
     ItemImg: CacioPepe,
     ItemName: "Cacio e Pepe",
     ItemIngredients: "Spaghetti, parmesan, butter, black pepper.",
@@ -1632,7 +1632,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "pasta-puttanesca",
+    id: "pasta-puttanesca-second",
     ItemImg: PastaPuttanesca,
     ItemName: "Pasta Puttanesca",
     ItemIngredients:
@@ -1642,7 +1642,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "italian-pasta-salad",
+    id: "italian-pasta-salad-second",
     ItemImg: ItalianPastaSalad,
     ItemName: "Italian Pasta Salad",
     ItemIngredients:
@@ -1652,7 +1652,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "lasagna-roll-ups",
+    id: "lasagna-roll-ups-second",
     ItemImg: Lasagna,
     ItemName: "Lasagna Roll Ups",
     ItemIngredients:
@@ -1662,7 +1662,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "toasted-ravioli",
+    id: "toasted-ravioli-second",
     ItemImg: ToastedRavioli,
     ItemName: "Toasted Ravioli",
     ItemIngredients:
@@ -1672,7 +1672,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "orecchiette-with-broccoli-rabe",
+    id: "orecchiette-with-broccoli-rabe-second",
     ItemImg: OrecchietteBroccoli,
     ItemName: "Orecchiette with Broccoli Rabe",
     ItemIngredients:
@@ -1682,7 +1682,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "lamb-ragu",
+    id: "lamb-ragu-second",
     ItemImg: LambRagu,
     ItemName: "Lamb Ragù",
     ItemIngredients:
@@ -1692,7 +1692,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "lasagna-bolognese",
+    id: "lasagna-bolognese-second",
     ItemImg: LasagnaBolognese,
     ItemName: "Lasagna Bolognese",
     ItemIngredients:
@@ -1702,7 +1702,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "lemon-ricotta-pasta",
+    id: "lemon-ricotta-pasta-second",
     ItemImg: LemonRicotta,
     ItemName: "Lemon Ricotta Pasta",
     ItemIngredients: "Spaghetti, ricotta, lemon, red pepper flakes, parmesan.",
@@ -1711,7 +1711,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "stuffed-rigatoni",
+    id: "stuffed-rigatoni-second",
     ItemImg: StuffedRigatoni,
     ItemName: "Stuffed Rigatoni",
     ItemIngredients:
@@ -1721,7 +1721,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "five-cheese-ziti-al-forno",
+    id: "five-cheese-ziti-al-forno-second",
     ItemImg: FiveCheese,
     ItemName: "Five-Cheese Ziti Al Forno",
     ItemIngredients:
@@ -1731,7 +1731,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "chicken-florentine-pasta",
+    id: "chicken-florentine-pasta-second",
     ItemImg: ChickenFlorentine,
     ItemName: "Chicken Florentine Pasta",
     ItemIngredients:
@@ -1741,7 +1741,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "italian-mac-and-cheese",
+    id: "italian-mac-and-cheese-second",
     ItemImg: MacCheese,
     ItemName: "Italian Mac and Cheese",
     ItemIngredients:
@@ -1880,7 +1880,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "double-salmon-roll-8-pcs",
+    id: "double-salmon-roll-8-pcs-3",
     ItemImg: DoubleSalmon,
     ItemName: "Double Salmon Roll 8Pcs",
     ItemIngredients:
@@ -2039,7 +2039,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "salmon-poke",
+    id: "salmon-poke-second",
     ItemImg: SalmonPoke,
     ItemName: "Salmon Poke",
     ItemIngredients:
@@ -2050,7 +2050,7 @@ export const allProductsData = [
   },
 
   {
-    id: "veggie-poke",
+    id: "veggie-poke-second",
     ItemImg: VeggiePoke,
     ItemName: "Veggie Poke",
     ItemIngredients:
@@ -2060,7 +2060,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "mini-salmon-set-22-pcs",
+    id: "mini-salmon-set-22-pcs-second",
     ItemImg: MiniSalmon,
     ItemName: "Mini Salmon Set - 22Pcs",
     ItemIngredients:
@@ -2070,7 +2070,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "the-bull-of-ombos-set-32-pcs",
+    id: "the-bull-of-ombos-set-32-pcs-second",
     ItemImg: OmbosSeth,
     ItemName: "The Bull of Ombos Set - 32 Pcs",
     ItemIngredients:
@@ -2080,7 +2080,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "veggie-set-32-pcs",
+    id: "veggie-set-32-pcs-second",
     ItemImg: VeggieSet,
     ItemName: "Veggie Set 32Pcs",
     ItemIngredients:
@@ -2090,7 +2090,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "friendly-set-40-pcs",
+    id: "friendly-set-40-pcs-second",
     ItemImg: FriendlySet,
     ItemName: "Friendly Set 40Pcs",
     ItemIngredients:
@@ -2100,7 +2100,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "sunny-philadelphia-roll-8-pcs",
+    id: "sunny-philadelphia-roll-8-pcs-second",
     ItemImg: SunnyPhiladelphia,
     ItemName: "Sunny Philadelphia Roll 8Pcs",
     ItemIngredients: "Salmon, cream cheese, avocado, rice, sesame, nori.",
@@ -2109,7 +2109,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "hidden-dragon-roll-8-pcs",
+    id: "hidden-dragon-roll-8-pcs-second",
     ItemImg: HiddenDragon,
     ItemName: "Hidden Dragon Roll 8Pcs",
     ItemIngredients:
@@ -2119,7 +2119,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "double-salmon-roll-8-pcs",
+    id: "double-salmon-roll-8-pcs-second",
     ItemImg: DoubleSalmon,
     ItemName: "Double Salmon Roll 8Pcs",
     ItemIngredients:
@@ -2129,7 +2129,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "the-hottest-taisho",
+    id: "the-hottest-taisho-second",
     ItemImg: HottestTaisho,
     ItemName: "The Hottest Taisho",
     ItemIngredients:
@@ -2139,7 +2139,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "burning-taisho",
+    id: "burning-taisho-second",
     ItemImg: BurningTaisho,
     ItemName: "Burning Taisho",
     ItemIngredients: "Salmon, Avocado, Rice, Cucumber, Cream Cheese.",
@@ -2148,7 +2148,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "blissful-eel-roll-8-pcs",
+    id: "blissful-eel-roll-8-pcs-second",
     ItemImg: BlissfulEel,
     ItemName: "Blissful Eel Roll 8Pcs",
     ItemIngredients:
@@ -2158,7 +2158,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "sebastian-the-crab-roll-8-pcs",
+    id: "sebastian-the-crab-roll-8-pcs-second",
     ItemImg: Sebastian,
     ItemName: "Sebastian the Crab Roll 8Pcs",
     ItemIngredients:
@@ -2168,7 +2168,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "double-salmon-roll-8-pcs",
+    id: "double-salmon-roll-8-pcs-sec",
     ItemImg: DoubleSalmon,
     ItemName: "Double Salmon Roll 8Pcs",
     ItemIngredients:
@@ -2178,7 +2178,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "clockwork-orange-roll-8-pcs",
+    id: "clockwork-orange-roll-8-pcs-second",
     ItemImg: ClockworkOrange,
     ItemName: "Clockwork Orange Roll 8Pcs",
     ItemIngredients: "Salmon, orange, cream cheese, salmon extra slice, nori.",
@@ -2187,7 +2187,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "kiwi-roll-8-pcs",
+    id: "kiwi-roll-8-pcs-second",
     ItemImg: KiwiRoll,
     ItemName: "Kiwi Roll 8Pcs",
     ItemIngredients:
@@ -2197,7 +2197,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "the-roll-of-siamese",
+    id: "the-roll-of-siamese-second",
     ItemImg: Siamese,
     ItemName: "The Roll of Siamese",
     ItemIngredients: "Salmon, Cucumber, Carrot, Caviar, Rice.",
@@ -2206,7 +2206,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "salmon-maki-raki-8-pcs",
+    id: "salmon-maki-raki-8-pcs-second",
     ItemImg: SalmonMaki,
     ItemName: "Salmon Maki Raki 8Pcs",
     ItemIngredients: "Salmon, Cream Cheese, Rice, Nori.",
@@ -2215,7 +2215,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "nigiri-with-roasted-salmon-1-pc",
+    id: "nigiri-with-roasted-salmon-1-pc-second",
     ItemImg: NigiriWithRoasted,
     ItemName: "Nigiri with Roasted Salmon 1Pc",
     ItemIngredients: "Roasted Salmon, Rice.",
@@ -2224,7 +2224,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "nigiri-with-salmon-and-orange-1-pc",
+    id: "nigiri-with-salmon-and-orange-1-pc-second",
     ItemImg: NigiriWithSalmon,
     ItemName: "Nigiri with Salmon and Orange 1Pc",
     ItemIngredients: "Salmon, Orange, Rice.",
@@ -2233,7 +2233,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "nigiri-with-eel-1-pc",
+    id: "nigiri-with-eel-1-pc-second",
     ItemImg: NigiriWithEel,
     ItemName: "Nigiri with Eel 1Pc",
     ItemIngredients: "Eel, rice.",
@@ -2242,7 +2242,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "vulcan-tobiko",
+    id: "vulcan-tobiko-second",
     ItemImg: VulcanTobiko,
     ItemName: "Vulcan Tobiko",
     ItemIngredients: "Delicious Gunkan with Tobiko and Rice.",
@@ -2251,7 +2251,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "salmon-gunkan-with-cream-cheese",
+    id: "salmon-gunkan-with-cream-cheese-second",
     ItemImg: SalmonGunkan,
     ItemName: "Salmon Gunkan with Cream Cheese",
     ItemIngredients: "Perfect sushi rice, Nigiri prawns, Cream cheese, Wasabi.",
@@ -2260,7 +2260,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "very-vegetarian-maki-8-pcs",
+    id: "very-vegetarian-maki-8-pcs-second",
     ItemImg: VeryVegetarian,
     ItemName: "Very Vegetarian Maki 8Pcs",
     ItemIngredients: "Avocado, Cream Cheese, Cucumber, Rice, Nori.",
@@ -2269,7 +2269,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "avocado-maki-raki-8-pcs",
+    id: "avocado-maki-raki-8-pcs-second",
     ItemImg: SushiOne,
     ItemName: "Avocado Maki Raki 8Pcs",
     ItemIngredients: "Avocado, Cream Cheese, Rice, Nori.",
@@ -2278,7 +2278,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "cucumber-maki-raki-8-pcs",
+    id: "cucumber-maki-raki-8-pcs-second",
     ItemImg: CucumberMaki,
     ItemName: "Cucumber Maki Raki 8Pcs",
     ItemIngredients: "Cucumber, Sesame, Rice, Nori.",
@@ -2287,7 +2287,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "hungry-set-64-pcs",
+    id: "hungry-set-64-pcs-second",
     ItemImg: HungrySet,
     ItemName: "Hungry Set 64Pcs",
     ItemIngredients:
@@ -2297,7 +2297,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "nigiri-ocean-14-pcs",
+    id: "nigiri-ocean-14-pcs-second",
     ItemImg: NigiriOcean,
     ItemName: "Nigiri Ocean - 14 Pcs",
     ItemIngredients:
@@ -2307,7 +2307,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "foggy-albion-26-pcs",
+    id: "foggy-albion-26-pcs-second",
     ItemImg: FoggyAlbion,
     ItemName: "Foggy Albion - 26Pcs",
     ItemIngredients:
@@ -2317,7 +2317,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "stanley-kubrick-24-pcs",
+    id: "stanley-kubrick-24-pcs-second",
     ItemImg: StanleyKubrick,
     ItemName: "Stanley Kubrick - 24 Pcs",
     ItemIngredients:
@@ -2504,7 +2504,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "coca-cola-original-soda-pop",
+    id: "coca-cola-original-soda-pop-second",
     ItemImg: CocaCola,
     ItemName: "Coca-Cola Original Soda Pop",
     ItemPrice: (1).toFixed(2),
@@ -2513,7 +2513,7 @@ export const allProductsData = [
   },
 
   {
-    id: "mountain-dew-citrus-soda-pop",
+    id: "mountain-dew-citrus-soda-pop-second",
     ItemImg: MountainDew,
     ItemName: "Mountain Dew Citrus Soda Pop",
     ItemPrice: (2).toFixed(2),
@@ -2521,7 +2521,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "pepsi-cola-soda-pop",
+    id: "pepsi-cola-soda-pop-second",
     ItemImg: PepsiCola,
     ItemName: "Pepsi Cola Soda Pop",
     ItemPrice: (1).toFixed(2),
@@ -2529,7 +2529,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "milos-famous-sweet-tea",
+    id: "milos-famous-sweet-tea-second",
     ItemImg: Milo,
     ItemName: "Milo’s Famous Sweet Tea",
     ItemPrice: (1).toFixed(2),
@@ -2537,7 +2537,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "dr-pepper-soda",
+    id: "dr-pepper-soda-second",
     ItemImg: DrPepper,
     ItemName: "Dr Pepper Soda",
     ItemPrice: (1).toFixed(2),
@@ -2545,7 +2545,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "sprite-caffeine-free-lemon-lime-soda-pop",
+    id: "sprite-caffeine-free-lemon-lime-soda-pop-second",
     ItemImg: SpriteCaffeine,
     ItemName: "Sprite Caffeine-Free Lemon Lime Soda Pop",
     ItemPrice: (2).toFixed(2),
@@ -2553,7 +2553,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "great-value-sweet-brewed-iced-tea",
+    id: "great-value-sweet-brewed-iced-tea-second",
     ItemImg: GreatValueSweet,
     ItemName: "Great Value Sweet Brewed Iced Tea",
     ItemPrice: (2).toFixed(2),
@@ -2561,7 +2561,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "stok-cold-brew-coffee-black-iunsweetened",
+    id: "stok-cold-brew-coffee-black-iunsweetened-second",
     ItemImg: SToK,
     ItemName: "SToK Cold Brew Coffee, Black Unsweetened",
     ItemPrice: (3).toFixed(2),
@@ -2569,7 +2569,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "lipton-green-tea-citrus-iced-tea",
+    id: "lipton-green-tea-citrus-iced-tea-second",
     ItemImg: Lipton,
     ItemName: "Lipton Green Tea Citrus Iced Tea",
     ItemPrice: (2).toFixed(2),
@@ -2577,7 +2577,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "canada-dry-ginger-ale-soda",
+    id: "canada-dry-ginger-ale-soda-second",
     ItemImg: CanadaDry,
     ItemName: "Canada Dry Ginger Ale Soda",
     ItemPrice: (2).toFixed(2),
@@ -2585,7 +2585,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "dr-pepper-zero-sugar-soda",
+    id: "dr-pepper-zero-sugar-soda-second",
     ItemImg: DrPepperZero,
     ItemName: "Dr Pepper Zero Sugar Soda",
     ItemPrice: (2).toFixed(2),
@@ -2593,7 +2593,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "diet-dr-pepper-soda",
+    id: "diet-dr-pepper-soda-second",
     ItemImg: DietDrPepper,
     ItemName: "Diet Dr Pepper Soda",
     ItemPrice: (1).toFixed(2),
@@ -2601,7 +2601,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "aquafina-purified-bottled-drinking-water",
+    id: "aquafina-purified-bottled-drinking-water-second",
     ItemImg: AquafinaPurified,
     ItemName: "Aquafina Purified Bottled Drinking Water",
     ItemPrice: (2).toFixed(2),
@@ -2609,7 +2609,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "pure-life-purified-water",
+    id: "pure-life-purified-water-second",
     ItemImg: PureLife,
     ItemName: "Pure Life Purified Water",
     ItemPrice: (1).toFixed(2),
@@ -2617,7 +2617,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "sams-cola-soda-pop",
+    id: "sams-cola-soda-pop-second",
     ItemImg: SamsCola,
     ItemName: "Sams Cola Soda Pop",
     ItemPrice: (1).toFixed(2),
@@ -2625,7 +2625,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "red-bull-energy-drink",
+    id: "red-bull-energy-drink-second",
     ItemImg: RedBull,
     ItemName: "Red Bull Energy Drink",
     ItemPrice: (2).toFixed(2),
@@ -2633,7 +2633,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "a-w-caffeine-free-low-sodium-root-beer-soda-pop",
+    id: "a-w-caffeine-free-low-sodium-root-beer-soda-pop-second",
     ItemImg: Anw,
     ItemName: "A&W Caffeine-Free, Low Sodium Root Beer Soda Pop",
     ItemPrice: (3).toFixed(2),
@@ -2641,7 +2641,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "pepsi-soda-pop",
+    id: "pepsi-soda-pop-second",
     ItemImg: PepsiSoda,
     ItemName: "Pepsi Soda Pop",
     ItemPrice: (3).toFixed(2),
@@ -2649,7 +2649,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "great-value-cream-soda-pop",
+    id: "great-value-cream-soda-pop-second",
     ItemImg: GreatValue,
     ItemName: "Great Value Cream Soda Pop",
     ItemPrice: (3).toFixed(2),
@@ -2657,7 +2657,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "sunkist-orange-soda",
+    id: "sunkist-orange-soda-second",
     ItemImg: Sunkist,
     ItemName: "Sunkist Orange Soda",
     ItemPrice: (1).toFixed(2),
@@ -2665,7 +2665,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "great-value-twist-up-lemon-lime-soda-pop",
+    id: "great-value-twist-up-lemon-lime-soda-pop-second",
     ItemImg: GreatValueTwist,
     ItemName: "Great Value Twist Up Lemon Lime Soda Pop",
     ItemPrice: (2).toFixed(2),
@@ -2673,7 +2673,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "fanta-orange-soda",
+    id: "fanta-orange-soda-second",
     ItemImg: FantaOrange,
     ItemName: "Fanta Orange Soda",
     ItemPrice: (1).toFixed(2),
@@ -2681,7 +2681,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "cacio-e-pepe-potato-gnocchi-sale",
+    id: "cacio-e-pepe-potato-gnocchi-sale-2",
     ItemImg: PotatoGnocchi,
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
@@ -2781,7 +2781,7 @@ export const allProductsData = [
   },
 
   {
-    id: "nigiri-with-salmon-and-orange-1-pc-sale",
+    id: "nigiri-with-salmon-and-orange-1-pc-sale-second",
     ItemImg: NigiriWithSalmon,
     ItemName: "Nigiri with Salmon and Orange 1Pc",
     ItemIngredients: "Salmon, Orange, Rice.",
@@ -2790,7 +2790,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "pepperoni-pizza-sale",
+    id: "pepperoni-pizza-sale-second",
     ItemImg: PepperoniPizza,
     ItemName: "Pepperoni Pizza",
     ItemIngredients:
@@ -2800,7 +2800,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "meat-pizza-sale",
+    id: "meat-pizza-sale-second",
     ItemImg: MeatPizza,
     ItemName: "Meat Pizza",
     ItemIngredients:
@@ -2810,7 +2810,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "margherita-pizza-sale",
+    id: "margherita-pizza-sale-second",
     ItemImg: MargheritaPizza,
     ItemName: "Margherita Pizza",
     ItemIngredients:
@@ -2820,7 +2820,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "veggie-pizza-sale",
+    id: "veggie-pizza-sale-second",
     ItemImg: VeggiePizza,
     ItemName: "Veggie Pizza",
     ItemIngredients:
@@ -2830,7 +2830,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "sebastian-the-crab-roll-8-pcs-sale",
+    id: "sebastian-the-crab-roll-8-pcs-sale-second",
     ItemImg: Sebastian,
     ItemName: "Sebastian the Crab Roll 8Pcs",
     ItemIngredients:
@@ -2840,7 +2840,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "lamb-ragu-sale",
+    id: "lamb-ragu-sale-second",
     ItemImg: LambRagu,
     ItemName: "Lamb Ragù",
     ItemIngredients:
@@ -2850,7 +2850,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "cheese-pizza-sale",
+    id: "cheese-pizza-sale-second",
     ItemImg: CheesePizza,
     ItemName: "Cheese Pizza",
     ItemIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
@@ -2859,7 +2859,7 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: "cacio-e-pepe-potato-gnocchi-sale",
+    id: "cacio-e-pepe-potato-gnocchi-sale-second",
     ItemImg: PotatoGnocchi,
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
