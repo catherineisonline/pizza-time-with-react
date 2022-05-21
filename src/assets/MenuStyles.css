@@ -137,7 +137,7 @@ input[type="search"]::-webkit-search-results-decoration {
   color: var(--white);
 }
 .side-menu ul a:hover {
-  color: var(--pizza-red)
+  color: var(--pizza-red);
 }
 
 .pizza-section {
@@ -156,7 +156,6 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 100%;
   justify-content: space-around;
   position: relative;
- 
 }
 
 .pizza-item h3 {
@@ -250,7 +249,7 @@ input[type="search"]::-webkit-search-results-decoration {
   .side-menu {
     grid-column: span 1;
     position: sticky;
-    top: 5%;
+    top: 15%;
     flex-direction: column;
     height: max-content;
     overflow-x: initial;
@@ -294,4 +293,20 @@ input[type="search"]::-webkit-search-results-decoration {
   .side-menu ul {
     padding: 0;
   }
+}
+
+/* MENU ATTRIBUTES */
+.menu-attributes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-attributes li {
+  border: 1px solid rgba(255, 255, 255, 0.113);
+  opacity: 0.7;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 0.5rem;
 }

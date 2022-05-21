@@ -6,10 +6,6 @@ import FooterNav from "./components/FooterNav.js";
 import MenuRoot from "./components/MenuRoot";
 import RootSection from "./components/RootSection";
 import ContactRoot from "./components/ContactRoot";
-// import SushiRoot from "./components/SushiRoot";
-// import SaleRoot from "./components/SaleRoot";
-// import PastaRoot from "./components/PastaRoot";
-// import DrinksRoot from "./components/DrinksRoot";
 import AboutUs from "./components/AboutUs";
 import Blog from "./components/Blog";
 import Cart from "./components/Cart";
@@ -26,6 +22,7 @@ export default class App extends React.Component {
       activeCategory: "Menu",
       cartItems: [],
       allProducts: [],
+      productsQuantity: 0,
     };
     this.getProductsByCategory = this.getProductsByCategory.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
@@ -112,7 +109,8 @@ export default class App extends React.Component {
       }
     });
   };
-
+  // CART LOGIC
+  /*******************************************************/
   CheckRepeatableProducts = (
     cartItems,
     targetProduct,
@@ -126,6 +124,29 @@ export default class App extends React.Component {
       }
     });
     return item;
+  };
+  MatchingAttributes = (userSelectedAttributes, targetProduct) => {
+    const attributesMatch = (groupOne, groupTwo) => {
+      return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
+    };
+
+    let truthyValuesCounter = 0;
+    let i = 0;
+    while (i < userSelectedAttributes.length) {
+      if (
+        attributesMatch(
+          userSelectedAttributes[i],
+          targetProduct?.userSelectedAttributes[i]
+        )
+      ) {
+        truthyValuesCounter += 1;
+      }
+      i += 1;
+    }
+
+    if (truthyValuesCounter === userSelectedAttributes?.length) {
+      return true;
+    }
   };
   updateCartQuantity(
     actionToPerfrom,
@@ -198,13 +219,14 @@ export default class App extends React.Component {
       ];
     }
     this.setState({ cartItems: updatedProductList });
+    
     //save to local storage
-    localStorage.setItem("cartItems", JSON.stringify(updatedProductList));
+    // localStorage.setItem("cartItems", JSON.stringify(updatedProductList));
     //Update cart amount
     if (updatedProductList.length <= 1) {
       updatedProductList.map((item) => {
         //save to local storage
-        localStorage.setItem("productsQuantity", JSON.stringify(item.quantity));
+        // localStorage.setItem("productsQuantity", JSON.stringify(item.quantity));
         return this.setState({ productsQuantity: item.quantity });
       });
     } else {
@@ -212,7 +234,7 @@ export default class App extends React.Component {
       let sum = productListArray.reduce((a, b) => a + b, 0);
       this.setState({ productsQuantity: sum });
       //save to local storage
-      localStorage.setItem("productsQuantity", JSON.stringify(sum));
+      // localStorage.setItem("productsQuantity", JSON.stringify(sum));
     }
   };
   // Remove Product From Cart
@@ -237,7 +259,7 @@ export default class App extends React.Component {
     }
     this.setState({ cartItems: updatedProductList });
     //save to local storage
-    localStorage.setItem("cartItems", JSON.stringify(updatedProductList));
+    // localStorage.setItem("cartItems", JSON.stringify(updatedProductList));
 
     //Update cart amount
     if (updatedProductList.length <= 1) {
@@ -252,12 +274,12 @@ export default class App extends React.Component {
       let sum = productListArray.reduce((a, b) => a + b);
       this.setState({ productsQuantity: sum });
       //save to local storage
-      localStorage.setItem("productsQuantity", JSON.stringify(sum));
+      // localStorage.setItem("productsQuantity", JSON.stringify(sum));
     }
     if (updatedProductList.length === 0) {
       this.setState({ productsQuantity: 0 });
       //save to local storage
-      localStorage.setItem("productsQuantity", JSON.stringify(0));
+      // localStorage.setItem("productsQuantity", JSON.stringify(0));
     }
   };
   componentDidMount() {
@@ -266,10 +288,9 @@ export default class App extends React.Component {
     this.getProductsByCategory(this.state.activeCategory);
   }
   render() {
-    // console.log(this.state.cartItems);
     return (
       <BrowserRouter>
-        <HeaderNav />
+        <HeaderNav productsQuantity={this.state.productsQuantity} />
         <Routes>
           <Route path="/pizza-time-with-react" element={<RootSection />} />
           <Route
@@ -278,20 +299,20 @@ export default class App extends React.Component {
               <MenuRoot
                 allProducts={this.state.allProducts}
                 allCategories={this.state.allCategories}
-                activeCategory={this.state.activeCategory}
                 changeCategory={this.changeCategory}
+                handleAddProduct={this.handleAddProduct}
+                handleRemoveProduct={this.handleRemoveProduct}
+                activeCategory={this.activeCategory}
               />
             }
           />
-          {/* <Route path="/pizza" element={<MenuRoot />} /> */}
           <Route path="/contact" element={<ContactRoot />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/cart"
+            element={<Cart cartItems={this.state.cartItems} />}
+          />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />
-          {/* <Route path="/sushi" element={<SushiRoot />} />
-          <Route path="/sale" element={<SaleRoot />} />
-          <Route path="/pasta" element={<PastaRoot />} />
-          <Route path="/drinks" element={<DrinksRoot />} /> */}
           <Route path="/register" element={<Register />} />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>

@@ -7,7 +7,7 @@ const ResetLocation = () => window.scrollTo(0, 0);
 export default class MenuNavBar extends React.Component {
   ResetLocation = () => window.scrollTo(0, 0);
   render() {
-    const { allCategories, changeCategory } = this.props;
+    const { allCategories, changeCategory, activeCategory } = this.props;
     return (
       <>
         <article className="side-menu">
@@ -21,9 +21,8 @@ export default class MenuNavBar extends React.Component {
           </section>
           <ul>
             {allCategories.map((category) => (
-              <li>
+              <li key={category.id}>
                 <NavLink
-                  key={category.name}
                   to="/menu"
                   onClick={() => {
                     changeCategory(category.name);

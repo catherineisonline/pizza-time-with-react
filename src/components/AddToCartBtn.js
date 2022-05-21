@@ -3,29 +3,40 @@ import React from "react";
 export default class AddToCartButton extends React.Component {
   render() {
     const {
-      item,
+      singleProduct,
       allAttributesAreSelected,
       selectedAttributes,
       handleAddProduct,
+      handleRemoveProduct,
       className,
       alertMessageMain,
     } = this.props;
+    // console.log(allAttributesAreSelected)
     return (
-      <div className={className}>
+      // <div className={className}>
+      //   <button
+      //     onClick={() => {
+      //       handleAddProduct(singleProduct, selectedAttributes);
+      //     }}
+      //   >
+      //     add
+      //   </button>
+      // </div>
+
+      <div className="add-to-cart">
         <button
           onClick={() => {
-            handleAddProduct(item, selectedAttributes);
+            handleAddProduct(singleProduct, selectedAttributes);
             // alertMessageMain();
           }}
-          //   className={
-          //     item.inStock && allAttributesAreSelected
-          //       ? "active-add-to-cart"
-          //       : "inactive-add-to-cart"
-          //   }
-          //   disabled={!item.inStock || !allAttributesAreSelected}
+          className={
+            allAttributesAreSelected
+              ? "active-add-to-cart"
+              : "inactive-add-to-cart"
+          }
+          disabled={!allAttributesAreSelected}
         >
-          add
-          {/* {item.inStock ? "ADD TO CART" : "OUT OF STOCK"} */}
+          Add to cart
         </button>
       </div>
     );

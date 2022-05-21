@@ -27,6 +27,7 @@ export default class NavBar extends React.Component {
     hiddenMenu.classList.remove("active");
   }
   render() {
+    const {productsQuantity} = this.props;
     return (
       <nav className="main-nav flex-container flex-row txt-center" id="test">
     
@@ -167,6 +168,7 @@ export default class NavBar extends React.Component {
               >
                 <img src={Cart} alt="" />
                 <>Cart</>
+                <p>{productsQuantity}</p>
               </NavLink>
             </div>
           </li>

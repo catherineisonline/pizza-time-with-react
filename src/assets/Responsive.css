@@ -52,6 +52,16 @@
   .burger-menu {
     display: none;
   }
+  .main-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    justify-content: space-around;
+  }
+  .menu-main {
+    margin-top: 10%;
+  }
+  
   .header-info p {
     width: 40%;
     margin: 0 auto;
