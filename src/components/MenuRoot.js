@@ -1,8 +1,8 @@
 import React from "react";
 import MenuNavBar from "./MenuNavBar.js";
-import AddItemsToCart from "./AddItemsToCart";
+// import AddItemsToCart from "./Drafts/AddItemsToCart";
 import ScrollButton from "./ScrollBtn";
-import Attribute from "./Attribute.js";
+// import Attribute from "./Attribute.js";
 import Product from "./Product.js";
 // import PizzaRoot from "./PizzaRoot";
 
