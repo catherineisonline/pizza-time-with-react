@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
 import ScrollBtn from "./ScrollBtn";
-
+import CartItem from "./CartItem";
 export default class Cart extends React.Component {
   render() {
     const { cartItems } = this.props;
@@ -21,17 +21,9 @@ export default class Cart extends React.Component {
           </article>
         ) : (
           <section className="cart-title-section">
-            {cartItems.map((item)=> {
-             return (
-               
-               <p>{item.ItemName}</p>
-               
-               
-               
-               
-               
-               )
-            })}
+            {cartItems.map((cartItem) => (
+              <CartItem cartItem={cartItem} className="cart-item" />
+            ))}
           </section>
         )}
 

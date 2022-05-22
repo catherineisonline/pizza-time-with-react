@@ -19,11 +19,11 @@ export default class NavBar extends React.Component {
     hiddenModal.classList.toggle("active-modal");
   }
   ShowHiddenMenu() {
-    const hiddenMenu = document.querySelector(".menu");
+    const hiddenMenu = document.querySelector(".navigation-menu");
     hiddenMenu.classList.toggle("active");
   }
   RemoveMenu() {
-    const hiddenMenu = document.querySelector(".menu");
+    const hiddenMenu = document.querySelector(".navigation-menu");
     hiddenMenu.classList.remove("active");
   }
   render() {
@@ -44,7 +44,7 @@ export default class NavBar extends React.Component {
             Pizza <span>Time</span>
           </p>
         </NavLink>
-        <ul className="menu flex-row pop-font">
+        <ul className="navigation-menu flex-row pop-font">
           <li>
             <NavLink
               onClick={() => {

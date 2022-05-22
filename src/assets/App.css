@@ -123,8 +123,8 @@ img {
   color: var(--pizza-yellow);
 }
 
-/* Menu */
-.menu {
+/* NAVIGATION MENU */
+.navigation-menu {
   display: none;
   gap: 2rem;
   font-weight: 400;
@@ -132,7 +132,7 @@ img {
   align-items: center;
 }
 
-.menu a {
+.navigation-menu a {
   transition: all ease-in-out 0.2s;
 }
 /* Login & Cart */
@@ -185,6 +185,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  /* background-color: var(--light-black); */
   height: 40rem;
   max-height: 100%;
   width: 100%;
@@ -234,6 +235,8 @@ li.alice-carousel__stage-item .__cloned {
 .header-section.slider-three {
   background-image: url("../images/sushi-images/sushi-3.jpeg");
 }
+
+
 
 .header-info {
   justify-content: center;
@@ -948,7 +951,7 @@ hr {
 }
 
 /* Transitions */
-.menu a,
+.navigation-menu a,
 .logo,
 .header-btns a:last-child,
 .header-btns a:first-child,
@@ -969,7 +972,7 @@ hr {
 
 /* Hover */
 @media (hover: hover) {
-  .menu a:hover,
+  .navigation-menu a:hover,
   .logo:hover,
   .header-btns .btn-link:last-child:hover,
   .header-btns .btn-link:first-child:hover,
@@ -987,7 +990,7 @@ hr {
     transition: all ease-in-out 0.3s;
   }
 
-  .menu a:hover {
+  .navigation-menu a:hover {
     color: var(--pizza-red);
   }
   .logo:hover {
@@ -1036,7 +1039,7 @@ hr {
   }
 }
 
-.menu.active {
+.navigation-menu.active {
   position: absolute;
   display: flex;
   flex-direction: column;

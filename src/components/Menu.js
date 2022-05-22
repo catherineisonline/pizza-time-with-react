@@ -1,10 +1,8 @@
 import React from "react";
-import MenuNavBar from "./MenuNavBar.js";
-// import AddItemsToCart from "./Drafts/AddItemsToCart";
+//Components
+import MenuCategories from "./MenuCategories.js";
 import ScrollButton from "./ScrollBtn";
-// import Attribute from "./Attribute.js";
-import Product from "./Product.js";
-// import PizzaRoot from "./PizzaRoot";
+import MenuItem from "./MenuItem.js";
 
 export default class MenuRoot extends React.Component {
   render() {
@@ -19,14 +17,14 @@ export default class MenuRoot extends React.Component {
     document.title = `${activeCategory} | Pizza Time`;
     return (
       <main className="menu-main">
-        <MenuNavBar
+        <MenuCategories
           activeCategory={activeCategory}
           allCategories={allCategories}
           changeCategory={changeCategory}
         />
         <article className="pizza-section">
           {allProducts.map((singleProduct) => (
-            <Product
+            <MenuItem
               key={singleProduct.id}
               singleProduct={singleProduct}
               handleAddProduct={handleAddProduct}

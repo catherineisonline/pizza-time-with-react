@@ -4,7 +4,7 @@ import SearchIcon from "../images/search-icon.png";
 
 const ResetLocation = () => window.scrollTo(0, 0);
 
-export default class MenuNavBar extends React.Component {
+export default class MenuCategories extends React.Component {
   ResetLocation = () => window.scrollTo(0, 0);
   render() {
     const { allCategories, changeCategory, activeCategory } = this.props;

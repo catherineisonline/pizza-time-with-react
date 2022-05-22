@@ -3,7 +3,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 //Componnets
 import HeaderNav from "./components/HeaderNav.js";
 import FooterNav from "./components/FooterNav.js";
-import MenuRoot from "./components/MenuRoot";
+import Menu from "./components/Menu";
 import RootSection from "./components/RootSection";
 import ContactRoot from "./components/ContactRoot";
 import AboutUs from "./components/AboutUs";
@@ -298,13 +298,13 @@ export default class App extends React.Component {
           <Route
             path="/menu"
             element={
-              <MenuRoot
+              <Menu
                 allProducts={this.state.allProducts}
                 allCategories={this.state.allCategories}
                 changeCategory={this.changeCategory}
                 handleAddProduct={this.handleAddProduct}
                 handleRemoveProduct={this.handleRemoveProduct}
-                activeCategory={this.activeCategory}
+                activeCategory={this.state.activeCategory}
               />
             }
           />

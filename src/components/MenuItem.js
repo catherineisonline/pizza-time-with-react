@@ -1,8 +1,8 @@
 import React from "react";
-import AddToCartButton from "./AddToCartBtn.js";
+import AddToCartButton from "./AddToCartButton.js";
 import Attribute from "./Attribute.js";
 
-export default class Product extends React.Component {
+export default class MenuItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -69,13 +69,7 @@ export default class Product extends React.Component {
   }
 
   render() {
-    const {
-      activeCategory,
-      singleProduct,
-      handleAddProduct,
-      handleRemoveProduct,
-    } = this.props;
-    document.title = `${activeCategory} | Pizza Time`;
+    const { singleProduct, handleAddProduct, handleRemoveProduct } = this.props;
     return (
       <div className="pizza-item flex-container flex-column txt-white">
         <img src={singleProduct.ItemImg} alt="pizza"></img>
@@ -87,7 +81,6 @@ export default class Product extends React.Component {
             className="menu-attributes"
             handleSelectedAttributes={this.handleSelectedAttributes}
             attribute={attribute}
-            // selectedAttributes={this.state.selectedAttributes}
           />
         ))}
         <div className="price">

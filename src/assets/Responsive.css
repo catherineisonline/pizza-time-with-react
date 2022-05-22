@@ -46,7 +46,7 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .menu {
+  .navigation-menu {
     display: flex;
   }
   .burger-menu {

@@ -75,5 +75,13 @@
   .cart-title-sectionr {
     width: 80%;
   }
-  
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-item img {
+  max-width: 100%;
 }
