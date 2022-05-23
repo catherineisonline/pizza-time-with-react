@@ -335,7 +335,7 @@ class SectionFour extends React.Component {
         </section>
         <Link
           onClick={ResetLocation}
-          to="/pizza"
+          to="/menu"
           className="more-pizza txt-white"
         >
           More Pizza
@@ -358,7 +358,7 @@ class SectionFive extends React.Component {
         <section className="pricing-grid flex-container flex-column">
           {/* Pizza 1 */}
           <Link
-            to="/pizza"
+            to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
             <img className="pricing-img" src={CheesePizza} alt="Cheese Pizza" />
@@ -377,7 +377,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 2 */}
           <Link
-            to="/pizza"
+            to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
             <img className="pricing-img" src={VeggiePizza} alt="eggie Pizza" />
@@ -396,7 +396,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 3 */}
           <Link
-            to="/pizza"
+            to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
             <img
@@ -419,7 +419,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 4 */}
           <Link
-            to="/pizza"
+            to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
             <img className="pricing-img" src={MeatPizza} alt="Meat Pizza" />
@@ -439,7 +439,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 5 */}
           <Link
-            to="/pizza"
+            to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
             <img
@@ -463,7 +463,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 6 */}
           <Link
-            to="/pizza"
+            to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
             <img

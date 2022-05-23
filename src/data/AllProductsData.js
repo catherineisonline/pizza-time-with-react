@@ -131,7 +131,7 @@ export const allProductsData = [
     ItemName: "Veggie Pizza",
     ItemIngredients:
       "Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.",
-    ItemPrice: 9,
+    ItemPrice: 9.00,
     Category: "Pizza",
     attributes: [
       {

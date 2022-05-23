@@ -362,7 +362,16 @@ export default class App extends React.Component {
               />
             }
           />
-          <Route path="/:id" element={<SingleItem />} />
+          <Route
+            path="/:id"
+            element={
+              <SingleItem
+                handleAddProduct={this.handleAddProduct}
+                handleRemoveProduct={this.handleRemoveProduct}
+                successMsg={this.successMsg}
+              />
+            }
+          />
           <Route path="/contact" element={<ContactRoot />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />

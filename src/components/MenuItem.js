@@ -7,7 +7,7 @@ export default class MenuItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pricing: "",
+      // pricing: "",
       selectedAttributes: [],
       allAttributesAreSelected: false,
     };
