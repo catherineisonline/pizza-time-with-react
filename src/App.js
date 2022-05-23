@@ -5,8 +5,9 @@ import HeaderNav from "./components/HeaderNav.js";
 import FooterNav from "./components/FooterNav.js";
 import Menu from "./components/Menu";
 import RootSection from "./components/RootSection";
-import ContactRoot from "./components/ContactRoot";
-import AboutUs from "./components/AboutUs";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import Checkout from "./components/Checkout";
 import Blog from "./components/Blog";
 import Cart from "./components/Cart";
 import PasswordRecovery from "./components/PasswordRecovery.js";
@@ -372,10 +373,11 @@ export default class App extends React.Component {
               />
             }
           />
-          <Route path="/contact" element={<ContactRoot />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>
         <FooterNav />

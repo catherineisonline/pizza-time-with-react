@@ -1,13 +1,13 @@
 
-.contact-main::before {
+.contact::before {
   content: "";
   height: 10rem;
 }
-.contact-main::after {
+.contact::after {
   content: "";
   height: 10rem;
 }
-.contact-main {
+.contact {
   position: relative;
   display: flex;
   flex-direction: column;

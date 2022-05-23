@@ -1,6 +1,6 @@
 import React from "react";
 
-export default  class ContactRoot extends React.Component {
+export default class Contact extends React.Component {
   render() {
     document.title = "Contact | Pizza Time";
     function SubmitContactForm(e) {
@@ -73,7 +73,7 @@ export default  class ContactRoot extends React.Component {
       }
     }
     return (
-      <main className="contact-main">
+      <main className="contact">
         <section className="contact-us-form">
           <form className="contact-form-cpage flex-container flex-column">
             <div className="contact-form-item-cpage">

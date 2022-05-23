@@ -214,10 +214,10 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /* SINGLE ITEM */
-.single-item-container::before {
+/* .single-item-container::before {
   content: "";
   height: 10rem;
-}
+} */
 .single-item-container::after {
   content: "";
   height: 10rem;

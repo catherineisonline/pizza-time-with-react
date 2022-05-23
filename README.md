@@ -16,9 +16,9 @@
 ### User Story
 
 As a user, I want to be able to add items to cart even if I am not logged in/registered. When navigating to the menu page, I want to see menu items that have pictures, name, ingredients, pricing.
-I want to be able to sort the menu by categories, as well as be able to find something specific by writing it in the search bar. I want to be able to add items to cart, indicate the amount or delete the items from the cart. In cart sections, I want to be able to see how much I have to pay total and have the possibility to navigate to payments. Before paying, I want to add a special request to my order, like, "no spicy, please".
+I want to be able to sort the menu by categories, as well as be able to find something specific by writing it in the search bar. I want to be able to add items to cart, indicate the amount or delete the items from the cart. In the cart section, I want to be able to see how much I have to pay total and have the possibility to navigate to payments. Before paying, I want to add a special request to my order, like, "no spicy, please".
 
-### To-do
+### To-Do
 
 #### Landing Page
 
@@ -38,7 +38,6 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 - [x] Email & password input
 - [x] Forgot password option
-- [ ] Save password option
 - [x] Link to registration form
 
 #### Menu Page
@@ -126,7 +125,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 2. [x] Create database or simple object for Menu
 3. [x] Scroll to top when navigating to another page
 4. [x] Update meta title depending on the current page
-5. [ ] Responsive layout
+5. [x] Responsive layout
 
 ## Version 1.0
 

@@ -7,7 +7,7 @@ import "./assets/Responsive.css";
 import "./assets/leaflet.css";
 import "./assets/Menu.css";
 import "./assets/Contact.css";
-import "./assets/AboutUs.css";
+import "./assets/About.css";
 import "./assets/Blog.css";
 import "./assets/Cart.css";
 import "./assets/Register.css";

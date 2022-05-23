@@ -12,7 +12,7 @@ import SlideTwo from "../images/carbonara.jpg";
 import SlideThree from "../images/img-grid-3.jpg";
 import SlideFour from "../images/img-grid-4.jpg";
 
-export default class AboutUs extends React.Component {
+export default class About extends React.Component {
   render() {
     document.title = "About Us | Pizza Time";
     return (
