@@ -172,7 +172,7 @@
 
 @media screen and (min-width: 1025px) {
   .cart-title-section {
-    margin-top: 20%;
+    /* margin-top: 20%; */
     max-width: 60%;
   }
 }
