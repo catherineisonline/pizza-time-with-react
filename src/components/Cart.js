@@ -2,7 +2,12 @@ import { NavLink } from "react-router-dom";
 import React from "react";
 import ScrollBtn from "./ScrollBtn";
 import CartItem from "./CartItem";
+import CartTotals from "./CartTotals";
 export default class Cart extends React.Component {
+  componentDidMount() {
+    // this.props.getTotalPrice(this.props.cartItems);
+  }
+  
   render() {
     const {
       cartItems,
@@ -10,7 +15,14 @@ export default class Cart extends React.Component {
       handleAddProduct,
       handleRemoveProduct,
       successMsg,
+      productsQuantity,
+      totalPayment,
+      taxes
+  
     } = this.props;
+
+
+    // console.log(cartItems)
     document.title = "Cart | Pizza Time";
     return (
       <>
@@ -40,6 +52,7 @@ export default class Cart extends React.Component {
             ))}
           </section>
         )}
+        <CartTotals productsQuantity={productsQuantity} totalPayment={totalPayment} taxes={taxes}/>
         </article>
 
         <ScrollBtn />

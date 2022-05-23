@@ -23,6 +23,8 @@ export default class App extends React.Component {
       cartItems: [],
       allProducts: [],
       productsQuantity: 0,
+      totalPayment: 0,
+      taxes: 0,
     };
     this.getProductsByCategory = this.getProductsByCategory.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
@@ -285,6 +287,31 @@ export default class App extends React.Component {
     }
   };
 
+  // getPrice = (prices) => {
+  //   const [correctPrice] = prices.filter(
+  //     (price) => price
+  //   );
+
+  //   return correctPrice;
+  // };
+
+
+  getTotalPrice = (cartItems) => {
+    let totalPayment = 0;
+    cartItems.map((item) => {
+      const correctPrice = item.ItemPrice;
+     return totalPayment = totalPayment + correctPrice * item.quantity;
+    })
+    for(let item of cartItems)
+  {  const correctPrice = item.ItemPrice;
+  totalPayment = totalPayment + correctPrice * item.quantity;}
+    totalPayment = parseFloat(totalPayment.toFixed(2));
+  
+    this.setState({ totalPayment: totalPayment });
+    this.setState({ taxes: ((totalPayment * 10) / 100).toFixed(2) });
+  };
+
+
   successMsg() {
     const alertMessage = document.querySelector(".success-msg");
     alertMessage.classList.add("visible");
@@ -296,6 +323,18 @@ export default class App extends React.Component {
     this.getCategories();
     this.getAllProducts();
     this.getProductsByCategory(this.state.activeCategory);
+    this.getTotalPrice(this.state.cartItems);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const { cartItems } = this.state;
+    if (
+      cartItems !== nextState.cartItems
+    ) {
+      this.getTotalPrice(nextState.cartItems);
+    }
+
+    return true;
   }
   render() {
     return (
@@ -322,10 +361,15 @@ export default class App extends React.Component {
             path="/cart"
             element={
               <Cart
+              totalPayment={this.state.totalPayment}
                 cartItems={this.state.cartItems}
+                productsQuantity={this.state.productsQuantity} 
                 handleAddProduct={this.handleAddProduct}
                 handleRemoveProduct={this.handleRemoveProduct}
                 successMsg={this.successMsg}
+                getTotalPrice={this.getTotalPrice}
+                taxes={this.state.taxes}
+                
               />
             }
           />
