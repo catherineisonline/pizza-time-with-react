@@ -131,7 +131,7 @@ export default class App extends React.Component {
     const attributesMatch = (groupOne, groupTwo) => {
       return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
     };
-    console.log(userSelectedAttributes);
+    // console.log(userSelectedAttributes);
     let truthyValuesCounter = 0;
     let i = 0;
     while (i < userSelectedAttributes.length) {
@@ -311,7 +311,13 @@ export default class App extends React.Component {
           <Route path="/contact" element={<ContactRoot />} />
           <Route
             path="/cart"
-            element={<Cart cartItems={this.state.cartItems} />}
+            element={
+              <Cart
+                cartItems={this.state.cartItems}
+                handleAddProduct={this.handleAddProduct}
+                handleRemoveProduct={this.handleRemoveProduct}
+              />
+            }
           />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />

@@ -4,8 +4,12 @@ import ScrollBtn from "./ScrollBtn";
 import CartItem from "./CartItem";
 export default class Cart extends React.Component {
   render() {
-    const { cartItems } = this.props;
-    console.log(cartItems);
+    const {
+      cartItems,
+      selectedAttributes,
+      handleAddProduct,
+      handleRemoveProduct,
+    } = this.props;
     document.title = "Cart | Pizza Time";
     return (
       <>
@@ -22,7 +26,14 @@ export default class Cart extends React.Component {
         ) : (
           <section className="cart-title-section">
             {cartItems.map((cartItem) => (
-              <CartItem cartItem={cartItem} className="cart-item" />
+              <CartItem
+              // key={cartItem.index}
+                cartItem={cartItem}
+                selectedAttributes={selectedAttributes}
+                handleAddProduct={handleAddProduct}
+                handleRemoveProduct={handleRemoveProduct}
+                className="cart-item"
+              />
             ))}
           </section>
         )}
