@@ -30,167 +30,164 @@ export default class NavBar extends React.Component {
     const { productsQuantity } = this.props;
     return (
       <header>
-      <nav className="main-nav flex-container flex-row txt-center" id="test">
-      {/* <div> */}
-        <NavLink
-
-          onClick={() => {
-            ResetLocation();
-            this.RemoveMenu();
-          }}
-          to="/pizza-time-with-react"
-          className="logo-styling flex-container flex-row txt-center txt-white"
-        >
-        {/* <div   className="logo-styling-test"> */}
-          <img className="logo" src={logo} alt="pizza time logo" />
-          <p>
-            Pizza <span>Time</span>
-          </p>
+        <nav className="main-nav flex-container flex-row txt-center">
+          {/* <div> */}
+          <NavLink
+            onClick={() => {
+              ResetLocation();
+              this.RemoveMenu();
+            }}
+            to="/pizza-time-with-react"
+            className="logo-styling flex-container flex-row txt-center txt-white"
+          >
+            {/* <div   className="logo-styling-test"> */}
+            <img className="logo" src={logo} alt="pizza time logo" />
+            <p>
+              Pizza <span>Time</span>
+            </p>
+            {/* </div> */}
+          </NavLink>
           {/* </div> */}
-        </NavLink>
-        {/* </div> */}
-        <ul className="navigation-menu flex-row pop-font">
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation();
-                this.RemoveMenu();
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
-                  : {}
-              }
-              className="txt-white"
-              to="/pizza-time-with-react"
-            >
-              <>Home</>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation();
-                this.RemoveMenu();
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
-                  : {}
-              }
-              className="txt-white"
-              to="/menu"
-            >
-              <>Menu</>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation();
-                this.RemoveMenu();
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
-                  : {}
-              }
-              className="txt-white"
-              to="/blog"
-            >
-              <>Blog</>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation();
-                this.RemoveMenu();
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
-                  : {}
-              }
-              className="txt-white"
-              to="/about"
-            >
-              <>About</>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation();
-                this.RemoveMenu();
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
-                  : {}
-              }
-              className="txt-white"
-              to="/contact"
-            >
-              <>Contact</>
-            </NavLink>
-          </li>
-          <li>
-            <div className="login-and-cart">
-              <LoginModal />
-              <div
-                className="login-btn txt-white"
-                onClick={() => {
-                  ResetLocation();
-                  this.ShowModal();
-                }}
-              >
-                <>Log In</>
-              </div>
+          <ul className="navigation-menu flex-row pop-font">
+            <li>
               <NavLink
-                className="cart-btn txt-white"
-                to="/cart"
                 onClick={() => {
                   ResetLocation();
                   this.RemoveMenu();
                 }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/pizza-time-with-react"
               >
-                <img src={Cart} alt="" />
-                <>Cart</>
-                <p>({productsQuantity})</p>
+                <>Home</>
               </NavLink>
-            </div>
-          </li>
-        </ul>
-        {/* <div className="burger-menu flex-container flex-row txt-center pop-font txt-white"> */}
+            </li>
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/menu"
+              >
+                <>Menu</>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/blog"
+              >
+                <>Blog</>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/about"
+              >
+                <>About</>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/contact"
+              >
+                <>Contact</>
+              </NavLink>
+            </li>
+            <li>
+              <div className="login-and-cart">
+                <LoginModal />
+                <div
+                  className="login-btn txt-white"
+                  onClick={() => {
+                    ResetLocation();
+                    this.ShowModal();
+                  }}
+                >
+                  <>Log In</>
+                </div>
+                <NavLink
+                  className="cart-btn txt-white"
+                  to="/cart"
+                  onClick={() => {
+                    ResetLocation();
+                    this.RemoveMenu();
+                  }}
+                >
+                  <img src={Cart} alt="" />
+                  <>Cart</>
+                  <p>({productsQuantity})</p>
+                </NavLink>
+              </div>
+            </li>
+          </ul>
+          {/* <div className="burger-menu flex-container flex-row txt-center pop-font txt-white"> */}
           <img
             className="burger-bars"
             src={burger}
             alt=""
             onClick={this.ShowHiddenMenu}
           ></img>
-        {/* </div> */}
-
+          {/* </div> */}
+        </nav>
         <SuccessMsg />
-      </nav>
       </header>
-
     );
   }
 }

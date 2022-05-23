@@ -5,11 +5,11 @@ li {
 /* .menu-main::before {
   content: "";
   height: 10rem;
-}
+}*/
 .menu-main::after {
   content: "";
   height: 10rem;
-} */
+} 
 .menu-main {
   display: grid;
   grid-template-columns: 1fr;

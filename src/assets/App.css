@@ -95,10 +95,10 @@ img {
 
 header {
   height: 3rem;
-  margin-top: 0;
+  top: 0;
   background-color: var(--light-black);
-  position: fixed;
-  width: 100%;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
   z-index: 999;
   padding: 2rem;
 }
@@ -108,7 +108,8 @@ header {
   justify-content: space-between;
   /* gap: 10rem; */
   align-items: center;
-  width: 90%;
+  /* width: 90%; */
+  position: relative;
   /* background-color: var(--light-black); */
   /* padding: 1.5rem; */
   /* height: 3rem;
@@ -1113,12 +1114,15 @@ hr {
 }
 .success-msg.visible {
   display: inline-block;
-  position: fixed;
-  top: 20%;
-  left: 3%;
-  background-color: rgba(219, 219, 219, 0.22);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: max-content; */
+  /* translate: 50%; */
+  background-color: rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(5px);
-  padding: 0.7rem;
+  padding: 0.5rem;
   border-radius: 10px;
 }
 .success-msg.visible p {
