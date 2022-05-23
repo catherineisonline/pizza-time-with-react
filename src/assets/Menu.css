@@ -308,7 +308,7 @@ input[type="search"]::-webkit-search-results-decoration {
   .menu-main {
     grid-template-columns: repeat(4, 1fr);
     gap: none;
-    padding: 2rem 1rem;
+    /* padding: 2rem 1rem; */
   }
 
   .menu-search {

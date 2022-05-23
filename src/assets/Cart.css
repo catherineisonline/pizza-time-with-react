@@ -1,8 +1,8 @@
 
-.cart-container::before {
+/* .cart-container::before {
   content: "";
-  height: 10rem;
-}
+  height: 5rem;
+} */
 .cart-container::after {
   content: "";
   height: 10rem;

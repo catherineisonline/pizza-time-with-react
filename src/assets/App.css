@@ -106,19 +106,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* gap: 10rem; */
   align-items: center;
-  /* width: 90%; */
-  position: relative;
-  /* background-color: var(--light-black); */
-  /* padding: 1.5rem; */
-  /* height: 3rem;
-  margin-top: 0; */
   /* position: relative; */
-  /* position: fixed;
-  width: 100%;
-  z-index: 999;
-  padding: 2rem; */
 }
 /* Logo */
 .logo-styling {
@@ -127,10 +116,6 @@ header {
   width: 5rem;
   height: 3rem;
 }
-/* .logo-styling-test {
-  display: flex;
-  flex-direction: row;
-} */
 .logo {
   max-width: 70%;
   transition: all ease-in-out 0.2s;
@@ -1072,14 +1057,14 @@ hr {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 270%;
-  left: 0;
-  right: 0;
-  transform: translate(0, -50%);
+  top: 20%;
+  left:0;
+  transform: translate(0, 20%);
   z-index: 99;
   background-color: var(--light-black);
   padding-top: 2rem;
   padding-bottom: 2rem;
+  width: 100%;
 }
 
 /* ADD TO CART BUTTON */
