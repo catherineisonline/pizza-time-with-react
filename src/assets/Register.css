@@ -43,12 +43,14 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  /* gap: 5rem; */
+  gap: 2rem;
   font-family: var(--poppins-font);
   font-weight: 400;
   align-items: left;
 
   justify-content: space-between;
+  width: 90%;
 }
 
 .name-section,
@@ -57,7 +59,7 @@
 .birthday-section,
 .gender-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 2rem;
 }
 .birthday,
@@ -67,18 +69,26 @@
   flex-direction: column;
   gap: 1rem;
 }
+.birthday,
+.gender {
+  align-items: flex-start;
+}
 .birthday-section,
 .gender-section {
   justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+}
+
+.register-section::before {
+  content: "";
+  height: 3rem;
 }
 
 .register-main input {
   border: 1px solid #fac56425;
   background-color: transparent;
   padding: 2rem;
-  width: -webkit-fill-available;
+  /* width: -webkit-fill-available; */
   border-radius: 10px;
 }
 
@@ -154,9 +164,9 @@ input[type="radio" i]:checked {
   border-radius: 10px;
 }
 .register-section {
-  text-align: center;
-  max-width: 100%;
-  width: 18rem;
+  /* text-align: center; */
+ width: 90%;
+  width: 18rem; 
   margin: 0 auto;
 }
 .terms-warning {
@@ -195,24 +205,28 @@ input[type="radio" i]:checked {
     width: 80%;
     margin-bottom: 5rem;
   }
-  .birthday select {
-    width: 100%;
-  }
-}
+.register-main input {
+    width: -webkit-fill-available;
 
-@media screen and (min-width: 1025px) {
+}
   .name-section,
   .email-section,
   .password-section,
   .birthday-section,
   .gender-section {
+    flex-direction: row;
     gap: 4rem;
   }
+}
+
+@media screen and (min-width: 1025px) {
+
   .register-main input[type="text"],
   .register-main input[type="password"],
   .register-main input::placeholder,
   .register-main label,
-  .birthday select, .register-btn {
+  .birthday select,
+  .register-btn {
     font-size: 1.2rem;
   }
 }
