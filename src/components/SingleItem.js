@@ -106,9 +106,15 @@ export default class SingleItem extends React.Component {
             src={singleProduct.ItemImg}
             alt={`${singleProduct.ItemName}`}
           ></img>
+          <section className="single-item-info">
 
-          <h3>{singleProduct.ItemName}</h3>
-          <p>{singleProduct.ItemIngredients}</p>
+        
+          <section className="single-item-title">
+            {" "}
+            <h3>{singleProduct.ItemName}</h3>
+            <p>{singleProduct.ItemIngredients}</p>
+          </section>
+
           {singleProduct?.attributes?.map((attribute) => (
             <Attribute
               key={attribute.id}
@@ -133,6 +139,7 @@ export default class SingleItem extends React.Component {
               selectedAttributes={this.state.selectedAttributes}
             />
           </div>
+          </section>
         </div>
       </article>
     );

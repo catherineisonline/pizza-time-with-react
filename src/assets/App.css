@@ -362,7 +362,7 @@ li.alice-carousel__stage-item .__cloned {
 .section-two-img {
   /* min-width: 529.5px; */
   width: 100%;
-  height: 20rem;
+  /* min-height: 30%; */
   object-fit: cover;
 }
 
