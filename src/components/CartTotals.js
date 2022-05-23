@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class CartTotals extends React.Component {
   render() {
@@ -22,7 +23,16 @@ export default class CartTotals extends React.Component {
                 <p>$ {totalPayment / 2}</p>
               </section>
             </section>
-            <button className="order-btn">Order</button>
+
+            <section className="totals-btns">
+              <p className="promo-code">I have a promo code</p>
+              <Link to="/order" className="order-btn">
+                Order
+              </Link>
+              <Link to="/menu" className="order-btn">
+                Back to menu
+              </Link>
+            </section>
           </section>
         )}
       </>
