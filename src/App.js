@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-//Componnets
+//Components
 import HeaderNav from "./components/HeaderNav.js";
 import FooterNav from "./components/FooterNav.js";
 import Menu from "./components/Menu";
@@ -14,6 +14,7 @@ import Register from "./components/Register";
 //Data
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
+import SingleItem from "./components/SingleItem.js";
 export default class App extends React.Component {
   constructor() {
     super();
@@ -287,30 +288,21 @@ export default class App extends React.Component {
     }
   };
 
-  // getPrice = (prices) => {
-  //   const [correctPrice] = prices.filter(
-  //     (price) => price
-  //   );
-
-  //   return correctPrice;
-  // };
-
-
   getTotalPrice = (cartItems) => {
     let totalPayment = 0;
     cartItems.map((item) => {
       const correctPrice = item.ItemPrice;
-     return totalPayment = totalPayment + correctPrice * item.quantity;
-    })
-    for(let item of cartItems)
-  {  const correctPrice = item.ItemPrice;
-  totalPayment = totalPayment + correctPrice * item.quantity;}
+      return (totalPayment = totalPayment + correctPrice * item.quantity);
+    });
+    for (let item of cartItems) {
+      const correctPrice = item.ItemPrice;
+      totalPayment = totalPayment + correctPrice * item.quantity;
+    }
     totalPayment = parseFloat(totalPayment.toFixed(2));
-  
+
     this.setState({ totalPayment: totalPayment });
     this.setState({ taxes: ((totalPayment * 10) / 100).toFixed(2) });
   };
-
 
   successMsg() {
     const alertMessage = document.querySelector(".success-msg");
@@ -328,9 +320,7 @@ export default class App extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     const { cartItems } = this.state;
-    if (
-      cartItems !== nextState.cartItems
-    ) {
+    if (cartItems !== nextState.cartItems) {
       this.getTotalPrice(nextState.cartItems);
     }
 
@@ -356,23 +346,24 @@ export default class App extends React.Component {
               />
             }
           />
-          <Route path="/contact" element={<ContactRoot />} />
+
           <Route
             path="/cart"
             element={
               <Cart
-              totalPayment={this.state.totalPayment}
+                totalPayment={this.state.totalPayment}
                 cartItems={this.state.cartItems}
-                productsQuantity={this.state.productsQuantity} 
+                productsQuantity={this.state.productsQuantity}
                 handleAddProduct={this.handleAddProduct}
                 handleRemoveProduct={this.handleRemoveProduct}
                 successMsg={this.successMsg}
                 getTotalPrice={this.getTotalPrice}
                 taxes={this.state.taxes}
-                
               />
             }
           />
+          <Route path="/:id" element={<SingleItem />} />
+          <Route path="/contact" element={<ContactRoot />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import AddToCartButton from "./AddToCartButton.js";
 import Attribute from "./Attribute.js";
 
@@ -69,16 +70,23 @@ export default class MenuItem extends React.Component {
   }
 
   render() {
-    const { singleProduct, handleAddProduct, handleRemoveProduct, successMsg } = this.props;
+    const { singleProduct, handleAddProduct, handleRemoveProduct, successMsg } =
+      this.props;
     return (
-      <div className="pizza-item flex-container flex-column txt-white">
-        <img src={singleProduct.ItemImg} alt="pizza"></img>
+      <div className="menu-item flex-container flex-column txt-white">
+        <NavLink to={`/${singleProduct.id}`} className="menu-item-link">
+          <img
+            src={singleProduct.ItemImg}
+            alt={`${singleProduct.ItemName}`}
+          ></img>
+        </NavLink>
+
         <h3>{singleProduct.ItemName}</h3>
         <p>{singleProduct.ItemIngredients}</p>
         {singleProduct?.attributes?.map((attribute) => (
           <Attribute
             key={attribute.id}
-            className="menu-attributes"
+            className="menu-item-attributes"
             handleSelectedAttributes={this.handleSelectedAttributes}
             attribute={attribute}
           />
@@ -91,7 +99,7 @@ export default class MenuItem extends React.Component {
             </p>
           </section>
           <AddToCartButton
-          successMsg={successMsg}
+            successMsg={successMsg}
             allAttributesAreSelected={this.state.allAttributesAreSelected}
             handleAddProduct={handleAddProduct}
             handleRemoveProduct={handleRemoveProduct}
