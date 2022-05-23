@@ -25,7 +25,7 @@ export default class CartTotals extends React.Component {
             </section>
 
             <section className="totals-btns">
-              <p className="promo-code">I have a promo code</p>
+              {/* <p className="promo-code">I have a promo code</p> */}
               <Link to="/order" className="order-btn">
                 Order
               </Link>

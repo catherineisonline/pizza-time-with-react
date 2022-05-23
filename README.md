@@ -84,16 +84,21 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [x] Disable ability to change item attributes
 - [x] Ability to add/remove items
 - [ ] Ability to remove all items
-- [ ] Total amount of items
-- [ ] Total price
-- [ ] Tax amount
-- [ ] Buttons to menu/checkout page
+- [x] Total amount of items
+- [x] Total price
+- [x] Tax amount
+- [x] Buttons to menu/order page
+
+#### Order page
+
 - [ ] Choice between order and takeaway
+- [ ] Promo code input
 
 #### Blog
 
 1. [x] Grid of blog posts
 2. [x] Each post contains
+
 - [x] Name
 - [x] Picture
 - [x] Description

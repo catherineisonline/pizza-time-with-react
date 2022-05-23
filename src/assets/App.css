@@ -360,11 +360,15 @@ li.alice-carousel__stage-item .__cloned {
 
 /* Section 2 */
 .section-two-img {
-  max-width: 100%;
-  height: auto;
+  /* min-width: 529.5px; */
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
 }
 
 .section-2-info {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 1rem;
   padding: 3rem;

@@ -174,10 +174,10 @@
   margin: 0 auto;
   text-align: center;
 }
-.totals-btns p {
+/* .totals-btns p {
   color: var(--light-gray);
   cursor: pointer;
-}
+} */
 .order-btn {
   border: 1px solid transparent;
   color: var(--white);
