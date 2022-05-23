@@ -31,6 +31,7 @@ export default class CartItem extends React.Component {
     return (
       <section className={className}>
         <img src={cartItem.ItemImg} alt="pizza"></img>
+        <section className="cart-item-content">
         <section className="cart-item-info">
           <section className="cart-item-title">
             {cartItem.userSelectedAttributes.length === 0 ? (
@@ -74,6 +75,7 @@ export default class CartItem extends React.Component {
             <span>$</span>
             {cartItem.ItemPrice}
           </p>
+        </section>
         </section>
       </section>
     );

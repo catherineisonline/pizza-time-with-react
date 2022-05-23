@@ -53,13 +53,13 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 2. [x] Search input available
        Menu items have:
+
 - [x] Pricing
 - [x] Name
 - [x] Ingredients
 - [x] Image
 - [x] Sizings (in case of pizza)
 - [x] Add to cart button
-
 
 5. [ ] Add pagination
 6. [x] Menu side-cotainer
@@ -76,13 +76,13 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 #### Cart
 
-- [ ] Cart page
+- [x] Cart page
 - [x] Empty cart page
       Cart page should include:
-- [ ] Added item
-- [ ] Amount of unique items (if the same item is added several, it shouldn't repeat)
-- [ ] Disable ability to change item attributes
-- [ ] Ability to add/remove items
+- [x] Added item
+- [x] Amount of unique items (if the same item is added several, it shouldn't repeat)
+- [x] Disable ability to change item attributes
+- [x] Ability to add/remove items
 - [ ] Ability to remove all items
 - [ ] Total amount of items
 - [ ] Total price
@@ -90,25 +90,10 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [ ] Buttons to menu/checkout page
 - [ ] Choice between order and takeaway
 
-#### Cart Overlay
-
-- [ ] Toggle cart overlay by clicking on the cart icon
-      Cart overlay should include:
-- [ ] Added item
-- [ ] Amount of unique items (if the same item is added several, it shouldn't repeat)
-- [ ] Disable ability to change item attributes
-- [ ] Ability to add/remove items
-- [ ] Ability to remove all items
-- [ ] Total amount of items
-- [ ] Total price
-- [ ] Buttons to cart/checkout page
-- [ ] Disable cart overlay on mobile version and direct the visitor straight to the cart page
-
 #### Blog
 
 1. [x] Grid of blog posts
 2. [x] Each post contains
-
 - [x] Name
 - [x] Picture
 - [x] Description
@@ -216,7 +201,7 @@ Secondly, I will add more interactivity this time, like adding items to the cart
 
 #### Day 1
 
-I created a separate file for all menu items and categories which saved me tons of space. Instead of having separate data for each category, I created just one and added the possibility to filter each of them by category. This helped me to get rid of 10 extra components! I do not want to do this now however I would gladly also make a GraphQL for this data. Now, I do not have to load different components every time I change a category. I simply render different data. This was remade to make the add to cart function and separate menu item page easier to create. 
+I created a separate file for all menu items and categories which saved me tons of space. Instead of having separate data for each category, I created just one and added the possibility to filter each of them by category. This helped me to get rid of 10 extra components! I do not want to do this now however I would gladly also make a GraphQL for this data. Now, I do not have to load different components every time I change a category. I simply render different data. This was remade to make the add to cart function and separate menu item page easier to create.
 Started cart interactivity by adding add to cart option on the menu page along with the attributes. This time, I added size attributes only to the pizza. The customer shouldn't be able to add items to cart until they chose size option and should be able to add products to cart if there are no attributes. Now, you can also see cart item count on navigation cart icon.
 
 ## Useful Resources

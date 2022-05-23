@@ -168,7 +168,7 @@ export default class NavBar extends React.Component {
               >
                 <img src={Cart} alt="" />
                 <>Cart</>
-                <p>{productsQuantity}</p>
+                <p>({productsQuantity})</p>
               </NavLink>
             </div>
           </li>
