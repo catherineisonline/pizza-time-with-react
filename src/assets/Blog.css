@@ -13,7 +13,14 @@
   --yellow: #fac564;
   --pizza-red: #ff6240;
 }
-
+.blog-main::before {
+  content: "";
+  height: 10rem;
+}
+.blog-main::after {
+  content: "";
+  height: 10rem;
+}
 .blog-main {
   width: 100%;
   display: flex;

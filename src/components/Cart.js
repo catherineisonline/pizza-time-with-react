@@ -14,8 +14,10 @@ export default class Cart extends React.Component {
     document.title = "Cart | Pizza Time";
     return (
       <>
+      <article className="cart-container">
+            <h1>Cart</h1>
         {cartItems.length === 0 ? (
-          <article className="cart-container">
+        
             <section className="cart-title-section">
               <h3>Oh, no, your cart is empty</h3>
               <p>Seems like you have not added anything to your cart yet.</p>
@@ -23,7 +25,7 @@ export default class Cart extends React.Component {
                 Check out menu
               </NavLink>
             </section>
-          </article>
+      
         ) : (
           <section className="cart-title-section">
             {cartItems.map((cartItem) => (
@@ -38,6 +40,7 @@ export default class Cart extends React.Component {
             ))}
           </section>
         )}
+        </article>
 
         <ScrollBtn />
       </>

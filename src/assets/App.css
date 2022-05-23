@@ -1110,7 +1110,7 @@ hr {
 .success-msg.visible {
   display: inline-block;
   position: fixed;
-  top: 5%;
+  top: 20%;
   left: 3%;
   background-color: rgba(219, 219, 219, 0.22);
   backdrop-filter: blur(5px);
@@ -1118,8 +1118,8 @@ hr {
   border-radius: 10px;
 }
 .success-msg.visible p {
-  font-family: var(--font-raleway);
+  font-family: var(--poppins-font);
   font-size: 1rem;
-  color: var(--c-text);
+  color: var(--white);
   font-weight: 500;
 }

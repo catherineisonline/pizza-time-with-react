@@ -13,7 +13,14 @@
   --yellow: #fac564;
   --pizza-red: #ff6240;
 }
-
+.contact-main::before {
+  content: "";
+  height: 10rem;
+}
+.contact-main::after {
+  content: "";
+  height: 10rem;
+}
 .contact-main {
   position: relative;
   display: flex;
