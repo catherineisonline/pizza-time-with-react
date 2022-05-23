@@ -1118,8 +1118,6 @@ hr {
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* width: max-content; */
-  /* translate: 50%; */
   background-color: rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(5px);
   padding: 0.5rem;
