@@ -31,7 +31,6 @@ export default class NavBar extends React.Component {
     return (
       <header>
         <nav className="main-nav flex-container flex-row txt-center">
-          {/* <div> */}
           <NavLink
             onClick={() => {
               ResetLocation();
@@ -40,14 +39,11 @@ export default class NavBar extends React.Component {
             to="/pizza-time-with-react"
             className="logo-styling flex-container flex-row txt-center txt-white"
           >
-            {/* <div   className="logo-styling-test"> */}
             <img className="logo" src={logo} alt="pizza time logo" />
             <p>
               Pizza <span>Time</span>
             </p>
-            {/* </div> */}
           </NavLink>
-          {/* </div> */}
           <ul className="navigation-menu flex-row pop-font">
             <li>
               <NavLink
@@ -177,14 +173,12 @@ export default class NavBar extends React.Component {
               </div>
             </li>
           </ul>
-          {/* <div className="burger-menu flex-container flex-row txt-center pop-font txt-white"> */}
           <img
             className="burger-bars"
             src={burger}
             alt=""
             onClick={this.ShowHiddenMenu}
           ></img>
-          {/* </div> */}
         </nav>
         <SuccessMsg />
       </header>

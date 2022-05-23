@@ -1,6 +1,6 @@
 import React from "react";
 import { allProductsData } from "../data/AllProductsData";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Attribute from "./Attribute";
 import AddToCartButton from "./AddToCartButton";
 export default class SingleItem extends React.Component {

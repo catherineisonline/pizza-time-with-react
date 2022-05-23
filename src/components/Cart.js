@@ -4,10 +4,6 @@ import ScrollBtn from "./ScrollBtn";
 import CartItem from "./CartItem";
 import CartTotals from "./CartTotals";
 export default class Cart extends React.Component {
-  componentDidMount() {
-    // this.props.getTotalPrice(this.props.cartItems);
-  }
-  
   render() {
     const {
       cartItems,
@@ -17,19 +13,14 @@ export default class Cart extends React.Component {
       successMsg,
       productsQuantity,
       totalPayment,
-      taxes
-  
+      taxes,
     } = this.props;
-
-
-    // console.log(cartItems)
     document.title = "Cart | Pizza Time";
     return (
       <>
-      <article className="cart-container">
-            <h1>Cart</h1>
-        {cartItems.length === 0 ? (
-        
+        <article className="cart-container">
+          <h1>Cart</h1>
+          {cartItems.length === 0 ? (
             <section className="cart-title-section">
               <h3>Oh, no, your cart is empty</h3>
               <p>Seems like you have not added anything to your cart yet.</p>
@@ -37,22 +28,25 @@ export default class Cart extends React.Component {
                 Check out menu
               </NavLink>
             </section>
-      
-        ) : (
-          <section className="cart-title-section">
-            {cartItems.map((cartItem) => (
-              <CartItem
-                successMsg={successMsg}
-                cartItem={cartItem}
-                selectedAttributes={selectedAttributes}
-                handleAddProduct={handleAddProduct}
-                handleRemoveProduct={handleRemoveProduct}
-                className="cart-item"
-              />
-            ))}
-          </section>
-        )}
-        <CartTotals productsQuantity={productsQuantity} totalPayment={totalPayment} taxes={taxes}/>
+          ) : (
+            <section className="cart-title-section">
+              {cartItems.map((cartItem) => (
+                <CartItem
+                  successMsg={successMsg}
+                  cartItem={cartItem}
+                  selectedAttributes={selectedAttributes}
+                  handleAddProduct={handleAddProduct}
+                  handleRemoveProduct={handleRemoveProduct}
+                  className="cart-item"
+                />
+              ))}
+            </section>
+          )}
+          <CartTotals
+            productsQuantity={productsQuantity}
+            totalPayment={totalPayment}
+            taxes={taxes}
+          />
         </article>
 
         <ScrollBtn />
@@ -61,4 +55,3 @@ export default class Cart extends React.Component {
   }
 }
 
-// export default Cart;

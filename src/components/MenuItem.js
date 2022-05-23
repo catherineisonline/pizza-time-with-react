@@ -7,7 +7,6 @@ export default class MenuItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // pricing: "",
       selectedAttributes: [],
       allAttributesAreSelected: false,
     };
@@ -36,7 +35,6 @@ export default class MenuItem extends React.Component {
     } else {
       userSelectedAttributes.push(newSelectedAttribute);
     }
-    // console.log(userSelectedAttributes)
     this.setState({ selectedAttributes: userSelectedAttributes });
   };
   // Check if attributes are selected

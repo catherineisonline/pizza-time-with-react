@@ -1,5 +1,5 @@
 import React from "react";
-// import logo from "../images/logo.png";
+//Images
 import Visa from "../images/payment-methods/visa-icon.svg";
 import MasterCard from "../images/payment-methods/mastercard-icon.svg";
 import ApplePay from "../images/payment-methods/applepay-icon.svg";

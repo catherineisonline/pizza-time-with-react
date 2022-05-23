@@ -7,7 +7,7 @@ const ResetLocation = () => window.scrollTo(0, 0);
 export default class MenuCategories extends React.Component {
   ResetLocation = () => window.scrollTo(0, 0);
   render() {
-    const { allCategories, changeCategory, activeCategory } = this.props;
+    const { allCategories, changeCategory } = this.props;
     return (
       <>
         <article className="side-menu">

@@ -20,12 +20,11 @@ export default class CartTotals extends React.Component {
               <section>
                 <h4 className="cart-totals-sum">Total:</h4>
                 {/* COUNTING TWICE DUE TO STRICT MODE */}
-                <p>$ {totalPayment / 2}</p>
+                <p>$ {(totalPayment / 2).toFixed(2)}</p>
               </section>
             </section>
 
             <section className="totals-btns">
-              {/* <p className="promo-code">I have a promo code</p> */}
               <Link to="/order" className="order-btn">
                 Order
               </Link>

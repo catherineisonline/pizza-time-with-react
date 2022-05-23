@@ -32,7 +32,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-// import { render } from "@testing-library/react";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -599,47 +598,6 @@ class SectionSeven extends React.Component {
     );
   }
 }
-// const Wow = () => {
-//   return <div>Test</div>;
-// };
-// function Pizza() {
-//   function sayHello() {
-//     alert("Hello!");
-//   }
-//   return <h3 onClick={sayHello}>Pizza</h3>;
-// }
-// function Sushi() {
-//   function sayHello() {
-//     <Wow />;
-//   }
-//   return <h3 onClick={sayHello}>Sushi</h3>;
-// }
-// function Burgers() {
-//   function sayHello() {
-//     <div className="dish-details flex-container flex-column txt-center">
-//       <img src={PepperoniPizza} alt="pepperoni pizza" />
-//       <h3 className="pop-font txt-white">Pepperoni Pizza</h3>
-//       <p className="dish-details-desc pop-font">
-//         There’s a reason this is one of the most popular types of pizza. Who
-//         doesn’t love biting into a crispy, salty round of pepperoni?
-//       </p>
-//       <p className="dish-details-pricing">
-//         <span>$</span>5.00
-//       </p>
-//       <a className="txt-white" href="/">
-//         Add to cart
-//       </a>
-//     </div>;
-//   }
-//   return <h3 onClick={sayHello}>Burgers</h3>;
-// }
-
-// function Pasta() {
-//   function sayHello() {
-//     alert("Hello!");
-//   }
-//   return <h3 onClick={sayHello}>Pasta</h3>;
-// }
 
 class SectionEight extends React.Component {
   render() {
@@ -648,10 +606,6 @@ class SectionEight extends React.Component {
         <img src={SectionEightImg} alt="restaurant interior" />
         <section className="dish-slider  flex-container flex-column txt-center">
           <div className="dish-categories flex-container flex-column">
-            {/* <Pizza />
-          <Sushi />
-          <Burgers />
-          <Pasta /> */}
             <h3>Pizza</h3>
             <h3>Sushi</h3>
             <h3>Burgers</h3>
@@ -844,11 +798,18 @@ class SectionTen extends React.Component {
       console.log("err");
     }
   }
+  componentDidMount() {
+    var container = L.DomUtil.get("map");
+    if (container != null) {
+      container._leaflet_id = null;
+    }
+  }
+
   render() {
     return (
       <article className="section-10  flex-container flex-column">
         <section className="map">
-          {/* <MapContainer
+          <MapContainer
             id="map"
             center={position}
             zoom={9}
@@ -863,7 +824,7 @@ class SectionTen extends React.Component {
                 A pretty CSS3 popup. <br /> Easily customizable.
               </Popup>
             </Marker>
-          </MapContainer> */}
+          </MapContainer>
         </section>
         <section className="contact-section">
           <form className="contact-form  flex-container flex-column">

@@ -110,20 +110,6 @@ export default  class ContactRoot extends React.Component {
               <p className="button-msg-cpage"></p>
             </div>
           </form>
-          {/* <form
-            className="contact-form flex-container flex-column"
-            action="get"
-          >
-            <input className="pop-font" type="text" placeholder="First Name" />
-            <input className="pop-font" type="text" placeholder="Last Name" />
-            <textarea
-              className="pop-font"
-              placeholder="Message"
-            />
-            <button className="contact-us-form-btn" type="submit">
-              Send
-            </button>
-          </form> */}
         </section>
         <section className="contact-us-img"></section>
         <section className="contact-us-content pop-font">

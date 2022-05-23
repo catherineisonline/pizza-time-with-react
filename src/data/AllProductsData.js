@@ -109,7 +109,7 @@ export const allProductsData = [
     ItemImg: CheesePizza,
     ItemName: "Cheese Pizza",
     ItemIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -131,7 +131,7 @@ export const allProductsData = [
     ItemName: "Veggie Pizza",
     ItemIngredients:
       "Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.",
-    ItemPrice: 9.00,
+    ItemPrice: (9).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -152,7 +152,7 @@ export const allProductsData = [
     ItemName: "Pepperoni Pizza",
     ItemIngredients:
       "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -173,7 +173,7 @@ export const allProductsData = [
     ItemName: "Meat Pizza",
     ItemIngredients:
       "Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -194,7 +194,7 @@ export const allProductsData = [
     ItemName: "Margherita Pizza",
     ItemIngredients:
       "Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -215,7 +215,7 @@ export const allProductsData = [
     ItemName: "BBQ Chicken Pizza",
     ItemIngredients:
       "Rotisserie chicken, pizza dough, bbq sauce, smoked cheddar cheese, mozzarella cheese.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -235,7 +235,7 @@ export const allProductsData = [
     ItemImg: AllaPalla,
     ItemName: "Pizza alla pala",
     ItemIngredients: "Cheese, cherry tomatoes, arugula, olive oil, yeast.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -256,7 +256,7 @@ export const allProductsData = [
     ItemName: "Prosciutto e Funghi Pizza",
     ItemIngredients:
       "Italian sausage meat, truffle oil, pizza dough, san marzano tomatoes, bocconcini cheese.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -277,7 +277,7 @@ export const allProductsData = [
     ItemName: "Detroit-Style Pizza",
     ItemIngredients:
       "Pizza dough, pizza sauce, brick cheese, rapid rise yeast, olive oil.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -298,7 +298,7 @@ export const allProductsData = [
     ItemName: "Garlic Fingers",
     ItemIngredients:
       "Bread flour, mozzarella cheese, butter, olive oil, instant yeast.",
-    ItemPrice: 7,
+    ItemPrice: (7).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -319,7 +319,7 @@ export const allProductsData = [
     ItemName: "St. Louis-Style Pizza",
     ItemIngredients:
       "Liquid smoke, swiss cheese, white cheddar cheese, light corn syrup, pizza sauce.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -339,7 +339,7 @@ export const allProductsData = [
     ItemImg: Rustica,
     ItemName: "Pizza Rustica",
     ItemIngredients: "Prosciutto, pepperoni, mozzarella, crust, eggs.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -360,7 +360,7 @@ export const allProductsData = [
     ItemName: "Pizza pesto Genovese",
     ItemIngredients:
       "Pine nuts, baby potatoes, snow pea shoots, lemon, buffalo mozzarella.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -380,7 +380,7 @@ export const allProductsData = [
     ItemImg: Efichi,
     ItemName: "Pizza e fichi",
     ItemIngredients: "Coconut flour, truffle oil, fig jam, cheese, prosciutto.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -401,7 +401,7 @@ export const allProductsData = [
     ItemName: "Apizza",
     ItemIngredients:
       "Ricotta cheese, tomato sauce, fresh basil pesto, fresh mozzarella cheese, semolina flour.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -422,7 +422,7 @@ export const allProductsData = [
     ItemName: "Stuffed Pizza",
     ItemIngredients:
       "Hot italian sausage, sweet italian sausage, pizza dough, red pepper flakes, olive oil.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -443,7 +443,7 @@ export const allProductsData = [
     ItemName: "Pugliese Pizza",
     ItemIngredients:
       "Sloppy joe, banana peppers, ground beef, pizza dough, ricotta cheese.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -464,7 +464,7 @@ export const allProductsData = [
     ItemName: "Tomato Pie",
     ItemIngredients:
       "Pizza dough, san marzano, red pepper flakes, pizza stone, olive oil.",
-    ItemPrice: 15,
+    ItemPrice: (15).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -484,7 +484,7 @@ export const allProductsData = [
     ItemImg: Fugaza,
     ItemName: "Fugazza",
     ItemIngredients: "Mozzarella cheese, sugar, dry yeast, all purpose flour.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -505,7 +505,7 @@ export const allProductsData = [
     ItemName: "Pizza fiori di zucca",
     ItemIngredients:
       "Zucchini blossoms, pizza dough, buffalo mozzarella, olive oil.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -526,7 +526,7 @@ export const allProductsData = [
     ItemName: "Fugazzeta",
     ItemIngredients:
       "Feta cheese, mozzarella cheese, parmesan cheese, olive oil, yeast.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -547,7 +547,7 @@ export const allProductsData = [
     ItemName: "Pizza Carbonara",
     ItemIngredients:
       "Refrigerated pizza crust, monterey jack cheese, parmesan cheese, butter, chicken bouillon.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -568,7 +568,7 @@ export const allProductsData = [
     ItemName: "Grandma Pie",
     ItemIngredients:
       "Dark brown sugar, san marzano tomatoes, tomato paste, bread flour, red pepper flakes.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -589,7 +589,7 @@ export const allProductsData = [
     ItemName: "Pizza al padellino",
     ItemIngredients:
       "Mozzarella cheese, prosciutto di parma, dough, baby arugula, black pepper",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -610,7 +610,7 @@ export const allProductsData = [
     ItemName: "California-Style Pizza",
     ItemIngredients:
       "Feta cheese, marinated artichoke hearts, pizza crust, red bell pepper, red onion.",
-    ItemPrice: 15,
+    ItemPrice: (15).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -631,7 +631,7 @@ export const allProductsData = [
     ItemName: "Pizza fritta",
     ItemIngredients:
       "Ricotta cheese, tomato sauce, tipo 00, neapolitan pizza base, mozzarella cheese.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -652,7 +652,7 @@ export const allProductsData = [
     ItemName: "Pinsa romana",
     ItemIngredients:
       "Rice flour, olive oil, plain flour, sea salt, dried yeast.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -673,7 +673,7 @@ export const allProductsData = [
     ItemName: "Chicago Thin Crust Pizza",
     ItemIngredients:
       "Sweet italian sausage, semolina flour, pizza sauce, giardiniera, sugar.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -694,7 +694,7 @@ export const allProductsData = [
     ItemName: "Greek-Style Pizza",
     ItemIngredients:
       "White cheddar, sauce, tomato paste, bread flour, red pepper flakes.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -714,7 +714,7 @@ export const allProductsData = [
     ItemImg: PizzaRomana,
     ItemName: "Pizza Romana",
     ItemIngredients: "Fresh mozzarella, bread flour, tomato, olive oil, yeast",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -734,7 +734,7 @@ export const allProductsData = [
     ItemImg: CheesePizza,
     ItemName: "Cheese Pizza",
     ItemIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -756,7 +756,7 @@ export const allProductsData = [
     ItemName: "Veggie Pizza",
     ItemIngredients:
       "Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -777,7 +777,7 @@ export const allProductsData = [
     ItemName: "Pepperoni Pizza",
     ItemIngredients:
       "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -798,7 +798,7 @@ export const allProductsData = [
     ItemName: "Meat Pizza",
     ItemIngredients:
       "Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -819,7 +819,7 @@ export const allProductsData = [
     ItemName: "Margherita Pizza",
     ItemIngredients:
       "Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -840,7 +840,7 @@ export const allProductsData = [
     ItemName: "BBQ Chicken Pizza",
     ItemIngredients:
       "Rotisserie chicken, pizza dough, bbq sauce, smoked cheddar cheese, mozzarella cheese.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -860,7 +860,7 @@ export const allProductsData = [
     ItemImg: AllaPalla,
     ItemName: "Pizza alla pala",
     ItemIngredients: "Cheese, cherry tomatoes, arugula, olive oil, yeast.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -881,7 +881,7 @@ export const allProductsData = [
     ItemName: "Prosciutto e Funghi Pizza",
     ItemIngredients:
       "Italian sausage meat, truffle oil, pizza dough, san marzano tomatoes, bocconcini cheese.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -902,7 +902,7 @@ export const allProductsData = [
     ItemName: "Detroit-Style Pizza",
     ItemIngredients:
       "Pizza dough, pizza sauce, brick cheese, rapid rise yeast, olive oil.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -923,7 +923,7 @@ export const allProductsData = [
     ItemName: "Garlic Fingers",
     ItemIngredients:
       "Bread flour, mozzarella cheese, butter, olive oil, instant yeast.",
-    ItemPrice: 7,
+    ItemPrice: (7).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -944,7 +944,7 @@ export const allProductsData = [
     ItemName: "St. Louis-Style Pizza",
     ItemIngredients:
       "Liquid smoke, swiss cheese, white cheddar cheese, light corn syrup, pizza sauce.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -964,7 +964,7 @@ export const allProductsData = [
     ItemImg: Rustica,
     ItemName: "Pizza Rustica",
     ItemIngredients: "Prosciutto, pepperoni, mozzarella, crust, eggs.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -985,7 +985,7 @@ export const allProductsData = [
     ItemName: "Pizza pesto Genovese",
     ItemIngredients:
       "Pine nuts, baby potatoes, snow pea shoots, lemon, buffalo mozzarella.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1005,7 +1005,7 @@ export const allProductsData = [
     ItemImg: Efichi,
     ItemName: "Pizza e fichi",
     ItemIngredients: "Coconut flour, truffle oil, fig jam, cheese, prosciutto.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1026,7 +1026,7 @@ export const allProductsData = [
     ItemName: "Apizza",
     ItemIngredients:
       "Ricotta cheese, tomato sauce, fresh basil pesto, fresh mozzarella cheese, semolina flour.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1047,7 +1047,7 @@ export const allProductsData = [
     ItemName: "Stuffed Pizza",
     ItemIngredients:
       "Hot italian sausage, sweet italian sausage, pizza dough, red pepper flakes, olive oil.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1068,7 +1068,7 @@ export const allProductsData = [
     ItemName: "Pugliese Pizza",
     ItemIngredients:
       "Sloppy joe, banana peppers, ground beef, pizza dough, ricotta cheese.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1089,7 +1089,7 @@ export const allProductsData = [
     ItemName: "Tomato Pie",
     ItemIngredients:
       "Pizza dough, san marzano, red pepper flakes, pizza stone, olive oil.",
-    ItemPrice: 15,
+    ItemPrice: (15).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1109,7 +1109,7 @@ export const allProductsData = [
     ItemImg: Fugaza,
     ItemName: "Fugazza",
     ItemIngredients: "Mozzarella cheese, sugar, dry yeast, all purpose flour.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1130,7 +1130,7 @@ export const allProductsData = [
     ItemName: "Pizza fiori di zucca",
     ItemIngredients:
       "Zucchini blossoms, pizza dough, buffalo mozzarella, olive oil.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1151,7 +1151,7 @@ export const allProductsData = [
     ItemName: "Fugazzeta",
     ItemIngredients:
       "Feta cheese, mozzarella cheese, parmesan cheese, olive oil, yeast.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1172,7 +1172,7 @@ export const allProductsData = [
     ItemName: "Pizza Carbonara",
     ItemIngredients:
       "Refrigerated pizza crust, monterey jack cheese, parmesan cheese, butter, chicken bouillon.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1193,7 +1193,7 @@ export const allProductsData = [
     ItemName: "Grandma Pie",
     ItemIngredients:
       "Dark brown sugar, san marzano tomatoes, tomato paste, bread flour, red pepper flakes.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1214,7 +1214,7 @@ export const allProductsData = [
     ItemName: "Pizza al padellino",
     ItemIngredients:
       "Mozzarella cheese, prosciutto di parma, dough, baby arugula, black pepper",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1235,7 +1235,7 @@ export const allProductsData = [
     ItemName: "California-Style Pizza",
     ItemIngredients:
       "Feta cheese, marinated artichoke hearts, pizza crust, red bell pepper, red onion.",
-    ItemPrice: 15,
+    ItemPrice: (15).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1256,7 +1256,7 @@ export const allProductsData = [
     ItemName: "Pizza fritta",
     ItemIngredients:
       "Ricotta cheese, tomato sauce, tipo 00, neapolitan pizza base, mozzarella cheese.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1277,7 +1277,7 @@ export const allProductsData = [
     ItemName: "Pinsa romana",
     ItemIngredients:
       "Rice flour, olive oil, plain flour, sea salt, dried yeast.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1298,7 +1298,7 @@ export const allProductsData = [
     ItemName: "Chicago Thin Crust Pizza",
     ItemIngredients:
       "Sweet italian sausage, semolina flour, pizza sauce, giardiniera, sugar.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1319,7 +1319,7 @@ export const allProductsData = [
     ItemName: "Greek-Style Pizza",
     ItemIngredients:
       "White cheddar, sauce, tomato paste, bread flour, red pepper flakes.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1339,7 +1339,7 @@ export const allProductsData = [
     ItemImg: PizzaRomana,
     ItemName: "Pizza Romana",
     ItemIngredients: "Fresh mozzarella, bread flour, tomato, olive oil, yeast",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pizza",
     attributes: [
       {
@@ -1360,7 +1360,7 @@ export const allProductsData = [
     ItemName: "Chicken Alfredo",
     ItemIngredients:
       "Skinless chicken breast, heavy cream, olive oil, parmigiano reggiano, black pepper.",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1370,7 +1370,7 @@ export const allProductsData = [
     ItemName: "Pasta Alla Gricia",
     ItemIngredients:
       "Rigatoni pasta, pancetta, olive oil, pecorino romano, black pepper.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1380,7 +1380,7 @@ export const allProductsData = [
     ItemName: "Sheet-Pan Burrata Caprese Gnocchi",
     ItemIngredients:
       "Penne pasta, sour cream, rotisserie chicken, cherry tomatoes, curly kale.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1390,7 +1390,7 @@ export const allProductsData = [
     ItemName: "Penne Alla Vodka",
     ItemIngredients:
       "Tomato sauce, penne, heavy cream, red pepper flakes, butter.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1400,7 +1400,7 @@ export const allProductsData = [
     ItemName: "Baked Spaghetti",
     ItemIngredients:
       "Ground beef, spaghetti, olive oil, crushed tomatoes, basil.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1410,7 +1410,7 @@ export const allProductsData = [
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
       "Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1420,7 +1420,7 @@ export const allProductsData = [
     ItemName: "Ultimate Baked Ziti",
     ItemIngredients:
       "Bulk italian sausage, ricotta cheese, tomato sauce, red pepper flakes, mozzarella cheese.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1429,7 +1429,7 @@ export const allProductsData = [
     ItemImg: CacioPepe,
     ItemName: "Cacio e Pepe",
     ItemIngredients: "Spaghetti, parmesan, butter, black pepper.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1439,7 +1439,7 @@ export const allProductsData = [
     ItemName: "Pasta Puttanesca",
     ItemIngredients:
       "Spaghetti, kalamata olives, red pepper flakes, capers, diced tomatoes.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1449,7 +1449,7 @@ export const allProductsData = [
     ItemName: "Italian Pasta Salad",
     ItemIngredients:
       "Bell peppers, fresh mozzarella pearls, honey, dijon mustard, rotini.",
-    ItemPrice: 7,
+    ItemPrice: (7).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1459,7 +1459,7 @@ export const allProductsData = [
     ItemName: "Lasagna Roll Ups",
     ItemIngredients:
       "Ricotta cheese, lasagna noodles, homemade marinara sauce, frozen spinach, parmesan cheese.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1469,7 +1469,7 @@ export const allProductsData = [
     ItemName: "Toasted Ravioli",
     ItemIngredients:
       "Frozen cheese ravioli, jar spaghetti sauce, bread crumbs, parmesan cheese, egg.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1479,7 +1479,7 @@ export const allProductsData = [
     ItemName: "Orecchiette with Broccoli Rabe",
     ItemIngredients:
       "Broccoli rabe, andouille sausage links, orecchiette, lemon, red pepper flakes.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1489,7 +1489,7 @@ export const allProductsData = [
     ItemName: "Lamb Ragù",
     ItemIngredients:
       "Lamb shoulder, gnocchi, red wine, heavy cream, tomato paste.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1499,7 +1499,7 @@ export const allProductsData = [
     ItemName: "Lasagna Bolognese",
     ItemIngredients:
       "Ground italian sausage, ground beef, ground pork, bolognese sauce, lasagna noodles.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1508,7 +1508,7 @@ export const allProductsData = [
     ItemImg: LemonRicotta,
     ItemName: "Lemon Ricotta Pasta",
     ItemIngredients: "Spaghetti, ricotta, lemon, red pepper flakes, parmesan.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1518,7 +1518,7 @@ export const allProductsData = [
     ItemName: "Stuffed Rigatoni",
     ItemIngredients:
       "Ground turkey, rigatoni pasta, red pepper, mozzarella, parmesan.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1528,7 +1528,7 @@ export const allProductsData = [
     ItemName: "Five-Cheese Ziti Al Forno",
     ItemIngredients:
       "Alfredo sauce, ricotta cheese, ziti pasta, marinara sauce, fontina cheese.",
-    ItemPrice: 15,
+    ItemPrice: (15).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1538,7 +1538,7 @@ export const allProductsData = [
     ItemName: "Chicken Florentine Pasta",
     ItemIngredients:
       "Skinless chicken breasts, linguine pasta, chicken broth, butter, baby spinach.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1548,7 +1548,7 @@ export const allProductsData = [
     ItemName: "Italian Mac and Cheese",
     ItemIngredients:
       "Italian sausage, pasta, cheese sauce, cream, baby spinach.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1558,7 +1558,7 @@ export const allProductsData = [
     ItemName: "Chicken Alfredo",
     ItemIngredients:
       "Skinless chicken breast, heavy cream, olive oil, parmigiano reggiano, black pepper.",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1568,7 +1568,7 @@ export const allProductsData = [
     ItemName: "Pasta Alla Gricia",
     ItemIngredients:
       "Rigatoni pasta, pancetta, olive oil, pecorino romano, black pepper.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1578,7 +1578,7 @@ export const allProductsData = [
     ItemName: "Sheet-Pan Burrata Caprese Gnocchi",
     ItemIngredients:
       "Penne pasta, sour cream, rotisserie chicken, cherry tomatoes, curly kale.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1588,7 +1588,7 @@ export const allProductsData = [
     ItemName: "Penne Alla Vodka",
     ItemIngredients:
       "Tomato sauce, penne, heavy cream, red pepper flakes, butter.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1598,7 +1598,7 @@ export const allProductsData = [
     ItemName: "Baked Spaghetti",
     ItemIngredients:
       "Ground beef, spaghetti, olive oil, crushed tomatoes, basil.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1608,7 +1608,7 @@ export const allProductsData = [
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
       "Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1618,7 +1618,7 @@ export const allProductsData = [
     ItemName: "Ultimate Baked Ziti",
     ItemIngredients:
       "Bulk italian sausage, ricotta cheese, tomato sauce, red pepper flakes, mozzarella cheese.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1627,7 +1627,7 @@ export const allProductsData = [
     ItemImg: CacioPepe,
     ItemName: "Cacio e Pepe",
     ItemIngredients: "Spaghetti, parmesan, butter, black pepper.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1637,7 +1637,7 @@ export const allProductsData = [
     ItemName: "Pasta Puttanesca",
     ItemIngredients:
       "Spaghetti, kalamata olives, red pepper flakes, capers, diced tomatoes.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1647,7 +1647,7 @@ export const allProductsData = [
     ItemName: "Italian Pasta Salad",
     ItemIngredients:
       "Bell peppers, fresh mozzarella pearls, honey, dijon mustard, rotini.",
-    ItemPrice: 7,
+    ItemPrice: (7).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1657,7 +1657,7 @@ export const allProductsData = [
     ItemName: "Lasagna Roll Ups",
     ItemIngredients:
       "Ricotta cheese, lasagna noodles, homemade marinara sauce, frozen spinach, parmesan cheese.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1667,7 +1667,7 @@ export const allProductsData = [
     ItemName: "Toasted Ravioli",
     ItemIngredients:
       "Frozen cheese ravioli, jar spaghetti sauce, bread crumbs, parmesan cheese, egg.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1677,7 +1677,7 @@ export const allProductsData = [
     ItemName: "Orecchiette with Broccoli Rabe",
     ItemIngredients:
       "Broccoli rabe, andouille sausage links, orecchiette, lemon, red pepper flakes.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1687,7 +1687,7 @@ export const allProductsData = [
     ItemName: "Lamb Ragù",
     ItemIngredients:
       "Lamb shoulder, gnocchi, red wine, heavy cream, tomato paste.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1697,7 +1697,7 @@ export const allProductsData = [
     ItemName: "Lasagna Bolognese",
     ItemIngredients:
       "Ground italian sausage, ground beef, ground pork, bolognese sauce, lasagna noodles.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1706,7 +1706,7 @@ export const allProductsData = [
     ItemImg: LemonRicotta,
     ItemName: "Lemon Ricotta Pasta",
     ItemIngredients: "Spaghetti, ricotta, lemon, red pepper flakes, parmesan.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1716,7 +1716,7 @@ export const allProductsData = [
     ItemName: "Stuffed Rigatoni",
     ItemIngredients:
       "Ground turkey, rigatoni pasta, red pepper, mozzarella, parmesan.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1726,7 +1726,7 @@ export const allProductsData = [
     ItemName: "Five-Cheese Ziti Al Forno",
     ItemIngredients:
       "Alfredo sauce, ricotta cheese, ziti pasta, marinara sauce, fontina cheese.",
-    ItemPrice: 15,
+    ItemPrice: (15).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1736,7 +1736,7 @@ export const allProductsData = [
     ItemName: "Chicken Florentine Pasta",
     ItemIngredients:
       "Skinless chicken breasts, linguine pasta, chicken broth, butter, baby spinach.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1746,7 +1746,7 @@ export const allProductsData = [
     ItemName: "Italian Mac and Cheese",
     ItemIngredients:
       "Italian sausage, pasta, cheese sauce, cream, baby spinach.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Pasta",
     attributes: [],
   },
@@ -1756,7 +1756,7 @@ export const allProductsData = [
     ItemName: "Salmon Poke",
     ItemIngredients:
       "Salmon, Avocado, Rice, Cabbage, Carrots, Creen onions, Sesame.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1767,7 +1767,7 @@ export const allProductsData = [
     ItemName: "Veggie Poke",
     ItemIngredients:
       "Rice, Avocado, Cabage, Carrot, Ginger, Green Onion, Sesam.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1777,7 +1777,7 @@ export const allProductsData = [
     ItemName: "Mini Salmon Set - 22Pcs",
     ItemIngredients:
       "Double Salmon Roll,Californication, Salmon Nigiri - 2Pcs, Eel Nigiri - 2Pcs,Vulcan Gunkan - 2Pcs",
-    ItemPrice: 35,
+    ItemPrice: (35).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1787,7 +1787,7 @@ export const allProductsData = [
     ItemName: "The Bull of Ombos Set - 32 Pcs",
     ItemIngredients:
       "Double Salmon Roll, Sunny Philadelphia, Salmon Maki Raki, Cucumber Maki Raki.",
-    ItemPrice: 30,
+    ItemPrice: (30).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1797,7 +1797,7 @@ export const allProductsData = [
     ItemName: "Veggie Set 32Pcs",
     ItemIngredients:
       "Very Veggie Roll, Very Veggie Maki, Cucumber Maki Raki, Avocado Maki Raki.",
-    ItemPrice: 16,
+    ItemPrice: (16).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1807,7 +1807,7 @@ export const allProductsData = [
     ItemName: "Friendly Set 40Pcs",
     ItemIngredients:
       "Californication, Spicy Salmon Roll, Blissful Eel Roll, Sebastian the Crab Roll, Cucumber Maki Raki.",
-    ItemPrice: 30,
+    ItemPrice: (30).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1816,7 +1816,7 @@ export const allProductsData = [
     ItemImg: SunnyPhiladelphia,
     ItemName: "Sunny Philadelphia Roll 8Pcs",
     ItemIngredients: "Salmon, cream cheese, avocado, rice, sesame, nori.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1826,7 +1826,7 @@ export const allProductsData = [
     ItemName: "Hidden Dragon Roll 8Pcs",
     ItemIngredients:
       "Salmon, cream cheese, avocado, tobiko, rice, sesame, cucumber, nori.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1836,7 +1836,7 @@ export const allProductsData = [
     ItemName: "Double Salmon Roll 8Pcs",
     ItemIngredients:
       "Salmon, Cream Cheese, Avocado, Sesame, Extra Salmon Slice, Cucumber, Rice, nori.",
-    ItemPrice: 14,
+    ItemPrice: (14).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1846,7 +1846,7 @@ export const allProductsData = [
     ItemName: "The Hottest Taisho",
     ItemIngredients:
       "Salmon, Cream Cheese, Avocado, Cucumber, Rice - all comes with your chosen sauce.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1855,7 +1855,7 @@ export const allProductsData = [
     ItemImg: BurningTaisho,
     ItemName: "Burning Taisho",
     ItemIngredients: "Salmon, Avocado, Rice, Cucumber, Cream Cheese.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1865,7 +1865,7 @@ export const allProductsData = [
     ItemName: "Blissful Eel Roll 8Pcs",
     ItemIngredients:
       "Eel kinda blissful, Cream Cheese, Avocado, Tobico, Sesame, Rice, Nori.",
-    ItemPrice: 14,
+    ItemPrice: (14).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1875,7 +1875,7 @@ export const allProductsData = [
     ItemName: "Sebastian the Crab Roll 8Pcs",
     ItemIngredients:
       "Crab with Unique Sauce, Cream Cheese, Avocado, Dried Tuna Flakes, Sesame, Cucumber Rice, Nori.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1885,7 +1885,7 @@ export const allProductsData = [
     ItemName: "Double Salmon Roll 8Pcs",
     ItemIngredients:
       "Salmon, Cream Cheese, Avocado, Sesame, Extra Salmon Slice, Cucumber, Rice, Nori.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1894,7 +1894,7 @@ export const allProductsData = [
     ItemImg: ClockworkOrange,
     ItemName: "Clockwork Orange Roll 8Pcs",
     ItemIngredients: "Salmon, orange, cream cheese, salmon extra slice, nori.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1904,7 +1904,7 @@ export const allProductsData = [
     ItemName: "Kiwi Roll 8Pcs",
     ItemIngredients:
       "Salmon, Kiwi, Carrot, Cream Cheese, Tobico, Cucumber, Rice, Nori.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1913,7 +1913,7 @@ export const allProductsData = [
     ItemImg: Siamese,
     ItemName: "The Roll of Siamese",
     ItemIngredients: "Salmon, Cucumber, Carrot, Caviar, Rice.",
-    ItemPrice: 15,
+    ItemPrice: (15).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1922,7 +1922,7 @@ export const allProductsData = [
     ItemImg: SalmonMaki,
     ItemName: "Salmon Maki Raki 8Pcs",
     ItemIngredients: "Salmon, Cream Cheese, Rice, Nori.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1931,7 +1931,7 @@ export const allProductsData = [
     ItemImg: NigiriWithRoasted,
     ItemName: "Nigiri with Roasted Salmon 1Pc",
     ItemIngredients: "Roasted Salmon, Rice.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1940,7 +1940,7 @@ export const allProductsData = [
     ItemImg: NigiriWithSalmon,
     ItemName: "Nigiri with Salmon and Orange 1Pc",
     ItemIngredients: "Salmon, Orange, Rice.",
-    ItemPrice: 4,
+    ItemPrice: (4).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1949,7 +1949,7 @@ export const allProductsData = [
     ItemImg: NigiriWithEel,
     ItemName: "Nigiri with Eel 1Pc",
     ItemIngredients: "Eel, rice.",
-    ItemPrice: 6,
+    ItemPrice: (6).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1958,7 +1958,7 @@ export const allProductsData = [
     ItemImg: VulcanTobiko,
     ItemName: "Vulcan Tobiko",
     ItemIngredients: "Delicious Gunkan with Tobiko and Rice.",
-    ItemPrice: 4,
+    ItemPrice: (4).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1967,7 +1967,7 @@ export const allProductsData = [
     ItemImg: SalmonGunkan,
     ItemName: "Salmon Gunkan with Cream Cheese",
     ItemIngredients: "Perfect sushi rice, Nigiri prawns, Cream cheese, Wasabi.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1976,7 +1976,7 @@ export const allProductsData = [
     ItemImg: VeryVegetarian,
     ItemName: "Very Vegetarian Maki 8Pcs",
     ItemIngredients: "Avocado, Cream Cheese, Cucumber, Rice, Nori.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1985,7 +1985,7 @@ export const allProductsData = [
     ItemImg: SushiOne,
     ItemName: "Avocado Maki Raki 8Pcs",
     ItemIngredients: "Avocado, Cream Cheese, Rice, Nori.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -1994,7 +1994,7 @@ export const allProductsData = [
     ItemImg: CucumberMaki,
     ItemName: "Cucumber Maki Raki 8Pcs",
     ItemIngredients: "Cucumber, Sesame, Rice, Nori.",
-    ItemPrice: 4,
+    ItemPrice: (4).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2004,7 +2004,7 @@ export const allProductsData = [
     ItemName: "Hungry Set 64Pcs",
     ItemIngredients:
       "Californication,  Sunny Philadelphia Roll, Spicy Salmon Roll, Blissful Eel Roll, Sebastian the Crab Roll, Very Vegetarian Maki Raki, Cucumber Maki Raki,  Avocado Maki Raki.",
-    ItemPrice: 50,
+    ItemPrice: (50).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2014,7 +2014,7 @@ export const allProductsData = [
     ItemName: "Nigiri Ocean - 14 Pcs",
     ItemIngredients:
       "14 Different Nigiris: Salmon Nigiri - 2Pcs, Salmon Nigiri with Orange - 2Pcs, Eel Nigiri - 2Pcs, Tuna Nigiri - 2Pcs, Fried Tuna Nigiri - 2Pcs, Fried Salmon Nigiri - 2Pcs, Kiwi Nigiri - 2Pcs",
-    ItemPrice: 40,
+    ItemPrice: (40).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2024,7 +2024,7 @@ export const allProductsData = [
     ItemName: "Foggy Albion - 26Pcs",
     ItemIngredients:
       "Sunny Philadelphia, Sebastian the Crab, Cucumber Maki Raki, Salmon Gunkan with Cream Cheese - 2Pcs",
-    ItemPrice: 30,
+    ItemPrice: (30).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2034,7 +2034,7 @@ export const allProductsData = [
     ItemName: "Stanley Kubrick - 24 Pcs",
     ItemIngredients:
       "Clockwork Orange Roll, Spicy Salmon Roll, Very Vegetarian Maki",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2044,7 +2044,7 @@ export const allProductsData = [
     ItemName: "Salmon Poke",
     ItemIngredients:
       "Salmon, Avocado, Rice, Cabbage, Carrots, Creen onions, Sesame.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2055,7 +2055,7 @@ export const allProductsData = [
     ItemName: "Veggie Poke",
     ItemIngredients:
       "Rice, Avocado, Cabage, Carrot, Ginger, Green Onion, Sesam.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2065,7 +2065,7 @@ export const allProductsData = [
     ItemName: "Mini Salmon Set - 22Pcs",
     ItemIngredients:
       "Double Salmon Roll,Californication, Salmon Nigiri - 2Pcs, Eel Nigiri - 2Pcs,Vulcan Gunkan - 2Pcs",
-    ItemPrice: 35,
+    ItemPrice: (35).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2075,7 +2075,7 @@ export const allProductsData = [
     ItemName: "The Bull of Ombos Set - 32 Pcs",
     ItemIngredients:
       "Double Salmon Roll, Sunny Philadelphia, Salmon Maki Raki, Cucumber Maki Raki.",
-    ItemPrice: 30,
+    ItemPrice: (30).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2085,7 +2085,7 @@ export const allProductsData = [
     ItemName: "Veggie Set 32Pcs",
     ItemIngredients:
       "Very Veggie Roll, Very Veggie Maki, Cucumber Maki Raki, Avocado Maki Raki.",
-    ItemPrice: 16,
+    ItemPrice: (16).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2095,7 +2095,7 @@ export const allProductsData = [
     ItemName: "Friendly Set 40Pcs",
     ItemIngredients:
       "Californication, Spicy Salmon Roll, Blissful Eel Roll, Sebastian the Crab Roll, Cucumber Maki Raki.",
-    ItemPrice: 30,
+    ItemPrice: (30).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2104,7 +2104,7 @@ export const allProductsData = [
     ItemImg: SunnyPhiladelphia,
     ItemName: "Sunny Philadelphia Roll 8Pcs",
     ItemIngredients: "Salmon, cream cheese, avocado, rice, sesame, nori.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2114,7 +2114,7 @@ export const allProductsData = [
     ItemName: "Hidden Dragon Roll 8Pcs",
     ItemIngredients:
       "Salmon, cream cheese, avocado, tobiko, rice, sesame, cucumber, nori.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2124,7 +2124,7 @@ export const allProductsData = [
     ItemName: "Double Salmon Roll 8Pcs",
     ItemIngredients:
       "Salmon, Cream Cheese, Avocado, Sesame, Extra Salmon Slice, Cucumber, Rice, nori.",
-    ItemPrice: 14,
+    ItemPrice: (14).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2134,7 +2134,7 @@ export const allProductsData = [
     ItemName: "The Hottest Taisho",
     ItemIngredients:
       "Salmon, Cream Cheese, Avocado, Cucumber, Rice - all comes with your chosen sauce.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2143,7 +2143,7 @@ export const allProductsData = [
     ItemImg: BurningTaisho,
     ItemName: "Burning Taisho",
     ItemIngredients: "Salmon, Avocado, Rice, Cucumber, Cream Cheese.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2153,7 +2153,7 @@ export const allProductsData = [
     ItemName: "Blissful Eel Roll 8Pcs",
     ItemIngredients:
       "Eel kinda blissful, Cream Cheese, Avocado, Tobico, Sesame, Rice, Nori.",
-    ItemPrice: 14,
+    ItemPrice: (14).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2163,7 +2163,7 @@ export const allProductsData = [
     ItemName: "Sebastian the Crab Roll 8Pcs",
     ItemIngredients:
       "Crab with Unique Sauce, Cream Cheese, Avocado, Dried Tuna Flakes, Sesame, Cucumber Rice, Nori.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2173,7 +2173,7 @@ export const allProductsData = [
     ItemName: "Double Salmon Roll 8Pcs",
     ItemIngredients:
       "Salmon, Cream Cheese, Avocado, Sesame, Extra Salmon Slice, Cucumber, Rice, Nori.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2182,7 +2182,7 @@ export const allProductsData = [
     ItemImg: ClockworkOrange,
     ItemName: "Clockwork Orange Roll 8Pcs",
     ItemIngredients: "Salmon, orange, cream cheese, salmon extra slice, nori.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2192,7 +2192,7 @@ export const allProductsData = [
     ItemName: "Kiwi Roll 8Pcs",
     ItemIngredients:
       "Salmon, Kiwi, Carrot, Cream Cheese, Tobico, Cucumber, Rice, Nori.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2201,7 +2201,7 @@ export const allProductsData = [
     ItemImg: Siamese,
     ItemName: "The Roll of Siamese",
     ItemIngredients: "Salmon, Cucumber, Carrot, Caviar, Rice.",
-    ItemPrice: 15,
+    ItemPrice: (15).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2210,7 +2210,7 @@ export const allProductsData = [
     ItemImg: SalmonMaki,
     ItemName: "Salmon Maki Raki 8Pcs",
     ItemIngredients: "Salmon, Cream Cheese, Rice, Nori.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2219,7 +2219,7 @@ export const allProductsData = [
     ItemImg: NigiriWithRoasted,
     ItemName: "Nigiri with Roasted Salmon 1Pc",
     ItemIngredients: "Roasted Salmon, Rice.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2228,7 +2228,7 @@ export const allProductsData = [
     ItemImg: NigiriWithSalmon,
     ItemName: "Nigiri with Salmon and Orange 1Pc",
     ItemIngredients: "Salmon, Orange, Rice.",
-    ItemPrice: 4,
+    ItemPrice: (4).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2237,7 +2237,7 @@ export const allProductsData = [
     ItemImg: NigiriWithEel,
     ItemName: "Nigiri with Eel 1Pc",
     ItemIngredients: "Eel, rice.",
-    ItemPrice: 6,
+    ItemPrice: (6).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2246,7 +2246,7 @@ export const allProductsData = [
     ItemImg: VulcanTobiko,
     ItemName: "Vulcan Tobiko",
     ItemIngredients: "Delicious Gunkan with Tobiko and Rice.",
-    ItemPrice: 4,
+    ItemPrice: (4).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2255,7 +2255,7 @@ export const allProductsData = [
     ItemImg: SalmonGunkan,
     ItemName: "Salmon Gunkan with Cream Cheese",
     ItemIngredients: "Perfect sushi rice, Nigiri prawns, Cream cheese, Wasabi.",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2264,7 +2264,7 @@ export const allProductsData = [
     ItemImg: VeryVegetarian,
     ItemName: "Very Vegetarian Maki 8Pcs",
     ItemIngredients: "Avocado, Cream Cheese, Cucumber, Rice, Nori.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2273,7 +2273,7 @@ export const allProductsData = [
     ItemImg: SushiOne,
     ItemName: "Avocado Maki Raki 8Pcs",
     ItemIngredients: "Avocado, Cream Cheese, Rice, Nori.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2282,7 +2282,7 @@ export const allProductsData = [
     ItemImg: CucumberMaki,
     ItemName: "Cucumber Maki Raki 8Pcs",
     ItemIngredients: "Cucumber, Sesame, Rice, Nori.",
-    ItemPrice: 4,
+    ItemPrice: (4).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2292,7 +2292,7 @@ export const allProductsData = [
     ItemName: "Hungry Set 64Pcs",
     ItemIngredients:
       "Californication,  Sunny Philadelphia Roll, Spicy Salmon Roll, Blissful Eel Roll, Sebastian the Crab Roll, Very Vegetarian Maki Raki, Cucumber Maki Raki,  Avocado Maki Raki.",
-    ItemPrice: 50,
+    ItemPrice: (50).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2302,7 +2302,7 @@ export const allProductsData = [
     ItemName: "Nigiri Ocean - 14 Pcs",
     ItemIngredients:
       "14 Different Nigiris: Salmon Nigiri - 2Pcs, Salmon Nigiri with Orange - 2Pcs, Eel Nigiri - 2Pcs, Tuna Nigiri - 2Pcs, Fried Tuna Nigiri - 2Pcs, Fried Salmon Nigiri - 2Pcs, Kiwi Nigiri - 2Pcs",
-    ItemPrice: 40,
+    ItemPrice: (40).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2312,7 +2312,7 @@ export const allProductsData = [
     ItemName: "Foggy Albion - 26Pcs",
     ItemIngredients:
       "Sunny Philadelphia, Sebastian the Crab, Cucumber Maki Raki, Salmon Gunkan with Cream Cheese - 2Pcs",
-    ItemPrice: 30,
+    ItemPrice: (30).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2322,7 +2322,7 @@ export const allProductsData = [
     ItemName: "Stanley Kubrick - 24 Pcs",
     ItemIngredients:
       "Clockwork Orange Roll, Spicy Salmon Roll, Very Vegetarian Maki",
-    ItemPrice: 11,
+    ItemPrice: (11).toFixed(2),
     Category: "Sushi",
     attributes: [],
   },
@@ -2330,7 +2330,7 @@ export const allProductsData = [
     id: "coca-cola-original-soda-pop",
     ItemImg: CocaCola,
     ItemName: "Coca-Cola Original Soda Pop",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2339,7 +2339,7 @@ export const allProductsData = [
     id: "mountain-dew-citrus-soda-pop",
     ItemImg: MountainDew,
     ItemName: "Mountain Dew Citrus Soda Pop",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2347,7 +2347,7 @@ export const allProductsData = [
     id: "pepsi-cola-soda-pop",
     ItemImg: PepsiCola,
     ItemName: "Pepsi Cola Soda Pop",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2355,7 +2355,7 @@ export const allProductsData = [
     id: "milos-famous-sweet-tea",
     ItemImg: Milo,
     ItemName: "Milo’s Famous Sweet Tea",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2363,7 +2363,7 @@ export const allProductsData = [
     id: "dr-pepper-soda",
     ItemImg: DrPepper,
     ItemName: "Dr Pepper Soda",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2371,7 +2371,7 @@ export const allProductsData = [
     id: "sprite-caffeine-free-lemon-lime-soda-pop",
     ItemImg: SpriteCaffeine,
     ItemName: "Sprite Caffeine-Free Lemon Lime Soda Pop",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2379,7 +2379,7 @@ export const allProductsData = [
     id: "great-value-sweet-brewed-iced-tea",
     ItemImg: GreatValueSweet,
     ItemName: "Great Value Sweet Brewed Iced Tea",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2387,7 +2387,7 @@ export const allProductsData = [
     id: "stok-cold-brew-coffee-black-iunsweetened",
     ItemImg: SToK,
     ItemName: "SToK Cold Brew Coffee, Black Unsweetened",
-    ItemPrice: 3,
+    ItemPrice: (3).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2395,7 +2395,7 @@ export const allProductsData = [
     id: "lipton-green-tea-citrus-iced-tea",
     ItemImg: Lipton,
     ItemName: "Lipton Green Tea Citrus Iced Tea",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2403,7 +2403,7 @@ export const allProductsData = [
     id: "canada-dry-ginger-ale-soda",
     ItemImg: CanadaDry,
     ItemName: "Canada Dry Ginger Ale Soda",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2411,7 +2411,7 @@ export const allProductsData = [
     id: "dr-pepper-zero-sugar-soda",
     ItemImg: DrPepperZero,
     ItemName: "Dr Pepper Zero Sugar Soda",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2419,7 +2419,7 @@ export const allProductsData = [
     id: "diet-dr-pepper-soda",
     ItemImg: DietDrPepper,
     ItemName: "Diet Dr Pepper Soda",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2427,7 +2427,7 @@ export const allProductsData = [
     id: "aquafina-purified-bottled-drinking-water",
     ItemImg: AquafinaPurified,
     ItemName: "Aquafina Purified Bottled Drinking Water",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2435,7 +2435,7 @@ export const allProductsData = [
     id: "pure-life-purified-water",
     ItemImg: PureLife,
     ItemName: "Pure Life Purified Water",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2443,7 +2443,7 @@ export const allProductsData = [
     id: "sams-cola-soda-pop",
     ItemImg: SamsCola,
     ItemName: "Sams Cola Soda Pop",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2451,7 +2451,7 @@ export const allProductsData = [
     id: "red-bull-energy-drink",
     ItemImg: RedBull,
     ItemName: "Red Bull Energy Drink",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2459,7 +2459,7 @@ export const allProductsData = [
     id: "a-w-caffeine-free-low-sodium-root-beer-soda-pop",
     ItemImg: Anw,
     ItemName: "A&W Caffeine-Free, Low Sodium Root Beer Soda Pop",
-    ItemPrice: 3,
+    ItemPrice: (3).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2467,7 +2467,7 @@ export const allProductsData = [
     id: "pepsi-soda-pop",
     ItemImg: PepsiSoda,
     ItemName: "Pepsi Soda Pop",
-    ItemPrice: 3,
+    ItemPrice: (3).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2475,7 +2475,7 @@ export const allProductsData = [
     id: "great-value-cream-soda-pop",
     ItemImg: GreatValue,
     ItemName: "Great Value Cream Soda Pop",
-    ItemPrice: 3,
+    ItemPrice: (3).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2483,7 +2483,7 @@ export const allProductsData = [
     id: "sunkist-orange-soda",
     ItemImg: Sunkist,
     ItemName: "Sunkist Orange Soda",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2491,7 +2491,7 @@ export const allProductsData = [
     id: "great-value-twist-up-lemon-lime-soda-pop",
     ItemImg: GreatValueTwist,
     ItemName: "Great Value Twist Up Lemon Lime Soda Pop",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2499,7 +2499,7 @@ export const allProductsData = [
     id: "fanta-orange-soda",
     ItemImg: FantaOrange,
     ItemName: "Fanta Orange Soda",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2507,7 +2507,7 @@ export const allProductsData = [
     id: "coca-cola-original-soda-pop-second",
     ItemImg: CocaCola,
     ItemName: "Coca-Cola Original Soda Pop",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2516,7 +2516,7 @@ export const allProductsData = [
     id: "mountain-dew-citrus-soda-pop-second",
     ItemImg: MountainDew,
     ItemName: "Mountain Dew Citrus Soda Pop",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2524,7 +2524,7 @@ export const allProductsData = [
     id: "pepsi-cola-soda-pop-second",
     ItemImg: PepsiCola,
     ItemName: "Pepsi Cola Soda Pop",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2532,7 +2532,7 @@ export const allProductsData = [
     id: "milos-famous-sweet-tea-second",
     ItemImg: Milo,
     ItemName: "Milo’s Famous Sweet Tea",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2540,7 +2540,7 @@ export const allProductsData = [
     id: "dr-pepper-soda-second",
     ItemImg: DrPepper,
     ItemName: "Dr Pepper Soda",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2548,7 +2548,7 @@ export const allProductsData = [
     id: "sprite-caffeine-free-lemon-lime-soda-pop-second",
     ItemImg: SpriteCaffeine,
     ItemName: "Sprite Caffeine-Free Lemon Lime Soda Pop",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2556,7 +2556,7 @@ export const allProductsData = [
     id: "great-value-sweet-brewed-iced-tea-second",
     ItemImg: GreatValueSweet,
     ItemName: "Great Value Sweet Brewed Iced Tea",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2564,7 +2564,7 @@ export const allProductsData = [
     id: "stok-cold-brew-coffee-black-iunsweetened-second",
     ItemImg: SToK,
     ItemName: "SToK Cold Brew Coffee, Black Unsweetened",
-    ItemPrice: 3,
+    ItemPrice: (3).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2572,7 +2572,7 @@ export const allProductsData = [
     id: "lipton-green-tea-citrus-iced-tea-second",
     ItemImg: Lipton,
     ItemName: "Lipton Green Tea Citrus Iced Tea",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2580,7 +2580,7 @@ export const allProductsData = [
     id: "canada-dry-ginger-ale-soda-second",
     ItemImg: CanadaDry,
     ItemName: "Canada Dry Ginger Ale Soda",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2588,7 +2588,7 @@ export const allProductsData = [
     id: "dr-pepper-zero-sugar-soda-second",
     ItemImg: DrPepperZero,
     ItemName: "Dr Pepper Zero Sugar Soda",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2596,7 +2596,7 @@ export const allProductsData = [
     id: "diet-dr-pepper-soda-second",
     ItemImg: DietDrPepper,
     ItemName: "Diet Dr Pepper Soda",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2604,7 +2604,7 @@ export const allProductsData = [
     id: "aquafina-purified-bottled-drinking-water-second",
     ItemImg: AquafinaPurified,
     ItemName: "Aquafina Purified Bottled Drinking Water",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2612,7 +2612,7 @@ export const allProductsData = [
     id: "pure-life-purified-water-second",
     ItemImg: PureLife,
     ItemName: "Pure Life Purified Water",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2620,7 +2620,7 @@ export const allProductsData = [
     id: "sams-cola-soda-pop-second",
     ItemImg: SamsCola,
     ItemName: "Sams Cola Soda Pop",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2628,7 +2628,7 @@ export const allProductsData = [
     id: "red-bull-energy-drink-second",
     ItemImg: RedBull,
     ItemName: "Red Bull Energy Drink",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2636,7 +2636,7 @@ export const allProductsData = [
     id: "a-w-caffeine-free-low-sodium-root-beer-soda-pop-second",
     ItemImg: Anw,
     ItemName: "A&W Caffeine-Free, Low Sodium Root Beer Soda Pop",
-    ItemPrice: 3,
+    ItemPrice: (3).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2644,7 +2644,7 @@ export const allProductsData = [
     id: "pepsi-soda-pop-second",
     ItemImg: PepsiSoda,
     ItemName: "Pepsi Soda Pop",
-    ItemPrice: 3,
+    ItemPrice: (3).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2652,7 +2652,7 @@ export const allProductsData = [
     id: "great-value-cream-soda-pop-second",
     ItemImg: GreatValue,
     ItemName: "Great Value Cream Soda Pop",
-    ItemPrice: 3,
+    ItemPrice: (3).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2660,7 +2660,7 @@ export const allProductsData = [
     id: "sunkist-orange-soda-second",
     ItemImg: Sunkist,
     ItemName: "Sunkist Orange Soda",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2668,7 +2668,7 @@ export const allProductsData = [
     id: "great-value-twist-up-lemon-lime-soda-pop-second",
     ItemImg: GreatValueTwist,
     ItemName: "Great Value Twist Up Lemon Lime Soda Pop",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2676,7 +2676,7 @@ export const allProductsData = [
     id: "fanta-orange-soda-second",
     ItemImg: FantaOrange,
     ItemName: "Fanta Orange Soda",
-    ItemPrice: 1,
+    ItemPrice: (1).toFixed(2),
     Category: "Drinks",
     attributes: [],
   },
@@ -2686,7 +2686,7 @@ export const allProductsData = [
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
       "Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2696,7 +2696,7 @@ export const allProductsData = [
     ItemImg: NigiriWithSalmon,
     ItemName: "Nigiri with Salmon and Orange 1Pc",
     ItemIngredients: "Salmon, Orange, Rice.",
-    ItemPrice: 4,
+    ItemPrice: (4).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2706,7 +2706,7 @@ export const allProductsData = [
     ItemName: "Pepperoni Pizza",
     ItemIngredients:
       "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2716,7 +2716,7 @@ export const allProductsData = [
     ItemName: "Meat Pizza",
     ItemIngredients:
       "Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2726,7 +2726,7 @@ export const allProductsData = [
     ItemName: "Margherita Pizza",
     ItemIngredients:
       "Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2736,7 +2736,7 @@ export const allProductsData = [
     ItemName: "Veggie Pizza",
     ItemIngredients:
       "Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2746,7 +2746,7 @@ export const allProductsData = [
     ItemName: "Sebastian the Crab Roll 8Pcs",
     ItemIngredients:
       "Crab with Unique Sauce, Cream Cheese, Avocado, Dried Tuna Flakes, Sesame, Cucumber Rice, Nori.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2756,7 +2756,7 @@ export const allProductsData = [
     ItemName: "Lamb Ragù",
     ItemIngredients:
       "Lamb shoulder, gnocchi, red wine, heavy cream, tomato paste.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2765,7 +2765,7 @@ export const allProductsData = [
     ItemImg: CheesePizza,
     ItemName: "Cheese Pizza",
     ItemIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2775,7 +2775,7 @@ export const allProductsData = [
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
       "Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2785,7 +2785,7 @@ export const allProductsData = [
     ItemImg: NigiriWithSalmon,
     ItemName: "Nigiri with Salmon and Orange 1Pc",
     ItemIngredients: "Salmon, Orange, Rice.",
-    ItemPrice: 4,
+    ItemPrice: (4).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2795,7 +2795,7 @@ export const allProductsData = [
     ItemName: "Pepperoni Pizza",
     ItemIngredients:
       "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
-    ItemPrice: 5,
+    ItemPrice: (5).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2805,7 +2805,7 @@ export const allProductsData = [
     ItemName: "Meat Pizza",
     ItemIngredients:
       "Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2815,7 +2815,7 @@ export const allProductsData = [
     ItemName: "Margherita Pizza",
     ItemIngredients:
       "Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.",
-    ItemPrice: 8,
+    ItemPrice: (8).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2825,7 +2825,7 @@ export const allProductsData = [
     ItemName: "Veggie Pizza",
     ItemIngredients:
       "Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.",
-    ItemPrice: 9,
+    ItemPrice: (9).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2835,7 +2835,7 @@ export const allProductsData = [
     ItemName: "Sebastian the Crab Roll 8Pcs",
     ItemIngredients:
       "Crab with Unique Sauce, Cream Cheese, Avocado, Dried Tuna Flakes, Sesame, Cucumber Rice, Nori.",
-    ItemPrice: 13,
+    ItemPrice: (13).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2845,7 +2845,7 @@ export const allProductsData = [
     ItemName: "Lamb Ragù",
     ItemIngredients:
       "Lamb shoulder, gnocchi, red wine, heavy cream, tomato paste.",
-    ItemPrice: 12,
+    ItemPrice: (12).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2854,7 +2854,7 @@ export const allProductsData = [
     ItemImg: CheesePizza,
     ItemName: "Cheese Pizza",
     ItemIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
-    ItemPrice: 2,
+    ItemPrice: (2).toFixed(2),
     Category: "Sale",
     attributes: [],
   },
@@ -2864,7 +2864,7 @@ export const allProductsData = [
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
       "Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.",
-    ItemPrice: 10,
+    ItemPrice: (10).toFixed(2),
     Category: "Sale",
     attributes: [],
   },

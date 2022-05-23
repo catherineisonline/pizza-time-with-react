@@ -4,15 +4,9 @@ export default class CartItem extends React.Component {
   constructor() {
     super();
     this.state = {
-      // existingAttributes: [],
       selectedAttributes: [],
     };
   }
-  // existingAttr  = async ()   => {
-  //    this.props.cartItem.attributes.items.map((item) => {
-  //     return this.setState({ existingAttributes: item.value });
-  //   });
-  // };
   userSelectedAttr() {
     this.props.cartItem.userSelectedAttributes.map((item) => {
       this.setState({ selectedAttributes: item.attributeValue });
@@ -79,4 +73,4 @@ export default class CartItem extends React.Component {
   }
 }
 
-// export default Cart;
+
