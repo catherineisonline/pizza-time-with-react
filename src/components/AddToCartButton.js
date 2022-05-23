@@ -7,16 +7,14 @@ export default class AddToCartButton extends React.Component {
       allAttributesAreSelected,
       selectedAttributes,
       handleAddProduct,
-      handleRemoveProduct,
-      className,
-      alertMessageMain,
+      successMsg,
     } = this.props;
     return (
       <div className="add-to-cart">
         <button
           onClick={() => {
             handleAddProduct(singleProduct, selectedAttributes);
-            // alertMessageMain();
+            successMsg();
           }}
           className={
             allAttributesAreSelected

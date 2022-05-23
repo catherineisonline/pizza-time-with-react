@@ -49,7 +49,10 @@
   .navigation-menu {
     display: flex;
   }
-  .burger-menu {
+  /* .burger-menu {
+    display: none;
+  } */
+  .burger-bars {
     display: none;
   }
   .main-nav {

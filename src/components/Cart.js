@@ -9,6 +9,7 @@ export default class Cart extends React.Component {
       selectedAttributes,
       handleAddProduct,
       handleRemoveProduct,
+      successMsg,
     } = this.props;
     document.title = "Cart | Pizza Time";
     return (
@@ -27,7 +28,7 @@ export default class Cart extends React.Component {
           <section className="cart-title-section">
             {cartItems.map((cartItem) => (
               <CartItem
-              // key={cartItem.index}
+                successMsg={successMsg}
                 cartItem={cartItem}
                 selectedAttributes={selectedAttributes}
                 handleAddProduct={handleAddProduct}

@@ -92,14 +92,32 @@ img {
   margin: 0 auto;
 }
 /* Header */
-.main-nav {
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--light-black);
-  padding: 1.5rem;
+
+header {
   height: 3rem;
   margin-top: 0;
-  position: relative;
+  background-color: var(--light-black);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 2rem;
+}
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* gap: 10rem; */
+  align-items: center;
+  width: 90%;
+  /* background-color: var(--light-black); */
+  /* padding: 1.5rem; */
+  /* height: 3rem;
+  margin-top: 0; */
+  /* position: relative; */
+  /* position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 2rem; */
 }
 /* Logo */
 .logo-styling {
@@ -108,6 +126,10 @@ img {
   width: 5rem;
   height: 3rem;
 }
+/* .logo-styling-test {
+  display: flex;
+  flex-direction: row;
+} */
 .logo {
   max-width: 70%;
   transition: all ease-in-out 0.2s;
@@ -169,16 +191,20 @@ img {
 }
 
 /* Burger Menu */
-.burger-menu {
+/* .burger-menu {
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
   font-size: 1.2rem;
   cursor: pointer;
-}
+  
+} */
 .burger-bars {
   width: 2rem;
+  cursor: pointer;
+  margin-right: 0;
+  /* position: relative; */
 }
 /* Header Info */
 .header-section {
@@ -235,8 +261,6 @@ li.alice-carousel__stage-item .__cloned {
 .header-section.slider-three {
   background-image: url("../images/sushi-images/sushi-3.jpeg");
 }
-
-
 
 .header-info {
   justify-content: center;
@@ -1043,7 +1067,7 @@ hr {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 300%;
+  top: 270%;
   left: 0;
   right: 0;
   transform: translate(0, -50%);
@@ -1077,4 +1101,25 @@ hr {
   cursor: not-allowed;
   opacity: 0.6;
   font-family: var(--poppins-font);
+}
+
+/* Success Msg */
+.success-msg {
+  display: none;
+}
+.success-msg.visible {
+  display: inline-block;
+  position: fixed;
+  top: 5%;
+  left: 3%;
+  background-color: rgba(219, 219, 219, 0.22);
+  backdrop-filter: blur(5px);
+  padding: 0.7rem;
+  border-radius: 10px;
+}
+.success-msg.visible p {
+  font-family: var(--font-raleway);
+  font-size: 1rem;
+  color: var(--c-text);
+  font-weight: 500;
 }

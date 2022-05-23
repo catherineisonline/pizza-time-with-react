@@ -284,6 +284,14 @@ export default class App extends React.Component {
       // localStorage.setItem("productsQuantity", JSON.stringify(0));
     }
   };
+
+  successMsg() {
+    const alertMessage = document.querySelector(".success-msg");
+    alertMessage.classList.add("visible");
+    setTimeout(() => {
+      alertMessage.classList.remove("visible");
+    }, 1000);
+  }
   componentDidMount() {
     this.getCategories();
     this.getAllProducts();
@@ -304,6 +312,7 @@ export default class App extends React.Component {
                 changeCategory={this.changeCategory}
                 handleAddProduct={this.handleAddProduct}
                 handleRemoveProduct={this.handleRemoveProduct}
+                successMsg={this.successMsg}
                 activeCategory={this.state.activeCategory}
               />
             }
@@ -316,6 +325,7 @@ export default class App extends React.Component {
                 cartItems={this.state.cartItems}
                 handleAddProduct={this.handleAddProduct}
                 handleRemoveProduct={this.handleRemoveProduct}
+                successMsg={this.successMsg}
               />
             }
           />

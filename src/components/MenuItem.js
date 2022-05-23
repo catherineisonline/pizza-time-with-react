@@ -69,7 +69,7 @@ export default class MenuItem extends React.Component {
   }
 
   render() {
-    const { singleProduct, handleAddProduct, handleRemoveProduct } = this.props;
+    const { singleProduct, handleAddProduct, handleRemoveProduct, successMsg } = this.props;
     return (
       <div className="pizza-item flex-container flex-column txt-white">
         <img src={singleProduct.ItemImg} alt="pizza"></img>
@@ -91,6 +91,7 @@ export default class MenuItem extends React.Component {
             </p>
           </section>
           <AddToCartButton
+          successMsg={successMsg}
             allAttributesAreSelected={this.state.allAttributesAreSelected}
             handleAddProduct={handleAddProduct}
             handleRemoveProduct={handleRemoveProduct}

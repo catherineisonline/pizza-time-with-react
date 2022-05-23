@@ -13,6 +13,7 @@ export default class MenuRoot extends React.Component {
       changeCategory,
       handleAddProduct,
       handleRemoveProduct,
+      successMsg
     } = this.props;
     document.title = `${activeCategory} | Pizza Time`;
     return (
@@ -29,6 +30,7 @@ export default class MenuRoot extends React.Component {
               singleProduct={singleProduct}
               handleAddProduct={handleAddProduct}
               handleRemoveProduct={handleRemoveProduct}
+              successMsg={successMsg}
             />
           ))}
           <ScrollButton />

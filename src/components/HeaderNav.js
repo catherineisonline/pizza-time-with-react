@@ -5,9 +5,9 @@ import burger from "../images/burger-menu.svg";
 import { NavLink } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import Cart from "../images/cart-icon.png";
+import SuccessMsg from "./SuccessMsg";
 
 const ResetLocation = () => window.scrollTo(0, 0);
-
 
 export default class NavBar extends React.Component {
   HideModal() {
@@ -27,11 +27,13 @@ export default class NavBar extends React.Component {
     hiddenMenu.classList.remove("active");
   }
   render() {
-    const {productsQuantity} = this.props;
+    const { productsQuantity } = this.props;
     return (
+      <header>
       <nav className="main-nav flex-container flex-row txt-center" id="test">
-    
+      {/* <div> */}
         <NavLink
+
           onClick={() => {
             ResetLocation();
             this.RemoveMenu();
@@ -39,11 +41,14 @@ export default class NavBar extends React.Component {
           to="/pizza-time-with-react"
           className="logo-styling flex-container flex-row txt-center txt-white"
         >
+        {/* <div   className="logo-styling-test"> */}
           <img className="logo" src={logo} alt="pizza time logo" />
           <p>
             Pizza <span>Time</span>
           </p>
+          {/* </div> */}
         </NavLink>
+        {/* </div> */}
         <ul className="navigation-menu flex-row pop-font">
           <li>
             <NavLink
@@ -173,17 +178,19 @@ export default class NavBar extends React.Component {
             </div>
           </li>
         </ul>
-        <div className="burger-menu flex-container flex-row txt-center pop-font txt-white">
+        {/* <div className="burger-menu flex-container flex-row txt-center pop-font txt-white"> */}
           <img
             className="burger-bars"
             src={burger}
             alt=""
             onClick={this.ShowHiddenMenu}
           ></img>
-        </div>
+        {/* </div> */}
+
+        <SuccessMsg />
       </nav>
+      </header>
+
     );
   }
 }
-
-
