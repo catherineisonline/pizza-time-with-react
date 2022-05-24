@@ -12,6 +12,7 @@ import "./assets/Blog.css";
 import "./assets/Cart.css";
 import "./assets/Register.css";
 import "./assets/PasswordRecovery.css";
+import "./assets/checkout.css";
 //Components
 import App from "./App.js";
 

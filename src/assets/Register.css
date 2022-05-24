@@ -1,4 +1,3 @@
-
 .register-main::before {
   content: "";
   height: 10rem;
@@ -120,12 +119,13 @@ input[type="radio" i] {
   appearance: none;
   outline: 1px solid var(--whitish-gray);
   border: 1px solid var(--whitish-gray);
-  padding: 0.5rem;
+  padding: 0.3rem;
   border-radius: 50%;
 }
+
 input[type="radio" i]:checked {
   background-color: var(--yellow);
-  outline: 1px solid var(--yellow);
+  outline: 1px solid var(--white);
   border: 1px solid var(--yellow);
 }
 
@@ -151,8 +151,8 @@ input[type="radio" i]:checked {
 }
 .register-section {
   /* text-align: center; */
- width: 90%;
-  width: 18rem; 
+  width: 90%;
+  width: 18rem;
   margin: 0 auto;
 }
 .terms-warning {
@@ -191,10 +191,9 @@ input[type="radio" i]:checked {
     width: 80%;
     margin-bottom: 5rem;
   }
-.register-main input {
+  .register-main input {
     width: -webkit-fill-available;
-
-}
+  }
   .name-section,
   .email-section,
   .password-section,
@@ -206,7 +205,6 @@ input[type="radio" i]:checked {
 }
 
 @media screen and (min-width: 1025px) {
-
   .register-main input[type="text"],
   .register-main input[type="password"],
   .register-main input::placeholder,

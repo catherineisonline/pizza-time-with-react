@@ -1,0 +1,25 @@
+.checkout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background-color: var(--light-black);
+  background-image: none;
+  color: var(--white);
+  font-family: var(--poppins-font);
+}
+.checkout h1 {
+  font-family: var(--poppins-font);
+  text-transform: uppercase;
+  margin: 0 auto;
+  font-size: 4rem;
+  padding: 2rem;
+}
+
+/* Hide Calendar Icon In Chrome */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}

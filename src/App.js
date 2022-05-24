@@ -377,7 +377,21 @@ export default class App extends React.Component {
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={
+              <Checkout
+                totalPayment={this.state.totalPayment}
+                cartItems={this.state.cartItems}
+                productsQuantity={this.state.productsQuantity}
+                handleAddProduct={this.handleAddProduct}
+                handleRemoveProduct={this.handleRemoveProduct}
+                successMsg={this.successMsg}
+                getTotalPrice={this.getTotalPrice}
+                taxes={this.state.taxes}
+              />
+            }
+          />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>
         <FooterNav />

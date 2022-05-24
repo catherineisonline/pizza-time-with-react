@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class CartItem extends React.Component {
+export default class CheckoutItem extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -9,7 +9,6 @@ export default class CartItem extends React.Component {
   }
   userSelectedAttr() {
     this.props.cartItem.userSelectedAttributes.map((item) => {
-      console.log(item.attributeValue)
       this.setState({ selectedAttributes: item.attributeValue });
     });
   }
@@ -21,11 +20,7 @@ export default class CartItem extends React.Component {
     const {
       cartItem,
       className,
-      successMsg,
-      handleAddProduct,
-      handleRemoveProduct,
     } = this.props;
-    // console.log(cartItem)
     return (
       <section className={className}>
         <img src={cartItem.ItemImg} alt="pizza"></img>
@@ -48,23 +43,7 @@ export default class CartItem extends React.Component {
 
           <section className="cart-item-interaction">
             <section className="cart-item-add-qty">
-              <button
-                onClick={() => {
-                  handleAddProduct(cartItem, this.state.selectedAttributes);
-                  successMsg();
-                }}
-              >
-                +
-              </button>
-
               <p>{cartItem.quantity}</p>
-              <button
-                onClick={() => {
-                  handleRemoveProduct(cartItem, this.state.selectedAttributes);
-                }}
-              >
-                -
-              </button>
             </section>
 
             <p className="price-num">
@@ -77,5 +56,3 @@ export default class CartItem extends React.Component {
     );
   }
 }
-
-
