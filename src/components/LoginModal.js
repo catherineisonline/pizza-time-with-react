@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/loginModal.css";
+import "../assets/LoginModal.css";
 import { Link } from "react-router-dom";
 
 export default class LoginModal extends React.Component {

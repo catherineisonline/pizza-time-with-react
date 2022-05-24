@@ -159,6 +159,40 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: 400;
   font-size: 1rem;
 }
+
+/* PROMOCODE */
+.promo-code {
+  height: 3rem;
+}
+.promo-code p {
+  cursor: pointer;
+  color: var(--white);
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  font-size: 1rem;
+  transition: all ease-in-out 0.2s;
+}
+.promo-code p:hover {
+  color: var(--yellow);
+  transition: all ease-in-out 0.2s;
+}
+
+.promo-code input {
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid var(--light-gray);
+  max-width: 80%;
+  width: 80%;
+  outline: none;
+}
+.promo-code input[type="text"] {
+  color: var(--whitish-gray);
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  font-size: 1rem;
+}
 /* CART TOTALS */
 .checkout-carttotals .cart-totals {
   display: flex;

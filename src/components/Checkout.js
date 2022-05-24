@@ -10,8 +10,10 @@ export default class Checkout extends React.Component {
     super(props);
     this.state = {
       takeAway: true,
+      promoCode: false,
     };
     this.toggleDelivery = this.toggleDelivery.bind(this);
+    this.togglePromocode = this.togglePromocode.bind(this);
   }
   toggleDelivery(e) {
     if (e.target.value === "takeaway") {
@@ -20,6 +22,9 @@ export default class Checkout extends React.Component {
     if (e.target.value === "delivery") {
       return this.setState({ takeAway: false });
     }
+  }
+  togglePromocode() {
+    this.setState({ promoCode: !this.state.promoCode });
   }
   render() {
     const {
@@ -146,8 +151,18 @@ export default class Checkout extends React.Component {
               <input className=" pop-font" type="passwod" placeholder="***" />
             </label>
           </section>
-          <CartTotals
 
+          <section className="promo-code">
+            <p onClick={this.togglePromocode}>I have a promo code!</p>
+            {this.state.promoCode === false ? null : (
+              <input
+                className=" pop-font"
+                type="text"
+                placeholder="enter the code"
+              />
+            )}
+          </section>
+          <CartTotals
             className="checkout-carttotals"
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
