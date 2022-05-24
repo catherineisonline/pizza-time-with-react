@@ -13,7 +13,7 @@ export default class MenuRoot extends React.Component {
       changeCategory,
       handleAddProduct,
       handleRemoveProduct,
-      successMsg
+      successMsg,
     } = this.props;
     document.title = `${activeCategory} | Pizza Time`;
     return (

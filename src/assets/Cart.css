@@ -43,6 +43,7 @@
   font-family: var(--poppins-font);
 }
 
+
 .back-to-menu {
   font-size: 1.3rem;
   text-transform: capitalize;
@@ -59,6 +60,9 @@
 }
 .cart-title-section p {
   color: white;
+}
+.cart-item-interaction .cart-item-price {
+  color: var(--yellow);
 }
 
 .cart-item {
@@ -111,11 +115,13 @@
   background-color: transparent;
   transition: all ease-in-out 0.3s;
 }
+
 .cart-item-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
+
 
 .cart-carttotals .cart-totals {
   display: flex;
@@ -185,6 +191,16 @@
   width: 100%;
   padding: 0.5rem;
   text-align: center;
+  transition: all ease-in-out 0.2s;
+}
+.cart-checkout-btn:hover {
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  transition: all ease-in-out 0.2s;
+}
+.cart-backtomenu-btn:hover {
+  transition: all ease-in-out 0.2s;
+  color: var(--yellow);
 }
 
 .cart-backtomenu-btn {

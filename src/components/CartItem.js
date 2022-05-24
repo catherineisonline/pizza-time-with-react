@@ -25,7 +25,7 @@ export default class CartItem extends React.Component {
       handleAddProduct,
       handleRemoveProduct,
     } = this.props;
-    console.log(cartItem);
+    // console.log(cartItem);
     return (
       <section className={className}>
         <img src={cartItem.ItemImg} alt="pizza"></img>
@@ -69,10 +69,7 @@ export default class CartItem extends React.Component {
               </button>
             </section>
 
-            <p className="price-num">
-              <span>$</span>
-              {cartItem.ItemPrice}
-            </p>
+            <p className="cart-item-price">${cartItem.ItemPrice}</p>
           </section>
         </section>
       </section>

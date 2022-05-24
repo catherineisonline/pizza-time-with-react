@@ -205,6 +205,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 100%;
   padding: 0.5rem;
   text-align: center;
+  transition: all ease-in-out 0.2s;
+}
+.checkout-payment-btn:hover {
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  transition: all ease-in-out 0.2s;
+}
+.checkout-backtomenu-btn:hover {
+  color: var(--yellow);
+  transition: all ease-in-out 0.2s;
 }
 
 .checkout-backtomenu-btn {
@@ -212,7 +222,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: none;
   font-size: 0.8rem;
 }
-
+.checkout-choose-payment label {
+  display: flex;
+  flex-direction: column;
+}
 @media screen and (min-width: 700px) {
   .checkout-content {
     width: 60%;
@@ -225,7 +238,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     row-gap: 2rem;
   }
   .checkout-choose-payment label {
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: space-between;
   }

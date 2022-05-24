@@ -1,13 +1,12 @@
-
-.blog-main::before {
+.blog::before {
+  content: "";
+  height: 2rem;
+}
+.blog::after {
   content: "";
   height: 10rem;
 }
-.blog-main::after {
-  content: "";
-  height: 10rem;
-}
-.blog-main {
+.blog {
   width: 100%;
   display: flex;
   flex-direction: column;

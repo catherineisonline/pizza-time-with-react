@@ -2,16 +2,16 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 // CSS
-import "./assets/App.css";
-import "./assets/Responsive.css";
+import "./assets/app.css";
+import "./assets/responsive.css";
 import "./assets/leaflet.css";
-import "./assets/Menu.css";
-import "./assets/Contact.css";
-import "./assets/About.css";
-import "./assets/Blog.css";
-import "./assets/Cart.css";
-import "./assets/Register.css";
-import "./assets/PasswordRecovery.css";
+import "./assets/menu.css";
+import "./assets/contact.css";
+import "./assets/about.css";
+import "./assets/blog.css";
+import "./assets/cart.css";
+import "./assets/register.css";
+import "./assets/passwordRecovery.css";
 import "./assets/checkout.css";
 //Components
 import App from "./App.js";

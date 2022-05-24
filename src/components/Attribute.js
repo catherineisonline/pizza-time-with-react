@@ -11,9 +11,10 @@ export default class Attribute extends React.Component {
     const { attribute, handleSelectedAttributes, className } = this.props;
     return (
       <ul className={className}>
-        {attribute?.items?.map((item, index) => {
+        {attribute?.items?.map((item) => {
           return (
             <li
+            key={item.id}
               onClick={() => {
                 this.setState({
                   selectedAttribute: item.value,
