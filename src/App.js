@@ -133,18 +133,25 @@ export default class App extends React.Component {
   };
   MatchingAttributes = (userSelectedAttributes, targetProduct) => {
     const attributesMatch = (groupOne, groupTwo) => {
-      return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
+console.log(groupOne)
+      // return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
+
     };
-    // console.log(userSelectedAttributes);
-    let truthyValuesCounter = 0;
+   
+      let truthyValuesCounter = 0;
     let i = 0;
     while (i < userSelectedAttributes.length) {
       if (
         attributesMatch(
-          userSelectedAttributes[i],
-          targetProduct?.userSelectedAttributes[i]
+          // userSelectedAttributes[i],
+          // targetProduct?.userSelectedAttributes[i]
+          userSelectedAttributes,
+          targetProduct?.userSelectedAttributes
         )
-      ) {
+      )
+   
+      {
+        console.log(userSelectedAttributes);
         truthyValuesCounter += 1;
       }
       i += 1;
@@ -224,6 +231,7 @@ export default class App extends React.Component {
         },
       ];
     }
+ 
     this.setState({ cartItems: updatedProductList });
 
     //save to local storage

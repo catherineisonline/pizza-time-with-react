@@ -9,11 +9,12 @@ export default class CartItem extends React.Component {
   }
   userSelectedAttr() {
     this.props.cartItem.userSelectedAttributes.map((item) => {
-      return this.setState({ selectedAttributes: item.attributeValue });
+      // console.log(item.attributeValue)
+      this.setState({ selectedAttributes: item.attributeValue });
     });
   }
   componentDidMount() {
-    this.userSelectedAttr();
+    // this.userSelectedAttr();
   }
 
   render() {
@@ -24,6 +25,7 @@ export default class CartItem extends React.Component {
       handleAddProduct,
       handleRemoveProduct,
     } = this.props;
+    console.log(cartItem);
     return (
       <section className={className}>
         <img src={cartItem.ItemImg} alt="pizza"></img>
@@ -35,7 +37,9 @@ export default class CartItem extends React.Component {
               ) : (
                 <h3>
                   {cartItem.ItemName},{" "}
-                  <span>{this.state.selectedAttributes}</span>
+                  {cartItem.userSelectedAttributes.map((i) => {
+                    return <span>{i.attributeValue}</span>;
+                  })}
                 </h3>
               )}
             </section>

@@ -32,6 +32,7 @@ export default class Cart extends React.Component {
             <section className="cart-title-section">
               {cartItems.map((cartItem) => (
                 <CartItem
+                key={cartItem.index}
                   successMsg={successMsg}
                   cartItem={cartItem}
                   selectedAttributes={selectedAttributes}

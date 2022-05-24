@@ -40,18 +40,16 @@ export default class Checkout extends React.Component {
           <section className="checkout-summary">
             <h2>Summary</h2>
             <section className="checkout-cart-items">
-
-         
-            {cartItems.map((cartItem) => (
-              <CheckoutItem
-                successMsg={successMsg}
-                cartItem={cartItem}
-                selectedAttributes={selectedAttributes}
-                handleAddProduct={handleAddProduct}
-                handleRemoveProduct={handleRemoveProduct}
-                className="checkout-item"
-              />
-            ))}
+              {cartItems.map((cartItem) => (
+                <CheckoutItem
+                  successMsg={successMsg}
+                  cartItem={cartItem}
+                  selectedAttributes={selectedAttributes}
+                  handleAddProduct={handleAddProduct}
+                  handleRemoveProduct={handleRemoveProduct}
+                  className="checkout-item"
+                />
+              ))}
             </section>
           </section>
           <section className="checkout-personal-information">
@@ -144,11 +142,7 @@ export default class Checkout extends React.Component {
             </label>
             <label>
               Card CVV
-              <input
-                className=" pop-font"
-                type="passwod"
-                placeholder="***"
-              />
+              <input className=" pop-font" type="passwod" placeholder="***" />
             </label>
           </section>
           <CartTotals
