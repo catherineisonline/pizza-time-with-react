@@ -31,6 +31,7 @@ export default class Checkout extends React.Component {
       productsQuantity,
       totalPayment,
       taxes,
+      ResetLocation,
     } = this.props;
     document.title = "Checkout | Pizza Time";
     return (
@@ -146,10 +147,12 @@ export default class Checkout extends React.Component {
             </label>
           </section>
           <CartTotals
+
             className="checkout-carttotals"
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
             taxes={taxes}
+            ResetLocation={ResetLocation}
           />
         </section>
       </main>

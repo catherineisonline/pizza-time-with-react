@@ -14,6 +14,7 @@ export default class Cart extends React.Component {
       productsQuantity,
       totalPayment,
       taxes,
+      ResetLocation
     } = this.props;
     document.title = "Cart | Pizza Time";
     return (
@@ -48,6 +49,7 @@ export default class Cart extends React.Component {
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
             taxes={taxes}
+            ResetLocation={ResetLocation}
           />
         </article>
 

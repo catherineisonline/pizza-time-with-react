@@ -6,10 +6,10 @@ import ApplePay from "../images/payment-methods/applepay-icon.svg";
 import GooglePay from "../images/payment-methods/googlepay-icon.svg";
 
 import { NavLink } from "react-router-dom";
-const ResetLocation = () => window.scrollTo(0, 0);
 
-export default class FooterNav extends React.Component {
+export default class Footer extends React.Component {
   render() {
+    const { ResetLocation } = this.props;
     return (
       <footer className=" flex-container flex-column txt-center txt-white pop-font">
         <ul className="footer-menu  flex-container flex-column">

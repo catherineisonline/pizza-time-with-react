@@ -68,11 +68,20 @@ export default class MenuItem extends React.Component {
   }
 
   render() {
-    const { singleProduct, handleAddProduct, handleRemoveProduct, successMsg } =
-      this.props;
+    const {
+      singleProduct,
+      handleAddProduct,
+      handleRemoveProduct,
+      successMsg,
+      ResetLocation,
+    } = this.props;
     return (
       <div className="menu-item flex-container flex-column txt-white">
-        <NavLink to={`/${singleProduct.id}`} className="menu-item-link">
+        <NavLink
+          to={`/${singleProduct.id}`}
+          className="menu-item-link"
+          onClick={ResetLocation}
+        >
           <img
             src={singleProduct.ItemImg}
             alt={`${singleProduct.ItemName}`}

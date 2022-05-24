@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 //Components
-import HeaderNav from "./components/HeaderNav.js";
-import FooterNav from "./components/FooterNav.js";
+import Header from "./components/Header.js";
+import Footer from "./components/Footer.js";
 import Menu from "./components/Menu";
 import RootSection from "./components/RootSection";
 import Contact from "./components/Contact";
@@ -133,12 +133,10 @@ export default class App extends React.Component {
   };
   MatchingAttributes = (userSelectedAttributes, targetProduct) => {
     const attributesMatch = (groupOne, groupTwo) => {
-
       // return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
-
     };
-   
-      let truthyValuesCounter = 0;
+
+    let truthyValuesCounter = 0;
     // let i = 0;
     // while (i < userSelectedAttributes.length) {
     //   if (
@@ -149,7 +147,7 @@ export default class App extends React.Component {
     //       targetProduct?.userSelectedAttributes
     //     )
     //   )
-   
+
     //   {
     //     console.log(userSelectedAttributes);
     //     truthyValuesCounter += 1;
@@ -231,7 +229,7 @@ export default class App extends React.Component {
         },
       ];
     }
- 
+
     this.setState({ cartItems: updatedProductList });
 
     //save to local storage
@@ -320,6 +318,9 @@ export default class App extends React.Component {
       alertMessage.classList.remove("visible");
     }, 1000);
   }
+
+  ResetLocation = () => window.scrollTo(0, 0);
+
   componentDidMount() {
     this.getCategories();
     this.getAllProducts();
@@ -338,9 +339,15 @@ export default class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <HeaderNav productsQuantity={this.state.productsQuantity} />
+        <Header
+          productsQuantity={this.state.productsQuantity}
+          ResetLocation={this.ResetLocation}
+        />
         <Routes>
-          <Route path="/pizza-time-with-react" element={<RootSection />} />
+          <Route
+            path="/pizza-time-with-react"
+            element={<RootSection ResetLocation={this.ResetLocation} />}
+          />
           <Route
             path="/menu"
             element={
@@ -351,6 +358,7 @@ export default class App extends React.Component {
                 handleAddProduct={this.handleAddProduct}
                 handleRemoveProduct={this.handleRemoveProduct}
                 successMsg={this.successMsg}
+                ResetLocation={this.ResetLocation}
                 activeCategory={this.state.activeCategory}
               />
             }
@@ -368,6 +376,7 @@ export default class App extends React.Component {
                 successMsg={this.successMsg}
                 getTotalPrice={this.getTotalPrice}
                 taxes={this.state.taxes}
+                ResetLocation={this.ResetLocation}
               />
             }
           />
@@ -397,12 +406,13 @@ export default class App extends React.Component {
                 successMsg={this.successMsg}
                 getTotalPrice={this.getTotalPrice}
                 taxes={this.state.taxes}
+                ResetLocation={this.ResetLocation}
               />
             }
           />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>
-        <FooterNav />
+        <Footer ResetLocation={this.ResetLocation} />
       </BrowserRouter>
     );
   }

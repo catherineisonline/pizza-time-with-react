@@ -14,11 +14,13 @@ export default class MenuRoot extends React.Component {
       handleAddProduct,
       handleRemoveProduct,
       successMsg,
+      ResetLocation
     } = this.props;
     document.title = `${activeCategory} | Pizza Time`;
     return (
       <main className="menu-main">
         <MenuCategories
+        ResetLocation={ResetLocation}
           activeCategory={activeCategory}
           allCategories={allCategories}
           changeCategory={changeCategory}
@@ -31,6 +33,7 @@ export default class MenuRoot extends React.Component {
               handleAddProduct={handleAddProduct}
               handleRemoveProduct={handleRemoveProduct}
               successMsg={successMsg}
+              ResetLocation={ResetLocation}
             />
           ))}
           <ScrollButton />

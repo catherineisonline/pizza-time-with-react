@@ -2,12 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import SearchIcon from "../images/search-icon.png";
 
-const ResetLocation = () => window.scrollTo(0, 0);
-
 export default class MenuCategories extends React.Component {
-  ResetLocation = () => window.scrollTo(0, 0);
   render() {
-    const { allCategories, changeCategory } = this.props;
+    const { allCategories, changeCategory,ResetLocation } = this.props;
     return (
       <>
         <article className="side-menu">

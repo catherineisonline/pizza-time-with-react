@@ -5,7 +5,8 @@ import CheckoutBtn from "./CheckoutBtn";
 
 export default class CartTotals extends React.Component {
   render() {
-    const { totalPayment, productsQuantity, taxes, className } = this.props;
+    const { totalPayment, productsQuantity, taxes, className, ResetLocation } =
+      this.props;
     return (
       <section className={className}>
         {productsQuantity === 0 ? null : (
@@ -27,13 +28,25 @@ export default class CartTotals extends React.Component {
             </section>
             {className === "cart-carttotals" ? (
               <section className="cart-interaction-btns">
-                <CheckoutBtn className="cart-checkout-btn"/>
-                <BacktoMenu className="cart-backtomenu-btn"/>
+                <CheckoutBtn
+                  className="cart-checkout-btn"
+                  ResetLocation={ResetLocation}
+                />
+                <BacktoMenu
+                  className="cart-backtomenu-btn"
+                  ResetLocation={ResetLocation}
+                />
               </section>
             ) : (
               <section className="checkout-interaction-btns">
-                <PaymentBtn className="checkout-payment-btn"/>
-                <BacktoMenu className="checkout-backtomenu-btn"/>
+                <PaymentBtn
+                  className="checkout-payment-btn"
+                  ResetLocation={ResetLocation}
+                />
+                <BacktoMenu
+                  className="checkout-backtomenu-btn"
+                  ResetLocation={ResetLocation}
+                />
               </section>
             )}
           </section>

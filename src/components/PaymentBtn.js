@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 export default class PaymentBtn extends React.Component {
   render() {
-    const {className } = this.props;
+    const {className, ResetLocation } = this.props;
     return (
       <>
-        <Link to="/payment" className={className}>
+        <Link to="/payment" className={className} onClick={ResetLocation}>
           Proceed to payment
         </Link>
       </>

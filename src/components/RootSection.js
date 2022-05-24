@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./Hero";
 import { Link } from "react-router-dom";
 import ScrollButton from "./ScrollBtn";
 // Images for Section One and Eleven
@@ -40,8 +40,6 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const position = [37.0902, -93.7129];
-//Reset Location
-const ResetLocation = () => window.scrollTo(0, 0);
 
 //Section One
 class SectionOne extends React.Component {
@@ -216,6 +214,7 @@ class SectionThree extends React.Component {
 
 class SectionFour extends React.Component {
   render() {
+    const { ResetLocation } = this.props;
     return (
       <article className="section-4 flex-container flex-column">
         <section className="section-4-info txt-center">
@@ -656,6 +655,7 @@ class SectionEight extends React.Component {
 
 class SectionNine extends React.Component {
   render() {
+    const { ResetLocation } = this.props;
     return (
       <article className="section-9 flex-container flex-column">
         <h2 className="txt-center pop-font txt-white">Recent from blog</h2>

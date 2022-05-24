@@ -11,6 +11,7 @@ export default class LoginModal extends React.Component {
     const hiddenMenu = document.querySelector(".menu");
     hiddenMenu.classList.remove("active");
   }
+
   render() {
     return (
       <article className="modal">

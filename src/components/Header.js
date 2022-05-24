@@ -1,81 +1,186 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
 
-const items = [
-  //Section 1
-  <section className="header-section slider-one">
-    <section className="header-info flex-container flex-column txt-center pop-font txt-white">
-      <span>Welcome</span>
-      <h1 className="txt-white">try something amazing</h1>
-      <p className="txt-white">
-        Ordering your fave Pizza is quick and easy with our app or on our
-        website.
-      </p>
-      <div className="header-btns flex-container flex-row">
-        <Link className="btn-link" to="/blog">
-          Read Blog
-        </Link>
-        <Link className="btn-link txt-white " to="/menu">
-          View Menu
-        </Link>
-      </div>
-    </section>
-  </section>,
-  //Section 2
-  <section className="header-section slider-two">
-    <section className="header-info flex-container flex-column txt-center pop-font txt-white">
-      <span>Delicious</span>
-      <h1 className="txt-white">Pizza, Sushi & Pasta</h1>
-      <p className="txt-white">
-        We are be using simple, fresh ingredients and transforming them into
-        sophisticated and elegant meals.
-      </p>
-      <div className="header-btns flex-container flex-row">
-        <Link className="btn-link" to="/blog">
-          Read Blog
-        </Link>
-        <Link className="btn-link txt-white " to="/menu">
-          View Menu
-        </Link>
-      </div>
-    </section>
-  </section>,
-  //Section 3
-  <section className="header-section slider-three">
-    <section className="header-info flex-container flex-column txt-center pop-font txt-white">
-      <span>Healthy</span>
-      <h1 className="txt-white">Sushi Dreams</h1>
-      <p className="txt-white">
-        Craving a California roll? Fancy a fine dining Japanese feast?
-        Fortunately for you, we have everything you need.
-      </p>
-      <div className="header-btns flex-container flex-row">
-        <Link className="btn-link" to="/blog">
-          Read Blog
-        </Link>
-        <Link className="btn-link txt-white " to="/menu">
-          View Menu
-        </Link>
-      </div>
-    </section>
-  </section>,
-];
+import logo from "../images/logo.png";
+import burger from "../images/burger-menu.svg";
+import { NavLink } from "react-router-dom";
+import LoginModal from "./LoginModal";
+import Cart from "../images/cart-icon.png";
+import SuccessMsg from "./SuccessMsg";
+
 
 export default class Header extends React.Component {
+  HideModal() {
+    const hiddenModal = document.querySelector(".modal");
+    hiddenModal.classList.remove("active-modal");
+  }
+  ShowModal() {
+    const hiddenModal = document.querySelector(".modal");
+    hiddenModal.classList.toggle("active-modal");
+  }
+  ShowHiddenMenu() {
+    const hiddenMenu = document.querySelector(".navigation-menu");
+    hiddenMenu.classList.toggle("active");
+  }
+  RemoveMenu() {
+    const hiddenMenu = document.querySelector(".navigation-menu");
+    hiddenMenu.classList.remove("active");
+  }
   render() {
+    const { productsQuantity, ResetLocation } = this.props;
     return (
-      <>
-        <AliceCarousel
-          items={items}
-          autoPlay
-          infinite
-          autoPlayInterval="3000"
-          autoPlayStrategy="none"
-          disableButtonsControls
-        />
-      </>
+      <header>
+        <nav className="main-nav flex-container flex-row txt-center">
+          <NavLink
+            onClick={() => {
+              ResetLocation();
+              this.RemoveMenu();
+            }}
+            to="/pizza-time-with-react"
+            className="logo-styling flex-container flex-row txt-center txt-white"
+          >
+            <img className="logo" src={logo} alt="pizza time logo" />
+            <p>
+              Pizza <span>Time</span>
+            </p>
+          </NavLink>
+          <ul className="navigation-menu flex-row pop-font">
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/pizza-time-with-react"
+              >
+                <>Home</>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/menu"
+              >
+                <>Menu</>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/blog"
+              >
+                <>Blog</>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/about"
+              >
+                <>About</>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={() => {
+                  ResetLocation();
+                  this.RemoveMenu();
+                }}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        textDecoration: "none",
+                        color: "#ff6240",
+                      }
+                    : {}
+                }
+                className="txt-white"
+                to="/contact"
+              >
+                <>Contact</>
+              </NavLink>
+            </li>
+            <li>
+              <div className="login-and-cart">
+                <LoginModal />
+                <div
+                  className="login-btn txt-white"
+                  onClick={() => {
+                    ResetLocation();
+                    this.ShowModal();
+                  }}
+                >
+                  <>Log In</>
+                </div>
+                <NavLink
+                  className="cart-btn txt-white"
+                  to="/cart"
+                  onClick={() => {
+                    ResetLocation();
+                    this.RemoveMenu();
+                  }}
+                >
+                  <img src={Cart} alt="" />
+                  <>Cart</>
+                  <p>({productsQuantity})</p>
+                </NavLink>
+              </div>
+            </li>
+          </ul>
+          <img
+            className="burger-bars"
+            src={burger}
+            alt=""
+            onClick={this.ShowHiddenMenu}
+          ></img>
+        </nav>
+        <SuccessMsg />
+      </header>
     );
   }
 }
