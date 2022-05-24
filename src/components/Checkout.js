@@ -1,4 +1,8 @@
 import React from "react";
+//ICons
+import { FaShippingFast } from "react-icons/fa";
+import { RiShoppingBagLine } from "react-icons/ri";
+
 import CheckoutItem from "./CheckoutItem";
 import CartTotals from "./CartTotals";
 export default class Checkout extends React.Component {
@@ -32,9 +36,12 @@ export default class Checkout extends React.Component {
     return (
       <main className="checkout">
         <h1>Checkout</h1>
-        <section>
-          <section>
+        <section className="checkout-content">
+          <section className="checkout-summary">
             <h2>Summary</h2>
+            <section className="checkout-cart-items">
+
+         
             {cartItems.map((cartItem) => (
               <CheckoutItem
                 successMsg={successMsg}
@@ -45,9 +52,10 @@ export default class Checkout extends React.Component {
                 className="checkout-item"
               />
             ))}
+            </section>
           </section>
-          <section>
-            <h3>Personal Information</h3>
+          <section className="checkout-personal-information">
+            <h2>Personal Information</h2>
             <form>
               <div className="contact-form-item-cpage">
                 <input
@@ -69,10 +77,11 @@ export default class Checkout extends React.Component {
               </div>
             </form>
           </section>
-          <section>
-            <h3>Choose delivery</h3>
+          <section className="checkout-choose-delivery">
+            <h2>Choose delivery</h2>
             <form>
               <label htmlFor="takeaway">
+                <RiShoppingBagLine />
                 Takeaway
                 <input
                   onClick={this.toggleDelivery}
@@ -85,6 +94,7 @@ export default class Checkout extends React.Component {
               </label>
 
               <label htmlFor="delivery">
+                <FaShippingFast />
                 Delivery
                 <input
                   onClick={this.toggleDelivery}
@@ -97,8 +107,8 @@ export default class Checkout extends React.Component {
               </label>
             </form>
             {this.state.takeAway === true ? null : (
-              <section>
-                <h3>Address</h3>
+              <section className="delivery">
+                <h2>Address</h2>
                 <form>
                   <div className="contact-form-item-cpage">
                     <input
@@ -114,12 +124,12 @@ export default class Checkout extends React.Component {
             )}
           </section>
 
-          <section>
-            <h3>Payment</h3>
+          <section className="checkout-choose-payment">
+            <h2>Payment</h2>
             <label>
               Card Number
               <input
-                className="fullname-input-cpage pop-font"
+                className=" pop-font"
                 type="text"
                 placeholder="0000-0000-0000-0000"
               />
@@ -127,21 +137,22 @@ export default class Checkout extends React.Component {
             <label>
               Expiration Date
               <input
-                className="fullname-input-cpage pop-font"
+                className=" pop-font"
                 type="date"
                 placeholder="Expiration Date"
               />
             </label>
             <label>
-              CVV
+              Card CVV
               <input
-                className="fullname-input-cpage pop-font"
+                className=" pop-font"
                 type="passwod"
                 placeholder="***"
               />
             </label>
           </section>
           <CartTotals
+            className="checkout-carttotals"
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
             taxes={taxes}

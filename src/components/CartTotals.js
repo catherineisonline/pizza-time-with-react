@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import PaymentBtn from "./PaymentBtn";
+import BacktoMenu from "./BacktoMenu";
+import CheckoutBtn from "./CheckoutBtn";
 
 export default class CartTotals extends React.Component {
   render() {
-    const { totalPayment, productsQuantity, taxes } = this.props;
+    const { totalPayment, productsQuantity, taxes, className } = this.props;
     return (
-      <>
+      <section className={className}>
         {productsQuantity === 0 ? null : (
           <section className="cart-totals">
             <section className="totals-content">
@@ -23,18 +25,20 @@ export default class CartTotals extends React.Component {
                 <p>$ {(totalPayment / 2).toFixed(2)}</p>
               </section>
             </section>
-
-            <section className="totals-btns">
-              <Link to="/checkout" className="order-btn">
-                Checkout
-              </Link>
-              <Link to="/menu" className="order-btn">
-                Back to menu
-              </Link>
-            </section>
+            {className === "cart-carttotals" ? (
+              <section className="cart-interaction-btns">
+                <CheckoutBtn className="cart-checkout-btn"/>
+                <BacktoMenu className="cart-backtomenu-btn"/>
+              </section>
+            ) : (
+              <section className="checkout-interaction-btns">
+                <PaymentBtn className="checkout-payment-btn"/>
+                <BacktoMenu className="checkout-backtomenu-btn"/>
+              </section>
+            )}
           </section>
         )}
-      </>
+      </section>
     );
   }
 }

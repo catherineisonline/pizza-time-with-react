@@ -43,6 +43,7 @@ export default class Cart extends React.Component {
             </section>
           )}
           <CartTotals
+          className="cart-carttotals"
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
             taxes={taxes}
