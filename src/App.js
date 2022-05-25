@@ -23,6 +23,7 @@ export default class App extends React.Component {
       allCategories: [],
       activeCategory: "Menu",
       cartItems: [],
+      clearedCart: false,
       allProducts: [],
       productsQuantity: 0,
       totalPayment: 0,
@@ -32,6 +33,7 @@ export default class App extends React.Component {
     this.changeCategory = this.changeCategory.bind(this);
     this.handleAddProduct = this.handleAddProduct.bind(this);
     this.handleRemoveProduct = this.handleRemoveProduct.bind(this);
+    this.clearCart = this.clearCart.bind(this);
   }
 
   // GET DATA
@@ -295,6 +297,11 @@ export default class App extends React.Component {
     }
   };
 
+  clearCart() {
+    this.setState({ cartItems: [] });
+    this.setState({ clearedCart: true });
+  }
+
   getTotalPrice = (cartItems) => {
     let totalPayment = 0;
     cartItems.map((item) => {
@@ -329,9 +336,12 @@ export default class App extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { cartItems } = this.state;
+    const { cartItems, clearedCart } = this.state;
     if (cartItems !== nextState.cartItems) {
       this.getTotalPrice(nextState.cartItems);
+    }
+    if (clearedCart !== nextState.clearedCart) {
+      this.clearCart();
     }
 
     return true;
@@ -377,6 +387,8 @@ export default class App extends React.Component {
                 getTotalPrice={this.getTotalPrice}
                 taxes={this.state.taxes}
                 ResetLocation={this.ResetLocation}
+                clearCart={this.clearCart}
+                clearedCart={this.state.clearedCart}
               />
             }
           />

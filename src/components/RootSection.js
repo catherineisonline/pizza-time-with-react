@@ -345,6 +345,7 @@ class SectionFour extends React.Component {
 
 class SectionFive extends React.Component {
   render() {
+    const { ResetLocation } = this.props;
     return (
       <article className="section-5 flex-container ">
         <h2 className="txt-center pop-font txt-white">Menu Pricing</h2>
@@ -356,6 +357,7 @@ class SectionFive extends React.Component {
         <section className="pricing-grid flex-container flex-column">
           {/* Pizza 1 */}
           <Link
+            onClick={ResetLocation}
             to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
@@ -375,6 +377,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 2 */}
           <Link
+            onClick={ResetLocation}
             to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
@@ -394,6 +397,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 3 */}
           <Link
+            onClick={ResetLocation}
             to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
@@ -417,6 +421,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 4 */}
           <Link
+            onClick={ResetLocation}
             to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
@@ -437,6 +442,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 5 */}
           <Link
+            onClick={ResetLocation}
             to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
@@ -461,6 +467,7 @@ class SectionFive extends React.Component {
           </Link>
           {/* Pizza 6 */}
           <Link
+            onClick={ResetLocation}
             to="/menu"
             className="pricing-grid-item flex-container flex-row"
           >
@@ -920,6 +927,7 @@ class RootSection extends React.Component {
     window.scrollTo(0, 0);
   }
   render() {
+    const { ResetLocation } = this.props;
     document.title = "Pizza Time";
     return (
       <>
@@ -927,13 +935,13 @@ class RootSection extends React.Component {
         <SectionOne />
         <SectionTwo />
         <SectionThree />
-        <SectionFour />
-        <SectionFive />
+        <SectionFour ResetLocation={ResetLocation} />
+        <SectionFive ResetLocation={ResetLocation} />
         <SectionSix />
         <SectionSeven />
         <SectionEight />
         <SectionEleven />
-        <SectionNine />
+        <SectionNine ResetLocation={ResetLocation} />
         <SectionTen />
         <ScrollButton />
       </>

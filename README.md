@@ -82,7 +82,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [x] Amount of unique items (if the same item is added several, it shouldn't repeat)
 - [x] Disable ability to change item attributes
 - [x] Ability to add/remove items
-- [ ] Ability to remove all items
+- [x] Ability to remove all items
 - [x] Total amount of items
 - [x] Total price
 - [x] Tax amount
@@ -91,7 +91,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 #### Order page
 
 - [x] Choice between order and takeaway
-- [ ] Promo code input
+- [x] Promo code input
 
 #### Blog
 
@@ -222,6 +222,3 @@ Now I have a fully functional menu that enables the customer to add products to 
 - <a href="https://tinypng.com/">TinyPNG</a> - smart lossy compression techniques to reduce the file size of your WEBP, JPEG and PNG files.
 - <a href="https://www.npmjs.com/package/react-lazy-load-image-component">React Lazy Load Image Component</a> - React Component to lazy load images and other components/elements.
 - <a href="https://react-icons.github.io/react-icons">React Icons</a> - Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
-
-
-
