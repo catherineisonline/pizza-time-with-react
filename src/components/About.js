@@ -7,10 +7,10 @@ import ImgTwo from "../images/about-us/img-2.jpeg";
 import ImgThree from "../images/about-us/img-3.jpeg";
 import OfficeOne from "../images/about-us/office-1.jpeg";
 import OfficeTwo from "../images/about-us/office-2.jpeg";
-import SlideOne from "../images/img-grid-1.jpg";
-import SlideTwo from "../images/carbonara.jpg";
-import SlideThree from "../images/img-grid-3.jpg";
-import SlideFour from "../images/img-grid-4.jpg";
+import SlideOne from "../images/img-grid-1.jpeg";
+import SlideTwo from "../images/carbonara.jpeg";
+import SlideThree from "../images/img-grid-3.jpeg";
+import SlideFour from "../images/img-grid-4.jpeg";
 
 export default class About extends React.Component {
   render() {

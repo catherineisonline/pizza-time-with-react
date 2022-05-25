@@ -8,7 +8,7 @@ import instagram from "../images/instagram.svg";
 import twitter from "../images/twitter.svg";
 import youtube from "../images/youtube.svg";
 // Images for Section Two
-import SectionOneImg from "../images/section-1-img.jpg";
+import SectionOneImg from "../images/section-1-img.jpeg";
 //Images for Section Four & Five
 import CheesePizza from "../images/cheese-pizza.jpg";
 import VeggiePizza from "../images/veggie-pizza.jpg";
@@ -17,10 +17,10 @@ import MeatPizza from "../images/meat-pizza.jpg";
 import MargheritaPizza from "../images/margherita-pizza.jpg";
 import BBQPizza from "../images/BBQ-chicken-pizza.jpg";
 // Images for Section Six
-import ImgOne from "../images/img-grid-1.jpg";
-import ImgTwo from "../images/img-grid-2.jpg";
-import ImgThree from "../images/img-grid-3.jpg";
-import ImgFour from "../images/img-grid-4.jpg";
+import ImgOne from "../images/img-grid-1.jpeg";
+import ImgTwo from "../images/img-grid-2.jpeg";
+import ImgThree from "../images/img-grid-3.jpeg";
+import ImgFour from "../images/img-grid-4.jpeg";
 // Images for Section Eight
 import SectionEightImg from "../images/section-8-img.jpg";
 // Images for Section Nine
