@@ -22,7 +22,7 @@ import GreatValueTwist from "../images/drinks-images/Great Value Twist Up.jpeg";
 import FantaOrange from "../images/drinks-images/Fanta Orange Soda.jpeg";
 //Pasta
 import ChickenAlfredo from "../images/pasta-images/Chicken Alfredo.jpeg";
-import AllaGricia from "../images/pasta-images/Pasta Alla Gricia.webp";
+import AllaGricia from "../images/pasta-images/Pasta Alla Gricia.jpeg";
 import SheetPan from "../images/pasta-images/Sheet-Pan Burrata Caprese Gnocchi.jpeg";
 import AllaVodka from "../images/pasta-images/Penne Alla Vodka.jpeg";
 import BakedSpaghetti from "../images/pasta-images/Baked Spaghetti.jpeg";

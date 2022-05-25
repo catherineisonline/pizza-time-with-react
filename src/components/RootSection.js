@@ -22,16 +22,24 @@ import ImgTwo from "../images/img-grid-2.jpeg";
 import ImgThree from "../images/img-grid-3.jpeg";
 import ImgFour from "../images/img-grid-4.jpeg";
 // Images for Section Eight
-import SectionEightImg from "../images/section-8-img.jpg";
+import MenuSliderImg from "../images/section-8-img.jpg";
 // Images for Section Nine
 import PizzaCrust from "../images/pizza-crust.jpg";
 import ThickAndThin from "../images/thick-or-thin.jpg";
 import Leftover from "../images/pizza-leftover.jpg";
 // Import for Section Ten
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
+import L, { extend } from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+//Sushi
+import SalmonPoke from "../images/sushi-images/sushi-19.jpeg";
+import VeggiePoke from "../images/sushi-images/sushi-26.jpeg";
+import MiniSalmon from "../images/sushi-images/sushi-12.jpeg";
+//Pasta
+import ChickenAlfredo from "../images/pasta-images/Chicken Alfredo.jpeg";
+import AllaGricia from "../images/pasta-images/Pasta Alla Gricia.jpeg";
+import SheetPan from "../images/pasta-images/Sheet-Pan Burrata Caprese Gnocchi.jpeg";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -42,72 +50,72 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const position = [37.0902, -93.7129];
 
 //Section One
-class SectionOne extends React.Component {
+class ContactUsLanding extends React.Component {
   render() {
     return (
-      <>
-        <article className="section-1">
-          <section className="company-details flex-container flex-row txt-white">
-            <div>
-              <h2>000 (000) 123 4567</h2>
-              <p>Contact us if you have any questions</p>
-            </div>
-            <div>
-              <h2>506 Roy Alley 80202 </h2>
-              <p>Colorado, Denver</p>
-            </div>
-            <div>
-              <h2>Open Monday-Friday</h2>
-              <p>8:00am - 9:00pm</p>
-            </div>
-          </section>
+      // <>
+      <article className="section-1">
+        <section className="company-details flex-container flex-row txt-white">
+          <div>
+            <h2>000 (000) 123 4567</h2>
+            <p>Contact us if you have any questions</p>
+          </div>
+          <div>
+            <h2>506 Roy Alley 80202 </h2>
+            <p>Colorado, Denver</p>
+          </div>
+          <div>
+            <h2>Open Monday-Friday</h2>
+            <p>8:00am - 9:00pm</p>
+          </div>
+        </section>
 
-          <section className="social-media flex-container flex-row txt-white">
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={facebook} alt="facebook"></img>
-            </a>
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={instagram} alt="instagram"></img>
-            </a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={twitter} alt="twitter"></img>
-            </a>
-            <a
-              href="https://www.youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={youtube} alt="youtube"></img>
-            </a>
-          </section>
-        </article>
-      </>
+        <section className="social-media flex-container flex-row txt-white">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={facebook} alt="facebook"></img>
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={instagram} alt="instagram"></img>
+          </a>
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={twitter} alt="twitter"></img>
+          </a>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={youtube} alt="youtube"></img>
+          </a>
+        </section>
+      </article>
+      // </>
     );
   }
 }
 
-class SectionTwo extends React.Component {
+class WelcomeSection extends React.Component {
   render() {
     return (
       <article className="section-2">
         {/* <section className="section-2-img-block"> */}
-          <img
-            className="section-two-img"
-            src={SectionOneImg}
-            alt="restaurant interior"
-          />
+        <img
+          className="section-two-img"
+          src={SectionOneImg}
+          alt="restaurant interior"
+        />
         {/* </section> */}
         <section className="section-2-info flex-container flex-column txt-center pop-font">
           <h2 className="txt-white">
@@ -126,7 +134,7 @@ class SectionTwo extends React.Component {
   }
 }
 
-class SectionThree extends React.Component {
+class OurServices extends React.Component {
   MouseEnter() {
     const ServiceImgGroup = document.querySelectorAll(".service-img");
     ServiceImgGroup.forEach((ServiceImg) => {
@@ -214,7 +222,7 @@ class SectionThree extends React.Component {
   }
 }
 
-class SectionFour extends React.Component {
+class PizzaMenuPreview extends React.Component {
   render() {
     const { ResetLocation } = this.props;
     return (
@@ -345,7 +353,7 @@ class SectionFour extends React.Component {
   }
 }
 
-class SectionFive extends React.Component {
+class MenuPricingPreview extends React.Component {
   render() {
     const { ResetLocation } = this.props;
     return (
@@ -497,7 +505,7 @@ class SectionFive extends React.Component {
   }
 }
 
-class SectionSix extends React.Component {
+class Gallery extends React.Component {
   render() {
     return (
       <article>
@@ -524,7 +532,7 @@ class SectionSix extends React.Component {
   }
 }
 
-class SectionSeven extends React.Component {
+class StatsPreview extends React.Component {
   MouseEnter() {
     const ServiceImgGroup = document.querySelectorAll(".hightlight-img");
     ServiceImgGroup.forEach((ServiceImg) => {
@@ -606,63 +614,268 @@ class SectionSeven extends React.Component {
     );
   }
 }
+const MenuSliderCategory = [
+  {
+    name: "pizza",
+    id: "pizza",
+  },
+  {
+    name: "sushi",
+    id: "sushi",
+  },
+  {
+    name: "pasta",
+    id: "pasta",
+  },
+];
+const MenuSliderProduct = [
+  {
+    id: "pepperoni-pizza",
+    name: "Pepperoni Pizza",
+    describtion:
+      "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
+    price: (5).toFixed(2),
+    img: PepperoniPizza,
+    category: "pizza",
+  },
+  {
+    id: "bbq-chicken-pizza",
+    name: "BBQ Chicken Pizza",
+    describtion:
+      "Rotisserie chicken, pizza dough, bbq sauce, smoked cheddar cheese, mozzarella cheese.",
+    price: (10).toFixed(2),
+    img: BBQPizza,
+    category: "pizza",
+  },
+  {
+    id: "cheese-pizza",
+    name: "Cheese Pizza",
+    describtion: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
+    price: (5).toFixed(2),
+    img: CheesePizza,
+    category: "pizza",
+  },
+  {
+    id: "salmon-poke",
+    img: SalmonPoke,
+    name: "Salmon Poke",
+    describtion:
+      "Salmon, Avocado, Rice, Cabbage, Carrots, Creen onions, Sesame.",
+    price: (10).toFixed(2),
+    category: "sushi",
+  },
 
-class SectionEight extends React.Component {
+  {
+    id: "veggie-poke",
+    img: VeggiePoke,
+    name: "Veggie Poke",
+    describtion: "Rice, Avocado, Cabage, Carrot, Ginger, Green Onion, Sesam.",
+    price: (8).toFixed(2),
+    category: "sushi",
+  },
+  {
+    id: "mini-salmon-set-22-pcs",
+    img: MiniSalmon,
+    name: "Mini Salmon Set",
+    describtion:
+      "Double Salmon Roll,Californication, Salmon Nigiri - 2Pcs, Eel Nigiri - 2Pcs,Vulcan Gunkan - 2Pcs",
+    price: (35).toFixed(2),
+    category: "sushi",
+  },
+  {
+    id: "chicken-alfredo",
+    img: ChickenAlfredo,
+    name: "Chicken Alfredo",
+    describtion:
+      "Skinless chicken breast, heavy cream, olive oil, parmigiano reggiano, black pepper.",
+    price: (2).toFixed(2),
+    category: "pasta",
+  },
+  {
+    id: "pasta-alla-gricia",
+    img: AllaGricia,
+    name: "Pasta Alla Gricia",
+    describtion:
+      "Rigatoni pasta, pancetta, olive oil, pecorino romano, black pepper.",
+    price: (9).toFixed(2),
+    category: "pasta",
+  },
+  {
+    id: "sheet-pan-burrata-caprese-gnocchi",
+    img: SheetPan,
+    name: "Burrata Caprese Gnocchi",
+    describtion:
+      "Penne pasta, sour cream, rotisserie chicken, cherry tomatoes, curly kale.",
+    price: (5).toFixed(2),
+    category: "pasta",
+  },
+];
+class MenuSliderProducts extends React.Component {
+  render() {
+    const { singleProduct } = this.props;
+    return (
+      <div className="slider-product">
+        <section className="menu-slider-img-section">
+          <img src={singleProduct.img} alt={singleProduct.name} />
+        </section>
+        <section className="slider-product-description">
+          <h3 className="pop-font txt-white">{singleProduct.name}</h3>
+          <p className="dish-details-desc pop-font">
+            {singleProduct.describtion}
+          </p>
+          <p className="dish-details-pricing">
+            <span>$</span>
+            {singleProduct.price}
+          </p>
+        </section>
+      </div>
+    );
+  }
+}
+class MenuSliderCategories extends React.Component {
+  render() {
+    const { category, changeCategory } = this.props;
+
+    return (
+      <li>
+        <button
+          onClick={() => {
+            changeCategory(category.name);
+            // ResetLocation();
+          }}
+        >
+          {category.name}
+        </button>
+      </li>
+    );
+  }
+}
+class MenuSlider extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      activeCategory: "pizza",
+      allProducts: [],
+      allCategories: [],
+    };
+    this.getAllProducts = this.getAllProducts.bind(this);
+    this.changeCategory = this.changeCategory.bind(this);
+    this.getProductsByCategory = this.getProductsByCategory.bind(this);
+  }
+  allCategoriesData = new Promise((resolve, reject) => {
+    if (true) {
+      resolve(MenuSliderCategory);
+      return;
+    }
+    reject("error, check the code!");
+  });
+  allProductsData = new Promise((resolve, reject) => {
+    if (true) {
+      resolve(MenuSliderProduct);
+      return;
+    }
+    reject("error, check the code!");
+  });
+  getCategories() {
+    try {
+      const result = this.allCategoriesData;
+      this.setState({ allCategories: result });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  getAllProducts() {
+    try {
+      const result = this.allProductsData;
+      this.setState({ allProducts: result });
+      // this.setState({activeCategory: "pizza"})
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  changeCategory(newCategory) {
+    this.setState({ activeCategory: newCategory });
+    this.getProductsByCategory(newCategory);
+  }
+  getProductsByCategory(category) {
+    let separateCategoriesByname = [];
+    //Separate arrays by category names
+
+    const separateCategories = MenuSliderProduct.reduce(function (
+      singleCategory,
+      singleItem
+    ) {
+      separateCategoriesByname = Object.keys(singleCategory);
+
+      if (!singleCategory[singleItem.category])
+        singleCategory[singleItem.category] = singleItem;
+      else
+        singleCategory[singleItem.category] = Array.isArray(
+          singleCategory[singleItem.category]
+        )
+          ? singleCategory[singleItem.category].concat(singleItem)
+          : [singleCategory[singleItem.category]].concat(singleItem);
+
+      return singleCategory;
+    },
+    {});
+
+    const productsOfCategories = Object.keys(separateCategories).map(
+      (e) => separateCategories[e]
+    );
+    console.log(productsOfCategories);
+
+    let singleCategoryArray = [];
+    productsOfCategories.map((category) => {
+      return (singleCategoryArray = category);
+    });
+
+    //Change products by category
+    separateCategoriesByname.forEach((cate) => {
+      if (cate === category) {
+        return this.setState({ allProducts: separateCategories[category] });
+      }
+    });
+  }
+  componentDidMount() {
+    // this.getCategories();
+    this.getAllProducts();
+    this.getProductsByCategory(this.state.activeCategory);
+  }
+
   render() {
     return (
       <article className="section-8">
-        <img src={SectionEightImg} alt="restaurant interior" />
+        <img className="menu-slider-hero" src={MenuSliderImg} alt="restaurant interior" />
         <section className="dish-slider  flex-container flex-column txt-center">
-          <div className="dish-categories flex-container flex-column">
-            <h3>Pizza</h3>
-            <h3>Sushi</h3>
-            <h3>Burgers</h3>
-            <h3>Pasta</h3>
-          </div>
-          <div className="all-dishes flex-container flex-column">
-            <div className="dish-details flex-container flex-column txt-center">
-              <img src={PepperoniPizza} alt="pepperoni pizza" />
-              <h3 className="pop-font txt-white">Pepperoni Pizza</h3>
-              <p className="dish-details-desc pop-font">
-                There’s a reason this is one of the most popular types of pizza.
-                Who doesn’t love biting into a crispy, salty round of pepperoni?
-              </p>
-              <p className="dish-details-pricing">
-                <span>$</span>5.00
-              </p>
-            </div>
-
-            <div className="dish-details flex-container flex-column txt-center">
-              <img src={BBQPizza} alt="bbq pizza" />
-              <h3 className="pop-font txt-white">BBQ Chicken Pizza</h3>
-              <p className="dish-details-desc pop-font">
-                If you love BBQ chicken and pizza, why not put them
-                together? This has long been a cult favorite of sports fans.
-              </p>
-              <p className="dish-details-pricing">
-                <span>$</span>10.00
-              </p>
-            </div>
-
-            <div className="dish-details flex-container flex-column txt-center">
-              <img src={CheesePizza} alt="cheese pizza" />
-              <h3 className="pop-font txt-white"> Cheese Pizza</h3>
-              <p className="dish-details-desc pop-font">
-                It should be no shocker that a classic is the statistical
-                favorite. Cheese pizza is one of the most popular choices.
-              </p>
-              <p className="dish-details-pricing">
-                <span>$</span>5.00
-              </p>
-            </div>
-          </div>
+          <section className="dish-categories flex-container flex-column">
+            <ul>
+              {MenuSliderCategory.map((category) => (
+                <MenuSliderCategories
+                  key={category.id}
+                  category={category}
+                  changeCategory={this.changeCategory}
+                />
+              ))}
+            </ul>
+          </section>
+          <section className="menu-slider-products">
+            {this.state.allProducts.map((singleProduct) => {
+              return (
+                <MenuSliderProducts
+                  key={singleProduct.id}
+                  singleProduct={singleProduct}
+                />
+              );
+            })}
+          </section>
         </section>
       </article>
     );
   }
 }
 
-class SectionNine extends React.Component {
+class BlogPreview extends React.Component {
   render() {
     const { ResetLocation } = this.props;
     return (
@@ -737,7 +950,7 @@ class SectionNine extends React.Component {
   }
 }
 
-class SectionTen extends React.Component {
+class ContactForm extends React.Component {
   SubmitContactForm(e) {
     e.preventDefault();
     const emailValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -878,7 +1091,7 @@ class SectionTen extends React.Component {
   }
 }
 
-class SectionEleven extends React.Component {
+class Newsletter extends React.Component {
   SubmitEmail() {
     const errorMsg = document.querySelector(".error-msg");
     const inputEl = document.querySelector(".input-field");
@@ -934,17 +1147,17 @@ class RootSection extends React.Component {
     return (
       <>
         <Header />
-        <SectionOne />
-        <SectionTwo />
-        <SectionThree />
-        <SectionFour ResetLocation={ResetLocation} />
-        <SectionFive ResetLocation={ResetLocation} />
-        <SectionSix />
-        <SectionSeven />
-        <SectionEight />
-        <SectionEleven />
-        <SectionNine ResetLocation={ResetLocation} />
-        <SectionTen />
+        <ContactUsLanding />
+        <WelcomeSection />
+        <OurServices />
+        <PizzaMenuPreview ResetLocation={ResetLocation} />
+        <MenuPricingPreview ResetLocation={ResetLocation} />
+        <Gallery />
+        <StatsPreview />
+        <MenuSlider />
+        <Newsletter />
+        <BlogPreview ResetLocation={ResetLocation} />
+        <ContactForm />
         <ScrollButton />
       </>
     );
