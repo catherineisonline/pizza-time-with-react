@@ -1,6 +1,6 @@
 .register-main::before {
   content: "";
-  height: 10rem;
+  height: 2rem;
 }
 .register-main::after {
   content: "";

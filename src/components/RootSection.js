@@ -102,11 +102,13 @@ class SectionTwo extends React.Component {
   render() {
     return (
       <article className="section-2">
-        <img
-          className="section-two-img"
-          src={SectionOneImg}
-          alt="restaurant interior"
-        />
+        {/* <section className="section-2-img-block"> */}
+          <img
+            className="section-two-img"
+            src={SectionOneImg}
+            alt="restaurant interior"
+          />
+        {/* </section> */}
         <section className="section-2-info flex-container flex-column txt-center pop-font">
           <h2 className="txt-white">
             Welcome to <span>Pizza Time</span> restaurant
@@ -634,7 +636,7 @@ class SectionEight extends React.Component {
               <img src={BBQPizza} alt="bbq pizza" />
               <h3 className="pop-font txt-white">BBQ Chicken Pizza</h3>
               <p className="dish-details-desc pop-font">
-                If you love BBQ chicken and you love pizza, why not put them
+                If you love BBQ chicken and pizza, why not put them
                 together? This has long been a cult favorite of sports fans.
               </p>
               <p className="dish-details-pricing">

@@ -1,4 +1,3 @@
-
 .contact::before {
   content: "";
   height: 10rem;
@@ -13,7 +12,6 @@
   flex-direction: column;
   padding: 0;
   margin: 0;
-  padding-top: 15%;
   background-color: var(--light-black);
   background-image: none;
 }

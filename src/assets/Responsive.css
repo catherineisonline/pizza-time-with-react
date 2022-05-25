@@ -43,16 +43,20 @@
   footer {
     justify-content: space-evenly;
   }
+  .section-2-info {
+    width: 65%;
+    margin: 0 auto;
+     }
 }
 
 @media screen and (min-width: 1025px) {
   .navigation-menu {
     display: flex;
   }
-  .section-2-info {
+  /* .section-2-info {
  width: 65%;
  margin: 0 auto;
-  }
+  } */
   .burger-bars {
     display: none;
   }
@@ -62,9 +66,7 @@
     z-index: 999;
     justify-content: space-around;
   }
-  .menu-main {
-    margin-top: 10%;
-  }
+
   
   .header-info p {
     width: 40%;

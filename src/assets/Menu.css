@@ -9,7 +9,7 @@ li {
 .menu-main::after {
   content: "";
   height: 10rem;
-} 
+}
 .menu-main {
   display: grid;
   grid-template-columns: 1fr;
@@ -355,7 +355,6 @@ input[type="search"]::-webkit-search-results-decoration {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     width: 90%;
-    margin-bottom: 50%;
   }
 }
 

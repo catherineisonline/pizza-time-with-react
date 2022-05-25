@@ -345,11 +345,12 @@ li.alice-carousel__stage-item .__cloned {
 }
 
 /* Section 2 */
+
 .section-two-img {
-  /* min-width: 529.5px; */
   width: 100%;
-  /* min-height: 30%; */
   object-fit: cover;
+  max-height: 20rem;
+  height: 50%;
 }
 
 .section-2-info {
@@ -524,10 +525,13 @@ li.alice-carousel__stage-item .__cloned {
 .pricing-grid-item {
   gap: 1rem;
 }
-
+.pricing-details {
+  width: 100%;
+}
 .pricing-details p {
   color: var(--light-gray);
   text-align: left;
+  
 }
 .name-and-price {
   justify-content: space-between;
@@ -1058,7 +1062,7 @@ hr {
   display: flex;
   flex-direction: column;
   top: 20%;
-  left:0;
+  left: 0;
   transform: translate(0, 20%);
   z-index: 99;
   background-color: var(--light-black);
