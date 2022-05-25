@@ -25,7 +25,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 1. [x] Create main landing page
 2. [x] Carousel to header container
 3. [x] Animation effect on landing page for Services & Image Grid section
-4. [ ] Interactivity to food categories on landing page - e.g. Pizza, Drinks, Burgers, Pasta
+4. [x] Interactivity to food categories on landing page - e.g. Pizza, Drinks, Burgers, Pasta
 5. [x] Contact Form validation on main page
 6. [x] Let the visitor scroll to the top of the page with one click
 7. [x] Email subscribtion section
