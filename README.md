@@ -212,6 +212,13 @@ Started cart interactivity by adding add to cart option on the menu page along w
 
 Now I have a fully functional menu that enables the customer to add products to cart and check them on a separate cart page. They can now see a message once they add the item and it's possible to do it via menu page or separate product page. On the cart page, I disabled the option to change pizza size however you add or remove the product stacked by chosen size. You can also see the total amount of the items and how much you have to pay. Due to the websier design, I decided to skip the cart overlay and made only cart page. As long as I do not have any backend, I am not going to implement too many details of real life e-commerce website.
 
+#### Day 3
+Had some issues with adding items to cart in the cart page. Interesting thing to remember! Always add a key value  to components that are repeatable. For example, if you are rendering the componentsof blog post, you need to add a unique key value to this repeating blog post component, so React can understand they are actually different blog posts. Otherwise you will end up having random issues!! I also added checkout page and fixed some minor css. 
+
+#### Day 4
+
+I have a lot of images on the website and I didn't think in advance when choosing them. Not all of them have similar dimensions which makes my life harder to first of all, design and second huge sizes makes images weight more and as a result delay the loading time. So, I decided to change or resize the images. Would also be perfect to have different sizes for mobile and desktop, however I decided not to hassle to much right now.
+
 ## Useful Resources
 
 - <a href="https://magic.reactjs.net/htmltojsx.htm">HTML to JSX</a> - a great tool to compile HTML to JSX.
