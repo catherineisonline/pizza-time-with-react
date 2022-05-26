@@ -89,7 +89,7 @@ export default class Checkout extends React.Component {
                 Takeaway
                 <input
                   onClick={this.toggleDelivery}
-                  className="fullname-input-cpage pop-font"
+                  className="takeaway"
                   type="radio"
                   placeholder="Address"
                   value="takeaway"
@@ -102,7 +102,7 @@ export default class Checkout extends React.Component {
                 Delivery
                 <input
                   onClick={this.toggleDelivery}
-                  className="fullname-input-cpage pop-font"
+                  className="delivery"
                   type="radio"
                   placeholder="Address"
                   value="delivery"
@@ -148,7 +148,7 @@ export default class Checkout extends React.Component {
             </label>
             <label>
               Card CVV
-              <input className=" pop-font" type="passwod" placeholder="***" />
+              <input className="cvv pop-font" type="password" placeholder="***" />
             </label>
           </section>
 

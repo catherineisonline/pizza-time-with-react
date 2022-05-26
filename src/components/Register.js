@@ -207,7 +207,7 @@ export default class Register extends React.Component {
             <section className="gender-section">
               <label className="gender-checkbox" htmlFor="male">
                 Male
-                <input type="radio" value="male" name="gender"></input>
+                <input  type="radio" value="male" name="gender"></input>
               </label>
               <label className="gender-checkbox" htmlFor="female">
                 Female
