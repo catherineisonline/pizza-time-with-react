@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pizza-time-with-react/static/css/main.70b6856c.css",
-    "main.js": "/pizza-time-with-react/static/js/main.b4ecb5ed.js",
+    "main.css": "/pizza-time-with-react/static/css/main.7b9c6b0e.css",
+    "main.js": "/pizza-time-with-react/static/js/main.a2b336de.js",
     "static/js/787.a2bf511c.chunk.js": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js",
     "static/media/Sams Cola Soda.jpeg": "/pizza-time-with-react/static/media/Sams Cola Soda.5529523e7dde31b0f6ce.jpeg",
     "static/media/Lipton Green Tea.jpeg": "/pizza-time-with-react/static/media/Lipton Green Tea.468aa016cc41286180e6.jpeg",
@@ -35,6 +35,7 @@
     "static/media/Tomato-Pie.jpeg": "/pizza-time-with-react/static/media/Tomato-Pie.66ce6a9a0d47add5f5dc.jpeg",
     "static/media/meat-pizza.jpg": "/pizza-time-with-react/static/media/meat-pizza.c93001ba3b437deb508a.jpg",
     "static/media/pepperoni-pizza.jpg": "/pizza-time-with-react/static/media/pepperoni-pizza.9d2278479d94466dcb0d.jpg",
+    "static/media/Chicken Alfredo.jpeg": "/pizza-time-with-react/static/media/Chicken Alfredo.667ed6fe83e99a65740d.jpeg",
     "static/media/Pizza-e-fichi.jpeg": "/pizza-time-with-react/static/media/Pizza-e-fichi.6f8bf879ff5abb2b8ef0.jpeg",
     "static/media/PizzaRomana.jpeg": "/pizza-time-with-react/static/media/PizzaRomana.2443a48d5d638dc5e258.jpeg",
     "static/media/section-three.jpeg": "/pizza-time-with-react/static/media/section-three.206c486153c5ce03ac97.jpeg",
@@ -48,6 +49,7 @@
     "static/media/thick-or-thin.jpg": "/pizza-time-with-react/static/media/thick-or-thin.e700a610919d034d7258.jpg",
     "static/media/Great Value Twist Up.jpeg": "/pizza-time-with-react/static/media/Great Value Twist Up.3f3b13f0a16e771aafc5.jpeg",
     "static/media/office-2.jpeg": "/pizza-time-with-react/static/media/office-2.28cade6adfddd4026454.jpeg",
+    "static/media/Pasta Alla Gricia.jpeg": "/pizza-time-with-react/static/media/Pasta Alla Gricia.2fa3d413fbb9cd5731cd.jpeg",
     "static/media/Ultimate Baked Ziti.jpeg": "/pizza-time-with-react/static/media/Ultimate Baked Ziti.6da9e3b81911f0923cc7.jpeg",
     "static/media/post-4.jpeg": "/pizza-time-with-react/static/media/post-4.13a765c191c0c53c7e26.jpeg",
     "static/media/Pugliese.jpeg": "/pizza-time-with-react/static/media/Pugliese.d53ca71b62e654d73b32.jpeg",
@@ -68,7 +70,6 @@
     "static/media/SToK.webp": "/pizza-time-with-react/static/media/SToK.b6bb27ec640e191b95e7.webp",
     "static/media/sushi-7.jpeg": "/pizza-time-with-react/static/media/sushi-7.28f440a6c0e7a7bdeba2.jpeg",
     "static/media/sushi-19.jpeg": "/pizza-time-with-react/static/media/sushi-19.3e1f48b41123c36ae226.jpeg",
-    "static/media/Pasta Alla Gricia.webp": "/pizza-time-with-react/static/media/Pasta Alla Gricia.a294f4970842141d8d2b.webp",
     "static/media/Stuffed-Pizza.jpg": "/pizza-time-with-react/static/media/Stuffed-Pizza.6f66f31a27806e603daa.jpg",
     "static/media/img-grid-1.jpeg": "/pizza-time-with-react/static/media/img-grid-1.583ad93aaeacf77c70eb.jpeg",
     "static/media/pizza-leftover.jpg": "/pizza-time-with-react/static/media/pizza-leftover.b1f78515e34ae95f5e38.jpg",
@@ -121,7 +122,6 @@
     "static/media/Aquafina Purified.jpeg": "/pizza-time-with-react/static/media/Aquafina Purified.24de1fd7f3a2a2194ead.jpeg",
     "static/media/Pure Life Purified.jpg": "/pizza-time-with-react/static/media/Pure Life Purified.1750b32aec899566443e.jpg",
     "static/media/Fanta Orange Soda.jpeg": "/pizza-time-with-react/static/media/Fanta Orange Soda.b52270c0473038df825d.jpeg",
-    "static/media/Chicken Alfredo.jpeg": "/pizza-time-with-react/static/media/Chicken Alfredo.626cd5ba79cc9b748457.jpeg",
     "static/media/Great Value.jpeg": "/pizza-time-with-react/static/media/Great Value.8970e4d5ff596c98f858.jpeg",
     "static/media/Canada Dry Ginger.jpg": "/pizza-time-with-react/static/media/Canada Dry Ginger.1a8616aac1f3a58d5414.jpg",
     "static/media/Red Bull.jpg": "/pizza-time-with-react/static/media/Red Bull.3f39b96343a41ca694f5.jpg",
@@ -140,12 +140,12 @@
     "static/media/burger-menu.svg": "/pizza-time-with-react/static/media/burger-menu.3fd5cfb7747ba533b53ac919f3de692f.svg",
     "index.html": "/pizza-time-with-react/index.html",
     "static/media/facebook.svg": "/pizza-time-with-react/static/media/facebook.4fb9beab599f181e1d1fac61c70ef89f.svg",
-    "main.70b6856c.css.map": "/pizza-time-with-react/static/css/main.70b6856c.css.map",
-    "main.b4ecb5ed.js.map": "/pizza-time-with-react/static/js/main.b4ecb5ed.js.map",
+    "main.7b9c6b0e.css.map": "/pizza-time-with-react/static/css/main.7b9c6b0e.css.map",
+    "main.a2b336de.js.map": "/pizza-time-with-react/static/js/main.a2b336de.js.map",
     "787.a2bf511c.chunk.js.map": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.70b6856c.css",
-    "static/js/main.b4ecb5ed.js"
+    "static/css/main.7b9c6b0e.css",
+    "static/js/main.a2b336de.js"
   ]
 }

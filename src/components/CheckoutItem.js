@@ -20,8 +20,8 @@ export default class CheckoutItem extends React.Component {
     const { cartItem, className } = this.props;
     return (
       <section className={className}>
-      <section className="image-container">
-        <img src={cartItem.ItemImg} alt={`${cartItem.ItemName}`}></img>
+        <section className="image-container">
+          <img src={cartItem.ItemImg} alt={`${cartItem.ItemName}`}></img>
         </section>
         <section className="checkout-item-content">
           <section className="checkout-item-info">
@@ -39,19 +39,12 @@ export default class CheckoutItem extends React.Component {
                 <p> - {cartItem.quantity}</p>
               </section>
             )}
-            {/* </section> */}
           </section>
-
-          {/* <section className="checkout-item-interaction"> */}
-          {/* <section className="checkout-item-add-qty">
-              <p>{cartItem.quantity}</p>
-            </section> */}
 
           <p className="checkout-price-num">
             <span>$</span>
             {cartItem.ItemPrice}
           </p>
-          {/* </section> */}
         </section>
       </section>
     );

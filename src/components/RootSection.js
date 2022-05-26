@@ -846,7 +846,11 @@ class MenuSlider extends React.Component {
   render() {
     return (
       <article className="section-8">
-        <img className="menu-slider-hero" src={MenuSliderImg} alt="restaurant interior" />
+        <img
+          className="menu-slider-hero"
+          src={MenuSliderImg}
+          alt="restaurant interior"
+        />
         <section className="dish-slider  flex-container flex-column txt-center">
           <section className="dish-categories flex-container flex-column">
             <ul>

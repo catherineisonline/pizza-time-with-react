@@ -65,7 +65,6 @@
   .section-1,
   .company-details,
   .social-media,
-  /* .section-2, */
   .services-grid {
     display: flex;
     flex-direction: row;
@@ -76,9 +75,7 @@
     align-items: center;
     width: 100%;
   }
-  /* .section-2 img {
-    max-width: 51.2%;
-  } */
+
   .meals-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -97,7 +94,6 @@
 
   .section-8 {
     flex-direction: row;
-    /* gap: 0; */
     justify-content: space-evenly;
   }
   .menu-slider-hero {

@@ -651,7 +651,6 @@ li.alice-carousel__stage-item .__cloned {
 .dish-slider .dish-categories {
   margin: 0 auto;
   gap: 1rem;
-  /* padding: 1rem; */
 }
 .dish-categories ul {
   display: flex;
