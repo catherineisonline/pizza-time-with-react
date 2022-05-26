@@ -1,22 +1,7 @@
 import React from "react";
+import CartProductInteraction from "./CartItemInteraction";
 
 export default class CartItem extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedAttributes: [],
-    };
-  }
-  userSelectedAttr() {
-    this.props.cartItem.userSelectedAttributes.map((item) => {
-      // console.log(item.attributeValue)
-      this.setState({ selectedAttributes: item.attributeValue });
-    });
-  }
-  componentDidMount() {
-    // this.userSelectedAttr();
-  }
-
   render() {
     const {
       cartItem,
@@ -24,10 +9,10 @@ export default class CartItem extends React.Component {
       successMsg,
       handleAddProduct,
       handleRemoveProduct,
+      index,
     } = this.props;
-    // console.log(cartItem);
     return (
-      <section className={className}>
+      <section className={className} key={index}>
         <img src={cartItem.ItemImg} alt="pizza"></img>
         <section className="cart-item-content">
           <section className="cart-item-info">
@@ -37,8 +22,8 @@ export default class CartItem extends React.Component {
               ) : (
                 <h3>
                   {cartItem.ItemName},{" "}
-                  {cartItem.userSelectedAttributes.map((i) => {
-                    return <span>{i.attributeValue}</span>;
+                  {cartItem.userSelectedAttributes.map((i, index) => {
+                    return <span key={index}>{i.attributeValue}</span>;
                   })}
                 </h3>
               )}
@@ -49,25 +34,12 @@ export default class CartItem extends React.Component {
           </section>
 
           <section className="cart-item-interaction">
-            <section className="cart-item-add-qty">
-              <button
-                onClick={() => {
-                  handleAddProduct(cartItem, this.state.selectedAttributes);
-                  successMsg();
-                }}
-              >
-                +
-              </button>
-
-              <p>{cartItem.quantity}</p>
-              <button
-                onClick={() => {
-                  handleRemoveProduct(cartItem, this.state.selectedAttributes);
-                }}
-              >
-                -
-              </button>
-            </section>
+            <CartProductInteraction
+              handleAddProduct={handleAddProduct}
+              handleRemoveProduct={handleRemoveProduct}
+              cartItem={cartItem}
+              successMsg={successMsg}
+            />
 
             <p className="cart-item-price">${cartItem.ItemPrice}</p>
           </section>

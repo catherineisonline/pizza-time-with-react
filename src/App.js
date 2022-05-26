@@ -135,27 +135,27 @@ export default class App extends React.Component {
   };
   MatchingAttributes = (userSelectedAttributes, targetProduct) => {
     const attributesMatch = (groupOne, groupTwo) => {
-      // return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
+      return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
     };
 
     let truthyValuesCounter = 0;
-    // let i = 0;
-    // while (i < userSelectedAttributes.length) {
-    //   if (
-    //     attributesMatch(
-    //       // userSelectedAttributes[i],
-    //       // targetProduct?.userSelectedAttributes[i]
-    //       userSelectedAttributes,
-    //       targetProduct?.userSelectedAttributes
-    //     )
-    //   )
+    let i = 0;
+    while (i < userSelectedAttributes.length) {
+      if (
+        attributesMatch(
+          userSelectedAttributes[i],
+          targetProduct?.userSelectedAttributes[i]
+          // userSelectedAttributes,
+          // targetProduct?.userSelectedAttributes
+        )
+      )
 
-    //   {
-    //     console.log(userSelectedAttributes);
-    //     truthyValuesCounter += 1;
-    //   }
-    //   i += 1;
-    // }
+      {
+        // console.log(userSelectedAttributes);
+        truthyValuesCounter += 1;
+      }
+      i += 1;
+    }
 
     if (truthyValuesCounter === userSelectedAttributes?.length) {
       return true;
@@ -185,6 +185,7 @@ export default class App extends React.Component {
     return currentProductList;
   }
   handleAddProduct = (targetProduct, userSelectedAttributes) => {
+    // console.log(userSelectedAttributes)
     let updatedProductList;
     const productAlreadyInCart = this.CheckRepeatableProducts(
       this.state.cartItems,

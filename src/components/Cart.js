@@ -20,6 +20,7 @@ export default class Cart extends React.Component {
       clearedCart,
     } = this.props;
     document.title = "Cart | Pizza Time";
+   
     return (
       <>
         <article className="cart-container">
@@ -38,17 +39,21 @@ export default class Cart extends React.Component {
             </section>
           ) : (
             <section className="cart-title-section">
-              {cartItems.map((cartItem) => (
-                <CartItem
-                  key={cartItem.index}
-                  successMsg={successMsg}
-                  cartItem={cartItem}
-                  selectedAttributes={selectedAttributes}
-                  handleAddProduct={handleAddProduct}
-                  handleRemoveProduct={handleRemoveProduct}
-                  className="cart-item"
-                />
-              ))}
+              {cartItems.map((cartItem, index) => {
+
+                return (
+                  <CartItem
+                    key={index}
+                    index={index}
+                    successMsg={successMsg}
+                    cartItem={cartItem}
+                    selectedAttributes={selectedAttributes}
+                    handleAddProduct={handleAddProduct}
+                    handleRemoveProduct={handleRemoveProduct}
+                    className="cart-item"
+                  />
+                );
+              })}
               <ClearCartBtn className="cart-clear-btn" clearCart={clearCart} />
             </section>
           )}
