@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pizza-time-with-react/static/css/main.7b9c6b0e.css",
-    "main.js": "/pizza-time-with-react/static/js/main.a2b336de.js",
+    "main.js": "/pizza-time-with-react/static/js/main.c1eb847e.js",
     "static/js/787.a2bf511c.chunk.js": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js",
     "static/media/Sams Cola Soda.jpeg": "/pizza-time-with-react/static/media/Sams Cola Soda.5529523e7dde31b0f6ce.jpeg",
     "static/media/Lipton Green Tea.jpeg": "/pizza-time-with-react/static/media/Lipton Green Tea.468aa016cc41286180e6.jpeg",
@@ -141,11 +141,11 @@
     "index.html": "/pizza-time-with-react/index.html",
     "static/media/facebook.svg": "/pizza-time-with-react/static/media/facebook.4fb9beab599f181e1d1fac61c70ef89f.svg",
     "main.7b9c6b0e.css.map": "/pizza-time-with-react/static/css/main.7b9c6b0e.css.map",
-    "main.a2b336de.js.map": "/pizza-time-with-react/static/js/main.a2b336de.js.map",
+    "main.c1eb847e.js.map": "/pizza-time-with-react/static/js/main.c1eb847e.js.map",
     "787.a2bf511c.chunk.js.map": "/pizza-time-with-react/static/js/787.a2bf511c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7b9c6b0e.css",
-    "static/js/main.a2b336de.js"
+    "static/js/main.c1eb847e.js"
   ]
 }
