@@ -1,0 +1,216 @@
+.register-main::before {
+  content: "";
+  height: 2rem;
+}
+.register-main::after {
+  content: "";
+  height: 10rem;
+}
+.register-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: var(--light-black);
+}
+
+.register-main h1 {
+  color: var(--white);
+  font-family: var(--poppins-font);
+  text-transform: uppercase;
+  margin: 0 auto;
+  font-size: 4rem;
+  padding: 2rem;
+}
+
+.registration-form {
+  background-color: transparent;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* gap: 5rem; */
+  gap: 2rem;
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  align-items: left;
+
+  justify-content: space-between;
+  width: 90%;
+}
+
+.name-section,
+.email-section,
+.password-section,
+.birthday-section,
+.gender-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.birthday,
+.gender,
+.register-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.birthday,
+.gender {
+  align-items: flex-start;
+}
+.birthday-section,
+.gender-section {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.register-section::before {
+  content: "";
+  height: 3rem;
+}
+
+.register-main input {
+  border: 1px solid #fac56425;
+  background-color: transparent;
+  padding: 2rem;
+  /* width: -webkit-fill-available; */
+  border-radius: 10px;
+}
+
+.register-main input::placeholder {
+  color: var(--white);
+  font-family: var(--poppins-font);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.register-main input:focus-visible {
+  outline: 1px solid var(--yellow);
+}
+
+.register-main input[type="text"],
+.register-main input[type="password"] {
+  color: var(--whitish-gray);
+  font-family: var(--poppins-font);
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.register-main select {
+  border: 1px solid transparent;
+  background-color: transparent;
+  opacity: 0.7;
+  color: var(--whitish-gray);
+  font-family: var(--poppins-font);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.register-main select:focus-visible {
+  outline: 1px solid transparent;
+}
+
+input[type="radio" i] {
+  -moz-appearance: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  /* outline: 1px solid var(--whitish-gray); */
+  border: 1px solid var(--whitish-gray);
+  padding: 0.3rem;
+  border-radius: 50%;
+}
+
+input[type="radio" i]:checked {
+  background-color: var(--yellow);
+  /* outline: 1px solid var(--white); */
+  border: 1px solid var(--yellow);
+}
+
+.register-main label {
+  color: var(--whitish-gray);
+  font-family: var(--poppins-font);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.gender-checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.birthday select {
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #fac56425;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.register-section {
+  /* text-align: center; */
+  width: 90%;
+  width: 18rem;
+  margin: 0 auto;
+}
+.terms-warning {
+  color: var(--whitish-gray);
+  font-family: var(--poppins-font);
+  font-size: 0.4rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.register-btn {
+  cursor: pointer;
+  border: 1px solid var(--whitish-gray);
+  background-color: transparent;
+  color: var(--whitish-gray);
+  border-radius: 10px;
+  padding: 1rem;
+  color: var(--whitish-gray);
+  font-family: var(--poppins-font);
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.8;
+  text-transform: uppercase;
+  transition: all ease-in-out 0.3s;
+}
+.register-btn:hover {
+  border: 1px solid var(--yellow);
+  background-color: transparent;
+  color: var(--yellow);
+  transition: all ease-in-out 0.3s;
+}
+
+@media screen and (min-width: 700px) {
+  .registration-form {
+    padding: 1.5rem;
+    width: 80%;
+    margin-bottom: 5rem;
+  }
+  .register-main input {
+    width: -webkit-fill-available;
+  }
+  .name-section,
+  .email-section,
+  .password-section,
+  .birthday-section,
+  .gender-section {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .register-main input[type="text"],
+  .register-main input[type="password"],
+  .register-main input::placeholder,
+  .register-main label,
+  .birthday select,
+  .register-btn {
+    font-size: 1.2rem;
+  }
+}

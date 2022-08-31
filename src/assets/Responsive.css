@@ -1,0 +1,114 @@
+@media screen and (min-width: 700px) {
+  .section-description {
+    font-size: 1.3rem;
+  }
+
+  .pricing-grid {
+    gap: 2.5rem;
+  }
+  .img-grid,
+  .highlights,
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-10,
+  footer,
+  .dish-categories {
+    flex-direction: row !important;
+  }
+  .blog-posts-landing {
+    flex-direction: row;
+  }
+
+  .blog-posts {
+    padding-top: 3rem;
+  }
+  .section-10 {
+    justify-content: space-evenly;
+    gap: 5rem;
+  }
+  .map {
+    height: auto;
+    width: 80%;
+  }
+
+  footer {
+    justify-content: space-evenly;
+  }
+  .section-2-info {
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .navigation-menu {
+    display: flex;
+  }
+
+  .burger-bars {
+    display: none;
+  }
+  .main-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    justify-content: space-around;
+  }
+
+  .header-info p {
+    width: 40%;
+    margin: 0 auto;
+  }
+  .section-1,
+  .company-details,
+  .social-media,
+  .services-grid {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .social-media,
+  .company-details {
+    align-items: center;
+    width: 100%;
+  }
+
+  .meals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .meal-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .img-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .highlights {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .section-8 {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .menu-slider-hero {
+    max-width: 40%;
+    object-fit: cover;
+  }
+
+  .section-11 {
+    display: flex;
+    flex-direction: row;
+  }
+  .section-11.heading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+}
