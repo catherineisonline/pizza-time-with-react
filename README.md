@@ -48,6 +48,13 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Used Dependencies
+
+- [React Icons](https://www.npmjs.com/package/react-icons)
+- [React Router DOM](https://www.npmjs.com/package/react-router-dom)
+- [React Alice Carousel](https://www.npmjs.com/package/react-alice-carousel)
+- [Leaflet Maps](https://react-leaflet.js.org/docs/start-installation/)
+
 # Goals
 
 <p>The goal of this project is to learn React and become a bit closer to real life projects. Most of the projects I worked with are only small pieces that are not much useful on it's own. By doing this project I will have to think not only as a developer but as a business and a customer. I will be updating the project time to time and adding information on what I did, what I learned, change of the plans and etc. Let's dive into details of this project! </p>
