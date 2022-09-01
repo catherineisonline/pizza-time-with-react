@@ -5,11 +5,6 @@ export default class WelcomeSection extends React.Component {
   render() {
     return (
       <article className="section-2">
-        <img
-          className="section-two-img"
-          src={SectionOneImg}
-          alt="restaurant interior"
-        />
         <section className="section-2-info flex-container flex-column txt-center pop-font">
           <h2 className="txt-white">
             Welcome to <span>Pizza Time</span> restaurant
@@ -22,6 +17,11 @@ export default class WelcomeSection extends React.Component {
             orci eu justo porttitor, eget ultricies magna facilisis.{" "}
           </p>
         </section>
+        <img
+          className="section-two-img"
+          src={SectionOneImg}
+          alt="restaurant interior"
+        />
       </article>
     );
   }

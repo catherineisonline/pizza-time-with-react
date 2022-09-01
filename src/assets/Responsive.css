@@ -64,13 +64,11 @@
   }
   .section-1,
   .company-details,
-  .social-media,
   .services-grid {
     display: flex;
     flex-direction: row;
   }
 
-  .social-media,
   .company-details {
     align-items: center;
     width: 100%;
@@ -90,6 +88,7 @@
   }
   .highlights {
     grid-template-columns: repeat(4, 1fr);
+    /* margin: 0 auto; */
   }
 
   .section-8 {

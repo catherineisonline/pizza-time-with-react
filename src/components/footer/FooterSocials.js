@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Github from "../../images/socials/github.svg";
 import Linkedin from "../../images/socials/linkedin.svg";
 import Website from "../../images/socials/portfolio.png";

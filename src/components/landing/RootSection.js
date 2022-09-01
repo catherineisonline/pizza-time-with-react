@@ -23,8 +23,8 @@ class RootSection extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <ContactUsLanding />
         <WelcomeSection />
+        <ContactUsLanding />
         <OurServices />
         <PizzaMenuPreview ResetLocation={ResetLocation} />
         <MenuPricingPreview ResetLocation={ResetLocation} />

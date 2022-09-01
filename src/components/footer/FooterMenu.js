@@ -20,7 +20,7 @@ export default class FooterMenu extends React.Component {
             className="txt-white"
             to="/"
           >
-            <>Home</>
+            Home
           </NavLink>
         </li>
         <li>
@@ -37,7 +37,7 @@ export default class FooterMenu extends React.Component {
             className="txt-white"
             to="/menu"
           >
-            <>Menu</>
+            Menu
           </NavLink>
         </li>
 
@@ -55,7 +55,7 @@ export default class FooterMenu extends React.Component {
             className="txt-white"
             to="/blog"
           >
-            <>Blog</>
+            Blog
           </NavLink>
         </li>
         <li>
@@ -72,7 +72,7 @@ export default class FooterMenu extends React.Component {
             className="txt-white"
             to="/about"
           >
-            <>About</>
+            About
           </NavLink>
         </li>
         <li>
@@ -89,7 +89,7 @@ export default class FooterMenu extends React.Component {
             className="txt-white"
             to="/contact"
           >
-            <>Contact</>
+            Contact
           </NavLink>
         </li>
         <li>
