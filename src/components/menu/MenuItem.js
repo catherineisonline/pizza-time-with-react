@@ -75,6 +75,7 @@ export default class MenuItem extends React.Component {
       successMsg,
       ResetLocation,
     } = this.props;
+
     return (
       <div className="menu-item flex-container flex-column txt-white">
         <NavLink

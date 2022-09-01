@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 //Components
+
 import Header from "./components/landing/Header.js";
 import Footer from "./components/footer/Footer.js";
 import Menu from "./components/menu/Menu";
@@ -16,6 +17,7 @@ import Register from "./components/registration/Register";
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
 import SingleItem from "./components/singleItem/SingleItem";
+import Error404 from "./components/errors/Error404.js";
 
 export default class App extends React.Component {
   constructor() {
@@ -404,6 +406,7 @@ export default class App extends React.Component {
           />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>
+
         <Footer ResetLocation={this.ResetLocation} />
       </BrowserRouter>
     );

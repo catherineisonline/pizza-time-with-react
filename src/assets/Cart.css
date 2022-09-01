@@ -37,6 +37,13 @@
   text-transform: capitalize;
   font-size: 2rem;
 }
+.error-404 {
+  color: var(--white);
+  font-family: var(--nothing-font);
+  text-transform: capitalize;
+  font-size: 2rem;
+  text-align: center;
+}
 
 .cart-title-section p {
   color: var(--whitish-gray);
