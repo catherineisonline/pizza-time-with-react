@@ -25,7 +25,7 @@ export default class Register extends React.Component {
             </section>
             <section className="birthday-section">
               <select name="month">
-                <option selected>January</option>
+                <option defaultValue={"January"}>January</option>
                 <option>February</option>
                 <option>March</option>
                 <option>April</option>
@@ -72,7 +72,7 @@ export default class Register extends React.Component {
                 <option value="31">31</option>
               </select>
               <select name="year" className="year">
-                <option value="2018" selected="1">
+                <option value="2018" defaultValue="1">
                   2022
                 </option>
                 <option value="2018">2021</option>

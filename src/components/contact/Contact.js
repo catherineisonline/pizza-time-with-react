@@ -69,7 +69,7 @@ export default class Contact extends React.Component {
       ) {
         BtnMsg.textContent = `Thanks for contacting us, ${FullnameInput.value}! We will get back to you shortly`;
       } else {
-        console.log("err");
+        return;
       }
     }
     return (
