@@ -215,8 +215,8 @@ li.alice-carousel__stage-item .__cloned {
 }
 
 .alice-carousel__dots-item:not(.__custom) {
-  width: 20px !important;
-  height: 20px !important;
+  width: 16px !important;
+  height: 16px !important;
   background-color: var(--light-black) !important;
   opacity: 0.8 !important;
 }
