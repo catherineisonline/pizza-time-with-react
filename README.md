@@ -2,9 +2,9 @@
 
 <img src="https://github.com/catherineisonline/pizza-time-with-react/blob/main/src/images/project-preview.png?raw=true" ></img>
 
-- Pizza Time, a pizza restaurant that offers online order services, is one of the most interesting projects I am planning to implement. The goal of this project is to make this restaurant landing page look almost like an actual working bussiness. It should have all the interactivity usual e-commerce websites have.
+Pizza Time, a pizza restaurant that offers online order services, is one of the most interesting projects I am planning to implement. The goal of this project is to make this restaurant landing page look almost like an actual working bussiness. It should have all the interactivity usual e-commerce websites have.
 
-- Live Version:
+Live Version:
 
 [Pizza Time](https://pizza-time-with-react.vercel.app/)
 
@@ -69,7 +69,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### Used Dependencies <a id="dependencies"></a>
+## Used Dependencies <a id="dependencies"></a>
 
 - [React Icons](https://www.npmjs.com/package/react-icons)
 - [React Router DOM](https://www.npmjs.com/package/react-router-dom)
