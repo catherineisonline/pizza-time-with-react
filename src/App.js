@@ -17,7 +17,6 @@ import Register from "./components/registration/Register";
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
 import SingleItem from "./components/singleItem/SingleItem";
-import Error404 from "./components/errors/Error404.js";
 
 export default class App extends React.Component {
   constructor() {
