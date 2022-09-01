@@ -8,21 +8,17 @@ export default class Register extends React.Component {
       <main className="register-main">
         <h1>Register</h1>
         <form className="registration-form">
-          {/* NAME SECTION */}
           <section className="name-section">
             <input type="text" placeholder="First name" />
             <input type="text" placeholder="Last name" />
           </section>
-          {/* EMAIL SECTION  */}
           <section className="email-section">
             <input type="email" placeholder="Email" />
           </section>
-          {/* PASS SECTION */}
           <section className="password-section">
             <input type="password" placeholder="New password" />
             <input type="password" placeholder="Repeat password" />
           </section>
-          {/* BIRTHDAY SECTION */}
           <section className="birthday">
             <section>
               <label htmlFor="birthday">Birthday</label>
@@ -199,7 +195,6 @@ export default class Register extends React.Component {
               </select>
             </section>
           </section>
-          {/* GENDER SECTION */}
           <section className="gender">
             <section>
               <label htmlFor="gender">Gender</label>
@@ -207,7 +202,7 @@ export default class Register extends React.Component {
             <section className="gender-section">
               <label className="gender-checkbox" htmlFor="male">
                 Male
-                <input  type="radio" value="male" name="gender"></input>
+                <input type="radio" value="male" name="gender"></input>
               </label>
               <label className="gender-checkbox" htmlFor="female">
                 Female

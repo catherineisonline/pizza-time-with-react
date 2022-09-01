@@ -196,7 +196,6 @@ export default class MenuSlider extends React.Component {
     });
   }
   componentDidMount() {
-    // this.getCategories();
     this.getAllProducts();
     this.getProductsByCategory(this.state.activeCategory);
   }

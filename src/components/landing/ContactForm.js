@@ -1,19 +1,16 @@
 import React from "react";
-// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+//Leaflet
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker } from "react-leaflet";
 import { Popup } from "react-leaflet";
-// import L from "react-leaflet";
-// import { Marker } from "leaflet";
 let DefaultIcon = L.icon({
   iconUrl: icon,
   shadowUrl: iconShadow,
 });
 L.Marker.prototype.options.icon = DefaultIcon;
-
 const position = [37.0902, -93.7129];
 
 export default class ContactForm extends React.Component {
@@ -86,12 +83,6 @@ export default class ContactForm extends React.Component {
       console.log("err");
     }
   }
-  componentDidMount() {
-    // var container = L.DomUtil.get("map");
-    // if (container != null) {
-    //   container._leaflet_id = null;
-    // }
-  }
 
   render() {
     return (
@@ -113,22 +104,6 @@ export default class ContactForm extends React.Component {
               </Popup>
             </Marker>
           </MapContainer>
-          {/* <MapContainer
-            id="map"
-            center={position}
-            zoom={9}
-            scrollWheelZoom={false}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={position}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
-          </MapContainer> */}
         </section>
         <section className="contact-section">
           <form className="contact-form  flex-container flex-column">

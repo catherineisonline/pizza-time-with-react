@@ -1,12 +1,10 @@
 import React from "react";
-
 import logo from "../../images/logo.png";
 import burger from "../../images/burger-menu.svg";
 import { NavLink } from "react-router-dom";
 import LoginModal from "../tools/LoginModal";
 import Cart from "../../images/cart-icon.png";
 import SuccessMsg from "../tools/SuccessMsg";
-// import ResetLocation from "../tools/ResetLocation";
 
 export default class Header extends React.Component {
   HideModal() {

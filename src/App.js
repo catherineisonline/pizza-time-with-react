@@ -146,11 +146,8 @@ export default class App extends React.Component {
         attributesMatch(
           userSelectedAttributes[i],
           targetProduct?.userSelectedAttributes[i]
-          // userSelectedAttributes,
-          // targetProduct?.userSelectedAttributes
         )
       ) {
-        // console.log(userSelectedAttributes);
         truthyValuesCounter += 1;
       }
       i += 1;
@@ -184,7 +181,6 @@ export default class App extends React.Component {
     return currentProductList;
   }
   handleAddProduct = (targetProduct, userSelectedAttributes) => {
-    // console.log(userSelectedAttributes)
     let updatedProductList;
     const productAlreadyInCart = this.CheckRepeatableProducts(
       this.state.cartItems,
@@ -233,22 +229,15 @@ export default class App extends React.Component {
     }
 
     this.setState({ cartItems: updatedProductList });
-
-    //save to local storage
-    // localStorage.setItem("cartItems", JSON.stringify(updatedProductList));
     //Update cart amount
     if (updatedProductList.length <= 1) {
       updatedProductList.map((item) => {
-        //save to local storage
-        // localStorage.setItem("productsQuantity", JSON.stringify(item.quantity));
         return this.setState({ productsQuantity: item.quantity });
       });
     } else {
       let productListArray = updatedProductList.map((item) => item.quantity);
       let sum = productListArray.reduce((a, b) => a + b, 0);
       this.setState({ productsQuantity: sum });
-      //save to local storage
-      // localStorage.setItem("productsQuantity", JSON.stringify(sum));
     }
   };
   // Remove Product From Cart
@@ -272,28 +261,19 @@ export default class App extends React.Component {
       updatedProductList = products;
     }
     this.setState({ cartItems: updatedProductList });
-    //save to local storage
-    // localStorage.setItem("cartItems", JSON.stringify(updatedProductList));
 
     //Update cart amount
     if (updatedProductList.length <= 1) {
       updatedProductList.map((item) => {
-        //save to local storage
-        localStorage.setItem("productsQuantity", JSON.stringify(item.quantity));
-
         return this.setState({ productsQuantity: item.quantity });
       });
     } else {
       let productListArray = updatedProductList.map((item) => item.quantity);
       let sum = productListArray.reduce((a, b) => a + b);
       this.setState({ productsQuantity: sum });
-      //save to local storage
-      // localStorage.setItem("productsQuantity", JSON.stringify(sum));
     }
     if (updatedProductList.length === 0) {
       this.setState({ productsQuantity: 0 });
-      //save to local storage
-      // localStorage.setItem("productsQuantity", JSON.stringify(0));
     }
   };
 

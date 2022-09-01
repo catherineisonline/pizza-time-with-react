@@ -1,4 +1,3 @@
-
 .modal.active-modal {
   display: inline-block;
   position: fixed;
@@ -137,19 +136,11 @@
 @media screen and (min-width: 1025px) {
   .modal-main {
     width: 50%;
-    /* top: 50%; */
-  }
-}
-
-@media screen and (min-width: 1110px) {
-  .modal-main {
-    /* top: 50%; */
   }
 }
 
 @media screen and (min-width: 1440px) {
   .modal-main {
     width: 40%;
-    /* top: 30%; */
   }
 }

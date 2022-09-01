@@ -1,11 +1,6 @@
 li {
   list-style: none;
 }
-
-/* .menu-main::before {
-  content: "";
-  height: 10rem;
-}*/
 .menu-main::after {
   content: "";
   height: 10rem;
@@ -135,7 +130,6 @@ input[type="search"]::-webkit-search-results-decoration {
   grid-template-columns: 1fr;
   width: 80%;
   margin: 0 auto;
-  /* margin-bottom: 0%; */
 }
 
 /* MENU ITEM */
@@ -309,7 +303,6 @@ input[type="search"]::-webkit-search-results-decoration {
   .menu-main {
     grid-template-columns: repeat(4, 1fr);
     gap: none;
-    /* padding: 2rem 1rem; */
   }
 
   .menu-search {
@@ -321,9 +314,7 @@ input[type="search"]::-webkit-search-results-decoration {
     flex-direction: row;
     width: 80%;
     margin: 0 auto;
-    /* gap: 1rem; */
     justify-content: space-between;
-    /* gap: 2rem; */
   }
 
   .side-menu {

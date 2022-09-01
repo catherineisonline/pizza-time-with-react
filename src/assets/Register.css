@@ -73,7 +73,6 @@
   border: 1px solid #fac56425;
   background-color: transparent;
   padding: 2rem;
-  /* width: -webkit-fill-available; */
   border-radius: 10px;
 }
 
@@ -117,7 +116,6 @@ input[type="radio" i] {
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
-  /* outline: 1px solid var(--whitish-gray); */
   border: 1px solid var(--whitish-gray);
   padding: 0.3rem;
   border-radius: 50%;
@@ -125,7 +123,6 @@ input[type="radio" i] {
 
 input[type="radio" i]:checked {
   background-color: var(--yellow);
-  /* outline: 1px solid var(--white); */
   border: 1px solid var(--yellow);
 }
 
@@ -150,7 +147,6 @@ input[type="radio" i]:checked {
   border-radius: 10px;
 }
 .register-section {
-  /* text-align: center; */
   width: 90%;
   width: 18rem;
   margin: 0 auto;

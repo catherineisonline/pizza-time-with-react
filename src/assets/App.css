@@ -107,7 +107,6 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* position: relative; */
 }
 /* Logo */
 .logo-styling {
@@ -176,28 +175,16 @@ header {
   height: 1.5rem;
 }
 
-/* Burger Menu */
-/* .burger-menu {
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  cursor: pointer;
-  
-} */
 .burger-bars {
   width: 2rem;
   cursor: pointer;
   margin-right: 0;
-  /* position: relative; */
 }
 /* Header Info */
 .header-section {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background-color: var(--light-black); */
   height: 40rem;
   max-height: 100%;
   width: 100%;
@@ -438,7 +425,6 @@ li.alice-carousel__stage-item .__cloned {
 /* Section 4 */
 .section-4 {
   gap: 2rem;
-
   padding-bottom: 3rem;
 }
 
