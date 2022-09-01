@@ -366,6 +366,11 @@ li.alice-carousel__stage-item .__cloned {
   font-weight: 400;
 }
 
+.section-introduction {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .services-grid {
   gap: 4rem;
   margin-top: 4rem;
@@ -384,7 +389,7 @@ li.alice-carousel__stage-item .__cloned {
   width: 3.5rem;
   margin: 0 auto;
   z-index: 2;
-  border: 1px solid #bf7e06;
+  opacity: 0.8;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;

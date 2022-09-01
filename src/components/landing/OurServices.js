@@ -22,10 +22,11 @@ export default class OurServices extends React.Component {
       <article className="section-3 flex-container flex-column txt-center">
         <h2 className="pop-font">Our Services</h2>
         <p className="pop-font section-introduction">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          consequat nibh qua. Pellentesque ac leo at elit consequat aliquet.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          consequat nibh qua.
+          Pizza Time provides services across all states. We provide various
+          foods and drinks, you choose! What makes us special is our teams of
+          professionals with extensive knowledge of all cuisine that we have to
+          offer. Pizza Time holds the market of the pizza industry and
+          continuously offers more than pizza!
         </p>
         <section className="services-grid  flex-container flex-column">
           <div className="service-list flex-container flex-column">
