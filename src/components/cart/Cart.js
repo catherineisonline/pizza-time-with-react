@@ -8,7 +8,6 @@ export default class Cart extends React.Component {
   render() {
     const {
       cartItems,
-      selectedAttributes,
       handleAddProduct,
       handleRemoveProduct,
       successMsg,
@@ -29,7 +28,6 @@ export default class Cart extends React.Component {
           <FullCart
             cartItems={cartItems}
             clearCart={clearCart}
-            selectedAttributes={selectedAttributes}
             handleAddProduct={handleAddProduct}
             handleRemoveProduct={handleRemoveProduct}
             successMsg={successMsg}

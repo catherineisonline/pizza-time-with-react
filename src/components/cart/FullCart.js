@@ -8,7 +8,6 @@ export default class FullCart extends React.Component {
       successMsg,
       handleAddProduct,
       handleRemoveProduct,
-      selectedAttributes,
       cartItems,
     } = this.props;
     return (
@@ -20,7 +19,6 @@ export default class FullCart extends React.Component {
               index={index}
               successMsg={successMsg}
               cartItem={cartItem}
-              selectedAttributes={selectedAttributes}
               handleAddProduct={handleAddProduct}
               handleRemoveProduct={handleRemoveProduct}
               className="cart-item"
