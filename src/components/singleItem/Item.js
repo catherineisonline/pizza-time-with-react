@@ -2,7 +2,6 @@ import React from "react";
 import AddToCartButton from "../cart/AddToCartButton";
 import Attribute from "../menu/Attribute";
 import { allProductsData } from "../../data/AllProductsData";
-import Error404 from "../errors/Error404";
 
 export default class Item extends React.Component {
   constructor(props) {
@@ -104,50 +103,44 @@ export default class Item extends React.Component {
       this.state;
     document.title = `${singleProduct.ItemName} | Pizza Time`;
     return (
-      <React.Fragment>
-        {singleProduct.length > 0 ? (
-          <article className="single-item flex-container flex-column txt-white">
-            <img
-              src={singleProduct.ItemImg}
-              alt={`${singleProduct.ItemName}`}
-            ></img>
-            <section className="single-item-info">
-              <section className="single-item-title">
-                {" "}
-                <h3>{singleProduct.ItemName}</h3>
-                <p>{singleProduct.ItemIngredients}</p>
-              </section>
+      <article className="single-item flex-container flex-column txt-white">
+        <img
+          src={singleProduct.ItemImg}
+          alt={`${singleProduct.ItemName}`}
+        ></img>
+        <section className="single-item-info">
+          <section className="single-item-title">
+            {" "}
+            <h3>{singleProduct.ItemName}</h3>
+            <p>{singleProduct.ItemIngredients}</p>
+          </section>
 
-              {singleProduct?.attributes?.map((attribute) => (
-                <Attribute
-                  key={attribute.id}
-                  className="single-item-attributes"
-                  handleSelectedAttributes={this.handleSelectedAttributes}
-                  attribute={attribute}
-                />
-              ))}
-              <div className="price">
-                <section>
-                  <p className="price-num">
-                    <span>$</span>
-                    {singleProduct.ItemPrice}
-                  </p>
-                </section>
-                <AddToCartButton
-                  successMsg={successMsg}
-                  allAttributesAreSelected={allAttributesAreSelected}
-                  handleAddProduct={handleAddProduct}
-                  handleRemoveProduct={handleRemoveProduct}
-                  singleProduct={singleProduct}
-                  selectedAttributes={selectedAttributes}
-                />
-              </div>
+          {singleProduct?.attributes?.map((attribute) => (
+            <Attribute
+              key={attribute.id}
+              className="single-item-attributes"
+              handleSelectedAttributes={this.handleSelectedAttributes}
+              attribute={attribute}
+            />
+          ))}
+          <div className="price">
+            <section>
+              <p className="price-num">
+                <span>$</span>
+                {singleProduct.ItemPrice}
+              </p>
             </section>
-          </article>
-        ) : (
-          <Error404 />
-        )}
-      </React.Fragment>
+            <AddToCartButton
+              successMsg={successMsg}
+              allAttributesAreSelected={allAttributesAreSelected}
+              handleAddProduct={handleAddProduct}
+              handleRemoveProduct={handleRemoveProduct}
+              singleProduct={singleProduct}
+              selectedAttributes={selectedAttributes}
+            />
+          </div>
+        </section>
+      </article>
     );
   }
 }
