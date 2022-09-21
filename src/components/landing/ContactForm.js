@@ -91,7 +91,7 @@ export default class ContactForm extends React.Component {
           <MapContainer
             id="map"
             center={position}
-            zoom={13}
+            zoom={9}
             scrollWheelZoom={false}
           >
             <TileLayer
