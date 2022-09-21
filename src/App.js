@@ -403,7 +403,10 @@ export default class App extends React.Component {
               />
             }
           />
-          <Route path="/payment" element={<Payment />} />
+          <Route
+            path="/payment"
+            element={<Payment cartItems={this.state.cartItems} />}
+          />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>
 

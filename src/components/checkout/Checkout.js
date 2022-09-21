@@ -4,6 +4,7 @@ import CheckoutSummary from "./CheckoutSummary";
 import CheckoutPersonalInfo from "./CheckoutPersonalInfo";
 import CheckoutDelivery from "./CheckoutDelivery";
 import CheckoutPromo from "./CheckoutPromo";
+import EmptyCart from "../cart/EmptyCart.js";
 
 export default class Checkout extends React.Component {
   constructor(props) {
@@ -42,31 +43,35 @@ export default class Checkout extends React.Component {
     return (
       <main className="checkout">
         <h1>Checkout</h1>
-        <article className="checkout-content">
-          <CheckoutSummary
-            cartItems={cartItems}
-            selectedAttributes={selectedAttributes}
-            handleAddProduct={handleAddProduct}
-            handleRemoveProduct={handleRemoveProduct}
-            successMsg={successMsg}
-          />
-          <CheckoutPersonalInfo />
-          <CheckoutDelivery
-            toggleDelivery={this.toggleDelivery}
-            takeAway={this.state.takeAway}
-          />
-          <CheckoutPromo
-            promoCode={this.state.promoCode}
-            togglePromocode={this.togglePromocode}
-          />
-          <CartTotals
-            className="checkout-carttotals"
-            productsQuantity={productsQuantity}
-            totalPayment={totalPayment}
-            taxes={taxes}
-            ResetLocation={ResetLocation}
-          />
-        </article>
+        {cartItems.length === 0 ? (
+          <EmptyCart />
+        ) : (
+          <article className="checkout-content">
+            <CheckoutSummary
+              cartItems={cartItems}
+              selectedAttributes={selectedAttributes}
+              handleAddProduct={handleAddProduct}
+              handleRemoveProduct={handleRemoveProduct}
+              successMsg={successMsg}
+            />
+            <CheckoutPersonalInfo />
+            <CheckoutDelivery
+              toggleDelivery={this.toggleDelivery}
+              takeAway={this.state.takeAway}
+            />
+            <CheckoutPromo
+              promoCode={this.state.promoCode}
+              togglePromocode={this.togglePromocode}
+            />
+            <CartTotals
+              className="checkout-carttotals"
+              productsQuantity={productsQuantity}
+              totalPayment={totalPayment}
+              taxes={taxes}
+              ResetLocation={ResetLocation}
+            />
+          </article>
+        )}
       </main>
     );
   }
