@@ -3,7 +3,6 @@ import CartTotals from "../cart/CartTotals";
 import CheckoutSummary from "./CheckoutSummary";
 import CheckoutPersonalInfo from "./CheckoutPersonalInfo";
 import CheckoutDelivery from "./CheckoutDelivery";
-import CheckoutPayment from "./CheckoutPayment";
 import CheckoutPromo from "./CheckoutPromo";
 
 export default class Checkout extends React.Component {
@@ -56,7 +55,6 @@ export default class Checkout extends React.Component {
             toggleDelivery={this.toggleDelivery}
             takeAway={this.state.takeAway}
           />
-          <CheckoutPayment />
           <CheckoutPromo
             promoCode={this.state.promoCode}
             togglePromocode={this.togglePromocode}

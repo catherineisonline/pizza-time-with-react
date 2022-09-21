@@ -67,44 +67,35 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   gap: 0.5rem;
 }
 /* PERSONAL INFORMATION */
-.checkout-personal-information {
+.checkout-personal-information,
+.checkout-personal-information form,
+.checkout-choose-delivery,
+.checkout-choose-delivery form,
+.checkout-choose-payment,
+.delivery {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.checkout-personal-information input {
-  background-color: transparent;
-  font-weight: 400;
-  font-size: 1rem;
-  border: none;
-  border-bottom: 1px solid var(--light-gray);
-  max-width: 80%;
-  width: 80%;
-}
-.checkout-personal-information input:focus-visible {
-  outline: transparent;
-}
-.checkout-personal-information input[type="text"] {
+.checkout-personal-information input,
+.delivery input,
+.checkout-choose-payment input,
+.promo-code input {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
   font-weight: 400;
   font-size: 1rem;
+  border: 1px solid var(--light-gray);
+  padding: 1rem;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 1rem;
+  max-width: 80%;
+  width: 80%;
 }
 
 /* CHOOSE DELIVERY */
-.checkout-choose-delivery {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.checkout-choose-delivery form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
 .checkout-choose-delivery form label {
   display: flex;
   flex-direction: row;
@@ -112,61 +103,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   gap: 1rem;
   width: 50%;
 }
-
-/* DELIVERY */
-.delivery {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.delivery input {
-  background-color: transparent;
-  font-weight: 400;
-  font-size: 1rem;
-  border: none;
-  border-bottom: 1px solid var(--light-gray);
-  max-width: 80%;
-  width: 80%;
-}
-.delivery input:focus-visible {
-  outline: transparent;
-}
-.delivery input[type="text"] {
-  color: var(--whitish-gray);
-  font-family: var(--poppins-font);
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-/* PAYMENT */
-
-.checkout-choose-payment {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.checkout-choose-payment input {
-  background-color: transparent;
-  font-weight: 400;
-  font-size: 1rem;
-  border: none;
-  border-bottom: 1px solid var(--light-gray);
-  max-width: 80%;
-  width: 80%;
-  outline: none;
-}
-.checkout-choose-payment input:focus-visible {
-  outline: transparent;
-}
-.checkout-choose-payment input[type="text"] {
-  color: var(--whitish-gray);
-  font-family: var(--poppins-font);
-  font-weight: 400;
-  font-size: 1rem;
-}
-
 /* PROMOCODE */
 .promo-code {
   display: flex;
@@ -181,23 +117,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: 400;
   font-size: 1rem;
   transition: all ease-in-out 0.2s;
+  text-decoration: underline;
 }
 .promo-code p:hover {
   color: var(--yellow);
   transition: all ease-in-out 0.2s;
 }
-
-.promo-code input {
-  background-color: transparent;
-  font-weight: 400;
-  font-size: 1rem;
-  border: none;
-  border-bottom: 1px solid var(--light-gray);
-  max-width: 80%;
-  width: 80%;
-  outline: none;
-}
-.promo-code input[type="text"],
+/* .promo-code input[type="text"], */
 input[type="password"] {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);

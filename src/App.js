@@ -16,6 +16,7 @@ import Register from "./components/registration/Register";
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
 import SingleItem from "./components/singleItem/SingleItem";
+import Payment from "./components/payment/Payment.js";
 
 export default class App extends React.Component {
   constructor() {
@@ -402,6 +403,7 @@ export default class App extends React.Component {
               />
             }
           />
+          <Route path="/payment" element={<Payment />} />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>
 

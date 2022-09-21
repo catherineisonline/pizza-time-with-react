@@ -192,7 +192,7 @@
   font-family: var(--poppins-font);
   font-weight: 400;
   font-size: 1rem;
-  text-transform: uppercase;
+
   border: 1px solid var(--whitish-gray);
   width: 90%;
   padding: 0.5rem;
@@ -203,6 +203,7 @@
   background-color: var(--whitish-gray);
   color: var(--light-black);
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .cart-checkout-btn:hover {
   border: 1px solid var(--yellow);
