@@ -361,16 +361,15 @@ li.alice-carousel__stage-item .__cloned {
   background-repeat: repeat;
   background-size: contain;
   padding: 3rem 1rem;
+  
 }
 .section-3 h2 {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
 }
-
-.section-introduction {
-  max-width: 90%;
-  margin: 0 auto;
+.section-3 p {
+  color: black;
 }
 
 .services-grid {
