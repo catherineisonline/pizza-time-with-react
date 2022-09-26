@@ -2686,8 +2686,10 @@ export const allProductsData = [
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
       "Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.",
-    ItemPrice: (10).toFixed(2),
+    ItemPriceBefore: (10).toFixed(2),
+    ItemPrice: (8).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
 
@@ -2696,8 +2698,10 @@ export const allProductsData = [
     ItemImg: NigiriWithSalmon,
     ItemName: "Nigiri with Salmon and Orange 1Pc",
     ItemIngredients: "Salmon, Orange, Rice.",
-    ItemPrice: (4).toFixed(2),
+    ItemPriceBefore: (4).toFixed(2),
+    ItemPrice: (3).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2706,8 +2710,10 @@ export const allProductsData = [
     ItemName: "Pepperoni Pizza",
     ItemIngredients:
       "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
-    ItemPrice: (5).toFixed(2),
+      ItemPriceBefore: (5).toFixed(2),
+    ItemPrice: (3).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2716,8 +2722,10 @@ export const allProductsData = [
     ItemName: "Meat Pizza",
     ItemIngredients:
       "Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.",
-    ItemPrice: (10).toFixed(2),
+      ItemPriceBefore: (10).toFixed(2),
+    ItemPrice: (8).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2726,8 +2734,10 @@ export const allProductsData = [
     ItemName: "Margherita Pizza",
     ItemIngredients:
       "Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.",
-    ItemPrice: (8).toFixed(2),
+      ItemPriceBefore: (8).toFixed(2),
+    ItemPrice: (7).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2736,8 +2746,10 @@ export const allProductsData = [
     ItemName: "Veggie Pizza",
     ItemIngredients:
       "Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.",
-    ItemPrice: (9).toFixed(2),
+      ItemPriceBefore: (9).toFixed(2),
+    ItemPrice: (7).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2746,8 +2758,10 @@ export const allProductsData = [
     ItemName: "Sebastian the Crab Roll 8Pcs",
     ItemIngredients:
       "Crab with Unique Sauce, Cream Cheese, Avocado, Dried Tuna Flakes, Sesame, Cucumber Rice, Nori.",
-    ItemPrice: (13).toFixed(2),
+      ItemPriceBefore: (13).toFixed(2),
+    ItemPrice: (10).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2756,8 +2770,10 @@ export const allProductsData = [
     ItemName: "Lamb Ragù",
     ItemIngredients:
       "Lamb shoulder, gnocchi, red wine, heavy cream, tomato paste.",
-    ItemPrice: (12).toFixed(2),
+      ItemPriceBefore: (12).toFixed(2),
+    ItemPrice: (10).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2765,8 +2781,10 @@ export const allProductsData = [
     ItemImg: CheesePizza,
     ItemName: "Cheese Pizza",
     ItemIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
-    ItemPrice: (2).toFixed(2),
+    ItemPriceBefore: (2).toFixed(2),
+    ItemPrice: (1).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2775,8 +2793,10 @@ export const allProductsData = [
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
       "Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.",
-    ItemPrice: (10).toFixed(2),
+      ItemPriceBefore: (10).toFixed(2),
+    ItemPrice: (9).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
 
@@ -2785,8 +2805,10 @@ export const allProductsData = [
     ItemImg: NigiriWithSalmon,
     ItemName: "Nigiri with Salmon and Orange 1Pc",
     ItemIngredients: "Salmon, Orange, Rice.",
-    ItemPrice: (4).toFixed(2),
+    ItemPriceBefore: (4).toFixed(2),
+    ItemPrice: (3).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2795,8 +2817,10 @@ export const allProductsData = [
     ItemName: "Pepperoni Pizza",
     ItemIngredients:
       "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
-    ItemPrice: (5).toFixed(2),
+      ItemPriceBefore: (5).toFixed(2),
+    ItemPrice: (3).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2805,8 +2829,10 @@ export const allProductsData = [
     ItemName: "Meat Pizza",
     ItemIngredients:
       "Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.",
-    ItemPrice: (10).toFixed(2),
+      ItemPriceBefore: (10).toFixed(2),
+    ItemPrice: (8).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2815,8 +2841,10 @@ export const allProductsData = [
     ItemName: "Margherita Pizza",
     ItemIngredients:
       "Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.",
-    ItemPrice: (8).toFixed(2),
+      ItemPriceBefore: (8).toFixed(2),
+    ItemPrice: (7).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2825,8 +2853,10 @@ export const allProductsData = [
     ItemName: "Veggie Pizza",
     ItemIngredients:
       "Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.",
-    ItemPrice: (9).toFixed(2),
+      ItemPriceBefore: (9).toFixed(2),
+    ItemPrice: (8).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2835,8 +2865,10 @@ export const allProductsData = [
     ItemName: "Sebastian the Crab Roll 8Pcs",
     ItemIngredients:
       "Crab with Unique Sauce, Cream Cheese, Avocado, Dried Tuna Flakes, Sesame, Cucumber Rice, Nori.",
-    ItemPrice: (13).toFixed(2),
+      ItemPriceBefore: (13).toFixed(2),
+    ItemPrice: (11).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2845,8 +2877,10 @@ export const allProductsData = [
     ItemName: "Lamb Ragù",
     ItemIngredients:
       "Lamb shoulder, gnocchi, red wine, heavy cream, tomato paste.",
-    ItemPrice: (12).toFixed(2),
+      ItemPriceBefore: (12).toFixed(2),
+    ItemPrice: (11).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2854,8 +2888,10 @@ export const allProductsData = [
     ItemImg: CheesePizza,
     ItemName: "Cheese Pizza",
     ItemIngredients: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
-    ItemPrice: (2).toFixed(2),
+    ItemPriceBefore: (2).toFixed(2),
+    ItemPrice: (1).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
   {
@@ -2864,8 +2900,10 @@ export const allProductsData = [
     ItemName: "Cacio e Pepe Potato Gnocchi",
     ItemIngredients:
       "Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.",
-    ItemPrice: (10).toFixed(2),
+      ItemPriceBefore: (10).toFixed(2),
+    ItemPrice: (8).toFixed(2),
     Category: "Sale",
+    sale: true,
     attributes: [],
   },
 ];

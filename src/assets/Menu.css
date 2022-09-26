@@ -183,6 +183,16 @@ input[type="search"]::-webkit-search-results-decoration {
 .price-num {
   color: var(--yellow);
 }
+.sale-pricing {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.price-num-before {
+  color: var(--pizza-red); 
+  text-decoration: line-through;
+}
+
 
 .add-to-cart-buttons {
   display: flex;
