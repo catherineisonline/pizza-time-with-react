@@ -1,22 +1,24 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 //Components
-import Header from "./components/landing/Header.js";
-import Footer from "./components/footer/Footer.js";
-import Menu from "./components/menu/Menu";
-import RootSection from "./components/landing/RootSection";
-import Contact from "./components/contact/Contact";
-import About from "./components/about/About";
-import Checkout from "./components/checkout/Checkout";
-import Blog from "./components/blog/Blog";
-import Cart from "./components/cart/Cart";
-import PasswordRecovery from "./components/passRecovery/PasswordRecovery.js";
-import Register from "./components/registration/Register";
+import Header from "./routes/landing/Header.js";
+import Footer from './components/footer/Footer'
+// import Menu from "./components/menu/Menu";
+// import RootSection from "./components/landing/RootSection";
+// import About from "./components/about/About";
+// import Checkout from "./components/checkout/Checkout";
+// import Blog from "./components/blog/Blog";
+// import Cart from "./components/cart/Cart";
+// import PasswordRecovery from "./routes/passRecovery/PasswordRecovery.js";
+// import Register from "./routes/registration/Register";
+// import SingleItem from "./routes/singleItem/SingleItem";
+// import Payment from "./routes/payment/Payment.js";
+// import Contact from "./routes/contact/Contact";
+import {About, Blog, Cart, Checkout, Contact, RootSection,  Menu, PasswordRecovery, Payment, Register, SingleItem } from './routes/index'
 //Data
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
-import SingleItem from "./components/singleItem/SingleItem";
-import Payment from "./components/payment/Payment.js";
+
 
 export default class App extends React.Component {
   constructor() {

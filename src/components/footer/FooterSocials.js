@@ -1,7 +1,7 @@
 import React from "react";
-import Github from "../../images/socials/github.svg";
-import Linkedin from "../../images/socials/linkedin.svg";
-import Website from "../../images/socials/portfolio.png";
+import Github from "../../assets/images/socials/github.svg";
+import Linkedin from "../../assets/images/socials/linkedin.svg";
+import Website from "../../assets/images/socials/portfolio.png";
 
 export default class FooterSocials extends React.Component {
   render() {
