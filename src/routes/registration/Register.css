@@ -169,7 +169,9 @@ input[type="radio" i]:checked {
   color: var(--yellow);
   transition: all ease-in-out 0.3s;
 }
-
+.registration-input-err {
+  color: red;
+}
 @media screen and (min-width: 700px) {
   .registration-form {
     width: 70%;
