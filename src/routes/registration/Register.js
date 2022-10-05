@@ -3,7 +3,6 @@ import React from "react";
 export default class Register extends React.Component {
   render() {
     document.title = "Register | Pizza Time";
-
     return (
       <main className="register-main">
         <h1>Register</h1>
@@ -193,25 +192,6 @@ export default class Register extends React.Component {
                 <option value="1906">1906</option>
                 <option value="1905">1905</option>
               </select>
-            </section>
-          </section>
-          <section className="gender">
-            <section>
-              <label htmlFor="gender">Gender</label>
-            </section>
-            <section className="gender-section">
-              <label className="gender-checkbox" htmlFor="male">
-                Male
-                <input type="radio" value="male" name="gender"></input>
-              </label>
-              <label className="gender-checkbox" htmlFor="female">
-                Female
-                <input type="radio" value="female" name="gender"></input>
-              </label>
-              <label className="gender-checkbox" htmlFor="other">
-                Other
-                <input type="radio" value="other" name="gender"></input>
-              </label>
             </section>
           </section>
         </form>
