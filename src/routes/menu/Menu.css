@@ -41,17 +41,19 @@ input[type="search"]::-webkit-search-results-decoration {
 .menu-search-section {
   position: relative;
   width: 80%;
+  margin: 0 auto;
+  height: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
 }
 .menu-search {
-  width: 100%;
+  width: 80%;
   display: block;
   background-color: transparent;
   border: 1px solid var(--light-gray);
   opacity: 0.6;
   border-radius: 20px;
   outline: none;
-  margin-bottom: 2rem;
-  position: relative;
 }
 .menu-search::placeholder {
   color: var(--white);
@@ -64,14 +66,14 @@ input[type="search"]::-webkit-search-results-decoration {
   font-family: var(--poppins-font);
   font-size: 1rem;
   padding: 1rem;
+  /* height: 100%; */
 }
 .menu-search-icon {
   cursor: pointer;
   position: absolute;
   display: block;
-  top: 0;
-  right: 0;
-  transform: translate(50%, 50%);
+  top: 50%;
+  right: 15%;
 }
 
 .sale-message {
@@ -313,11 +315,6 @@ input[type="search"]::-webkit-search-results-decoration {
     grid-template-columns: repeat(4, 1fr);
     gap: none;
   }
-
-  .menu-search {
-    width: 100%;
-  }
-
   .single-item {
     display: flex;
     flex-direction: row;
@@ -330,15 +327,19 @@ input[type="search"]::-webkit-search-results-decoration {
     grid-column: span 1;
     position: sticky;
     top: 15%;
+    display: flex;
     flex-direction: column;
     height: max-content;
     overflow-x: initial;
     scroll-behavior: initial;
+    align-items: initial;
+  }
+  .menu-search-section {
+    width: 100%;
   }
   .side-menu ul {
     flex-direction: column;
     justify-content: space-around;
-    padding: 1rem;
     gap: initial;
     line-height: 5rem;
     overflow-x: initial;

@@ -124,11 +124,6 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
-select option {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #fff;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-}
 .birthday select {
   border: 1px solid transparent;
   background-color: transparent;
