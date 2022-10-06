@@ -16,6 +16,7 @@ export default class MenuRoot extends React.Component {
       successMsg,
       ResetLocation,
     } = this.props;
+    console.log(allProducts)
     document.title = `${activeCategory} | Pizza Time`;
     return (
       <main className="menu-main">

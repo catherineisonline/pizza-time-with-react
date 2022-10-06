@@ -1,6 +1,6 @@
 # Pizza Time
 
-<img src="https://github.com/catherineisonline/pizza-time-with-react/blob/main/src/images/project-preview.png?raw=true" ></img>
+<img src="https://github.com/catherineisonline/pizza-time-with-react/blob/main/src/assets/images/project-preview.png?raw=true" ></img>
 
 Pizza Time, a pizza restaurant that offers online order services, is one of the most interesting projects I am planning to implement. The goal of this project is to make this restaurant landing page look almost like an actual working bussiness. It should have all the interactivity usual e-commerce websites have.
 
