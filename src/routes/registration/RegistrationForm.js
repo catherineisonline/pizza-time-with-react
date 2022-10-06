@@ -110,7 +110,7 @@ export default function RegistrationForm() {
     }
     return (
         <React.Fragment>
-            {submit && Object.keys(formError).length === 0 ? <p className="form-submit-msg">Thank you submitting your request. We will review your message and contact you shortly!</p> :
+            {submit && Object.keys(formError).length === 0 ? <p className="form-submit-msg">Success! Please check your email to verify your account</p> :
                 <form className="registration-form" onSubmit={handleSubmit}>
                     <section className="name-section">
                         <input type="text" placeholder="First name" name="firstName" value={formValue.firstName}
@@ -152,6 +152,14 @@ export default function RegistrationForm() {
                             </select>
                             <span className="registration-input-err">{formError.year}</span>
                         </section>
+                    </section>
+                    <section className="register-section">
+                        <p className="terms-warning">
+                            By clicking Sign Up, you agree to our Terms, Data Policy and Cookies
+                            Policy. You may receive an email notification from us and can opt
+                            out any time.
+                        </p>
+
                     </section>
                     <button className="register-btn" type="submit">Sign up</button>
                 </form>
