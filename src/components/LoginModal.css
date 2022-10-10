@@ -31,7 +31,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   gap: 3rem;
   padding: 2rem;
   margin: 0 auto;
@@ -68,7 +68,7 @@
   width: 90%;
   background-color: transparent;
   border: 1px solid transparent;
-  border-bottom: 1px solid var(--light-black);
+  border: 1px solid var(--light-black);
   padding: 1rem;
 }
 .modal-content input:focus-visible {
@@ -125,6 +125,11 @@
 
 .login-and-signup .modal-signup-btn {
   background-color: var(--yellow);
+}
+
+.login-input-err {
+  color: red;
+  text-align: left;
 }
 
 @media screen and (min-width: 700px) {
