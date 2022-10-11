@@ -65,6 +65,8 @@ export default function LoginModal() {
             <span className="login-input-err">{formError.email}</span>
             <input onChange={handleValidation} value={formValue.password} name="password" type="password" placeholder="Password"></input>
             <span className="login-input-err">{formError.password}</span>
+
+            {submit && Object.keys(formError).length === 0 ? <p className="login-input-err">We couldn't find an account with that email. Try another, or sign up</p> : null}
             <section className="login-and-signup">
               <Link
                 to="/register"
@@ -80,6 +82,7 @@ export default function LoginModal() {
 
             </section>
           </form>
+
           <section className="modal-extras">
             <Link
               to="/password-recovery"
@@ -87,7 +90,6 @@ export default function LoginModal() {
               onClick={() => {
                 HideModal();
                 RemoveMenu();
-                // ShowMenu();
               }}
             >
               Forgot password?
@@ -95,6 +97,7 @@ export default function LoginModal() {
           </section>
         </section>
       </section>
+
     </article>
   );
 }
