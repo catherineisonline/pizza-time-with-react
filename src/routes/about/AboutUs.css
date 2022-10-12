@@ -156,12 +156,19 @@
 .section-three-content,
 .section-four-content,
 .section-five-content {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 /***************  RESPONSIVE ***************/
 
 @media screen and (min-width: 700px) {
+  .section-one-content,
+  .section-two-content,
+  .section-three-content,
+  .section-four-content,
+  .section-five-content {
+    padding: 2rem;
+  }
   .aboutus-img-grid {
     flex-direction: row;
     justify-content: center;
