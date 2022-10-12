@@ -110,6 +110,10 @@
   backdrop-filter: blur(3px);
 }
 
+.section-three-content {
+  margin: 0 auto;
+}
+
 .section-three-img-grid {
   display: flex;
   flex-direction: column;
@@ -152,7 +156,7 @@
 .section-three-content,
 .section-four-content,
 .section-five-content {
-  padding: 3rem;
+  padding: 2rem;
 }
 
 /***************  RESPONSIVE ***************/
