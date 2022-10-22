@@ -33,7 +33,7 @@
   flex-direction: column;
   gap: 1.5rem;
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   padding-bottom: 3rem;
 }
 .display-block {
@@ -120,6 +120,7 @@
   border-radius: 10px;
   color: var(--light-black);
   background-color: transparent;
+  font-weight: 400;
 }
 
 .login-and-signup .modal-signup-btn {
