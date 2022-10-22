@@ -167,7 +167,7 @@ input[type="password"] {
 .checkout-interaction-btns {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  max-width: 65%;
   width: 100%;
   align-items: flex-start;
   gap: 1rem;
