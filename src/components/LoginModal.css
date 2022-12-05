@@ -54,7 +54,19 @@
   padding: 1rem;
   width: 90%;
 }
+.login-modal-title {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.login-modal-title img {
+  cursor: pointer;
+}
 
+.hint-icon {
+  width: 1.5rem;
+}
 .modal-content h2 {
   color: var(--pizza-red);
   font-family: var(--poppins-font);
@@ -69,6 +81,59 @@
   border: 1px solid var(--light-black);
   padding: 1rem;
 }
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  /* height: 1rem; */
+  border-bottom: 1px dotted var(--black);
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 1rem;
+  background-color: #555;
+  color: var(--black);
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: -150%;
+  left: 350%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-left: -5px;
+  transform: rotate(90deg);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.tooltiptext p {
+  color: var(--black);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-align: left;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: max-content;
+  padding: 1.5rem;
+}
+
 .modal-content input:focus-visible {
   outline: none;
 }
@@ -81,8 +146,12 @@
 }
 
 .modal-content input[type="email"],
-.modal-content input[type="password"] {
+.modal-content input[type="password"],
+.modal-content input[type="text"] {
   color: var(--light-black);
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .modal-extras {
@@ -91,6 +160,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  text-align: center;
 }
 
 .modal-forgot-password {
@@ -125,6 +195,7 @@
 
 .login-and-signup .modal-signup-btn {
   background-color: var(--yellow);
+  text-align: center;
 }
 
 .login-input-err {

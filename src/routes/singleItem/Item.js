@@ -30,7 +30,7 @@ export default class Item extends React.Component {
             : [singleId[singleItem.id]].concat(singleItem);
         return singleId;
       },
-      {});
+        {});
 
       const result = Object.keys(separateById).map((e) => separateById[e]);
 
@@ -91,7 +91,7 @@ export default class Item extends React.Component {
     if (
       this.state.selectedAttributes !== nextState.selectedAttributes &&
       nextState.selectedAttributes.length ===
-        this.state.singleProduct.attributes.length
+      this.state.singleProduct.attributes.length
     ) {
       this.handleAllAttributesAreSelected();
     }

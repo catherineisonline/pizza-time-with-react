@@ -332,13 +332,12 @@ export default class App extends React.Component {
   // ! LOGIN MODAL Validation
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.formValue.password === '12345678' && this.state.formValue.email === 'danielwalter@gmail.com') {
+    if (this.state.formValue.password === '12345678' && this.state.formValue.email === 'danielwalter@pizzatime.com') {
       this.setState({ validLogin: true });
     }
     this.setState({ formError: this.validateForm(this.state.formValue) })
-    console.log(this.state.formValue);
     this.setState({ submit: true });
-    console.log(this.state.validLogin)
+    this.removeNavigationMenu();
   }
 
   handleValidation = (e) => {
