@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import FooterSocials from "./FooterSocials";
+import ResetLocation from "../../helpers/ResetLocation";
+
 export default class FooterMenu extends React.Component {
   render() {
-    const { ResetLocation } = this.props;
     return (
       <ul className="footer-menu  flex-container flex-column">
         <li>
@@ -11,9 +12,9 @@ export default class FooterMenu extends React.Component {
             style={({ isActive }) =>
               isActive
                 ? {
-                    textDecoration: "none",
-                    color: "#ff6240",
-                  }
+                  textDecoration: "none",
+                  color: "#ff6240",
+                }
                 : {}
             }
             onClick={ResetLocation}
@@ -28,9 +29,9 @@ export default class FooterMenu extends React.Component {
             style={({ isActive }) =>
               isActive
                 ? {
-                    textDecoration: "none",
-                    color: "#ff6240",
-                  }
+                  textDecoration: "none",
+                  color: "#ff6240",
+                }
                 : {}
             }
             onClick={ResetLocation}
@@ -46,9 +47,9 @@ export default class FooterMenu extends React.Component {
             style={({ isActive }) =>
               isActive
                 ? {
-                    textDecoration: "none",
-                    color: "#ff6240",
-                  }
+                  textDecoration: "none",
+                  color: "#ff6240",
+                }
                 : {}
             }
             onClick={ResetLocation}
@@ -63,9 +64,9 @@ export default class FooterMenu extends React.Component {
             style={({ isActive }) =>
               isActive
                 ? {
-                    textDecoration: "none",
-                    color: "#ff6240",
-                  }
+                  textDecoration: "none",
+                  color: "#ff6240",
+                }
                 : {}
             }
             onClick={ResetLocation}
@@ -80,9 +81,9 @@ export default class FooterMenu extends React.Component {
             style={({ isActive }) =>
               isActive
                 ? {
-                    textDecoration: "none",
-                    color: "#ff6240",
-                  }
+                  textDecoration: "none",
+                  color: "#ff6240",
+                }
                 : {}
             }
             onClick={ResetLocation}

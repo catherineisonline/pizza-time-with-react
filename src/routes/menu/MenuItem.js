@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import AddToCartButton from "../cart/AddToCartButton.js";
 import Attribute from "./Attribute";
+import ResetLocation from "../../helpers/ResetLocation.js";
 
 export default class MenuItem extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ export default class MenuItem extends React.Component {
     if (
       this.state.selectedAttributes !== nextState.selectedAttributes &&
       nextState.selectedAttributes.length ===
-        this.props.singleProduct.attributes.length
+      this.props.singleProduct.attributes.length
     ) {
       this.handleAllAttributesAreSelected();
     }
@@ -73,7 +74,6 @@ export default class MenuItem extends React.Component {
       handleAddProduct,
       handleRemoveProduct,
       successMsg,
-      ResetLocation,
     } = this.props;
 
     return (
@@ -100,22 +100,22 @@ export default class MenuItem extends React.Component {
           />
         ))}
         <div className="price">
-        
-          {singleProduct.sale === true ?   <section className="sale-pricing">  <p className="price-num-before">
-              <span>$</span>
-              {singleProduct.ItemPriceBefore}
-            </p> <p className="price-num">
+
+          {singleProduct.sale === true ? <section className="sale-pricing">  <p className="price-num-before">
+            <span>$</span>
+            {singleProduct.ItemPriceBefore}
+          </p> <p className="price-num">
               <span>$</span>
               {singleProduct.ItemPrice}
-            </p>      </section>:
+            </p>      </section> :
             <section>
-            <p className="price-num">
-              <span>$</span>
-              {singleProduct.ItemPrice}
-            </p> 
+              <p className="price-num">
+                <span>$</span>
+                {singleProduct.ItemPrice}
+              </p>
             </section>}
-           
-     
+
+
           <AddToCartButton
             successMsg={successMsg}
             allAttributesAreSelected={this.state.allAttributesAreSelected}

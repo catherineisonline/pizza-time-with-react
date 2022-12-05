@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import LoginModal from "../../components/LoginModal";
 import Cart from "../../assets/images/cart-icon.png";
 import SuccessMsg from "../../components/SuccessMsg";
+import ResetLocation from "../../helpers/ResetLocation";
 
 export default class Header extends React.Component {
   HideModal() {
@@ -24,7 +25,7 @@ export default class Header extends React.Component {
     hiddenMenu.classList.remove("active");
   }
   render() {
-    const { productsQuantity, ResetLocation } = this.props;
+    const { productsQuantity } = this.props;
     return (
       <header>
         <nav className="main-nav flex-container flex-row txt-center">
@@ -51,9 +52,9 @@ export default class Header extends React.Component {
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: "none",
-                        color: "#ff6240",
-                      }
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -71,9 +72,9 @@ export default class Header extends React.Component {
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: "none",
-                        color: "#ff6240",
-                      }
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -92,9 +93,9 @@ export default class Header extends React.Component {
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: "none",
-                        color: "#ff6240",
-                      }
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -112,9 +113,9 @@ export default class Header extends React.Component {
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: "none",
-                        color: "#ff6240",
-                      }
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -132,9 +133,9 @@ export default class Header extends React.Component {
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: "none",
-                        color: "#ff6240",
-                      }
+                      textDecoration: "none",
+                      color: "#ff6240",
+                    }
                     : {}
                 }
                 className="txt-white"

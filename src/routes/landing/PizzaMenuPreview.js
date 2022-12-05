@@ -6,9 +6,10 @@ import MeatPizza from "../../assets/images/meat-pizza.jpg";
 import MargheritaPizza from "../../assets/images/margherita-pizza.jpg";
 import BBQPizza from "../../assets/images/BBQ-chicken-pizza.jpg";
 import { Link } from "react-router-dom";
+import ResetLocation from "../../helpers/ResetLocation";
+
 export default class PizzaMenuPreview extends React.Component {
   render() {
-    const { ResetLocation } = this.props;
     return (
       <article className="section-4 flex-container flex-column">
         <section className="section-4-info txt-center">

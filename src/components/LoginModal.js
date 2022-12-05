@@ -3,16 +3,20 @@ import "./LoginModal.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+
+
+// ! danielwalter@gmail.com
+//! 12345678
 export default function LoginModal() {
   const [formValue, setFormValue] = useState({ email: '', password: '' });
   const [formError, setFormError] = useState({})
   const [submit, setSubmit] = useState(false);
+  const [validLogin, setValidLogin] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormError(validateForm(formValue))
+    setFormError(validateForm(formValue));
     setSubmit(true);
-
   }
 
   const handleValidation = (e) => {
@@ -29,8 +33,11 @@ export default function LoginModal() {
     else if (!emailRegex.test(value.email)) {
       errors.email = "Please enter valid email"
     }
-    if (!value.password) {
+    if (!value.password || value.password.length < 8) {
       errors.password = "Please enter a valid password"
+    }
+    if (value.password === '12345678' && value.email === 'danielwalter@gmail.com') {
+      setValidLogin(true);
     }
 
     return errors;
@@ -39,6 +46,10 @@ export default function LoginModal() {
   function HideModal() {
     const hiddenModal = document.querySelector(".modal");
     hiddenModal.classList.remove("active-modal");
+    setFormValue({ email: '', password: '' });
+    setFormError({});
+    setValidLogin(false);
+    setSubmit(false);
   }
   function RemoveMenu() {
     const hiddenMenu = document.querySelector(".menu");
@@ -66,7 +77,7 @@ export default function LoginModal() {
             <input onChange={handleValidation} value={formValue.password} name="password" type="password" placeholder="Password"></input>
             <span className="login-input-err">{formError.password}</span>
 
-            {submit && Object.keys(formError).length === 0 ? <p className="login-input-err">We couldn't find an account with that email. Try another, or sign up</p> : null}
+            {submit && Object.keys(formError).length === 0 && !validLogin ? <p className="login-input-err">We couldn't find an account. Try another credentials</p> : null}
             <section className="login-and-signup">
               <Link
                 to="/register"

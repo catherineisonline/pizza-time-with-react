@@ -4,6 +4,7 @@ import MenuCategories from "./MenuCategories";
 import ScrollButton from "../../components/ScrollBtn";
 import MenuItem from "./MenuItem";
 
+
 export default class MenuRoot extends React.Component {
   render() {
     const {
@@ -14,14 +15,12 @@ export default class MenuRoot extends React.Component {
       handleAddProduct,
       handleRemoveProduct,
       successMsg,
-      ResetLocation,
     } = this.props;
     console.log(allProducts)
     document.title = `${activeCategory} | Pizza Time`;
     return (
       <main className="menu-main">
         <MenuCategories
-          ResetLocation={ResetLocation}
           activeCategory={activeCategory}
           allCategories={allCategories}
           changeCategory={changeCategory}
@@ -34,7 +33,6 @@ export default class MenuRoot extends React.Component {
               handleAddProduct={handleAddProduct}
               handleRemoveProduct={handleRemoveProduct}
               successMsg={successMsg}
-              ResetLocation={ResetLocation}
             />
           ))}
           <ScrollButton />

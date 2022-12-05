@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import PizzaCrust from "../../assets/images/pizza-crust.jpg";
 import ThickAndThin from "../../assets/images/thick-or-thin.jpg";
 import Leftover from "../../assets/images/pizza-leftover.jpg";
+import ResetLocation from "../../helpers/ResetLocation";
 
 export default class BlogPreview extends React.Component {
   render() {
-    const { ResetLocation } = this.props;
+
     return (
       <article className="section-9 flex-container flex-column">
         <h2 className="txt-center pop-font txt-white">Recent from blog</h2>

@@ -2,19 +2,8 @@ import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 //Components
 import Header from "./routes/landing/Header.js";
-import Footer from './components/footer/Footer'
-// import Menu from "./components/menu/Menu";
-// import RootSection from "./components/landing/RootSection";
-// import About from "./components/about/About";
-// import Checkout from "./components/checkout/Checkout";
-// import Blog from "./components/blog/Blog";
-// import Cart from "./components/cart/Cart";
-// import PasswordRecovery from "./routes/passRecovery/PasswordRecovery.js";
-// import Register from "./routes/registration/Register";
-// import SingleItem from "./routes/singleItem/SingleItem";
-// import Payment from "./routes/payment/Payment.js";
-// import Contact from "./routes/contact/Contact";
-import {About, Blog, Cart, Checkout, Contact, RootSection,  Menu, PasswordRecovery, Payment, Register, SingleItem } from './routes/index'
+import Footer from './components/footer/Footer';
+import { About, Blog, Cart, Checkout, Contact, RootSection, Menu, PasswordRecovery, Payment, Register, SingleItem } from './routes/index'
 //Data
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
@@ -101,7 +90,7 @@ export default class App extends React.Component {
           : [singleCategory[singleItem.Category]].concat(singleItem);
       return singleCategory;
     },
-    {});
+      {});
 
     const result = Object.keys(separateCategories).map(
       (e) => separateCategories[e]
@@ -309,8 +298,6 @@ export default class App extends React.Component {
     }, 1000);
   }
 
-  ResetLocation = () => window.scrollTo(0, 0);
-
   componentDidMount() {
     this.getCategories();
     this.getAllProducts();
@@ -334,12 +321,11 @@ export default class App extends React.Component {
       <BrowserRouter>
         <Header
           productsQuantity={this.state.productsQuantity}
-          ResetLocation={this.ResetLocation}
         />
         <Routes>
           <Route
             path="/"
-            element={<RootSection ResetLocation={this.ResetLocation} />}
+            element={<RootSection />}
           />
           <Route
             path="/menu"
@@ -351,7 +337,6 @@ export default class App extends React.Component {
                 handleAddProduct={this.handleAddProduct}
                 handleRemoveProduct={this.handleRemoveProduct}
                 successMsg={this.successMsg}
-                ResetLocation={this.ResetLocation}
                 activeCategory={this.state.activeCategory}
               />
             }
@@ -369,7 +354,6 @@ export default class App extends React.Component {
                 successMsg={this.successMsg}
                 getTotalPrice={this.getTotalPrice}
                 taxes={this.state.taxes}
-                ResetLocation={this.ResetLocation}
                 clearCart={this.clearCart}
                 clearedCart={this.state.clearedCart}
               />
@@ -401,7 +385,6 @@ export default class App extends React.Component {
                 successMsg={this.successMsg}
                 getTotalPrice={this.getTotalPrice}
                 taxes={this.state.taxes}
-                ResetLocation={this.ResetLocation}
               />
             }
           />
@@ -412,7 +395,7 @@ export default class App extends React.Component {
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>
 
-        <Footer ResetLocation={this.ResetLocation} />
+        <Footer />
       </BrowserRouter>
     );
   }

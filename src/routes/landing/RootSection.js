@@ -12,13 +12,13 @@ import MenuSlider from "./MenuSlider";
 import BlogPreview from "./BlogPreview";
 import ContactForm from "./ContactForm";
 import Newsletter from "./Newsletter";
+import ResetLocation from "../../helpers/ResetLocation";
 
 class RootSection extends React.Component {
   componentDidUpdate() {
-    window.scrollTo(0, 0);
+    ResetLocation();
   }
   render() {
-    const { ResetLocation } = this.props;
     document.title = "Pizza Time";
     return (
       <React.Fragment>
@@ -26,13 +26,13 @@ class RootSection extends React.Component {
         <WelcomeSection />
         <ContactUsLanding />
         <OurServices />
-        <PizzaMenuPreview ResetLocation={ResetLocation} />
-        <MenuPricingPreview ResetLocation={ResetLocation} />
+        <PizzaMenuPreview />
+        <MenuPricingPreview />
         <Gallery />
         <StatsPreview />
         <MenuSlider />
         <Newsletter />
-        <BlogPreview ResetLocation={ResetLocation} />
+        <BlogPreview />
         <ContactForm />
         <ScrollButton />
       </React.Fragment>

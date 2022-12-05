@@ -6,10 +6,11 @@ import PepperoniPizza from "../../assets/images/pepperoni-pizza.jpg";
 import MeatPizza from "../../assets/images/meat-pizza.jpg";
 import MargheritaPizza from "../../assets/images/margherita-pizza.jpg";
 import BBQPizza from "../../assets/images/BBQ-chicken-pizza.jpg";
+import ResetLocation from "../../helpers/ResetLocation";
 
 export default class MenuPricingPreview extends React.Component {
   render() {
-    const { ResetLocation } = this.props;
+
     return (
       <article className="section-5 flex-container ">
         <h2 className="txt-center pop-font txt-white">Menu Pricing</h2>

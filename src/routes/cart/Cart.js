@@ -14,7 +14,6 @@ export default class Cart extends React.Component {
       productsQuantity,
       totalPayment,
       taxes,
-      ResetLocation,
       clearCart,
       clearedCart,
     } = this.props;
@@ -23,7 +22,7 @@ export default class Cart extends React.Component {
       <main className="cart-container">
         <h1>Cart</h1>
         {cartItems.length === 0 ? (
-          <EmptyCart ResetLocation={ResetLocation} />
+          <EmptyCart />
         ) : (
           <FullCart
             cartItems={cartItems}
@@ -39,7 +38,6 @@ export default class Cart extends React.Component {
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
             taxes={taxes}
-            ResetLocation={ResetLocation}
           />
         )}
         <ScrollBtn />
