@@ -1,38 +1,23 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
 import burger from "../../assets/images/burger-menu.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LoginModal from "../../components/LoginModal";
 import Cart from "../../assets/images/cart-icon.png";
 import SuccessMsg from "../../components/SuccessMsg";
 import ResetLocation from "../../helpers/ResetLocation";
 
 export default class Header extends React.Component {
-  HideModal() {
-    const hiddenModal = document.querySelector(".modal");
-    hiddenModal.classList.remove("active-modal");
-  }
-  ShowModal() {
-    const hiddenModal = document.querySelector(".modal");
-    hiddenModal.classList.toggle("active-modal");
-  }
-  ShowHiddenMenu() {
-    const hiddenMenu = document.querySelector(".navigation-menu");
-    hiddenMenu.classList.toggle("active");
-  }
-  RemoveMenu() {
-    const hiddenMenu = document.querySelector(".navigation-menu");
-    hiddenMenu.classList.remove("active");
-  }
   render() {
-    const { productsQuantity } = this.props;
+    const { productsQuantity, handleLogout, submit, handleSubmit, formValue, hideModal, showModal, showHiddenMenu, validLogin, removeNavigationMenu, handleValidation, formError } = this.props;
     return (
       <header>
+        <LoginModal validLogin={validLogin} formValue={formValue} handleSubmit={handleSubmit} submit={submit} formError={formError} handleValidation={handleValidation} hideModal={hideModal} removeMenu={removeNavigationMenu} />
         <nav className="main-nav flex-container flex-row txt-center">
           <NavLink
             onClick={() => {
               ResetLocation();
-              this.RemoveMenu();
+              removeNavigationMenu();
             }}
             to="/"
             className="logo-styling flex-container flex-row txt-center txt-white"
@@ -47,7 +32,7 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation();
-                  this.RemoveMenu();
+                  removeNavigationMenu();
                 }}
                 style={({ isActive }) =>
                   isActive
@@ -67,7 +52,7 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation();
-                  this.RemoveMenu();
+                  removeNavigationMenu();
                 }}
                 style={({ isActive }) =>
                   isActive
@@ -88,7 +73,7 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation();
-                  this.RemoveMenu();
+                  removeNavigationMenu();
                 }}
                 style={({ isActive }) =>
                   isActive
@@ -108,7 +93,7 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation();
-                  this.RemoveMenu();
+                  removeNavigationMenu();
                 }}
                 style={({ isActive }) =>
                   isActive
@@ -128,7 +113,7 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation();
-                  this.RemoveMenu();
+                  removeNavigationMenu();
                 }}
                 style={({ isActive }) =>
                   isActive
@@ -146,22 +131,31 @@ export default class Header extends React.Component {
             </li>
             <li>
               <div className="login-and-cart">
-                <LoginModal />
-                <div
+                {validLogin ? <Link
+                  to="/"
                   className="login-btn txt-white"
                   onClick={() => {
                     ResetLocation();
-                    this.ShowModal();
-                  }}
-                >
-                  <>Log In</>
-                </div>
+                    handleLogout();
+                  }}>
+                  <>Log out</>
+                </Link> :
+                  <div
+                    className="login-btn txt-white"
+                    onClick={() => {
+                      ResetLocation();
+                      showModal();
+                    }}
+                  >
+                    <>Log in</>
+                  </div>
+                }
                 <NavLink
                   className="cart-btn txt-white"
                   to="/cart"
                   onClick={() => {
                     ResetLocation();
-                    this.RemoveMenu();
+                    removeNavigationMenu();
                   }}
                 >
                   <img src={Cart} alt="" />
@@ -175,7 +169,7 @@ export default class Header extends React.Component {
             className="burger-bars"
             src={burger}
             alt=""
-            onClick={this.ShowHiddenMenu}
+            onClick={showHiddenMenu}
           ></img>
         </nav>
         <SuccessMsg />

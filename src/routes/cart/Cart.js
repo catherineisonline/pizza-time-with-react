@@ -16,6 +16,8 @@ export default class Cart extends React.Component {
       taxes,
       clearCart,
       clearedCart,
+      validLogin,
+      handleLogout, submit, handleSubmit, formValue, hideModal, removeMenu, handleValidation, formError, showModal
     } = this.props;
     document.title = "Cart | Pizza Time";
     return (
@@ -38,6 +40,22 @@ export default class Cart extends React.Component {
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
             taxes={taxes}
+
+
+
+            handleLogout={handleLogout}
+            // validLogin={this.state.validLogin}
+            formValue={formValue}
+            handleSubmit={handleSubmit}
+            submit={submit}
+            formError={formError}
+            hideModal={hideModal}
+            removeMenu={removeMenu}
+            handleValidation={handleValidation}
+            validLogin={validLogin}
+            showModal={showModal}
+
+
           />
         )}
         <ScrollBtn />

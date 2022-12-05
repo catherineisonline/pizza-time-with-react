@@ -6,7 +6,7 @@ import CheckoutBtn from "../checkout/CheckoutBtn";
 
 export default class CartTotals extends React.Component {
   render() {
-    const { totalPayment, productsQuantity, taxes, className } =
+    const { totalPayment, productsQuantity, taxes, className, validLogin, showModal, formValue, handleSubmit, submit, formError, hideModal, removeMenu, handleValidation } =
       this.props;
     return (
       <article className={className}>
@@ -31,6 +31,17 @@ export default class CartTotals extends React.Component {
               <section className="cart-interaction-btns">
                 <CheckoutBtn
                   className="cart-checkout-btn"
+                  // validLogin={validLogin}
+
+                  formValue={formValue}
+                  handleSubmit={handleSubmit}
+                  submit={submit}
+                  formError={formError}
+                  hideModal={hideModal}
+                  removeMenu={removeMenu}
+                  handleValidation={handleValidation}
+                  validLogin={validLogin}
+                  showModal={showModal}
                 />
                 <BacktoMenu
                   className="cart-backtomenu-btn"

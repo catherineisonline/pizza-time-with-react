@@ -10,6 +10,7 @@
   gap: 5rem;
   background-color: var(--light-black);
   min-height: 100vh;
+  position: relative;
 }
 
 .cart-container h1 {
@@ -20,6 +21,12 @@
   font-size: 4rem;
   padding: 2rem;
 }
+
+/* .login-and-checkout {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+} */
 
 .cart-title-section {
   display: flex;

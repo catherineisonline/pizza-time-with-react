@@ -7,7 +7,8 @@ import { About, Blog, Cart, Checkout, Contact, RootSection, Menu, PasswordRecove
 //Data
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
-
+// ! danielwalter@gmail.com
+//! 12345678
 
 export default class App extends React.Component {
   constructor() {
@@ -21,12 +22,22 @@ export default class App extends React.Component {
       productsQuantity: 0,
       totalPayment: 0,
       taxes: 0,
+      formValue: { email: '', password: '' },
+      formError: {},
+      submit: false,
+      validLogin: false,
     };
     this.getProductsByCategory = this.getProductsByCategory.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
     this.handleAddProduct = this.handleAddProduct.bind(this);
     this.handleRemoveProduct = this.handleRemoveProduct.bind(this);
     this.clearCart = this.clearCart.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.validateForm = this.validateForm.bind(this);
+    this.handleValidation = this.handleValidation.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+    this.removeNavigationMenu = this.removeNavigationMenu.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   // GET DATA
@@ -298,6 +309,75 @@ export default class App extends React.Component {
     }, 1000);
   }
 
+  // ! MODAL TOGGLE
+
+  // HideModal() {
+  //   const hiddenModal = document.querySelector(".modal");
+  //   hiddenModal.classList.remove("active-modal");
+  // }
+  showModal() {
+    const hiddenModal = document.querySelector(".modal");
+    hiddenModal.classList.toggle("active-modal");
+    console.log(hiddenModal.classList);
+  }
+  showHiddenMenu() {
+    const hiddenMenu = document.querySelector(".navigation-menu");
+    hiddenMenu.classList.toggle("active");
+  }
+  removeNavigationMenu() {
+    const hiddenMenu = document.querySelector(".navigation-menu");
+    hiddenMenu.classList.remove("active");
+  }
+
+  // ! LOGIN MODAL Validation
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.formValue.password === '12345678' && this.state.formValue.email === 'danielwalter@gmail.com') {
+      this.setState({ validLogin: true });
+    }
+    this.setState({ formError: this.validateForm(this.state.formValue) })
+    console.log(this.state.formValue);
+    this.setState({ submit: true });
+    console.log(this.state.validLogin)
+  }
+
+  handleValidation = (e) => {
+    const { name, value } = e.target;
+    this.setState({ formValue: { ...this.state.formValue, [name]: value } })
+  }
+
+  handleLogout = () => this.setState({ validLogin: false });
+
+  validateForm = (value) => {
+    let errors = {}
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (!value.email) {
+      errors.email = "Please enter email"
+    }
+    else if (!emailRegex.test(value.email)) {
+      errors.email = "Please enter valid email"
+    }
+    if (!value.password || value.password.length < 8) {
+      errors.password = "Please enter a valid password"
+    }
+    return errors;
+  }
+
+  hideModal() {
+    const hiddenModal = document.querySelector(".modal");
+    hiddenModal.classList.remove("active-modal");
+    this.setState({ formValue: { email: '', password: '' } });
+    this.setState({ formError: {} });
+    this.setState({ submit: false });
+  }
+
+  removeMenu() {
+    const hiddenMenu = document.querySelector(".menu");
+    hiddenMenu.classList.remove("active");
+  }
+
+
+  //! Other
   componentDidMount() {
     this.getCategories();
     this.getAllProducts();
@@ -306,12 +386,15 @@ export default class App extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { cartItems, clearedCart } = this.state;
+    const { cartItems, clearedCart, validLogin } = this.state;
     if (cartItems !== nextState.cartItems) {
       this.getTotalPrice(nextState.cartItems);
     }
     if (clearedCart !== nextState.clearedCart) {
       this.clearCart();
+    }
+    if (validLogin !== nextState.validLogin) {
+      this.hideModal();
     }
 
     return true;
@@ -320,6 +403,20 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
         <Header
+          showModal={this.showModal}
+          showHiddenMenu={this.showHiddenMenu}
+          removeMenu={this.removeMenu}
+          // HideModal={this.HideModal}
+
+          handleLogout={this.handleLogout}
+          validLogin={this.state.validLogin}
+          formValue={this.state.formValue}
+          handleSubmit={this.handleSubmit}
+          submit={this.state.submit}
+          formError={this.state.formError}
+          hideModal={this.hideModal}
+          removeNavigationMenu={this.removeNavigationMenu}
+          handleValidation={this.handleValidation}
           productsQuantity={this.state.productsQuantity}
         />
         <Routes>
@@ -346,6 +443,23 @@ export default class App extends React.Component {
             path="/cart"
             element={
               <Cart
+                handleLogout={this.handleLogout}
+                // validLogin={this.state.validLogin}
+                formValue={this.state.formValue}
+                handleSubmit={this.handleSubmit}
+                submit={this.state.submit}
+                formError={this.state.formError}
+                hideModal={this.hideModal}
+                removeMenu={this.removeMenu}
+                handleValidation={this.handleValidation}
+                // productsQuantity={this.state.productsQuantity}
+                showModal={this.showModal}
+
+
+
+
+
+                validLogin={this.state.validLogin}
                 totalPayment={this.state.totalPayment}
                 cartItems={this.state.cartItems}
                 productsQuantity={this.state.productsQuantity}
