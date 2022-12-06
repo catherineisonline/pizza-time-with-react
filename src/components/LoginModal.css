@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--modal-glass-bg);
   backdrop-filter: blur(5px);
   z-index: 999;
 }
@@ -16,11 +16,11 @@
 .modal-main {
   position: relative;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.911);
+  background-color: var(--white);
   backdrop-filter: blur(5px);
-  box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
-  -webkit-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
-  -moz-box-shadow: -2px 10px 24px -11px rgba(0, 0, 0, 0.62);
+  box-shadow: var(--modal-box-shadow);
+  -webkit-box-shadow: var(--modal-box-shadow);
+  -moz-box-shadow: var(--modal-box-shadow);
   width: 90%;
   -webkit-align-self: center;
   align-self: center;
@@ -94,7 +94,7 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 1rem;
-  background-color: #555;
+  background-color: var(--modal-glass-bg);
   color: var(--black);
   text-align: center;
   padding: 3px 0;
@@ -118,7 +118,7 @@
   transform: rotate(90deg);
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: var(--light-black) transparent transparent transparent;
 }
 .tooltiptext p {
   color: var(--black);
@@ -130,7 +130,7 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--modal-glass-bg);
   width: max-content;
   padding: 1.5rem;
 }

@@ -5,7 +5,7 @@
   --poppins-font: "Poppins", sans-serif;
   --josefin-font: "Sansita Swashed", cursive;
   --nothing-font: "Nothing You Could Do", cursive;
-  --white: white;
+  --white: #ffffff;
   --light-gray: #919191;
   --whitish-gray: #bfbfbf;
   --light-black: #121618;
@@ -17,6 +17,9 @@
   --pizza-red-light: #f87d62 0;
   --transition: all ease-in-out 0.3s;
   --red: #ff0000;
+  --modal-glass-bg: rgba(255, 255, 255, 0.15);
+  --modal-box-shadow: -2px 10px 24px -11px #0000009e;
+  --transparent-button: #ffffffa2;
 }
 
 /* Reset */
@@ -193,7 +196,7 @@ header {
   height: 40rem;
   max-height: 100%;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--white);
   backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
@@ -284,15 +287,13 @@ li.alice-carousel__stage-item .__cloned {
 
 .header-btns .btn-link:last-child {
   border-width: 1px;
-
-  border-color: rgba(255, 255, 255, 0.637);
-  background-color: rgba(255, 255, 255, 0.637);
+  border-color: var(--transparent-button);
+  background-color: var(--transparent-button);
   color: var(--light-black);
 }
 
 /* Section 1 */
 /* Company Details */
-
 .section-1 {
   position: relative;
   padding: 0;
@@ -408,7 +409,7 @@ li.alice-carousel__stage-item .__cloned {
 .service-img.active-img,
 .hightlight-img.active-img {
   border: 1px solid transparent;
-  background-color: #f8b500;
+  background-color: var(--pizza-red);
   position: relative;
   -webkit-transform: rotate(20deg);
   -ms-transform: rotate(20deg);
@@ -532,7 +533,7 @@ li.alice-carousel__stage-item .__cloned {
   right: 0;
   width: 100%;
   bottom: 0;
-  border-bottom: 1px solid #fac564;
+  border-bottom: 1px solid var(--yellow);
   height: 1px;
 }
 .name-and-price h3 {
@@ -581,7 +582,7 @@ li.alice-carousel__stage-item .__cloned {
 .section-7::after {
   content: "";
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--modal-glass-bg);
   backdrop-filter: blur(5px);
   height: 100%;
   width: 100%;
