@@ -197,19 +197,19 @@
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
   font-weight: 400;
-  font-size: 1rem;
-
+  font-size: 1.4rem;
   border: 1px solid var(--whitish-gray);
-  width: 90%;
+  width: max-content;
   padding: 0.5rem;
   text-align: center;
   transition: all ease-in-out 0.2s;
+  cursor: pointer;
 }
 .cart-checkout-btn {
-  background-color: var(--whitish-gray);
-  color: var(--light-black);
+  background-color: transparent;
+  color: var(--white);
   letter-spacing: 1px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 .cart-checkout-btn:hover {
   border: 1px solid var(--yellow);
@@ -284,10 +284,12 @@
   .cart-title-section {
     max-width: 60%;
   }
-
+  .cart-item-interaction {
+    gap: 2rem;
+  }
   .cart-checkout-btn,
   .cart-backtomenu-btn {
-    max-width: 40%;
+    /* max-width: 90%; */
     font-size: 1.4rem;
   }
 }

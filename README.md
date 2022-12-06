@@ -76,6 +76,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - [React Alice Carousel](https://www.npmjs.com/package/react-alice-carousel)
 - [Leaflet Maps](https://react-leaflet.js.org/docs/start-installation/)
 - [React Paginate](https://www.npmjs.com/package/react-paginate)
+- [uuid - Random id generator](https://www.npmjs.com/package/uuid)
 
 ## Goals <a id="goals"></a>
 

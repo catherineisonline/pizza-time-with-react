@@ -329,7 +329,7 @@ export default class App extends React.Component {
   // ! LOGIN MODAL Validation
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.formValue.password === '12345678' && this.state.formValue.email === 'danielwalter@pizzatime.com') {
+    if (this.state.formValue.password === '12345678' && this.state.formValue.email === 'danielw@pizzatime.com') {
       this.setState({ validLogin: true });
     }
     this.setState({ formError: this.validateForm(this.state.formValue) })
@@ -507,7 +507,7 @@ export default class App extends React.Component {
           />
           <Route
             path="/payment"
-            element={<Payment cartItems={this.state.cartItems} />}
+            element={<Payment cartItems={this.state.cartItems} totalPayment={this.state.totalPayment} />}
           />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
         </Routes>

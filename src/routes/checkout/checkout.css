@@ -190,6 +190,7 @@ input[type="password"] {
   color: var(--light-black);
   padding: 1rem;
 }
+
 .checkout-payment-btn:hover {
   border: 1px solid var(--yellow);
   background-color: transparent;

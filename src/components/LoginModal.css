@@ -126,6 +126,7 @@
   letter-spacing: 1px;
   text-align: left;
 }
+
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
