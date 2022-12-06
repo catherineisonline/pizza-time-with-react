@@ -132,7 +132,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [x] Sizings (in case of pizza)
 - [x] Add to cart button
 
-5. [ ] Add pagination
+5. [x] Add pagination
 6. [x] Menu side-cotainer
 
 #### A single item page
@@ -176,7 +176,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [x] Date
 - [x] Author
 
-2. [ ] Add pagination
+2. [x] Add pagination
 
 #### Contact
 
