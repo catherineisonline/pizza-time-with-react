@@ -75,6 +75,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - [React Router DOM](https://www.npmjs.com/package/react-router-dom)
 - [React Alice Carousel](https://www.npmjs.com/package/react-alice-carousel)
 - [Leaflet Maps](https://react-leaflet.js.org/docs/start-installation/)
+- [React Paginate](https://www.npmjs.com/package/react-paginate)
 
 ## Goals <a id="goals"></a>
 

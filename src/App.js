@@ -1,14 +1,10 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-//Components
 import Header from "./routes/landing/Header.js";
 import Footer from './components/footer/Footer';
 import { About, Blog, Cart, Checkout, Contact, RootSection, Menu, PasswordRecovery, Payment, Register, SingleItem } from './routes/index'
-//Data
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
-// ! danielwalter@gmail.com
-//! 12345678
 
 export default class App extends React.Component {
   constructor() {
@@ -40,6 +36,7 @@ export default class App extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
+
   // GET DATA
   /*******************************************************/
   allCategoriesData = new Promise((resolve, reject) => {
@@ -69,7 +66,7 @@ export default class App extends React.Component {
   getAllProducts = async () => {
     try {
       const result = await this.allProductsData;
-      this.setState({ allProducts: result });
+      this.setState({ allProducts: result });;
     } catch (error) {
       console.log(error);
     }
@@ -382,10 +379,11 @@ export default class App extends React.Component {
     this.getAllProducts();
     this.getProductsByCategory(this.state.activeCategory);
     this.getTotalPrice(this.state.cartItems);
+
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { cartItems, clearedCart, validLogin } = this.state;
+    const { cartItems, clearedCart, validLogin, itemOffset, endOffset } = this.state;
     if (cartItems !== nextState.cartItems) {
       this.getTotalPrice(nextState.cartItems);
     }
@@ -395,6 +393,7 @@ export default class App extends React.Component {
     if (validLogin !== nextState.validLogin) {
       this.hideModal();
     }
+
 
     return true;
   }
@@ -434,6 +433,11 @@ export default class App extends React.Component {
                 handleRemoveProduct={this.handleRemoveProduct}
                 successMsg={this.successMsg}
                 activeCategory={this.state.activeCategory}
+
+
+                pageCountExpenses={this.state.pageCountExpenses}
+                handlePageClick={this.handlePageClick}
+                currentExpenses={this.state.currentExpenses}
               />
             }
           />

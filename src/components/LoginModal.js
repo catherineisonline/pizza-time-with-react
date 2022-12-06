@@ -19,8 +19,8 @@ export default function LoginModal({ hideModal, removeMenu, handleValidation, va
         </button>
         <section className="modal-content">
           <div className="login-modal-title"><h2>Log in</h2>
-            <div class="tooltip"> <img class="hint-icon" src="https://img.icons8.com/ios/50/000000/questions.png" aria-label="/" />
-              <article class="tooltiptext">
+            <div className="tooltip"> <img className="hint-icon" src="https://img.icons8.com/ios/50/000000/questions.png" aria-label="/" />
+              <article className="tooltiptext">
                 <p>Username: <span>danielwalter@pizzatime.com</span></p>
                 <p>Password: <span>12345678</span></p>
               </article>

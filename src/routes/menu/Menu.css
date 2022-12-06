@@ -12,6 +12,7 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding-bottom: 4rem;
 }
 .side-menu h1 {
   font-family: var(--josefin-font);
@@ -133,7 +134,23 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 80%;
   margin: 0 auto;
 }
+.pagination {
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding-top: 15rem;
+}
+.pagination li {
+  cursor: pointer;
+}
 
+.pagination li.selected {
+  color: var(--pizza-red);
+}
 /* MENU ITEM */
 .menu-item {
   display: flex;
@@ -358,6 +375,11 @@ input[type="search"]::-webkit-search-results-decoration {
     gap: 2rem;
     width: 90%;
   }
+  .pagination {
+    position: absolute;
+    bottom: 1%;
+    right: 30%;
+  }
 }
 
 @media screen and (min-width: 1110px) {
@@ -372,5 +394,18 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   .single-item {
     width: 60%;
+  }
+  .menu-main {
+    position: relative;
+  }
+  .pagination {
+    padding: initial;
+  }
+  /* .pagination li {
+    cursor: pointer;
+  } */
+
+  .pagination li.selected {
+    color: var(--pizza-red);
   }
 }

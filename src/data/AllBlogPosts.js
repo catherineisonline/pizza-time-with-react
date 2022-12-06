@@ -9,7 +9,7 @@ import Img8 from "../assets/images/blog/post-8.jpeg";
 import Img9 from "../assets/images/blog/post-9.jpeg";
 import Img10 from "../assets/images/blog/post-10.jpeg";
 
-export const AllBlogPosts = [
+export const allBlogPosts = [
   {
     BlogImg: Img1,
     BlogName: "Pizza Crust Types: Self-Rising And Par-Baked",

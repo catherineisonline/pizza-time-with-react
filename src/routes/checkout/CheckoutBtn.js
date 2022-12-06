@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LoginModal from "../../components/LoginModal";
 import ResetLocation from "../../helpers/ResetLocation";
 
 export default class CheckoutBtn extends React.Component {
