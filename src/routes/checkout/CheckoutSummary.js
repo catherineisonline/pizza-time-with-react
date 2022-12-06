@@ -1,6 +1,6 @@
 import React from "react";
 import CheckoutItem from "./CheckoutItem";
-
+import { v4 as uuidv4 } from 'uuid';
 export default class CheckoutSummary extends React.Component {
   render() {
     const {
@@ -16,7 +16,8 @@ export default class CheckoutSummary extends React.Component {
         <section className="checkout-cart-items">
           {cartItems.map((cartItem) => (
             <CheckoutItem
-              key={cartItem.userSelectedAttributes.length > 0 ? cartItem.userSelectedAttributes[0].attributeValue : cartItem.name}
+              key={uuidv4()}
+              // key={cartItem.userSelectedAttributes.length > 0 ? cartItem.userSelectedAttributes[0].attributeValue : cartItem.name}
               successMsg={successMsg}
               cartItem={cartItem}
               selectedAttributes={selectedAttributes}

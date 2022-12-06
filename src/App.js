@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer';
 import { About, Blog, Cart, Checkout, Contact, RootSection, Menu, PasswordRecovery, Payment, Register, SingleItem } from './routes/index'
 import { allProductsData } from "./data/AllProductsData.js";
 import { AllCategories } from "./data/AllCategories";
+import Order from "./routes/order/Order.js";
 
 export default class App extends React.Component {
   constructor() {
@@ -315,7 +316,6 @@ export default class App extends React.Component {
   showModal() {
     const hiddenModal = document.querySelector(".modal");
     hiddenModal.classList.toggle("active-modal");
-    console.log(hiddenModal.classList);
   }
   showHiddenMenu() {
     const hiddenMenu = document.querySelector(".navigation-menu");
@@ -510,6 +510,7 @@ export default class App extends React.Component {
             element={<Payment cartItems={this.state.cartItems} totalPayment={this.state.totalPayment} />}
           />
           <Route path="/password-recovery" element={<PasswordRecovery />} />
+          <Route path="/order" element={<Order />} />
         </Routes>
 
         <Footer />
