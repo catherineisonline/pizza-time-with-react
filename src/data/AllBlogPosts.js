@@ -9,7 +9,7 @@ import Img8 from "../assets/images/blog/post-8.jpeg";
 import Img9 from "../assets/images/blog/post-9.jpeg";
 import Img10 from "../assets/images/blog/post-10.jpeg";
 
-const allBlogPosts = [
+export const AllBlogPosts = [
   {
     BlogImg: Img1,
     BlogName: "Pizza Crust Types: Self-Rising And Par-Baked",
@@ -472,4 +472,4 @@ const allBlogPosts = [
   },
 ];
 
-export default allBlogPosts;
+

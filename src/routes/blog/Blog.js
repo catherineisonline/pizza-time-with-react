@@ -1,5 +1,5 @@
 import React from "react";
-import { allBlogPosts } from "../../data/AllBlogPosts";
+import { AllBlogPosts as allBlogPosts } from "../../data/AllBlogPosts";
 import ReactPaginate from 'react-paginate';
 import ScrollBtn from "../../components/ScrollBtn";
 import BlogPost from "../blog/BlogPost";
