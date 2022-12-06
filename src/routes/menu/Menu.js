@@ -47,7 +47,7 @@ const Menu = ({ allProducts,
         resetPagination={resetPagination}
         findMenuItem={findMenuItem}
       />
-      {currentProducts.length === 0 ? <article className="pizza-section"><p className="nothing-found">Nothing found. try again...</p></article> :
+      {currentProducts.length === 0 ? <article className="pizza-section"><p className="nothing-found">No results found... </p></article> :
         <article className="pizza-section">
           {currentProducts.map((singleProduct) => (
             <MenuItem
