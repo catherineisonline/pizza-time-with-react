@@ -22,12 +22,6 @@
   padding: 2rem;
 }
 
-/* .login-and-checkout {
-  position: absolute;
-  top: 0;
-  z-index: 99;
-} */
-
 .cart-title-section {
   display: flex;
   flex-direction: column;

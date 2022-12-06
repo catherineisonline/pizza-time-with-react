@@ -14,8 +14,9 @@
   --yellow: #fac564;
   --green: #1d9f55;
   --pizza-red: #ff6240;
-  --pizza-red-light: rgb(248, 125, 98) 0;
+  --pizza-red-light: #f87d62 0;
   --transition: all ease-in-out 0.3s;
+  --red: #ff0000;
 }
 
 /* Reset */

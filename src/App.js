@@ -308,11 +308,6 @@ export default class App extends React.Component {
   }
 
   // ! MODAL TOGGLE
-
-  // HideModal() {
-  //   const hiddenModal = document.querySelector(".modal");
-  //   hiddenModal.classList.remove("active-modal");
-  // }
   showModal() {
     const hiddenModal = document.querySelector(".modal");
     hiddenModal.classList.toggle("active-modal");
@@ -383,7 +378,7 @@ export default class App extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { cartItems, clearedCart, validLogin, itemOffset, endOffset } = this.state;
+    const { cartItems, clearedCart, validLogin } = this.state;
     if (cartItems !== nextState.cartItems) {
       this.getTotalPrice(nextState.cartItems);
     }
@@ -403,10 +398,7 @@ export default class App extends React.Component {
         <Header
           showModal={this.showModal}
           showHiddenMenu={this.showHiddenMenu}
-          removeMenu={this.removeMenu}
-          // HideModal={this.HideModal}
-
-          handleLogout={this.handleLogout}
+          removeMenu={this.removeMenu} handleLogout={this.handleLogout}
           validLogin={this.state.validLogin}
           formValue={this.state.formValue}
           handleSubmit={this.handleSubmit}
@@ -446,33 +438,17 @@ export default class App extends React.Component {
             path="/cart"
             element={
               <Cart
-                handleLogout={this.handleLogout}
-                // validLogin={this.state.validLogin}
-                formValue={this.state.formValue}
-                handleSubmit={this.handleSubmit}
-                submit={this.state.submit}
-                formError={this.state.formError}
-                hideModal={this.hideModal}
-                removeMenu={this.removeMenu}
-                handleValidation={this.handleValidation}
-                // productsQuantity={this.state.productsQuantity}
-                showModal={this.showModal}
-
-
-
-
-
-                validLogin={this.state.validLogin}
-                totalPayment={this.state.totalPayment}
                 cartItems={this.state.cartItems}
-                productsQuantity={this.state.productsQuantity}
                 handleAddProduct={this.handleAddProduct}
                 handleRemoveProduct={this.handleRemoveProduct}
                 successMsg={this.successMsg}
-                getTotalPrice={this.getTotalPrice}
+                productsQuantity={this.state.productsQuantity}
+                totalPayment={this.state.totalPayment}
                 taxes={this.state.taxes}
                 clearCart={this.clearCart}
                 clearedCart={this.state.clearedCart}
+                validLogin={this.state.validLogin}
+                showModal={this.showModal}
               />
             }
           />

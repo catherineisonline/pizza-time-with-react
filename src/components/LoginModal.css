@@ -200,7 +200,7 @@
 }
 
 .login-input-err {
-  color: red;
+  color: var(--red);
   text-align: left;
 }
 

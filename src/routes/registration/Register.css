@@ -178,10 +178,10 @@ select {
   transition: all ease-in-out 0.3s;
 }
 .registration-input-err {
-  color: red;
+  color: var(--red);
 }
 .form-submit-msg {
-  color: green;
+  color: var(--green);
   font-family: var(--poppins-font);
   font-size: 1.5rem;
   font-weight: 400;

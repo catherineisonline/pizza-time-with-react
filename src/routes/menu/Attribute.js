@@ -14,7 +14,7 @@ export default class Attribute extends React.Component {
         {attribute?.items?.map((item) => {
           return (
             <li
-            key={item.id}
+              key={item.id}
               onClick={() => {
                 this.setState({
                   selectedAttribute: item.value,
@@ -24,10 +24,10 @@ export default class Attribute extends React.Component {
               style={
                 this.state.selectedAttribute === item.value
                   ? {
-                      transition: "all, ease-in-out, 0.3s",
-                      color: "white",
-                      borderColor: "#fac564",
-                    }
+                    transition: "all, ease-in-out, 0.3s",
+                    color: "white",
+                    borderColor: "#fac564",
+                  }
                   : null
               }
             >

@@ -67,7 +67,6 @@ input[type="search"]::-webkit-search-results-decoration {
   font-family: var(--poppins-font);
   font-size: 1rem;
   padding: 1rem;
-  /* height: 100%; */
 }
 .menu-search-icon {
   cursor: pointer;
@@ -401,10 +400,6 @@ input[type="search"]::-webkit-search-results-decoration {
   .pagination {
     padding: initial;
   }
-  /* .pagination li {
-    cursor: pointer;
-  } */
-
   .pagination li.selected {
     color: var(--pizza-red);
   }
