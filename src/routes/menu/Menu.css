@@ -60,7 +60,6 @@ input[type="search"]::-webkit-search-results-decoration {
   color: var(--white);
   font-family: var(--poppins-font);
   font-size: 1rem;
-  padding: 1rem;
 }
 .menu-search[type="text"] {
   color: var(--white);
@@ -316,6 +315,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .price-num {
   color: var(--yellow);
+}
+
+.nothing-found {
+  color: var(--white);
+  margin-top: 3rem;
 }
 
 @media (hover: hover) {

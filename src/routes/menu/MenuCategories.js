@@ -4,7 +4,7 @@ import SearchIcon from "../../assets/images/search-icon.png";
 import ResetLocation from "../../helpers/ResetLocation";
 export default class MenuCategories extends React.Component {
   render() {
-    const { allCategories, changeCategory, resetPagination } = this.props;
+    const { allCategories, changeCategory, resetPagination, findMenuItem } = this.props;
     return (
       <article className="side-menu">
         <section className="menu-search-section">
@@ -12,7 +12,8 @@ export default class MenuCategories extends React.Component {
             type="text"
             className="menu-search"
             placeholder="search..."
-          ></input>
+            onChange={findMenuItem}
+          />
           <img src={SearchIcon} alt="" className="menu-search-icon"></img>
         </section>
         <ul>

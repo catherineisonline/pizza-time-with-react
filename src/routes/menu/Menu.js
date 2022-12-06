@@ -12,7 +12,9 @@ const Menu = ({ allProducts,
   changeCategory,
   handleAddProduct,
   handleRemoveProduct,
-  successMsg
+  successMsg,
+  findMenuItem,
+  searchFailed
 }) => {
 
   const [itemOffset, setItemOffset] = useState(0);
@@ -35,8 +37,7 @@ const Menu = ({ allProducts,
     setcurrentProducts([...allProducts].reverse().slice(itemOffset, endOffset));
     setpageCountProducts(Math.ceil(allProducts.length / 5));
 
-  }, [allProducts, setEndOffset, endOffset, itemOffset]);
-
+  }, [allProducts, setEndOffset, endOffset, itemOffset, activeCategory]);
   return (
     <main className="menu-main">
       <MenuCategories
@@ -44,20 +45,25 @@ const Menu = ({ allProducts,
         allCategories={allCategories}
         changeCategory={changeCategory}
         resetPagination={resetPagination}
+        findMenuItem={findMenuItem}
       />
-      <article className="pizza-section">
-        {currentProducts.map((singleProduct) => (
-          <MenuItem
-            key={singleProduct.id}
-            singleProduct={singleProduct}
-            handleAddProduct={handleAddProduct}
-            handleRemoveProduct={handleRemoveProduct}
-            successMsg={successMsg}
-          />
-        ))}
+      {currentProducts.length === 0 ? <article className="pizza-section"><p className="nothing-found">Nothing found. try again...</p></article> :
+        <article className="pizza-section">
+          {currentProducts.map((singleProduct) => (
+            <MenuItem
 
-        <ScrollButton />
-      </article>
+              key={singleProduct.id}
+              singleProduct={singleProduct}
+              handleAddProduct={handleAddProduct}
+              handleRemoveProduct={handleRemoveProduct}
+              successMsg={successMsg}
+            />
+          ))
+          }
+
+          < ScrollButton />
+        </article>}
+
       <ReactPaginate
         className="pagination"
         breakLabel="..."

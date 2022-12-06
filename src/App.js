@@ -23,6 +23,7 @@ export default class App extends React.Component {
       formError: {},
       submit: false,
       validLogin: false,
+      searchFailed: false,
     };
     this.getProductsByCategory = this.getProductsByCategory.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
@@ -35,6 +36,7 @@ export default class App extends React.Component {
     this.hideModal = this.hideModal.bind(this);
     this.removeNavigationMenu = this.removeNavigationMenu.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.findMenuItem = this.findMenuItem.bind(this);
   }
 
 
@@ -366,7 +368,22 @@ export default class App extends React.Component {
     const hiddenMenu = document.querySelector(".menu");
     hiddenMenu.classList.remove("active");
   }
+  findMenuItem(e) {
+    e.preventDefault()
+    const collectData = [];
+    allProductsData.map((product) => {
+      if (product.ItemName.toLowerCase().includes(e.target.value)) {
+        this.setState({ searchFailed: false });
+        collectData.push(product);
+        this.setState({ allProducts: [...collectData] });
+      }
+    })
+    if (collectData.length === 0) {
+      this.setState({ allProducts: [] });
+      this.setState({ searchFailed: true });
 
+    }
+  }
 
   //! Other
   componentDidMount() {
@@ -418,6 +435,7 @@ export default class App extends React.Component {
             path="/menu"
             element={
               <Menu
+                findMenuItem={this.findMenuItem}
                 allProducts={this.state.allProducts}
                 allCategories={this.state.allCategories}
                 changeCategory={this.changeCategory}
@@ -426,7 +444,7 @@ export default class App extends React.Component {
                 successMsg={this.successMsg}
                 activeCategory={this.state.activeCategory}
 
-
+                searchFailed={this.state.searchFailed}
                 pageCountExpenses={this.state.pageCountExpenses}
                 handlePageClick={this.handlePageClick}
                 currentExpenses={this.state.currentExpenses}
