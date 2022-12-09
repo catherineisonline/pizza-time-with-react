@@ -108,16 +108,16 @@ export default class ContactForm extends React.Component {
         <section className="contact-section">
           <form className="contact-form  flex-container flex-column">
             <h2 className="txt-center pop-font txt-white">Contact Us</h2>
-            <div className="contact-form-item">
+            <div className="contact-form-item webflow-style-input">
               <input
-                className="fullname-input pop-font"
+                className="fullname-input  pop-font"
                 type="text"
                 placeholder="Full Name"
               />
               <br></br>
               <p className="fullname-error"></p>
             </div>
-            <div className="contact-form-item">
+            <div className="contact-form-item webflow-style-input">
               <input
                 className="email-input pop-font"
                 type="text"
@@ -126,16 +126,16 @@ export default class ContactForm extends React.Component {
               <br></br>
               <p className="email-error"></p>
             </div>
-            <div className="contact-form-item">
+            <div className="contact-form-item webflow-style-input">
               <textarea
-                className="textarea-input pop-font"
+                className="textarea-input  pop-font"
                 placeholder="Message"
               />
               <br></br>
               <p className="textarea-error"></p>
             </div>
             <div className="contact-form-item">
-              <button onClick={this.SubmitContactForm} className="form-btn">
+              <button onClick={this.SubmitContactForm} className="active-button-style">
                 Send
               </button>
               <br></br>

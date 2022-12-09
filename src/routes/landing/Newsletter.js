@@ -30,13 +30,10 @@ export default class Newsletter extends React.Component {
             awesome gifts!
           </label>
           <section className="input-section">
-            <input
-              className="input-field"
-              id="email-input"
-              type="email"
-              placeholder="Your Email"
-            ></input>
-            <button onClick={this.SubmitEmail} className="landing-email-btn">
+            <section className="webflow-style-input">
+              <input className="input-field" type="email" placeholder="What's your email?" />
+            </section>
+            <button onClick={this.SubmitEmail} className="active-button-style">
               Sign me up
             </button>
             <p className="error-msg"></p>

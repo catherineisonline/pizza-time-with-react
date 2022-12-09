@@ -71,9 +71,9 @@ export default class BlogPreview extends React.Component {
         <Link
           onClick={ResetLocation}
           to="/blog"
-          className="more-pizza txt-white"
+          className="active-button-style txt-white"
         >
-          More Posts
+          More posts
         </Link>
       </article>
     );

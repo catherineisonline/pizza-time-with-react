@@ -133,7 +133,7 @@ export default class Header extends React.Component {
               <div className="login-and-cart">
                 {validLogin ? <Link
                   to="/"
-                  className="login-btn txt-white"
+                  className="passive-button-style txt-white"
                   onClick={() => {
                     ResetLocation();
                     handleLogout();
@@ -141,7 +141,7 @@ export default class Header extends React.Component {
                   <>Log out</>
                 </Link> :
                   <div
-                    className="login-btn txt-white"
+                    className="passive-button-style txt-white"
                     onClick={() => {
                       ResetLocation();
                       showModal();
@@ -151,7 +151,7 @@ export default class Header extends React.Component {
                   </div>
                 }
                 <NavLink
-                  className="cart-btn txt-white"
+                  className="cart-btn active-button-style txt-white"
                   to="/cart"
                   onClick={() => {
                     ResetLocation();

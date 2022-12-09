@@ -129,9 +129,9 @@ export default class PizzaMenuPreview extends React.Component {
         <Link
           onClick={ResetLocation}
           to="/menu"
-          className="more-pizza txt-white"
+          className="active-button-style txt-white"
         >
-          More Pizza
+          More pizza
         </Link>
       </article>
     );
