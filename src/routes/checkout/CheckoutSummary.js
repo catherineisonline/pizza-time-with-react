@@ -17,7 +17,6 @@ export default class CheckoutSummary extends React.Component {
           {cartItems.map((cartItem) => (
             <CheckoutItem
               key={uuidv4()}
-              // key={cartItem.userSelectedAttributes.length > 0 ? cartItem.userSelectedAttributes[0].attributeValue : cartItem.name}
               successMsg={successMsg}
               cartItem={cartItem}
               selectedAttributes={selectedAttributes}

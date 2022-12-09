@@ -1,27 +1,24 @@
 import React from "react";
-import CartTotals from "../cart/CartTotals";
 import CheckoutSummary from "./CheckoutSummary";
-import CheckoutPersonalInfo from "./CheckoutPersonalInfo";
-import CheckoutDelivery from "./CheckoutDelivery";
-import CheckoutPromo from "./CheckoutPromo";
+import CheckoutForm from "./CheckoutForm";
 import EmptyCart from "../cart/EmptyCart.js";
 
 export default class Checkout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      takeAway: true,
+      delivery: false,
       promoCode: false,
     };
     this.toggleDelivery = this.toggleDelivery.bind(this);
     this.togglePromocode = this.togglePromocode.bind(this);
   }
   toggleDelivery(e) {
-    if (e.target.value === "takeaway") {
-      return this.setState({ takeAway: true });
-    }
     if (e.target.value === "delivery") {
-      return this.setState({ takeAway: false });
+      this.setState({ delivery: true });
+    }
+    if (e.target.value === "takeaway") {
+      this.setState({ delivery: false });
     }
   }
   togglePromocode() {
@@ -53,21 +50,12 @@ export default class Checkout extends React.Component {
               handleRemoveProduct={handleRemoveProduct}
               successMsg={successMsg}
             />
-            <CheckoutPersonalInfo />
-            <CheckoutDelivery
-              toggleDelivery={this.toggleDelivery}
-              takeAway={this.state.takeAway}
-            />
-            <CheckoutPromo
-              promoCode={this.state.promoCode}
-              togglePromocode={this.togglePromocode}
-            />
-            <CartTotals
-              className="checkout-carttotals"
+            <CheckoutForm toggleDelivery={this.toggleDelivery}
+              delivery={this.state.delivery} promoCode={this.state.promoCode}
+              togglePromocode={this.togglePromocode} className="checkout-carttotals"
               productsQuantity={productsQuantity}
               totalPayment={totalPayment}
-              taxes={taxes}
-            />
+              taxes={taxes} />
           </article>
         )}
       </main>

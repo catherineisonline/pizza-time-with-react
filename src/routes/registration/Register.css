@@ -93,7 +93,7 @@
   font-weight: 400;
   letter-spacing: 1px;
 }
-input[type="radio" i] {
+.register-main input[type="radio" i] {
   -moz-appearance: none;
   cursor: pointer;
   -webkit-appearance: none;
@@ -103,7 +103,7 @@ input[type="radio" i] {
   border-radius: 50%;
 }
 
-input[type="radio" i]:checked {
+.register-main input[type="radio" i]:checked {
   background-color: var(--yellow);
   border: 1px solid var(--yellow);
 }

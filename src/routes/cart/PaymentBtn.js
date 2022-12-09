@@ -9,6 +9,7 @@ export default class PaymentBtn extends React.Component {
       <Link to="/payment" className={className} onClick={ResetLocation}>
         Proceed to payment
       </Link>
+
     );
   }
 }

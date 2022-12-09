@@ -78,9 +78,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   flex-direction: column;
   gap: 2rem;
 }
-
-.checkout-personal-information input,
-.delivery input,
+.checkout-personal-information input[type="text" i],
 .checkout-choose-payment input,
 .promo-code input {
   color: var(--whitish-gray);
@@ -103,6 +101,37 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
   gap: 1rem;
   width: 50%;
+}
+.takeaway[type="radio" i],
+.delivery[type="radio" i] {
+  -moz-appearance: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid var(--white);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.takeaway[type="radio" i]:checked,
+.delivery[type="radio" i]:checked {
+  border: 1px solid var(--white);
+  background-color: var(--pizza-red);
+}
+.takeaway:checked,
+.delivery:checked {
+  width: 1rem;
+}
+
+.takeaway-option,
+.delivery-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.takeaway-option svg {
+  width: 1rem;
+  height: 1rem;
 }
 /* PROMOCODE */
 .promo-code p {
@@ -189,6 +218,7 @@ input[type="password"] {
   border: 1px solid transparent;
   color: var(--light-black);
   padding: 1rem;
+  cursor: pointer;
 }
 
 .checkout-payment-btn:hover {
