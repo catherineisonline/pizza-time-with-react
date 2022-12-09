@@ -800,19 +800,32 @@ li.alice-carousel__stage-item .__cloned {
   text-align: left;
 }
 
-.map {
-  height: 20rem;
+/* .map {
+  height: 25rem;
   width: 100%;
-}
+} */
 .contact-section {
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: 0 auto;
 }
+.contact-section-success {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  height: 30rem;
+}
+
+.contact-section-success p {
+  color: var(--green);
+  font-size: 2rem;
+  font-family: var(--poppins-font);
+}
 
 #map {
-  height: 100%;
+  height: 25rem;
   max-width: 90%;
   margin: 0 auto;
 }
@@ -821,7 +834,7 @@ li.alice-carousel__stage-item .__cloned {
   width: 90%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .contact-form textarea {
@@ -835,21 +848,14 @@ li.alice-carousel__stage-item .__cloned {
   width: max-content;
 }
 .section-10 .active-button-style {
-  margin-top: 6rem;
+  margin-top: 2rem;
 }
 
-.fullname-error,
-.email-error,
-.textarea-error {
-  font-family: var(--poppins-font);
-  color: var(--pizza-red);
-}
-
-.button-msg {
+/* .button-msg {
   font-family: var(--poppins-font);
   color: var(--white);
   padding-top: 1rem;
-}
+} */
 
 /* Section 11 */
 .section-11 {
