@@ -160,7 +160,7 @@ const CheckoutForm = ({ toggleDelivery, delivery, togglePromocode, promoCode, to
                 </section>
               ) : (
                 <section className="checkout-interaction-btns">
-                  <button type="submit" className="checkout-payment-btn">
+                  <button type="submit" className="active-button-style">
                     Proceed to payment
                   </button>
                 </section>

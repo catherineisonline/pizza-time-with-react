@@ -59,28 +59,6 @@
     border-radius: 50%;
     padding: 1rem;
 }
-
-.payment-btn {
-    font-family: var(--poppins-font);
-    font-weight: 400;
-    font-size: 1rem;
-    text-align: center;
-    transition: all ease-in-out 0.2s;
-    letter-spacing: 1px;
-    background-color: var(--yellow);
-    border: 1px solid transparent;
-    color: var(--light-black);
-    border-radius: 5px;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    width: max-content;
-}
-.payment-btn:hover {
-    border: 1px solid var(--yellow);
-    background-color: transparent;
-    color: var(--yellow);
-    transition: all ease-in-out 0.2s;
-}
 .cvv-input,
 .date-input {
     display: flex;
@@ -126,31 +104,14 @@
     flex-direction: column;
     gap: 2rem;
 }
-.success-payment-redirection a {
-    border: none;
-    color: var(--whitish-gray);
-}
-
 .success-payment-redirection a:last-child {
     text-decoration: underline;
-}
-
-.success-payment-redirection a:first-child {
-    border: 1px solid var(--yellow);
-    color: var(--yellow);
-    padding: 1rem 1.4rem;
-    border-radius: 5px;
+    color: var(--whitish-gray);
 }
 .success-payment-redirection a:last-child:hover {
     color: var(--yellow);
     transition: var(--transition);
 }
-.success-payment-redirection a:first-child:hover {
-    background-color: var(--yellow);
-    color: var(--white);
-    transition: var(--transition);
-}
-/* Card Image */
 
 .card {
     width: 400px;

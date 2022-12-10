@@ -202,7 +202,6 @@ input[type="password"] {
   gap: 1rem;
 }
 
-.checkout-payment-btn,
 .checkout-backtomenu-btn {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
@@ -213,20 +212,7 @@ input[type="password"] {
   transition: all ease-in-out 0.2s;
   letter-spacing: 1px;
 }
-.checkout-payment-btn {
-  background-color: var(--yellow);
-  border: 1px solid transparent;
-  color: var(--light-black);
-  padding: 1rem;
-  cursor: pointer;
-}
 
-.checkout-payment-btn:hover {
-  border: 1px solid var(--yellow);
-  background-color: transparent;
-  color: var(--yellow);
-  transition: all ease-in-out 0.2s;
-}
 .checkout-backtomenu-btn:hover {
   color: var(--yellow);
   transition: all ease-in-out 0.2s;

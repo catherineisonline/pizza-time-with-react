@@ -30,7 +30,7 @@ export default class CartTotals extends React.Component {
             {className === "cart-carttotals" ? (
               <section className="cart-interaction-btns">
                 <CheckoutBtn
-                  className="cart-checkout-btn"
+                  className="active-button-style"
                   validLogin={validLogin}
                   showModal={showModal}
                 />
@@ -41,7 +41,7 @@ export default class CartTotals extends React.Component {
             ) : (
               <section className="checkout-interaction-btns">
                 <PaymentBtn
-                  className="checkout-payment-btn"
+                  className="active-button-style"
                 />
                 <BacktoMenu
                   className="checkout-backtomenu-btn"

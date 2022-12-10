@@ -31,6 +31,9 @@
   padding: 4rem 1rem;
   align-items: center;
 }
+.cart-title-section .active-button-style {
+  font-size: 1.5rem;
+}
 
 .cart-title-section h3 {
   color: var(--white);
@@ -51,20 +54,6 @@
   font-family: var(--poppins-font);
 }
 
-.back-to-menu {
-  font-size: 1.3rem;
-  text-transform: capitalize;
-  color: var(--light-black);
-  background-color: var(--yellow);
-  border-radius: 5px;
-  border-color: var(--yellow);
-  border-width: 1px;
-  padding: 1rem;
-  letter-spacing: 1px;
-  min-width: 50%;
-
-  transition: all ease-in-out 0.3s;
-}
 .cart-title-section p {
   color: white;
 }
@@ -186,7 +175,7 @@
   align-items: center;
 }
 
-.cart-checkout-btn,
+/* .cart-checkout-btn, */
 .cart-backtomenu-btn {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
@@ -199,17 +188,17 @@
   transition: all ease-in-out 0.2s;
   cursor: pointer;
 }
-.cart-checkout-btn {
+/* .cart-checkout-btn {
   background-color: transparent;
   color: var(--white);
   letter-spacing: 1px;
   /* text-transform: uppercase; */
-}
+/* }
 .cart-checkout-btn:hover {
   border: 1px solid var(--yellow);
   background-color: var(--yellow);
   transition: all ease-in-out 0.2s;
-}
+} */
 .cart-backtomenu-btn:hover {
   transition: all ease-in-out 0.2s;
   color: var(--yellow);
@@ -234,10 +223,6 @@
   letter-spacing: 2px;
 }
 @media (hover: hover) {
-  .back-to-menu:hover {
-    opacity: 0.8;
-    transition: all ease-in-out 0.3s;
-  }
   .cart-item-add-qty button:hover {
     color: var(--yellow);
     border-color: var(--yellow);

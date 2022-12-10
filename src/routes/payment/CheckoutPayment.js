@@ -60,7 +60,7 @@ const CheckoutPayment = ({ totalPayment }) => {
             <h3>Est. delivery time: 24mins.</h3>
           </section>
           <section className="success-payment-redirection">
-            <Link to="/order" onClick={ResetLocation}>Track my order</Link>
+            <Link className="active-button-style" to="/order" onClick={ResetLocation}>Track my order</Link>
             <Link to="/menu" onClick={ResetLocation}>Order something else</Link>
           </section>
         </article> :
@@ -111,7 +111,7 @@ const CheckoutPayment = ({ totalPayment }) => {
                 <span className="login-input-err">{formError.year}</span>
               </section>
             </section>
-            <button type="submit" className="payment-btn">Proceed</button>
+            <button type="submit" className=" active-button-style">Proceed</button>
           </form>
         </article>}
     </main>
