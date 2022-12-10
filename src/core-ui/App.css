@@ -289,27 +289,13 @@ li.alice-carousel__stage-item .__cloned {
   box-sizing: content-box;
 }
 
-.header-btns .btn-link {
-  cursor: pointer;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  padding: 0.5rem 1.2rem;
-  opacity: 0.8;
-  letter-spacing: 1px;
-  align-items: center;
-  width: max-content;
-  font-size: 1rem;
-  font-family: var(--poppins-font);
-}
-
-.header-btns .btn-link:first-child {
+.header-btns a:first-child {
   color: var(--light-black);
   background-color: var(--yellow);
   border: 1px solid transparent;
 }
 
-.header-btns .btn-link:last-child {
+.header-btns a:last-child {
   border-width: 1px;
   border-color: var(--transparent-button);
   background-color: var(--transparent-button);
@@ -1031,15 +1017,14 @@ hr {
 .passive-button-style:hover {
   background-color: var(--pizza-red);
   border-color: var(--pizza-red);
-  /* color: var(--pizza-red); */
 }
 
 /* Hover */
 @media (hover: hover) {
   .navigation-menu a:hover,
   .logo:hover,
-  .header-btns .btn-link:last-child:hover,
-  .header-btns .btn-link:first-child:hover,
+  .header-btns a:last-child:hover,
+  .header-btns a:first-child:hover,
   .meal-item-order a:hover,
   .more-pizza:hover,
   .dish-categories h3:hover,
@@ -1062,12 +1047,12 @@ hr {
     transform: rotate(30deg);
   }
 
-  .header-btns .btn-link:last-child:hover {
+  .header-btns a:last-child:hover {
     color: var(--light-black);
     background-color: var(--yellow);
     border: 1px solid transparent;
   }
-  .header-btns .btn-link:first-child:hover {
+  .header-btns a:first-child:hover {
     border: 1px solid var(--yellow);
     color: var(--light-black);
     background-color: transparent;

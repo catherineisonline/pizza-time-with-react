@@ -14,10 +14,10 @@ const items = [
         website.
       </p>
       <div className="header-btns flex-container flex-row">
-        <Link className="btn-link" to="/blog">
+        <Link className=" passive-button-style" to="/blog">
           Read Blog
         </Link>
-        <Link className="btn-link txt-white " to="/menu">
+        <Link className=" passive-button-style  " to="/menu">
           View Menu
         </Link>
       </div>
@@ -33,15 +33,15 @@ const items = [
         sophisticated and elegant meals.
       </p>
       <div className="header-btns flex-container flex-row">
-        <Link className="btn-link" to="/blog">
+        <Link className="passive-button-style" to="/blog">
           Read Blog
         </Link>
-        <Link className="btn-link txt-white " to="/menu">
+        <Link className="passive-button-style" to="/menu">
           View Menu
         </Link>
       </div>
     </section>
-  </section>,
+  </section >,
   //Section 3
   <section className="header-section slider-three">
     <section className="header-info flex-container flex-column txt-center pop-font txt-white">
@@ -52,10 +52,10 @@ const items = [
         Fortunately for you, we have everything you need.
       </p>
       <div className="header-btns flex-container flex-row">
-        <Link className="btn-link" to="/blog">
+        <Link className="passive-button-style " to="/blog">
           Read Blog
         </Link>
-        <Link className="btn-link txt-white " to="/menu">
+        <Link className="passive-button-style" to="/menu">
           View Menu
         </Link>
       </div>
