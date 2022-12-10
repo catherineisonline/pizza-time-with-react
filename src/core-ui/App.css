@@ -1103,34 +1103,21 @@ hr {
 }
 
 /* ADD TO CART BUTTON */
-.add-to-cart.active-add-to-cart {
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  color: white;
-  border: none;
-  cursor: pointer;
+.passive-button-style.active-add-to-cart {
   background-color: #307d45;
-  border-radius: 5px;
-  font-family: var(--poppins-font);
-  transition: all ease-in-out 0.2s;
+  border-color: #307d45;
+  cursor: pointer;
 }
-.add-to-cart.active-add-to-cart:hover {
+.passive-button-style.active-add-to-cart:hover {
   opacity: 0.7;
   transition: all ease-in-out 0.2s;
 }
 
-.add-to-cart.inactive-add-to-cart {
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  border-radius: 5px;
-  color: gray;
+.passive-button-style.inactive-add-to-cart {
+  color: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.22);
   background-color: rgba(255, 255, 255, 0.22);
-  border: none;
   cursor: not-allowed;
-  opacity: 0.6;
-  font-family: var(--poppins-font);
 }
 
 /* Success Msg */
