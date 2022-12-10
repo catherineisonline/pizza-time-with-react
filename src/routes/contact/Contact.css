@@ -15,7 +15,17 @@
   background-color: var(--light-black);
   background-image: none;
 }
+.contact-success {
+  color: var(--green);
+  font-family: var(--poppins-font);
+  font-size: 1.5rem;
+  height: 460px;
+}
 
+.contact-us-form {
+  padding: 3rem;
+  height: max-content;
+}
 .contact-us-form input,
 .contact-us-form textarea {
   width: 50%;

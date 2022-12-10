@@ -34,12 +34,16 @@ const ContactForm = () => {
     setFormValue({ ...formValue, [name]: value });
   }
   const validateForm = (value) => {
-    let errors = {}
+    let errors = {};
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (!value.fullname) {
       errors.fullname = "Please enter your full name"
     }
     if (!value.email) {
       errors.email = "Please enter phone an email"
+    }
+    else if (!emailRegex.test(value.email)) {
+      errors.email = "Please enter valid email"
     }
     if (!value.message) {
       errors.message = "Please write a message"
