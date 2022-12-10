@@ -103,7 +103,7 @@ export default class Contact extends React.Component {
               <p className="textarea-error-cpage"></p>
             </div>
             <div className="contact-form-item-cpage">
-              <button onClick={SubmitContactForm} className="form-btn-cpage">
+              <button onClick={SubmitContactForm} className="active-button-style">
                 Send
               </button>
               <br></br>
