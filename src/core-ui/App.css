@@ -190,17 +190,6 @@ header {
   align-items: center;
 }
 
-/* .login-btn, */
-/* .cart-btn {
-  cursor: pointer;
-  border-radius: 5px;
-  border-color: var(--whitish-gray);
-  border-style: solid;
-  border-width: 1px;
-  padding: 0.5rem 1.2rem;
-  opacity: 0.8;
-} */
-
 .cart-btn {
   display: flex;
   flex-direction: row;
@@ -301,11 +290,17 @@ li.alice-carousel__stage-item .__cloned {
 }
 
 .header-btns .btn-link {
-  border: 1px solid;
-  padding: 1.2rem;
-  letter-spacing: 1.5px;
-  font-weight: 600;
+  cursor: pointer;
   border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.5rem 1.2rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  align-items: center;
+  width: max-content;
+  font-size: 1rem;
+  font-family: var(--poppins-font);
 }
 
 .header-btns .btn-link:first-child {
@@ -800,10 +795,6 @@ li.alice-carousel__stage-item .__cloned {
   text-align: left;
 }
 
-/* .map {
-  height: 25rem;
-  width: 100%;
-} */
 .contact-section {
   display: flex;
   flex-direction: column;
@@ -850,12 +841,6 @@ li.alice-carousel__stage-item .__cloned {
 .section-10 .active-button-style {
   margin-top: 2rem;
 }
-
-/* .button-msg {
-  font-family: var(--poppins-font);
-  color: var(--white);
-  padding-top: 1rem;
-} */
 
 /* Section 11 */
 .section-11 {
@@ -1086,7 +1071,6 @@ hr {
     border: 1px solid var(--yellow);
     color: var(--light-black);
     background-color: transparent;
-    font-weight: 600;
     border-color: rgba(255, 255, 255, 0.637);
     background-color: rgba(255, 255, 255, 0.637);
   }
