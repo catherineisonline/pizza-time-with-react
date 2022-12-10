@@ -188,17 +188,6 @@
   transition: all ease-in-out 0.2s;
   cursor: pointer;
 }
-/* .cart-checkout-btn {
-  background-color: transparent;
-  color: var(--white);
-  letter-spacing: 1px;
-  /* text-transform: uppercase; */
-/* }
-.cart-checkout-btn:hover {
-  border: 1px solid var(--yellow);
-  background-color: var(--yellow);
-  transition: all ease-in-out 0.2s;
-} */
 .cart-backtomenu-btn:hover {
   transition: all ease-in-out 0.2s;
   color: var(--yellow);

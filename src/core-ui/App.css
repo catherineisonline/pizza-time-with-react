@@ -833,6 +833,11 @@ li.alice-carousel__stage-item .__cloned {
   color: var(--white);
   margin: 7rem auto;
 }
+.newsletter-success {
+  color: var(--green);
+  font-size: 1.5rem;
+  line-height: 160px;
+}
 
 .email-subscribtion {
   width: 90%;

@@ -1,45 +1,53 @@
 import React from "react";
+import { useState } from "react";
 
-export default class Newsletter extends React.Component {
-  SubmitEmail() {
-    const errorMsg = document.querySelector(".error-msg");
-    const inputEl = document.querySelector(".input-field");
-    const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    const timeoutFunc = setTimeout(() => {
-      errorMsg.style.display = "none";
-    }, 3000);
-    if (inputEl.value.length === 0 || !inputEl.value.match(emailValidation)) {
-      errorMsg.textContent = "Please enter a valid email address";
-      errorMsg.style.display = "inline";
-      errorMsg.style.color = "#ff6240";
-      return timeoutFunc;
-    } else {
-      errorMsg.textContent = "Thank you for subscribing to our newsletter!";
-      errorMsg.style.display = "inline";
-      errorMsg.style.color = "#fac564";
-      return timeoutFunc;
-    }
+const Newsletter = () => {
+  const [formValue, setFormValue] = useState({ email: "" });
+  const [submit, setSubmit] = useState(false);
+  const [formError, setFormError] = useState({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormError(validateForm(formValue));
+    setSubmit(true);
   }
-
-  render() {
-    return (
-      <article className="section-11  flex-container flex-column">
-        <section className="email-subscribtion">
-          <label className="email-label" htmlFor="email-input">
-            Subscribe to our newsletter to recieve updates about menu and enjoy
-            awesome gifts!
-          </label>
-          <section className="input-section">
+  const handleValidation = async (e) => {
+    const { name, value } = e.target;
+    setFormValue({ ...formValue, [name]: value });
+  }
+  const validateForm = (value) => {
+    let errors = {};
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (!value.email) {
+      errors.email = "Please enter an email"
+    }
+    else if (!emailRegex.test(value.email)) {
+      errors.email = "Please enter valid email"
+    }
+    return errors;
+  }
+  return (
+    <article className="section-11  flex-container flex-column">
+      <section className="email-subscribtion">
+        <label className="email-label" htmlFor="email-input">
+          Subscribe to our newsletter to recieve updates about menu and enjoy
+          awesome gifts!
+        </label>
+        {submit && Object.keys(formError).length === 0 ?
+          <p className="newsletter-success">You have successfully subscribed to our newsletter!</p> :
+          <form onSubmit={handleSubmit} className="input-section">
             <section className="webflow-style-input">
-              <input className="input-field" type="email" placeholder="What's your email?" />
+              <input name="email" onChange={handleValidation} value={formValue.email} className="input-field" placeholder="What's your email?" />
             </section>
-            <button onClick={this.SubmitEmail} className="active-button-style">
+            <span className="fullname-error-cpage">{formError.email}</span>
+            <button type="submit" className="active-button-style">
               Sign me up
             </button>
-            <p className="error-msg"></p>
-          </section>
-        </section>
-      </article>
-    );
-  }
+          </form>}
+
+      </section>
+    </article>
+  );
 }
+
+export default Newsletter;
