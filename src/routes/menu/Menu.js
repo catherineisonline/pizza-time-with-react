@@ -13,8 +13,7 @@ const Menu = ({ allProducts,
   handleAddProduct,
   handleRemoveProduct,
   successMsg,
-  findMenuItem,
-  searchFailed
+  findMenuItem
 }) => {
 
   const [itemOffset, setItemOffset] = useState(0);

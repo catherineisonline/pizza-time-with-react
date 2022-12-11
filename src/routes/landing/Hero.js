@@ -41,7 +41,7 @@ const items = [
         </Link>
       </div>
     </section>
-  </section >,
+  </section>,
   //Section 3
   <section className="header-section slider-three">
     <section className="header-info flex-container flex-column txt-center pop-font txt-white">

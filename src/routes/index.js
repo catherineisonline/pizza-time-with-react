@@ -10,4 +10,4 @@ import Payment from "./payment/Payment";
 import Register from './registration/Register';
 import SingleItem from './singleItem/SingleItem';
 
-export {About, Blog, Cart, Checkout, Contact, RootSection,  Menu, PasswordRecovery, Payment, Register, SingleItem };
+export { About, Blog, Cart, Checkout, Contact, RootSection, Menu, PasswordRecovery, Payment, Register, SingleItem };

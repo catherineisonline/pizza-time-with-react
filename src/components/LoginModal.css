@@ -86,7 +86,6 @@
 .tooltip {
   position: relative;
   cursor: pointer;
-  /* height: 1rem; */
   border-bottom: 1px dotted var(--black);
 }
 
