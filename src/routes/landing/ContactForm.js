@@ -92,8 +92,6 @@ const ContactForm = () => {
             <span className="fullname-error-cpage">{formError.fullname}</span>
             <div className="contact-form-item webflow-style-input">
               <input
-
-
                 onChange={handleValidation}
                 value={formValue.email}
                 name="email"

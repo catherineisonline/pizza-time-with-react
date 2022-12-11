@@ -36,44 +36,46 @@ const Contact = () => {
   }
   return (
     <main className="contact" >
-      <section className="contact-us-form">
-        {submit && Object.keys(formError).length === 0 ? <p className="contact-success">We have recieved your message and we will get back to you shortly! 🍕</p> : <form onSubmit={handleSubmit} className="contact-form-cpage flex-container flex-column">
-          <div className="contact-form-item-cpage">
-            <input
-              onChange={handleValidation}
-              value={formValue.fullname}
-              name="fullname"
-              className="fullname-input-cpage pop-font"
-              type="text"
-              placeholder="Full Name"
-            />
-          </div>
-          <span className="fullname-error-cpage">{formError.fullname}</span>
-          <div className="contact-form-item-cpage">
-            <input
-              onChange={handleValidation}
-              value={formValue.email}
-              name="email"
-              className="email-input-cpage pop-font"
-              type="text"
-              placeholder="Email"
-            />
-          </div>
-          <span className="fullname-error-cpage">{formError.email}</span>
-          <div className="contact-form-item-cpage">
-            <textarea
-              onChange={handleValidation}
-              value={formValue.message}
-              name="message"
-              className="textarea-input-cpage pop-font"
-              placeholder="Message"
-            />
-          </div>
-          <span className="fullname-error-cpage">{formError.message}</span>
-          <button type="submit" className="active-button-style">
-            Send
-          </button>
-        </form>}
+      <section>
+        {submit && Object.keys(formError).length === 0 ?
+          <p className="contact-success">We have recieved your message and we will get back to you shortly! 🍕</p> :
+          <form onSubmit={handleSubmit} className="flex-container flex-column">
+            <div className="webflow-style-input">
+              <input
+                onChange={handleValidation}
+                value={formValue.fullname}
+                name="fullname"
+                className="pop-font"
+                type="text"
+                placeholder="Full Name"
+              />
+            </div>
+            <span className="input-validation-error">{formError.fullname}</span>
+            <div className=" webflow-style-input">
+              <input
+                onChange={handleValidation}
+                value={formValue.email}
+                name="email"
+                className="pop-font"
+                type="text"
+                placeholder="Email"
+              />
+            </div>
+            <span className="input-validation-error">{formError.email}</span>
+            <div className=" webflow-style-input">
+              <textarea
+                onChange={handleValidation}
+                value={formValue.message}
+                name="message"
+                className="pop-font"
+                placeholder="Message"
+              />
+            </div>
+            <span className="input-validation-error">{formError.message}</span>
+            <button type="submit" className="active-button-style">
+              Send
+            </button>
+          </form>}
       </section>
       <section className="contact-us-img"></section>
       <section className="contact-us-content pop-font">
