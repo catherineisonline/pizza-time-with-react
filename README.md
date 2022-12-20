@@ -1,6 +1,6 @@
 # Pizza Time
 
-<img src="https://github.com/catherineisonline/pizza-time-with-react/blob/main/src/assets/images/project-preview.png?raw=true" ></img>
+![Pizza Time preview](https://github.com/catherineisonline/pizza-time-with-react/blob/main/src/assets/images/project-preview.png?raw=true)
 
 Pizza Time, a pizza restaurant that offers online order services, is one of the most interesting projects I am planning to implement. The goal of this project is to make this restaurant landing page look almost like an actual working bussiness. It should have all the interactivity usual e-commerce websites have.
 
@@ -116,7 +116,6 @@ I want to be able to sort the menu by categories, as well as be able to find som
 #### Menu Page
 
 1. [x] Sortable by categories - category navigation on the side
-
 - [x] Pizza category
 - [x] Sushi category
 - [x] Drinks category
@@ -124,8 +123,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [x] Sale category
 
 2. [x] Search input available
-       Menu items have:
-
+Menu items have:
 - [x] Pricing
 - [x] Name
 - [x] Ingredients
@@ -134,12 +132,13 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [x] Add to cart button
 
 5. [x] Add pagination
+
 6. [x] Menu side-cotainer
 
 #### A single item page
 
 - [x] A single menu item page
-      A single menu item page should include:
+A single menu item page should include:
 - [x] An image
 - [x] Name
 - [x] Ingredients
@@ -150,7 +149,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 - [x] Cart page
 - [x] Empty cart page
-      Cart page should include:
+Cart page should include:
 - [x] Added item
 - [x] Amount of unique items (if the same item is added several, it shouldn't repeat)
 - [x] Disable ability to change item attributes
@@ -186,7 +185,6 @@ I want to be able to sort the menu by categories, as well as be able to find som
 #### Other
 
 1. [x] Create sub-pages:
-
 - [x] Menu
 - [x] Blog
 - [x] About
@@ -295,11 +293,11 @@ I have a lot of images on the website and I didn't think in advance when choosin
 
 ## Useful Resources <a id="resources"></a>
 
-- <a href="https://magic.reactjs.net/htmltojsx.htm">HTML to JSX</a> - a great tool to compile HTML to JSX.
-- <a href="https://www.lipsum.com/feed/html">Lorem Ipsum</a> - dummy text generator, there no need to think of big articles on your own.
-- <a href="https://react-leaflet.js.org/">Leaflet</a> - map API. It's a second project where I use it and I like it a lot. It's free and doesn't require any credit card info if you want to use it for some small projects.
-- <a href="https://icons8.com/">Icons8</a> - very good collection of icons, in case you cannot find what you needed on FontAwesome.
-- <a href="https://www.npmjs.com/package/react-alice-carousel">React Alice Carousel</a> - React Alice Carousel is a React component for building content galleries, content rotators and any React carousels.
-- <a href="https://tinypng.com/">TinyPNG</a> - smart lossy compression techniques to reduce the file size of your WEBP, JPEG and PNG files.
-- <a href="https://www.npmjs.com/package/react-lazy-load-image-component">React Lazy Load Image Component</a> - React Component to lazy load images and other components/elements.
-- <a href="https://react-icons.github.io/react-icons">React Icons</a> - Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
+- [HTML to JSX](https://magic.reactjs.net/htmltojsx.htm) - a great tool to compile HTML to JSX.
+- [Lorem Ipsum](https://www.lipsum.com/feed/html) - dummy text generator, there no need to think of big articles on your own.
+- [Leaflet](https://react-leaflet.js.org/) - map API. It's a second project where I use it and I like it a lot. It's free and doesn't require any credit card info if you want to use it for some small projects.
+- [Icons8](https://icons8.com/) - []() - very good collection of icons, in case you cannot find what you needed on FontAwesome.
+- [React Alice Carousel](https://www.npmjs.com/package/react-alice-carousel) - React Alice Carousel is a React component for building content galleries, content rotators and any React carousels.
+- [TinyPNG](https://tinypng.com/) - smart lossy compression techniques to reduce the file size of your WEBP, JPEG and PNG files.
+- [React Lazy Load Image Component](https://www.npmjs.com/package/react-lazy-load-image-component) - React Component to lazy load images and other components/elements.
+- [React Icons](https://react-icons.github.io/react-icons) - Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
