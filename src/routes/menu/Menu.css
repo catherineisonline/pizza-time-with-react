@@ -13,6 +13,8 @@ li {
   background-size: cover;
   background-attachment: fixed;
   padding-bottom: 4rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .side-menu h1 {
   font-family: var(--josefin-font);
@@ -266,6 +268,7 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 90%;
   margin: 0 auto;
   gap: 2rem;
+  max-width: 800px;
 }
 
 .single-item img {
@@ -336,10 +339,7 @@ input[type="search"]::-webkit-search-results-decoration {
     gap: none;
   }
   .single-item {
-    display: flex;
     flex-direction: row;
-    width: 80%;
-    margin: 0 auto;
     justify-content: space-between;
   }
 
@@ -394,9 +394,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   .side-menu ul {
     padding: 0;
-  }
-  .single-item {
-    width: 60%;
   }
   .menu-main {
     position: relative;

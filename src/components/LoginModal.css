@@ -14,7 +14,7 @@
 }
 
 .modal-main {
-  position: relative;
+  position: static;
   border-radius: 15px;
   background-color: var(--white);
   backdrop-filter: blur(5px);
@@ -25,7 +25,9 @@
   -webkit-align-self: center;
   align-self: center;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: 10%;
+  min-width: max-content;
+  max-width: 600px;
 }
 .modal-content {
   position: relative;
@@ -201,22 +203,4 @@
 .login-input-err {
   color: var(--red);
   text-align: left;
-}
-
-@media screen and (min-width: 700px) {
-  .modal-main {
-    width: 60%;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .modal-main {
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .modal-main {
-    width: 40%;
-  }
 }

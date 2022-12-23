@@ -114,6 +114,8 @@
   .section-8 {
     flex-direction: row;
     justify-content: space-evenly;
+    max-width: 1440px;
+    margin: 0 auto;
   }
   .menu-slider-hero {
     max-width: 40%;

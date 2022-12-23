@@ -127,7 +127,7 @@ img {
   font-family: var(--poppins-font);
   font-size: 1rem;
   text-align: center;
-  max-width: 90%;
+  max-width: 1200px;
   text-align: center;
   margin: 0 auto;
 }
@@ -318,6 +318,8 @@ li.alice-carousel__stage-item .__cloned {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .company-details > * {
   text-align: center;
@@ -366,15 +368,22 @@ li.alice-carousel__stage-item .__cloned {
   color: var(--light-gray);
   font-size: 1.2rem;
   line-height: 2rem;
+  width: 100%;
+  max-width: 730px;
+  margin: 0 auto;
 }
 
 /* Section 3 */
 .section-3 {
-  gap: 2rem;
   background-image: url("../assets/images/section-3-img.png");
   background-repeat: repeat;
   background-size: contain;
+}
+.section-3-container {
+  gap: 2rem;
   padding: 3rem 1rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .section-3 h2 {
   text-transform: uppercase;
@@ -383,6 +392,7 @@ li.alice-carousel__stage-item .__cloned {
 }
 .section-3 p {
   color: black;
+  max-width: 1200px;
 }
 
 .services-grid {
@@ -435,6 +445,8 @@ li.alice-carousel__stage-item .__cloned {
 .section-4 {
   gap: 2rem;
   padding-bottom: 3rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .section-4 .active-button-style {
   margin: 0 auto;
@@ -449,6 +461,7 @@ li.alice-carousel__stage-item .__cloned {
 }
 .section-4-info p {
   color: var(--light-gray);
+  max-width: 1200px;
 }
 
 .meals-grid {
@@ -511,9 +524,12 @@ li.alice-carousel__stage-item .__cloned {
 
 .section-5 p {
   color: var(--light-gray);
+  max-width: 1200px;
 }
 .pricing-grid {
   gap: 2.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .pricing-grid-item {
@@ -600,6 +616,9 @@ li.alice-carousel__stage-item .__cloned {
 
 .highlights {
   z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 3rem;
 }
 
 .highligh-container {
@@ -731,6 +750,10 @@ li.alice-carousel__stage-item .__cloned {
 }
 
 /* Section 9 */
+.section-9 {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
 .section-9 h2 {
   text-transform: uppercase;
@@ -772,6 +795,8 @@ li.alice-carousel__stage-item .__cloned {
   padding-top: 4rem;
   gap: 3.5rem;
   padding-bottom: 10rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .section-10 h2 {
@@ -846,6 +871,7 @@ li.alice-carousel__stage-item .__cloned {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  max-width: 1200px;
 }
 
 @-webkit-keyframes gradient {
@@ -919,6 +945,7 @@ li.alice-carousel__stage-item .__cloned {
   color: var(--whitish-gray);
   font-size: 1.2rem;
   text-align: center;
+  max-width: 650px;
 }
 
 .error-msg {

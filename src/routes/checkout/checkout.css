@@ -37,6 +37,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* SUMMARY */
@@ -228,11 +230,6 @@ input[type="password"] {
   flex-direction: column;
 }
 @media screen and (min-width: 700px) {
-  .checkout-content {
-    width: 90%;
-    margin: 0 auto;
-  }
-
   .checkout-cart-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

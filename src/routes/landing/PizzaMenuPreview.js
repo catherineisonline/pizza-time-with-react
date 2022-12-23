@@ -15,10 +15,8 @@ export default class PizzaMenuPreview extends React.Component {
         <section className="section-4-info txt-center">
           <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
           <p className="section-description">
-            Vestibulum et viverra massa, a malesuada lacus. Curabitur quis elit
-            eget metus porttitor sollicitudin at in nulla. Integer mollis orci
-            vel consequat eleifend. Fusce sollicitudin feugiat magna et
-            facilisis.
+          Pizza Time holds the market of the pizza industry and
+          continuously offers more than pizza. Check out our hottest menu options with cheese, meat, chicken and veggies!
           </p>
         </section>
         {/* Meals Grid */}

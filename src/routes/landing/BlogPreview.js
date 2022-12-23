@@ -12,9 +12,7 @@ export default class BlogPreview extends React.Component {
       <article className="section-9 flex-container flex-column">
         <h2 className="txt-center pop-font txt-white">Recent from blog</h2>
         <p className="section-description">
-          Vestibulum et viverra massa, a malesuada lacus. Curabitur quis elit
-          eget metus porttitor sollicitudin at in nulla. Integer mollis orci vel
-          consequat eleifend. Fusce sollicitudin feugiat magna et facilisis.
+        Fresh, flavorful and maybe some healthy recipes made for real, actual, every day life. You don't need to be a pro! Helping you celebrate the joy of food in a totally non-intimidating way.
         </p>
         <section className="blog-posts-landing">
           {/* Post 1 */}

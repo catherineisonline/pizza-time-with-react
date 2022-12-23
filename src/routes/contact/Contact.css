@@ -19,6 +19,7 @@
 .contact form {
   height: max-content;
   width: 90%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 2rem;

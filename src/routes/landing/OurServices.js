@@ -20,13 +20,14 @@ export default class OurServices extends React.Component {
   render() {
     return (
       <article className="section-3 flex-container flex-column txt-center">
+      <section className="section-3-container">
         <h2 className="pop-font">Our Services</h2>
         <p className="pop-font section-description">
-          Pizza Time provides services across all states. We provide various
+          Pizza Time provides services across all states - various
           foods and drinks, you choose! What makes us special is our teams of
           professionals with extensive knowledge of all cuisine that we have to
-          offer. Pizza Time holds the market of the pizza industry and
-          continuously offers more than pizza!
+          offer. 
+         
         </p>
         <section className="services-grid  flex-container flex-column">
           <div className="service-list flex-container flex-column">
@@ -83,6 +84,7 @@ export default class OurServices extends React.Component {
               </p>
             </div>
           </div>
+        </section>
         </section>
       </article>
     );

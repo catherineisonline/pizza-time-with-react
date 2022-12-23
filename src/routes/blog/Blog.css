@@ -34,6 +34,7 @@
   color: var(--whitish-gray);
   font-size: 1.3rem;
   width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 3rem;
 }
@@ -42,8 +43,9 @@
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 4rem;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  max-width: 1440px;
 }
 
 .blog-img {
@@ -80,12 +82,6 @@
 @media screen and (min-width: 700px) {
   .blog-posts {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .blog-intro {
-    width: 60%;
   }
 }
 
