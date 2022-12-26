@@ -40,7 +40,7 @@ export default class BlogPreview extends React.Component {
         </p>
         <section className="blog-posts-landing">
          {blogPreview.map(post =>
-         <section className="blog-post flex-container flex-column">
+         <section key={post.id} className="blog-post flex-container flex-column">
             <img
               className="blog-post-img"
               src={post.img}
