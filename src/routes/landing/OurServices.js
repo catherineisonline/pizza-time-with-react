@@ -19,8 +19,7 @@ export default class OurServices extends React.Component {
   }
   render() {
     return (
-      <article className="section-3 flex-container flex-column txt-center">
-      <section className="section-3-container">
+      <article className="section-3-container">
         <h2 className="pop-font">Our Services</h2>
         <p className="pop-font section-description">
           Pizza Time provides services across all states - various
@@ -35,7 +34,7 @@ export default class OurServices extends React.Component {
               className="service-img"
               onMouseEnter={this.MouseEnter}
               onMouseLeave={this.MouseLeave}
-              src="https://img.icons8.com/ios/50/000000/natural-food.png"
+              src="https://img.icons8.com/laces/64/null/natural-food.png"
               alt=""
             />
             <div>
@@ -53,7 +52,7 @@ export default class OurServices extends React.Component {
               className="service-img"
               onMouseEnter={this.MouseEnter}
               onMouseLeave={this.MouseLeave}
-              src="https://img.icons8.com/external-outline-wichaiwi/64/000000/external-deliver-services-business-outline-wichaiwi.png"
+              src="https://img.icons8.com/laces/64/null/fish-food.png"
               alt=""
             />
             <div>
@@ -71,7 +70,7 @@ export default class OurServices extends React.Component {
               className="service-img"
               onMouseEnter={this.MouseEnter}
               onMouseLeave={this.MouseLeave}
-              src="https://img.icons8.com/ios/50/000000/pizza.png"
+              src="https://img.icons8.com/laces/64/null/pizza.png"
               alt=""
             />
             <div>
@@ -85,8 +84,7 @@ export default class OurServices extends React.Component {
             </div>
           </div>
         </section>
-        </section>
-      </article>
+        </article>
     );
   }
 }

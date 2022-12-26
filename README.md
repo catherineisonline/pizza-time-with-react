@@ -17,7 +17,7 @@ Live Version:
 - [Plan](#plan)
 - [User Story](#userStory)
 - [To Do](#todo)
-- [Version 2.0](#v1)
+- [Version 1.0](#v1)
 - [Version 2.0](#v2)
 - [Useful Resources](#resources)
 

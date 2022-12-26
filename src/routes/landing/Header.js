@@ -170,7 +170,7 @@ export default class Header extends React.Component {
             src={burger}
             alt=""
             onClick={showHiddenMenu}
-          ></img>
+          />
         </nav>
         <SuccessMsg />
       </header>

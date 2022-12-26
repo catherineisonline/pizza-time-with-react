@@ -206,6 +206,10 @@ header {
   cursor: pointer;
   margin-right: 0;
 }
+.main-nav .navigation-menu.active .burger-bars {
+  content: url("../assets//images/close-btn.svg");
+  /* content: ; */
+}
 /* Header Info */
 .header-section {
   background-repeat: no-repeat;
@@ -374,31 +378,35 @@ li.alice-carousel__stage-item .__cloned {
 }
 
 /* Section 3 */
-.section-3 {
+
+.section-3-container {
+  text-align: center;
   background-image: url("../assets/images/section-3-img.png");
   background-repeat: repeat;
   background-size: contain;
-}
-.section-3-container {
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   padding: 3rem 1rem;
   max-width: 1440px;
   margin: 0 auto;
 }
-.section-3 h2 {
+.section-3-container h2 {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
 }
-.section-3 p {
+.section-3-container p {
   color: black;
   max-width: 1200px;
 }
 
 .services-grid {
   gap: 4rem;
-  margin-top: 4rem;
-  max-width: 80%;
+  margin-top: 8rem;
+  /* min-width: 300px; */
+  max-width: 1200px;
+  /* max-width: 80%; */
   margin: 0 auto;
 }
 
@@ -411,6 +419,7 @@ li.alice-carousel__stage-item .__cloned {
   cursor: pointer;
   padding: 1rem;
   width: 3.5rem;
+  border: 1px solid transparent;
   margin: 0 auto;
   z-index: 2;
   opacity: 0.8;
