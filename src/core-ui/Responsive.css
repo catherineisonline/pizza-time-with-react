@@ -12,7 +12,7 @@
   .pricing-grid {
     gap: 2.5rem;
   }
-  .img-grid,
+  .gallery,
   .highlights,
   .pricing-grid {
     display: grid;
@@ -104,7 +104,7 @@
     width: 100%;
   }
 
-  .img-grid {
+  .gallery {
     grid-template-columns: repeat(4, 1fr);
   }
   .highlights {

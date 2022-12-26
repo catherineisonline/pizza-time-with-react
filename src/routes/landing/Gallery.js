@@ -5,10 +5,9 @@ import ImgThree from "../../assets/images/img-grid-3.jpeg";
 import ImgFour from "../../assets/images/img-grid-4.jpeg";
 
 
-export default class Gallery extends React.Component {
-  render() {
+const Gallery = () => {
     return (
-      <article className="img-grid flex-container flex-column">
+      <article className="gallery flex-container flex-column">
         <img src={ImgOne} alt="" aria-hidden="true"/>
         <img src={ImgTwo} alt="" aria-hidden="true"/>
         <img src={ImgThree} alt="" aria-hidden="true"/>
@@ -16,4 +15,5 @@ export default class Gallery extends React.Component {
       </article>
     );
   }
-}
+
+export default Gallery;
