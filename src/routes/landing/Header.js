@@ -45,7 +45,7 @@ export default class Header extends React.Component {
                 className="txt-white"
                 to="/"
               >
-                <>Home</>
+               Home
               </NavLink>
             </li>
             <li>
@@ -65,7 +65,7 @@ export default class Header extends React.Component {
                 className="txt-white"
                 to="/menu"
               >
-                <>Menu</>
+           Menu
               </NavLink>
             </li>
 
@@ -86,7 +86,7 @@ export default class Header extends React.Component {
                 className="txt-white"
                 to="/blog"
               >
-                <>Blog</>
+           Blog
               </NavLink>
             </li>
             <li>
@@ -106,7 +106,7 @@ export default class Header extends React.Component {
                 className="txt-white"
                 to="/about"
               >
-                <>About</>
+         About
               </NavLink>
             </li>
             <li>
@@ -126,19 +126,20 @@ export default class Header extends React.Component {
                 className="txt-white"
                 to="/contact"
               >
-                <>Contact</>
+         Contact
               </NavLink>
             </li>
             <li>
               <div className="login-and-cart">
-                {validLogin ? <Link
+                {validLogin ?
+                <Link
                   to="/"
                   className="passive-button-style txt-white"
                   onClick={() => {
                     ResetLocation();
                     handleLogout();
                   }}>
-                  <>Log out</>
+              Log out
                 </Link> :
                   <div
                     className="passive-button-style txt-white"
@@ -147,7 +148,7 @@ export default class Header extends React.Component {
                       showModal();
                     }}
                   >
-                    <>Log in</>
+           Log in
                   </div>
                 }
                 <NavLink
@@ -159,7 +160,7 @@ export default class Header extends React.Component {
                   }}
                 >
                   <img src={Cart} alt="" />
-                  <>Cart</>
+                  <p>Cart</p>
                   <p>({productsQuantity})</p>
                 </NavLink>
               </div>

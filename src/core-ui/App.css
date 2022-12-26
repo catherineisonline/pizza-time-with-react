@@ -588,14 +588,7 @@ li.alice-carousel__stage-item .__cloned {
 
 /* Section 6 */
 
-.img-grid div {
-  object-fit: contain;
-  width: 100%;
-
-  position: relative;
-}
-
-.img-grid div img {
+.img-grid img {
   max-width: 100%;
   width: 100%;
   object-fit: cover;
