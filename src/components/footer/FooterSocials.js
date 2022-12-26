@@ -7,17 +7,20 @@ const socials = [
   {
     id: 1,
     href: "https://github.com/catherineisonline/pizza-time-with-react",
-    img: Github
+    img: Github,
+    name: Github
   },
   {
     id: 2,
     href: "https://www.linkedin.com/in/catherinemitagvaria/",
-    img: Linkedin
+    img: Linkedin,
+    name: Linkedin
   },
   {
     id: 3,
     href: "https://ekaterine-mitagvaria.vercel.app/",
-    img: Website
+    img: Website,
+    name: Website
   }
 ];
 
@@ -31,7 +34,9 @@ export default class FooterSocials extends React.Component {
             href={social.href}
             target="_blank"
             rel="noreferrer"
+            aria-label={social.name}
           >
+          <span aria-hidden="true">{social.name}</span>
             <img src={social.img} alt="" aria-hidden="true" />
           </a>
         </li>)}
