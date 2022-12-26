@@ -13,7 +13,7 @@ export default class CartItem extends React.Component {
     } = this.props;
     return (
       <article className={className} key={index}>
-        <img src={cartItem.ItemImg} alt="pizza"></img>
+        <img src={cartItem.ItemImg} alt={cartItem.ItemName}></img>
         <section className="cart-item-content">
           <section className="cart-item-info">
             <section className="cart-item-title">

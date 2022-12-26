@@ -22,7 +22,7 @@ export default class Header extends React.Component {
             to="/"
             className="logo-styling flex-container flex-row txt-center txt-white"
           >
-            <img className="logo" src={logo} alt="pizza time logo" />
+            <img className="logo" src={logo} alt="Pizza Time logo" />
             <p>
               Pizza <span>Time</span>
             </p>
@@ -159,7 +159,7 @@ export default class Header extends React.Component {
                     removeNavigationMenu();
                   }}
                 >
-                  <img src={Cart} alt="" />
+                  <img src={Cart} alt="" aria-hidden="true"/>
                   <p>Cart</p>
                   <p>({productsQuantity})</p>
                 </NavLink>

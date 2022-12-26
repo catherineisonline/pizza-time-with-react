@@ -21,7 +21,7 @@ export default class CheckoutItem extends React.Component {
     return (
       <section className={className}>
         <section className="image-container">
-          <img src={cartItem.ItemImg} alt={`${cartItem.ItemName}`}></img>
+          <img src={cartItem.ItemImg} alt={cartItem.ItemName}></img>
         </section>
         <section className="checkout-item-content">
           <section className="checkout-item-info">

@@ -26,18 +26,10 @@ export default class AboutSectionOne extends React.Component {
         </section>
         <div className="dark-glass"></div>
         <section className="aboutus-img-grid">
-          <div>
-            <img src={SlideOne} alt="table in the street" />
-          </div>
-          <div>
-            <img src={SlideTwo} alt="pizza on the table" />
-          </div>
-          <div>
-            <img src={SlideThree} alt="man cutting vegetables" />
-          </div>
-          <div>
-            <img src={SlideFour} alt="people in the restaurant" />
-          </div>
+            <img src={SlideOne} alt="" aria-hidden="true" />
+            <img src={SlideTwo} alt="" aria-hidden="true" />
+            <img src={SlideThree} alt="" aria-hidden="true" />
+            <img src={SlideFour} alt="" aria-hidden="true" />
         </section>
       </article>
     );

@@ -14,7 +14,7 @@ export default class MenuCategories extends React.Component {
             placeholder="search..."
             onChange={findMenuItem}
           />
-          <img src={SearchIcon} alt="" className="menu-search-icon"></img>
+          <img src={SearchIcon} alt="" aria-hidden="true" className="menu-search-icon" />
         </section>
         <ul>
           {allCategories.map((category) => (

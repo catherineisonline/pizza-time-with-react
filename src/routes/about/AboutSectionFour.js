@@ -19,7 +19,7 @@ export default class AboutSectionFour extends React.Component {
           </p>
         </section>
         <section>
-          <img src={OfficeOne} alt="office interior"></img>
+          <img src={OfficeOne} alt="" aria-hidden="true" />
         </section>
       </article>
     );

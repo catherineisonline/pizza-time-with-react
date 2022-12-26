@@ -8,9 +8,9 @@ export default class AboutSectionThree extends React.Component {
     return (
       <article className="section-three">
         <div className="section-three-img-grid">
-          <img src={ImgOne} alt="restaurant interior"></img>
-          <img src={ImgTwo} alt="restaurant interior"></img>
-          <img src={ImgThree} alt="restaurant interior"></img>
+          <img src={ImgOne} alt="" aria-hidden="true"/>
+          <img src={ImgTwo} alt="" aria-hidden="true"/>
+          <img src={ImgThree} alt="" aria-hidden="true"/>
         </div>
         <section className="section-three-content">
           <h2 className="sub-title">Happy Customers</h2>

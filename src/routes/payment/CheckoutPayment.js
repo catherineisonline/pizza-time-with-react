@@ -53,7 +53,7 @@ const CheckoutPayment = ({ totalPayment }) => {
             <h2>Your food is on the way!</h2>
             <p>Thank you for the order. We will update your order status once the restraurant confirms it. </p>
           </section>
-          <img src={Tick} alt="" />
+          <img src={Tick} alt="" aria-hidden="true"/>
           <section className="payment-details">
             <p>Amount paid: <span>{totalPayment} $</span></p>
             <p>Transaction id: <span>{transactionId}</span></p>
