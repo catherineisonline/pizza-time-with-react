@@ -8,6 +8,57 @@ import BBQPizza from "../../assets/images/BBQ-chicken-pizza.jpg";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 
+const pizzaMenu = [
+  {
+    id: 1,
+    img: CheesePizza,
+    name: "Cheese Pizza",
+    price: 5.00,
+    currency: "$",
+    description: "It should be no shocker that a classic is the statistical favorite. Cheese pizza is one of the most popular choices. It will always be a simple, unadorned masterpiece on its own."
+  },
+  {
+    id: 2,
+    img: VeggiePizza,
+    name: "Veggie Pizza",
+    price: 9.00,
+    currency: "$",
+    description: "When you want to jazz up your cheese pizza with color and texture, veggies are the perfect topping. And you’re only limited by your imagination."
+  },
+  {
+    id: 3,
+    img: PepperoniPizza,
+    name: "Pepperoni Pizza",
+    price: 5.00,
+    currency: "$",
+    description: "There’s a reason this is one of the most popular types of pizza. Who doesn’t love biting into a crispy, salty round of pepperoni?"
+  },
+  {
+    id: 4,
+    img: MeatPizza,
+    name: "Meat Pizza",
+    price: 10.00,
+    currency: "$",
+    description: "If pepperoni just isn’t enough, and you’re looking for a pie with a bit more heft, a meat pizza is a perfect and popular choice."
+  },
+  {
+    id: 5,
+    img: MargheritaPizza,
+    name: "Margherita Pizza",
+    price: 8.00,
+    currency: "$",
+    description: "Deceptively simple, the Margherita pizza is made with basil, fresh mozzarella, and tomatoes. There’s a reason it’s an Italian staple and one of the most popular types of pizza in the country."
+  },
+  {
+    id: 6,
+    img: BBQPizza,
+    name: "BBQ Chicken Pizza",
+    price: 10.00,
+    currency: "$",
+    description: "If you love BBQ chicken and you love pizza, why not put them together? This has long been a cult favorite of sports fans and college kids."
+  }
+]
+
 export default class PizzaMenuPreview extends React.Component {
   render() {
     return (
@@ -19,110 +70,18 @@ export default class PizzaMenuPreview extends React.Component {
           continuously offers more than pizza. Check out our hottest menu options with cheese, meat, chicken and veggies!
           </p>
         </section>
-        {/* Meals Grid */}
         <section className="meals-grid flex-container flex-column">
-          {/* Pizza 1 */}
-          <div className="meal-item flex-container">
-            <img src={CheesePizza} alt="cheese pizza" />
-            <div className="meal-item-details flex-container flex-column">
-              <h3 className="txt-white"> Cheese Pizza</h3>
-              <p>
-                It should be no shocker that a classic is the statistical
-                favorite. Cheese pizza is one of the most popular choices. It
-                will always be a simple, unadorned masterpiece on its own..
-              </p>
-              <div className="meal-item-order flex-container flex-row txt-center">
-                <p>
-                  <span>$</span>5.00
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* Pizza 2 */}
-          <div className="meal-item flex-container flex-row">
-            <img src={VeggiePizza} alt="veggie pizza" />
-            <div className="meal-item-details flex-container flex-column">
-              <h3 className="txt-white"> Veggie Pizza</h3>
-              <p>
-                When you want to jazz up your cheese pizza with color and
-                texture, veggies are the perfect topping. And you’re only
-                limited by your imagination.
-              </p>
-              <div className="meal-item-order flex-container flex-row txt-center">
-                <p>
-                  <span>$</span>9.00
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* Pizza 3 */}
-          <div className="meal-item flex-container flex-row">
-            <img src={PepperoniPizza} alt="pepperoni pizza" />
-            <div className="meal-item-details flex-container flex-column">
-              <h3 className=" txt-white"> Pepperoni Pizza</h3>
-              <p>
-                There’s a reason this is one of the most popular types of pizza.
-                Who doesn’t love biting into a crispy, salty round of pepperoni?
-              </p>
-              <div className="meal-item-order flex-container flex-row  txt-center">
-                <p>
-                  <span>$</span>5.00
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* Pizza 4 */}
-          <div className="meal-item flex-container flex-row">
-            <img src={MeatPizza} alt="meat pizza" />
-            <div className="meal-item-details flex-container flex-column">
-              <h3 className=" txt-white">Meat Pizza</h3>
-              <p>
-                If pepperoni just isn’t enough, and you’re looking for a pie
-                with a bit more heft, a meat pizza is a perfect and popular
-                choice.{" "}
-              </p>
-              <div className="meal-item-order flex-container flex-row txt-center">
-                <p>
-                  <span>$</span>10.00
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* Pizza 5 */}
-          <div className="meal-item flex-container flex-row">
-            <img src={MargheritaPizza} alt="margherita pizza" />
-            <div className="meal-item-details flex-container flex-column">
-              <h3 className=" txt-white">Margherita Pizza</h3>
-              <p>
-                Deceptively simple, the Margherita pizza is made with basil,
-                fresh mozzarella, and tomatoes. There’s a reason it’s an Italian
-                staple and one of the most popular types of pizza in the
-                country..
-              </p>
-              <div className="meal-item-order flex-container flex-row txt-center">
-                <p>
-                  <span>$</span>8.00
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* Pizza 6 */}
-          <div className="meal-item flex-container flex-row">
-            <img src={BBQPizza} alt="bbq pizza" />
-            <div className="meal-item-details flex-container flex-column">
-              <h3 className=" txt-white">BBQ Chicken Pizza</h3>
-              <p>
-                If you love BBQ chicken and you love pizza, why not put them
-                together? This has long been a cult favorite of sports fans and
-                college kids.
-              </p>
-              <div className="meal-item-order flex-container flex-row txt-center">
-                <p>
-                  <span>$</span>10.00
-                </p>
-              </div>
-            </div>
-          </div>
+        {pizzaMenu.map(pizza =>
+        <section key={pizza.id} className="meal-item flex-container">
+            <img src={pizza.img} alt={pizza.name} />
+            <section className="meal-item-details flex-container flex-column">
+              <h3 className="txt-white">{pizza.name}</h3>
+              <p>{pizza.description}</p>
+              <section className="meal-item-order flex-container flex-row txt-center">
+                <p><span>{pizza.currency}</span>{pizza.price}</p>
+              </section>
+            </section>
+          </section>)}
         </section>
         <Link
           onClick={ResetLocation}

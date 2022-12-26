@@ -16,7 +16,7 @@ export default class WelcomeSection extends React.Component {
         <img
           className="section-two-img"
           src={SectionOneImg}
-          alt="restaurant interior"
+          alt="Pizza Time restaurant interior with people at the tabel and the staff serving the customers"
         />
       </article>
     );
