@@ -20,10 +20,10 @@ export default class FooterContact extends React.Component {
           <p>8:00am - 9:00pm</p>
         </div>
         <section className="accepted-payments">
-          <img src={Visa} alt="visa icon" />
-          <img src={MasterCard} alt="mastercard icon" />
-          <img src={ApplePay} alt="applepay icon" />
-          <img className="googlepay" src={GooglePay} alt="googlepay icon" />
+          <img src={Visa} alt="Visa card" />
+          <img src={MasterCard} alt="Mastercard card" />
+          <img src={ApplePay} alt="Apple pay" />
+          <img className="googlepay" src={GooglePay} alt="Google pay" />
         </section>
       </section>
     );

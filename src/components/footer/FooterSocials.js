@@ -3,37 +3,38 @@ import Github from "../../assets/images/socials/github.svg";
 import Linkedin from "../../assets/images/socials/linkedin.svg";
 import Website from "../../assets/images/socials/portfolio.png";
 
+const socials = [
+  {
+    id: 1,
+    href: "https://github.com/catherineisonline/pizza-time-with-react",
+    img: Github
+  },
+  {
+    id: 2,
+    href: "https://www.linkedin.com/in/catherinemitagvaria/",
+    img: Linkedin
+  },
+  {
+    id: 3,
+    href: "https://ekaterine-mitagvaria.vercel.app/",
+    img: Website
+  }
+];
+
 export default class FooterSocials extends React.Component {
   render() {
     return (
       <ul className="socials">
-        <li>
+      {socials.map(social =>
+      <li key={social.id}>
           <a
-            href="https://github.com/catherineisonline/pizza-time-with-react"
+            href={social.href}
             target="_blank"
             rel="noreferrer"
           >
-            <img src={Github} alt="github icon"></img>
+            <img src={social.img} alt="" aria-hidden="true" />
           </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/catherinemitagvaria/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={Linkedin} alt="linkedin icon"></img>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://ekaterine-mitagvaria.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={Website} alt="website icon"></img>
-          </a>
-        </li>
+        </li>)}
       </ul>
     );
   }
