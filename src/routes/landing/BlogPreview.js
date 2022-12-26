@@ -5,6 +5,30 @@ import ThickAndThin from "../../assets/images/thick-or-thin.jpg";
 import Leftover from "../../assets/images/pizza-leftover.jpg";
 import ResetLocation from "../../helpers/ResetLocation";
 
+const blogPreview = [
+  {
+    id: 1,
+    img: PizzaCrust,
+    date: "July 12, 2021",
+    name: "Pizza crust types: self-rising and par-baked",
+    description: "Pizza crust can be various and it depends what pizza you are looking for..."
+  },
+  {
+    id: 2,
+    img: ThickAndThin,
+    date: "July 1, 2021",
+    name: "Thick or thin: different styles of pizza crust",
+    description: "If you want to taste the toppings of pizza to their fullest, thin crust is the way to go..."
+  },
+  {
+    id: 3,
+    img: Leftover,
+    date: "June 27, 2021",
+    name: "What to do with leftover pizza dough",
+    description: "Not sure what to do with pizza dough leftover? We have got you covered..."
+  }
+]
+
 export default class BlogPreview extends React.Component {
   render() {
 
@@ -15,55 +39,21 @@ export default class BlogPreview extends React.Component {
         Fresh, flavorful and maybe some healthy recipes made for real, actual, every day life. You don't need to be a pro! Helping you celebrate the joy of food in a totally non-intimidating way.
         </p>
         <section className="blog-posts-landing">
-          {/* Post 1 */}
-          <div className="blog-post flex-container flex-column">
+         {blogPreview.map(post =>
+         <section className="blog-post flex-container flex-column">
             <img
               className="blog-post-img"
-              src={PizzaCrust}
-              alt="pizza on the table"
-            />
-            <p className="blog-date">July 12, 2021</p>
-
-            <h3 className="pop-font txt-white">
-              Pizza Crust Types: Self-Rising and Par-Baked
-            </h3>
-            <p className="blog-snippet">
-              Maecenas interdum erat justo, eget posuere mi vehicula et. Fusce
-              ut elit ex.
-            </p>
-          </div>
-          {/* Post 2 */}
-          <div className="blog-post flex-container flex-column">
-            <img
-              className="blog-post-img"
-              src={ThickAndThin}
-              alt="a person placing pizza in an over"
-            />
-            <p className="blog-date">July 1, 2021</p>
-            <h3 className="pop-font txt-white">
-              Thick or Thin: Different Styles of Pizza Crust
-            </h3>
-            <p className="blog-snippet">
-              Aenean convallis tempor vehicula. Nunc pellentesque porta libero,
-              proin laoreet diam.
-            </p>
-          </div>
-          {/* Post 3 */}
-          <div className="blog-post flex-container flex-column">
-            <img
-              className="blog-post-img"
-              src={Leftover}
-              alt="pizza near fireplace"
+              src={post.img}
+              alt={post.name}
             />
             <p className="blog-date">June 27, 2021</p>
             <h3 className="pop-font txt-white">
-              What To Do With Leftover Pizza Dough
+           {post.name}
             </h3>
             <p className="blog-snippet">
-              Nullam sit amet semper est. Proin laoreet diam quis tortor
-              malesuada.
+             {post.description}
             </p>
-          </div>
+          </section>)}
         </section>
 
         <Link
