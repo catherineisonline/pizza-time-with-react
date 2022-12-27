@@ -1181,6 +1181,9 @@ hr {
   flex-direction: row;
   gap: 1rem;
 }
+.socials span {
+  display: none;
+}
 
 .socials img {
   max-width: 2rem;
