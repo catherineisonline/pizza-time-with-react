@@ -1138,8 +1138,8 @@ hr {
 
 /* ADD TO CART BUTTON */
 .passive-button-style.active-add-to-cart {
-  background-color: #307d45;
-  border-color: #307d45;
+  background-color: var(--green);
+  border-color: var(--green);
   cursor: pointer;
 }
 .passive-button-style.active-add-to-cart:hover {
