@@ -5,7 +5,7 @@ export default class AboutSectionTwo extends React.Component {
       <article className="section-two">
         <section className="section-two-content">
           <h2 className="sub-title">Dedicated</h2>
-          <h2 className="main-title">Changing the world together</h2>
+          <h3 className="main-title">Changing the world together</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             volutpat ullamcorper urna, at vestibulum justo ornare ut. Proin

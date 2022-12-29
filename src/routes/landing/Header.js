@@ -2,17 +2,16 @@ import React from "react";
 import logo from "../../assets/images/logo.png";
 import burger from "../../assets/images/burger-menu.svg";
 import { Link, NavLink } from "react-router-dom";
-import LoginModal from "../../components/LoginModal";
 import Cart from "../../assets/images/cart-icon.png";
 import SuccessMsg from "../../components/SuccessMsg";
 import ResetLocation from "../../helpers/ResetLocation";
 
 export default class Header extends React.Component {
   render() {
-    const { productsQuantity, handleLogout, submit, handleSubmit, formValue, hideModal, showModal, showHiddenMenu, validLogin, removeNavigationMenu, handleValidation, formError } = this.props;
+    const { loginModal, productsQuantity, handleLogout, showModal, showHiddenMenu, validLogin, removeNavigationMenu,  } = this.props;
     return (
       <header>
-        <LoginModal validLogin={validLogin} formValue={formValue} handleSubmit={handleSubmit} submit={submit} formError={formError} handleValidation={handleValidation} hideModal={hideModal} removeMenu={removeNavigationMenu} />
+      {loginModal}
         <nav className="main-nav flex-container flex-row txt-center">
           <NavLink
             onClick={() => {

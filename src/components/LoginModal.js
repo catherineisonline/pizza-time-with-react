@@ -1,6 +1,7 @@
 import React from "react";
 import "./LoginModal.css";
 import { Link } from "react-router-dom";
+import LinkButton from "./Button";
 
 
 export default function LoginModal({ hideModal, removeMenu, handleValidation, validLogin, handleSubmit, formValue, formError, submit }) {
@@ -34,7 +35,7 @@ export default function LoginModal({ hideModal, removeMenu, handleValidation, va
             <span className="login-input-err">{formError.password}</span>
             {submit && Object.keys(formError).length === 0 && !validLogin ? <p className="login-input-err">We couldn't find an account. Try another credentials</p> : null}
             <section className="login-and-signup">
-              <Link
+              {/* <Link
                 to="/register"
                 className="modal-signup-btn"
                 onClick={() => {
@@ -43,7 +44,17 @@ export default function LoginModal({ hideModal, removeMenu, handleValidation, va
                 }}
               >
                 Sign up
-              </Link>
+              </Link> */}
+              <LinkButton
+               onClick={() => {
+                  hideModal();
+                  removeMenu();
+                }}
+                to="/register"
+                className="modal-signup-btn"
+                >
+  Sign up
+              </LinkButton>
               <button type="submit" className="modal-login-btn">Log in</button>
             </section>
           </form>

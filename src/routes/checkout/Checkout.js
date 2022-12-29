@@ -1,5 +1,4 @@
 import React from "react";
-import CheckoutSummary from "./CheckoutSummary";
 import CheckoutForm from "./CheckoutForm";
 import EmptyCart from "../cart/EmptyCart.js";
 
@@ -27,13 +26,10 @@ export default class Checkout extends React.Component {
   render() {
     const {
       cartItems,
-      selectedAttributes,
-      handleAddProduct,
-      handleRemoveProduct,
-      successMsg,
       productsQuantity,
       totalPayment,
       taxes,
+      checkoutSummary
     } = this.props;
     document.title = "Checkout | Pizza Time";
     return (
@@ -43,13 +39,7 @@ export default class Checkout extends React.Component {
           <EmptyCart />
         ) : (
           <article className="checkout-content">
-            <CheckoutSummary
-              cartItems={cartItems}
-              selectedAttributes={selectedAttributes}
-              handleAddProduct={handleAddProduct}
-              handleRemoveProduct={handleRemoveProduct}
-              successMsg={successMsg}
-            />
+          {checkoutSummary}
             <CheckoutForm toggleDelivery={this.toggleDelivery}
               delivery={this.state.delivery} promoCode={this.state.promoCode}
               togglePromocode={this.togglePromocode} className="checkout-carttotals"

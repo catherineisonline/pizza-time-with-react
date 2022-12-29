@@ -2,12 +2,10 @@ import React from "react";
 import PaymentBtn from "../cart/PaymentBtn";
 import BacktoMenu from "../../components/BacktoMenu";
 import CheckoutBtn from "../checkout/CheckoutBtn";
+import LinkButton from "../../components/Button";
+import ResetLocation from "../../helpers/ResetLocation";
 
-
-export default class CartTotals extends React.Component {
-  render() {
-    const { totalPayment, productsQuantity, taxes, className, validLogin, showModal } =
-      this.props;
+const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLogin, showModal }) => {
     return (
       <article className={className}>
         {productsQuantity === 0 ? null : (
@@ -34,9 +32,13 @@ export default class CartTotals extends React.Component {
                   validLogin={validLogin}
                   showModal={showModal}
                 />
-                <BacktoMenu
-                  className="cart-backtomenu-btn"
-                />
+               <LinkButton
+               onClick={ResetLocation}
+               to="/menu"
+                className="cart-backtomenu-btn"
+               >
+               Back to menu test
+               </LinkButton>
               </section>
             ) : (
               <section className="checkout-interaction-btns">
@@ -53,4 +55,5 @@ export default class CartTotals extends React.Component {
       </article>
     );
   }
-}
+
+  export default CartTotals;
