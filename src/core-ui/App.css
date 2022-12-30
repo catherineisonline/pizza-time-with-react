@@ -258,13 +258,13 @@ li.alice-carousel__stage-item .__cloned {
 }
 
 .header-section.slider-one {
-  background-image: url("../assets/images/hero/hero-one-375.jpg");
+  background-image: url("../assets/images/hero/hero-one-375.webp");
 }
 .header-section.slider-two {
-  background-image: url("../assets/images/hero/hero-two-375.jpg");
+  background-image: url("../assets/images/hero/hero-two-375.webp");
 }
 .header-section.slider-three {
-  background-image: url("../assets/images/hero/hero-three-375.jpg");
+  background-image: url("../assets/images/hero/hero-three-375.webp");
 }
 
 .header-info {

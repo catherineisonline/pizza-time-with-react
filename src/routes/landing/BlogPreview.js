@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 //375px
-import blogOne375 from '../../assets/images/blog-preview/blog-one-375.jpg'
-import blogTwo375 from '../../assets/images/blog-preview/blog-two-375.jpg'
-import blogThree375 from '../../assets/images/blog-preview/blog-three-375.jpg'
+import blogOne375 from '../../assets/images/blog-preview/blog-one-375.webp'
+import blogTwo375 from '../../assets/images/blog-preview/blog-two-375.webp'
+import blogThree375 from '../../assets/images/blog-preview/blog-three-375.webp'
 //700px
-import blogOne700 from '../../assets/images/blog-preview/blog-one-700.jpg'
-import blogTwo700 from '../../assets/images/blog-preview/blog-two-700.jpg'
-import blogThree700 from '../../assets/images/blog-preview/blog-three-700.jpg'
+import blogOne700 from '../../assets/images/blog-preview/blog-one-700.webp'
+import blogTwo700 from '../../assets/images/blog-preview/blog-two-700.webp'
+import blogThree700 from '../../assets/images/blog-preview/blog-three-700.webp'
 import ResetLocation from '../../helpers/ResetLocation'
 
 const blogPreview = [

@@ -2,10 +2,10 @@ import React from 'react'
 import MenuSliderProducts from './MenuSliderProducts'
 import MenuSliderCategories from './MenuSliderCategories'
 
-import MenuSlide375 from '../../assets/images/section-eight/section-eight-375.jpg'
-import MenuSlide700 from '../../assets/images/section-eight/section-eight-700.jpg'
-import MenuSlide900 from '../../assets/images/section-eight/section-eight-900.jpg'
-import MenuSlide1440 from '../../assets/images/section-eight/section-eight-1440.jpg'
+import MenuSlide375 from '../../assets/images/section-eight/section-eight-375.webp'
+import MenuSlide700 from '../../assets/images/section-eight/section-eight-700.webp'
+import MenuSlide900 from '../../assets/images/section-eight/section-eight-900.webp'
+import MenuSlide1440 from '../../assets/images/section-eight/section-eight-1440.webp'
 import SalmonPoke from '../../assets/images/sushi-images/sushi-19.jpeg'
 import VeggiePoke from '../../assets/images/sushi-images/sushi-26.jpeg'
 import MiniSalmon from '../../assets/images/sushi-images/sushi-12.jpeg'
@@ -14,13 +14,13 @@ import AllaGricia from '../../assets/images/pasta-images/Pasta Alla Gricia.jpeg'
 import SheetPan from '../../assets/images/pasta-images/Sheet-Pan Burrata Caprese Gnocchi.jpeg'
 
 //375
-import pizzaOne375 from '../../assets/images/menu-slider/pizza-one-375.jpg'
-import pizzaTwo375 from '../../assets/images/menu-slider/pizza-two-375.jpg'
-import pizzaThree375 from '../../assets/images/menu-slider/pizza-three-375.jpg'
+import pizzaOne375 from '../../assets/images/menu-slider/pizza-one-375.webp'
+import pizzaTwo375 from '../../assets/images/menu-slider/pizza-two-375.webp'
+import pizzaThree375 from '../../assets/images/menu-slider/pizza-three-375.webp'
 //700
-import pizzaOne700 from '../../assets/images/menu-slider/pizza-one-700.jpg'
-import pizzaTwo700 from '../../assets/images/menu-slider/pizza-two-700.jpg'
-import pizzaThree700 from '../../assets/images/menu-slider/pizza-three-700.jpg'
+import pizzaOne700 from '../../assets/images/menu-slider/pizza-one-700.webp'
+import pizzaTwo700 from '../../assets/images/menu-slider/pizza-two-700.webp'
+import pizzaThree700 from '../../assets/images/menu-slider/pizza-three-700.webp'
 
 const MenuSliderCategory = [
   {
