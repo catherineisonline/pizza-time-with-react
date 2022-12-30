@@ -1,212 +1,217 @@
-import React from "react";
-import MenuSliderProducts from "./MenuSliderProducts";
-import MenuSliderCategories from "./MenuSliderCategories";
-import CheesePizza from "../../assets/images/cheese-pizza.jpg";
-import PepperoniPizza from "../../assets/images/pepperoni-pizza.jpg";
-import BBQPizza from "../../assets/images/BBQ-chicken-pizza.jpg";
-import MenuSliderImg from "../../assets/images/section-8-img.jpg";
-import SalmonPoke from "../../assets/images/sushi-images/sushi-19.jpeg";
-import VeggiePoke from "../../assets/images/sushi-images/sushi-26.jpeg";
-import MiniSalmon from "../../assets/images/sushi-images/sushi-12.jpeg";
-import ChickenAlfredo from "../../assets/images/pasta-images/Chicken Alfredo.jpeg";
-import AllaGricia from "../../assets/images/pasta-images/Pasta Alla Gricia.jpeg";
-import SheetPan from "../../assets/images/pasta-images/Sheet-Pan Burrata Caprese Gnocchi.jpeg";
+import React from 'react'
+import MenuSliderProducts from './MenuSliderProducts'
+import MenuSliderCategories from './MenuSliderCategories'
+import CheesePizza from '../../assets/images/cheese-pizza-375.jpg'
+import PepperoniPizza from '../../assets/images/pepperoni-pizza.jpg'
+import BBQPizza from '../../assets/images/BBQ-chicken-pizza.jpg'
+import MenuSlide375 from '../../assets/images/section-eight/section-eight-375.jpg'
+import MenuSlide700 from '../../assets/images/section-eight/section-eight-700.jpg'
+import MenuSlide900 from '../../assets/images/section-eight/section-eight-900.jpg'
+import MenuSlide1440 from '../../assets/images/section-eight/section-eight-1440.jpg'
+import SalmonPoke from '../../assets/images/sushi-images/sushi-19.jpeg'
+import VeggiePoke from '../../assets/images/sushi-images/sushi-26.jpeg'
+import MiniSalmon from '../../assets/images/sushi-images/sushi-12.jpeg'
+import ChickenAlfredo from '../../assets/images/pasta-images/Chicken Alfredo.jpeg'
+import AllaGricia from '../../assets/images/pasta-images/Pasta Alla Gricia.jpeg'
+import SheetPan from '../../assets/images/pasta-images/Sheet-Pan Burrata Caprese Gnocchi.jpeg'
 
 const MenuSliderCategory = [
   {
-    name: "pizza",
-    id: "pizza",
+    name: 'pizza',
+    id: 'pizza',
   },
   {
-    name: "sushi",
-    id: "sushi",
+    name: 'sushi',
+    id: 'sushi',
   },
   {
-    name: "pasta",
-    id: "pasta",
+    name: 'pasta',
+    id: 'pasta',
   },
-];
+]
 const MenuSliderProduct = [
   {
-    id: "pepperoni-pizza",
-    name: "Pepperoni Pizza",
+    id: 'pepperoni-pizza',
+    name: 'Pepperoni Pizza',
     describtion:
-      "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
+      'Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.',
     price: (5).toFixed(2),
     img: PepperoniPizza,
-    category: "pizza",
+    category: 'pizza',
   },
   {
-    id: "bbq-chicken-pizza",
-    name: "BBQ Chicken Pizza",
+    id: 'bbq-chicken-pizza',
+    name: 'BBQ Chicken Pizza',
     describtion:
-      "Rotisserie chicken, pizza dough, bbq sauce, smoked cheddar cheese, mozzarella cheese.",
+      'Rotisserie chicken, pizza dough, bbq sauce, smoked cheddar cheese, mozzarella cheese.',
     price: (10).toFixed(2),
     img: BBQPizza,
-    category: "pizza",
+    category: 'pizza',
   },
   {
-    id: "cheese-pizza",
-    name: "Cheese Pizza",
-    describtion: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
+    id: 'cheese-pizza',
+    name: 'Cheese Pizza',
+    describtion: 'Pizza dough, pizza sauce, provolone cheese, mozzarella.',
     price: (5).toFixed(2),
     img: CheesePizza,
-    category: "pizza",
+    category: 'pizza',
   },
   {
-    id: "salmon-poke",
+    id: 'salmon-poke',
     img: SalmonPoke,
-    name: "Salmon Poke",
+    name: 'Salmon Poke',
     describtion:
-      "Salmon, Avocado, Rice, Cabbage, Carrots, Creen onions, Sesame.",
+      'Salmon, Avocado, Rice, Cabbage, Carrots, Creen onions, Sesame.',
     price: (10).toFixed(2),
-    category: "sushi",
+    category: 'sushi',
   },
 
   {
-    id: "veggie-poke",
+    id: 'veggie-poke',
     img: VeggiePoke,
-    name: "Veggie Poke",
-    describtion: "Rice, Avocado, Cabage, Carrot, Ginger, Green Onion, Sesam.",
+    name: 'Veggie Poke',
+    describtion: 'Rice, Avocado, Cabage, Carrot, Ginger, Green Onion, Sesam.',
     price: (8).toFixed(2),
-    category: "sushi",
+    category: 'sushi',
   },
   {
-    id: "mini-salmon-set-22-pcs",
+    id: 'mini-salmon-set-22-pcs',
     img: MiniSalmon,
-    name: "Mini Salmon Set",
+    name: 'Mini Salmon Set',
     describtion:
-      "Double Salmon Roll,Californication, Salmon Nigiri - 2Pcs, Eel Nigiri - 2Pcs,Vulcan Gunkan - 2Pcs",
+      'Double Salmon Roll,Californication, Salmon Nigiri - 2Pcs, Eel Nigiri - 2Pcs,Vulcan Gunkan - 2Pcs',
     price: (35).toFixed(2),
-    category: "sushi",
+    category: 'sushi',
   },
   {
-    id: "chicken-alfredo",
+    id: 'chicken-alfredo',
     img: ChickenAlfredo,
-    name: "Chicken Alfredo",
+    name: 'Chicken Alfredo',
     describtion:
-      "Skinless chicken breast, heavy cream, olive oil, parmigiano reggiano, black pepper.",
+      'Skinless chicken breast, heavy cream, olive oil, parmigiano reggiano, black pepper.',
     price: (2).toFixed(2),
-    category: "pasta",
+    category: 'pasta',
   },
   {
-    id: "pasta-alla-gricia",
+    id: 'pasta-alla-gricia',
     img: AllaGricia,
-    name: "Pasta Alla Gricia",
+    name: 'Pasta Alla Gricia',
     describtion:
-      "Rigatoni pasta, pancetta, olive oil, pecorino romano, black pepper.",
+      'Rigatoni pasta, pancetta, olive oil, pecorino romano, black pepper.',
     price: (9).toFixed(2),
-    category: "pasta",
+    category: 'pasta',
   },
   {
-    id: "sheet-pan-burrata-caprese-gnocchi",
+    id: 'sheet-pan-burrata-caprese-gnocchi',
     img: SheetPan,
-    name: "Burrata Caprese Gnocchi",
+    name: 'Burrata Caprese Gnocchi',
     describtion:
-      "Penne pasta, sour cream, rotisserie chicken, cherry tomatoes, curly kale.",
+      'Penne pasta, sour cream, rotisserie chicken, cherry tomatoes, curly kale.',
     price: (5).toFixed(2),
-    category: "pasta",
+    category: 'pasta',
   },
-];
+]
 
 export default class MenuSlider extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      activeCategory: "pizza",
+      activeCategory: 'pizza',
       allProducts: [],
       allCategories: [],
-    };
-    this.getAllProducts = this.getAllProducts.bind(this);
-    this.changeCategory = this.changeCategory.bind(this);
-    this.getProductsByCategory = this.getProductsByCategory.bind(this);
+    }
+    this.getAllProducts = this.getAllProducts.bind(this)
+    this.changeCategory = this.changeCategory.bind(this)
+    this.getProductsByCategory = this.getProductsByCategory.bind(this)
   }
   allCategoriesData = new Promise((resolve, reject) => {
     if (true) {
-      resolve(MenuSliderCategory);
-      return;
+      resolve(MenuSliderCategory)
+      return
     }
-    reject("error, check the code!");
-  });
+    reject('error, check the code!')
+  })
   allProductsData = new Promise((resolve, reject) => {
     if (true) {
-      resolve(MenuSliderProduct);
-      return;
+      resolve(MenuSliderProduct)
+      return
     }
-    reject("error, check the code!");
-  });
+    reject('error, check the code!')
+  })
   getCategories() {
     try {
-      const result = this.allCategoriesData;
-      this.setState({ allCategories: result });
+      const result = this.allCategoriesData
+      this.setState({ allCategories: result })
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
   getAllProducts() {
     try {
-      const result = this.allProductsData;
-      this.setState({ allProducts: result });
+      const result = this.allProductsData
+      this.setState({ allProducts: result })
       // this.setState({activeCategory: "pizza"})
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
   changeCategory(newCategory) {
-    this.setState({ activeCategory: newCategory });
-    this.getProductsByCategory(newCategory);
+    this.setState({ activeCategory: newCategory })
+    this.getProductsByCategory(newCategory)
   }
   getProductsByCategory(category) {
-    let separateCategoriesByname = [];
+    let separateCategoriesByname = []
     //Separate arrays by category names
 
     const separateCategories = MenuSliderProduct.reduce(function (
       singleCategory,
-      singleItem
+      singleItem,
     ) {
-      separateCategoriesByname = Object.keys(singleCategory);
+      separateCategoriesByname = Object.keys(singleCategory)
 
       if (!singleCategory[singleItem.category])
-        singleCategory[singleItem.category] = singleItem;
+        singleCategory[singleItem.category] = singleItem
       else
         singleCategory[singleItem.category] = Array.isArray(
-          singleCategory[singleItem.category]
+          singleCategory[singleItem.category],
         )
           ? singleCategory[singleItem.category].concat(singleItem)
-          : [singleCategory[singleItem.category]].concat(singleItem);
+          : [singleCategory[singleItem.category]].concat(singleItem)
 
-      return singleCategory;
+      return singleCategory
     },
-    {});
+    {})
 
     const productsOfCategories = Object.keys(separateCategories).map(
-      (e) => separateCategories[e]
-    );
+      (e) => separateCategories[e],
+    )
 
-    let singleCategoryArray = [];
+    let singleCategoryArray = []
     productsOfCategories.map((category) => {
-      return singleCategoryArray.push(category);
-    });
+      return singleCategoryArray.push(category)
+    })
 
     //Change products by category
     separateCategoriesByname.forEach((cate) => {
       if (cate === category) {
-        return this.setState({ allProducts: separateCategories[category] });
+        return this.setState({ allProducts: separateCategories[category] })
       }
-    });
+    })
   }
   componentDidMount() {
-    this.getAllProducts();
-    this.getProductsByCategory(this.state.activeCategory);
+    this.getAllProducts()
+    this.getProductsByCategory(this.state.activeCategory)
   }
 
   render() {
-    const { allProducts } = this.state;
+    const { allProducts } = this.state
     return (
       <article className="section-8">
         <img
           className="menu-slider-hero"
-          src={MenuSliderImg}
+          src={MenuSlide375}
+          srcSet={`${MenuSlide1440} 1440w, ${MenuSlide900} 900w, ${MenuSlide700} 700w, ${MenuSlide375} 375w`}
+          sizes="(min-width: 1440px) 1440px, (min-width: 900px) 900px, (min-width: 700px) 700px, 375px"
           alt="restaurant interior"
         />
         <section className="dish-slider  flex-container flex-column txt-center">
@@ -228,11 +233,11 @@ export default class MenuSlider extends React.Component {
                   key={singleProduct.id}
                   singleProduct={singleProduct}
                 />
-              );
+              )
             })}
           </section>
         </section>
       </article>
-    );
+    )
   }
 }

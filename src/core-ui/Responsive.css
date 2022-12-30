@@ -47,6 +47,16 @@
     width: 65%;
     margin: 0 auto;
   }
+
+  .header-section.slider-one {
+    background-image: url("../assets/images/hero/hero-one-700.jpg");
+  }
+  .header-section.slider-two {
+    background-image: url("../assets/images/hero/hero-two-700.jpg");
+  }
+  .header-section.slider-three {
+    background-image: url("../assets/images/hero/hero-three-700.jpg");
+  }
 }
 @media screen and (min-width: 800px) {
   .meals-grid {
@@ -131,5 +141,17 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header-section.slider-one {
+    background-image: url("../assets/images/hero/hero-one-1440.jpg");
+  }
+  .header-section.slider-two {
+    background-image: url("../assets/images/hero/hero-two-1440.jpg");
+  }
+  .header-section.slider-three {
+    background-image: url("../assets/images/hero/hero-three-1440.jpg");
   }
 }

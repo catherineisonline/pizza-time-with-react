@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 //Images
-import Visa from "../../assets/images/payment-methods/visa-icon.svg";
-import MasterCard from "../../assets/images/payment-methods/mastercard-icon.svg";
-import ApplePay from "../../assets/images/payment-methods/applepay-icon.svg";
-import GooglePay from "../../assets/images/payment-methods/googlepay-icon.svg";
+import Visa from '../../assets/images/payment-methods/visa-icon.svg'
+import MasterCard from '../../assets/images/payment-methods/mastercard-icon.svg'
+import ApplePay from '../../assets/images/payment-methods/applepay-icon.svg'
+import GooglePay from '../../assets/images/payment-methods/googlepay-icon.svg'
 
 export default class FooterContact extends React.Component {
   render() {
@@ -20,12 +20,18 @@ export default class FooterContact extends React.Component {
           <p>8:00am - 9:00pm</p>
         </div>
         <section className="accepted-payments">
-          <img src={Visa} alt="Visa card" />
-          <img src={MasterCard} alt="Mastercard card" />
-          <img src={ApplePay} alt="Apple pay" />
-          <img className="googlepay" src={GooglePay} alt="Google pay" />
+          <img width="50" height="50" src={Visa} alt="Visa card" />
+          <img width="50" height="50" src={MasterCard} alt="Mastercard card" />
+          <img width="50" height="50" src={ApplePay} alt="Apple pay" />
+          <img
+            width="50"
+            height="50"
+            className="googlepay"
+            src={GooglePay}
+            alt="Google pay"
+          />
         </section>
       </section>
-    );
+    )
   }
 }

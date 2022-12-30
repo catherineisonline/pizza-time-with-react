@@ -1,27 +1,41 @@
-import React from "react";
-import logo from "../../assets/images/logo.png";
-import burger from "../../assets/images/burger-menu.svg";
-import { Link, NavLink } from "react-router-dom";
-import Cart from "../../assets/images/cart-icon.png";
-import SuccessMsg from "../../components/SuccessMsg";
-import ResetLocation from "../../helpers/ResetLocation";
+import React from 'react'
+import logo from '../../assets/images/logo.png'
+import burger from '../../assets/images/burger-menu.svg'
+import { Link, NavLink } from 'react-router-dom'
+import Cart from '../../assets/images/cart-icon.png'
+import SuccessMsg from '../../components/SuccessMsg'
+import ResetLocation from '../../helpers/ResetLocation'
 
 export default class Header extends React.Component {
   render() {
-    const { loginModal, productsQuantity, handleLogout, showModal, showHiddenMenu, validLogin, removeNavigationMenu,  } = this.props;
+    const {
+      loginModal,
+      productsQuantity,
+      handleLogout,
+      showModal,
+      showHiddenMenu,
+      validLogin,
+      removeNavigationMenu,
+    } = this.props
     return (
       <header>
-      {loginModal}
+        {loginModal}
         <nav className="main-nav flex-container flex-row txt-center">
           <NavLink
             onClick={() => {
-              ResetLocation();
-              removeNavigationMenu();
+              ResetLocation()
+              removeNavigationMenu()
             }}
             to="/"
             className="logo-styling flex-container flex-row txt-center txt-white"
           >
-            <img className="logo" src={logo} alt="Pizza Time logo" />
+            <img
+              width="50"
+              height="50"
+              className="logo"
+              src={logo}
+              alt="Pizza Time logo"
+            />
             <p>
               Pizza <span>Time</span>
             </p>
@@ -30,135 +44,137 @@ export default class Header extends React.Component {
             <li>
               <NavLink
                 onClick={() => {
-                  ResetLocation();
-                  removeNavigationMenu();
+                  ResetLocation()
+                  removeNavigationMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
+                        textDecoration: 'none',
+                        color: '#ff6240',
+                      }
                     : {}
                 }
                 className="txt-white"
                 to="/"
               >
-               Home
+                Home
               </NavLink>
             </li>
             <li>
               <NavLink
                 onClick={() => {
-                  ResetLocation();
-                  removeNavigationMenu();
+                  ResetLocation()
+                  removeNavigationMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
+                        textDecoration: 'none',
+                        color: '#ff6240',
+                      }
                     : {}
                 }
                 className="txt-white"
                 to="/menu"
               >
-           Menu
+                Menu
               </NavLink>
             </li>
 
             <li>
               <NavLink
                 onClick={() => {
-                  ResetLocation();
-                  removeNavigationMenu();
+                  ResetLocation()
+                  removeNavigationMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
+                        textDecoration: 'none',
+                        color: '#ff6240',
+                      }
                     : {}
                 }
                 className="txt-white"
                 to="/blog"
               >
-           Blog
+                Blog
               </NavLink>
             </li>
             <li>
               <NavLink
                 onClick={() => {
-                  ResetLocation();
-                  removeNavigationMenu();
+                  ResetLocation()
+                  removeNavigationMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
+                        textDecoration: 'none',
+                        color: '#ff6240',
+                      }
                     : {}
                 }
                 className="txt-white"
                 to="/about"
               >
-         About
+                About
               </NavLink>
             </li>
             <li>
               <NavLink
                 onClick={() => {
-                  ResetLocation();
-                  removeNavigationMenu();
+                  ResetLocation()
+                  removeNavigationMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                      textDecoration: "none",
-                      color: "#ff6240",
-                    }
+                        textDecoration: 'none',
+                        color: '#ff6240',
+                      }
                     : {}
                 }
                 className="txt-white"
                 to="/contact"
               >
-         Contact
+                Contact
               </NavLink>
             </li>
             <li>
               <div className="login-and-cart">
-                {validLogin ?
-                <Link
-                  to="/"
-                  className="passive-button-style txt-white"
-                  onClick={() => {
-                    ResetLocation();
-                    handleLogout();
-                  }}>
-              Log out
-                </Link> :
+                {validLogin ? (
+                  <Link
+                    to="/"
+                    className="passive-button-style txt-white"
+                    onClick={() => {
+                      ResetLocation()
+                      handleLogout()
+                    }}
+                  >
+                    Log out
+                  </Link>
+                ) : (
                   <div
                     className="passive-button-style txt-white"
                     onClick={() => {
-                      ResetLocation();
-                      showModal();
+                      ResetLocation()
+                      showModal()
                     }}
                   >
-           Log in
+                    Log in
                   </div>
-                }
+                )}
                 <NavLink
                   className="cart-btn active-button-style txt-white"
                   to="/cart"
                   onClick={() => {
-                    ResetLocation();
-                    removeNavigationMenu();
+                    ResetLocation()
+                    removeNavigationMenu()
                   }}
                 >
-                  <img src={Cart} alt="" aria-hidden="true"/>
+                  <img src={Cart} alt="" aria-hidden="true" />
                   <p>Cart</p>
                   <p>({productsQuantity})</p>
                 </NavLink>
@@ -166,14 +182,17 @@ export default class Header extends React.Component {
             </li>
           </ul>
           <img
+            width="50"
+            height="50"
             className="burger-bars"
             src={burger}
             alt=""
+            aria-hidden="true"
             onClick={showHiddenMenu}
           />
         </nav>
         <SuccessMsg />
       </header>
-    );
+    )
   }
 }

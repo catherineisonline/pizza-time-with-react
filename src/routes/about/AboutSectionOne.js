@@ -1,8 +1,8 @@
-import React from "react";
-import SlideOne from "../../assets/images/img-grid-1.jpeg";
-import SlideTwo from "../../assets/images/carbonara.jpeg";
-import SlideThree from "../../assets/images/img-grid-3.jpeg";
-import SlideFour from "../../assets/images/img-grid-4.jpeg";
+import React from 'react'
+import SlideOne from '../../assets/images/img-one.jpeg'
+import SlideTwo from '../../assets/images/carbonara.jpeg'
+import SlideThree from '../../assets/images/img-three.jpeg'
+import SlideFour from '../../assets/images/img-four.jpeg'
 
 export default class AboutSectionOne extends React.Component {
   render() {
@@ -26,12 +26,12 @@ export default class AboutSectionOne extends React.Component {
         </section>
         <div className="dark-glass"></div>
         <section className="aboutus-img-grid">
-            <img src={SlideOne} alt="" aria-hidden="true" />
-            <img src={SlideTwo} alt="" aria-hidden="true" />
-            <img src={SlideThree} alt="" aria-hidden="true" />
-            <img src={SlideFour} alt="" aria-hidden="true" />
+          <img src={SlideOne} alt="" aria-hidden="true" />
+          <img src={SlideTwo} alt="" aria-hidden="true" />
+          <img src={SlideThree} alt="" aria-hidden="true" />
+          <img src={SlideFour} alt="" aria-hidden="true" />
         </section>
       </article>
-    );
+    )
   }
 }

@@ -156,6 +156,8 @@ header {
   height: 3rem;
 }
 .logo {
+  /* width: 4rem;
+  height: auto; */
   max-width: 70%;
   transition: all ease-in-out 0.2s;
 }
@@ -256,13 +258,13 @@ li.alice-carousel__stage-item .__cloned {
 }
 
 .header-section.slider-one {
-  background-image: url("../assets/images/header-pizza-one.jpeg");
+  background-image: url("../assets/images/hero/hero-one-375.jpg");
 }
 .header-section.slider-two {
-  background-image: url("../assets/images/img-grid-2.jpeg");
+  background-image: url("../assets/images/hero/hero-two-375.jpg");
 }
 .header-section.slider-three {
-  background-image: url("../assets/images/sushi-images/sushi-3.jpeg");
+  background-image: url("../assets/images/hero/hero-three-375.jpg");
 }
 
 .header-info {
@@ -489,6 +491,7 @@ li.alice-carousel__stage-item .__cloned {
 }
 .meal-item img {
   max-width: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -660,7 +663,9 @@ li.alice-carousel__stage-item .__cloned {
   padding: 2rem;
 }
 .menu-slider-hero {
+  object-fit: cover;
   max-width: 100%;
+  height: auto;
 }
 
 .dish-slider .dish-categories {
