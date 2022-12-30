@@ -41,7 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url("../assets/images/landing-bg.jpg");
+  background-image: url("../assets/images/landing-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -603,7 +603,7 @@ li.alice-carousel__stage-item .__cloned {
 /* Section 7 */
 .section-7 {
   position: relative;
-  background-image: url("../assets/images/section-7-bg.jpeg");
+  background-image: url("../assets/images/section-7-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

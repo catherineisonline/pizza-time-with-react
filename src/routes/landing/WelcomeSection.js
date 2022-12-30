@@ -1,7 +1,7 @@
 import React from 'react'
-import img375 from '../../assets/images/section-one/section-one-375.jpeg'
-import img700 from '../../assets/images/section-one/section-one-700.jpeg'
-import img1440 from '../../assets/images/section-one/section-one-1440.jpg'
+import img375 from '../../assets/images/section-one/section-one-375.webp'
+import img700 from '../../assets/images/section-one/section-one-700.webp'
+import img1440 from '../../assets/images/section-one/section-one-1440.webp'
 
 export default class WelcomeSection extends React.Component {
   render() {
