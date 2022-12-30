@@ -156,8 +156,8 @@ header {
   height: 3rem;
 }
 .logo {
-  /* width: 4rem;
-  height: auto; */
+  width: 4rem;
+  height: auto;
   max-width: 70%;
   transition: all ease-in-out 0.2s;
 }
@@ -483,6 +483,7 @@ li.alice-carousel__stage-item .__cloned {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+
   padding: 1rem;
   background-color: var(--light-black);
 }
@@ -492,6 +493,7 @@ li.alice-carousel__stage-item .__cloned {
 .meal-item img {
   max-width: 100%;
   width: 100%;
+  height: auto;
   object-fit: cover;
 }
 

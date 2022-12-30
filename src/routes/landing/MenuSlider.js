@@ -1,9 +1,7 @@
 import React from 'react'
 import MenuSliderProducts from './MenuSliderProducts'
 import MenuSliderCategories from './MenuSliderCategories'
-import CheesePizza from '../../assets/images/cheese-pizza-375.jpg'
-import PepperoniPizza from '../../assets/images/pepperoni-pizza.jpg'
-import BBQPizza from '../../assets/images/BBQ-chicken-pizza.jpg'
+
 import MenuSlide375 from '../../assets/images/section-eight/section-eight-375.jpg'
 import MenuSlide700 from '../../assets/images/section-eight/section-eight-700.jpg'
 import MenuSlide900 from '../../assets/images/section-eight/section-eight-900.jpg'
@@ -14,6 +12,15 @@ import MiniSalmon from '../../assets/images/sushi-images/sushi-12.jpeg'
 import ChickenAlfredo from '../../assets/images/pasta-images/Chicken Alfredo.jpeg'
 import AllaGricia from '../../assets/images/pasta-images/Pasta Alla Gricia.jpeg'
 import SheetPan from '../../assets/images/pasta-images/Sheet-Pan Burrata Caprese Gnocchi.jpeg'
+
+//375
+import pizzaOne375 from '../../assets/images/menu-slider/pizza-one-375.jpg'
+import pizzaTwo375 from '../../assets/images/menu-slider/pizza-two-375.jpg'
+import pizzaThree375 from '../../assets/images/menu-slider/pizza-three-375.jpg'
+//700
+import pizzaOne700 from '../../assets/images/menu-slider/pizza-one-700.jpg'
+import pizzaTwo700 from '../../assets/images/menu-slider/pizza-two-700.jpg'
+import pizzaThree700 from '../../assets/images/menu-slider/pizza-three-700.jpg'
 
 const MenuSliderCategory = [
   {
@@ -36,7 +43,8 @@ const MenuSliderProduct = [
     describtion:
       'Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.',
     price: (5).toFixed(2),
-    img: PepperoniPizza,
+    img375: pizzaOne375,
+    img700: pizzaOne700,
     category: 'pizza',
   },
   {
@@ -45,7 +53,8 @@ const MenuSliderProduct = [
     describtion:
       'Rotisserie chicken, pizza dough, bbq sauce, smoked cheddar cheese, mozzarella cheese.',
     price: (10).toFixed(2),
-    img: BBQPizza,
+    img375: pizzaTwo375,
+    img700: pizzaTwo700,
     category: 'pizza',
   },
   {
@@ -53,7 +62,8 @@ const MenuSliderProduct = [
     name: 'Cheese Pizza',
     describtion: 'Pizza dough, pizza sauce, provolone cheese, mozzarella.',
     price: (5).toFixed(2),
-    img: CheesePizza,
+    img375: pizzaThree375,
+    img700: pizzaThree700,
     category: 'pizza',
   },
   {

@@ -110,7 +110,7 @@ export default class PizzaMenuPreview extends React.Component {
             <section key={pizza.id} className="meal-item flex-container">
               <img
                 src={pizza.img375}
-                srcSet={`${pizza.img1440} 300w, ${pizza.img700} 700w, ${pizza.img375} 375w`}
+                srcSet={`${pizza.img1440} 300w, ${pizza.img700} 450w, ${pizza.img375} 375w`}
                 sizes="(min-width: 1440px) 1440px, (min-width: 700px) 700px, 375px"
                 alt={pizza.name}
               />
