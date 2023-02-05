@@ -267,13 +267,6 @@ li.alice-carousel__stage-item .__cloned {
   background-image: url("../assets/images/hero/hero-three-375.webp");
 }
 
-.header-info {
-  justify-content: center;
-  gap: 1.5rem;
-  align-items: center;
-  padding: 3rem 2rem;
-}
-
 .header-info span {
   color: var(--pizza-red);
   font-family: var(--nothing-font);
@@ -284,10 +277,12 @@ li.alice-carousel__stage-item .__cloned {
   text-transform: uppercase;
   font-size: 3rem;
   line-height: 3rem;
+  color: white;
 }
 
 .header-info p {
   font-size: 1.5rem;
+  /* width: 100%; */
 }
 
 .header-btns {
@@ -669,7 +664,40 @@ li.alice-carousel__stage-item .__cloned {
   max-width: 100%;
   height: auto;
 }
-
+/* Hero Video */
+.hero-section {
+  /* width: 100%; */
+  height: auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero-video {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.343);
+  backdrop-filter: blur(3px);
+  top: 0;
+  z-index: 3;
+}
+.header-info {
+  position: absolute;
+  z-index: 4;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+}
 .dish-slider .dish-categories {
   margin: 0 auto;
   gap: 1rem;

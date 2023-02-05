@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import HeroVideo from '../../assets/images/hero/hero-bg.mp4';
 
 const items = [
   //Section 1
@@ -66,14 +67,35 @@ const items = [
 export default class Hero extends React.Component {
   render() {
     return (
-      <AliceCarousel
-        items={items}
-        autoPlay
-        infinite
-        autoPlayInterval="3000"
-        autoPlayStrategy="none"
-        disableButtonsControls
-      />
+      <section className="hero-section">
+        <video autoPlay loop muted className="hero-video">
+<source src={HeroVideo} type="video/mp4" />
+        </video>
+        <section className="header-info flex-container flex-column txt-center pop-font txt-white">
+      <span>Welcome</span>
+      <h1 className="txt-white">try something amazing</h1>
+      <p className="txt-white">
+        Ordering your fave Pizza is quick and easy with our app or on our
+        website.
+      </p>
+      <div className="header-btns flex-container flex-row">
+        <Link className=" passive-button-style" to="/blog">
+          Read Blog
+        </Link>
+        <Link className=" passive-button-style  " to="/menu">
+          View Menu
+        </Link>
+      </div>
+    </section>
+     </section>
+      // <AliceCarousel
+      //   items={items}
+      //   autoPlay
+      //   infinite
+      //   autoPlayInterval="3000"
+      //   autoPlayStrategy="none"
+      //   disableButtonsControls
+      // />
     );
   }
 }
