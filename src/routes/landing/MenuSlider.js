@@ -6,21 +6,27 @@ import MenuSlide375 from '../../assets/images/section-eight/section-eight-375.we
 import MenuSlide700 from '../../assets/images/section-eight/section-eight-700.webp'
 import MenuSlide900 from '../../assets/images/section-eight/section-eight-900.webp'
 import MenuSlide1440 from '../../assets/images/section-eight/section-eight-1440.webp'
-import SalmonPoke from '../../assets/images/sushi-images/sushi-19.jpeg'
-import VeggiePoke from '../../assets/images/sushi-images/sushi-26.jpeg'
-import MiniSalmon from '../../assets/images/sushi-images/sushi-12.jpeg'
-import ChickenAlfredo from '../../assets/images/pasta-images/Chicken Alfredo.jpeg'
-import AllaGricia from '../../assets/images/pasta-images/Pasta Alla Gricia.jpeg'
-import SheetPan from '../../assets/images/pasta-images/Sheet-Pan Burrata Caprese Gnocchi.jpeg'
 
 //375
 import pizzaOne375 from '../../assets/images/menu-slider/pizza-one-375.webp'
 import pizzaTwo375 from '../../assets/images/menu-slider/pizza-two-375.webp'
 import pizzaThree375 from '../../assets/images/menu-slider/pizza-three-375.webp'
+import SalmonPoke375 from '../../assets/images/menu-slider/sushi-one-375.webp'
+import VeggiePoke375 from '../../assets/images/menu-slider/sushi-two-375.webp'
+import MiniSalmon375 from '../../assets/images/menu-slider/sushi-three-375.webp'
+import ChickenAlfredo375 from '../../assets/images/menu-slider/pasta-one-375.webp'
+import AllaGricia375 from '../../assets/images/menu-slider/pasta-two-375.webp'
+import SheetPan375 from '../../assets/images/menu-slider/pasta-three-375.webp'
 //700
 import pizzaOne700 from '../../assets/images/menu-slider/pizza-one-700.webp'
 import pizzaTwo700 from '../../assets/images/menu-slider/pizza-two-700.webp'
 import pizzaThree700 from '../../assets/images/menu-slider/pizza-three-700.webp'
+import SalmonPoke700 from '../../assets/images/menu-slider/sushi-one-700.webp'
+import VeggiePoke700 from '../../assets/images/menu-slider/sushi-two-700.webp'
+import MiniSalmon700 from '../../assets/images/menu-slider/sushi-three-700.webp'
+import ChickenAlfredo700 from '../../assets/images/menu-slider/pasta-one-700.webp'
+import AllaGricia700 from '../../assets/images/menu-slider/pasta-two-700.webp'
+import SheetPan700 from '../../assets/images/menu-slider/pasta-three-700.webp'
 
 const MenuSliderCategory = [
   {
@@ -68,7 +74,8 @@ const MenuSliderProduct = [
   },
   {
     id: 'salmon-poke',
-    img: SalmonPoke,
+    img375: SalmonPoke375,
+    img700: SalmonPoke700,
     name: 'Salmon Poke',
     describtion:
       'Salmon, Avocado, Rice, Cabbage, Carrots, Creen onions, Sesame.',
@@ -78,7 +85,9 @@ const MenuSliderProduct = [
 
   {
     id: 'veggie-poke',
-    img: VeggiePoke,
+    // img: VeggiePoke,
+    img375: VeggiePoke375,
+    img700: VeggiePoke700,
     name: 'Veggie Poke',
     describtion: 'Rice, Avocado, Cabage, Carrot, Ginger, Green Onion, Sesam.',
     price: (8).toFixed(2),
@@ -86,7 +95,9 @@ const MenuSliderProduct = [
   },
   {
     id: 'mini-salmon-set-22-pcs',
-    img: MiniSalmon,
+    // img: MiniSalmon,
+    img375: MiniSalmon375,
+    img700: MiniSalmon700,
     name: 'Mini Salmon Set',
     describtion:
       'Double Salmon Roll,Californication, Salmon Nigiri - 2Pcs, Eel Nigiri - 2Pcs,Vulcan Gunkan - 2Pcs',
@@ -95,7 +106,9 @@ const MenuSliderProduct = [
   },
   {
     id: 'chicken-alfredo',
-    img: ChickenAlfredo,
+    // img: ChickenAlfredo,
+    img375: ChickenAlfredo375,
+    img700: ChickenAlfredo700,
     name: 'Chicken Alfredo',
     describtion:
       'Skinless chicken breast, heavy cream, olive oil, parmigiano reggiano, black pepper.',
@@ -104,7 +117,9 @@ const MenuSliderProduct = [
   },
   {
     id: 'pasta-alla-gricia',
-    img: AllaGricia,
+    // img: AllaGricia,
+    img375: AllaGricia375,
+    img700: AllaGricia700,
     name: 'Pasta Alla Gricia',
     describtion:
       'Rigatoni pasta, pancetta, olive oil, pecorino romano, black pepper.',
@@ -113,7 +128,9 @@ const MenuSliderProduct = [
   },
   {
     id: 'sheet-pan-burrata-caprese-gnocchi',
-    img: SheetPan,
+    // img: SheetPan,
+    img375: SheetPan375,
+    img700: SheetPan700,
     name: 'Burrata Caprese Gnocchi',
     describtion:
       'Penne pasta, sour cream, rotisserie chicken, cherry tomatoes, curly kale.',

@@ -50,9 +50,9 @@ const OurServices = () => {
         </p></section>
         <section className="services-grid  flex-container flex-column">
           {ourServices.map((service) => (
-            <Tilt>
+            <Tilt         key={service.id}>
             <section
-              key={service.id}
+      
               className="service-list flex-container flex-column"
             >
               <img

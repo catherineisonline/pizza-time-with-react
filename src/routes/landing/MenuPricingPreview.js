@@ -79,9 +79,8 @@ export default class MenuPricingPreview extends React.Component {
         </p>
         <section className="pricing-grid flex-container flex-column">
           {menuPricing.map((menu) => (
-            <Tilt>
+            <Tilt   key={menu.id}>
             <Link
-              key={menu.id}
               onClick={ResetLocation}
               to="/menu"
               className="pricing-grid-item flex-container flex-row"

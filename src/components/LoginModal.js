@@ -31,7 +31,7 @@ export default function LoginModal({ hideModal, removeMenu, handleValidation, va
           <form className="modal-content" onSubmit={handleSubmit}>
             <input onChange={handleValidation} value={formValue.email} name="email" type="text" placeholder="Email"></input>
             <span className="login-input-err">{formError.email}</span>
-            <input onChange={handleValidation} value={formValue.password} name="password" type="password" placeholder="Password"></input>
+            <input onChange={handleValidation} value={formValue.password} name="password" type="password" autoComplete="true" placeholder="Password"></input>
             <span className="login-input-err">{formError.password}</span>
             {submit && Object.keys(formError).length === 0 && !validLogin ? <p className="login-input-err">We couldn't find an account. Try another credentials</p> : null}
             <section className="login-and-signup">
