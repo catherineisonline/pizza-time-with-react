@@ -6,6 +6,9 @@
   .meal-item img {
     max-width: 50%;
   }
+  /* .meals-grid {
+    transform: inherit !important;
+  } */
 }
 
 @media screen and (min-width: 700px) {
@@ -63,7 +66,16 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 2rem;
+    margin-left: -90rem;
+    width: 800px;
   }
+
+  /* .meals-grid {
+    gap: 1rem;
+    margin-left: -74rem;
+    overflow-y: hidden;
+    width: 1200px;
+  } */
   .meal-item {
     gap: 1rem;
     padding: 0;
@@ -79,6 +91,19 @@
     display: grid;
     grid-template-rows: 1fr;
   }
+  .hero-section {
+    height: 30rem;
+  }
+  .pizza-one {
+    right: -22%;
+    top: -20%;
+    width: 20rem;
+  }
+  .pizza-two {
+    left: -22%;
+    top: -20%;
+    width: 20rem;
+  }
 }
 @media screen and (min-width: 1025px) {
   .navigation-menu {
@@ -88,6 +113,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 2rem;
+    margin-left: -65rem;
+    width: 970px;
   }
   .burger-bars {
     display: none;
@@ -102,8 +129,7 @@
     width: 70%;
     margin: 0 auto;
   }
-  /* .section-1, */
-  /* .company-details, */
+
   .services-grid {
     display: flex;
     flex-direction: row;
@@ -141,6 +167,19 @@
     flex-direction: column;
     padding: 2rem;
   }
+  .hero-section {
+    height: 40rem;
+  }
+  .pizza-one {
+    right: -20%;
+    top: -20%;
+    width: 22rem;
+  }
+  .pizza-two {
+    left: -20%;
+    top: -20%;
+    width: 22rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -152,5 +191,22 @@
   }
   .header-section.slider-three {
     background-image: url("../assets/images/hero/hero-three-1440.webp");
+  }
+
+  .pizza-one {
+    right: -15%;
+    top: 3%;
+    width: 22rem;
+  }
+  .pizza-two {
+    left: -15%;
+    top: 3%;
+    width: 22rem;
+  }
+  .meals-grid {
+    gap: 1rem;
+    margin-left: -58rem;
+    overflow-y: hidden;
+    width: 1200px;
   }
 }

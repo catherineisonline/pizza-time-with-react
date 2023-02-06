@@ -99,6 +99,7 @@ const PizzaMenuPreview =()=> {
   const [innerWidth, setInnerWidth] = useState(0)
   const handleScroll = () => {
     setOffsetY(window.scrollY)
+
   }
   const handleScreenSize = () => {
     console.log(window.innerWidth)
@@ -128,7 +129,7 @@ const PizzaMenuPreview =()=> {
             cheese, meat, chicken and veggies!
           </p>
         </section>
-        <section className="meals-grid flex-container flex-column" style={{transform: `translateX(${offsetY * 0.5}px)` , transition: 'all ease-in-out 0.3'}}>
+        <section className="meals-grid flex-container flex-column" style={innerWidth <= 799 ?{transform: 'none'} :{transform: `translateX(${offsetY * 0.5}px)` , transition: 'all ease-in-out 0.3'}}>
           {pizzaMenu.map((pizza) => (
             <section key={pizza.id} className="meal-item flex-container">
               <img

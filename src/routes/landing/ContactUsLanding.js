@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PizzaOne from '../../assets/images/contact-us/image-one-parallax.png'
-// import PizzaTwo from '../../assets/images/contact-us/image-one-parallax.png'
+
 const ContactUsLanding = () =>  {
   const [offsetY, setOffsetY] = useState(0)
 
