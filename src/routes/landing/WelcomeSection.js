@@ -1,13 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import img375 from '../../assets/images/section-one/section-one-375.webp'
 import img700 from '../../assets/images/section-one/section-one-700.webp'
 import img1440 from '../../assets/images/section-one/section-one-1440.webp'
+import PizzaOne from '../../assets/images/welcome-section/pizza-one-parallax.png'
+import PizzaTwo from '../../assets/images/welcome-section/pizza-two-parallax.png'
 
-export default class WelcomeSection extends React.Component {
-  render() {
+
+const WelcomeSection = () => {
+const [offsetY, setOffsetY] = useState(0)
+const handleScroll = () => {
+  setOffsetY(window.scrollY)
+}
+
+useEffect(() => {
+window.addEventListener('scroll', handleScroll)
+return(() => window.removeEventListener('scroll', handleScroll))
+}, []);
+
     return (
-      <article className="section-2">
+      <article className="welcome-section"  style={{transform: `translateY(-${offsetY * 0.2}px)`}}>
+
         <section className="section-2-info flex-container flex-column txt-center pop-font">
+        <img src={PizzaTwo} alt="" className="parallax pizza-two" style={{transform: `translateX(-${offsetY * 0.2}px)`}}/>
+        <img src={PizzaOne} alt="" className="parallax pizza-one" style={{transform: `translateX(${offsetY * 0.2}px)`}}/>
           <h2 className="txt-white">
             Welcome to <span>Pizza Time</span> restaurant
           </h2>
@@ -33,4 +48,5 @@ export default class WelcomeSection extends React.Component {
       </article>
     )
   }
-}
+
+export default WelcomeSection;
