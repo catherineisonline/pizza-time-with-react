@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 //375px
 import imgOne375 from '../../assets/images/menu-preview/img-one-375.jpg'
 import imgTwo375 from '../../assets/images/menu-preview/img-two-375.jpg'
@@ -93,8 +93,17 @@ const pizzaMenu = [
   },
 ]
 
-export default class PizzaMenuPreview extends React.Component {
-  render() {
+const PizzaMenuPreview =()=> {
+  const [offsetY, setOffsetY] = useState(0)
+  const handleScroll = () => {
+    setOffsetY(window.scrollY)
+  }
+  
+  useEffect(() => {
+  window.addEventListener('scroll', handleScroll)
+  return(() => window.removeEventListener('scroll', handleScroll))
+  }, []);
+ 
     return (
       <article className="section-4 flex-container flex-column">
         <section className="section-4-info txt-center">
@@ -105,7 +114,7 @@ export default class PizzaMenuPreview extends React.Component {
             cheese, meat, chicken and veggies!
           </p>
         </section>
-        <section className="meals-grid flex-container flex-column">
+        <section className="meals-grid flex-container flex-column" style={{transform: `translateX(${offsetY * 0.5}px)` , transition: 'all ease-in-out 0.3'}}>
           {pizzaMenu.map((pizza) => (
             <section key={pizza.id} className="meal-item flex-container">
               <img
@@ -137,4 +146,5 @@ export default class PizzaMenuPreview extends React.Component {
       </article>
     )
   }
-}
+
+export default PizzaMenuPreview;
