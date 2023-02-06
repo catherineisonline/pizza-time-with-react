@@ -7,6 +7,7 @@ import imgFour375 from '../../assets/images/pricings/img-four-375.jpg'
 import imgFive375 from '../../assets/images/pricings/img-five-375.jpg'
 import imgSix375 from '../../assets/images/pricings/img-six-375.jpg'
 import ResetLocation from '../../helpers/ResetLocation'
+import Tilt from 'react-parallax-tilt';
 
 const menuPricing = [
   {
@@ -78,6 +79,7 @@ export default class MenuPricingPreview extends React.Component {
         </p>
         <section className="pricing-grid flex-container flex-column">
           {menuPricing.map((menu) => (
+            <Tilt>
             <Link
               key={menu.id}
               onClick={ResetLocation}
@@ -106,6 +108,7 @@ export default class MenuPricingPreview extends React.Component {
                 <p>{menu.description}</p>
               </section>
             </Link>
+            </Tilt>
           ))}
         </section>
       </article>

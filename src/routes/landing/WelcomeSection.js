@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import img375 from '../../assets/images/section-one/section-one-375.webp'
 import img700 from '../../assets/images/section-one/section-one-700.webp'
 import img1440 from '../../assets/images/section-one/section-one-1440.webp'
@@ -37,7 +39,7 @@ return(() => window.removeEventListener('scroll', handleScroll))
             because you are the one who makes us special!
           </p>
         </section>
-        <img
+        <LazyLoadImage
           className="section-two-img"
           src={img375}
           srcSet={`${img1440} 1440w, ${img700} 700w, ${img375} 375w`}

@@ -302,20 +302,26 @@ li.alice-carousel__stage-item .__cloned {
   background-color: var(--transparent-button);
   color: var(--light-black);
 }
-
-.company-details {
+.contact-us-landing {
   position: relative;
+  overflow: hidden;
+  margin-top: -12rem;
+  padding: 4rem;
+}
+.company-details {
+  /* position: relative; */
   gap: 1.5rem;
   text-align: left;
-  padding: 4rem;
+
   justify-content: space-between;
   font-family: var(--poppins-font);
   font-weight: 400;
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  margin-top: -12rem;
-  z-index: 1;
+  /* z-index: 1; */
+
+  /* width: 100%; */
 }
 
 .company-details > * {
@@ -1258,21 +1264,44 @@ hr {
 .company-details-image {
   position: absolute;
   width: 22rem;
-  right: -200%;
+  right: -20%;
   opacity: 0.8;
   overflow-y: hidden;
+  /* z-index: 2; */
 }
 .company-details-image-two {
   position: absolute;
   width: 22rem;
-  right: -220%;
+  right: -30%;
   opacity: 0.8;
   overflow-y: hidden;
+  /* z-index: 2; */
 }
 .company-details-image-three {
   position: absolute;
   width: 22rem;
-  right: -240%;
+  right: -40%;
   opacity: 0.9;
+  overflow-y: hidden;
+  /* z-index: 2; */
+}
+
+.tomato-bg {
+  width: 18rem;
+  position: absolute;
+  top: 50%;
+  left: -2rem;
+
+  opacity: 0.8;
+  overflow-y: hidden;
+}
+.cucumber-bg {
+  width: 18rem;
+  position: absolute;
+  top: 35%;
+  left: -6rem;
+  opacity: 0.6;
+  /* z-index: -1; */
+  /* background-color: red; */
   overflow-y: hidden;
 }
