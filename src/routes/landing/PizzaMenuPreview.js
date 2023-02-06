@@ -20,8 +20,6 @@ import imgThree1440 from '../../assets/images/menu-preview/img-three-1440.jpg'
 import imgFour1440 from '../../assets/images/menu-preview/img-four-1440.jpg'
 import imgFive1440 from '../../assets/images/menu-preview/img-five-1440.jpg'
 import imgSix1440 from '../../assets/images/menu-preview/img-six-1440.jpg'
-import Tomato from '../../assets/images/menu-preview/tomato.png'
-import Cucumber from '../../assets/images/menu-preview/cucumber.png'
 import { Link } from 'react-router-dom'
 import ResetLocation from '../../helpers/ResetLocation'
 
@@ -102,7 +100,6 @@ const PizzaMenuPreview =()=> {
 
   }
   const handleScreenSize = () => {
-    console.log(window.innerWidth)
     setInnerWidth(window.innerWidth)
   }
   
@@ -119,9 +116,6 @@ const PizzaMenuPreview =()=> {
     return (
       <article className="section-4 flex-container flex-column">
         <section className="section-4-info txt-center">
-        {/* <img src={Cucumber} alt="" className="cucumber-bg"/>
-        <img src={Tomato} alt="" className="tomato-bg"/> */}
-      
           <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
           <p className="section-description">
             Pizza Time holds the market of the pizza industry and continuously

@@ -6,9 +6,6 @@
   .meal-item img {
     max-width: 50%;
   }
-  /* .meals-grid {
-    transform: inherit !important;
-  } */
 }
 
 @media screen and (min-width: 700px) {
@@ -50,16 +47,6 @@
     width: 65%;
     margin: 0 auto;
   }
-
-  .header-section.slider-one {
-    background-image: url("../assets/images/hero/hero-one-700.webp");
-  }
-  .header-section.slider-two {
-    background-image: url("../assets/images/hero/hero-two-700.webp");
-  }
-  .header-section.slider-three {
-    background-image: url("../assets/images/hero/hero-three-700.webp");
-  }
 }
 @media screen and (min-width: 800px) {
   .meals-grid {
@@ -70,12 +57,6 @@
     width: 800px;
   }
 
-  /* .meals-grid {
-    gap: 1rem;
-    margin-left: -74rem;
-    overflow-y: hidden;
-    width: 1200px;
-  } */
   .meal-item {
     gap: 1rem;
     padding: 0;
@@ -183,16 +164,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .header-section.slider-one {
-    background-image: url("../assets/images/hero/hero-one-1440.webp");
-  }
-  .header-section.slider-two {
-    background-image: url("../assets/images/hero/hero-two-1440.webp");
-  }
-  .header-section.slider-three {
-    background-image: url("../assets/images/hero/hero-three-1440.webp");
-  }
-
   .pizza-one {
     right: -15%;
     top: 3%;

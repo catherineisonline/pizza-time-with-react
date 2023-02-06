@@ -30,22 +30,6 @@ const ourServices = [
 ]
 
 const OurServices = () => {
-  // MouseEnter() {
-  //   const ServiceImgGroup = document.querySelectorAll('.service-img')
-  //   ServiceImgGroup.forEach((ServiceImg) => {
-  //     ServiceImg.addEventListener('mouseenter', function () {
-  //       ServiceImg.classList.add('active-img')
-  //     })
-  //   })
-  // }
-  // MouseLeave() {
-  //   const ServiceImgGroup = document.querySelectorAll('.service-img')
-  //   ServiceImgGroup.forEach((ServiceImg) => {
-  //     ServiceImg.addEventListener('mouseleave', function () {
-  //       ServiceImg.classList.remove('active-img')
-  //     })
-  //   })
-  // }
   const [offsetY, setOffsetY] = useState(0)
   const handleScroll = () => {
     setOffsetY(window.scrollY)
@@ -71,15 +55,10 @@ const OurServices = () => {
               key={service.id}
               className="service-list flex-container flex-column"
             >
-      
               <img
-             
-             
                 width="50"
                 height="50"
                 className="service-img"
-                // onMouseEnter={this.MouseEnter}
-                // onMouseLeave={this.MouseLeave}
                 src={service.img}
                 alt=""
                 aria-hidden="true"
