@@ -77,6 +77,8 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - [Leaflet Maps](https://react-leaflet.js.org/docs/start-installation/)
 - [React Paginate](https://www.npmjs.com/package/react-paginate)
 - [uuid - Random id generator](https://www.npmjs.com/package/uuid)
+- [Tilt](https://micku7zu.github.io/vanilla-tilt.js/)
+- [React Lazy Load](https://www.npmjs.com/package/react-lazy-load-image-component)
 
 ## Goals <a id="goals"></a>
 
