@@ -304,6 +304,7 @@ li.alice-carousel__stage-item .__cloned {
 }
 
 .company-details {
+  position: relative;
   gap: 1.5rem;
   text-align: left;
   padding: 4rem;
@@ -312,12 +313,8 @@ li.alice-carousel__stage-item .__cloned {
   font-weight: 400;
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start; */
   max-width: 500px;
   margin-top: -12rem;
-  /* margin: 0 auto; */
-  /* margin-top: 3rem; */
-  /* height: 2rem; */
   z-index: 1;
 }
 
@@ -348,8 +345,11 @@ li.alice-carousel__stage-item .__cloned {
   opacity: 0.8;
   /* position: relative; */
 }
-
+.welcome-section {
+  overflow: hidden;
+}
 .section-2-info {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -450,28 +450,14 @@ li.alice-carousel__stage-item .__cloned {
   font-size: 1.5rem;
   font-weight: 400;
 }
-
-/* .service-img.active-img,
-.hightlight-img.active-img {
-  border: 1px solid transparent;
-  background-color: var(--pizza-red);
-  position: relative;
-  -webkit-transform: rotate(20deg);
-  -ms-transform: rotate(20deg);
-  transform: rotate(20deg);
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-} */
-
 /* Section 4 */
 .section-4 {
   gap: 2rem;
   padding-bottom: 3rem;
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
 .section-4 .active-button-style {
   margin: 0 auto;
@@ -1249,39 +1235,44 @@ hr {
 }
 
 /* Parallax */
-.welcome-section {
+/* .welcome-section {
   position: relative;
-}
+} */
 .pizza-one {
   position: absolute;
-  right: 2%;
+  right: -15%;
   top: 3%;
   width: 22rem;
   opacity: 0.8;
+  overflow: hidden;
 }
 .pizza-two {
   position: absolute;
-  left: -2%;
+  left: -15%;
   top: 3%;
   width: 22rem;
   opacity: 0.8;
+  overflow-y: hidden;
 }
 
 .company-details-image {
   position: absolute;
   width: 22rem;
-  left: 100%;
+  right: -200%;
   opacity: 0.8;
+  overflow-y: hidden;
 }
 .company-details-image-two {
   position: absolute;
   width: 22rem;
-  left: 110%;
+  right: -220%;
   opacity: 0.8;
+  overflow-y: hidden;
 }
 .company-details-image-three {
   position: absolute;
   width: 22rem;
-  left: 120%;
+  right: -240%;
   opacity: 0.9;
+  overflow-y: hidden;
 }

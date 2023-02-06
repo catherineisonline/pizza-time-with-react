@@ -15,8 +15,6 @@ return(() => window.removeEventListener('scroll', handleScroll))
 
     return (
         <section className="company-details flex-container flex-row txt-white" >
-        
-       
         <img src={PizzaOne} alt="" className="parallax company-details-image" style={{transform: `translateX(-${offsetY * 0.6}px)` , transition: 'all ease-in-out 0.3'}}/>
         <img src={PizzaOne} alt="" className="parallax company-details-image-two" style={{transform: `translateX(-${offsetY * 0.6}px)` , transition: 'all ease-in-out 0.3'}}/>
         <img src={PizzaOne} alt="" className="parallax company-details-image-three" style={{transform: `translateX(-${offsetY * 0.6}px)` , transition: 'all ease-in-out 0.3'}}/>

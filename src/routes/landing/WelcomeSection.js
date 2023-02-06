@@ -19,7 +19,6 @@ return(() => window.removeEventListener('scroll', handleScroll))
 
     return (
       <article className="welcome-section"  style={{transform: `translateY(-${offsetY * 0.2}px)`}}>
-
         <section className="section-2-info flex-container flex-column txt-center pop-font">
         <img src={PizzaTwo} alt="" className="parallax pizza-two" style={{transform: `translateX(-${offsetY * 0.2}px)`}}/>
         <img src={PizzaOne} alt="" className="parallax pizza-one" style={{transform: `translateX(${offsetY * 0.2}px)`}}/>

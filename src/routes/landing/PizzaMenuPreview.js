@@ -95,13 +95,23 @@ const pizzaMenu = [
 
 const PizzaMenuPreview =()=> {
   const [offsetY, setOffsetY] = useState(0)
+  const [innerWidth, setInnerWidth] = useState(0)
   const handleScroll = () => {
     setOffsetY(window.scrollY)
+  }
+  const handleScreenSize = () => {
+    console.log(window.innerWidth)
+    setInnerWidth(window.innerWidth)
   }
   
   useEffect(() => {
   window.addEventListener('scroll', handleScroll)
-  return(() => window.removeEventListener('scroll', handleScroll))
+  window.addEventListener('resize', handleScreenSize)
+  
+  return(() => {
+    window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('resize', handleScreenSize)
+  })
   }, []);
  
     return (
