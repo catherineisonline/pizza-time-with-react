@@ -3,7 +3,7 @@ import Tilt from 'react-parallax-tilt';
 import ImgOne from '../../assets/images/our-services/organic-food.png'
 import ImgTwo from '../../assets/images/our-services/express-delivery.png'
 import ImgThree from '../../assets/images/our-services/unforgable-taste.png'
-
+import { motion } from "framer-motion";
 
 const ourServices = [
   {
@@ -30,17 +30,23 @@ const ourServices = [
 ]
 
 const OurServices = () => {
-  const [offsetY, setOffsetY] = useState(0)
-  const handleScroll = () => {
-    setOffsetY(window.scrollY)
-  }
+  // const [offsetY, setOffsetY] = useState(0)
+  // const handleScroll = () => {
+  //   setOffsetY(window.scrollY)
+  // }
   
-  useEffect(() => {
-  window.addEventListener('scroll', handleScroll)
-  return(() => window.removeEventListener('scroll', handleScroll))
-  }, []);
+  // useEffect(() => {
+  // window.addEventListener('scroll', handleScroll)
+  // return(() => window.removeEventListener('scroll', handleScroll))
+  // }, []);
     return (
-      <article className="section-3-container"  style={{transform: `translateY(-${offsetY * 0.1}px)` , transition: 'all ease-in-out 0.3'}}>
+      <motion.div
+   initial={{ opacity: 0, translateX: -300  }}
+whileInView={{ opacity: 1 , translateX: 0  }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 2}}
+    >
+      <article className="section-3-container" >
         <section><h2 className="pop-font">Our Services</h2>
         <p className="pop-font section-description">
           Pizza Time provides services across all states - various foods and
@@ -73,6 +79,7 @@ const OurServices = () => {
           ))}
         </section>
       </article>
+      </motion.div>
     )
   }
 

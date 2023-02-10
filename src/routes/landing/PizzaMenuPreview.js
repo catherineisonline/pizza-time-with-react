@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { motion } from "framer-motion";
+import { useRef } from "react";
+
 //375px
 import imgOne375 from '../../assets/images/menu-preview/img-one-375.jpg'
 import imgTwo375 from '../../assets/images/menu-preview/img-two-375.jpg'
@@ -93,28 +96,33 @@ const pizzaMenu = [
 ]
 
 const PizzaMenuPreview =()=> {
-  const [offsetY, setOffsetY] = useState(0)
-  const [innerWidth, setInnerWidth] = useState(0)
-  const handleScroll = () => {
-    setOffsetY(window.scrollY)
+  const scrollRef = useRef(null)
 
-  }
-  const handleScreenSize = () => {
-    setInnerWidth(window.innerWidth)
-  }
+
+  // const [offsetY, setOffsetY] = useState(0)
+  // const [innerWidth, setInnerWidth] = useState(0)
+  // const handleScroll = () => {
+  //   setOffsetY(window.scrollY)
+
+  // }
+  // const handleScreenSize = () => {
+  //   setInnerWidth(window.innerWidth)
+  // }
   
-  useEffect(() => {
-  window.addEventListener('scroll', handleScroll)
-  window.addEventListener('resize', handleScreenSize)
+  // useEffect(() => {
+  // window.addEventListener('scroll', handleScroll)
+  // window.addEventListener('resize', handleScreenSize)
   
-  return(() => {
-    window.removeEventListener('scroll', handleScroll)
-    window.removeEventListener('resize', handleScreenSize)
-  })
-  }, []);
+  // return(() => {
+  //   window.removeEventListener('scroll', handleScroll)
+  //   window.removeEventListener('resize', handleScreenSize)
+  // })
+  // }, []);
  
     return (
-      <article className="section-4 flex-container flex-column">
+  
+      <article className="section-4 flex-container flex-column" ref={scrollRef}>
+     
         <section className="section-4-info txt-center">
           <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
           <p className="section-description">
@@ -123,9 +131,34 @@ const PizzaMenuPreview =()=> {
             cheese, meat, chicken and veggies!
           </p>
         </section>
-        <section className="meals-grid flex-container flex-column" style={innerWidth <= 799 ?{transform: 'none'} :{transform: `translateX(${offsetY * 0.5}px)` , transition: 'all ease-in-out 0.3'}}>
+        {/* <motion.div
+              initial={{
+                opacity: 0,
+                translateX: -500,
+                rotate: 10,
+              }}
+              animate={{
+                opacity: 1,
+                translateX: 0,
+                rotate: 0,
+              }}
+              transition={{
+                delay: 0 * 0.02,
+              }}
+              whileHover={{
+                translateY: -20,
+              }}
+            > */}
+        <section className="meals-grid flex-container flex-column" >
           {pizzaMenu.map((pizza) => (
-            <section key={pizza.id} className="meal-item flex-container">
+            <motion.div
+            className="meal-item flex-container"
+  initial={{ opacity: 0, translateX: -300  }}
+whileInView={{ opacity: 1 , translateX: 0  }}
+  exit={{ opacity: 0,  translateX: -300  }}
+  transition={{ duration: 3}}
+    >
+            {/* <section key={pizza.id} className="meal-item flex-container"> */}
               <img
                 src={pizza.img375}
                 srcSet={`${pizza.img1440} 300w, ${pizza.img700} 450w, ${pizza.img375} 375w`}
@@ -142,9 +175,11 @@ const PizzaMenuPreview =()=> {
                   </p>
                 </section>
               </section>
-            </section>
+            {/* </section> */}
+            </motion.div>
           ))}
         </section>
+        {/* </motion.div> */}
         <Link
           onClick={ResetLocation}
           to="/menu"
@@ -152,7 +187,9 @@ const PizzaMenuPreview =()=> {
         >
           More pizza
         </Link>
+
       </article>
+
     )
   }
 

@@ -8,6 +8,7 @@ import imgFive375 from '../../assets/images/pricings/img-five-375.jpg'
 import imgSix375 from '../../assets/images/pricings/img-six-375.jpg'
 import ResetLocation from '../../helpers/ResetLocation'
 import Tilt from 'react-parallax-tilt';
+import { motion } from "framer-motion";
 
 const menuPricing = [
   {
@@ -70,6 +71,12 @@ export default class MenuPricingPreview extends React.Component {
   render() {
     return (
       <article className="section-5 flex-container ">
+       <motion.div
+initial={{ opacity: 0, translateX: -300  }}
+whileInView={{ opacity: 1 , translateX: 0  }}
+  exit={{ opacity: 0,  translateX: -300  }}
+  transition={{ duration: 2}}
+>
         <h2 className="txt-center pop-font txt-white">Menu Pricing</h2>
         <p className="section-description">
           Every bite of every meal is different and special. You will never get
@@ -110,6 +117,7 @@ export default class MenuPricingPreview extends React.Component {
             </Tilt>
           ))}
         </section>
+        </motion.div>
       </article>
     )
   }

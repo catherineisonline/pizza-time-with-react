@@ -13,7 +13,7 @@ import BlogPreview from "./BlogPreview";
 import ContactForm from "./ContactForm";
 import Newsletter from "./Newsletter";
 import ResetLocation from "../../helpers/ResetLocation";
-
+import { motion } from "framer-motion";
 class RootSection extends React.Component {
   componentDidUpdate() {
     ResetLocation();

@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "framer-motion";
 
 const statsPreview = [
   {
@@ -54,6 +55,12 @@ export default class StatsPreview extends React.Component {
         <section className="highlights flex-container flex-column">
           {statsPreview.map((stats) => (
             <div key={stats.id} className="highligh-container">
+            <motion.div
+initial={{ opacity: 0, translateX: -300  }}
+whileInView={{ opacity: 1 , translateX: 0  }}
+  exit={{ opacity: 0,  translateX: -300  }}
+  transition={{ duration: 2}}
+>
               <img
                 width="50"
                 height="50"
@@ -63,7 +70,7 @@ export default class StatsPreview extends React.Component {
                 src={stats.img}
                 alt=""
                 aria-hidden="true"
-              />
+              /></motion.div>
               <div>
                 <h3>{stats.stats}</h3>
                 <p className="pop-font txt-white">{stats.name}</p>

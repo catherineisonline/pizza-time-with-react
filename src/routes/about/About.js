@@ -8,17 +8,22 @@ import AboutSectionFour from "./AboutSectionFour";
 import AboutSectionFive from "./AboutSectionFive";
 
 export default class About extends React.Component {
+  
   render() {
     document.title = "About Us | Pizza Time";
     return (
+     
       <main className="about-us">
+   
         <AboutSectionOne />
         <AboutSectionTwo />
         <AboutSectionThree />
         <AboutSectionFour />
         <AboutSectionFive />
         <ScrollBtn />
+      
       </main>
+     
     );
   }
 }

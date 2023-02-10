@@ -3,11 +3,19 @@ import SlideOne from '../../assets/images/img-one.jpeg'
 import SlideTwo from '../../assets/images/carbonara.jpeg'
 import SlideThree from '../../assets/images/img-three.jpeg'
 import SlideFour from '../../assets/images/img-four.jpeg'
-
+import { motion, AnimatePresence } from "framer-motion";
 export default class AboutSectionOne extends React.Component {
   render() {
     return (
+      <AnimatePresence>
+      <motion.div
+initial={{ opacity: 0,  }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 3, }}
+>
       <article className="section-one">
+     
         <section className="section-one-content">
           <h1>About us</h1>
           <h2 className="main-title">More than delicious food</h2>
@@ -31,7 +39,10 @@ export default class AboutSectionOne extends React.Component {
           <img src={SlideThree} alt="" aria-hidden="true" />
           <img src={SlideFour} alt="" aria-hidden="true" />
         </section>
+      
       </article>
+      </motion.div>
+        </AnimatePresence>
     )
   }
 }

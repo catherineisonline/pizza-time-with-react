@@ -53,7 +53,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 2rem;
-    margin-left: -90rem;
+    /* margin-left: -90rem; */
     width: 800px;
   }
 
@@ -94,7 +94,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 2rem;
-    margin-left: -65rem;
+    /* margin-left: -65rem; */
     width: 970px;
   }
   .burger-bars {
@@ -176,7 +176,7 @@
   }
   .meals-grid {
     gap: 1rem;
-    margin-left: -58rem;
+    /* margin-left: -58rem; */
     overflow-y: hidden;
     width: 1200px;
   }

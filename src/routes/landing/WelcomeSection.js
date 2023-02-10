@@ -6,24 +6,38 @@ import img700 from '../../assets/images/section-one/section-one-700.webp'
 import img1440 from '../../assets/images/section-one/section-one-1440.webp'
 import PizzaOne from '../../assets/images/welcome-section/pizza-one-parallax.png'
 import PizzaTwo from '../../assets/images/welcome-section/pizza-two-parallax.png'
-
+import { motion, AnimatePresence } from "framer-motion";
 
 const WelcomeSection = () => {
-const [offsetY, setOffsetY] = useState(0)
-const handleScroll = () => {
-  setOffsetY(window.scrollY)
-}
+// const [offsetY, setOffsetY] = useState(0)
+// const handleScroll = () => {
+//   setOffsetY(window.scrollY)
+// }
 
-useEffect(() => {
-window.addEventListener('scroll', handleScroll)
-return(() => window.removeEventListener('scroll', handleScroll))
-}, []);
+// useEffect(() => {
+// window.addEventListener('scroll', handleScroll)
+// return(() => window.removeEventListener('scroll', handleScroll))
+// }, []);
 
     return (
-      <article className="welcome-section"  style={{transform: `translateY(-${offsetY * 0.2}px)`}}>
+      <article className="welcome-section" >
         <section className="section-2-info flex-container flex-column txt-center pop-font">
-        <img src={PizzaTwo} alt="" className="parallax pizza-two" style={{transform: `translateX(-${offsetY * 0.2}px)`}}/>
-        <img src={PizzaOne} alt="" className="parallax pizza-one" style={{transform: `translateX(${offsetY * 0.2}px)`}}/>
+        {/* <AnimatePresence> */}
+      <motion.div
+initial={{ opacity: 0, translateX: -200  }}
+whileInView={{ opacity: 1 , translateX: -100 , translateY: '-12%' }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 3}}
+>
+        <img src={PizzaTwo} alt="" className=" pizza-two" /> </motion.div>
+        <motion.div
+initial={{ opacity: 0, translateX: 200  }}
+whileInView={{ opacity: 1 , translateX: 100, translateY: '-12%'  }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 3}}
+  // whileInView={{ opacity: 1 }}
+>   <img src={PizzaOne} alt="" className=" pizza-one" /> </motion.div>
+        {/* </AnimatePresence> */}
           <h2 className="txt-white">
             Welcome to <span>Pizza Time</span> restaurant
           </h2>
