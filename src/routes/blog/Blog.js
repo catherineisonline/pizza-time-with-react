@@ -5,6 +5,7 @@ import ScrollBtn from "../../components/ScrollBtn";
 import BlogPost from "../blog/BlogPost";
 import { useEffect, useState } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
+import { motion } from "framer-motion";
 
 const Blog = () => {
   const [itemOffset, setItemOffset] = useState(0);
@@ -26,6 +27,12 @@ const Blog = () => {
 
   }, [setEndOffset, endOffset, itemOffset]);
   return (
+    <motion.div
+    initial={{ opacity: 0, translateX: -300  }}
+    whileInView={{ opacity: 1 , translateX: 0  }}
+      exit={{ opacity: 0,  translateX: -300  }}
+      transition={{ duration: 1}}
+    >
     <main className="blog">
       <article className="blog-section">
         <h1>Blog</h1>
@@ -51,6 +58,7 @@ const Blog = () => {
       />
       <ScrollBtn />
     </main>
+    </motion.div>
   );
 }
 export default Blog;

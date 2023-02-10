@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   document.title = "Contact | Pizza Time";
@@ -35,6 +36,12 @@ const Contact = () => {
     return errors;
   }
   return (
+    <motion.div
+    initial={{ opacity: 0, translateX: -300  }}
+    whileInView={{ opacity: 1 , translateX: 0  }}
+      exit={{ opacity: 0,  translateX: -300  }}
+      transition={{ duration: 1}}
+    >
     <main className="contact" >
       <section>
         {submit && Object.keys(formError).length === 0 ?
@@ -94,6 +101,7 @@ const Contact = () => {
         </section>
       </section>
     </main>
+    </motion.div>
   );
 }
 

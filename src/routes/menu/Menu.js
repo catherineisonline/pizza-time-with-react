@@ -5,6 +5,7 @@ import MenuItem from "./MenuItem";
 import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
+import { motion } from "framer-motion";
 
 const Menu = ({ allProducts,
   activeCategory,
@@ -38,6 +39,12 @@ const Menu = ({ allProducts,
 
   }, [allProducts, setEndOffset, endOffset, itemOffset, activeCategory]);
   return (
+    <motion.div
+    initial={{ opacity: 0, translateX: -300  }}
+    whileInView={{ opacity: 1 , translateX: 0  }}
+      exit={{ opacity: 0,  translateX: -300  }}
+      transition={{ duration: 1}}
+    >
     <main className="menu-main">
       <MenuCategories
         activeCategory={activeCategory}
@@ -74,6 +81,7 @@ const Menu = ({ allProducts,
         renderOnZeroPageCount={null}
       />
     </main>
+    </motion.div>
   );
 }
 

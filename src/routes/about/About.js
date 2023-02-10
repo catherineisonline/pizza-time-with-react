@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 //Components
 import ScrollBtn from "../../components/ScrollBtn";
 import AboutSectionOne from "./AboutSectionOne";
@@ -12,7 +13,12 @@ export default class About extends React.Component {
   render() {
     document.title = "About Us | Pizza Time";
     return (
-     
+      <motion.div
+    initial={{ opacity: 0, translateX: -300  }}
+    whileInView={{ opacity: 1 , translateX: 0  }}
+      exit={{ opacity: 0,  translateX: -300  }}
+      transition={{ duration: 1}}
+    >
       <main className="about-us">
    
         <AboutSectionOne />
@@ -23,6 +29,7 @@ export default class About extends React.Component {
         <ScrollBtn />
       
       </main>
+      </motion.div>
      
     );
   }
