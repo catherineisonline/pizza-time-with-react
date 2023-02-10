@@ -7,7 +7,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker } from "react-leaflet";
 import { Popup } from "react-leaflet";
 import { useState } from 'react';
-
+import { motion } from "framer-motion";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -53,7 +53,15 @@ const ContactForm = () => {
   }
   return (
     <article className="section-10  flex-container flex-column">
-      <section className="map">
+     
+      {/* <section className="map"> */}
+      <motion.div
+       className="map"
+initial={{ opacity: 0, translateX: -300  }}
+whileInView={{ opacity: 1 , translateX: 0  }}
+  exit={{ opacity: 0,  translateX: -300  }}
+  transition={{ duration: 2}}
+>
         <MapContainer
           id="map"
           center={position}
@@ -70,13 +78,22 @@ const ContactForm = () => {
             </Popup>
           </Marker>
         </MapContainer>
-      </section>
+        </motion.div>
+      {/* </section> */}
+  
       {submit && Object.keys(formError).length === 0 ?
         <section className="contact-section-success">
           <p>We have recieved your message and we will get back to you shortly! 🍕</p>
         </section>
         :
         <section className="contact-section">
+        <motion.div
+ className="contact-section"
+initial={{ opacity: 0, translateX: 300  }}
+whileInView={{ opacity: 1 , translateX: 0  }}
+  exit={{ opacity: 0,  translateX: 300  }}
+  transition={{ duration: 2}}
+>
           <form className="contact-form  flex-container flex-column" onSubmit={handleSubmit}>
             <h2 className="txt-center pop-font txt-white">Contact Us</h2>
             <div className="contact-form-item webflow-style-input">
@@ -115,6 +132,7 @@ const ContactForm = () => {
               Send
             </button>
           </form>
+          </motion.div>
         </section>}
     </article>
   );

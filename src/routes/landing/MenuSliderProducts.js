@@ -1,10 +1,13 @@
 import React from 'react'
-
+import { motion } from "framer-motion";
 export default class MenuSliderProducts extends React.Component {
   render() {
     const { singleProduct } = this.props
     return (
-      <div className="slider-product">
+      <motion.div initial={{ opacity: 0, translateY: -300  }}
+      whileInView={{ opacity: 1 , translateY: 0  }}
+        exit={{ opacity: 0,  translateY: -300  }}
+        transition={{ duration: 1}} className="slider-product">
         <section className="menu-slider-img-section">
           <img
             src={singleProduct.img375}
@@ -24,7 +27,7 @@ export default class MenuSliderProducts extends React.Component {
             {singleProduct.price}
           </p>
         </section>
-      </div>
+      </motion.div>
     )
   }
 }

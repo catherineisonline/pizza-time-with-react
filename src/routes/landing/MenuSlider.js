@@ -1,7 +1,7 @@
 import React from 'react'
 import MenuSliderProducts from './MenuSliderProducts'
 import MenuSliderCategories from './MenuSliderCategories'
-
+import { motion } from "framer-motion";
 import MenuSlide375 from '../../assets/images/section-eight/section-eight-375.webp'
 import MenuSlide700 from '../../assets/images/section-eight/section-eight-700.webp'
 import MenuSlide900 from '../../assets/images/section-eight/section-eight-900.webp'
@@ -233,7 +233,14 @@ export default class MenuSlider extends React.Component {
   render() {
     const { allProducts } = this.state
     return (
-      <article className="section-8">
+      // <article className="section-8">
+       <motion.div
+initial={{ opacity: 0, translateX: 300  }}
+whileInView={{ opacity: 1 , translateX: 0  }}
+  exit={{ opacity: 0,  translateX: 300  }}
+  transition={{ duration: 2}}
+  className="section-8"
+>
         <img
           className="menu-slider-hero"
           src={MenuSlide375}
@@ -264,7 +271,8 @@ export default class MenuSlider extends React.Component {
             })}
           </section>
         </section>
-      </article>
+        </motion.div>
+      // </article>
     )
   }
 }
