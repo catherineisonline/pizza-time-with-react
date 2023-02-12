@@ -249,7 +249,6 @@ header {
 .contact-us-landing {
   position: relative;
   overflow: hidden;
-  /* margin-top: -12rem; */
   padding: 4rem;
 }
 .company-details {
@@ -333,7 +332,6 @@ header {
   padding: 3rem 1rem;
   max-width: 1440px;
   margin: 0 auto;
-  /* margin-top: 10rem; */
 }
 .section-3-container h2 {
   text-transform: uppercase;
@@ -839,11 +837,6 @@ header {
   margin-top: 2rem;
 }
 
-/* Section 11 */
-/* .section-11 {
-  color: var(--white);
-  margin: 7rem auto;
-} */
 .newsletter-success {
   color: var(--green);
   font-size: 1.5rem;
@@ -856,7 +849,6 @@ header {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  /* justify-content: center; */
   min-width: 375px;
   max-width: 900px;
   color: var(--white);
@@ -1180,7 +1172,6 @@ hr {
 
 .pizza-one {
   position: absolute;
-  /* right: -30%; */
   top: -12%;
   width: 20rem;
   opacity: 0.8;
@@ -1188,7 +1179,6 @@ hr {
 }
 .pizza-two {
   position: absolute;
-  /* left: -10rem; */
   top: -12%;
   width: 20rem;
   opacity: 0.8;
@@ -1198,21 +1188,18 @@ hr {
 .company-details-image {
   position: absolute;
   width: 22rem;
-  /* right: -20%; */
   opacity: 0.8;
   overflow-y: hidden;
 }
 .company-details-image-two {
   position: absolute;
   width: 22rem;
-  /* right: -30%; */
   opacity: 0.8;
   overflow-y: hidden;
 }
 .company-details-image-three {
   position: absolute;
   width: 22rem;
-  /* right: -40%; */
   opacity: 0.9;
   overflow-y: hidden;
 }

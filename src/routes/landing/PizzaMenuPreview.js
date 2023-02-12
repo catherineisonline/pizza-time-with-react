@@ -1,7 +1,5 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import { useRef } from "react";
-
 //375px
 import imgOne375 from '../../assets/images/menu-preview/img-one-375.jpg'
 import imgTwo375 from '../../assets/images/menu-preview/img-two-375.jpg'
@@ -95,102 +93,57 @@ const pizzaMenu = [
   },
 ]
 
-const PizzaMenuPreview =()=> {
-  const scrollRef = useRef(null)
+const PizzaMenuPreview = () => {
+  return (
 
+    <article className="section-4 flex-container flex-column" >
 
-  // const [offsetY, setOffsetY] = useState(0)
-  // const [innerWidth, setInnerWidth] = useState(0)
-  // const handleScroll = () => {
-  //   setOffsetY(window.scrollY)
-
-  // }
-  // const handleScreenSize = () => {
-  //   setInnerWidth(window.innerWidth)
-  // }
-  
-  // useEffect(() => {
-  // window.addEventListener('scroll', handleScroll)
-  // window.addEventListener('resize', handleScreenSize)
-  
-  // return(() => {
-  //   window.removeEventListener('scroll', handleScroll)
-  //   window.removeEventListener('resize', handleScreenSize)
-  // })
-  // }, []);
- 
-    return (
-  
-      <article className="section-4 flex-container flex-column" ref={scrollRef}>
-     
-        <section className="section-4-info txt-center">
-          <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
-          <p className="section-description">
-            Pizza Time holds the market of the pizza industry and continuously
-            offers more than pizza. Check out our hottest menu options with
-            cheese, meat, chicken and veggies!
-          </p>
-        </section>
-        {/* <motion.div
-              initial={{
-                opacity: 0,
-                translateX: -500,
-                rotate: 10,
-              }}
-              animate={{
-                opacity: 1,
-                translateX: 0,
-                rotate: 0,
-              }}
-              transition={{
-                delay: 0 * 0.02,
-              }}
-              whileHover={{
-                translateY: -20,
-              }}
-            > */}
-        <section className="meals-grid flex-container flex-column" >
-          {pizzaMenu.map((pizza) => (
-            <motion.div
+      <section className="section-4-info txt-center">
+        <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
+        <p className="section-description">
+          Pizza Time holds the market of the pizza industry and continuously
+          offers more than pizza. Check out our hottest menu options with
+          cheese, meat, chicken and veggies!
+        </p>
+      </section>
+      <section className="meals-grid flex-container flex-column" >
+        {pizzaMenu.map((pizza) => (
+          <motion.div
             className="meal-item flex-container"
-  initial={{ opacity: 0, translateX: -300  }}
-whileInView={{ opacity: 1 , translateX: 0  }}
-  exit={{ opacity: 0,  translateX: -300  }}
-  transition={{ duration: 3}}
-    >
-            {/* <section key={pizza.id} className="meal-item flex-container"> */}
-              <img
-                src={pizza.img375}
-                srcSet={`${pizza.img1440} 300w, ${pizza.img700} 450w, ${pizza.img375} 375w`}
-                sizes="(min-width: 1440px) 1440px, (min-width: 700px) 700px, 375px"
-                alt={pizza.name}
-              />
-              <section className="meal-item-details flex-container flex-column">
-                <h3 className="txt-white">{pizza.name}</h3>
-                <p>{pizza.description}</p>
-                <section className="meal-item-order flex-container flex-row txt-center">
-                  <p>
-                    <span>{pizza.currency}</span>
-                    {pizza.price}
-                  </p>
-                </section>
+            initial={{ opacity: 0, translateX: -300 }}
+            whileInView={{ opacity: 1, translateX: 0 }}
+            exit={{ opacity: 0, translateX: -300 }}
+            transition={{ duration: 3 }}
+          >
+            <img
+              src={pizza.img375}
+              srcSet={`${pizza.img1440} 300w, ${pizza.img700} 450w, ${pizza.img375} 375w`}
+              sizes="(min-width: 1440px) 1440px, (min-width: 700px) 700px, 375px"
+              alt={pizza.name}
+            />
+            <section className="meal-item-details flex-container flex-column">
+              <h3 className="txt-white">{pizza.name}</h3>
+              <p>{pizza.description}</p>
+              <section className="meal-item-order flex-container flex-row txt-center">
+                <p>
+                  <span>{pizza.currency}</span>
+                  {pizza.price}
+                </p>
               </section>
-            {/* </section> */}
-            </motion.div>
-          ))}
-        </section>
-        {/* </motion.div> */}
-        <Link
-          onClick={ResetLocation}
-          to="/menu"
-          className="active-button-style txt-white"
-        >
-          More pizza
-        </Link>
+            </section>
+          </motion.div>
+        ))}
+      </section>
+      <Link
+        onClick={ResetLocation}
+        to="/menu"
+        className="active-button-style txt-white"
+      >
+        More pizza
+      </Link>
+    </article>
 
-      </article>
-
-    )
-  }
+  )
+}
 
 export default PizzaMenuPreview;

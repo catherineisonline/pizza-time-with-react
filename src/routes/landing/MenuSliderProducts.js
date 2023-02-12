@@ -15,7 +15,6 @@ export default class MenuSliderProducts extends React.Component {
             sizes="(min-width: 700px) 700px, 375px"
             alt={singleProduct.name}
           />
-          {/* <img src={singleProduct.img} alt={singleProduct.name} /> */}
         </section>
         <section className="slider-product-description">
           <h3 className="pop-font txt-white">{singleProduct.name}</h3>

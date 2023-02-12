@@ -44,7 +44,6 @@ const Newsletter = () => {
         <p className="newsletter-success">You have successfully subscribed to our newsletter!</p> :
 
         <form onSubmit={handleSubmit} className="input-section">
-          {/* <section className="webflow-style-input"> */}
           <motion.div
             className="webflow-style-input"
             initial={{ opacity: 0, translateX: 300 }}
@@ -54,7 +53,6 @@ const Newsletter = () => {
           >
             <input name="email" onChange={handleValidation} value={formValue.email} className="input-field" placeholder="What's your email?" />
           </motion.div>
-          {/* </section> */}
           <span className="fullname-error-cpage">{formError.email}</span>
           <button type="submit" className="active-button-style">
             Sign me up

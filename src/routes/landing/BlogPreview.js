@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from "framer-motion";
 //375px
 import blogOne375 from '../../assets/images/blog-preview/blog-one-375.webp'
 import blogTwo375 from '../../assets/images/blog-preview/blog-two-375.webp'
@@ -9,7 +10,7 @@ import blogOne700 from '../../assets/images/blog-preview/blog-one-700.webp'
 import blogTwo700 from '../../assets/images/blog-preview/blog-two-700.webp'
 import blogThree700 from '../../assets/images/blog-preview/blog-three-700.webp'
 import ResetLocation from '../../helpers/ResetLocation'
-import { motion } from "framer-motion";
+
 const blogPreview = [
   {
     id: 1,

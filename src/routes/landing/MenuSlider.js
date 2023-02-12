@@ -1,12 +1,11 @@
 import React from 'react'
+import { motion } from "framer-motion";
 import MenuSliderProducts from './MenuSliderProducts'
 import MenuSliderCategories from './MenuSliderCategories'
-import { motion } from "framer-motion";
 import MenuSlide375 from '../../assets/images/section-eight/section-eight-375.webp'
 import MenuSlide700 from '../../assets/images/section-eight/section-eight-700.webp'
 import MenuSlide900 from '../../assets/images/section-eight/section-eight-900.webp'
 import MenuSlide1440 from '../../assets/images/section-eight/section-eight-1440.webp'
-
 //375
 import pizzaOne375 from '../../assets/images/menu-slider/pizza-one-375.webp'
 import pizzaTwo375 from '../../assets/images/menu-slider/pizza-two-375.webp'
@@ -85,7 +84,6 @@ const MenuSliderProduct = [
 
   {
     id: 'veggie-poke',
-    // img: VeggiePoke,
     img375: VeggiePoke375,
     img700: VeggiePoke700,
     name: 'Veggie Poke',
@@ -95,7 +93,6 @@ const MenuSliderProduct = [
   },
   {
     id: 'mini-salmon-set-22-pcs',
-    // img: MiniSalmon,
     img375: MiniSalmon375,
     img700: MiniSalmon700,
     name: 'Mini Salmon Set',
@@ -106,7 +103,6 @@ const MenuSliderProduct = [
   },
   {
     id: 'chicken-alfredo',
-    // img: ChickenAlfredo,
     img375: ChickenAlfredo375,
     img700: ChickenAlfredo700,
     name: 'Chicken Alfredo',
@@ -117,7 +113,6 @@ const MenuSliderProduct = [
   },
   {
     id: 'pasta-alla-gricia',
-    // img: AllaGricia,
     img375: AllaGricia375,
     img700: AllaGricia700,
     name: 'Pasta Alla Gricia',
@@ -128,7 +123,6 @@ const MenuSliderProduct = [
   },
   {
     id: 'sheet-pan-burrata-caprese-gnocchi',
-    // img: SheetPan,
     img375: SheetPan375,
     img700: SheetPan700,
     name: 'Burrata Caprese Gnocchi',
@@ -233,7 +227,6 @@ export default class MenuSlider extends React.Component {
   render() {
     const { allProducts } = this.state
     return (
-      // <article className="section-8">
        <motion.div
 initial={{ opacity: 0, translateX: 300  }}
 whileInView={{ opacity: 1 , translateX: 0  }}
@@ -272,7 +265,6 @@ whileInView={{ opacity: 1 , translateX: 0  }}
           </section>
         </section>
         </motion.div>
-      // </article>
     )
   }
 }

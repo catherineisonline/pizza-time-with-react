@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from 'react';
+import { motion } from "framer-motion";
 //Leaflet
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
@@ -6,8 +8,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker } from "react-leaflet";
 import { Popup } from "react-leaflet";
-import { useState } from 'react';
-import { motion } from "framer-motion";
+
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -53,8 +54,6 @@ const ContactForm = () => {
   }
   return (
     <article className="section-10  flex-container flex-column">
-     
-      {/* <section className="map"> */}
       <motion.div
        className="map"
 initial={{ opacity: 0, translateX: -300  }}
@@ -79,7 +78,6 @@ whileInView={{ opacity: 1 , translateX: 0  }}
           </Marker>
         </MapContainer>
         </motion.div>
-      {/* </section> */}
   
       {submit && Object.keys(formError).length === 0 ?
         <section className="contact-section-success">
@@ -137,6 +135,6 @@ whileInView={{ opacity: 1 , translateX: 0  }}
     </article>
   );
 }
-// }
+
 
 export default ContactForm;

@@ -1,20 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import PizzaOne from '../../assets/images/contact-us/image-one-parallax.png'
+import React from 'react'
 import { motion } from "framer-motion";
+import PizzaOne from '../../assets/images/contact-us/image-one-parallax.png'
 
-const ContactUsLanding = () =>  {
-//   const [offsetY, setOffsetY] = useState(0)
 
-// const handleScroll = () => {
-//   setOffsetY(window.scrollY)
-// }
-
-// useEffect(() => {
-// window.addEventListener('scroll', handleScroll)
-// return(() => window.removeEventListener('scroll', handleScroll))
-// }, []);
-
-    return (
+const ContactUsLanding = () =>  {   return (
         <section className="contact-us-landing flex-container flex-row txt-white" >
             <motion.div
 initial={{ opacity: 0, translateX: 1000  }}
