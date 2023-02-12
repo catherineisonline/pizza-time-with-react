@@ -79,6 +79,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - [uuid - Random id generator](https://www.npmjs.com/package/uuid)
 - [Tilt](https://micku7zu.github.io/vanilla-tilt.js/)
 - [React Lazy Load](https://www.npmjs.com/package/react-lazy-load-image-component)
+- [Framer Motion](https://www.framer.com/motion/)
 
 ## Goals <a id="goals"></a>
 
@@ -105,7 +106,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 6. [x] Let the visitor scroll to the top of the page with one click
 7. [x] Email subscribtion section
 8. [x] Add accepted payments
-9. [ ] Smooth component loading animation
+9. [x] Smooth component loading animation
 10. [x] Email Form validation on main page
 11. [x] Modal window for login button
 
