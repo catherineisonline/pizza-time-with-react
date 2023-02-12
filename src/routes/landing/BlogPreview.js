@@ -9,7 +9,7 @@ import blogOne700 from '../../assets/images/blog-preview/blog-one-700.webp'
 import blogTwo700 from '../../assets/images/blog-preview/blog-two-700.webp'
 import blogThree700 from '../../assets/images/blog-preview/blog-three-700.webp'
 import ResetLocation from '../../helpers/ResetLocation'
-
+import { motion } from "framer-motion";
 const blogPreview = [
   {
     id: 1,
@@ -43,7 +43,13 @@ const blogPreview = [
 export default class BlogPreview extends React.Component {
   render() {
     return (
-      <article className="section-9 flex-container flex-column">
+      <motion.div className="section-9 flex-container flex-column"
+      initial={{ opacity: 0}}
+      whileInView={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+    >
+
         <h2 className="txt-center pop-font txt-white">Recent from blog</h2>
         <p className="section-description">
           Fresh, flavorful and maybe some healthy recipes made for real, actual,
@@ -77,7 +83,8 @@ export default class BlogPreview extends React.Component {
         >
           More posts
         </Link>
-      </article>
+        </motion.div>
+
     )
   }
 }

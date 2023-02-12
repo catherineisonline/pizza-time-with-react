@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Newsletter = () => {
   const [formValue, setFormValue] = useState({ email: "" });
@@ -27,26 +28,41 @@ const Newsletter = () => {
     return errors;
   }
   return (
-    <article className="section-11  flex-container flex-column">
-      <section className="email-subscribtion">
-        <label className="email-label" htmlFor="email-input">
+
+    <section className="email-subscribtion">
+      <motion.div className="email-label" initial={{ opacity: 0, translateX: -300 }}
+        whileInView={{ opacity: 1, translateX: 0 }}
+        exit={{ opacity: 0, translateX: -300 }}
+        transition={{ duration: 2 }}
+      >
+        <label  htmlFor="email-input">
           Subscribe to our newsletter to recieve updates about menu and enjoy
           awesome gifts!
         </label>
-        {submit && Object.keys(formError).length === 0 ?
-          <p className="newsletter-success">You have successfully subscribed to our newsletter!</p> :
-          <form onSubmit={handleSubmit} className="input-section">
-            <section className="webflow-style-input">
-              <input name="email" onChange={handleValidation} value={formValue.email} className="input-field" placeholder="What's your email?" />
-            </section>
-            <span className="fullname-error-cpage">{formError.email}</span>
-            <button type="submit" className="active-button-style">
-              Sign me up
-            </button>
-          </form>}
+      </motion.div>
+      {submit && Object.keys(formError).length === 0 ?
+        <p className="newsletter-success">You have successfully subscribed to our newsletter!</p> :
 
-      </section>
-    </article>
+        <form onSubmit={handleSubmit} className="input-section">
+          {/* <section className="webflow-style-input"> */}
+          <motion.div
+            className="webflow-style-input"
+            initial={{ opacity: 0, translateX: 300 }}
+            whileInView={{ opacity: 1, translateX: 0 }}
+            exit={{ opacity: 0, translateX: 300 }}
+            transition={{ duration: 2 }}
+          >
+            <input name="email" onChange={handleValidation} value={formValue.email} className="input-field" placeholder="What's your email?" />
+          </motion.div>
+          {/* </section> */}
+          <span className="fullname-error-cpage">{formError.email}</span>
+          <button type="submit" className="active-button-style">
+            Sign me up
+          </button>
+        </form>
+      }
+
+    </section>
   );
 }
 

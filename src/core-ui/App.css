@@ -840,10 +840,10 @@ header {
 }
 
 /* Section 11 */
-.section-11 {
+/* .section-11 {
   color: var(--white);
   margin: 7rem auto;
-}
+} */
 .newsletter-success {
   color: var(--green);
   font-size: 1.5rem;
@@ -851,13 +851,16 @@ header {
 }
 
 .email-subscribtion {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  max-width: 1200px;
+  /* justify-content: center; */
+  min-width: 375px;
+  max-width: 900px;
+  color: var(--white);
+  margin: 7rem auto;
 }
 
 @-webkit-keyframes gradient {
