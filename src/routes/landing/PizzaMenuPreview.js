@@ -107,8 +107,9 @@ const PizzaMenuPreview = () => {
         </p>
       </section>
       <section className="meals-grid flex-container flex-column" >
-        {pizzaMenu.map((pizza) => (
+        {pizzaMenu.map((pizza, id) => (
           <motion.div
+            key={id}
             className="meal-item flex-container"
             initial={{ opacity: 0, translateX: -300 }}
             whileInView={{ opacity: 1, translateX: 0 }}

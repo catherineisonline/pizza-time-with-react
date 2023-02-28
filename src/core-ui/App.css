@@ -249,7 +249,7 @@ header {
 }
 .contact-us-landing {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 4rem;
 }
 .company-details {
@@ -566,6 +566,7 @@ header {
 
 .highlights {
   z-index: 1;
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   gap: 3rem;
@@ -578,7 +579,7 @@ header {
 }
 .highlights img {
   margin: 0 auto;
-  border: 1px solid var(--yellow);
+  border: 2px solid var(--yellow);
   padding: 0.7rem;
   cursor: pointer;
   -moz-transition: all 0.3s ease;

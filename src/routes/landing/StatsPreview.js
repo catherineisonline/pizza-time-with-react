@@ -33,22 +33,6 @@ const statsPreview = [
 ]
 
 export default class StatsPreview extends React.Component {
-  MouseEnter() {
-    const ServiceImgGroup = document.querySelectorAll('.hightlight-img')
-    ServiceImgGroup.forEach((ServiceImg) => {
-      ServiceImg.addEventListener('mouseenter', function () {
-        ServiceImg.classList.add('active-img')
-      })
-    })
-  }
-  MouseLeave() {
-    const ServiceImgGroup = document.querySelectorAll('.hightlight-img')
-    ServiceImgGroup.forEach((ServiceImg) => {
-      ServiceImg.addEventListener('mouseleave', function () {
-        ServiceImg.classList.remove('active-img')
-      })
-    })
-  }
   render() {
     return (
       <article className="section-7 flex-container flex-column txt-center">
@@ -65,8 +49,6 @@ export default class StatsPreview extends React.Component {
                   width="50"
                   height="50"
                   className="hightlight-img"
-                  onMouseEnter={this.MouseEnter}
-                  onMouseLeave={this.MouseLeave}
                   src={stats.img}
                   alt=""
                   aria-hidden="true"

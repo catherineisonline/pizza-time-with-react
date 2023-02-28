@@ -229,6 +229,7 @@ export default class MenuSlider extends React.Component {
     return (
       <article className="section-8">
         <motion.div
+          className="section-8"
           initial={{ opacity: 0, translateX: 300 }}
           whileInView={{ opacity: 1, translateX: 0 }}
           exit={{ opacity: 0, translateX: 300 }}
