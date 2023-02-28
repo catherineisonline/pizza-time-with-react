@@ -104,6 +104,7 @@ img {
   width: max-content;
   color: var(--white);
   font-size: 1rem;
+  font-weight: 400;
   font-family: var(--poppins-font);
 }
 .passive-button-style {
