@@ -150,14 +150,17 @@
     height: 40rem;
   }
   .pizza-one {
-    right: -20%;
+    right: -40%;
     top: -20%;
-    width: 22rem;
+    width: 23rem;
   }
   .pizza-two {
-    left: -20%;
+    left: -40%;
     top: -20%;
-    width: 22rem;
+    width: 23rem;
+  }
+  .pizza-motion {
+    display: inline-block;
   }
 }
 
@@ -165,12 +168,12 @@
   .pizza-one {
     right: -15%;
     top: 3%;
-    width: 22rem;
+    /* width: 22rem; */
   }
   .pizza-two {
     left: -15%;
     top: 3%;
-    width: 22rem;
+    /* width: 22rem; */
   }
   .meals-grid {
     gap: 1rem;

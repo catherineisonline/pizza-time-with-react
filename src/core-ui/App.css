@@ -1203,3 +1203,7 @@ hr {
   opacity: 0.9;
   overflow-y: hidden;
 }
+
+.pizza-motion {
+  display: none;
+}
