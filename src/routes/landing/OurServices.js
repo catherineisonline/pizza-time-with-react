@@ -1,8 +1,8 @@
 import React from 'react'
 import Tilt from 'react-parallax-tilt';
-import ImgOne from '../../assets/images/our-services/organic-food.png'
-import ImgTwo from '../../assets/images/our-services/express-delivery.png'
-import ImgThree from '../../assets/images/our-services/unforgable-taste.png'
+import ImgOne from '../../assets/images/our-services/organic-food.webp'
+import ImgTwo from '../../assets/images/our-services/express-delivery.webp'
+import ImgThree from '../../assets/images/our-services/unforgable-taste.webp'
 import { motion } from "framer-motion";
 
 const ourServices = [
