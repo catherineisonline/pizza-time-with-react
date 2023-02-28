@@ -651,9 +651,7 @@ header {
   align-items: center;
   overflow-x: hidden;
 }
-.dish-slider {
-  overflow: hidden;
-}
+
 .dish-slider .dish-categories {
   margin: 0 auto;
   gap: 1rem;
@@ -683,10 +681,6 @@ header {
 }
 
 /* Dish Details */
-
-.dish-slider {
-  gap: 1rem;
-}
 .dish-slider {
   gap: 3rem;
 }
