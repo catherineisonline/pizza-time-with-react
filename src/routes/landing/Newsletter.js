@@ -30,34 +30,39 @@ const Newsletter = () => {
   return (
 
     <section className="email-subscribtion">
-      <motion.div className="email-label" initial={{ opacity: 0, translateX: -300 }}
+      <motion.div className="email-label"
+        initial={{ opacity: 0, translateX: -300 }}
         whileInView={{ opacity: 1, translateX: 0 }}
         exit={{ opacity: 0, translateX: -300 }}
         transition={{ duration: 2 }}
       >
-        <label  htmlFor="email-input">
+        <label htmlFor="email-input">
           Subscribe to our newsletter to recieve updates about menu and enjoy
           awesome gifts!
         </label>
       </motion.div>
       {submit && Object.keys(formError).length === 0 ?
         <p className="newsletter-success">You have successfully subscribed to our newsletter!</p> :
-
-        <form onSubmit={handleSubmit} className="input-section">
-          <motion.div
-            className="webflow-style-input"
-            initial={{ opacity: 0, translateX: 300 }}
-            whileInView={{ opacity: 1, translateX: 0 }}
-            exit={{ opacity: 0, translateX: 300 }}
-            transition={{ duration: 2 }}
-          >
-            <input name="email" onChange={handleValidation} value={formValue.email} className="input-field" placeholder="What's your email?" />
-          </motion.div>
-          <span className="fullname-error-cpage">{formError.email}</span>
-          <button type="submit" className="active-button-style">
-            Sign me up
-          </button>
-        </form>
+        <motion.div
+          // className="form-overflow"
+          className="input-section"
+          initial={{ opacity: 0, translateX: 300 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 3 }}
+        >
+          <form onSubmit={handleSubmit}>
+            <div
+              className="webflow-style-input"
+            >
+              <input name="email" onChange={handleValidation} value={formValue.email} className="input-field" placeholder="What's your email?" />
+            </div>
+            <span className="fullname-error-cpage">{formError.email}</span>
+            <button type="submit" className="active-button-style">
+              Sign me up
+            </button>
+          </form>
+        </motion.div>
       }
 
     </section>

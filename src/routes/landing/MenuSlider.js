@@ -201,7 +201,7 @@ export default class MenuSlider extends React.Component {
 
       return singleCategory
     },
-    {})
+      {})
 
     const productsOfCategories = Object.keys(separateCategories).map(
       (e) => separateCategories[e],
@@ -227,44 +227,45 @@ export default class MenuSlider extends React.Component {
   render() {
     const { allProducts } = this.state
     return (
-       <motion.div
-initial={{ opacity: 0, translateX: 300  }}
-whileInView={{ opacity: 1 , translateX: 0  }}
-  exit={{ opacity: 0,  translateX: 300  }}
-  transition={{ duration: 2}}
-  className="section-8"
->
-        <img
-          className="menu-slider-hero"
-          src={MenuSlide375}
-          srcSet={`${MenuSlide1440} 1440w, ${MenuSlide900} 900w, ${MenuSlide700} 700w, ${MenuSlide375} 375w`}
-          sizes="(min-width: 1440px) 1440px, (min-width: 900px) 900px, (min-width: 700px) 700px, 375px"
-          alt="restaurant interior"
-        />
-        <section className="dish-slider  flex-container flex-column txt-center">
-          <section className="dish-categories flex-container flex-column">
-            <ul>
-              {MenuSliderCategory.map((category) => (
-                <MenuSliderCategories
-                  key={category.id}
-                  category={category}
-                  changeCategory={this.changeCategory}
-                />
-              ))}
-            </ul>
+      <article className="section-8">
+        <motion.div
+          initial={{ opacity: 0, translateX: 300 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
+          exit={{ opacity: 0, translateX: 300 }}
+          transition={{ duration: 2 }}
+        >
+          <img
+            className="menu-slider-hero"
+            src={MenuSlide375}
+            srcSet={`${MenuSlide1440} 1440w, ${MenuSlide900} 900w, ${MenuSlide700} 700w, ${MenuSlide375} 375w`}
+            sizes="(min-width: 1440px) 1440px, (min-width: 900px) 900px, (min-width: 700px) 700px, 375px"
+            alt="restaurant interior"
+          />
+          <section className="dish-slider  flex-container flex-column txt-center">
+            <section className="dish-categories flex-container flex-column">
+              <ul>
+                {MenuSliderCategory.map((category) => (
+                  <MenuSliderCategories
+                    key={category.id}
+                    category={category}
+                    changeCategory={this.changeCategory}
+                  />
+                ))}
+              </ul>
+            </section>
+            <section className="menu-slider-products">
+              {allProducts.map((singleProduct) => {
+                return (
+                  <MenuSliderProducts
+                    key={singleProduct.id}
+                    singleProduct={singleProduct}
+                  />
+                )
+              })}
+            </section>
           </section>
-          <section className="menu-slider-products">
-            {allProducts.map((singleProduct) => {
-              return (
-                <MenuSliderProducts
-                  key={singleProduct.id}
-                  singleProduct={singleProduct}
-                />
-              )
-            })}
-          </section>
-        </section>
         </motion.div>
+      </article>
     )
   }
 }
