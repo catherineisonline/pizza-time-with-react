@@ -45,11 +45,11 @@ export default class BlogPreview extends React.Component {
   render() {
     return (
       <motion.div className="section-9 flex-container flex-column"
-      initial={{ opacity: 0}}
-      whileInView={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 2 }}
-    >
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2 }}
+      >
 
         <h2 className="txt-center pop-font txt-white">Recent from blog</h2>
         <p className="section-description">
@@ -84,7 +84,7 @@ export default class BlogPreview extends React.Component {
         >
           More posts
         </Link>
-        </motion.div>
+      </motion.div>
 
     )
   }

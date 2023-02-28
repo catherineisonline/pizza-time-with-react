@@ -844,9 +844,6 @@ header {
 .contact-form .webflow-style-input {
   min-width: 90%;
   width: max-content;
-  /* z-index: 2; */
-  /* display: inline-block; */
-  /* overflow: hidden; */
 }
 .section-10 .active-button-style {
   margin-top: 2rem;
@@ -898,7 +895,6 @@ header {
   width: 100%;
   padding: 0.5rem 1.2rem;
   background-color: rgba(20, 20, 20, 0.672);
-  /* overflow: hidden; */
 }
 .webflow-style-input:after {
   content: "";
@@ -938,7 +934,6 @@ header {
   gap: 2rem;
   align-items: center;
   width: 100%;
-  /* justify-content: center; */
   overflow: hidden;
 }
 .input-section form {
@@ -948,9 +943,7 @@ header {
   align-items: center;
   width: 100%;
 }
-.form-overflow {
-  /* overflow-y: hidden; */
-}
+
 .email-label {
   font-family: var(--poppins-font);
   color: var(--whitish-gray);
