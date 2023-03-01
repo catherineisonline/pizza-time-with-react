@@ -9,13 +9,9 @@ export default class AboutSectionFour extends React.Component {
           <h2 className="sub-title">Careers</h2>
           <h2 className="main-title">Join the team</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            volutpat ullamcorper urna, at vestibulum justo ornare ut. Proin
-            accumsan sem odio, ac luctus eros sagittis vel. Duis pellentesque
-            rhoncus posuere. Mauris at metus vel justo hendrerit hendrerit.
-            Proin ut dolor non ipsum dapibus malesuada. Suspendisse laoreet ante
-            massa, sed vulputate augue dignissim eu. Nam sed vehicula elit.
-            Phasellus ut vehicula turpis.
+            Are you passionate about great food, exceptional customer service, and working with a fun and dynamic team? If so, we would love to have you join our team at Pizza Time!
+
+            We are always on the lookout for talented and motivated individuals to join our team in a variety of roles, from servers and chefs to kitchen staff and management. Whether you're just starting out in the foodservice industry or have years of experience under your belt, we offer a supportive and collaborative work environment that encourages personal and professional growth.
           </p>
         </section>
         <section>

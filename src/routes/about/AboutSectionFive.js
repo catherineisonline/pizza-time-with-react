@@ -12,13 +12,7 @@ export default class AboutSectionFive extends React.Component {
           <h2 className="sub-title">Collaboration</h2>
           <h2 className="main-title">Join the business</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            volutpat ullamcorper urna, at vestibulum justo ornare ut. Proin
-            accumsan sem odio, ac luctus eros sagittis vel. Duis pellentesque
-            rhoncus posuere. Mauris at metus vel justo hendrerit hendrerit.
-            Proin ut dolor non ipsum dapibus malesuada. Suspendisse laoreet ante
-            massa, sed vulputate augue dignissim eu. Nam sed vehicula elit.
-            Phasellus ut vehicula turpis.
+            Whether it's catering for a corporate event, providing lunch for a business meeting, or simply offering a delicious meal for employees to enjoy, we are committed to meeting the unique needs of businesses in our area. Our menu features a wide range of options, from classic pizzas and salads to sandwiches and pasta dishes, so you can be sure there's something for everyone to enjoy.
           </p>
         </section>
       </article>
