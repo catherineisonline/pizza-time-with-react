@@ -7,7 +7,7 @@ import HeroVideo from '../../assets/images/hero/hero-bg.mp4';
 const Hero = () => {
   return (
     <section className="hero-section">
-      <video autoPlay loop muted playsinline className="hero-video" >
+      <video autoPlay loop muted playsInline className="hero-video" >
         <source src={HeroVideo} type="video/mp4" />
       </video>
       <section className="header-info flex-container flex-column txt-center pop-font txt-white">

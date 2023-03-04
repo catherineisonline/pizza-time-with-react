@@ -43,7 +43,6 @@ export default class MenuItem extends React.Component {
   handleAllAttributesAreSelected = async () => {
     this.setState({ allAttributesAreSelected: true });
   };
-  // //Filter out produt with no attributes
   // /********************************************************/
   handleProductHasNoAttributes = async () => {
     if (this.props.singleProduct.attributes.length === 0) {

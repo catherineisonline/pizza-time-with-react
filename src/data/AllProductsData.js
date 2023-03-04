@@ -26,7 +26,7 @@ import AllaGricia from '../assets/images/pasta-images/Pasta Alla Gricia.jpeg'
 import SheetPan from '../assets/images/pasta-images/Sheet-Pan Burrata Caprese Gnocchi.jpeg'
 import AllaVodka from '../assets/images/pasta-images/Penne Alla Vodka.jpeg'
 import BakedSpaghetti from '../assets/images/pasta-images/Baked Spaghetti.jpeg'
-import PotatoGnocchi from '../assets/images/pasta-images/Cacio e Pepe Potato Gnocchi.jpeg'
+import PotatoGnocchi from '../assets/images/pasta-images/pasta-6.jpeg'
 import BakedZiti from '../assets/images/pasta-images/Ultimate Baked Ziti.jpeg'
 import CacioPepe from '../assets/images/pasta-images/Cacio e Pepe.jpeg'
 import PastaPuttanesca from '../assets/images/pasta-images/Pasta Puttanesca.jpeg'
@@ -2681,19 +2681,6 @@ export const allProductsData = [
     attributes: [],
   },
   {
-    id: 'cacio-e-pepe-potato-gnocchi-sale-2',
-    ItemImg: PotatoGnocchi,
-    ItemName: 'Cacio e Pepe Potato Gnocchi',
-    ItemIngredients:
-      'Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.',
-    ItemPriceBefore: (10).toFixed(2),
-    ItemPrice: (8).toFixed(2),
-    Category: 'Sale',
-    sale: true,
-    attributes: [],
-  },
-
-  {
     id: 'nigiri-with-salmon-and-orange-1-pc-sale',
     ItemImg: NigiriWithSalmon,
     ItemName: 'Nigiri with Salmon and Orange 1Pc',
@@ -2836,6 +2823,18 @@ export const allProductsData = [
     attributes: [],
   },
   {
+    id: 'cacio-e-pepe-potato-gnocchi-sale-second',
+    ItemImg: PotatoGnocchi,
+    ItemName: 'Cacio e Pepe Potato Gnocchi',
+    ItemIngredients:
+      'Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.',
+    ItemPriceBefore: (10).toFixed(2),
+    ItemPrice: (8).toFixed(2),
+    Category: 'Sale',
+    sale: true,
+    attributes: [],
+  },
+  {
     id: 'margherita-pizza-sale-second',
     ItemImg: MargheritaPizza,
     ItemName: 'Margherita Pizza',
@@ -2893,17 +2892,5 @@ export const allProductsData = [
     Category: 'Sale',
     sale: true,
     attributes: [],
-  },
-  {
-    id: 'cacio-e-pepe-potato-gnocchi-sale-second',
-    ItemImg: PotatoGnocchi,
-    ItemName: 'Cacio e Pepe Potato Gnocchi',
-    ItemIngredients:
-      'Green beans, potato gnocchi, green peas, pecorino romano cheese, black pepper.',
-    ItemPriceBefore: (10).toFixed(2),
-    ItemPrice: (8).toFixed(2),
-    Category: 'Sale',
-    sale: true,
-    attributes: [],
-  },
+  }
 ]

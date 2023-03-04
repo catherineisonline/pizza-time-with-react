@@ -20,7 +20,6 @@ import { AllCategories } from './data/AllCategories'
 import Order from './routes/order/Order.js'
 import CheckoutSummary from './routes/checkout/CheckoutSummary.js'
 import Item from './routes/singleItem/Item.js'
-import FullCart from './routes/cart/FullCart.js'
 import CartTotals from './routes/cart/CartTotals.js'
 import LoginModal from './components/LoginModal.js'
 import CartItem from './routes/cart/CartItem.js'
@@ -43,6 +42,7 @@ export default class App extends React.Component {
       validLogin: false,
       // searchFailed: false,
     }
+
     this.getProductsByCategory = this.getProductsByCategory.bind(this)
     this.changeCategory = this.changeCategory.bind(this)
     this.handleAddProduct = this.handleAddProduct.bind(this)
@@ -118,7 +118,7 @@ export default class App extends React.Component {
           : [singleCategory[singleItem.Category]].concat(singleItem)
       return singleCategory
     },
-    {})
+      {})
 
     const result = Object.keys(separateCategories).map(
       (e) => separateCategories[e],
@@ -202,6 +202,7 @@ export default class App extends React.Component {
     return currentProductList
   }
   handleAddProduct = (targetProduct, userSelectedAttributes) => {
+
     let updatedProductList
     const productAlreadyInCart = this.CheckRepeatableProducts(
       this.state.cartItems,
@@ -209,12 +210,14 @@ export default class App extends React.Component {
       userSelectedAttributes,
     )
 
+
     if (productAlreadyInCart) {
       updatedProductList = this.updateCartQuantity(
         'addProduct',
         productAlreadyInCart,
         userSelectedAttributes,
       )
+
     } else {
       let modifiedProduct = JSON.parse(JSON.stringify(targetProduct))
       let clone
@@ -393,14 +396,12 @@ export default class App extends React.Component {
     const collectData = []
     allProductsData.map((product) => {
       if (product.ItemName.toLowerCase().includes(e.target.value)) {
-        // this.setState({ searchFailed: false });
         collectData.push(product)
         this.setState({ allProducts: [...collectData] })
       }
     })
     if (collectData.length === 0) {
       this.setState({ allProducts: [] })
-      // this.setState({ searchFailed: true });
     }
   }
 
@@ -473,22 +474,13 @@ export default class App extends React.Component {
             path="/cart"
             element={
               <Cart
-                fullCart={
-                  <FullCart
-                    cartItem={
-                      <CartItem
-                        clearCart={this.clearCart}
-                        successMsg={this.successMsg}
-                        cartItems={this.state.cartItems}
-                        handleAddProduct={this.handleAddProduct}
-                        handleRemoveProduct={this.handleRemoveProduct}
-                      />
-                    }
-                    cartItems={this.state.cartItems}
+                CartItem={
+                  <CartItem
                     clearCart={this.clearCart}
+                    successMsg={this.successMsg}
+                    cartItems={this.state.cartItems}
                     handleAddProduct={this.handleAddProduct}
                     handleRemoveProduct={this.handleRemoveProduct}
-                    successMsg={this.successMsg}
                   />
                 }
                 cartTotals={
