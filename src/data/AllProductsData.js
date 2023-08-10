@@ -2694,7 +2694,7 @@ export const allProductsData = [
   {
     id: 'pepperoni-pizza-sale',
     ItemImg: PepperoniPizza,
-    ItemName: 'Pepperoni Pizza',
+    ItemName: 'Pepperoni Pizza Medium',
     ItemIngredients:
       'Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.',
     ItemPriceBefore: (5).toFixed(2),
@@ -2706,7 +2706,7 @@ export const allProductsData = [
   {
     id: 'meat-pizza-sale',
     ItemImg: MeatPizza,
-    ItemName: 'Meat Pizza',
+    ItemName: 'Meat Pizza Medium',
     ItemIngredients:
       'Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.',
     ItemPriceBefore: (10).toFixed(2),
@@ -2718,7 +2718,7 @@ export const allProductsData = [
   {
     id: 'margherita-pizza-sale',
     ItemImg: MargheritaPizza,
-    ItemName: 'Margherita Pizza',
+    ItemName: 'Margherita Pizza Small',
     ItemIngredients:
       'Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.',
     ItemPriceBefore: (8).toFixed(2),
@@ -2730,7 +2730,7 @@ export const allProductsData = [
   {
     id: 'veggie-pizza-sale',
     ItemImg: VeggiePizza,
-    ItemName: 'Veggie Pizza',
+    ItemName: 'Veggie Pizza Large',
     ItemIngredients:
       'Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.',
     ItemPriceBefore: (9).toFixed(2),
@@ -2766,7 +2766,7 @@ export const allProductsData = [
   {
     id: 'cheese-pizza-sale',
     ItemImg: CheesePizza,
-    ItemName: 'Cheese Pizza',
+    ItemName: 'Cheese Pizza Large',
     ItemIngredients: 'Pizza dough, pizza sauce, provolone cheese, mozzarella.',
     ItemPriceBefore: (2).toFixed(2),
     ItemPrice: (1).toFixed(2),
@@ -2801,7 +2801,7 @@ export const allProductsData = [
   {
     id: 'pepperoni-pizza-sale-second',
     ItemImg: PepperoniPizza,
-    ItemName: 'Pepperoni Pizza',
+    ItemName: 'Pepperoni Pizza Medium',
     ItemIngredients:
       'Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.',
     ItemPriceBefore: (5).toFixed(2),
@@ -2813,7 +2813,7 @@ export const allProductsData = [
   {
     id: 'meat-pizza-sale-second',
     ItemImg: MeatPizza,
-    ItemName: 'Meat Pizza',
+    ItemName: 'Meat Pizza Large',
     ItemIngredients:
       'Sausage, pizza dough, bacon, pizza sauce, red pepper flakes.',
     ItemPriceBefore: (10).toFixed(2),
@@ -2837,7 +2837,7 @@ export const allProductsData = [
   {
     id: 'margherita-pizza-sale-second',
     ItemImg: MargheritaPizza,
-    ItemName: 'Margherita Pizza',
+    ItemName: 'Margherita Pizza Medium',
     ItemIngredients:
       'Pizza dough, tomato sauce, fresh mozzarella, olive oil, basil leaves.',
     ItemPriceBefore: (8).toFixed(2),
@@ -2849,7 +2849,7 @@ export const allProductsData = [
   {
     id: 'veggie-pizza-sale-second',
     ItemImg: VeggiePizza,
-    ItemName: 'Veggie Pizza',
+    ItemName: 'Veggie Pizza Large',
     ItemIngredients:
       'Pizza sauce, Onion, Capsicum, Pineapple, Ginger, Hotshot sauce, Coriander, Garlic sauce, Butter sauce, Cheese.',
     ItemPriceBefore: (9).toFixed(2),
@@ -2885,7 +2885,7 @@ export const allProductsData = [
   {
     id: 'cheese-pizza-sale-second',
     ItemImg: CheesePizza,
-    ItemName: 'Cheese Pizza',
+    ItemName: 'Cheese Pizza Medium',
     ItemIngredients: 'Pizza dough, pizza sauce, provolone cheese, mozzarella.',
     ItemPriceBefore: (2).toFixed(2),
     ItemPrice: (1).toFixed(2),
