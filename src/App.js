@@ -10,7 +10,6 @@ import {
   Contact,
   RootSection,
   Menu,
-  PasswordRecovery,
   Payment,
   Register,
   SingleItem,
@@ -40,7 +39,7 @@ export default class App extends React.Component {
       formError: {},
       submit: false,
       validLogin: false,
-      // searchFailed: false,
+      // showMenu: false,
     }
 
     this.getProductsByCategory = this.getProductsByCategory.bind(this)
@@ -52,9 +51,10 @@ export default class App extends React.Component {
     this.validateForm = this.validateForm.bind(this)
     this.handleValidation = this.handleValidation.bind(this)
     this.hideModal = this.hideModal.bind(this)
-    this.removeNavigationMenu = this.removeNavigationMenu.bind(this)
+    // this.removeNavigationMenu = this.removeNavigationMenu.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
     this.findMenuItem = this.findMenuItem.bind(this)
+    // this.showHiddenMenu = this.showHiddenMenu.bind(this)
   }
 
   // GET DATA
@@ -335,14 +335,19 @@ export default class App extends React.Component {
     const hiddenModal = document.querySelector('.modal')
     hiddenModal.classList.toggle('active-modal')
   }
-  showHiddenMenu() {
-    const hiddenMenu = document.querySelector('.navigation-menu')
-    hiddenMenu.classList.toggle('active')
-  }
-  removeNavigationMenu() {
-    const hiddenMenu = document.querySelector('.navigation-menu')
-    hiddenMenu.classList.remove('active')
-  }
+  // showHiddenMenu() {
+  //   // const hiddenMenu = document.querySelector('.navigation-menu')
+  //   // hiddenMenu.classList.toggle('active')
+  //   this.setState(prevState => ({
+  //     showMenu: !prevState.showMenu
+  //   }));
+  //   console.log(this.state.showMenu)
+  // }
+  // removeNavigationMenu() {
+  //   const hiddenMenu = document.querySelector('.navigation-menu')
+  //   hiddenMenu.classList.remove('active')
+  // }
+
 
   // ! LOGIN MODAL Validation
   handleSubmit = (e) => {
@@ -414,7 +419,7 @@ export default class App extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { cartItems, clearedCart, validLogin } = this.state
+    const { cartItems, clearedCart, validLogin, showMenu } = this.state
     if (cartItems !== nextState.cartItems) {
       this.getTotalPrice(nextState.cartItems)
     }
@@ -424,6 +429,9 @@ export default class App extends React.Component {
     if (validLogin !== nextState.validLogin) {
       this.hideModal()
     }
+    // if (showMenu !== nextState.showMenu) {
+    //   this.showHiddenMenu()
+    // }
 
     return true
   }
@@ -445,6 +453,7 @@ export default class App extends React.Component {
           }
           showModal={this.showModal}
           showHiddenMenu={this.showHiddenMenu}
+          showMenu={this.showMenu}
           handleLogout={this.handleLogout}
           validLogin={this.state.validLogin}
           formError={this.state.formError}

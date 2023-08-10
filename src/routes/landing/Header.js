@@ -1,22 +1,41 @@
 import React from 'react'
 import logo from '../../assets/images/logo.png'
-import burger from '../../assets/images/burger-menu.svg'
+import openMenu from '../../assets/images/open-menu.svg'
+import closeMenu from '../../assets/images/close-menu.svg'
 import { Link, NavLink } from 'react-router-dom'
 import Cart from '../../assets/images/cart-icon.png'
 import SuccessMsg from '../../components/SuccessMsg'
 import ResetLocation from '../../helpers/ResetLocation'
 
 export default class Header extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      showMenu: false,
+    }
+    this.showHiddenMenu = this.showHiddenMenu.bind(this);
+    this.removeMenu = this.removeMenu.bind(this);
+  }
+
+  showHiddenMenu() {
+
+    this.setState({ showMenu: !this.state.showMenu });
+  }
+  removeMenu() {
+    this.setState({ showMenu: false });
+  }
+
   render() {
     const {
       loginModal,
       productsQuantity,
       handleLogout,
       showModal,
-      showHiddenMenu,
-      validLogin,
-      removeNavigationMenu,
-    } = this.props
+      validLogin
+    } = this.props;
+    const {
+      showHiddenMenu, removeMenu
+    } = this;
     return (
       <header>
         {loginModal}
@@ -24,7 +43,7 @@ export default class Header extends React.Component {
           <NavLink
             onClick={() => {
               ResetLocation()
-              removeNavigationMenu()
+              removeMenu()
             }}
             to="/"
             className="logo-styling flex-container flex-row txt-center txt-white"
@@ -40,19 +59,19 @@ export default class Header extends React.Component {
               Pizza <span>Time</span>
             </p>
           </NavLink>
-          <ul className="navigation-menu flex-row pop-font">
+          <ul className={`navigation-menu flex-row pop-font ${this.state.showMenu ? 'active' : ''}`}>
             <li>
               <NavLink
                 onClick={() => {
                   ResetLocation()
-                  removeNavigationMenu()
+                  removeMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: 'none',
-                        color: '#ff6240',
-                      }
+                      textDecoration: 'none',
+                      color: '#ff6240',
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -65,14 +84,14 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation()
-                  removeNavigationMenu()
+                  removeMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: 'none',
-                        color: '#ff6240',
-                      }
+                      textDecoration: 'none',
+                      color: '#ff6240',
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -86,14 +105,14 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation()
-                  removeNavigationMenu()
+                  removeMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: 'none',
-                        color: '#ff6240',
-                      }
+                      textDecoration: 'none',
+                      color: '#ff6240',
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -106,14 +125,14 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation()
-                  removeNavigationMenu()
+                  removeMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: 'none',
-                        color: '#ff6240',
-                      }
+                      textDecoration: 'none',
+                      color: '#ff6240',
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -126,14 +145,14 @@ export default class Header extends React.Component {
               <NavLink
                 onClick={() => {
                   ResetLocation()
-                  removeNavigationMenu()
+                  removeMenu()
                 }}
                 style={({ isActive }) =>
                   isActive
                     ? {
-                        textDecoration: 'none',
-                        color: '#ff6240',
-                      }
+                      textDecoration: 'none',
+                      color: '#ff6240',
+                    }
                     : {}
                 }
                 className="txt-white"
@@ -171,7 +190,7 @@ export default class Header extends React.Component {
                   to="/cart"
                   onClick={() => {
                     ResetLocation()
-                    removeNavigationMenu()
+                    removeMenu()
                   }}
                 >
                   <img src={Cart} alt="" aria-hidden="true" />
@@ -185,9 +204,8 @@ export default class Header extends React.Component {
             width="50"
             height="50"
             className="burger-bars"
-            src={burger}
-            alt=""
-            aria-hidden="true"
+            src={this.state.showMenu ? closeMenu : openMenu}
+            alt={this.state.showMenu ? "Close menu" : "Open menu"}
             onClick={showHiddenMenu}
           />
         </nav>
