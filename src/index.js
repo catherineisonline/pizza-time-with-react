@@ -11,7 +11,6 @@ import './routes/about/AboutUs.css'
 import './routes/blog/Blog.css'
 import './routes/cart/Cart.css'
 import './routes/registration/Register.css'
-import './routes/passRecovery/PasswordRecovery.css'
 import './routes/checkout/checkout.css'
 import './routes/payment/payments.css'
 //Components
@@ -19,9 +18,9 @@ import App from "./App.js";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-  
+
     <App />
-   </React.StrictMode>
+  </React.StrictMode>
 );
 
 reportWebVitals();

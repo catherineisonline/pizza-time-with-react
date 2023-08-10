@@ -545,7 +545,6 @@ export default class App extends React.Component {
               />
             }
           />
-          <Route path="/password-recovery" element={<PasswordRecovery />} />
           <Route path="/order" element={<Order />} />
         </Routes>
 

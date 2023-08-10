@@ -20,7 +20,7 @@ export default function LoginModal({ hideModal, removeMenu, handleValidation, va
         </button>
         <section className="modal-content">
           <div className="login-modal-title"><h2>Log in</h2>
-            <div className="tooltip"> <img className="hint-icon" src="https://img.icons8.com/ios/50/000000/questions.png" aria-hidden="true" alt=""/>
+            <div className="tooltip"> <img className="hint-icon" src="https://img.icons8.com/ios/50/000000/questions.png" aria-hidden="true" alt="" />
               <article className="tooltiptext">
                 <p>User: <span>danielw@pizzatime.com</span></p>
                 <p>Password: <span>12345678</span></p>
@@ -46,30 +46,18 @@ export default function LoginModal({ hideModal, removeMenu, handleValidation, va
                 Sign up
               </Link> */}
               <LinkButton
-               onClick={() => {
+                onClick={() => {
                   hideModal();
                   removeMenu();
                 }}
                 to="/register"
                 className="modal-signup-btn"
-                >
-  Sign up
+              >
+                Sign up
               </LinkButton>
               <button type="submit" className="modal-login-btn">Log in</button>
             </section>
           </form>
-          <section className="modal-extras">
-            <Link
-              to="/password-recovery"
-              className="modal-forgot-password"
-              onClick={() => {
-                hideModal();
-                removeMenu();
-              }}
-            >
-              Forgot password?
-            </Link>
-          </section>
         </section>
       </section>
 
