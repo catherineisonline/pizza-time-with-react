@@ -44,8 +44,9 @@
   flex-direction: column;
   gap: 2rem;
 }
-.gender,
-.register-section {
+.gender
+
+/* .register-section  */ {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -61,10 +62,10 @@
   align-items: flex-start;
 }
 
-.register-section::before {
+/* .register-section::before {
   content: "";
   height: 3rem;
-}
+} */
 
 .register-main input {
   border: 1px solid #fac56425;
@@ -143,11 +144,13 @@ select {
   outline: 1px solid transparent;
 }
 
-.register-section {
+/* .register-section {
+  display: flex;
+  flex-direction: row-reverse;
   width: 90%;
-  width: 18rem;
+  gap: 1rem;
   margin: 0 auto;
-}
+} */
 .terms-warning {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);

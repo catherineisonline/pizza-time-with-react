@@ -44,7 +44,7 @@ const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 
 
 export default function RegistrationForm() {
-    const [formValue, setFormValue] = useState({ firstName: '', lastName: '', email: '', password: '', repeatPassword: '', month: '', day: '', year: '' });
+    const [formValue, setFormValue] = useState({ firstName: '', lastName: '', email: '', password: '', repeatPassword: '', month: '', day: '', year: '', checkbox: false });
     const [formError, setFormError] = useState({})
     const [submit, setSubmit] = useState(false);
     const [years, setYears] = useState([]);
@@ -67,12 +67,12 @@ export default function RegistrationForm() {
 
     }
 
+
     const handleValidation = (e) => {
         const { name, value } = e.target;
         setFormValue({ ...formValue, [name]: value })
     }
     const validateForm = (value) => {
-
         let errors = {}
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         if (!value.firstName) {
@@ -101,6 +101,9 @@ export default function RegistrationForm() {
         }
         if (!value.day) {
             errors.day = "Please enter your birth day"
+        }
+        if (!value.year) {
+            errors.year = "Please enter your birth year"
         }
         if (!value.year) {
             errors.year = "Please enter your birth year"
@@ -153,14 +156,12 @@ export default function RegistrationForm() {
                             <span className="registration-input-err">{formError.year}</span>
                         </section>
                     </section>
-                    <section className="register-section">
-                        <p className="terms-warning">
-                            By clicking Sign Up, you agree to our Terms, Data Policy and Cookies
-                            Policy. You may receive an email notification from us and can opt
-                            out any time.
-                        </p>
-
-                    </section>
+                    {/* <section className="register-section"> */}
+                    <p className="terms-warning">
+                        By clicking Sign Up, you agree to our Terms, Data Policy and Cookies
+                        Policy. You may receive an email notification from us and can opt
+                        out any time.
+                    </p>
                     <button className="register-btn" type="submit">Sign up</button>
                 </form>
             }
