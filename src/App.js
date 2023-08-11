@@ -39,7 +39,6 @@ export default class App extends React.Component {
       formError: {},
       submit: false,
       validLogin: false,
-      // showMenu: false,
     }
 
     this.getProductsByCategory = this.getProductsByCategory.bind(this)
@@ -51,10 +50,8 @@ export default class App extends React.Component {
     this.validateForm = this.validateForm.bind(this)
     this.handleValidation = this.handleValidation.bind(this)
     this.hideModal = this.hideModal.bind(this)
-    // this.removeNavigationMenu = this.removeNavigationMenu.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
     this.findMenuItem = this.findMenuItem.bind(this)
-    // this.showHiddenMenu = this.showHiddenMenu.bind(this)
   }
 
   // GET DATA
@@ -138,6 +135,7 @@ export default class App extends React.Component {
       }
     })
   }
+
   // CART LOGIC
   /*******************************************************/
   CheckRepeatableProducts = (
@@ -152,8 +150,11 @@ export default class App extends React.Component {
         item = targetProduct
       }
     })
-    return item
+    return item;
+
   }
+
+
   MatchingAttributes = (userSelectedAttributes, targetProduct) => {
     const attributesMatch = (groupOne, groupTwo) => {
       return Object.values(groupOne)[1] === Object.values(groupTwo)[1]
@@ -201,69 +202,64 @@ export default class App extends React.Component {
 
     return currentProductList
   }
+
+  // Function to handle adding a product to the cart
   handleAddProduct = (targetProduct, userSelectedAttributes) => {
+    const { cartItems } = this.state;
 
-    let updatedProductList
+    // Check if the product is already in the cart
     const productAlreadyInCart = this.CheckRepeatableProducts(
-      this.state.cartItems,
+      cartItems,
       targetProduct,
-      userSelectedAttributes,
-    )
+      userSelectedAttributes
+    );
 
+    // Create a copy of the current cart items to update
+    let currentCartItems = [...cartItems];
+    let newQuantity;
 
-    if (productAlreadyInCart) {
-      updatedProductList = this.updateCartQuantity(
-        'addProduct',
-        productAlreadyInCart,
+    // If the product is not already in the cart
+    if (productAlreadyInCart === undefined) {
+      const itemToAdd = targetProduct;
+      newQuantity = 1;
+
+      // Add the new product to the cart with a quantity of 1
+      currentCartItems.push({
+        ...itemToAdd,
         userSelectedAttributes,
-      )
-
+        quantity: newQuantity,
+      });
     } else {
-      let modifiedProduct = JSON.parse(JSON.stringify(targetProduct))
-      let clone
+      // Find the index of the existing product in the cart
+      const index = cartItems.findIndex(item => item.id === targetProduct.id);
 
-      for (let i = 0; i < targetProduct?.attributes?.length; i++) {
-        for (let j = 0; j < targetProduct?.attributes[i]?.items?.length; j++) {
-          if (
-            targetProduct.attributes[i].items[j].value ===
-            userSelectedAttributes[i].value
-          ) {
-            clone = {
-              ...targetProduct.attributes[i].items[j],
-            }
-            clone.isSelected = true
+      // If the existing product is found
+      if (index !== -1) {
+        newQuantity = cartItems[index].quantity;
 
-            modifiedProduct.attributes[i].items[j].isSelected = true
-
-            modifiedProduct.attributes[i].items[j] = {
-              ...clone,
-            }
-          }
-        }
+        // Increment the quantity of the existing product in the cart
+        currentCartItems[index] = {
+          ...cartItems[index],
+          quantity: newQuantity += 1,
+        };
       }
-
-      updatedProductList = [
-        ...this.state.cartItems,
-        {
-          ...modifiedProduct,
-          userSelectedAttributes,
-          quantity: 1,
-        },
-      ]
     }
 
-    this.setState({ cartItems: updatedProductList })
-    //Update cart amount
-    if (updatedProductList.length <= 1) {
-      updatedProductList.map((item) => {
-        return this.setState({ productsQuantity: item.quantity })
-      })
-    } else {
-      let productListArray = updatedProductList.map((item) => item.quantity)
-      let sum = productListArray.reduce((a, b) => a + b, 0)
-      this.setState({ productsQuantity: sum })
-    }
-  }
+    // Calculate the total quantity of all items in the cart
+    const totalCartQuantity = currentCartItems.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+
+    // Update the cart items and total products quantity in the state
+    this.setState({
+      cartItems: currentCartItems,
+      totalCartQuantity
+    });
+  };
+
+
+
   // Remove Product From Cart
   handleRemoveProduct = (targetProduct, userSelectedAttributes) => {
     let updatedProductList
@@ -330,26 +326,13 @@ export default class App extends React.Component {
     }, 1000)
   }
 
-  // ! MODAL TOGGLE
+  //  MODAL TOGGLE
   showModal() {
     const hiddenModal = document.querySelector('.modal')
     hiddenModal.classList.toggle('active-modal')
   }
-  // showHiddenMenu() {
-  //   // const hiddenMenu = document.querySelector('.navigation-menu')
-  //   // hiddenMenu.classList.toggle('active')
-  //   this.setState(prevState => ({
-  //     showMenu: !prevState.showMenu
-  //   }));
-  //   console.log(this.state.showMenu)
-  // }
-  // removeNavigationMenu() {
-  //   const hiddenMenu = document.querySelector('.navigation-menu')
-  //   hiddenMenu.classList.remove('active')
-  // }
 
-
-  // ! LOGIN MODAL Validation
+  //  LOGIN MODAL Validation
   handleSubmit = (e) => {
     e.preventDefault()
     if (
@@ -419,7 +402,7 @@ export default class App extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const { cartItems, clearedCart, validLogin, showMenu } = this.state
+    const { cartItems, clearedCart, validLogin } = this.state
     if (cartItems !== nextState.cartItems) {
       this.getTotalPrice(nextState.cartItems)
     }
@@ -429,10 +412,6 @@ export default class App extends React.Component {
     if (validLogin !== nextState.validLogin) {
       this.hideModal()
     }
-    // if (showMenu !== nextState.showMenu) {
-    //   this.showHiddenMenu()
-    // }
-
     return true
   }
   render() {
