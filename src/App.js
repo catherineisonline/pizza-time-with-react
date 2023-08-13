@@ -1,7 +1,7 @@
-import React from 'react'
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
-import Header from './routes/landing/Header.js'
-import Footer from './components/footer/Footer'
+import React, { useState, useEffect } from 'react';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import Header from './routes/landing/Header.js';
+import Footer from './components/footer/Footer';
 import {
   About,
   Blog,
@@ -13,90 +13,299 @@ import {
   Payment,
   Register,
   SingleItem,
-} from './routes/index'
-import { allProductsData } from './data/AllProductsData.js'
-import { AllCategories } from './data/AllCategories'
-import Order from './routes/order/Order.js'
-import CheckoutSummary from './routes/checkout/CheckoutSummary.js'
-import Item from './routes/singleItem/Item.js'
-import CartTotals from './routes/cart/CartTotals.js'
-import LoginModal from './components/LoginModal.js'
-import CartItem from './routes/cart/CartItem.js'
+} from './routes/index';
+import { allProductsData } from './data/AllProductsData.js';
+import { AllCategories } from './data/AllCategories';
+import Order from './routes/order/Order.js';
+import CheckoutSummary from './routes/checkout/CheckoutSummary.js';
+import Item from './routes/singleItem/Item.js';
+import CartTotals from './routes/cart/CartTotals.js';
+import LoginModal from './components/LoginModal.js';
+import CartItem from './routes/cart/CartItem.js';
 
-export default class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      allCategories: [],
-      activeCategory: 'Menu',
-      cartItems: [],
-      clearedCart: false,
-      allProducts: [],
-      productsQuantity: 0,
-      totalPayment: 0,
-      taxes: 0,
-      formValue: { email: '', password: '' },
-      formError: {},
-      submit: false,
-      validLogin: false,
+function App() {
+  const [allCategories, setAllCategories] = useState([]);
+  const [activeCategory, setActiveCategory] = useState('Menu');
+  const [cartItems, setCartItems] = useState([]);
+  const [clearedCart, setClearedCart] = useState(false);
+  const [allProducts, setAllProducts] = useState([]);
+  const [productsQuantity, setProductsQuantity] = useState(0);
+  const [totalPayment, setTotalPayment] = useState(0);
+  const [taxes, setTaxes] = useState(0);
+  const [formValue, setFormValue] = useState({ email: '', password: '' });
+  const [formError, setFormError] = useState({});
+  const [submit, setSubmit] = useState(false);
+  const [validLogin, setValidLogin] = useState(false);
+  const [isModalActive, setIsModalActive] = useState(false);
+  const [loginModalWindow, setLoginModalWindow] = useState(false);
+
+  const activateLoginModal = () => {
+    setLoginModalWindow(!loginModalWindow);
+  }
+  const hideLoginModal = () => {
+    setLoginModalWindow(false);
+    setFormValue({ email: '', password: '' });
+    setFormError({});
+    setSubmit(false);
+  }
+  const validateForm = (value) => {
+    let errors = {};
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+    if (!value.email) {
+      errors.email = 'Please enter email';
+    } else if (!emailRegex.test(value.email)) {
+      errors.email = 'Please enter valid email';
     }
 
-    this.getProductsByCategory = this.getProductsByCategory.bind(this)
-    this.changeCategory = this.changeCategory.bind(this)
-    this.handleAddProduct = this.handleAddProduct.bind(this)
-    this.handleRemoveProduct = this.handleRemoveProduct.bind(this)
-    this.clearCart = this.clearCart.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.validateForm = this.validateForm.bind(this)
-    this.handleValidation = this.handleValidation.bind(this)
-    this.hideModal = this.hideModal.bind(this)
-    this.handleLogout = this.handleLogout.bind(this)
-    this.findMenuItem = this.findMenuItem.bind(this)
-  }
+    if (!value.password || value.password.length < 8) {
+      errors.password = 'Please enter a valid password';
+    }
 
+    return errors;
+  };
+
+  const handleLogout = () => {
+    setValidLogin(false);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (formValue.password === '12345678' && formValue.email === 'danielw@pizzatime.com') {
+      setValidLogin(true);
+    }
+
+    setFormError(validateForm(formValue));
+    setSubmit(true);
+    hideLoginModal();
+  };
+
+  const hideModal = () => {
+    const hiddenModal = document.querySelector('.modal');
+    hiddenModal.classList.remove('active-modal');
+    setFormValue({ email: '', password: '' });
+    setFormError({});
+    setSubmit(false);
+  };
+  const handleValidation = (e) => {
+    const { name, value } = e.target;
+    setFormValue((prevFormValue) => ({
+      ...prevFormValue,
+      [name]: value,
+    }));
+  };
+  const findMenuItem = (e) => {
+    e.preventDefault();
+    const inputValue = e.target.value.toLowerCase();
+    const collectData = allProductsData.filter(product =>
+      product.ItemName.toLowerCase().includes(inputValue)
+    );
+
+    if (collectData.length > 0) {
+      setAllProducts(collectData);
+    } else {
+      setAllProducts([]);
+    }
+  };
+
+  const showModal = () => {
+    setIsModalActive(!isModalActive);
+  };
+  const hideMenu = () => {
+    setIsModalActive(false);
+  };
   // GET DATA
   /*******************************************************/
-  allCategoriesData = new Promise((resolve, reject) => {
+  const allCategoriesData = new Promise((resolve, reject) => {
     if (true) {
-      resolve(AllCategories)
-      return
+      resolve(AllCategories);
+      return;
     }
-    reject('error, check the code!')
-  })
-  allProductsData = new Promise((resolve, reject) => {
+    reject('error, check the code!');
+  });
+
+  const allProductsDataPromise = new Promise((resolve, reject) => {
     if (true) {
-      resolve(allProductsData)
-      return
+      resolve(allProductsData);
+      return;
     }
-    reject('error, check the code!')
-  })
+    reject('error, check the code!');
+  });
 
-  getCategories = async () => {
+  const getCategories = async () => {
     try {
-      const result = await this.allCategoriesData
-      this.setState({ allCategories: result })
+      const result = await allCategoriesData;
+      setAllCategories(result);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
-  getAllProducts = async () => {
+  const getAllProducts = async () => {
     try {
-      const result = await this.allProductsData
-      this.setState({ allProducts: result })
+      const result = await allProductsDataPromise;
+      setAllProducts(result);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-
-  // HANDLE CHANGE
+  };
+  // CART LOGIC
   /*******************************************************/
-  changeCategory = async (newCategory) => {
-    this.setState({ activeCategory: newCategory })
-    this.getProductsByCategory(newCategory)
-  }
 
-  getProductsByCategory = async (category) => {
+  const CheckRepeatableProducts = (cartItems, targetProduct, userSelectedAttributes) => {
+    let item;
+    let productsById = cartItems.filter((item) => item.id === targetProduct.id);
+    productsById.forEach((targetItem) => {
+      if (MatchingAttributes(userSelectedAttributes, targetItem)) {
+        item = targetItem;
+      }
+    });
+    return item;
+  };
+  const MatchingAttributes = (userSelectedAttributes, targetProduct) => {
+    const attributesMatch = (groupOne, groupTwo) => {
+      return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
+    };
+
+    let truthyValuesCounter = 0;
+    let i = 0;
+    while (i < userSelectedAttributes.length) {
+      if (
+        attributesMatch(
+          userSelectedAttributes[i],
+          targetProduct?.userSelectedAttributes[i]
+        )
+      ) {
+        truthyValuesCounter += 1;
+      }
+      i += 1;
+    }
+
+    return truthyValuesCounter === userSelectedAttributes?.length;
+  };
+
+  const updateCartQuantity = (actionToPerfrom, productAlreadyInCart, userSelectedAttributes) => {
+    const repeatableProduct = CheckRepeatableProducts(cartItems, productAlreadyInCart, userSelectedAttributes);
+    const indexOfRepeatableProduct = cartItems.indexOf(repeatableProduct);
+
+    const currentProductList = [...cartItems];
+    if (actionToPerfrom === 'addProduct') {
+      currentProductList[indexOfRepeatableProduct].quantity += 1;
+    } else {
+      currentProductList[indexOfRepeatableProduct].quantity -= 1;
+    }
+
+    return currentProductList;
+  };
+  const handleAddProduct = (targetProduct, userSelectedAttributes) => {
+    const productAlreadyInCart = CheckRepeatableProducts(
+      cartItems,
+      targetProduct,
+      userSelectedAttributes
+    );
+
+    let currentCartItems = [...cartItems];
+    let newQuantity;
+
+    if (productAlreadyInCart === undefined) {
+      const itemToAdd = targetProduct;
+      newQuantity = 1;
+
+      currentCartItems.push({
+        ...itemToAdd,
+        userSelectedAttributes,
+        quantity: newQuantity,
+      });
+    } else {
+      const index = cartItems.findIndex(item => item.id === targetProduct.id);
+
+      if (index !== -1) {
+        newQuantity = cartItems[index].quantity;
+
+        currentCartItems[index] = {
+          ...cartItems[index],
+          quantity: newQuantity + 1,
+        };
+      }
+    }
+
+    const totalCartQuantity = currentCartItems.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+
+    setCartItems(currentCartItems);
+    setProductsQuantity(totalCartQuantity);
+  };
+
+  const handleRemoveProduct = (targetProduct, userSelectedAttributes) => {
+    let updatedProductList;
+    let repeatableProduct = CheckRepeatableProducts(
+      cartItems,
+      targetProduct,
+      userSelectedAttributes
+    );
+
+    if (repeatableProduct.quantity > 1) {
+      updatedProductList = updateCartQuantity(
+        'removeProduct',
+        repeatableProduct,
+        userSelectedAttributes
+      );
+    } else {
+      const products = [...cartItems];
+      const indexOfProduct = products.indexOf(repeatableProduct);
+      products.splice(indexOfProduct, 1);
+      updatedProductList = products;
+    }
+
+    setCartItems(updatedProductList);
+
+    if (updatedProductList.length <= 1) {
+      setProductsQuantity(updatedProductList[0]?.quantity || 0);
+    } else {
+      const productListArray = updatedProductList.map(item => item.quantity);
+      const sum = productListArray.reduce((a, b) => a + b, 0);
+      setProductsQuantity(sum);
+    }
+
+    if (updatedProductList.length === 0) {
+      setProductsQuantity(0);
+    }
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+    setClearedCart(true);
+  };
+
+  const getTotalPrice = (cartItems) => {
+    let totalPayment = 0;
+    let totalPrice = 0;
+
+    for (let item of cartItems) {
+      const correctPrice = item.ItemPrice;
+      totalPrice += correctPrice * item.quantity;
+    }
+
+    totalPayment = parseFloat(totalPrice.toFixed(2));
+
+    setTotalPayment(totalPayment);
+    setTaxes(((totalPayment * 10) / 100).toFixed(2));
+  };
+
+  const successMsg = () => {
+    const alertMessage = document.querySelector('.success-msg')
+    alertMessage.classList.add('visible')
+    setTimeout(() => {
+      alertMessage.classList.remove('visible')
+    }, 1000)
+  };
+
+
+  // Other
+  /*******************************************************/
+  const getProductsByCategory = async (category) => {
     let separateCategoriesByname = []
     //Separate arrays by category names
     const separateCategories = allProductsData.reduce(function (
@@ -128,416 +337,175 @@ export default class App extends React.Component {
     //Change products by category
     separateCategoriesByname.forEach((cate) => {
       if (cate === category) {
-        return this.setState({ allProducts: separateCategories[category] })
+        return setAllProducts(separateCategories[category])
       }
       if (category === 'Menu') {
-        return this.setState({ allProducts: allProductsData })
+        return setAllProducts(allProductsData)
       }
     })
   }
 
-  // CART LOGIC
-  /*******************************************************/
-  CheckRepeatableProducts = (
-    cartItems,
-    targetProduct,
-    userSelectedAttributes,
-  ) => {
-    let item
-    let productsById = cartItems.filter((item) => item.id === targetProduct.id)
-    productsById.forEach((targetProduct) => {
-      if (this.MatchingAttributes(userSelectedAttributes, targetProduct)) {
-        item = targetProduct
-      }
-    })
-    return item;
+  useEffect(() => {
+    getCategories();
+    getAllProducts();
+    getProductsByCategory(activeCategory);
+    getTotalPrice(cartItems);
+  }, []);
 
-  }
-
-
-  MatchingAttributes = (userSelectedAttributes, targetProduct) => {
-    const attributesMatch = (groupOne, groupTwo) => {
-      return Object.values(groupOne)[1] === Object.values(groupTwo)[1]
-    }
-
-    let truthyValuesCounter = 0
-    let i = 0
-    while (i < userSelectedAttributes.length) {
-      if (
-        attributesMatch(
-          userSelectedAttributes[i],
-          targetProduct?.userSelectedAttributes[i],
-        )
-      ) {
-        truthyValuesCounter += 1
-      }
-      i += 1
-    }
-
-    if (truthyValuesCounter === userSelectedAttributes?.length) {
-      return true
-    }
-  }
-  updateCartQuantity(
-    actionToPerfrom,
-    productAlreadyInCart,
-    userSelectedAttributes,
-  ) {
-    const repeatableProduct = this.CheckRepeatableProducts(
-      this.state.cartItems,
-      productAlreadyInCart,
-      userSelectedAttributes,
-    )
-    //Find the target product to update by index
-    const indexOfRepeatableProduct = this.state.cartItems.indexOf(
-      repeatableProduct,
-    )
-    const currentProductList = [...this.state.cartItems]
-    //Check type of action
-    if (actionToPerfrom === 'addProduct') {
-      currentProductList[indexOfRepeatableProduct].quantity += 1
-    } else {
-      currentProductList[indexOfRepeatableProduct].quantity -= 1
-    }
-
-    return currentProductList
-  }
-
-  // Function to handle adding a product to the cart
-  handleAddProduct = (targetProduct, userSelectedAttributes) => {
-    const { cartItems } = this.state;
-
-    // Check if the product is already in the cart
-    const productAlreadyInCart = this.CheckRepeatableProducts(
-      cartItems,
-      targetProduct,
-      userSelectedAttributes
-    );
-
-    // Create a copy of the current cart items to update
-    let currentCartItems = [...cartItems];
-    let newQuantity;
-
-    // If the product is not already in the cart
-    if (productAlreadyInCart === undefined) {
-      const itemToAdd = targetProduct;
-      newQuantity = 1;
-
-      // Add the new product to the cart with a quantity of 1
-      currentCartItems.push({
-        ...itemToAdd,
-        userSelectedAttributes,
-        quantity: newQuantity,
-      });
-    } else {
-      // Find the index of the existing product in the cart
-      const index = cartItems.findIndex(item => item.id === targetProduct.id);
-
-      // If the existing product is found
-      if (index !== -1) {
-        newQuantity = cartItems[index].quantity;
-
-        // Increment the quantity of the existing product in the cart
-        currentCartItems[index] = {
-          ...cartItems[index],
-          quantity: newQuantity += 1,
-        };
-      }
-    }
-
-    // Calculate the total quantity of all items in the cart
-    const totalCartQuantity = currentCartItems.reduce(
-      (total, item) => total + item.quantity,
-      0
-    );
-
-    // Update the cart items and total products quantity in the state
-    this.setState({
-      cartItems: currentCartItems,
-      totalCartQuantity
-    });
+  const changeCategory = async (newCategory) => {
+    setActiveCategory(newCategory);
+    await getProductsByCategory(newCategory);
   };
 
+  useEffect(() => {
+    const handleUpdate = (nextState) => {
+      const { cartItems: nextCartItems, clearedCart: nextClearedCart, validLogin: nextValidLogin } = nextState;
 
-
-  // Remove Product From Cart
-  handleRemoveProduct = (targetProduct, userSelectedAttributes) => {
-    let updatedProductList
-    let repeatableProduct = this.CheckRepeatableProducts(
-      this.state.cartItems,
-      targetProduct,
-      userSelectedAttributes,
-    )
-    if (repeatableProduct.quantity > 1) {
-      updatedProductList = this.updateCartQuantity(
-        'removeProduct',
-        repeatableProduct,
-        userSelectedAttributes,
-      )
-    } else {
-      const products = [...this.state.cartItems]
-      const indexOfProduct = products.indexOf(repeatableProduct)
-      products.splice(indexOfProduct, 1)
-      updatedProductList = products
-    }
-    this.setState({ cartItems: updatedProductList })
-
-    //Update cart amount
-    if (updatedProductList.length <= 1) {
-      updatedProductList.map((item) => {
-        return this.setState({ productsQuantity: item.quantity })
-      })
-    } else {
-      let productListArray = updatedProductList.map((item) => item.quantity)
-      let sum = productListArray.reduce((a, b) => a + b)
-      this.setState({ productsQuantity: sum })
-    }
-    if (updatedProductList.length === 0) {
-      this.setState({ productsQuantity: 0 })
-    }
-  }
-
-  clearCart() {
-    this.setState({ cartItems: [] })
-    this.setState({ clearedCart: true })
-  }
-
-  getTotalPrice = (cartItems) => {
-    let totalPayment = 0
-    cartItems.map((item) => {
-      const correctPrice = item.ItemPrice
-      return (totalPayment = totalPayment + correctPrice * item.quantity)
-    })
-    for (let item of cartItems) {
-      const correctPrice = item.ItemPrice
-      totalPayment = totalPayment + correctPrice * item.quantity
-    }
-    totalPayment = parseFloat(totalPayment.toFixed(2))
-
-    this.setState({ totalPayment: totalPayment })
-    this.setState({ taxes: ((totalPayment * 10) / 100).toFixed(2) })
-  }
-
-  successMsg() {
-    const alertMessage = document.querySelector('.success-msg')
-    alertMessage.classList.add('visible')
-    setTimeout(() => {
-      alertMessage.classList.remove('visible')
-    }, 1000)
-  }
-
-  //  MODAL TOGGLE
-  showModal() {
-    const hiddenModal = document.querySelector('.modal')
-    hiddenModal.classList.toggle('active-modal')
-  }
-
-  //  LOGIN MODAL Validation
-  handleSubmit = (e) => {
-    e.preventDefault()
-    if (
-      this.state.formValue.password === '12345678' &&
-      this.state.formValue.email === 'danielw@pizzatime.com'
-    ) {
-      this.setState({ validLogin: true })
-    }
-    this.setState({ formError: this.validateForm(this.state.formValue) })
-    this.setState({ submit: true })
-    this.removeNavigationMenu()
-  }
-
-  handleValidation = (e) => {
-    const { name, value } = e.target
-    this.setState({ formValue: { ...this.state.formValue, [name]: value } })
-  }
-
-  handleLogout = () => this.setState({ validLogin: false })
-
-  validateForm = (value) => {
-    let errors = {}
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
-    if (!value.email) {
-      errors.email = 'Please enter email'
-    } else if (!emailRegex.test(value.email)) {
-      errors.email = 'Please enter valid email'
-    }
-    if (!value.password || value.password.length < 8) {
-      errors.password = 'Please enter a valid password'
-    }
-    return errors
-  }
-
-  hideModal() {
-    const hiddenModal = document.querySelector('.modal')
-    hiddenModal.classList.remove('active-modal')
-    this.setState({ formValue: { email: '', password: '' } })
-    this.setState({ formError: {} })
-    this.setState({ submit: false })
-  }
-
-  removeMenu() {
-    const hiddenMenu = document.querySelector('.menu')
-    hiddenMenu.classList.remove('active')
-  }
-  findMenuItem(e) {
-    e.preventDefault()
-    const collectData = []
-    allProductsData.map((product) => {
-      if (product.ItemName.toLowerCase().includes(e.target.value)) {
-        collectData.push(product)
-        this.setState({ allProducts: [...collectData] })
+      if (cartItems !== nextCartItems) {
+        getTotalPrice(nextCartItems);
       }
-    })
-    if (collectData.length === 0) {
-      this.setState({ allProducts: [] })
-    }
-  }
+      if (nextClearedCart) {
+        clearCart();
+      }
+      if (validLogin !== nextValidLogin && !nextValidLogin) {
+        hideModal();
+      }
+    };
 
-  //! Other
-  componentDidMount() {
-    this.getCategories()
-    this.getAllProducts()
-    this.getProductsByCategory(this.state.activeCategory)
-    this.getTotalPrice(this.state.cartItems)
-  }
+    handleUpdate({
+      cartItems,
+      clearedCart,
+      validLogin
+    });
+  }, [cartItems, clearedCart, validLogin]);
 
-  shouldComponentUpdate(nextProps, nextState) {
-    const { cartItems, clearedCart, validLogin } = this.state
-    if (cartItems !== nextState.cartItems) {
-      this.getTotalPrice(nextState.cartItems)
-    }
-    if (clearedCart !== nextState.clearedCart) {
-      this.clearCart()
-    }
-    if (validLogin !== nextState.validLogin) {
-      this.hideModal()
-    }
-    return true
-  }
-  render() {
-    return (
-      <BrowserRouter>
-        <Header
-          loginModal={
-            <LoginModal
-              validLogin={this.state.validLogin}
-              formValue={this.state.formValue}
-              handleSubmit={this.handleSubmit}
-              submit={this.submit}
-              formError={this.state.formError}
-              handleValidation={this.handleValidation}
-              hideModal={this.hideModal}
-              removeMenu={this.removeNavigationMenu}
+  return (
+    <BrowserRouter>
+      <Header
+        loginModal={
+          <LoginModal
+            validLogin={validLogin}
+            formValue={formValue}
+            handleSubmit={handleSubmit}
+            submit={submit}
+            formError={formError}
+            handleValidation={handleValidation}
+            hideModal={hideModal}
+            loginModalWindow={loginModalWindow}
+            hideLoginModal={hideLoginModal}
+            hideMenu={hideMenu}
+          />
+        }
+        activateLoginModal={activateLoginModal}
+        showModal={showModal}
+        isModalActive={isModalActive}
+        hideMenu={hideMenu}
+        handleLogout={handleLogout}
+        validLogin={validLogin}
+        formError={formError}
+        handleValidation={handleValidation}
+        productsQuantity={productsQuantity}
+      />
+      <Routes>
+        <Route path="/" element={<RootSection />} />
+        <Route
+          path="/menu"
+          element={
+            <Menu
+              findMenuItem={findMenuItem}
+              allProducts={allProducts}
+              allCategories={allCategories}
+              changeCategory={changeCategory}
+              handleAddProduct={handleAddProduct}
+              handleRemoveProduct={handleRemoveProduct}
+              successMsg={successMsg}
+              activeCategory={activeCategory}
             />
           }
-          showModal={this.showModal}
-          showHiddenMenu={this.showHiddenMenu}
-          showMenu={this.showMenu}
-          handleLogout={this.handleLogout}
-          validLogin={this.state.validLogin}
-          formError={this.state.formError}
-          removeNavigationMenu={this.removeNavigationMenu}
-          handleValidation={this.handleValidation}
-          productsQuantity={this.state.productsQuantity}
         />
-        <Routes>
-          <Route path="/" element={<RootSection />} />
-          <Route
-            path="/menu"
-            element={
-              <Menu
-                findMenuItem={this.findMenuItem}
-                allProducts={this.state.allProducts}
-                allCategories={this.state.allCategories}
-                changeCategory={this.changeCategory}
-                handleAddProduct={this.handleAddProduct}
-                handleRemoveProduct={this.handleRemoveProduct}
-                successMsg={this.successMsg}
-                activeCategory={this.state.activeCategory}
-              />
-            }
-          />
 
-          <Route
-            path="/cart"
-            element={
-              <Cart
-                CartItem={
-                  <CartItem
-                    clearCart={this.clearCart}
-                    successMsg={this.successMsg}
-                    cartItems={this.state.cartItems}
-                    handleAddProduct={this.handleAddProduct}
-                    handleRemoveProduct={this.handleRemoveProduct}
-                  />
-                }
-                cartTotals={
-                  <CartTotals
-                    className="cart-carttotals"
-                    totalPayment={this.state.totalPayment}
-                    productsQuantity={this.state.productsQuantity}
-                    taxes={this.state.taxes}
-                    validLogin={this.state.validLogin}
-                    showModal={this.showModal}
-                  />
-                }
-                cartItems={this.state.cartItems}
-                clearedCart={this.state.clearedCart}
-              />
-            }
-          />
-          <Route
-            path="/:id"
-            element={
-              <SingleItem
-                item={
-                  <Item
-                    successMsg={this.successMsg}
-                    handleAddProduct={this.handleAddProduct}
-                    handleRemoveProduct={this.handleRemoveProduct}
-                  />
-                }
-              />
-            }
-          />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/register" element={<Register />} />
-          <Route
-            path="/checkout"
-            element={
-              <Checkout
-                checkoutSummary={
-                  <CheckoutSummary
-                    cartItems={this.state.cartItems}
-                    selectedAttributes={this.state.selectedAttributes}
-                    handleAddProduct={this.handleAddProduct}
-                    handleRemoveProduct={this.handleRemoveProduct}
-                    successMsg={this.successMsg}
-                  />
-                }
-                totalPayment={this.state.totalPayment}
-                cartItems={this.state.cartItems}
-                productsQuantity={this.state.productsQuantity}
-                taxes={this.state.taxes}
-              />
-            }
-          />
-          <Route
-            path="/payment"
-            element={
-              <Payment
-                cartItems={this.state.cartItems}
-                totalPayment={this.state.totalPayment}
-              />
-            }
-          />
-          <Route path="/order" element={<Order />} />
-        </Routes>
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              CartItem={
+                <CartItem
+                  clearCart={clearCart}
+                  successMsg={successMsg}
+                  cartItems={cartItems}
+                  handleAddProduct={handleAddProduct}
+                  handleRemoveProduct={handleRemoveProduct}
+                />
+              }
+              cartTotals={
+                <CartTotals
+                  className="cart-carttotals"
+                  totalPayment={totalPayment}
+                  productsQuantity={productsQuantity}
+                  taxes={taxes}
+                  validLogin={validLogin}
+                  showModal={showModal}
+                  isModalActive={isModalActive}
+                  activateLoginModal={activateLoginModal}
+                />
+              }
+              cartItems={cartItems}
+              clearedCart={clearedCart}
+            />
+          }
+        />
+        <Route
+          path="/:id"
+          element={
+            <SingleItem
+              item={
+                <Item
+                  successMsg={successMsg}
+                  handleAddProduct={handleAddProduct}
+                  handleRemoveProduct={handleRemoveProduct}
+                />
+              }
+            />
+          }
+        />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/register" element={<Register />} />
+        <Route
+          path="/checkout"
+          element={
+            <Checkout
+              checkoutSummary={
+                <CheckoutSummary
+                  cartItems={cartItems}
+                  handleAddProduct={handleAddProduct}
+                  handleRemoveProduct={handleRemoveProduct}
+                  successMsg={successMsg}
+                />
+              }
+              totalPayment={totalPayment}
+              cartItems={cartItems}
+              productsQuantity={productsQuantity}
+              taxes={taxes}
+            />
+          }
+        />
+        <Route
+          path="/payment"
+          element={
+            <Payment
+              cartItems={cartItems}
+              totalPayment={totalPayment}
+            />
+          }
+        />
+        <Route path="/order" element={<Order />} />
+      </Routes>
 
-        <Footer />
-      </BrowserRouter>
-    )
-  }
+      <Footer />
+    </BrowserRouter>
+  );
 }
+
+export default App;

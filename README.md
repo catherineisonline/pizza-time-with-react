@@ -2,7 +2,7 @@
 
 ![Pizza Time preview](https://github.com/catherineisonline/pizza-time-with-react/blob/main/src/assets/images/project-preview.png?raw=true)
 
-Pizza Time: A delicious online experience. I designed and developed an e-commerce platform for this pizza restaurant, featuring an interactive menu with a variety of options including pizza, sushi, and pasta. Simplifying the online ordering process and providing a seamless user experience was the key goal of this project. Please note, this project mostly uses React Classes as a way to learn. But it's also good to understand that React Hooks are quite important too, and using classes doesn't make hooks any less relevant.
+Pizza Time: A delicious online experience. I designed and developed an e-commerce platform for this pizza restaurant, featuring an interactive menu with a variety of options including pizza, sushi, and pasta. Simplifying the online ordering process and providing a seamless user experience was the key goal of this project.
 
 [![GitHub license](https://img.shields.io/github/license/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/travel-with-catherine/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/travel-with-catherine/issues)

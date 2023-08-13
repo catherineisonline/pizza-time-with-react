@@ -1,19 +1,17 @@
 import React from "react";
 import "./LoginModal.css";
-import { Link } from "react-router-dom";
 import LinkButton from "./Button";
 
 
-export default function LoginModal({ hideModal, removeMenu, handleValidation, validLogin, handleSubmit, formValue, formError, submit }) {
+export default function LoginModal({ hideLoginModal, loginModalWindow, hideMenu, handleValidation, validLogin, handleSubmit, formValue, formError, submit }) {
   return (
-    <article className="modal">
+    <article className={`modal ${loginModalWindow ? 'active-modal' : null}`}>
       <section className="modal-main">
         <button
           className="close-modal-btn"
           type="button"
           onClick={() => {
-            hideModal();
-            removeMenu();
+            hideLoginModal();
           }}
         >
           X
@@ -35,20 +33,10 @@ export default function LoginModal({ hideModal, removeMenu, handleValidation, va
             <span className="login-input-err">{formError.password}</span>
             {submit && Object.keys(formError).length === 0 && !validLogin ? <p className="login-input-err">We couldn't find an account. Try another credentials</p> : null}
             <section className="login-and-signup">
-              {/* <Link
-                to="/register"
-                className="modal-signup-btn"
-                onClick={() => {
-                  hideModal();
-                  removeMenu();
-                }}
-              >
-                Sign up
-              </Link> */}
               <LinkButton
                 onClick={() => {
-                  hideModal();
-                  removeMenu();
+                  hideLoginModal();
+                  hideMenu();
                 }}
                 to="/register"
                 className="modal-signup-btn"
@@ -60,7 +48,6 @@ export default function LoginModal({ hideModal, removeMenu, handleValidation, va
           </form>
         </section>
       </section>
-
     </article>
   );
 }

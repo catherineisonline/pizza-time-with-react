@@ -3,7 +3,6 @@ import ScrollBtn from "../../components/ScrollBtn";
 import EmptyCart from "./EmptyCart";
 
 const Cart = ({ cartItems, clearedCart, CartItem, cartTotals }) => {
-
   document.title = "Cart | Pizza Time";
   return (
     <main className="cart-container">

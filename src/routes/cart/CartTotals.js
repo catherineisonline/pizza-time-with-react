@@ -5,7 +5,7 @@ import CheckoutBtn from "../checkout/CheckoutBtn";
 import LinkButton from "../../components/Button";
 import ResetLocation from "../../helpers/ResetLocation";
 
-const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLogin, showModal }) => {
+const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLogin, showModal, activateLoginModal }) => {
   return (
     <article className={className}>
       {productsQuantity === 0 ? null : (
@@ -31,6 +31,7 @@ const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLog
                 className="active-button-style"
                 validLogin={validLogin}
                 showModal={showModal}
+                activateLoginModal={activateLoginModal}
               />
               <LinkButton
                 onClick={ResetLocation}
