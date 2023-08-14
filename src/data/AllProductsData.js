@@ -43,6 +43,7 @@ import ChickenFlorentine from '../assets/images/pasta-images/Chicken Florentine 
 import MacCheese from '../assets/images/pasta-images/Italian Mac and Cheese.jpeg'
 //Pizza
 import CheesePizza from '../assets/images/cheese-pizza-375.jpg'
+import ExtraCheesePizza from '../assets/images/cheese-pizza-376.jpg'
 import VeggiePizza from '../assets/images/veggie-pizza.jpg'
 import PepperoniPizza from '../assets/images/pepperoni-pizza.jpg'
 import MeatPizza from '../assets/images/meat-pizza.jpg'
@@ -730,11 +731,11 @@ export const allProductsData = [
     ],
   },
   {
-    id: 'cheese-pizza-second',
-    ItemImg: CheesePizza,
-    ItemName: 'Cheese Pizza',
-    ItemIngredients: 'Pizza dough, pizza sauce, provolone cheese, mozzarella.',
-    ItemPrice: (2).toFixed(2),
+    id: 'extra-cheese-pizza',
+    ItemImg: ExtraCheesePizza,
+    ItemName: 'Extra Cheese Pizza',
+    ItemIngredients: 'Homemade pizza sauce, fresh mozzarella cheese, mozzarella cheese, parmesan cheese, olive oil',
+    ItemPrice: (5).toFixed(2),
     Category: 'Pizza',
     attributes: [
       {

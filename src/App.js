@@ -68,6 +68,7 @@ function App() {
   const handleLogout = () => {
     setValidLogin(false);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -114,40 +115,13 @@ function App() {
   const hideMenu = () => {
     setIsModalActive(false);
   };
-  // GET DATA
-  /*******************************************************/
-  const allCategoriesData = new Promise((resolve, reject) => {
-    if (true) {
-      resolve(AllCategories);
-      return;
-    }
-    reject('error, check the code!');
-  });
 
-  const allProductsDataPromise = new Promise((resolve, reject) => {
-    if (true) {
-      resolve(allProductsData);
-      return;
-    }
-    reject('error, check the code!');
-  });
-
-  const getCategories = async () => {
-    try {
-      const result = await allCategoriesData;
-      setAllCategories(result);
-    } catch (error) {
-      console.log(error);
-    }
+  const getAllCategories = async () => {
+    setAllCategories(AllCategories);
   };
 
-  const getAllProducts = async () => {
-    try {
-      const result = await allProductsDataPromise;
-      setAllProducts(result);
-    } catch (error) {
-      console.log(error);
-    }
+  const getAllProducts = () => {
+    setAllProducts(allProductsData);
   };
   // CART LOGIC
   /*******************************************************/
@@ -305,7 +279,7 @@ function App() {
 
   // Other
   /*******************************************************/
-  const getProductsByCategory = async (category) => {
+  const getProductsByCategory = (category) => {
     let separateCategoriesByname = []
     //Separate arrays by category names
     const separateCategories = allProductsData.reduce(function (
@@ -346,15 +320,15 @@ function App() {
   }
 
   useEffect(() => {
-    getCategories();
+    getAllCategories();
     getAllProducts();
     getProductsByCategory(activeCategory);
     getTotalPrice(cartItems);
-  }, []);
+  }, [activeCategory, cartItems]);
 
-  const changeCategory = async (newCategory) => {
+  const changeCategory = (newCategory) => {
     setActiveCategory(newCategory);
-    await getProductsByCategory(newCategory);
+    getProductsByCategory(newCategory);
   };
 
   useEffect(() => {
