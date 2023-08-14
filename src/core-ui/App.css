@@ -1225,3 +1225,24 @@ hr {
 .pizza-motion {
   display: none;
 }
+
+.terms {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+.terms h2 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  font-family: var(--poppins-font);
+}
+.terms p,
+.terms h3 {
+  color: var(--light-gray);
+}

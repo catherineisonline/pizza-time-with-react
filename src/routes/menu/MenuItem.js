@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AddToCartButton from "../cart/AddToCartButton.js";
 import Attribute from "./Attribute";
 import ResetLocation from "../../helpers/ResetLocation.js";
@@ -71,22 +71,21 @@ export default class MenuItem extends React.Component {
     const {
       singleProduct,
       handleAddProduct,
-      handleRemoveProduct,
-      // successMsg,
+      handleRemoveProduct
     } = this.props;
 
     return (
       <div className="menu-item flex-container flex-column txt-white">
-        <NavLink
-          to={`/${singleProduct.id}`}
+        <Link
+          to={`/menu/${singleProduct.id}`}
           className="menu-item-link"
           onClick={ResetLocation}
         >
           <img
             src={singleProduct.ItemImg}
             alt={`${singleProduct.ItemName}`}
-          ></img>
-        </NavLink>
+          />
+        </Link>
 
         <h3>{singleProduct.ItemName}</h3>
         <p>{singleProduct.ItemIngredients}</p>
@@ -116,7 +115,6 @@ export default class MenuItem extends React.Component {
 
 
           <AddToCartButton
-            // successMsg={successMsg}
             allAttributesAreSelected={this.state.allAttributesAreSelected}
             handleAddProduct={handleAddProduct}
             handleRemoveProduct={handleRemoveProduct}

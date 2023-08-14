@@ -1,0 +1,39 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 1300px;
+    align-items: center;
+    color: white;
+}
+.not-found img {
+    width: 10rem;
+    height: auto;
+}
+.not-found h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+.not-found h3 {
+    font-weight: 100;
+    color: var(--light-gray);
+}
+.not-found section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: left;
+}
+
+.not-found section a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: var(--pizza-red);
+    font-size: 2rem;
+}
+.not-found section a span {
+    color: var(--light-gray);
+    font-size: 1rem;
+}

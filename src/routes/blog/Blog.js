@@ -28,36 +28,36 @@ const Blog = () => {
   }, [setEndOffset, endOffset, itemOffset]);
   return (
     <motion.div
-    initial={{ opacity: 0, translateX: -300  }}
-    whileInView={{ opacity: 1 , translateX: 0  }}
-      exit={{ opacity: 0,  translateX: -300  }}
-      transition={{ duration: 1}}
+      initial={{ opacity: 0, translateX: -300 }}
+      whileInView={{ opacity: 1, translateX: 0 }}
+      exit={{ opacity: 0, translateX: -300 }}
+      transition={{ duration: 1 }}
     >
-    <main className="blog">
-      <article className="blog-section">
-        <h1>Blog</h1>
-        <p className="blog-intro">
-          Pizza makes everything better. These are some of our favorite pizza
-          blogs that are loaded with recipes and pizza-making tips.
-        </p>
-        <section className="blog-posts">
-          {currentBlogPosts.map((blogPost, index) => {
-            return <BlogPost key={index} blogPost={blogPost} />;
-          })}
-        </section>
-      </article>
-      <ReactPaginate
-        className="pagination"
-        breakLabel="..."
-        nextLabel=" &#62;"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        pageCount={pageCountPosts}
-        previousLabel="&#60;"
-        renderOnZeroPageCount={null}
-      />
-      <ScrollBtn />
-    </main>
+      <main className="blog">
+        <article className="blog-section">
+          <h1>Blog</h1>
+          <p className="blog-intro">
+            Pizza makes everything better. These are some of our favorite pizza
+            blogs that are loaded with recipes and pizza-making tips.
+          </p>
+          <section className="blog-posts">
+            {currentBlogPosts.map((blogPost, index) => {
+              return <BlogPost key={index} blogPost={blogPost} />;
+            })}
+          </section>
+        </article>
+        <ReactPaginate
+          className="pagination"
+          breakLabel="..."
+          nextLabel=" &#62;"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          pageCount={pageCountPosts}
+          previousLabel="&#60;"
+          renderOnZeroPageCount={null}
+        />
+        <ScrollBtn />
+      </main>
     </motion.div>
   );
 }

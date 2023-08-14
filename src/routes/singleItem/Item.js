@@ -1,52 +1,45 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import AddToCartButton from "../cart/AddToCartButton";
 import Attribute from "../menu/Attribute";
 import { allProductsData } from "../../data/AllProductsData.js";
 
-const Item = ({ successMsg, handleAddProduct, handleRemoveProduct }) => {
+const Item = ({ handleAddProduct, handleRemoveProduct }) => {
 
-  const [pathname, setPathname] = useState(window.location.pathname.toString().substring(1))
+  const [pathname, setPathname] = useState('')
   const [singleProduct, setSingleProduct] = useState({ userSelectedAttributes: {} });
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [allAttributesAreSelected, setAllAttributesAreSelected] = useState(false);
 
 
-  const handleSelectedAttributes = useCallback(async (attributeId, attributeValue) => {
+  const handleSelectedAttributes = (attributeId, attributeValue) => {
     const newSelectedAttribute = [{ attributeId: attributeId, attributeValue: attributeValue }];
     setSelectedAttributes(newSelectedAttribute)
     setAllAttributesAreSelected(true)
-  }, [])
-
-  const GetProductById = useCallback(async (uniqueId) => {
-    const retrievedProduct = allProductsData.filter((item) => item.id === uniqueId);
-    setSingleProduct(retrievedProduct[0]);
-
-    if (retrievedProduct[0].attributes.length === 0) {
-      setAllAttributesAreSelected(true)
-    }
-  }, [])
+  }
 
   useEffect(() => {
-    document.title = `${singleProduct.ItemName} | Pizza Time`;
-    setPathname(window.location.pathname.toString().substring(1));
-    GetProductById(pathname)
-
-  }, [GetProductById, pathname, singleProduct]);
+    document.title = `${singleProduct?.ItemName} | Pizza Time`;
+    setPathname(window.location.pathname.toString().substring(6));
+    setSingleProduct(allProductsData.filter((item) => item.id === pathname)[0]);
+    if (allProductsData.filter((item) => item.id === pathname)[0]?.attributes?.length === 0) {
+      setAllAttributesAreSelected(true);
+    }
+  }, [pathname, singleProduct]);
 
   return (
     <article className="single-item flex-container flex-column txt-white">
       <img
-        src={singleProduct.ItemImg}
-        alt={`${singleProduct.ItemName}`}
+        src={singleProduct?.ItemImg}
+        alt={`${singleProduct?.ItemName}`}
       />
       <section className="single-item-info">
         <section className="single-item-title">
-          <h3>{singleProduct.ItemName}</h3>
-          <p>{singleProduct.ItemIngredients}</p>
+          <h3>{singleProduct?.ItemName}</h3>
+          <p>{singleProduct?.ItemIngredients}</p>
         </section>
-        {singleProduct.attributes ?
+        {singleProduct?.attributes ?
           <React.Fragment>{
-            singleProduct.attributes?.map((attribute) => (
+            singleProduct?.attributes?.map((attribute) => (
               <Attribute
                 key={attribute.id}
                 className="single-item-attributes"
@@ -59,11 +52,10 @@ const Item = ({ successMsg, handleAddProduct, handleRemoveProduct }) => {
           <section>
             <p className="price-num">
               <span>$</span>
-              {singleProduct.ItemPrice}
+              {singleProduct?.ItemPrice}
             </p>
           </section>
           <AddToCartButton
-            // successMsg={successMsg}
             allAttributesAreSelected={allAttributesAreSelected}
             handleAddProduct={handleAddProduct}
             handleRemoveProduct={handleRemoveProduct}

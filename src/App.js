@@ -22,6 +22,10 @@ import Item from './routes/singleItem/Item.js';
 import CartTotals from './routes/cart/CartTotals.js';
 import LoginModal from './components/LoginModal.js';
 import CartItem from './routes/cart/CartItem.js';
+import NotFound from './routes/not-found/NotFound.js';
+import Refunds from './routes/refunds/Refunds.js';
+import Terms from './routes/terms/Terms.js';
+import Privacy from './routes/privacy/Privacy.js';
 
 function App() {
   const [allCategories, setAllCategories] = useState([]);
@@ -334,7 +338,6 @@ function App() {
   };
 
   useEffect(() => {
-    // console.log(validLogin)
     const handleUpdate = (nextState) => {
       const { cartItems: nextCartItems, clearedCart: nextClearedCart, validLogin: nextValidLogin } = nextState;
 
@@ -344,9 +347,6 @@ function App() {
       if (nextClearedCart) {
         clearCart();
       }
-      // if (validLogin !== nextValidLogin && !nextValidLogin) {
-      //   hideModal();
-      // }
     };
 
     handleUpdate({
@@ -378,20 +378,6 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<RootSection />} />
-        <Route
-          path="/menu"
-          element={
-            <Menu
-              findMenuItem={findMenuItem}
-              allProducts={allProducts}
-              allCategories={allCategories}
-              changeCategory={changeCategory}
-              handleAddProduct={handleAddProduct}
-              handleRemoveProduct={handleRemoveProduct}
-              activeCategory={activeCategory}
-            />
-          }
-        />
 
         <Route
           path="/cart"
@@ -422,8 +408,23 @@ function App() {
             />
           }
         />
+
         <Route
-          path="/:id"
+          exact path="/menu"
+          element={
+            <Menu
+              findMenuItem={findMenuItem}
+              allProducts={allProducts}
+              allCategories={allCategories}
+              changeCategory={changeCategory}
+              handleAddProduct={handleAddProduct}
+              handleRemoveProduct={handleRemoveProduct}
+              activeCategory={activeCategory}
+            />
+          }
+        />
+        <Route
+          path="/menu/:name"
           element={
             <SingleItem
               item={
@@ -438,7 +439,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={validLogin ? <NotFound /> : <Register />} />
         <Route
           path="/checkout"
           element={
@@ -466,7 +467,11 @@ function App() {
             />
           }
         />
-        <Route path="/order" element={<Order />} />
+        <Route path="/order" element={validLogin ? <Order /> : <NotFound />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/refunds" element={<Refunds />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
 
       <Footer />
