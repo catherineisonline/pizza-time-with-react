@@ -1111,7 +1111,7 @@ hr {
     color: var(--yellow);
     background-color: transparent;
   }
-  .login-and-cart .cart-btn:hover {
+  .login-and-cart a:hover {
     background-color: var(--pizza-red);
     border-color: var(--pizza-red);
     color: var(--white);

@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 export default class CheckoutSummary extends React.Component {
   render() {
     const {
-      successMsg,
+      // successMsg,
       selectedAttributes,
       handleAddProduct,
       handleRemoveProduct,
@@ -17,7 +17,7 @@ export default class CheckoutSummary extends React.Component {
           {cartItems.map((cartItem) => (
             <CheckoutItem
               key={uuidv4()}
-              successMsg={successMsg}
+              // successMsg={successMsg}
               cartItem={cartItem}
               selectedAttributes={selectedAttributes}
               handleAddProduct={handleAddProduct}

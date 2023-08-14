@@ -7,13 +7,11 @@ export default class AddToCartButton extends React.Component {
       allAttributesAreSelected,
       selectedAttributes,
       handleAddProduct,
-      successMsg,
     } = this.props;
     return (
       <button
         onClick={() => {
           handleAddProduct(singleProduct, selectedAttributes);
-          successMsg();
         }}
         className={`passive-button-style ${allAttributesAreSelected
           ? "active-add-to-cart"

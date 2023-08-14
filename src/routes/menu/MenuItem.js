@@ -72,7 +72,7 @@ export default class MenuItem extends React.Component {
       singleProduct,
       handleAddProduct,
       handleRemoveProduct,
-      successMsg,
+      // successMsg,
     } = this.props;
 
     return (
@@ -116,7 +116,7 @@ export default class MenuItem extends React.Component {
 
 
           <AddToCartButton
-            successMsg={successMsg}
+            // successMsg={successMsg}
             allAttributesAreSelected={this.state.allAttributesAreSelected}
             handleAddProduct={handleAddProduct}
             handleRemoveProduct={handleRemoveProduct}

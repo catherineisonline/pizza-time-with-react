@@ -62,15 +62,10 @@
   align-items: flex-start;
 }
 
-/* .register-section::before {
-  content: "";
-  height: 3rem;
-} */
-
 .register-main input {
   border: 1px solid #fac56425;
   background-color: transparent;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 10px;
 }
 

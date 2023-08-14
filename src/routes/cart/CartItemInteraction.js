@@ -6,7 +6,7 @@ export default class CartProductInteraction extends React.Component {
       handleAddProduct,
       handleRemoveProduct,
       cartItem,
-      successMsg,
+      // successMsg,
     } = this.props;
 
     return (
@@ -14,7 +14,7 @@ export default class CartProductInteraction extends React.Component {
         <button
           onClick={() => {
             handleAddProduct(cartItem, cartItem.userSelectedAttributes);
-            successMsg();
+            // successMsg();
           }}
         >
           +

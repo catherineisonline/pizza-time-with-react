@@ -63,7 +63,7 @@ const Item = ({ successMsg, handleAddProduct, handleRemoveProduct }) => {
             </p>
           </section>
           <AddToCartButton
-            successMsg={successMsg}
+            // successMsg={successMsg}
             allAttributesAreSelected={allAttributesAreSelected}
             handleAddProduct={handleAddProduct}
             handleRemoveProduct={handleRemoveProduct}

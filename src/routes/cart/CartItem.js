@@ -2,7 +2,7 @@ import React from "react";
 import CartProductInteraction from "./CartItemInteraction";
 import ClearCartBtn from "./ClearCartBtn";
 
-const CartItem = ({ successMsg,
+const CartItem = ({
   handleAddProduct,
   handleRemoveProduct,
   clearCart,
@@ -38,7 +38,6 @@ const CartItem = ({ successMsg,
                     handleAddProduct={handleAddProduct}
                     handleRemoveProduct={handleRemoveProduct}
                     cartItem={cartItem}
-                    successMsg={successMsg}
                   />
 
                   <p className="cart-item-price">${cartItem.ItemPrice}</p>

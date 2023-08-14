@@ -13,7 +13,7 @@ const Menu = ({ allProducts,
   changeCategory,
   handleAddProduct,
   handleRemoveProduct,
-  successMsg,
+  // successMsg,
   findMenuItem
 }) => {
 
@@ -40,47 +40,47 @@ const Menu = ({ allProducts,
   }, [allProducts, setEndOffset, endOffset, itemOffset, activeCategory]);
   return (
     <motion.div
-    initial={{ opacity: 0, translateX: -300  }}
-    whileInView={{ opacity: 1 , translateX: 0  }}
-      exit={{ opacity: 0,  translateX: -300  }}
-      transition={{ duration: 1}}
+      initial={{ opacity: 0, translateX: -300 }}
+      whileInView={{ opacity: 1, translateX: 0 }}
+      exit={{ opacity: 0, translateX: -300 }}
+      transition={{ duration: 1 }}
     >
-    <main className="menu-main">
-      <MenuCategories
-        activeCategory={activeCategory}
-        allCategories={allCategories}
-        changeCategory={changeCategory}
-        resetPagination={resetPagination}
-        findMenuItem={findMenuItem}
-      />
-      {currentProducts.length === 0 ? <article className="pizza-section"><p className="nothing-found">No results found... </p></article> :
-        <article className="pizza-section">
-          {currentProducts.map((singleProduct) => (
-            <MenuItem
+      <main className="menu-main">
+        <MenuCategories
+          activeCategory={activeCategory}
+          allCategories={allCategories}
+          changeCategory={changeCategory}
+          resetPagination={resetPagination}
+          findMenuItem={findMenuItem}
+        />
+        {currentProducts.length === 0 ? <article className="pizza-section"><p className="nothing-found">No results found... </p></article> :
+          <article className="pizza-section">
+            {currentProducts.map((singleProduct) => (
+              <MenuItem
 
-              key={singleProduct.id}
-              singleProduct={singleProduct}
-              handleAddProduct={handleAddProduct}
-              handleRemoveProduct={handleRemoveProduct}
-              successMsg={successMsg}
-            />
-          ))
-          }
+                key={singleProduct.id}
+                singleProduct={singleProduct}
+                handleAddProduct={handleAddProduct}
+                handleRemoveProduct={handleRemoveProduct}
+              // successMsg={successMsg}
+              />
+            ))
+            }
 
-          < ScrollButton />
-        </article>}
+            < ScrollButton />
+          </article>}
 
-      <ReactPaginate
-        className="pagination"
-        breakLabel="..."
-        nextLabel=" &#62;"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        pageCount={pageCountProducts}
-        previousLabel="&#60;"
-        renderOnZeroPageCount={null}
-      />
-    </main>
+        <ReactPaginate
+          className="pagination"
+          breakLabel="..."
+          nextLabel=" &#62;"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          pageCount={pageCountProducts}
+          previousLabel="&#60;"
+          renderOnZeroPageCount={null}
+        />
+      </main>
     </motion.div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter, useNavigate } from 'react-router-dom';
 import Header from './routes/landing/Header.js';
 import Footer from './components/footer/Footer';
 import {
@@ -32,69 +32,69 @@ function App() {
   const [productsQuantity, setProductsQuantity] = useState(0);
   const [totalPayment, setTotalPayment] = useState(0);
   const [taxes, setTaxes] = useState(0);
-  const [formValue, setFormValue] = useState({ email: '', password: '' });
-  const [formError, setFormError] = useState({});
-  const [submit, setSubmit] = useState(false);
+  // const [formValue, setFormValue] = useState({ email: '', password: '' });
+  // const [formError, setFormError] = useState({});
+  // const [submit, setSubmit] = useState(false);
   const [validLogin, setValidLogin] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
   const [loginModalWindow, setLoginModalWindow] = useState(false);
 
   const activateLoginModal = () => {
+    hideMenu();
     setLoginModalWindow(!loginModalWindow);
   }
-  const hideLoginModal = () => {
-    setLoginModalWindow(false);
-    setFormValue({ email: '', password: '' });
-    setFormError({});
-    setSubmit(false);
-  }
-  const validateForm = (value) => {
-    let errors = {};
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+  // const hideLoginModal = () => {
+  //   setLoginModalWindow(false);
+  //   setFormValue({ email: '', password: '' });
+  //   setFormError({});
+  //   setSubmit(false);
+  // }
+  // const validateForm = (value) => {
+  //   let errors = {};
+  //   const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
-    if (!value.email) {
-      errors.email = 'Please enter email';
-    } else if (!emailRegex.test(value.email)) {
-      errors.email = 'Please enter valid email';
-    }
+  //   if (!value.email) {
+  //     errors.email = 'Please enter email';
+  //   } else if (!emailRegex.test(value.email)) {
+  //     errors.email = 'Please enter valid email';
+  //   }
 
-    if (!value.password || value.password.length < 8) {
-      errors.password = 'Please enter a valid password';
-    }
+  //   if (!value.password || value.password.length < 8) {
+  //     errors.password = 'Please enter a valid password';
+  //   }
 
-    return errors;
-  };
+  //   return errors;
+  // };
 
   const handleLogout = () => {
     setValidLogin(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   if (formValue.password === '12345678' && formValue.email === 'danielw@pizzatime.com') {
+  //     setValidLogin(true);
+  //   }
+  //   setFormError(validateForm(formValue));
+  //   setSubmit(true);
+  //   hideLoginModal();
 
-    if (formValue.password === '12345678' && formValue.email === 'danielw@pizzatime.com') {
-      setValidLogin(true);
-    }
+  // };
 
-    setFormError(validateForm(formValue));
-    setSubmit(true);
-    hideLoginModal();
-  };
-
-  const hideModal = () => {
-    const hiddenModal = document.querySelector('.modal');
-    hiddenModal.classList.remove('active-modal');
-    setFormValue({ email: '', password: '' });
-    setFormError({});
-    setSubmit(false);
-  };
-  const handleValidation = (e) => {
-    const { name, value } = e.target;
-    setFormValue((prevFormValue) => ({
-      ...prevFormValue,
-      [name]: value,
-    }));
-  };
+  // const hideModal = () => {
+  //   const hiddenModal = document.querySelector('.modal');
+  //   hiddenModal.classList.remove('active-modal');
+  //   setFormValue({ email: '', password: '' });
+  //   setFormError({});
+  //   setSubmit(false);
+  // };
+  // const handleValidation = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormValue((prevFormValue) => ({
+  //     ...prevFormValue,
+  //     [name]: value,
+  //   }));
+  // };
   const findMenuItem = (e) => {
     e.preventDefault();
     const inputValue = e.target.value.toLowerCase();
@@ -110,6 +110,7 @@ function App() {
   };
 
   const showModal = () => {
+    // hideMenu();
     setIsModalActive(!isModalActive);
   };
   const hideMenu = () => {
@@ -210,6 +211,7 @@ function App() {
 
     setCartItems(currentCartItems);
     setProductsQuantity(totalCartQuantity);
+    successMsg();
   };
 
   const handleRemoveProduct = (targetProduct, userSelectedAttributes) => {
@@ -332,6 +334,7 @@ function App() {
   };
 
   useEffect(() => {
+    // console.log(validLogin)
     const handleUpdate = (nextState) => {
       const { cartItems: nextCartItems, clearedCart: nextClearedCart, validLogin: nextValidLogin } = nextState;
 
@@ -341,9 +344,9 @@ function App() {
       if (nextClearedCart) {
         clearCart();
       }
-      if (validLogin !== nextValidLogin && !nextValidLogin) {
-        hideModal();
-      }
+      // if (validLogin !== nextValidLogin && !nextValidLogin) {
+      //   hideModal();
+      // }
     };
 
     handleUpdate({
@@ -359,14 +362,9 @@ function App() {
         loginModal={
           <LoginModal
             validLogin={validLogin}
-            formValue={formValue}
-            handleSubmit={handleSubmit}
-            submit={submit}
-            formError={formError}
-            handleValidation={handleValidation}
-            hideModal={hideModal}
+            setValidLogin={setValidLogin}
+            setLoginModalWindow={setLoginModalWindow}
             loginModalWindow={loginModalWindow}
-            hideLoginModal={hideLoginModal}
             hideMenu={hideMenu}
           />
         }
@@ -376,8 +374,6 @@ function App() {
         hideMenu={hideMenu}
         handleLogout={handleLogout}
         validLogin={validLogin}
-        formError={formError}
-        handleValidation={handleValidation}
         productsQuantity={productsQuantity}
       />
       <Routes>
@@ -392,7 +388,6 @@ function App() {
               changeCategory={changeCategory}
               handleAddProduct={handleAddProduct}
               handleRemoveProduct={handleRemoveProduct}
-              successMsg={successMsg}
               activeCategory={activeCategory}
             />
           }
@@ -405,7 +400,6 @@ function App() {
               CartItem={
                 <CartItem
                   clearCart={clearCart}
-                  successMsg={successMsg}
                   cartItems={cartItems}
                   handleAddProduct={handleAddProduct}
                   handleRemoveProduct={handleRemoveProduct}
@@ -434,7 +428,6 @@ function App() {
             <SingleItem
               item={
                 <Item
-                  successMsg={successMsg}
                   handleAddProduct={handleAddProduct}
                   handleRemoveProduct={handleRemoveProduct}
                 />
@@ -455,7 +448,6 @@ function App() {
                   cartItems={cartItems}
                   handleAddProduct={handleAddProduct}
                   handleRemoveProduct={handleRemoveProduct}
-                  successMsg={successMsg}
                 />
               }
               totalPayment={totalPayment}
