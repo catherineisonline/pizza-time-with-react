@@ -38,13 +38,6 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
     }));
   };
 
-  // const hideModal = () => {
-  //   const hiddenModal = document.querySelector('.modal');
-  //   hiddenModal.classList.remove('active-modal');
-  //   setFormValue({ email: '', password: '' });
-  //   setFormError({});
-  //   setSubmit(false);
-  // };
   const hideLoginModal = () => {
     setLoginModalWindow(false);
     setFormValue({ email: '', password: '' });

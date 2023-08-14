@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import FooterSocials from "./FooterSocials";
 import ResetLocation from "../../helpers/ResetLocation";
 
 export default class FooterLegal extends React.Component {
@@ -19,7 +18,7 @@ export default class FooterLegal extends React.Component {
                         }
                         onClick={ResetLocation}
                         className="txt-white"
-                        to="/career"
+                        to="/careers"
                     >
                         Carrer
                     </NavLink>

@@ -13,7 +13,6 @@ const Menu = ({ allProducts,
   changeCategory,
   handleAddProduct,
   handleRemoveProduct,
-  // successMsg,
   findMenuItem
 }) => {
 
@@ -57,12 +56,10 @@ const Menu = ({ allProducts,
           <article className="pizza-section">
             {currentProducts.map((singleProduct) => (
               <MenuItem
-
                 key={singleProduct.id}
                 singleProduct={singleProduct}
                 handleAddProduct={handleAddProduct}
                 handleRemoveProduct={handleRemoveProduct}
-              // successMsg={successMsg}
               />
             ))
             }

@@ -156,7 +156,6 @@ export default function RegistrationForm() {
                             <span className="registration-input-err">{formError.year}</span>
                         </section>
                     </section>
-                    {/* <section className="register-section"> */}
                     <p className="terms-warning">
                         By clicking Sign Up, you agree to our Terms, Data Policy and Cookies
                         Policy. You may receive an email notification from us and can opt

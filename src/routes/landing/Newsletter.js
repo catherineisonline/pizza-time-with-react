@@ -44,7 +44,6 @@ const Newsletter = () => {
       {submit && Object.keys(formError).length === 0 ?
         <p className="newsletter-success">You have successfully subscribed to our newsletter!</p> :
         <motion.div
-          // className="form-overflow"
           className="input-section"
           initial={{ opacity: 0, translateX: 300 }}
           whileInView={{ opacity: 1, translateX: 0 }}
