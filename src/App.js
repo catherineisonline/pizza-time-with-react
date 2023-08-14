@@ -26,6 +26,7 @@ import NotFound from './routes/not-found/NotFound.js';
 import Refunds from './routes/refunds/Refunds.js';
 import Terms from './routes/terms/Terms.js';
 import Privacy from './routes/privacy/Privacy.js';
+import Careers from './routes/careers/Careers.js';
 
 function App() {
   const [allCategories, setAllCategories] = useState([]);
@@ -468,6 +469,7 @@ function App() {
           }
         />
         <Route path="/order" element={validLogin ? <Order /> : <NotFound />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/refunds" element={<Refunds />} />
         <Route path="/terms" element={<Terms />} />

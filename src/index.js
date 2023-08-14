@@ -14,6 +14,8 @@ import './routes/registration/Register.css'
 import './routes/checkout/checkout.css'
 import './routes/payment/payments.css'
 import './routes/not-found/NotFound.css'
+import './routes/careers/careers.css'
+
 
 //Components
 import App from "./App.js";
