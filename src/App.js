@@ -16,7 +16,6 @@ import {
 } from './routes/index';
 import { allProductsData } from './data/AllProductsData.js';
 import { AllCategories } from './data/AllCategories';
-import Order from './routes/order/Order.js';
 import CheckoutSummary from './routes/checkout/CheckoutSummary.js';
 import Item from './routes/singleItem/Item.js';
 import CartTotals from './routes/cart/CartTotals.js';
@@ -419,7 +418,6 @@ function App() {
             />
           }
         />
-        <Route path="/order" element={validLogin ? <Order /> : <NotFound />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/refunds" element={<Refunds />} />
