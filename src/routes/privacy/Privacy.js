@@ -62,7 +62,6 @@ const privacyContent = [
     },
 
 ]
-
 const Privacy = () => {
     return (
         <main className="terms">
