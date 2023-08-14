@@ -28,7 +28,8 @@ const ContactUsLanding = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
       >
-        <img src={PizzaOne} alt="" className="parallax company-details-image-three" />      </motion.div>
+        <img src={PizzaOne} alt="" className="parallax company-details-image-three" />
+      </motion.div>
       <section className='company-details'>
         <div>
           <h2>000 (000) 123 4567</h2>

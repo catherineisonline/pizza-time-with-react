@@ -1,46 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { customDays, customMonths } from "../../data/datesArray";
 
-
-const months = [
-    {
-        option: "January"
-    },
-    {
-        option: 'February'
-    },
-    {
-        option: 'March'
-    },
-    {
-        option: 'April'
-    },
-    {
-        option: 'May'
-    },
-    {
-        option: 'June'
-    },
-    {
-        option: 'July'
-    },
-    {
-        option: 'August'
-    },
-    {
-        option: 'September'
-    },
-    {
-        option: 'October'
-    },
-    {
-        option: 'November'
-    },
-    {
-        option: 'December'
-    },
-]
-
-const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
 
 export default function RegistrationForm() {
@@ -143,11 +103,11 @@ export default function RegistrationForm() {
                         <section className="birthday-section">
                             <select name="month" value={formValue.month} onChange={handleValidation}
                             >
-                                {months.map((month) => (<option value={month.option} key={month.option}>{month.option}</option>))}
+                                {customMonths.map((month) => (<option value={month.option} key={month.option}>{month.option}</option>))}
                             </select>
                             <span className="registration-input-err">{formError.month}</span>
                             <select name="day" value={formValue.day} onChange={handleValidation}>
-                                {days.map((day) => (<option value={day} key={day}>{day}</option>))}
+                                {customDays.map((day) => (<option value={day} key={day}>{day}</option>))}
                             </select>
                             <span className="registration-input-err">{formError.day}</span>
                             <select name="year" className="year" value={formValue.year} onChange={handleValidation}>
