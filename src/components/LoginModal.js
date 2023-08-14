@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LoginModal.css";
+import "./loginModal.css";
 import LinkButton from "./Button";
 import { useNavigate } from "react-router-dom";
 
