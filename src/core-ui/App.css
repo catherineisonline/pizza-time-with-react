@@ -163,13 +163,13 @@ header {
   max-width: 70%;
   transition: all ease-in-out 0.2s;
 }
-.logo-styling p {
+.logo-styling h1 {
   font-size: 1.5rem;
   font-family: var(--josefin-font);
   line-height: 2rem;
   letter-spacing: 2px;
 }
-.logo-styling p span {
+.logo-styling h1 span {
   display: block;
   color: var(--pizza-yellow);
 }

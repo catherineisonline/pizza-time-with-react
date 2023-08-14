@@ -64,7 +64,7 @@ const Menu = ({ allProducts,
             ))
             }
 
-            < ScrollButton />
+            <ScrollButton />
           </article>}
 
         <ReactPaginate

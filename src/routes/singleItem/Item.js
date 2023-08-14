@@ -34,7 +34,7 @@ const Item = ({ handleAddProduct, handleRemoveProduct }) => {
       />
       <section className="single-item-info">
         <section className="single-item-title">
-          <h3>{singleProduct?.ItemName}</h3>
+          <h2>{singleProduct?.ItemName}</h2>
           <p>{singleProduct?.ItemIngredients}</p>
         </section>
         {singleProduct?.attributes ?

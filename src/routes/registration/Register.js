@@ -6,7 +6,7 @@ export default class Register extends React.Component {
     document.title = "Register | Pizza Time";
     return (
       <main className="register-main">
-        <h1>Register</h1>
+        <h2>Register</h2>
         <RegistrationForm />
 
       </main>

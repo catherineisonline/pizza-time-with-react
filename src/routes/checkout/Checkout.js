@@ -34,12 +34,12 @@ export default class Checkout extends React.Component {
     document.title = "Checkout | Pizza Time";
     return (
       <main className="checkout">
-        <h1>Checkout</h1>
+        <h2>Checkout</h2>
         {cartItems.length === 0 ? (
           <EmptyCart />
         ) : (
           <article className="checkout-content">
-          {checkoutSummary}
+            {checkoutSummary}
             <CheckoutForm toggleDelivery={this.toggleDelivery}
               delivery={this.state.delivery} promoCode={this.state.promoCode}
               togglePromocode={this.togglePromocode} className="checkout-carttotals"

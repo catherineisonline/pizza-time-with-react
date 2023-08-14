@@ -14,7 +14,7 @@
   background-color: var(--light-black);
 }
 
-.register-main h1 {
+.register-main h2 {
   color: var(--white);
   font-family: var(--poppins-font);
   text-transform: uppercase;

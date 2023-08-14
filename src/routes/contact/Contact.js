@@ -87,7 +87,7 @@ const Contact = () => {
         <section className="contact-us-img"></section>
         <section className="contact-us-content pop-font">
           <section className="contact-us-content-txt">
-            <h1 className="">Contact Us</h1>
+            <h2 className="">Contact Us</h2>
             <p>
               We are looking forward to hearing from you! Do not hesitate to
               contact us in case you have questions.
