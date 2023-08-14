@@ -16,7 +16,7 @@ const blogPreview = [
     id: 1,
     img375: blogOne375,
     img700: blogOne700,
-    date: 'July 12, 2021',
+    date: 'July 12, 2023',
     name: 'Pizza crust types: self-rising and par-baked',
     description:
       'Pizza crust can be various and it depends what pizza you are looking for...',
@@ -25,7 +25,7 @@ const blogPreview = [
     id: 2,
     img375: blogTwo375,
     img700: blogTwo700,
-    date: 'July 1, 2021',
+    date: 'July 1, 2023',
     name: 'Thick or thin: different styles of pizza crust',
     description:
       'If you want to taste the toppings of pizza to their fullest, thin crust is the way to go...',
@@ -34,7 +34,7 @@ const blogPreview = [
     id: 3,
     img375: blogThree375,
     img700: blogThree700,
-    date: 'June 27, 2021',
+    date: 'June 27, 2023',
     name: 'What to do with leftover pizza dough',
     description:
       'Not sure what to do with pizza dough leftover? We have got you covered...',
@@ -61,18 +61,17 @@ export default class BlogPreview extends React.Component {
           {blogPreview.map((post) => (
             <section
               key={post.id}
-              className="blog-post flex-container flex-column"
+              className="post flex-container flex-column"
             >
               <img
-                className="blog-post-img"
                 src={post.img375}
                 srcSet={`${post.img700} 400w, ${post.img375} 375w`}
                 sizes="(min-width: 700px) 700px, 375px"
                 alt={post.name}
               />
-              <p className="blog-date">June 27, 2021</p>
+              <p className="date">June 27, 2023</p>
               <h3 className="pop-font txt-white">{post.name}</h3>
-              <p className="blog-snippet">{post.description}</p>
+              <p className="intro">{post.description}</p>
             </section>
           ))}
         </section>

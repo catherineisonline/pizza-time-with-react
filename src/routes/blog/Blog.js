@@ -2,10 +2,10 @@ import React from "react";
 import { AllBlogPosts as allBlogPosts } from "../../data/AllBlogPosts";
 import ReactPaginate from 'react-paginate';
 import ScrollBtn from "../../components/ScrollBtn";
-import BlogPost from "../blog/BlogPost";
 import { useEffect, useState } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import { motion } from "framer-motion";
+import BlogGrid from "./BlogGrid";
 
 const Blog = () => {
   const [itemOffset, setItemOffset] = useState(0);
@@ -35,14 +35,14 @@ const Blog = () => {
     >
       <main className="blog">
         <article className="blog-section">
-          <h1>Blog</h1>
+          <h2>Blog</h2>
           <p className="blog-intro">
             Pizza makes everything better. These are some of our favorite pizza
             blogs that are loaded with recipes and pizza-making tips.
           </p>
-          <section className="blog-posts">
+          <section className="blog-grid">
             {currentBlogPosts.map((blogPost, index) => {
-              return <BlogPost key={index} blogPost={blogPost} />;
+              return <BlogGrid key={index} blogPost={blogPost} />;
             })}
           </section>
         </article>

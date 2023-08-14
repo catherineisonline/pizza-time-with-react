@@ -8,13 +8,14 @@ import "./core-ui/leaflet.css";
 import './routes/menu/Menu.css'
 import './routes/contact/Contact.css'
 import './routes/about/AboutUs.css'
-import './routes/blog/Blog.css'
+import './routes/blog/blog.css'
 import './routes/cart/Cart.css'
 import './routes/registration/Register.css'
 import './routes/checkout/checkout.css'
 import './routes/payment/payments.css'
 import './routes/not-found/NotFound.css'
 import './routes/careers/careers.css'
+import './routes/blog-post/blogPost.css'
 
 
 //Components

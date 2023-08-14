@@ -1,0 +1,34 @@
+.blog-post {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.blog-post img {
+    max-width: 100%;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.blog-post section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    padding: 2rem;
+    color: var(--light-gray);
+    text-align: left;
+}
+.blog-post section h2 {
+    text-align: center;
+    font-size: 4rem;
+    font-family: var(--poppins-font);
+    color: white;
+}
+
+.blog-post section p {
+    white-space: pre-line;
+}

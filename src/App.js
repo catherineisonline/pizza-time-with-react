@@ -27,6 +27,7 @@ import Refunds from './routes/refunds/Refunds.js';
 import Terms from './routes/terms/Terms.js';
 import Privacy from './routes/privacy/Privacy.js';
 import Careers from './routes/careers/Careers.js';
+import BlogPost from './routes/blog-post/BlogPost.js';
 
 function App() {
   const [allCategories, setAllCategories] = useState([]);
@@ -438,7 +439,8 @@ function App() {
           }
         />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route exact path="/blog" element={<Blog />} />
+        <Route path="/blog/:name" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
         <Route path="/register" element={validLogin ? <NotFound /> : <Register />} />
         <Route

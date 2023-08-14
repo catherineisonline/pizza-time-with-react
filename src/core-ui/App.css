@@ -754,25 +754,32 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  text-align: left;
   padding: 3rem 1.5rem;
+}
+.blog-posts-landing .post {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
 }
 
 .blog-posts-landing h3 {
   font-weight: 500;
 }
-.blog-post-img {
+.blog-posts-landing img {
   max-width: 100%;
   max-height: 60%;
   object-fit: cover;
 }
 
-.blog-post {
+.blog-posts-landing .intro {
   gap: 1rem;
 }
 
-.blog-date,
-.blog-snippet {
+.blog-posts-landing .date,
+.blog-posts-landing .intro {
   color: var(--whitish-gray);
 }
 
