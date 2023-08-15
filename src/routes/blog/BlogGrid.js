@@ -5,7 +5,7 @@ export default class BlogGrid extends React.Component {
   render() {
     const { blogPost } = this.props;
     return (
-      <section className="blog-preview">
+      <section className="blog-grid-item">
         <img
           src={blogPost.img}
           alt={blogPost.name}
@@ -16,7 +16,7 @@ export default class BlogGrid extends React.Component {
         </section>
         <Link
           onClick={ResetLocation}
-          to={`${blogPost.name.toLowerCase().replaceAll(' ', '-')}`}
+          to={`/blog/${blogPost.name.toLowerCase().replaceAll(' ', '-')}`}
         >
           <h3>{blogPost.name}</h3>
         </Link>

@@ -28,14 +28,16 @@ export default class BlogPreview extends React.Component {
               className="post flex-container flex-column"
             >
               <img
-                src={post.img375}
-                srcSet={`${post.img700} 400w, ${post.img375} 375w`}
-                sizes="(min-width: 700px) 700px, 375px"
+                src={post.img}
+                // srcSet={`${post.img700} 400w, ${post.img375} 375w`}
+                // sizes="(min-width: 700px) 700px, 375px"
                 alt={post.name}
               />
               <p className="date">June 27, 2023</p>
-              <h3 className="pop-font txt-white">{post.name}</h3>
-              <p className="intro">{post.description}</p>
+              <Link onClick={ResetLocation} to={`/blog/${post.name.toLowerCase().replaceAll(' ', '-')}`}>
+                <h3 className="pop-font txt-white">{post.name}</h3>
+              </Link>
+              <p className="intro">{post.intro}</p>
             </section>
           ))}
         </section>

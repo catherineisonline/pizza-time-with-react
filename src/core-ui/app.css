@@ -614,8 +614,8 @@ header {
 .menu-slider-hero {
   object-fit: cover;
   max-width: 100%;
-  height: auto;
   width: 100%;
+  height: auto;
   overflow: hidden;
 }
 /* Hero Video */
@@ -764,6 +764,9 @@ header {
   flex-direction: column;
   align-items: left;
   gap: 1rem;
+}
+.blog-posts-landing .post h3 {
+  transition: all ease-in-out 0.3s;
 }
 
 .blog-posts-landing h3 {
@@ -1071,7 +1074,8 @@ hr {
   .form-btn:hover,
   .login-and-cart .cart-btn:hover,
   .active-button-style:hover,
-  .passive-button-style:hover {
+  .passive-button-style:hover,
+  .blog-posts-landing .post h3:hover {
     -moz-transition: all ease-in-out 0.3s;
     -o-transition: all ease-in-out 0.3s;
     -webkit-transition: all ease-in-out 0.3s;
@@ -1084,6 +1088,9 @@ hr {
   }
   .logo:hover {
     transform: rotate(30deg);
+  }
+  .blog-posts-landing .post h3:hover {
+    color: var(--pizza-red);
   }
 
   .header-btns a:last-child:hover {
