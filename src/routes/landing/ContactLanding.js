@@ -8,6 +8,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker } from "react-leaflet";
 import { Popup } from "react-leaflet";
+import validateForm from "../../components/validateForm";
 
 
 let DefaultIcon = L.icon({
@@ -18,40 +19,25 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const position = [37.0902, -93.7129];
 
 
-const ContactForm = () => {
+const ContactLanding = () => {
   const [formValue, setFormValue] = useState({ fullname: '', email: '', message: "" });
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormError(validateForm(formValue));
+    setFormError(validate(formValue));
     setSubmit(true);
   }
 
 
-  const handleValidation = async (e) => {
+  const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   }
-  const validateForm = (value) => {
-    let errors = {};
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (!value.fullname) {
-      errors.fullname = "Please enter your full name"
-    }
-    if (!value.email) {
-      errors.email = "Please enter phone an email"
-    }
-    else if (!emailRegex.test(value.email)) {
-      errors.email = "Please enter valid email"
-    }
-    if (!value.message) {
-      errors.message = "Please write a message"
-    }
 
-    return errors;
-  }
+  const validate = validateForm("contact-landing");
+
   return (
     <article className="section-10  flex-container flex-column">
       <motion.div
@@ -137,4 +123,4 @@ const ContactForm = () => {
 }
 
 
-export default ContactForm;
+export default ContactLanding;

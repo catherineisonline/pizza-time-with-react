@@ -3,6 +3,7 @@ import Tick from "../../assets/images/success-tick.png";
 import ResetLocation from "../../helpers/ResetLocation";
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from "react-router-dom";
+import validateForm from "../../components/validateForm";
 
 
 const CheckoutPayment = ({ totalPayment }) => {
@@ -10,40 +11,19 @@ const CheckoutPayment = ({ totalPayment }) => {
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
   const [transactionId, setTransactionId] = useState(0);
+  const validate = validateForm("payment");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormError(validateForm(formValue));
+    setFormError(validate(formValue));
     setSubmit(true);
     setTransactionId(uuidv4());
     ResetLocation();
   }
 
-  const handleValidation = async (e) => {
+  const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
-  }
-  const validateForm = (value) => {
-    let errors = {}
-    if (!value.firstname) {
-      errors.firstname = "Please enter first name"
-    }
-    if (!value.lastname) {
-      errors.lastname = "Please enter last name"
-    }
-    if (!value.cardNumber || value.cardNumber.length < 16) {
-      errors.cardNumber = "Please enter a valid card number"
-    }
-    if (!value.cvv || value.cvv.length < 3) {
-      errors.cvv = "Please enter valid CVV"
-    }
-    if (!value.month || value.month > 12 || value.month < 1) {
-      errors.year = "Please enter valid month"
-    }
-    if (!value.year || value.year > 28 || value.year < 17) {
-      errors.year = "Please enter valid year"
-    }
-    return errors;
   }
   return (
     <main >
@@ -51,9 +31,9 @@ const CheckoutPayment = ({ totalPayment }) => {
         <article className="success-payment">
           <section className="success-payment-title">
             <h2>Your food is on the way!</h2>
-            <p>Thank you for the order. We will update your order status once the restraurant confirms it. </p>
+            <p>Thank you for the order. We will update your order status once the restaurant confirms it. </p>
           </section>
-          <img src={Tick} alt="" aria-hidden="true"/>
+          <img src={Tick} alt="" aria-hidden="true" />
           <section className="payment-details">
             <p>Amount paid: <span>{totalPayment} $</span></p>
             <p>Transaction id: <span>{transactionId}</span></p>

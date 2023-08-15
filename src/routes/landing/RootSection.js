@@ -10,9 +10,10 @@ import Gallery from "./Gallery";
 import StatsPreview from "./StatsPreview";
 import MenuSlider from "./MenuSlider";
 import BlogPreview from "./BlogPreview";
-import ContactForm from "./ContactForm";
+// import ContactForm from "./ContactForm";
 import Newsletter from "./Newsletter";
 import ResetLocation from "../../helpers/ResetLocation";
+import ContactLanding from "./ContactLanding";
 
 class RootSection extends React.Component {
   componentDidUpdate() {
@@ -33,7 +34,7 @@ class RootSection extends React.Component {
         <MenuSlider />
         <Newsletter />
         <BlogPreview />
-        <ContactForm />
+        <ContactLanding />
         <ScrollButton />
       </React.Fragment>
     );

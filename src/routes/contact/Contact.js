@@ -1,47 +1,31 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import validateForm from "../../components/validateForm";
 
 const Contact = () => {
   document.title = "Contact | Pizza Time";
   const [formValue, setFormValue] = useState({ fullname: '', email: '', message: "" });
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
+  const validate = validateForm("contact");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormError(validateForm(formValue));
+    setFormError(validate(formValue));
     setSubmit(true);
   }
-  const handleValidation = async (e) => {
+  const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   }
-  const validateForm = (value) => {
-    let errors = {};
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (!value.fullname) {
-      errors.fullname = "Please enter your full name"
-    }
-    if (!value.email) {
-      errors.email = "Please enter phone an email"
-    }
-    else if (!emailRegex.test(value.email)) {
-      errors.email = "Please enter valid email"
-    }
-    if (!value.message) {
-      errors.message = "Please write a message"
-    }
 
-    return errors;
-  }
   return (
     <motion.div
       initial={{ opacity: 0, translateX: -300 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}
-    >
+      transition={{ duration: 1 }}>
       <main className="contact" >
         <section>
           {submit && Object.keys(formError).length === 0 ?

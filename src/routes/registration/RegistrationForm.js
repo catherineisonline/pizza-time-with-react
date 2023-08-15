@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { customDays, customMonths } from "../../data/datesArray";
+import validateForm from "../../components/validateForm";
 
 
 
@@ -22,8 +23,9 @@ export default function RegistrationForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormError(validateForm(formValue))
+        setFormError(validate(formValue))
         setSubmit(true);
+        window.scrollTo(0, 0)
 
     }
 
@@ -32,45 +34,7 @@ export default function RegistrationForm() {
         const { name, value } = e.target;
         setFormValue({ ...formValue, [name]: value })
     }
-    const validateForm = (value) => {
-        let errors = {}
-        const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-        if (!value.firstName) {
-            errors.firstName = "Please enter first name"
-        }
-        if (!value.lastName) {
-            errors.lastName = "Please enter last name"
-        }
-        if (!value.email) {
-            errors.email = "Please enter email"
-        }
-        else if (!emailRegex.test(value.email)) {
-            errors.email = "Please enter valid email"
-        }
-        if (!value.password) {
-            errors.password = "Please enter a valid password"
-        }
-        if (!value.repeatPassword) {
-            errors.repeatPassword = "Please repeat the password"
-        }
-        if (value.password !== value.repeatPassword) {
-            errors.password = "Passwords don't match"
-        }
-        if (!value.month) {
-            errors.month = "Please enter your birth month"
-        }
-        if (!value.day) {
-            errors.day = "Please enter your birth day"
-        }
-        if (!value.year) {
-            errors.year = "Please enter your birth year"
-        }
-        if (!value.year) {
-            errors.year = "Please enter your birth year"
-        }
-
-        return errors;
-    }
+    const validate = validateForm("registration");
     return (
         <React.Fragment>
             {submit && Object.keys(formError).length === 0 ? <p className="form-submit-msg">Success! Please check your email to verify your account</p> :

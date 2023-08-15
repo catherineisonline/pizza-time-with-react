@@ -25,7 +25,7 @@ const CheckoutForm = ({ toggleDelivery, delivery, togglePromocode, promoCode, to
     }
   }, [submit, formError, navigate]);
 
-  const handleValidation = async (e) => {
+  const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   }

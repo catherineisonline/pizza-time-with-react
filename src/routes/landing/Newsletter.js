@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import validateForm from "../../components/validateForm";
 
 const Newsletter = () => {
   const [formValue, setFormValue] = useState({ email: "" });
@@ -9,24 +10,14 @@ const Newsletter = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormError(validateForm(formValue));
+    setFormError(validate(formValue));
     setSubmit(true);
   }
-  const handleValidation = async (e) => {
+  const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   }
-  const validateForm = (value) => {
-    let errors = {};
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (!value.email) {
-      errors.email = "Please enter an email"
-    }
-    else if (!emailRegex.test(value.email)) {
-      errors.email = "Please enter valid email"
-    }
-    return errors;
-  }
+  const validate = validateForm("newsletter");
   return (
 
     <section className="email-subscribtion">

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./loginModal.css";
 import LinkButton from "./Button";
 import { useNavigate } from "react-router-dom";
+import validateForm from "./validateForm";
 
 
 const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hideMenu, validLogin }) => {
@@ -9,27 +10,8 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
   const [formValue, setFormValue] = useState({ email: '', password: '' });
   const [formError, setFormError] = useState({});
   const [submit, setSubmit] = useState(false);
+  const validate = validateForm("login");
 
-
-  const validateForm = (value) => {
-    let errors = {};
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-
-    if (!value.email) {
-      errors.email = 'Please enter email';
-    } else if (!emailRegex.test(value.email)) {
-      errors.email = 'Please enter valid email';
-    }
-
-    if (!value.password) {
-      errors.password = 'Please enter a valid password';
-    }
-    else if (value.password.length < 8) {
-      errors.password = 'Password should be min. 8 characters';
-    }
-
-    return errors;
-  };
   const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue((prevFormValue) => ({
@@ -47,7 +29,7 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
 
   const handleLogin = (e) => {
     e.preventDefault();
-    setFormError(validateForm(formValue));
+    setFormError(validate(formValue));
     if (formValue.password === '12345678' && formValue.email === 'danielw@pizzatime.com') {
       setValidLogin(true);
       setSubmit(true);
