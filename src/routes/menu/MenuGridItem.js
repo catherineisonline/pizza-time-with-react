@@ -4,7 +4,6 @@ import AddToCartButton from '../cart/AddToCartButton';
 import Attribute from './Attribute';
 import ResetLocation from "../../helpers/ResetLocation";
 
-
 const MenuGridItem = ({ singleProduct, handleAddProduct, handleRemoveProduct }) => {
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [targetAttribute, setTargetAttribute] = useState('');
@@ -28,7 +27,7 @@ const MenuGridItem = ({ singleProduct, handleAddProduct, handleRemoveProduct }) 
 
 
   return (
-    <article className="menu-item flex-container flex-column txt-white">
+    <article className="menu-grid-item flex-container flex-column txt-white">
       <Link onClick={ResetLocation} to={`/menu/${singleProduct.id}`} className="menu-item-link">
         <img src={singleProduct.ItemImg} alt={`${singleProduct.ItemName}`} />
       </Link>
@@ -38,7 +37,7 @@ const MenuGridItem = ({ singleProduct, handleAddProduct, handleRemoveProduct }) 
         singleProduct.attributes?.map(attribute => (
           <Attribute
             key={attribute.id}
-            className="menu-item-attributes"
+            className="attributes"
             handleSelectedAttributes={handleSelectedAttributes}
             attribute={attribute}
             targetAttribute={targetAttribute}
@@ -54,7 +53,6 @@ const MenuGridItem = ({ singleProduct, handleAddProduct, handleRemoveProduct }) 
           :
           <p className="price-num"><span>$</span>{singleProduct.ItemPrice}</p>
         }
-
         <AddToCartButton
           handleAddProduct={handleAddProduct}
           handleRemoveProduct={handleRemoveProduct}

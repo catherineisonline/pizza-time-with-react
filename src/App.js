@@ -377,12 +377,8 @@ function App() {
           path="/menu/:name"
           element={
             <SingleItem
-              item={
-                <Item
-                  handleAddProduct={handleAddProduct}
-                  handleRemoveProduct={handleRemoveProduct}
-                />
-              }
+              handleAddProduct={handleAddProduct}
+              handleRemoveProduct={handleRemoveProduct}
             />
           }
         />

@@ -9,7 +9,7 @@ const BlogPost = () => {
     }, [])
     return (
         <main className="blog-post">
-            <img src={blogPost.img} alt="" />
+            <img src={blogPost.img} alt="" aria-hidden="true" />
             <section>
                 <h2>{blogPost.name}</h2>
                 <p>{blogPost.content}</p>
