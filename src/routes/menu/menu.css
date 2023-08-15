@@ -127,7 +127,7 @@ input[type="search"]::-webkit-search-results-decoration {
   color: var(--pizza-red);
 }
 
-.pizza-section {
+.menu-grid {
   display: grid;
   grid-column: span 1;
   grid-template-columns: 1fr;
@@ -372,7 +372,7 @@ input[type="search"]::-webkit-search-results-decoration {
   .side-menu li:last-of-type {
     border-bottom: none;
   }
-  .pizza-section {
+  .menu-grid {
     grid-column: span 3;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -386,7 +386,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 @media screen and (min-width: 1110px) {
-  .pizza-section {
+  .menu-grid {
     grid-template-columns: repeat(3, 1fr);
   }
   .side-menu {

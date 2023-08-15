@@ -116,7 +116,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -138,7 +138,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -159,7 +159,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -180,7 +180,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -201,7 +201,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -222,7 +222,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -242,7 +242,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -263,7 +263,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -284,7 +284,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -305,7 +305,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -326,7 +326,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -346,7 +346,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -367,7 +367,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -387,7 +387,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -408,7 +408,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -429,7 +429,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -450,7 +450,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -471,7 +471,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -491,7 +491,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -512,7 +512,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -533,7 +533,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -554,7 +554,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -575,7 +575,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -596,7 +596,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -617,7 +617,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -638,7 +638,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -659,7 +659,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -680,7 +680,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -701,7 +701,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -721,7 +721,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -741,7 +741,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -763,7 +763,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -784,7 +784,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -805,7 +805,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -826,7 +826,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -847,7 +847,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -867,7 +867,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -888,7 +888,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -909,7 +909,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -930,7 +930,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -951,7 +951,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -971,7 +971,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -992,7 +992,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1012,7 +1012,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1033,7 +1033,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1054,7 +1054,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1075,7 +1075,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1096,7 +1096,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1116,7 +1116,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1137,7 +1137,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1158,7 +1158,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1179,7 +1179,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1200,7 +1200,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1221,7 +1221,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1242,7 +1242,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1263,7 +1263,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1284,7 +1284,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1305,7 +1305,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1326,7 +1326,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },
@@ -1346,7 +1346,7 @@ export const allProductsData = [
       {
         id: 'size',
         name: 'size',
-        items: [
+        attributeOptions: [
           { id: 'small', value: 'small', slices: '6' },
           { id: 'medium', value: 'medium', slices: '8' },
           { id: 'large', value: 'large', slices: '10' },

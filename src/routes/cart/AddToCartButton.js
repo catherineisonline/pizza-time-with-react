@@ -1,26 +1,22 @@
 import React from "react";
 
-export default class AddToCartButton extends React.Component {
-  render() {
-    const {
-      singleProduct,
-      allAttributesAreSelected,
-      selectedAttributes,
-      handleAddProduct,
-    } = this.props;
-    return (
-      <button
-        onClick={() => {
-          handleAddProduct(singleProduct, selectedAttributes);
-        }}
-        className={`passive-button-style ${allAttributesAreSelected
-          ? "active-add-to-cart"
-          : "inactive-add-to-cart"
-          }`}
-        disabled={!allAttributesAreSelected}
-      >
-        Add to cart
-      </button>
-    );
-  }
+const AddToCartButton = ({ singleProduct,
+  selectedAttributes,
+  handleAddProduct, targetAttribute, setTargetAttribute }) => {
+  return (
+    <button
+      onClick={() => {
+        handleAddProduct(singleProduct, selectedAttributes);
+        setTargetAttribute(false);
+      }}
+      className={`passive-button-style ${targetAttribute?.length > 0 || singleProduct?.attributes?.length === 0
+        ? "active-add-to-cart"
+        : "inactive-add-to-cart"
+        }`}
+      disabled={targetAttribute?.length > 0 || singleProduct?.attributes?.length === 0 ? false : true}
+    >
+      Add to cart
+    </button>
+  );
 }
+export default AddToCartButton;

@@ -1,7 +1,7 @@
 import React from "react";
 import MenuCategories from "./MenuCategories";
 import ScrollButton from "../../components/ScrollBtn";
-import MenuItem from "./MenuItem";
+import MenuGridItem from "./MenuGridItem";
 import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
@@ -52,10 +52,13 @@ const Menu = ({ allProducts,
           resetPagination={resetPagination}
           findMenuItem={findMenuItem}
         />
-        {currentProducts.length === 0 ? <article className="pizza-section"><p className="nothing-found">No results found... </p></article> :
-          <article className="pizza-section">
+        {currentProducts.length === 0 ?
+          <article className="menu-grid">
+            <p className="nothing-found">No results found...</p>
+          </article> :
+          <article className="menu-grid">
             {currentProducts.map((singleProduct) => (
-              <MenuItem
+              <MenuGridItem
                 key={singleProduct.id}
                 singleProduct={singleProduct}
                 handleAddProduct={handleAddProduct}
@@ -63,7 +66,6 @@ const Menu = ({ allProducts,
               />
             ))
             }
-
             <ScrollButton />
           </article>}
 
