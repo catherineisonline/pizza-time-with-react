@@ -12,6 +12,7 @@ export default class CartProductInteraction extends React.Component {
       <section className="cart-item-add-qty">
         <button
           onClick={() => {
+
             handleAddProduct(cartItem, cartItem.userSelectedAttributes);
           }}
         >

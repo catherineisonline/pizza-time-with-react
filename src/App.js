@@ -126,6 +126,7 @@ function App() {
     return currentProductList;
   };
   const handleAddProduct = (targetProduct, userSelectedAttributes) => {
+
     const productAlreadyInCart = CheckRepeatableProducts(
       cartItems,
       targetProduct,
@@ -137,6 +138,7 @@ function App() {
 
     if (productAlreadyInCart === undefined) {
       const itemToAdd = targetProduct;
+
       newQuantity = 1;
 
       currentCartItems.push({
@@ -144,9 +146,9 @@ function App() {
         userSelectedAttributes,
         quantity: newQuantity,
       });
-    } else {
-      const index = cartItems.findIndex(item => item.id === targetProduct.id);
 
+    } else {
+      const index = cartItems.findIndex(item => item.userSelectedAttributes[0].attributeValue === targetProduct.userSelectedAttributes[0].attributeValue);
       if (index !== -1) {
         newQuantity = cartItems[index].quantity;
 
