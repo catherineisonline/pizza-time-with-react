@@ -1,4 +1,10 @@
-const app = require('express')();
+import express, { json } from 'express';
+import cors from 'cors'; // Import the cors middleware
+import fetch from 'node-fetch';
+const app = express();
+const port = 3000; // Choose a port for your server
+app.use(cors());
+app.use(json());
 const { v4 } = require('uuid');
 
 app.get('/api', (req, res) => {
@@ -16,5 +22,7 @@ app.get('/api/item/:slug', (req, res) => {
 app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
 })
+
+app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
 
 module.exports = app;
