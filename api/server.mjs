@@ -11,4 +11,7 @@ app.get('/', (req, res) => {
     res.send('Server Deployed 🥳')
 })
 
+app.get('/test', (req, res) => {
+    res.send('Test is Deployed 🥳')
+})
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
