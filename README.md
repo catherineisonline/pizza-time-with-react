@@ -92,6 +92,8 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [Tilt](https://micku7zu.github.io/vanilla-tilt.js/)
 - [React Lazy Load](https://www.npmjs.com/package/react-lazy-load-image-component)
 - [Framer Motion](https://www.framer.com/motion/)
+- [MySQL2](https://www.npmjs.com/package/mysql2)
+
 
 ## Resources  <a id="resources"></a>
 
@@ -103,6 +105,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [TinyPNG](https://tinypng.com/) - smart lossy compression techniques to reduce the file size of your WEBP, JPEG and PNG files.
 - [React Lazy Load Image Component](https://www.npmjs.com/package/react-lazy-load-image-component) - React Component to lazy load images and other components/elements.
 - [React Icons](https://react-icons.github.io/react-icons) - Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
+- [PlanetScale](https://planetscale.com/docs/) - serverless MySQL database
 
 ## Contribution <a id="contribution"></a>
 

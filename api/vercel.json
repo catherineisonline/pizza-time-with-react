@@ -12,11 +12,11 @@
             "dest": "index.mjs"
         },
         {
-            "src": "/airtable",
+            "src": "/users",
             "dest": "index.mjs"
         },
         {
-            "src": "/verify-recaptcha",
+            "src": "/users:id",
             "dest": "index.mjs"
         }
     ]
