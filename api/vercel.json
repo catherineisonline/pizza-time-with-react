@@ -16,7 +16,7 @@
             "dest": "index.mjs"
         },
         {
-            "src": "/users:id",
+            "src": "/users/:id",
             "dest": "index.mjs"
         }
     ]
