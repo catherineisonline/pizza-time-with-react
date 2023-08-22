@@ -10,11 +10,8 @@ const validateForm = (form) => (value) => {
         }
     }
     else if (form === "registration") {
-        if (!value.firstName) {
-            errors.firstName = "Please enter first name"
-        }
-        if (!value.lastName) {
-            errors.lastName = "Please enter last name"
+        if (!value.fullname) {
+            errors.fullname = "Please enter full name"
         }
         if (!value.email) {
             errors.email = "Please enter email"
@@ -31,19 +28,6 @@ const validateForm = (form) => (value) => {
         if (value.password !== value.repeatPassword) {
             errors.password = "Passwords don't match"
         }
-        if (!value.month) {
-            errors.month = "Please enter your birth month"
-        }
-        if (!value.day) {
-            errors.day = "Please enter your birth day"
-        }
-        if (!value.year) {
-            errors.year = "Please enter your birth year"
-        }
-        if (!value.year) {
-            errors.year = "Please enter your birth year"
-        }
-
     }
     else if (form === "contact-landing") {
         if (!value.fullname) {

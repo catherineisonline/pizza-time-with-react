@@ -10,9 +10,23 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
   const [formValue, setFormValue] = useState({ email: '', password: '' });
   const [formError, setFormError] = useState({});
   const [submit, setSubmit] = useState(false);
+  const [verificationError, setVerificationError] = useState('');
   const validate = validateForm("login");
 
+  const getUsers = async () => {
+    try {
+      const response = await fetch(process.env.REACT_APP_USERS_URL);
+      const body = await response.json();
+      return body.data;
+    }
+    catch (err) {
+      console.log(err.message)
+    }
+  }
+
+
   const handleValidation = (e) => {
+
     const { name, value } = e.target;
     setFormValue((prevFormValue) => ({
       ...prevFormValue,
@@ -27,15 +41,41 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
     setSubmit(false);
   }
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
+    setVerificationError('');
     e.preventDefault();
     setFormError(validate(formValue));
-    if (formValue.password === '12345678' && formValue.email === 'danielw@pizzatime.com') {
-      setValidLogin(true);
-      setSubmit(true);
-      hideLoginModal();
-      navigate('/menu');
+    if (Object.keys(validate(formValue)).length > 0) {
+      return;
     }
+    else {
+      const existingUsers = await getUsers(formValue.email.toLowerCase());
+      const targetUser = existingUsers.filter((u) => u.email === formValue.email.toLowerCase());
+      const targetPass = existingUsers.filter((u) => u.password === formValue.password);
+      if (targetUser.length === 0) {
+        setSubmit(false);
+        setFormValue({ email: '', password: '' });
+        setFormError({})
+        setVerificationError("Such user doesn't exist");
+        return;
+      }
+      else if (targetUser.length > 0 && targetPass.length === 0) {
+        setSubmit(false);
+        setFormValue({ email: '', password: '' });
+        setFormError({});
+        setVerificationError("Wrong password");
+        return;
+      }
+      else {
+        hideLoginModal();
+        setFormValue({ email: '', password: '' });
+        setFormError({});
+        setVerificationError("");
+        setValidLogin(true);
+        navigate('/menu');
+      }
+    }
+
   };
 
   return (
@@ -52,18 +92,9 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
           X
         </button>
         <section className="modal-content">
-          <div className="login-modal-title">
-            <h2>Log in</h2>
-            <div className="tooltip">
-              <img className="hint-icon" src="https://img.icons8.com/ios/50/000000/questions.png" aria-hidden="true" alt="" />
-              <article className="tooltiptext">
-                <p>User: <span>danielw@pizzatime.com</span></p>
-                <p>Password: <span>12345678</span></p>
-              </article>
-            </div>
-          </div>
-
+          <h2>Log in</h2>
           <form className="modal-content" onSubmit={handleLogin}>
+            {verificationError.length === 0 ? null : <p className="login-input-err">{verificationError}</p>}
             <input onChange={handleValidation} value={formValue.email} name="email" type="text" placeholder="Email" />
             <span className="login-input-err">{formError.email}</span>
             <input onChange={handleValidation} value={formValue.password} name="password" type="password" autoComplete="true" placeholder="Password" />

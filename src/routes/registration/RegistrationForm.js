@@ -1,35 +1,134 @@
-import React, { useEffect, useState } from "react";
-import { customDays, customMonths } from "../../data/datesArray";
+import React, { useState } from "react";
 import validateForm from "../../components/validateForm";
+import { v4 as uuidv4 } from 'uuid';
+import ResetLocation from "../../helpers/ResetLocation";
 
-
-
-export default function RegistrationForm() {
-    const [formValue, setFormValue] = useState({ firstName: '', lastName: '', email: '', password: '', repeatPassword: '', month: '', day: '', year: '', checkbox: false });
+export default function RegistrationForm({ activateLoginModal }) {
+    const [formValue, setFormValue] = useState({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '' });
     const [formError, setFormError] = useState({})
     const [submit, setSubmit] = useState(false);
-    const [years, setYears] = useState([]);
-    useEffect(() => {
-        function generateArrayOfYears() {
-            let max = new Date().getFullYear();
-            let min = max - 40;
-            for (let i = max; i >= min; i--) {
-                setYears(prevYears => [...prevYears, i])
-            }
+    const [registrationFail, setRegistrationFail] = useState(false);
+
+    const getUsers = async () => {
+        try {
+            const response = await fetch(process.env.REACT_APP_USERS_URL);
+            const body = await response.json();
+            return body.data;
         }
-        generateArrayOfYears();
+        catch (err) {
+            console.log(err.message)
+        }
+    }
 
-    }, []);
+    const createUser = async (user) => {
+        const users = await getUsers();
+        //check repetitive emails
+        const repetitiveEmail = users.filter((u) => u.email === user.email);
+        //cretae unique id
+        const id = uuidv4();
+        user.id = id;
+        try {
+            if (repetitiveEmail.length > 0) {
+                return false;
+            }
+            else {
+                const response = await fetch(process.env.REACT_APP_USERS_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(user),
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                });
+                if (response.status === 200) {
+                    return true;
+                }
+            }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setFormError(validate(formValue))
-        setSubmit(true);
-        window.scrollTo(0, 0)
-
+        }
+        catch (err) {
+            console.log(err.message)
+        }
     }
 
 
+    const getUser = async (id) => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
+            const body = await response.json();
+            // console.log(body.data);
+        }
+        catch (err) {
+            console.log(err.message)
+        }
+    }
+
+    const updateUser = async (id, user) => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
+                method: 'PUT',
+                body: JSON.stringify(user),
+                headers: {
+                    "Content-type": "application/json"
+                },
+            });
+            if (response.status === 200) {
+                return true;
+            }
+        }
+        catch (err) {
+            console.log(err.message)
+            return false;
+        }
+    }
+
+    const deleteUser = async (id) => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
+                method: 'DELETE'
+            });
+            if (response.status === 200) {
+                return true;
+            }
+        }
+        catch (err) {
+            console.log(err.message);
+            return false;
+        }
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setFormError(validate(formValue))
+        window.scrollTo(0, 0)
+        if (Object.keys(validate(formValue)).length > 0) {
+            return;
+        }
+        else {
+            let currForm = { ...formValue }
+            if (currForm.repeatPassword.length > 0) {
+                delete currForm.repeatPassword;
+            }
+            if (currForm.address !== undefined) {
+                delete currForm.address;
+            }
+            currForm.email = currForm.email.toLowerCase();
+            console.log(currForm)
+            const accCreation = await createUser(currForm);
+            if (accCreation === false) {
+                setSubmit(false);
+                setRegistrationFail(true);
+                setFormValue({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '' })
+            }
+            else {
+                setRegistrationFail(false);
+                setSubmit(true);
+                setFormValue({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '' })
+            }
+        }
+
+
+
+    }
     const handleValidation = (e) => {
         const { name, value } = e.target;
         setFormValue({ ...formValue, [name]: value })
@@ -37,15 +136,28 @@ export default function RegistrationForm() {
     const validate = validateForm("registration");
     return (
         <React.Fragment>
-            {submit && Object.keys(formError).length === 0 ? <p className="form-submit-msg">Success! Please check your email to verify your account</p> :
+            {submit && Object.keys(formError).length === 0 ?
+                <section className="registration-success">
+                    <h3>Success!</h3>
+                    <p className="form-submit-msg">You can now log in and make an order!</p>
+                    <button
+                        className="passive-button-style txt-white"
+                        onClick={() => {
+                            ResetLocation()
+                            activateLoginModal()
+                        }}
+                    >
+                        Log in
+                    </button>
+                </section>
+
+                :
                 <form className="registration-form" onSubmit={handleSubmit}>
+                    {registrationFail ? <p className="registration-input-err">Seems like this email has already been registered!</p> : null}
                     <section className="name-section">
-                        <input type="text" placeholder="First name" name="firstName" value={formValue.firstName}
+                        <input type="text" placeholder="Full name" name="fullname" value={formValue.fullname}
                             onChange={handleValidation} />
-                        <span className="registration-input-err">{formError.firstName}</span>
-                        <input type="text" placeholder="Last name" name="lastName" value={formValue.lastName}
-                            onChange={handleValidation} />
-                        <span className="registration-input-err">{formError.lastName}</span>
+                        <span className="registration-input-err">{formError.fullname}</span>
                     </section>
                     <section className="email-section">
                         <input type="text" placeholder="Email" name="email" value={formValue.email}
@@ -61,24 +173,9 @@ export default function RegistrationForm() {
                         <span className="registration-input-err">{formError.repeatPassword}</span>
                     </section>
                     <section className="birthday">
-                        <section>
-                            <label htmlFor="birthday">Birthday</label>
-                        </section>
-                        <section className="birthday-section">
-                            <select name="month" value={formValue.month} onChange={handleValidation}
-                            >
-                                {customMonths.map((month) => (<option value={month.option} key={month.option}>{month.option}</option>))}
-                            </select>
-                            <span className="registration-input-err">{formError.month}</span>
-                            <select name="day" value={formValue.day} onChange={handleValidation}>
-                                {customDays.map((day) => (<option value={day} key={day}>{day}</option>))}
-                            </select>
-                            <span className="registration-input-err">{formError.day}</span>
-                            <select name="year" className="year" value={formValue.year} onChange={handleValidation}>
-                                {years.map((year, index) => <option value={year} key={index}>{year}</option>)}
-                            </select>
-                            <span className="registration-input-err">{formError.year}</span>
-                        </section>
+                        <input type="text" placeholder="Address (optional)" name="address" value={formValue.address}
+                            onChange={handleValidation} />
+                        <span className="registration-input-err">{formError.address}</span>
                     </section>
                     <p className="terms-warning">
                         By clicking Sign Up, you agree to our Terms, Data Policy and Cookies

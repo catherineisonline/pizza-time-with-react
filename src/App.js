@@ -387,7 +387,7 @@ function App() {
         <Route exact path="/blog" element={<Blog />} />
         <Route path="/blog/:name" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
-        <Route path="/register" element={validLogin ? <NotFound /> : <Register />} />
+        <Route path="/register" element={validLogin ? <NotFound /> : <Register activateLoginModal={activateLoginModal} />} />
         <Route
           path="/checkout"
           element={
