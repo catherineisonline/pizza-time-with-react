@@ -112,7 +112,6 @@ export default function RegistrationForm({ activateLoginModal }) {
                 delete currForm.address;
             }
             currForm.email = currForm.email.toLowerCase();
-            console.log(currForm)
             const accCreation = await createUser(currForm);
             if (accCreation === false) {
                 setSubmit(false);

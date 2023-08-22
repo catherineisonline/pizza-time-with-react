@@ -47,6 +47,7 @@ function App() {
 
   const handleLogout = () => {
     setValidLogin(false);
+    hideMenu();
   };
 
   const findMenuItem = (e) => {
