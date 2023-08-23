@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
-import validateForm from "../../components/validateForm";
+// import validateForm from "../../components/validateForm";
 import { useNavigate } from "react-router-dom";
 
 const Profile = ({ currentUser, getUser, handleLogout, updateUser }) => {
     const [editForm, setEditForm] = useState(false);
     const [formValue, setFormValue] = useState({ email: '', password: '', fullname: '', address: '', number: '' });
-    const [formError, setFormError] = useState({});
+    // const [formError, setFormError] = useState({});
     const [submit, setSubmit] = useState(false);
-    const validate = validateForm("profile");
     const navigate = useNavigate()
 
     const toggleForm = () => {
@@ -22,27 +21,18 @@ const Profile = ({ currentUser, getUser, handleLogout, updateUser }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setFormError(validate(formValue))
         window.scrollTo(0, 0)
-        //if errors in error object
-        if (Object.keys(validate(formValue)).length > 0) {
-            return;
-        }
-        //if no errors in error obj
-        else {
-            let currForm = { ...formValue };
-            Object.entries(currForm).map((entry) => {
-                if (entry[1] === '') {
-                    delete currForm[entry[0]];
-                }
-            });
-            currForm = { id: currentUser.id, ...currForm }
-            const update = await updateUser(currForm);
-            if (update) {
-                setSubmit(true);
-                setEditForm(false);
-                setFormValue({ email: '', password: '', fullname: '', address: '', number: '' })
+        let currForm = { ...formValue };
+        Object.entries(currForm).map((entry) => {
+            if (entry[1] === '') {
+                delete currForm[entry[0]];
             }
+        });
+        const update = await updateUser(currentUser.id, currForm);
+        if (update) {
+            setSubmit(true);
+            setEditForm(false);
+            setFormValue({ email: '', password: '', fullname: '', address: '', number: '' })
         }
     }
 

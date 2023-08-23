@@ -35,20 +35,20 @@ const validateForm = (form) => (value) => {
             errors.password = "Passwords don't match"
         }
     }
-    else if (form === "profile") {
-        if (!value.fullname) {
-            errors.fullname = "Please enter full name"
-        }
-        if (!value.email) {
-            errors.email = "Please enter email"
-        }
-        else if (!emailRegex.test(value.email)) {
-            errors.email = "Please enter valid email"
-        }
-        if (!value.password) {
-            errors.password = "Please enter a valid password"
-        }
-    }
+    // else if (form === "profile") {
+    //     // if (!value.fullname) {
+    //     //     errors.fullname = "Please enter full name"
+    //     // }
+    //     // if (!value.email) {
+    //     //     errors.email = "Please enter email"
+    //     // }
+    //     // if (!emailRegex.test(value.email)) {
+    //     //     errors.email = "Please enter valid email"
+    //     // }
+    //     // // if (!value.password) {
+    //     //     errors.password = "Please enter a valid password"
+    //     // }
+    // }
     else if (form === "contact-landing") {
         if (!value.fullname) {
             errors.fullname = "Please enter your full name"

@@ -28,7 +28,6 @@ import Careers from './routes/careers/Careers.js';
 import BlogPost from './routes/blog-post/BlogPost.js';
 import Profile from './routes/profile/Profile.js';
 import ResetLocation from './helpers/ResetLocation.js';
-import { RiContactsBook2Fill } from 'react-icons/ri';
 
 function App() {
   const [allCategories, setAllCategories] = useState([]);
@@ -50,35 +49,48 @@ function App() {
       const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
       const body = await response.json();
       setCurrentUser(body.data[0]);
-
       const jsonUser = JSON.stringify(body.data[0]);
       sessionStorage.setItem('currentUser', jsonUser);
+      if (response.status === 200) {
+        return true;
+      }
     }
     catch (err) {
       console.log(err.message)
+      return false;
     }
   }
-  const updateUser = async (user) => {
-    console.log(currentUser);
-    console.log(user, 'updated');
+
+  const updateUser = async (id, user) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${user.id}`, {
-        method: 'PUT',
-        body: JSON.stringify(user),
+      const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
+
+        // const response = await fetch(`http://localhost:3000/users/${id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json"
-        }
+        },
+        body: JSON.stringify(user),
       });
-      // const body = await response.json();
-      getUser(user.id);
+
       if (response.status === 200) {
+        // Assuming getUser is a function that retrieves user data
+        // Make sure to handle this appropriately
+        const update = await getUser(id);
+        if (update) {
+          return true;
+        }
         return true;
+      } else {
+        console.log("Update failed with status:", response.status);
+        return false;
       }
     } catch (err) {
       console.log("Fetch error:", err.message);
       return false;
     }
   }
+
 
 
   useEffect(() => {
@@ -91,7 +103,6 @@ function App() {
   useEffect(() => {
     if (validLogin && sessionStorage.getItem('validLogin') === null) {
       sessionStorage.setItem('validLogin', true);
-      // getUser();
     }
     if (sessionStorage.getItem('validLogin') !== null) {
       setValidLogin(sessionStorage.getItem('validLogin'))

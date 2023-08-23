@@ -8,7 +8,6 @@ const port = 3000; // Choose a port for your server
 app.use(cors());
 app.use(json());
 
-
 //routes
 app.use("/", indexRouter)
 app.use(("*"), (req, res) => {

@@ -48,119 +48,44 @@ export const createUser = (id, user) => {
 }
 
 
-// export const updateUser = (id, user) => {
-//     return new Promise((resolve, reject) => {
-//         const { email, password, fullname, address, number } = user;
-//         const updates = [];
-//         const params = [];
-
-//         if (email !== undefined) {
-//             updates.push('email = ?');
-//             params.push(email);
-//         }
-//         if (password !== undefined) {
-//             updates.push('password = ?');
-//             params.push(password);
-//         }
-//         if (fullname !== undefined) {
-//             updates.push('fullname = ?');
-//             params.push(fullname);
-//         }
-//         if (address !== undefined) {
-//             updates.push('address = ?');
-//             params.push(address);
-//         }
-//         if (number !== undefined) {
-//             updates.push('number = ?');
-//             params.push(number);
-//         }
-
-//         if (updates.length === 0) {
-//             reject(new Error('No valid update parameters provided.'));
-//             return;
-//         }
-
-//         const updateString = updates.join(', ');
-//         const query = `UPDATE users SET ${updateString} WHERE id = ?`;
-//         params.push(id);
-//         sql.execute(query, params)
-//             .then((result) => resolve(result))
-//             .catch((err) => reject(err))
-//     })
-// }
-
-export const updateUser = (user) => {
+export const updateUser = (id, user) => {
     return new Promise((resolve, reject) => {
-        const { id, email, password, fullname, address, number } = user;
+        const { email, password, fullname, address, number } = user;
         let query;
         let params;
 
         // if (email === undefined) {
         //     query = 'UPDATE users SET password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
-        //     params = [id, password, fullname, address, number];
+        //     params = [password, fullname, address, number];
         // }
         // else if (password === undefined) {
         //     query = 'UPDATE users SET email = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
-        //     params = [id, email, fullname, address, number, id];
+        //     params = [email, fullname, address, number];
         // }
         // else if (fullname === undefined) {
         //     query = 'UPDATE users SET email = ?, password = ?, address = ?, number = ? WHERE id = ?';
-        //     params = [id, email, password, address, number];
+        //     params = [email, password, address, number];
         // }
         // else if (address === undefined) {
         //     query = 'UPDATE users SET email = ?, password = ?, fullname = ?, number = ? WHERE id = ?';
-        //     params = [id, email, password, fullname, number];
+        //     params = [email, password, fullname, number];
         // }
         // else if (number === undefined) {
         //     query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ? WHERE id = ?';
-        //     params = [id, email, password, fullname, address];
+        //     params = [email, password, fullname, address];
         // }
         // else {
-        query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
-        params = [id, email, password, fullname, address, number];
+        //     params = [email, password, fullname, address, number];
+        //     query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
+
         // }
-        sql.execute(query, params)
+        //test purposes
+        params = [email, password, fullname, address, number];
+        query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
+        sql.execute(query, [...params, id])
             .then((result) => resolve(result))
             .catch((err) => reject(err))
     })
-    //     const { email, password, fullname, address, number } = user;
-    //     const updates = [];
-    //     const params = [];
-    //     params.push(id);
-    //     if (email !== undefined) {
-    //         updates.push('email = ?');
-    //         params.push(email);
-    //     }
-    //     if (password !== undefined) {
-    //         updates.push('password = ?');
-    //         params.push(password);
-    //     }
-    //     if (fullname !== undefined) {
-    //         updates.push('fullname = ?');
-    //         params.push(fullname);
-    //     }
-    //     if (address !== undefined) {
-    //         updates.push('address = ?');
-    //         params.push(address);
-    //     }
-    //     if (number !== undefined) {
-    //         updates.push('number = ?');
-    //         params.push(number);
-    //     }
-
-    //     if (updates.length === 0) {
-    //         reject(new Error('No valid update parameters provided.'));
-    //         return;
-    //     }
-
-    //     const updateString = updates.join(', ');
-    //     const query = `UPDATE users SET ${updateString} WHERE id = ?`;
-
-
-    //     sql.execute(query, params)
-    //         .then((result) => resolve(result))
-    //         .catch((err) => reject(err))
-    // })
 }
 
 
