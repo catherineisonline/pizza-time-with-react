@@ -18,9 +18,9 @@ export const getUser = (id) => {
     })
 }
 
-export const createUser = (id, user) => {
+export const createUser = (user) => {
     return new Promise((resolve, reject) => {
-        const { email, password, fullname, address, number
+        const { id, email, password, fullname, address, number
         } = user;
         let query;
         let params;
@@ -41,7 +41,7 @@ export const createUser = (id, user) => {
             query = 'INSERT INTO users (id, email, password, fullname, address) VALUES(?, ?, ?, ?, ?)';
             params = [id, email, password, fullname, address];
         }
-        sql.execute(query, params)
+        sql.execute(query, [...params])
             .then((result) => resolve(result))
             .catch((err) => reject(err))
     })

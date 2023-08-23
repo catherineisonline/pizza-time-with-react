@@ -22,17 +22,19 @@ export default function RegistrationForm({ activateLoginModal }) {
 
     const createUser = async (user) => {
         const users = await getUsers();
+        console.log(users)
         //check repetitive emails
         const repetitiveEmail = users.filter((u) => u.email === user.email);
         //cretae unique id
         const id = uuidv4();
         user.id = id;
+        console.log(user)
         try {
             if (repetitiveEmail.length > 0) {
                 return false;
             }
             else {
-                const response = await fetch(process.env.REACT_APP_USERS_URL, {
+                const response = await fetch(`${process.env.REACT_APP_USERS_URL}`, {
                     method: 'POST',
                     body: JSON.stringify(user),
                     headers: {
@@ -42,11 +44,16 @@ export default function RegistrationForm({ activateLoginModal }) {
                 if (response.status === 200) {
                     return true;
                 }
+                else {
+                    console.log('error with server')
+                    return false;
+                }
             }
 
         }
         catch (err) {
             console.log(err.message)
+            return false;
         }
     }
 
@@ -86,6 +93,7 @@ export default function RegistrationForm({ activateLoginModal }) {
                 delete currForm.number;
             }
             currForm.email = currForm.email.toLowerCase();
+            // console.log(currForm)
             const accCreation = await createUser(currForm);
             if (accCreation === false) {
                 setSubmit(false);
