@@ -13,7 +13,7 @@ const validateForm = (form) => (value) => {
         if (!value.fullname) {
             errors.fullname = "Please enter full name"
         }
-        if (!value.fullname.length < 3) {
+        if (value.fullname.length < 3) {
             errors.fullname = "Name is too short"
         }
         if (!value.email) {

@@ -64,8 +64,6 @@ function App() {
   const updateUser = async (id, user) => {
     try {
       const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
-
-        // const response = await fetch(`http://localhost:3000/users/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
