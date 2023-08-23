@@ -13,6 +13,9 @@ const validateForm = (form) => (value) => {
         if (!value.fullname) {
             errors.fullname = "Please enter full name"
         }
+        if (!value.fullname.length < 3) {
+            errors.fullname = "Name is too short"
+        }
         if (!value.email) {
             errors.email = "Please enter email"
         }
@@ -22,6 +25,9 @@ const validateForm = (form) => (value) => {
         if (!value.password) {
             errors.password = "Please enter a valid password"
         }
+        if (value.password.length < 8 || value.repeatPassword.length < 8) {
+            errors.password = "Password should be min. 8 characters"
+        }
         if (!value.repeatPassword) {
             errors.repeatPassword = "Please repeat the password"
         }
@@ -29,7 +35,7 @@ const validateForm = (form) => (value) => {
             errors.password = "Passwords don't match"
         }
     }
-    else if (form === "registration") {
+    else if (form === "profile") {
         if (!value.fullname) {
             errors.fullname = "Please enter full name"
         }
@@ -42,12 +48,6 @@ const validateForm = (form) => (value) => {
         if (!value.password) {
             errors.password = "Please enter a valid password"
         }
-        // if (!value.repeatPassword) {
-        //     errors.repeatPassword = "Please repeat the password"
-        // }
-        // if (value.password !== value.repeatPassword) {
-        //     errors.password = "Passwords don't match"
-        // }
     }
     else if (form === "contact-landing") {
         if (!value.fullname) {
