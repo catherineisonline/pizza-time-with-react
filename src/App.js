@@ -41,6 +41,7 @@ function App() {
   const [loginModalWindow, setLoginModalWindow] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
+
   const getUser = async (id) => {
     try {
       const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
@@ -55,12 +56,11 @@ function App() {
   }
 
   useEffect(() => {
-    if (sessionStorage.getItem('validLogin') !== null) {
-      const jsonUser = sessionStorage.getItem('currentUser')
-      const user = JSON.parse(jsonUser);
-      setCurrentUser(user)
-    };
-  }, [])
+    if (sessionStorage.getItem('currentUser') !== null) {
+      const user = JSON.parse(sessionStorage.getItem('currentUser'));
+      setCurrentUser(user);
+    }
+  }, []);
 
   useEffect(() => {
     if (validLogin && sessionStorage.getItem('validLogin') === null) {
@@ -392,6 +392,7 @@ function App() {
             loginModalWindow={loginModalWindow}
             hideMenu={hideMenu}
             getUser={getUser}
+            setCurrentUser={setCurrentUser}
           />
         }
         activateLoginModal={activateLoginModal}
