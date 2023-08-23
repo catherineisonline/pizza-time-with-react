@@ -3,31 +3,13 @@ import ResetLocation from "../../helpers/ResetLocation";
 import validateForm from "../../components/validateForm";
 import { useNavigate } from "react-router-dom";
 
-const Profile = ({ currentUser, getUser, handleLogout }) => {
+const Profile = ({ currentUser, getUser, handleLogout, updateUser }) => {
     const [editForm, setEditForm] = useState(false);
     const [formValue, setFormValue] = useState({ email: '', password: '', fullname: '', address: '', number: '' });
     const [formError, setFormError] = useState({});
     const [submit, setSubmit] = useState(false);
     const validate = validateForm("profile");
     const navigate = useNavigate()
-    const updateUser = async (id, user) => {
-        try {
-            const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
-                method: 'PUT',
-                body: JSON.stringify(user),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            });
-
-            if (response.status === 200) {
-                return true;
-            }
-        } catch (err) {
-            console.log("Fetch error:", err.message);
-            return false;
-        }
-    }
 
     const toggleForm = () => {
         setEditForm(!editForm);
@@ -54,7 +36,8 @@ const Profile = ({ currentUser, getUser, handleLogout }) => {
                     delete currForm[entry[0]];
                 }
             });
-            const update = await updateUser(currentUser.id, currForm);
+            currForm = { id: currentUser.id, ...currForm }
+            const update = await updateUser(currForm);
             if (update) {
                 setSubmit(true);
                 setEditForm(false);

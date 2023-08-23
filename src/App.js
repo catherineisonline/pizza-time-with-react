@@ -28,6 +28,7 @@ import Careers from './routes/careers/Careers.js';
 import BlogPost from './routes/blog-post/BlogPost.js';
 import Profile from './routes/profile/Profile.js';
 import ResetLocation from './helpers/ResetLocation.js';
+import { RiContactsBook2Fill } from 'react-icons/ri';
 
 function App() {
   const [allCategories, setAllCategories] = useState([]);
@@ -49,11 +50,33 @@ function App() {
       const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
       const body = await response.json();
       setCurrentUser(body.data[0]);
+
       const jsonUser = JSON.stringify(body.data[0]);
       sessionStorage.setItem('currentUser', jsonUser);
     }
     catch (err) {
       console.log(err.message)
+    }
+  }
+  const updateUser = async (user) => {
+    console.log(currentUser);
+    console.log(user, 'updated');
+    try {
+      const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${user.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      // const body = await response.json();
+      getUser(user.id);
+      if (response.status === 200) {
+        return true;
+      }
+    } catch (err) {
+      console.log("Fetch error:", err.message);
+      return false;
     }
   }
 
@@ -469,7 +492,7 @@ function App() {
         <Route path="/blog/:name" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
         <Route path="/register" element={validLogin ? <NotFound /> : <Register activateLoginModal={activateLoginModal} />} />
-        <Route path="/profile" element={!validLogin ? <NotFound /> : <Profile currentUser={currentUser} getUser={getUser} handleLogout={handleLogout} />} />
+        <Route path="/profile" element={!validLogin ? <NotFound /> : <Profile currentUser={currentUser} getUser={getUser} handleLogout={handleLogout} updateUser={updateUser} />} />
         <Route
           path="/checkout"
           element={
