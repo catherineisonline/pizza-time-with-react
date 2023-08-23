@@ -83,6 +83,9 @@ function App() {
     hideMenu();
     setCurrentUser({});
     sessionStorage.removeItem('validLogin');
+    sessionStorage.removeItem('currentUser');
+    sessionStorage.removeItem('cartQuantity');
+    sessionStorage.removeItem('cartItems');
   };
 
   const findMenuItem = (e) => {
