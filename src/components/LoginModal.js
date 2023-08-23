@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import validateForm from "./validateForm";
 
 
-const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hideMenu, validLogin }) => {
+const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hideMenu, validLogin, getUser }) => {
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({ email: '', password: '' });
   const [formError, setFormError] = useState({});
@@ -51,6 +51,7 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
     else {
       const existingUsers = await getUsers(formValue.email.toLowerCase());
       const targetUser = existingUsers.filter((u) => u.email === formValue.email.toLowerCase());
+
       const targetPass = existingUsers.filter((u) => u.password === formValue.password);
       if (targetUser.length === 0) {
         setSubmit(false);
@@ -67,11 +68,13 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
         return;
       }
       else {
+        getUser(existingUsers[0].id);
         hideLoginModal();
         setFormValue({ email: '', password: '' });
         setFormError({});
         setVerificationError("");
         setValidLogin(true);
+        // localStorage.setItem('validLogin', true);
         navigate('/menu');
       }
     }

@@ -51,16 +51,16 @@ export default function RegistrationForm({ activateLoginModal }) {
     }
 
 
-    const getUser = async (id) => {
-        try {
-            const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
-            const body = await response.json();
-            // console.log(body.data);
-        }
-        catch (err) {
-            console.log(err.message)
-        }
-    }
+    // const getUser = async (id) => {
+    //     try {
+    //         const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
+    //         const body = await response.json();
+    //         // console.log(body.data);
+    //     }
+    //     catch (err) {
+    //         console.log(err.message)
+    //     }
+    // }
 
     const updateUser = async (id, user) => {
         try {

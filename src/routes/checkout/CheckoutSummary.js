@@ -11,21 +11,17 @@ export default class CheckoutSummary extends React.Component {
       cartItems,
     } = this.props;
     return (
-      <section className="checkout-summary">
-        <h2>Summary</h2>
-        <section className="checkout-cart-items">
-          {cartItems.map((cartItem) => (
-            <CheckoutItem
-              key={uuidv4()}
-              cartItem={cartItem}
-              selectedAttributes={selectedAttributes}
-              handleAddProduct={handleAddProduct}
-              handleRemoveProduct={handleRemoveProduct}
-              className="checkout-item"
-            />
-          ))}
-        </section>
-      </section>
-    );
+      <React.Fragment>
+        {cartItems.map((cartItem) => (
+          <CheckoutItem
+            key={uuidv4()}
+            cartItem={cartItem}
+            selectedAttributes={selectedAttributes}
+            handleAddProduct={handleAddProduct}
+            handleRemoveProduct={handleRemoveProduct}
+          />
+        ))}
+      </React.Fragment>
+    )
   }
 }

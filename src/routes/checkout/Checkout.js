@@ -29,7 +29,8 @@ export default class Checkout extends React.Component {
       productsQuantity,
       totalPayment,
       taxes,
-      checkoutSummary
+      checkoutSummary,
+      currentUser
     } = this.props;
     document.title = "Checkout | Pizza Time";
     return (
@@ -45,7 +46,8 @@ export default class Checkout extends React.Component {
               togglePromocode={this.togglePromocode} className="checkout-carttotals"
               productsQuantity={productsQuantity}
               totalPayment={totalPayment}
-              taxes={taxes} />
+              taxes={taxes} currentUser={currentUser} />
+
           </article>
         )}
       </main>

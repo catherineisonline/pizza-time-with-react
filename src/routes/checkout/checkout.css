@@ -21,15 +21,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-family: var(--poppins-font);
 }
 .checkout h2 {
+  color: var(--white);
   font-family: var(--poppins-font);
   text-transform: uppercase;
   margin: 0 auto;
   font-size: 4rem;
-  padding: 1.5rem;
-}
-.checkout h2 {
-  font-weight: 400;
-  letter-spacing: 1px;
+  padding: 2rem;
 }
 
 .checkout-content {
@@ -37,38 +34,47 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
-  max-width: 700px;
-  margin: 0 auto;
+  width: 80%;
+  /* margin: 0 auto; */
+  max-width: 1000px;
 }
 
-/* SUMMARY */
-.checkout-summary {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
 .checkout-item {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
-}
-.image-container {
-  min-height: 8rem;
-  max-height: 100%;
+  width: 60%;
 }
 .checkout-item img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+  object-position: center;
 }
-.checkout-item .checkout-item-title {
+.checkout-item-info {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-weight: 400;
-  gap: 0.5rem;
+  flex-direction: column;
+}
+.checkout-item-info h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 /* PERSONAL INFORMATION */
+.checkout-personal-information h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--pizza-red);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.checkout-personal-information h3 a {
+  font-size: 1rem;
+  color: rgb(103, 15, 186);
+}
+
 .checkout-personal-information,
 .checkout-personal-information form,
 .checkout-choose-delivery,
@@ -138,7 +144,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* PROMOCODE */
 .promo-code p {
   cursor: pointer;
-  color: var(--white);
+  color: rgb(103, 15, 186);
   font-family: var(--poppins-font);
   font-weight: 400;
   font-size: 1rem;
@@ -146,7 +152,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-decoration: underline;
 }
 .promo-code p:hover {
-  color: var(--yellow);
+  color: white;
   transition: all ease-in-out 0.2s;
 }
 
@@ -158,15 +164,11 @@ input[type="password"] {
 }
 
 /* CART TOTALS */
-.cart-totals {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-}
+
 .checkout-carttotals .cart-carttotals .totals-content {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  /* justify-content: space-between; */
   font-family: var(--poppins-font);
   color: var(--whitish-gray);
   text-transform: uppercase;
@@ -174,18 +176,31 @@ input[type="password"] {
   font-size: 1.2rem;
   gap: 1rem;
 }
-.checkout-carttotals .totals-content > * {
+.cart-totals {
   display: flex;
   flex-direction: row;
+  gap: 1rem;
+}
+.checkout-carttotals .totals-content {
+  display: flex;
+  flex-direction: column;
+  /* gap: rem; */
   justify-content: space-between;
+  max-width: 300px;
 }
 .checkout-carttotals .totals-content h4 {
   font-weight: 300;
 }
 .checkout-carttotals .totals-content p {
   font-weight: 600;
-  color: var(--yellow);
+  color: var(--pizza-red);
 }
+
+/* .totals-content section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+} */
 .checkout-choose-payment input[type="date"] {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
@@ -229,13 +244,13 @@ input[type="password"] {
   display: flex;
   flex-direction: column;
 }
+/* .checkout-cart-items {
+  display: grid;
+  gap: 2rem;
+  align-items: baseline;
+} */
+
 @media screen and (min-width: 700px) {
-  .checkout-cart-items {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    align-items: baseline;
-  }
   .checkout-choose-payment label {
     flex-direction: row;
     justify-content: space-between;

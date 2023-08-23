@@ -2,13 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { FaShippingFast } from "react-icons/fa";
 import { RiShoppingBagLine } from "react-icons/ri";
-import BacktoMenu from "../../components/BacktoMenu";
-import CheckoutBtn from "./CheckoutBtn";
 import ResetLocation from "../../helpers/ResetLocation";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const CheckoutForm = ({ toggleDelivery, delivery, togglePromocode, promoCode, totalPayment, productsQuantity, taxes, className, validLogin, showModal }) => {
-  const [formValue, setFormValue] = useState({ fullname: '', phone: '', chooseDelivery: "", address: '', promoCode: '' });
+const CheckoutForm = ({ currentUser, toggleDelivery, delivery, togglePromocode, promoCode, totalPayment, productsQuantity, taxes, className, validLogin, showModal }) => {
+  const [formValue, setFormValue] = useState({
+    fullname: currentUser.fullname, phone: currentUser.number, chooseDelivery: "", address: currentUser.address, promoCode: ''
+  });
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
   const navigate = useNavigate();
@@ -31,20 +31,11 @@ const CheckoutForm = ({ toggleDelivery, delivery, togglePromocode, promoCode, to
   }
   const validateForm = (value) => {
     let errors = {}
-    if (!value.fullname) {
-      errors.fullname = "Please enter full name"
-    }
-    if (!value.phone) {
-      errors.phone = "Please enter phone number"
-    }
     if (!value.chooseDelivery) {
-      errors.chooseDelivery = "Please choose a delivery"
-    }
-    if (!value.address && delivery) {
-      errors.address = "Please indicate your address"
+      errors.chooseDelivery = "Please choose a delivery type!"
     }
     if (!value.promoCode && promoCode) {
-      errors.promoCode = "Please indicate your promo code"
+      errors.promoCode = "Please indicate your promo code!"
     }
 
     return errors;
@@ -52,27 +43,20 @@ const CheckoutForm = ({ toggleDelivery, delivery, togglePromocode, promoCode, to
 
   return (
     <section className="checkout-personal-information">
-      <h2>Personal Information</h2>
+      <h3>Personal information <span><Link to="/profile">Edit profile</Link></span></h3>
+      <section>
+        <p>{currentUser.fullname}</p>
+        <p>{currentUser.email}</p>
+        {currentUser.address !== null ?
+          <p>{currentUser.address}</p> :
+          <p>You haven't added address yet <span><Link to="/profile">Add address</Link></span></p>}
+        {currentUser.number !== null ?
+          <p>{currentUser.number}</p> :
+          <p>Please add you contact number<span><Link to="/profile">Add number</Link></span></p>}
+
+      </section>
       <form onSubmit={handleSubmit}>
-        <input
-          name="fullname"
-          className="fullname-input-cpage pop-font"
-          type="text"
-          value={formValue.fullname}
-          placeholder="Full name"
-          onChange={handleValidation}
-        />
-        <span className="fullname-error-cpage">{formError.fullname}</span>
-        <input
-          name="phone"
-          className="fullname-input-cpage pop-font"
-          type="text"
-          placeholder="Phone number"
-          onChange={handleValidation}
-          value={formValue.phone}
-        />
-        <span className="fullname-error-cpage">{formError.phone}</span>
-        <h2>Choose delivery</h2>
+        <h3>Delivery details</h3>
         <label htmlFor="takeaway" className="takeaway-option" name="chooseDelivery">
           <RiShoppingBagLine />
           Takeaway
@@ -99,21 +83,7 @@ const CheckoutForm = ({ toggleDelivery, delivery, togglePromocode, promoCode, to
             onChange={handleValidation}
           />
         </label>
-
         <span className="fullname-error-cpage">{formError.chooseDelivery}</span>
-        {delivery ?
-          <React.Fragment>
-            <h2> Address</h2>
-            <input
-              name="address"
-              className="pop-font"
-              type="text"
-              placeholder="Address"
-              onChange={handleValidation}
-            />
-            <span className="fullname-error-cpage">{formError.address}</span>
-          </React.Fragment> : null
-        }
         <section className="promo-code">
           <p onClick={togglePromocode}>I have a promo code!</p>
           {promoCode === false ? null : (
@@ -133,43 +103,27 @@ const CheckoutForm = ({ toggleDelivery, delivery, togglePromocode, promoCode, to
           {productsQuantity === 0 ? null : (
             <section className="cart-totals">
               <section className="totals-content">
-                <section>
-                  <h4 className="cart-totals-sum">Tax 10%:</h4>
-                  <p>$ {taxes}</p>
-                </section>
-                <section>
-                  <h4 className="cart-totals-sum">Quantity:</h4>
-                  <p> {productsQuantity}</p>
-                </section>
-                <section>
-                  <h4 className="cart-totals-sum">Total:</h4>
-                  {/* COUNTING TWICE DUE TO STRICT MODE */}
-                  <p>$ {(totalPayment / 2).toFixed(2)}</p>
-                </section>
+                <h4 className="cart-totals-sum">Tax 10%:</h4>
+                <p>$ {taxes}</p>
               </section>
-              {className === "cart-carttotals" ? (
-                <section className="cart-interaction-btns">
-                  <CheckoutBtn
-                    className="cart-checkout-btn"
-                    validLogin={validLogin}
-                    showModal={showModal}
-                  />
-                  <BacktoMenu
-                    className="cart-backtomenu-btn"
-                  />
-                </section>
-              ) : (
-                <section className="checkout-interaction-btns">
-                  <button type="submit" className="active-button-style">
-                    Proceed to payment
-                  </button>
-                </section>
-              )}
+              <section className="totals-content">
+                <h4 className="cart-totals-sum">Quantity:</h4>
+                <p> {productsQuantity}</p>
+              </section>
+              <section className="totals-content" >
+                <h4 className="cart-totals-sum">Total:</h4>
+                {/* COUNTING TWICE DUE TO STRICT MODE */}
+                <p>$ {(totalPayment / 2).toFixed(2)}</p>
+              </section>
             </section>
+
           )}
         </article>
-      </form >
-    </section >
+        <button type="submit" className="active-button-style">
+          Proceed to payment
+        </button>
+      </form>
+    </section>
   );
 }
 

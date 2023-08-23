@@ -39,6 +39,39 @@ function App() {
   const [validLogin, setValidLogin] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
   const [loginModalWindow, setLoginModalWindow] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
+
+  const getUser = async (id) => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
+      const body = await response.json();
+      setCurrentUser(body.data[0]);
+      const jsonUser = JSON.stringify(body.data[0]);
+      sessionStorage.setItem('currentUser', jsonUser);
+    }
+    catch (err) {
+      console.log(err.message)
+    }
+  }
+
+  useEffect(() => {
+    if (sessionStorage.getItem('validLogin') !== null) {
+      const jsonUser = sessionStorage.getItem('currentUser')
+      const user = JSON.parse(jsonUser);
+      setCurrentUser(user)
+    };
+  }, [])
+
+  useEffect(() => {
+    if (validLogin && sessionStorage.getItem('validLogin') === null) {
+      sessionStorage.setItem('validLogin', true);
+    }
+    if (sessionStorage.getItem('validLogin') !== null) {
+      setValidLogin(sessionStorage.getItem('validLogin'))
+    }
+  }, [validLogin])
+
+
 
   const activateLoginModal = () => {
     hideMenu();
@@ -48,6 +81,8 @@ function App() {
   const handleLogout = () => {
     setValidLogin(false);
     hideMenu();
+    setCurrentUser({});
+    sessionStorage.removeItem('validLogin');
   };
 
   const findMenuItem = (e) => {
@@ -82,16 +117,24 @@ function App() {
   /*******************************************************/
 
   const CheckRepeatableProducts = (cartItems, targetProduct, userSelectedAttributes) => {
+
     let item;
     let productsById = cartItems.filter((item) => item.id === targetProduct.id);
     productsById.forEach((targetItem) => {
       if (MatchingAttributes(userSelectedAttributes, targetItem)) {
         item = targetItem;
       }
+      if (userSelectedAttributes.length === 0) {
+        item = targetItem;
+      }
     });
+
     return item;
   };
+
+
   const MatchingAttributes = (userSelectedAttributes, targetProduct) => {
+
     const attributesMatch = (groupOne, groupTwo) => {
       return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
     };
@@ -127,7 +170,6 @@ function App() {
     return currentProductList;
   };
   const handleAddProduct = (targetProduct, userSelectedAttributes) => {
-
     const productAlreadyInCart = CheckRepeatableProducts(
       cartItems,
       targetProduct,
@@ -148,8 +190,18 @@ function App() {
         quantity: newQuantity,
       });
 
+
     } else {
-      const index = cartItems.findIndex(item => item.userSelectedAttributes[0].attributeValue === targetProduct.userSelectedAttributes[0].attributeValue);
+      let index;
+      //if there are no attributes find index by id
+      if (userSelectedAttributes.length === 0) {
+        index = cartItems.findIndex(item => item.id === targetProduct.id);
+      }
+      //if there are attributes find index by attributes
+      else {
+        index = cartItems.findIndex(item => item.userSelectedAttributes[0]?.attributeValue === userSelectedAttributes[0].attributeValue);
+      }
+
       if (index !== -1) {
         newQuantity = cartItems[index].quantity;
 
@@ -157,6 +209,7 @@ function App() {
           ...cartItems[index],
           quantity: newQuantity + 1,
         };
+
       }
     }
 
@@ -164,11 +217,24 @@ function App() {
       (total, item) => total + item.quantity,
       0
     );
-
+    const jsonUser = JSON.stringify(currentCartItems);
+    sessionStorage.setItem('cartItems', jsonUser);
     setCartItems(currentCartItems);
+    sessionStorage.setItem('cartQuantity', totalCartQuantity);
     setProductsQuantity(totalCartQuantity);
     successMsg();
   };
+
+  useEffect(() => {
+    if (sessionStorage.getItem('cartItems') !== null) {
+      const jsonCartItems = sessionStorage.getItem('cartItems')
+      const cartItems = JSON.parse(jsonCartItems);
+      setCartItems(cartItems);
+    };
+    if (sessionStorage.getItem('cartQuantity') !== null) {
+      setProductsQuantity(sessionStorage.getItem('cartQuantity'));
+    };
+  }, []);
 
   const handleRemoveProduct = (targetProduct, userSelectedAttributes) => {
     let updatedProductList;
@@ -192,16 +258,20 @@ function App() {
     }
 
     setCartItems(updatedProductList);
+    const jsonUser = JSON.stringify(updatedProductList);
+    sessionStorage.setItem('cartItems', jsonUser);
 
     if (updatedProductList.length <= 1) {
       setProductsQuantity(updatedProductList[0]?.quantity || 0);
     } else {
       const productListArray = updatedProductList.map(item => item.quantity);
       const sum = productListArray.reduce((a, b) => a + b, 0);
+      sessionStorage.setItem('cartQuantity', sum);
       setProductsQuantity(sum);
     }
 
     if (updatedProductList.length === 0) {
+      sessionStorage.setItem('cartQuantity', 0);
       setProductsQuantity(0);
     }
   };
@@ -318,6 +388,7 @@ function App() {
             setLoginModalWindow={setLoginModalWindow}
             loginModalWindow={loginModalWindow}
             hideMenu={hideMenu}
+            getUser={getUser}
           />
         }
         activateLoginModal={activateLoginModal}
@@ -404,6 +475,7 @@ function App() {
               cartItems={cartItems}
               productsQuantity={productsQuantity}
               taxes={taxes}
+              currentUser={currentUser}
             />
           }
         />

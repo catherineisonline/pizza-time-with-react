@@ -17,35 +17,17 @@ export default class CheckoutItem extends React.Component {
   }
 
   render() {
-    const { cartItem, className } = this.props;
+    const { cartItem } = this.props;
     return (
-      <section className={className}>
-        <section className="image-container">
-          <img src={cartItem.ItemImg} alt={cartItem.ItemName}></img>
-        </section>
-        <section className="checkout-item-content">
+      <section className='checkout-item'>
+        <img src={cartItem.ItemImg} alt={cartItem.ItemName} />
+        {cartItem.userSelectedAttributes.length === 0 ?
           <section className="checkout-item-info">
-            {cartItem.userSelectedAttributes.length === 0 ? (
-              <section className="checkout-item-title">
-                <p>{cartItem.ItemName}</p>
-                <p>- {cartItem.quantity}</p>
-              </section>
-            ) : (
-              <section className="checkout-item-title">
-                <p>
-                  {cartItem.ItemName},{" "}
-                  <span>{this.state.selectedAttributes}</span>
-                </p>
-                <p> - {cartItem.quantity}</p>
-              </section>
-            )}
-          </section>
-
-          <p className="checkout-price-num">
-            <span>$</span>
-            {cartItem.ItemPrice}
-          </p>
-        </section>
+            <h3>{cartItem.quantity} {cartItem.ItemName}, <span>$ {cartItem.ItemPrice}</span></h3>
+          </section> :
+          <section className="checkout-item-info">
+            <h3>{cartItem.quantity} {cartItem.ItemName}  <span>{this.state.selectedAttributes}</span>, <span>$ {cartItem.ItemPrice}</span></h3>
+          </section>}
       </section>
     );
   }

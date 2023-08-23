@@ -7,6 +7,7 @@ const CartItem = ({
   handleRemoveProduct,
   clearCart,
   cartItems }) => {
+
   return (
     <section className="cart-title-section" >
       {

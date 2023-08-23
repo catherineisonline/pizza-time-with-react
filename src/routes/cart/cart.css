@@ -7,7 +7,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 1rem;
   background-color: var(--light-black);
   min-height: 100vh;
   position: relative;
@@ -19,7 +19,7 @@
   text-transform: uppercase;
   margin: 0 auto;
   font-size: 4rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .cart-title-section {
@@ -28,7 +28,7 @@
   gap: 2rem;
   margin: 0 auto;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 1rem;
   align-items: center;
   max-width: 700px;
 }
