@@ -45,7 +45,6 @@ export const updateUser = (req, res) => {
                 data: user
             })
         }).catch((err) => {
-
             res.status(500).send(err)
         })
 };

@@ -47,42 +47,50 @@ export const createUser = (user) => {
     })
 }
 
+
 export const updateUser = (id, user) => {
     return new Promise((resolve, reject) => {
         const { email, password, fullname, address, number } = user;
-        let query;
-        let params;
+        const updates = [];
+        const params = [];
+        params.push(id);
+        if (email !== undefined) {
+            updates.push('email = ?');
+            params.push(email);
+        }
+        if (password !== undefined) {
+            updates.push('password = ?');
+            params.push(password);
+        }
+        if (fullname !== undefined) {
+            updates.push('fullname = ?');
+            params.push(fullname);
+        }
+        if (address !== undefined) {
+            updates.push('address = ?');
+            params.push(address);
+        }
+        if (number !== undefined) {
+            updates.push('number = ?');
+            params.push(number);
+        }
 
-        if (email === undefined) {
-            query = 'UPDATE users SET password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
-            params = [password, fullname, address, number, id];
+        if (updates.length === 0) {
+            reject(new Error('No valid update parameters provided.'));
+            return;
         }
-        else if (password === undefined) {
-            query = 'UPDATE users SET email = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
-            params = [email, fullname, address, number, id];
-        }
-        else if (fullname === undefined) {
-            query = 'UPDATE users SET email = ?, password = ?, address = ?, number = ? WHERE id = ?';
-            params = [email, password, address, number, id];
-        }
-        else if (address === undefined) {
-            query = 'UPDATE users SET email = ?, password = ?, fullname = ?, number = ? WHERE id = ?';
-            params = [email, password, fullname, number, id];
-        }
-        else if (number === undefined) {
-            query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ? WHERE id = ?';
-            params = [email, password, fullname, address, id];
-        }
-        else {
-            query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, address WHERE id = ?';
-            params = [email, password, fullname, address, number, id];
-        }
+
+        const updateString = updates.join(', ');
+        const query = `UPDATE users SET ${updateString} WHERE id = ?`;
+
+
 
         sql.execute(query, params)
             .then((result) => resolve(result))
             .catch((err) => reject(err))
     })
 }
+
 
 export const deleteUser = (id) => {
     return new Promise((resolve, reject) => {
