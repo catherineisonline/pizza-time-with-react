@@ -27,6 +27,7 @@ import Privacy from './routes/privacy/Privacy.js';
 import Careers from './routes/careers/Careers.js';
 import BlogPost from './routes/blog-post/BlogPost.js';
 import Profile from './routes/profile/Profile.js';
+import ResetLocation from './helpers/ResetLocation.js';
 
 function App() {
   const [allCategories, setAllCategories] = useState([]);
@@ -56,6 +57,7 @@ function App() {
     }
   }
 
+
   useEffect(() => {
     if (sessionStorage.getItem('currentUser') !== null) {
       const user = JSON.parse(sessionStorage.getItem('currentUser'));
@@ -66,6 +68,7 @@ function App() {
   useEffect(() => {
     if (validLogin && sessionStorage.getItem('validLogin') === null) {
       sessionStorage.setItem('validLogin', true);
+      // getUser();
     }
     if (sessionStorage.getItem('validLogin') !== null) {
       setValidLogin(sessionStorage.getItem('validLogin'))
@@ -83,6 +86,7 @@ function App() {
     setValidLogin(false);
     hideMenu();
     setCurrentUser({});
+    ResetLocation()
     sessionStorage.removeItem('validLogin');
     sessionStorage.removeItem('currentUser');
     sessionStorage.removeItem('cartQuantity');
@@ -465,7 +469,7 @@ function App() {
         <Route path="/blog/:name" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
         <Route path="/register" element={validLogin ? <NotFound /> : <Register activateLoginModal={activateLoginModal} />} />
-        <Route path="/profile" element={!validLogin ? <NotFound /> : <Profile currentUser={currentUser} getUser={getUser} />} />
+        <Route path="/profile" element={!validLogin ? <NotFound /> : <Profile currentUser={currentUser} getUser={getUser} handleLogout={handleLogout} />} />
         <Route
           path="/checkout"
           element={

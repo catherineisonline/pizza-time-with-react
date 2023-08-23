@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import validateForm from "../../components/validateForm";
+import { useNavigate } from "react-router-dom";
 
-const Profile = ({ currentUser, getUser }) => {
+const Profile = ({ currentUser, getUser, handleLogout }) => {
     const [editForm, setEditForm] = useState(false);
     const [formValue, setFormValue] = useState({ email: '', password: '', fullname: '', address: '', number: '' });
     const [formError, setFormError] = useState({});
     const [submit, setSubmit] = useState(false);
     const validate = validateForm("profile");
-
-
+    const navigate = useNavigate()
     const updateUser = async (id, user) => {
         try {
             const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
@@ -28,8 +28,6 @@ const Profile = ({ currentUser, getUser }) => {
             return false;
         }
     }
-
-
 
     const toggleForm = () => {
         setEditForm(!editForm);
@@ -50,37 +48,37 @@ const Profile = ({ currentUser, getUser }) => {
         }
         //if no errors in error obj
         else {
-            //clear out empty properties
             let currForm = { ...formValue };
             Object.entries(currForm).map((entry) => {
                 if (entry[1] === '') {
                     delete currForm[entry[0]];
-                    return currForm;
                 }
             });
-            console.log(currForm)
-            //if there is anything left
-            // if (Object.keys(currForm).length > 0) {
-            const accUpdate = await updateUser(currentUser.id, currForm);
-            if (accUpdate === false) {
-                setSubmit(false);
-                setFormValue({ email: '', password: '', fullname: '', address: '', number: '' })
-            }
-            else {
-                getUser(currentUser.id);
+            const update = await updateUser(currentUser.id, currForm);
+            if (update) {
                 setSubmit(true);
                 setEditForm(false);
                 setFormValue({ email: '', password: '', fullname: '', address: '', number: '' })
             }
         }
-
-        // }
-
-
-
     }
 
-
+    const deleteUser = async (id) => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
+                method: 'DELETE'
+            });
+            if (response.status === 200) {
+                navigate("/");
+                handleLogout();
+                return true;
+            }
+        }
+        catch (err) {
+            console.log(err.message);
+            return false;
+        }
+    }
     return (
         <main className="profile">
             <h2>Profile Information</h2>
@@ -111,7 +109,7 @@ const Profile = ({ currentUser, getUser }) => {
                     <hr />
                     <section className="profile-information-section">
                         <label htmlFor="number">Number</label>
-                        <input name="password" type="password" value={formValue.number} placeholder={currentUser.number !== null ? currentUser.number : 'Add number...'} onChange={handleValidation} />
+                        <input name="number" type="text" value={formValue.number} placeholder={currentUser.number !== null ? currentUser.number : 'Add number...'} onChange={handleValidation} />
                     </section>
                     <hr />
                     <section className="profile-buttons">
@@ -155,7 +153,7 @@ const Profile = ({ currentUser, getUser }) => {
                     </article>
                     <section className="profile-buttons">
                         <button className="active-button-style" onClick={() => { toggleForm(); ResetLocation() }}>Edit profile</button>
-                        <button className="passive-button-style">Delete account</button>
+                        <button className="passive-button-style" onClick={() => deleteUser(currentUser.id)}>Delete account</button>
                     </section>
                 </React.Fragment>
             }

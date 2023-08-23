@@ -41,7 +41,7 @@ export const updateUser = (req, res) => {
     userServices.updateUser(id, user)
         .then(() => {
             res.status(200).json({
-                message: "User updated",
+                message: `User updated`,
                 data: user
             })
         }).catch((err) => {

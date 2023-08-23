@@ -22,7 +22,6 @@ export default function RegistrationForm({ activateLoginModal }) {
 
     const createUser = async (user) => {
         const users = await getUsers();
-        console.log(user)
         //check repetitive emails
         const repetitiveEmail = users.filter((u) => u.email === user.email);
         //cretae unique id
@@ -53,20 +52,20 @@ export default function RegistrationForm({ activateLoginModal }) {
 
 
 
-    const deleteUser = async (id) => {
-        try {
-            const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
-                method: 'DELETE'
-            });
-            if (response.status === 200) {
-                return true;
-            }
-        }
-        catch (err) {
-            console.log(err.message);
-            return false;
-        }
-    }
+    // const deleteUser = async (id) => {
+    //     try {
+    //         const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
+    //             method: 'DELETE'
+    //         });
+    //         if (response.status === 200) {
+    //             return true;
+    //         }
+    //     }
+    //     catch (err) {
+    //         console.log(err.message);
+    //         return false;
+    //     }
+    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();

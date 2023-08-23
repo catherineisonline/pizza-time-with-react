@@ -49,31 +49,38 @@ const LoginModal = ({ setCurrentUser, setLoginModalWindow, setValidLogin, loginM
       return;
     }
     else {
+      //find all users
       const existingUsers = await getUsers(formValue.email.toLowerCase());
-      const targetUser = existingUsers.filter((u) => u.email === formValue.email.toLowerCase());
-      const targetPass = existingUsers.filter((u) => u.password === formValue.password);
-      if (targetUser.length === 0) {
+      //filter existence by email
+      const findByEmail = existingUsers.filter((u) => u.email === formValue.email.toLowerCase());
+      // if user not found by email
+      if (findByEmail.length === 0) {
         setSubmit(false);
         setFormValue({ email: '', password: '' });
         setFormError({})
-        setVerificationError("Such user doesn't exist");
+        setVerificationError("Wrong email");
         return;
       }
-      else if (targetUser.length > 0 && targetPass.length === 0) {
+      else if (findByEmail.length > 0 && findByEmail[0].password !== formValue.password) {
         setSubmit(false);
         setFormValue({ email: '', password: '' });
         setFormError({});
         setVerificationError("Wrong password");
         return;
       }
-      else {
-        getUser(targetUser[0].id);
+      else if (findByEmail.length > 0 && findByEmail[0].password === formValue.password) {
+        // setCurrentUser(findByEmail[0]);
+        getUser(findByEmail[0].id);
+        // if (user === true) {
         hideLoginModal();
         setFormValue({ email: '', password: '' });
         setFormError({});
         setVerificationError("");
         setValidLogin(true);
         navigate('/menu');
+        // }
+
+
       }
     }
   };
