@@ -1,0 +1,91 @@
+.profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+    margin: 0 auto;
+    background-color: var(--light-black);
+}
+
+.profile h2 {
+    color: var(--white);
+    font-family: var(--poppins-font);
+    margin: 0 auto;
+    font-size: 3rem;
+    padding: 2rem;
+    text-align: center;
+}
+.profile p {
+    color: var(--white);
+    font-family: var(--poppins-font);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.profile-information {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: flex-start;
+    max-width: 1000px;
+    padding: 1rem;
+}
+.profile-information hr {
+    width: 100%;
+}
+.profile-information-section {
+    color: var(--white);
+    font-family: var(--poppins-font);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+.profile-information-section h3 {
+    font-weight: 600;
+}
+.profile-information-section p {
+    font-size: 1rem;
+}
+
+.profile-buttons {
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    width: 100%;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: flex-start;
+    max-width: 1000px;
+    padding: 1rem;
+}
+.profile-form hr {
+    width: 100%;
+}
+
+.profile-information-section label {
+    font-weight: 600;
+}
+.profile-information-section input {
+    font-size: 1rem;
+    border: 1px solid grey;
+    font-size: 0.8rem;
+    color: var(--white);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px;
+}
+.profile-information-section input::placeholder {
+    color: var(--white);
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
