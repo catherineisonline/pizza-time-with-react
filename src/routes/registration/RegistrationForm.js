@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import ResetLocation from "../../helpers/ResetLocation";
 
 export default function RegistrationForm({ activateLoginModal }) {
-    const [formValue, setFormValue] = useState({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '' });
+    const [formValue, setFormValue] = useState({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '', number: '' });
     const [formError, setFormError] = useState({})
     const [submit, setSubmit] = useState(false);
     const [registrationFail, setRegistrationFail] = useState(false);
@@ -49,18 +49,6 @@ export default function RegistrationForm({ activateLoginModal }) {
             console.log(err.message)
         }
     }
-
-
-    // const getUser = async (id) => {
-    //     try {
-    //         const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
-    //         const body = await response.json();
-    //         // console.log(body.data);
-    //     }
-    //     catch (err) {
-    //         console.log(err.message)
-    //     }
-    // }
 
     const updateUser = async (id, user) => {
         try {
@@ -111,17 +99,20 @@ export default function RegistrationForm({ activateLoginModal }) {
             if (currForm.address !== undefined) {
                 delete currForm.address;
             }
+            if (currForm.number !== undefined) {
+                delete currForm.number;
+            }
             currForm.email = currForm.email.toLowerCase();
             const accCreation = await createUser(currForm);
             if (accCreation === false) {
                 setSubmit(false);
                 setRegistrationFail(true);
-                setFormValue({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '' })
+                setFormValue({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '', number: '' })
             }
             else {
                 setRegistrationFail(false);
                 setSubmit(true);
-                setFormValue({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '' })
+                setFormValue({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '', number: '' })
             }
         }
 
@@ -175,6 +166,11 @@ export default function RegistrationForm({ activateLoginModal }) {
                         <input type="text" placeholder="Address (optional)" name="address" value={formValue.address}
                             onChange={handleValidation} />
                         <span className="registration-input-err">{formError.address}</span>
+                    </section>
+                    <section className="birthday">
+                        <input type="text" placeholder="Number (optional)" name="number" value={formValue.number}
+                            onChange={handleValidation} />
+                        <span className="registration-input-err">{formError.number}</span>
                     </section>
                     <p className="terms-warning">
                         By clicking Sign Up, you agree to our Terms, Data Policy and Cookies

@@ -20,14 +20,22 @@ export const getUser = (id) => {
 
 export const createUser = (user) => {
     return new Promise((resolve, reject) => {
-        const { id, email, password, fullname, address
+        const { id, email, password, fullname, address, number
         } = user;
         let query;
         let params;
 
         if (address === undefined) {
+            query = 'INSERT INTO users (id, email, password, fullname, number) VALUES(?, ?, ?, ?, ?)';
+            params = [id, email, password, fullname, number];
+        }
+        if (number === undefined) {
+            query = 'INSERT INTO users (id, email, password, fullname, address) VALUES(?, ?, ?, ?, ?)';
+            params = [id, email, password, fullname, address];
+        }
+        if (address === undefined && number === undefined) {
             query = 'INSERT INTO users (id, email, password, fullname) VALUES(?, ?, ?, ?)';
-            params = [id, email, password, fullname];
+            params = [id, email, password, fullname,];
         }
         else {
             query = 'INSERT INTO users (id, email, password, fullname, address) VALUES(?, ?, ?, ?, ?)';
@@ -41,29 +49,33 @@ export const createUser = (user) => {
 
 export const updateUser = (id, user) => {
     return new Promise((resolve, reject) => {
-        const { email, password, fullname, address } = user;
+        const { email, password, fullname, address, number } = user;
         let query;
         let params;
 
         if (email === undefined) {
-            query = 'UPDATE users SET password = ?, fullname = ?, address = ? WHERE id = ?';
-            params = [password, fullname, address, id];
+            query = 'UPDATE users SET password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
+            params = [password, fullname, address, number, id];
         }
         else if (password === undefined) {
-            query = 'UPDATE users SET email = ?, fullname = ?, address = ? WHERE id = ?';
-            params = [email, fullname, address, id];
+            query = 'UPDATE users SET email = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
+            params = [email, fullname, address, number, id];
         }
         else if (fullname === undefined) {
-            query = 'UPDATE users SET email = ?, password = ?, address = ? WHERE id = ?';
-            params = [email, password, address, id];
+            query = 'UPDATE users SET email = ?, password = ?, address = ?, number = ? WHERE id = ?';
+            params = [email, password, address, number, id];
         }
         else if (address === undefined) {
-            query = 'UPDATE users SET email = ?, password = ?, fullname = ? WHERE id = ?';
-            params = [email, password, fullname, id];
+            query = 'UPDATE users SET email = ?, password = ?, fullname = ?, number = ? WHERE id = ?';
+            params = [email, password, fullname, number, id];
         }
-        else {
+        else if (number === undefined) {
             query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ? WHERE id = ?';
             params = [email, password, fullname, address, id];
+        }
+        else {
+            query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, address WHERE id = ?';
+            params = [email, password, fullname, address, number, id];
         }
 
         sql.execute(query, params)
