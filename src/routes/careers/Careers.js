@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 import careers from "../../data/careers";
+import { useEffect } from "react";
 
 const Careers = () => {
+    useEffect(() => {
+        document.title = "Careers | Pizza Time";
+    }, []);
     return (
         <main className="careers">
             <h2>Careers</h2>

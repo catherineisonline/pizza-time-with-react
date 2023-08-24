@@ -1,5 +1,5 @@
 import EmptyCart from "../cart/EmptyCart.js";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tick from "../../assets/images/success-tick.png";
 import ResetLocation from "../../helpers/ResetLocation";
 import { v4 as uuidv4 } from 'uuid';
@@ -25,6 +25,10 @@ const Payment = ({ cartItems, totalPayment }) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   }
+
+  useEffect(() => {
+    document.title = "Payment | Pizza Time";
+  }, []);
   return (
     <React.Fragment>
       {cartItems.length === 0 ? <EmptyCart /> :

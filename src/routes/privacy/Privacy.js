@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import privacyContent from "../../data/privacyContent";
 
 const Privacy = () => {
+    useEffect(() => {
+        document.title = "Privacy | Pizza Time";
+    }, []);
     return (
         <main className="terms">
             <h2>Privacy</h2>

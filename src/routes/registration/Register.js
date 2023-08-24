@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import validateForm from "../../components/validateForm";
 import { v4 as uuidv4 } from 'uuid';
 import ResetLocation from "../../helpers/ResetLocation";
@@ -96,7 +96,10 @@ const Register = ({ activateLoginModal }) => {
     setFormValue({ ...formValue, [name]: value })
   }
   const validate = validateForm("registration");
-  document.title = "Register | Pizza Time";
+
+  useEffect(() => {
+    document.title = "Registration | Pizza Time";
+  }, []);
   return (
     <main className="register-main">
       <h2>{submit && Object.keys(formError).length === 0 ? 'Success!' : 'Registration'}</h2>

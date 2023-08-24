@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./Hero";
 import ScrollButton from "../../components/ScrollBtn";
 import ContactUsLanding from "./ContactUsLanding";
@@ -10,34 +10,32 @@ import Gallery from "./Gallery";
 import StatsPreview from "./StatsPreview";
 import MenuSlider from "./MenuSlider";
 import BlogPreview from "./BlogPreview";
-// import ContactForm from "./ContactForm";
 import Newsletter from "./Newsletter";
 import ResetLocation from "../../helpers/ResetLocation";
 import ContactLanding from "./ContactLanding";
 
-class RootSection extends React.Component {
-  componentDidUpdate() {
-    ResetLocation();
-  }
-  render() {
+const RootSection = () => {
+  useEffect(() => {
     document.title = "Pizza Time";
-    return (
-      <React.Fragment>
-        <Header />
-        <WelcomeSection />
-        <ContactUsLanding />
-        <OurServices />
-        <PizzaMenuPreview />
-        <MenuPricingPreview />
-        <Gallery />
-        <StatsPreview />
-        <MenuSlider />
-        <Newsletter />
-        <BlogPreview />
-        <ContactLanding />
-        <ScrollButton />
-      </React.Fragment>
-    );
-  }
+    ResetLocation();
+  }, []);
+  return (
+    <React.Fragment>
+      <Header />
+      <WelcomeSection />
+      <ContactUsLanding />
+      <OurServices />
+      <PizzaMenuPreview />
+      <MenuPricingPreview />
+      <Gallery />
+      <StatsPreview />
+      <MenuSlider />
+      <Newsletter />
+      <BlogPreview />
+      <ContactLanding />
+      <ScrollButton />
+    </React.Fragment>
+  );
 }
+
 export default RootSection;

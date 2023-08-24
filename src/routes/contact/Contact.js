@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import validateForm from "../../components/validateForm";
@@ -6,7 +6,6 @@ import ReCAPTCHA from "react-google-recaptcha"
 import { Link } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 const Contact = () => {
-  document.title = "Contact | Pizza Time";
   const [formValue, setFormValue] = useState({ fullname: '', email: '', message: "" });
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
@@ -14,7 +13,9 @@ const Contact = () => {
   const [captchaError, setCaptchaError] = useState('')
   const validate = validateForm("contact");
   const captchaRef = useRef();
-
+  useEffect(() => {
+    document.title = "Contact | Pizza Time";
+  }, []);
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();

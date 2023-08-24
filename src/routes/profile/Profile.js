@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import { useNavigate } from "react-router-dom";
 import validateForm from "../../components/validateForm";
@@ -71,6 +71,10 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
             return false;
         }
     }
+
+    useEffect(() => {
+        document.title = "Profile | Pizza Time";
+    }, []);
     return (
         <main className="profile">
             <h2>Profile information</h2>

@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import termsContent from "../../data/termsContent";
 
 const Terms = () => {
-
+    useEffect(() => {
+        document.title = "Terms | Pizza Time";
+    }, []);
     return (
         <main className="terms">
             <h2>Terms & Conditions</h2>

@@ -27,8 +27,9 @@ const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
   };
 
   useEffect(() => {
+    document.title = `${singleProduct.ItemName}| Pizza Time`;
     setSingleProduct(allProductsData.filter((item) => item.id === window.location.pathname.toString().substring(6))[0]);
-  }, []);
+  }, [singleProduct.ItemName]);
 
   return (
     <main className="single-item-container">
