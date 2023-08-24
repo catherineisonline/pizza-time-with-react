@@ -175,3 +175,8 @@
     font-weight: 400;
     font-family: var(--poppins-font);
 }
+
+.input-validation-error {
+    font-family: var(--poppins-font);
+    color: var(--pizza-red);
+}

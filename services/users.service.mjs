@@ -53,33 +53,6 @@ export const updateUser = (id, user) => {
         const { email, password, fullname, address, number } = user;
         let query;
         let params;
-
-        // if (email === undefined) {
-        //     query = 'UPDATE users SET password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
-        //     params = [password, fullname, address, number];
-        // }
-        // else if (password === undefined) {
-        //     query = 'UPDATE users SET email = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
-        //     params = [email, fullname, address, number];
-        // }
-        // else if (fullname === undefined) {
-        //     query = 'UPDATE users SET email = ?, password = ?, address = ?, number = ? WHERE id = ?';
-        //     params = [email, password, address, number];
-        // }
-        // else if (address === undefined) {
-        //     query = 'UPDATE users SET email = ?, password = ?, fullname = ?, number = ? WHERE id = ?';
-        //     params = [email, password, fullname, number];
-        // }
-        // else if (number === undefined) {
-        //     query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ? WHERE id = ?';
-        //     params = [email, password, fullname, address];
-        // }
-        // else {
-        //     params = [email, password, fullname, address, number];
-        //     query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
-
-        // }
-        //test purposes
         params = [email, password, fullname, address, number];
         query = 'UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?';
         sql.execute(query, [...params, id])
@@ -87,6 +60,8 @@ export const updateUser = (id, user) => {
             .catch((err) => reject(err))
     })
 }
+
+
 
 
 export const deleteUser = (id) => {

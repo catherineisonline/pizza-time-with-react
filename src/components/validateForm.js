@@ -36,20 +36,26 @@ const validateForm = (form) => (value) => {
             errors.password = "Passwords don't match"
         }
     }
-    // else if (form === "profile") {
-    //     // if (!value.fullname) {
-    //     //     errors.fullname = "Please enter full name"
-    //     // }
-    //     // if (!value.email) {
-    //     //     errors.email = "Please enter email"
-    //     // }
-    //     // if (!emailRegex.test(value.email)) {
-    //     //     errors.email = "Please enter valid email"
-    //     // }
-    //     // // if (!value.password) {
-    //     //     errors.password = "Please enter a valid password"
-    //     // }
-    // }
+    else if (form === "profile") {
+        if (value.fullname.length !== 0 && value.fullname.length < 3) {
+            errors.fullname = "Full name is too short"
+        }
+        if (value.address.length !== 0 && value.address.length < 5) {
+            errors.address = "Address is too short"
+        }
+        if (value.email.length !== 0 && !emailRegex.test(value.email)) {
+            errors.email = "Please enter valid email"
+        }
+        if (value.password.length !== 0 && value.password.length < 8) {
+            errors.password = "Password should be min. 8 characters"
+        }
+        if (value.number.length !== 0 && value.number.length < 5) {
+            errors.number = "Phone number is not valid"
+        }
+        else if (value.number.length !== 0 && !numberRegex.test(value.number)) {
+            errors.number = "Phone number is not valid"
+        }
+    }
     else if (form === "contact-landing") {
         if (!value.fullname) {
             errors.fullname = "Please enter your full name"
