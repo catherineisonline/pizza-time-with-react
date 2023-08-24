@@ -10,6 +10,7 @@
   background-attachment: fixed;
   margin-top: 2rem;
   margin-bottom: 3rem;
+  justify-content: center;
 }
 .blog-section h2,
 .blog-intro,
@@ -75,6 +76,14 @@
   text-transform: capitalize;
   letter-spacing: 1px;
   font-weight: 400;
+}
+
+.blog .blog-pagination {
+  position: initial;
+  display: flex;
+  flex-direction: row;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 }
 
 /***************  RESPONSIVE ***************/

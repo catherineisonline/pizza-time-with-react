@@ -47,7 +47,7 @@ const Blog = () => {
           </section>
         </article>
         <ReactPaginate
-          className="pagination"
+          className="pagination blog-pagination"
           breakLabel="..."
           nextLabel=" &#62;"
           onPageChange={handlePageClick}
