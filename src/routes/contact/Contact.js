@@ -1,25 +1,86 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import validateForm from "../../components/validateForm";
-
+import ReCAPTCHA from "react-google-recaptcha"
+import { Link } from "react-router-dom";
+import ResetLocation from "../../helpers/ResetLocation";
 const Contact = () => {
   document.title = "Contact | Pizza Time";
   const [formValue, setFormValue] = useState({ fullname: '', email: '', message: "" });
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [captchaError, setCaptchaError] = useState('')
   const validate = validateForm("contact");
+  const captchaRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     setFormError(validate(formValue));
     setSubmit(true);
+
+    if (Object.keys(validate(formValue)).length > 0) {
+      setLoading(false);
+      setSubmit(false);
+      return;
+    }
+    else {
+      let captchaToken = captchaRef.current?.getValue();
+      if (captchaToken.length === 0) {
+        setCaptchaError("reCaptcha is mandatory")
+        setLoading(false);
+        setSubmit(false);
+        return;
+      }
+      const verification = await verifyCaptcha(captchaToken);
+      captchaRef.current?.reset();
+      if (verification) {
+        setLoading(false);
+        setSubmit(true);
+        ResetLocation()
+        setFormValue({ fullname: '', email: '', message: "" })
+        setCaptchaError("");
+      }
+      else {
+        ResetLocation()
+        setLoading(false);
+        setSubmit(false);
+        setFormValue({ fullname: '', email: '', message: "" });
+        setCaptchaError("");
+      }
+
+    }
   }
   const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   }
-
+  const verifyCaptcha = async (captchaToken) => {
+    try {
+      const response = await fetch('https://pizza-time-backend.vercel.app/verify-recaptcha', {
+        method: 'POST',
+        body: JSON.stringify({
+          secret: process.env.REACT_APP_CAPTCHA_SECRET,
+          captchaToken
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (response.status === 200) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    catch (error) {
+      console.error("Could not verify captcha!", error.message);
+      return false;
+    }
+  }
   return (
     <motion.div
       initial={{ opacity: 0, translateX: -300 }}
@@ -27,10 +88,18 @@ const Contact = () => {
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}>
       <main className="contact" >
-        <section>
-          {submit && Object.keys(formError).length === 0 ?
-            <p className="contact-success">We have recieved your message and we will get back to you shortly! 🍕</p> :
+        {loading ? <p>loading</p> :
+          submit && Object.keys(formError).length === 0 ?
+            <section className="contact-success">
+              <p>We have recieved your message and we will get back to you shortly! 🍕</p>
+              <section>
+                <Link className="active-button-style" to="/menu">Go to menu</Link>
+                <button className="passive-button-style" type="button" onClick={() => { setSubmit(false); }}>Send again</button>
+              </section>
+            </section>
+            :
             <form onSubmit={handleSubmit} className="flex-container flex-column">
+
               <div className="webflow-style-input">
                 <input
                   onChange={handleValidation}
@@ -63,11 +132,13 @@ const Contact = () => {
                 />
               </div>
               <span className="input-validation-error">{formError.message}</span>
-              <button type="submit" className="active-button-style">
+              <ReCAPTCHA ref={captchaRef} sitekey={process.env.REACT_APP_CAPTCHA_KEY} theme="dark" />
+              <span className="input-validation-error">{captchaError}</span>
+              <button type="submit" className="active-button-style" >
                 Send
               </button>
-            </form>}
-        </section>
+            </form>
+        }
         <section className="contact-us-img"></section>
         <section className="contact-us-content pop-font">
           <section className="contact-us-content-txt">

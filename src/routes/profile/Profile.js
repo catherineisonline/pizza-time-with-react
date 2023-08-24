@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import { useNavigate } from "react-router-dom";
 
+
 const Profile = ({ currentUser, handleLogout, updateUser }) => {
     const [editForm, setEditForm] = useState(false);
     const [formValue, setFormValue] = useState({ email: '', password: '', fullname: '', address: '', number: '' });

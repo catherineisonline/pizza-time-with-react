@@ -18,6 +18,10 @@
         {
             "src": "/users/:id",
             "dest": "index.mjs"
+        },
+        {
+            "src": "/verify-recaptcha",
+            "dest": "index.mjs"
         }
     ]
 }
