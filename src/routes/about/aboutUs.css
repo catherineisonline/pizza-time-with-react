@@ -11,14 +11,18 @@
   font-family: var(--poppins-font);
   width: 100%;
 }
-.about-us h1,
+.about-us h2 {
+  font-size: 3rem;
+}
 .about-us .sub-title {
   font-size: 1.5rem;
   text-transform: uppercase;
 }
 
 .about-us p {
-  font-size: 1.4rem;
+  color: var(--light-gray);
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
 .section-one-content h3,
 .section-two-content h3,
