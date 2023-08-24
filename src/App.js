@@ -118,11 +118,10 @@ function App() {
     setValidLogin(false);
     hideMenu();
     setCurrentUser({});
-    ResetLocation()
-    sessionStorage.removeItem('validLogin');
-    sessionStorage.removeItem('currentUser');
-    sessionStorage.removeItem('cartQuantity');
-    sessionStorage.removeItem('cartItems');
+    ResetLocation();
+    setCartItems([]);
+    setProductsQuantity(0);
+    sessionStorage.clear();
   };
 
   const findMenuItem = (e) => {
@@ -210,6 +209,7 @@ function App() {
     return currentProductList;
   };
   const handleAddProduct = (targetProduct, userSelectedAttributes) => {
+
     const productAlreadyInCart = CheckRepeatableProducts(
       cartItems,
       targetProduct,
@@ -218,7 +218,7 @@ function App() {
 
     let currentCartItems = [...cartItems];
     let newQuantity;
-
+    //if product doesn't exists yet 
     if (productAlreadyInCart === undefined) {
       const itemToAdd = targetProduct;
 
@@ -231,17 +231,20 @@ function App() {
       });
 
 
-    } else {
+    }
+    //if product already exists
+    else {
       let index;
       //if there are no attributes find index by id
       if (userSelectedAttributes.length === 0) {
         index = cartItems.findIndex(item => item.id === targetProduct.id);
       }
+
       //if there are attributes find index by attributes
       else {
         index = cartItems.findIndex(item => item.userSelectedAttributes[0]?.attributeValue === userSelectedAttributes[0].attributeValue);
       }
-
+      // console.log(userSelectedAttributes);
       if (index !== -1) {
         newQuantity = cartItems[index].quantity;
 
