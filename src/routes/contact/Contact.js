@@ -88,7 +88,12 @@ const Contact = () => {
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}>
       <main className="contact" >
-        {loading ? <p>loading</p> :
+        {loading ?
+          <section className="contact-loader">
+            <p>Almost there...</p>
+            <img alt="Processing request" src="https://media0.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif?cid=ecf05e472hf2wk1f2jou3s5fcnx1vek6ggnfcvhsjbeh7v5u&ep=v1_stickers_search&rid=giphy.gif&ct=s" />
+          </section>
+          :
           submit && Object.keys(formError).length === 0 ?
             <section className="contact-success">
               <p>We have recieved your message and we will get back to you shortly! 🍕</p>
