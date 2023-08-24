@@ -366,6 +366,16 @@ input[type="search"]::-webkit-search-results-decoration {
     scroll-behavior: initial;
   }
 
+  .side-menu ul li a {
+    color: var(--white);
+    transition: all ease-in-out 0.3s;
+  }
+
+  .side-menu ul li a:hover {
+    color: var(--pizza-red);
+    transition: all ease-in-out 0.3s;
+  }
+
   .side-menu li {
     border-bottom: 1px solid var(--yellow);
   }
