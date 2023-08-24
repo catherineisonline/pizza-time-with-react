@@ -126,6 +126,7 @@
   color: var(--white);
   max-width: 700px;
   margin: 0 auto;
+  padding: 2rem;
 }
 
 .cart-carttotals .totals-content {
@@ -238,6 +239,7 @@
   }
   .cart-carttotals .cart-totals .totals-content {
     flex-direction: row;
+    padding: none;
   }
   .totals-content > * {
     flex-direction: column;
