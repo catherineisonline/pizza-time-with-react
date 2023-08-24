@@ -19,7 +19,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .section-10,
   footer,
   .dish-categories {
     flex-direction: row !important;
@@ -34,10 +33,6 @@
   .section-10 {
     justify-content: space-evenly;
     gap: 5rem;
-  }
-  .map {
-    height: auto;
-    width: 80%;
   }
 
   footer {
@@ -88,6 +83,13 @@
 @media screen and (min-width: 1025px) {
   .navigation-menu {
     display: flex;
+  }
+  .section-10 {
+    flex-direction: row !important;
+  }
+  .map {
+    height: auto;
+    width: 80%;
   }
   .meals-grid {
     display: grid;

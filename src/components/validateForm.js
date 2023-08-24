@@ -56,20 +56,6 @@ const validateForm = (form) => (value) => {
             errors.number = "Phone number is not valid"
         }
     }
-    else if (form === "contact-landing") {
-        if (!value.fullname) {
-            errors.fullname = "Please enter your full name"
-        }
-        if (!value.email) {
-            errors.email = "Please enter phone an email"
-        }
-        else if (!emailRegex.test(value.email)) {
-            errors.email = "Please enter valid email"
-        }
-        if (!value.message) {
-            errors.message = "Please write a message"
-        }
-    }
     else if (form === "login") {
         if (!value.email) {
             errors.email = 'Please enter email';

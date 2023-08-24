@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from 'react';
 import { motion } from "framer-motion";
 //Leaflet
 import L from "leaflet";
@@ -8,7 +7,6 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker } from "react-leaflet";
 import { Popup } from "react-leaflet";
-import validateForm from "../../components/validateForm";
 
 
 let DefaultIcon = L.icon({
@@ -20,24 +18,6 @@ const position = [37.0902, -93.7129];
 
 
 const ContactLanding = () => {
-  const [formValue, setFormValue] = useState({ fullname: '', email: '', message: "" });
-  const [submit, setSubmit] = useState(false);
-  const [formError, setFormError] = useState({});
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormError(validate(formValue));
-    setSubmit(true);
-  }
-
-
-  const handleValidation = (e) => {
-    const { name, value } = e.target;
-    setFormValue({ ...formValue, [name]: value });
-  }
-
-  const validate = validateForm("contact-landing");
-
   return (
     <article className="section-10  flex-container flex-column">
       <motion.div
@@ -64,60 +44,39 @@ const ContactLanding = () => {
           </Marker>
         </MapContainer>
       </motion.div>
-
-      {submit && Object.keys(formError).length === 0 ?
-        <section className="contact-section-success">
-          <p>We have recieved your message and we will get back to you shortly! 🍕</p>
+      <motion.div
+        className="contact-emails"
+        initial={{ opacity: 0, translateX: 300 }}
+        whileInView={{ opacity: 1, translateX: 0 }}
+        exit={{ opacity: 0, translateX: 300 }}
+        transition={{ duration: 2 }}
+      >
+        <h3>Contact Us</h3>
+        <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you!</p>
+        <section>
+          <h4>Customer Support:</h4>
+          <p>Our dedicated customer support team is ready to assist you with any inquiries you may have.</p>
+          <ul>
+            <li>- Email: support@pizzatime.com</li>
+            <li>- Phone: 000 (000) 123 4567</li>
+            <li>- Hours: Monday - Friday, 8:00am - 9:00pm (EST)</li>
+          </ul>
         </section>
-        :
-
-        <motion.div
-          className="contact-section"
-          initial={{ opacity: 0, translateX: 300 }}
-          whileInView={{ opacity: 1, translateX: 0 }}
-          exit={{ opacity: 0, translateX: 300 }}
-          transition={{ duration: 2 }}
-        >
-          <form className="contact-form  flex-container flex-column" onSubmit={handleSubmit}>
-            <h2 className="txt-center pop-font txt-white">Contact Us</h2>
-            <div className="contact-form-item webflow-style-input">
-              <input
-                onChange={handleValidation}
-                value={formValue.fullname}
-                name="fullname"
-                className="fullname-input  pop-font"
-                type="text"
-                placeholder="Full Name"
-              />
-            </div>
-            <span className="fullname-error-cpage">{formError.fullname}</span>
-            <div className="contact-form-item webflow-style-input">
-              <input
-                onChange={handleValidation}
-                value={formValue.email}
-                name="email"
-                className="email-input pop-font"
-                type="text"
-                placeholder="Email"
-              />
-            </div>
-            <span className="fullname-error-cpage">{formError.email}</span>
-            <div className="contact-form-item webflow-style-input">
-              <textarea
-                onChange={handleValidation}
-                value={formValue.message}
-                name="message"
-                className="textarea-input  pop-font"
-                placeholder="Message"
-              />
-            </div>
-            <span className="fullname-error-cpage">{formError.message}</span>
-            <button type="submit" className="active-button-style">
-              Send
-            </button>
-          </form>
-        </motion.div>
-      }
+        <section>
+          <h4>General Inquiries:</h4>
+          <p>If you have general questions about our company, partnerships, or anything else, feel free to get in touch.</p>
+          <ul>
+            <li>- Email: info@pizzatime.com</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Feedback and Suggestions:</h4>
+          <p>We value your feedback and are always striving to improve. If you have any suggestions, comments, or ideas on how we can enhance our offerings, please let us know.</p>
+          <ul>
+            <li>- Email: feedback@pizzatime.com</li>
+          </ul>
+        </section>
+      </motion.div>
     </article>
   );
 }
