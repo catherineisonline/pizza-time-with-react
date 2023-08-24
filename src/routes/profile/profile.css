@@ -4,7 +4,7 @@
     flex-direction: column;
     margin-top: 2rem;
     margin-bottom: 10rem;
-    margin: 0 auto;
+    align-items: center;
     background-color: var(--light-black);
 }
 
@@ -29,7 +29,7 @@
     gap: 2rem;
     margin-top: 3rem;
     align-items: flex-start;
-    max-width: 1000px;
+    width: 90%;
     padding: 1rem;
 }
 .profile-information hr {
@@ -56,7 +56,7 @@
     display: flex;
     gap: 2rem;
     flex-direction: row;
-    width: 100%;
+    width: 90%;
 }
 
 .profile-form {
@@ -65,7 +65,7 @@
     gap: 2rem;
     margin-top: 3rem;
     align-items: flex-start;
-    max-width: 1000px;
+    width: 90%;
     padding: 1rem;
 }
 .profile-form hr {
@@ -88,4 +88,90 @@
     color: var(--white);
     opacity: 0.7;
     font-size: 0.8rem;
+}
+
+.deletion-modal {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.deletion-window {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0 auto;
+    width: 60%;
+    max-width: 500px;
+    padding: 2rem;
+    box-shadow: var(--modal-box-shadow);
+    -webkit-box-shadow: var(--modal-box-shadow);
+    -moz-box-shadow: var(--modal-box-shadow);
+    border-radius: 15px;
+    background-color: var(--white);
+}
+
+.deletion-window h3 {
+    color: var(--pizza-red);
+    font-family: var(--poppins-font);
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.deletion-window p {
+    color: var(--light-black);
+    font-family: var(--poppins-font);
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: left;
+}
+.deletion-window section {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.cancel-deletion {
+    cursor: pointer;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0.5rem 1.2rem;
+    opacity: 0.8;
+    background-color: transparent;
+    border-color: var(--light-black);
+    color: var(--light-black);
+    letter-spacing: 1px;
+    align-items: center;
+    width: max-content;
+    font-size: 1rem;
+    font-family: var(--poppins-font);
+}
+
+.confirm-deletion {
+    cursor: pointer;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0.5rem 1.2rem;
+    opacity: 0.8;
+    background-color: var(--pizza-red);
+    border-color: var(--pizza-red);
+    letter-spacing: 1px;
+    align-items: center;
+    width: max-content;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--poppins-font);
 }

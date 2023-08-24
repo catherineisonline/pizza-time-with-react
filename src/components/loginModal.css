@@ -38,6 +38,7 @@
   width: 90%;
   padding-bottom: 3rem;
 }
+
 .display-block {
   display: block;
 }
@@ -54,15 +55,23 @@
   font-size: 2rem;
   text-align: right;
   padding: 1rem;
-  width: 90%;
+  width: 95%;
 }
 .modal-content h2 {
   color: var(--pizza-red);
   font-family: var(--poppins-font);
   letter-spacing: 1px;
-  text-transform: capitalize;
   font-weight: 400;
 }
+
+.modal-content form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
 .modal-content input {
   width: 90%;
   background-color: transparent;
@@ -138,4 +147,21 @@
 .login-input-err {
   color: var(--red);
   text-align: left;
+}
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+.loader p {
+  color: var(--light-black);
+  font-family: var(--poppins-font);
+  letter-spacing: 1px;
+}
+.loader img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
 }

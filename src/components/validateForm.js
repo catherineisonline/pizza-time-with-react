@@ -13,7 +13,7 @@ const validateForm = (form) => (value) => {
         if (!value.fullname) {
             errors.fullname = "Please enter full name"
         }
-        if (value.fullname.length < 3) {
+        else if (value.fullname.length < 3) {
             errors.fullname = "Name is too short"
         }
         if (!value.email) {
@@ -25,7 +25,7 @@ const validateForm = (form) => (value) => {
         if (!value.password) {
             errors.password = "Please enter a valid password"
         }
-        if (value.password.length < 8 || value.repeatPassword.length < 8) {
+        else if (value.password.length < 8 || value.repeatPassword.length < 8) {
             errors.password = "Password should be min. 8 characters"
         }
         if (!value.repeatPassword) {
