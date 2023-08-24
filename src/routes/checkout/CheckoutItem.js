@@ -23,7 +23,9 @@ export default class CheckoutItem extends React.Component {
         <img src={cartItem.ItemImg} alt={cartItem.ItemName} />
         {cartItem.userSelectedAttributes.length === 0 ?
           <section className="checkout-item-info">
-            <h3>{cartItem.quantity} {cartItem.ItemName}, <span>$ {cartItem.ItemPrice}</span></h3>
+            <h3> {cartItem.ItemName}</h3>
+            <p>Quantity: {cartItem.quantity}</p>
+            <p>Price: $ {cartItem.ItemPrice}</p>
           </section> :
           <section className="checkout-item-info">
             <h3>{cartItem.quantity} {cartItem.ItemName}  <span>{this.state.selectedAttributes}</span>, <span>$ {cartItem.ItemPrice}</span></h3>

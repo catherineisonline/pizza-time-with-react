@@ -530,6 +530,7 @@ function App() {
             <Payment
               cartItems={cartItems}
               totalPayment={totalPayment}
+              currentUser={currentUser}
             />
           }
         />

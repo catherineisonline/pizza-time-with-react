@@ -5,9 +5,9 @@ import { RiShoppingBagLine } from "react-icons/ri";
 import ResetLocation from "../../helpers/ResetLocation";
 import { Link, useNavigate } from "react-router-dom";
 
-const CheckoutForm = ({ currentUser, toggleDelivery, delivery, togglePromocode, promoCode, totalPayment, productsQuantity, taxes, className, validLogin, showModal }) => {
+const CheckoutForm = ({ currentUser, toggleDelivery, togglePromocode, promoCode, totalPayment, productsQuantity, taxes }) => {
   const [formValue, setFormValue] = useState({
-    fullname: currentUser.fullname, phone: currentUser.number, chooseDelivery: "", address: currentUser.address, promoCode: ''
+    fullname: currentUser.fullname, email: currentUser.email, address: currentUser.address, number: currentUser.number, chooseDelivery: "", promoCode: ''
   });
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
@@ -31,11 +31,20 @@ const CheckoutForm = ({ currentUser, toggleDelivery, delivery, togglePromocode, 
   }
   const validateForm = (value) => {
     let errors = {}
+    // if (value.address === null) {
+    //   errors.address = "Please add an address"
+    // }
+    // if (value.number === null) {
+    //   errors.number = "Missing a phone number"
+    // }
     if (!value.chooseDelivery) {
-      errors.chooseDelivery = "Please choose a delivery type!"
+      errors.chooseDelivery = "Please choose a delivery type"
     }
     if (!value.promoCode && promoCode) {
-      errors.promoCode = "Please indicate your promo code!"
+      errors.promoCode = "Please indicate your promo code"
+    }
+    if (value.promoCode && value.promoCode.length < 5 && promoCode) {
+      errors.promoCode = "Invalid promo code!"
     }
 
     return errors;
@@ -43,17 +52,18 @@ const CheckoutForm = ({ currentUser, toggleDelivery, delivery, togglePromocode, 
 
   return (
     <section className="checkout-personal-information">
-      <h3>Personal information <span><Link to="/profile">Edit profile</Link></span></h3>
+      <h3>Personal information <span><Link onClick={ResetLocation} to="/profile">Edit profile</Link></span></h3>
       <section>
         <p>{currentUser.fullname}</p>
         <p>{currentUser.email}</p>
         {currentUser.address !== null ?
           <p>{currentUser.address}</p> :
-          <p>You haven't added address yet <span><Link to="/profile">Add address</Link></span></p>}
+          <p className="checkout-address">You haven't added address yet<span><Link onClick={ResetLocation} to="/profile">Add address</Link></span></p>}
+        <span className="fullname-error-cpage">{formError.address}</span>
         {currentUser.number !== null ?
           <p>{currentUser.number}</p> :
-          <p>Please add you contact number<span><Link to="/profile">Add number</Link></span></p>}
-
+          <p className="checkout-number">Please add you contact number<span><Link onClick={ResetLocation} to="/profile">Add number</Link></span></p>}
+        <span className="fullname-error-cpage">{formError.number}</span>
       </section>
       <form onSubmit={handleSubmit}>
         <h3>Delivery details</h3>
@@ -85,17 +95,19 @@ const CheckoutForm = ({ currentUser, toggleDelivery, delivery, togglePromocode, 
         </label>
         <span className="fullname-error-cpage">{formError.chooseDelivery}</span>
         <section className="promo-code">
-          <p onClick={togglePromocode}>I have a promo code!</p>
-          {promoCode === false ? null : (
-            <input
-              name="promoCode"
-              className=" pop-font"
-              type="text"
-              placeholder="Enter the code"
-              onChange={handleValidation}
-              value={formValue.promoCode}
-            />
 
+          {promoCode === false ? <p onClick={togglePromocode}>I have a promo code!</p> : (
+            <React.Fragment>
+              <p onClick={togglePromocode}>No promo code</p>
+              <input
+                name="promoCode"
+                className=" pop-font"
+                type="text"
+                placeholder="Enter the 5-digit code"
+                onChange={handleValidation}
+                value={formValue.promoCode}
+              />
+            </React.Fragment>
           )}
           <span className="fullname-error-cpage">{formError.promoCode}</span>
         </section>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import RegistrationForm from "./RegistrationForm";
 import validateForm from "../../components/validateForm";
 import { v4 as uuidv4 } from 'uuid';
 import ResetLocation from "../../helpers/ResetLocation";
@@ -77,7 +76,6 @@ const Register = ({ activateLoginModal }) => {
         delete currForm.number;
       }
       currForm.email = currForm.email.toLowerCase();
-      // console.log(currForm)
       const accCreation = await createUser(currForm);
       if (accCreation === false) {
         setLoading(false);

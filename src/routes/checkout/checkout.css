@@ -5,72 +5,77 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
 }
 
-.checkout::after {
-  content: "";
-  height: 10rem;
-}
 .checkout {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin: 0;
+  width: 100%;
+  margin: 0 auto;
+  gap: 1rem;
+  min-height: 100vh;
+  padding-bottom: 10rem;
   background-color: var(--light-black);
-  background-image: none;
   color: var(--white);
   font-family: var(--poppins-font);
+  background-image: none;
 }
 .checkout h2 {
-  color: var(--white);
-  font-family: var(--poppins-font);
-  text-transform: uppercase;
   margin: 0 auto;
-  font-size: 4rem;
-  padding: 2rem;
+  font-size: 3rem;
 }
 
 .checkout-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
-  width: 80%;
-  /* margin: 0 auto; */
-  max-width: 1000px;
+  padding: 2rem;
 }
 
 .checkout-item {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  width: 60%;
+  grid-template-columns: 10rem 1fr;
+  gap: 2rem;
+  width: max-content;
+  height: 10rem;
 }
 .checkout-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 .checkout-item-info {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 .checkout-item-info h3 {
   font-size: 1.5rem;
   font-weight: 500;
+  color: var(--yellow);
 }
 /* PERSONAL INFORMATION */
 .checkout-personal-information h3 {
   font-size: 2.5rem;
   font-weight: 400;
-  color: var(--pizza-red);
+  color: var(--yellow);
   display: flex;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
 }
 
-.checkout-personal-information h3 a {
+.checkout-address,
+.checkout-number {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.checkout-personal-information h3 a,
+.checkout-address a,
+.checkout-number a {
   font-size: 1rem;
   color: rgb(103, 15, 186);
 }
@@ -86,8 +91,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   flex-direction: column;
   gap: 2rem;
 }
-.checkout-personal-information input[type="text" i],
-.checkout-choose-payment input,
 .promo-code input {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
@@ -98,8 +101,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: transparent;
   font-weight: 400;
   font-size: 1rem;
-  max-width: 80%;
-  width: 80%;
+  width: 20%;
 }
 
 /* CHOOSE DELIVERY */
@@ -168,7 +170,6 @@ input[type="password"] {
 .checkout-carttotals .cart-carttotals .totals-content {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   font-family: var(--poppins-font);
   color: var(--whitish-gray);
   text-transform: uppercase;
@@ -184,7 +185,6 @@ input[type="password"] {
 .checkout-carttotals .totals-content {
   display: flex;
   flex-direction: column;
-  /* gap: rem; */
   justify-content: space-between;
   max-width: 300px;
 }
@@ -193,14 +193,9 @@ input[type="password"] {
 }
 .checkout-carttotals .totals-content p {
   font-weight: 600;
-  color: var(--pizza-red);
+  color: var(--yellow);
 }
 
-/* .totals-content section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-} */
 .checkout-choose-payment input[type="date"] {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
@@ -219,37 +214,10 @@ input[type="password"] {
   gap: 1rem;
 }
 
-.checkout-backtomenu-btn {
-  color: var(--whitish-gray);
-  font-family: var(--poppins-font);
-  font-weight: 400;
-  font-size: 1rem;
-  border: none;
-  text-align: center;
-  transition: all ease-in-out 0.2s;
-  letter-spacing: 1px;
-}
-
-.checkout-backtomenu-btn:hover {
-  color: var(--yellow);
-  transition: all ease-in-out 0.2s;
-}
-
-.checkout-backtomenu-btn {
-  text-decoration: underline;
-  border: none;
-  font-size: 0.8rem;
-}
 .checkout-choose-payment label {
   display: flex;
   flex-direction: column;
 }
-/* .checkout-cart-items {
-  display: grid;
-  gap: 2rem;
-  align-items: baseline;
-} */
-
 @media screen and (min-width: 700px) {
   .checkout-choose-payment label {
     flex-direction: row;

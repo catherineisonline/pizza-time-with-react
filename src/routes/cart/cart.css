@@ -1,24 +1,20 @@
-.cart-container::after {
-  content: "";
-  height: 10rem;
-}
 .cart-container {
-  width: 100%;
-  margin: 0 auto;
+  position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
   gap: 1rem;
-  background-color: var(--light-black);
   min-height: 100vh;
-  position: relative;
+  padding-bottom: 10rem;
+  background-color: var(--light-black);
+  color: var(--white);
+  font-family: var(--poppins-font);
 }
 
 .cart-container h2 {
-  color: var(--white);
-  font-family: var(--poppins-font);
   margin: 0 auto;
   font-size: 3rem;
-  padding: 1rem;
 }
 
 .cart-title-section {
