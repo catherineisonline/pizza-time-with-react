@@ -3,7 +3,6 @@ import React from "react";
 const AddToCartButton = ({ singleProduct,
   selectedAttributes,
   handleAddProduct, targetAttribute, setTargetAttribute }) => {
-  // console.log('attribuets from menu', selectedAttributes)
   return (
     <button
       onClick={() => {

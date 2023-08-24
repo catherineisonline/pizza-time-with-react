@@ -5,7 +5,7 @@ export default class ClearCartBtn extends React.Component {
     const { className, clearCart } = this.props;
     return (
       <button onClick={clearCart} className={className}>
-        Clear cart
+        remove all items from the cart
       </button>
     );
   }

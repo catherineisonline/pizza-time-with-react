@@ -36,7 +36,7 @@ const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLog
               <LinkButton
                 onClick={ResetLocation}
                 to="/menu"
-                className="cart-backtomenu-btn"
+                className="back-to-menu"
               >
                 Back to menu
               </LinkButton>

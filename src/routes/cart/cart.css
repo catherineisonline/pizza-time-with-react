@@ -16,9 +16,8 @@
 .cart-container h2 {
   color: var(--white);
   font-family: var(--poppins-font);
-  text-transform: uppercase;
   margin: 0 auto;
-  font-size: 4rem;
+  font-size: 3rem;
   padding: 1rem;
 }
 
@@ -171,32 +170,23 @@
 
 .cart-interaction-btns {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
   align-items: center;
 }
-
-.cart-backtomenu-btn {
-  color: var(--whitish-gray);
-  font-family: var(--poppins-font);
-  font-weight: 400;
-  font-size: 1.4rem;
-  border: 1px solid var(--whitish-gray);
-  width: max-content;
-  padding: 0.5rem;
-  text-align: center;
-  transition: all ease-in-out 0.2s;
+.back-to-menu {
   cursor: pointer;
-}
-.cart-backtomenu-btn:hover {
-  transition: all ease-in-out 0.2s;
-  color: var(--yellow);
-}
-
-.cart-backtomenu-btn {
-  text-decoration: underline;
   border: none;
-  font-size: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  opacity: 0.8;
+  background-color: transparent;
+  color: var(--white);
+  letter-spacing: 1px;
+  align-items: center;
+  width: max-content;
+  font-size: 1rem;
+  font-family: var(--poppins-font);
+  transition: all ease-in-out 0.3s;
 }
 
 /* CLEAR CART */
@@ -205,21 +195,30 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 0.8rem;
+  text-decoration: underline;
   font-family: var(--poppins-font);
   width: max-content;
   text-align: right;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  transition: all ease-in-out 0.3s;
 }
+
 @media (hover: hover) {
   .cart-item-add-qty button:hover {
     color: var(--yellow);
     border-color: var(--yellow);
     transition: all ease-in-out 0.3s;
   }
-
+  .cart-clear-btn:hover {
+    color: var(--pizza-red);
+    transition: all ease-in-out 0.3s;
+  }
   .order-btn:hover {
     opacity: 0.7;
+    transition: all ease-in-out 0.3s;
+  }
+  .back-to-menu:hover {
+    color: var(--pizza-red);
     transition: all ease-in-out 0.3s;
   }
 }

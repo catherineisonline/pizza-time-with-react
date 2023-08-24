@@ -2,13 +2,11 @@ import React from "react";
 
 export default class CartProductInteraction extends React.Component {
   render() {
-
     const {
       handleAddProduct,
       handleRemoveProduct,
       cartItem
     } = this.props;
-    // console.log(cartItem)
     return (
       <section className="cart-item-add-qty">
         <button
