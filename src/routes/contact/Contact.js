@@ -20,7 +20,6 @@ const Contact = () => {
     e.preventDefault();
     setFormError(validate(formValue));
     setSubmit(true);
-
     if (Object.keys(validate(formValue)).length > 0) {
       setLoading(false);
       setSubmit(false);

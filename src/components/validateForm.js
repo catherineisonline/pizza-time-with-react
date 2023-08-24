@@ -1,6 +1,7 @@
 const validateForm = (form) => (value) => {
     let errors = {};
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    const numberRegex = /\d/;
     if (form === "newsletter") {
         if (!value.email) {
             errors.email = "Please enter an email"
@@ -81,14 +82,23 @@ const validateForm = (form) => (value) => {
         if (!value.fullname) {
             errors.fullname = "Please enter your full name"
         }
+        else if (numberRegex.test(value.fullname)) {
+            errors.fullname = "Please enter a valid full name"
+        }
+        else if (value.fullname && value.fullname.length < 3) {
+            errors.fullname = "Please enter a valid full name"
+        }
         if (!value.email) {
-            errors.email = "Please enter phone an email"
+            errors.email = "Please enter an email"
         }
         else if (!emailRegex.test(value.email)) {
             errors.email = "Please enter valid email"
         }
         if (!value.message) {
             errors.message = "Please write a message"
+        }
+        else if (value.message && value.message.length < 10) {
+            errors.message = "The message should be min. 10 characters"
         }
     }
     else if (form === "payment") {
