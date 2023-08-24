@@ -985,6 +985,11 @@ footer {
   letter-spacing: 1.5px;
 }
 
+.footer-menu a:hover {
+  color: var(--pizza-red);
+  transition: all ease-in-out 0.2s;
+}
+
 .footer-contact {
   gap: 1rem;
   font-weight: 400;
