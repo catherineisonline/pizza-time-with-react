@@ -6,10 +6,10 @@ import SlideThree from '../../assets/images/img-three.jpeg'
 import SlideFour from '../../assets/images/img-four.jpeg'
 
 
-const AboutSectionOne = () => {
+const AboutUs = () => {
   return (
-    <article className="section-one">
-      <section className="section-one-content">
+    <article className="about-us">
+      <section className="content">
         <h2>About us</h2>
         <h3 className='sub-title'>More than delicious food</h3>
         <p>
@@ -27,4 +27,4 @@ const AboutSectionOne = () => {
   )
 }
 
-export default AboutSectionOne;
+export default AboutUs;
