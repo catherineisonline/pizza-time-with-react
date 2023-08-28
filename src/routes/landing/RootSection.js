@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Header from "./Hero";
-import ScrollButton from "../../components/ScrollBtn";
+import ScrollButton from "../../helpers/ScrollBtn";
 import ContactUsLanding from "./ContactUsLanding";
 import WelcomeSection from "./WelcomeSection";
 import OurServices from "./OurServices";

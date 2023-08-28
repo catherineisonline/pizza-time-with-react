@@ -1,5 +1,4 @@
 import React from "react";
-import BacktoMenu from "../../components/BacktoMenu";
 import CheckoutBtn from "../checkout/CheckoutBtn";
 import LinkButton from "../../components/Button";
 import ResetLocation from "../../helpers/ResetLocation";
@@ -45,9 +44,9 @@ const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLog
               <Link to="/payment" className="active-button-style" onClick={ResetLocation}>
                 Proceed to payment
               </Link>
-              <BacktoMenu
-                className="checkout-backtomenu-btn"
-              />
+              <Link to="/menu" className="checkout-backtomenu-btn" onClick={ResetLocation}>
+                Back to menu
+              </Link>
             </section>
           )}
         </section>

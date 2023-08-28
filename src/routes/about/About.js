@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 //Components
-import ScrollBtn from "../../components/ScrollBtn";
+import ScrollBtn from "../../helpers/ScrollBtn";
 import AboutSectionOne from "./AboutSectionOne";
 import AboutSectionTwo from "./AboutSectionTwo";
 import AboutSectionThree from "./AboutSectionThree";

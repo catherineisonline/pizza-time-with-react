@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ScrollBtn from "../../components/ScrollBtn";
+import ScrollBtn from "../../helpers/ScrollBtn";
 import EmptyCart from "./EmptyCart";
 
 const Cart = ({ cartItems, CartItem }) => {

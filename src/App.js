@@ -18,7 +18,7 @@ import { allProductsData } from './data/AllProductsData.js';
 import { AllCategories } from './data/AllCategories';
 import CheckoutSummary from './routes/checkout/CheckoutSummary.js';
 import CartTotals from './routes/cart/CartTotals.js';
-import LoginModal from './components/LoginModal.js';
+import LoginModal from './components/login/LoginModal.js';
 import CartItem from './routes/cart/CartItem.js';
 import NotFound from './routes/not-found/NotFound.js';
 import Refunds from './routes/refunds/Refunds.js';

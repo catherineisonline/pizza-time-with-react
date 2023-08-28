@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 //data
 import allBlogPosts from '../../data/allBlogPosts'
 //components
-import ScrollBtn from "../../components/ScrollBtn";
+import ScrollBtn from "../../helpers/ScrollBtn";
 import ResetLocation from "../../helpers/ResetLocation";
 import BlogPosts from "./BlogPosts";
 

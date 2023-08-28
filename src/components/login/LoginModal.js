@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./loginModal.css";
-import LinkButton from "./Button";
+import LinkButton from "../Button";
 import { useNavigate } from "react-router-dom";
-import validateForm from "./validateForm";
+import validateForm from "../validateForm";
 
 
 const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hideMenu, validLogin, getUser }) => {
