@@ -240,9 +240,9 @@ function App() {
         index = cartItems.findIndex(item => item.id === targetProduct.id);
       }
 
-      //if there are attributes find index by attributes
+      //if there are attributes find index by attributes and id at the same time
       else {
-        index = cartItems.findIndex(item => item.userSelectedAttributes[0]?.attributeValue === userSelectedAttributes[0].attributeValue);
+        index = cartItems.findIndex(item => item.userSelectedAttributes[0]?.attributeValue === userSelectedAttributes[0].attributeValue && item.id === targetProduct.id);
       }
       // console.log(userSelectedAttributes);
       if (index !== -1) {
