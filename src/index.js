@@ -17,6 +17,7 @@ import './routes/not-found/notFound.css'
 import './routes/careers/careers.css'
 import './routes/blog-post/blogPost.css'
 import './routes/profile/profile.css'
+import './routes/single-item/singleItem.css'
 
 
 //Components

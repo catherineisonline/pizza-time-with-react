@@ -333,7 +333,7 @@ function App() {
       const singleItemQuantity = currentItem.ItemPrice * currentItem.quantity;
       return prevState + singleItemQuantity;
     }, 0);
-    setTotalPayment(total);
+    setTotalPayment(total.toFixed(2));
     setTaxes(((total * 10) / 100).toFixed(2));
   };
 
@@ -399,21 +399,6 @@ function App() {
     setActiveCategory(newCategory);
     getProductsByCategory(newCategory);
   };
-
-  // useEffect(() => {
-  //   const handleUpdate = (nextState) => {
-  //     const { cartItems: nextCartItems } = nextState;
-  //     if (cartItems !== nextCartItems) {
-  //       getTotalPrice(nextCartItems);
-  //     }
-  //   };
-
-  //   handleUpdate({
-  //     cartItems,
-  //     clearedCart,
-  //     validLogin
-  //   });
-  // }, [cartItems, clearedCart, validLogin]);
 
   return (
     <BrowserRouter>

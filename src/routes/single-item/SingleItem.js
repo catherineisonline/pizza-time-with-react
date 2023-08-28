@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import GoBackBtn from "./GoBackBtn";
 import AddToCartButton from "../cart/AddToCartButton";
 import Attribute from "../menu/Attribute";
 import { allProductsData } from "../../data/AllProductsData.js";
+import { Link } from "react-router-dom";
 
 const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
   const [singleProduct, setSingleProduct] = useState([]);
@@ -33,7 +33,9 @@ const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
 
   return (
     <main className="single-item-container">
-      <GoBackBtn />
+      <Link to="/menu" className="back-btn">
+        ← Back
+      </Link>
       <article className="single-item flex-container flex-column txt-white">
         <img
           src={singleProduct?.ItemImg}

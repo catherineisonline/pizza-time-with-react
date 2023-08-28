@@ -1,11 +1,13 @@
 import React from "react";
-import { AllBlogPosts as allBlogPosts } from "../../data/AllBlogPosts";
-import ReactPaginate from 'react-paginate';
-import ScrollBtn from "../../components/ScrollBtn";
 import { useEffect, useState } from "react";
-import ResetLocation from "../../helpers/ResetLocation";
 import { motion } from "framer-motion";
-import BlogGrid from "./BlogGrid";
+import ReactPaginate from 'react-paginate';
+//data
+import { allBlogPosts } from "../../data/AllBlogPosts";
+//components
+import ScrollBtn from "../../components/ScrollBtn";
+import ResetLocation from "../../helpers/ResetLocation";
+import BlogPosts from "./BlogPosts";
 
 const Blog = () => {
   const [itemOffset, setItemOffset] = useState(0);
@@ -42,7 +44,7 @@ const Blog = () => {
           </p>
           <section className="blog-grid">
             {currentBlogPosts.map((blogPost, index) => {
-              return <BlogGrid key={index} blogPost={blogPost} />;
+              return <BlogPosts key={index} blogPost={blogPost} />;
             })}
           </section>
         </article>

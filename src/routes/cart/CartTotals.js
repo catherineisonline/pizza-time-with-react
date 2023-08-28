@@ -1,9 +1,9 @@
 import React from "react";
-import PaymentBtn from "../cart/PaymentBtn";
 import BacktoMenu from "../../components/BacktoMenu";
 import CheckoutBtn from "../checkout/CheckoutBtn";
 import LinkButton from "../../components/Button";
 import ResetLocation from "../../helpers/ResetLocation";
+import { Link } from "react-router-dom";
 
 const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLogin, showModal, activateLoginModal }) => {
   return (
@@ -42,9 +42,9 @@ const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLog
             </section>
           ) : (
             <section className="checkout-interaction-btns">
-              <PaymentBtn
-                className="active-button-style"
-              />
+              <Link to="/payment" className="active-button-style" onClick={ResetLocation}>
+                Proceed to payment
+              </Link>
               <BacktoMenu
                 className="checkout-backtomenu-btn"
               />

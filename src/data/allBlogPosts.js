@@ -9,7 +9,7 @@ import Img8 from "../assets/images/blog/post-8.jpeg";
 import Img9 from "../assets/images/blog/post-9.jpeg";
 import Img10 from "../assets/images/blog/post-10.jpeg";
 
-export const AllBlogPosts = [
+const allBlogPosts = [
   {
     img: Img1,
     name: "Pizza crust types",
@@ -354,3 +354,4 @@ Mistakes happen, but learning from them is what makes you a better pizza maker. 
 ];
 
 
+export default allBlogPosts;

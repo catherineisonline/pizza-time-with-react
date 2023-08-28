@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { AllBlogPosts } from "../../data/AllBlogPosts";
+import { allBlogPosts } from "../../data/AllBlogPosts";
 
 const BlogPost = () => {
     const [blogPost, setBlogPost] = useState({});
@@ -7,7 +7,7 @@ const BlogPost = () => {
         document.title = `${blogPost.name} | Pizza Time`;
     }, [blogPost.name]);
     useEffect(() => {
-        setBlogPost(AllBlogPosts.filter((post) => post.name.toLowerCase() === window.location.pathname.toString().substring(6).replaceAll('-', ' '))[0])
+        setBlogPost(allBlogPosts.filter((post) => post.name.toLowerCase() === window.location.pathname.toString().substring(6).replaceAll('-', ' '))[0])
     }, [])
     return (
         <main className="blog-post">

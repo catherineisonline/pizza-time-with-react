@@ -31,12 +31,6 @@ const CheckoutForm = ({ currentUser, toggleDelivery, togglePromocode, promoCode,
   }
   const validateForm = (value) => {
     let errors = {}
-    // if (value.address === null) {
-    //   errors.address = "Please add an address"
-    // }
-    // if (value.number === null) {
-    //   errors.number = "Missing a phone number"
-    // }
     if (!value.chooseDelivery) {
       errors.chooseDelivery = "Please choose a delivery type"
     }
@@ -124,8 +118,7 @@ const CheckoutForm = ({ currentUser, toggleDelivery, togglePromocode, promoCode,
               </section>
               <section className="totals-content" >
                 <h4 className="cart-totals-sum">Total:</h4>
-                {/* COUNTING TWICE DUE TO STRICT MODE */}
-                <p>$ {(totalPayment / 2).toFixed(2)}</p>
+                <p>$ {totalPayment}</p>
               </section>
             </section>
 
