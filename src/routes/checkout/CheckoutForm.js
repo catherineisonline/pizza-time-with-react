@@ -5,13 +5,18 @@ import { RiShoppingBagLine } from "react-icons/ri";
 import ResetLocation from "../../helpers/ResetLocation";
 import { Link, useNavigate } from "react-router-dom";
 
-const CheckoutForm = ({ currentUser, toggleDelivery, togglePromocode, promoCode, totalPayment, productsQuantity, taxes }) => {
+const CheckoutForm = ({ currentUser, totalPayment, productsQuantity, taxes }) => {
   const [formValue, setFormValue] = useState({
     fullname: currentUser.fullname, email: currentUser.email, address: currentUser.address, number: currentUser.number, chooseDelivery: "", promoCode: ''
   });
   const [submit, setSubmit] = useState(false);
+  const [promoCode, setPromoCode] = useState(false);
   const [formError, setFormError] = useState({});
   const navigate = useNavigate();
+
+  const togglePromocode = () => {
+    setPromoCode(!promoCode);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,7 +70,6 @@ const CheckoutForm = ({ currentUser, toggleDelivery, togglePromocode, promoCode,
           <RiShoppingBagLine />
           Takeaway
           <input
-            onClick={toggleDelivery}
             className="takeaway"
             type="radio"
             placeholder="Address"
@@ -78,7 +82,6 @@ const CheckoutForm = ({ currentUser, toggleDelivery, togglePromocode, promoCode,
           <FaShippingFast />
           Delivery
           <input
-            onClick={toggleDelivery}
             className="delivery"
             type="radio"
             placeholder="Address"

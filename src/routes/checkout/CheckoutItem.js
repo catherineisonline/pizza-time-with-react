@@ -1,36 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default class CheckoutItem extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      selectedAttributes: [],
-    };
-  }
-  userSelectedAttr() {
-    this.props.cartItem.userSelectedAttributes.map((item) => {
-      return this.setState({ selectedAttributes: item.attributeValue });
+const CheckoutItem = ({ cartItem }) => {
+  const [selectedAttributes, setSelectedAttributes] = useState([]);
+  useEffect(() => {
+    cartItem.userSelectedAttributes.map((item) => {
+      return setSelectedAttributes(item.attributeValue);
     });
-  }
-  componentDidMount() {
-    this.userSelectedAttr();
-  }
+  }, [cartItem.userSelectedAttributes])
 
-  render() {
-    const { cartItem } = this.props;
-    return (
-      <section className='checkout-item'>
-        <img src={cartItem.ItemImg} alt={cartItem.ItemName} />
+  return (
+    <section className='checkout-item'>
+      <img src={cartItem.ItemImg} alt={cartItem.ItemName} />
+      <section className="checkout-item-info">
         {cartItem.userSelectedAttributes.length === 0 ?
-          <section className="checkout-item-info">
-            <h3> {cartItem.ItemName}</h3>
-            <p>Quantity: {cartItem.quantity}</p>
-            <p>Price: $ {cartItem.ItemPrice}</p>
-          </section> :
-          <section className="checkout-item-info">
-            <h3>{cartItem.quantity} {cartItem.ItemName}  <span>{this.state.selectedAttributes}</span>, <span>$ {cartItem.ItemPrice}</span></h3>
-          </section>}
+          <h3>{cartItem.ItemName}</h3> :
+          <h3>{cartItem.ItemName}  <span>{selectedAttributes}</span></h3>
+        }
+        <p>Quantity: {cartItem.quantity}</p>
+        <p>Price: $ {cartItem.ItemPrice}</p>
       </section>
-    );
-  }
+    </section>
+  );
 }
+
+export default CheckoutItem;
