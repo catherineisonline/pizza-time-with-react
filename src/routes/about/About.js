@@ -10,7 +10,7 @@ import AboutSectionFive from "./AboutSectionFive";
 
 const About = () => {
   useEffect(() => {
-    document.title = "About Us | Pizza Time";
+    document.title = "About | Pizza Time";
   }, []);
   return (
     <motion.div
@@ -18,7 +18,7 @@ const About = () => {
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}>
-      <main className="about-us">
+      <main className="about">
         <AboutSectionOne />
         <AboutSectionTwo />
         <AboutSectionThree />

@@ -1,5 +1,5 @@
 import React from "react";
-import OfficeOne from "../../assets/images/about-us/office-1.jpeg";
+import OfficeTwo from "../../assets/images/about-us/office-2.jpeg";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 
@@ -16,7 +16,7 @@ export default class AboutSectionFour extends React.Component {
           </p>
           <Link to="/careers" onClick={ResetLocation} className="active-button-style">Join now</Link>
         </section>
-        <img src={OfficeOne} alt="" aria-hidden="true" />
+        <img src={OfficeTwo} alt="" aria-hidden="true" />
       </article>
     );
   }

@@ -7,7 +7,7 @@ import "./core-ui/responsive.css";
 import "./core-ui/leaflet.css";
 import './routes/menu/menu.css'
 import './routes/contact/contact.css'
-import './routes/about/aboutUs.css'
+import './routes/about/about.css'
 import './routes/blog/blog.css'
 import './routes/cart/cart.css'
 import './routes/registration/register.css'
