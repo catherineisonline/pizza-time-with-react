@@ -6,7 +6,7 @@ const CartItem = ({
   handleAddProduct,
   handleRemoveProduct,
   clearCart,
-  cartItems }) => {
+  cartItems, cartTotals }) => {
 
   return (
     <section className="cart-title-section" >
@@ -49,6 +49,7 @@ const CartItem = ({
         })
       }
       <ClearCartBtn className="cart-clear-btn" clearCart={clearCart} />
+      {cartTotals}
     </section>
   );
 }

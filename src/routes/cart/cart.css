@@ -27,9 +27,9 @@
   align-items: center;
   max-width: 700px;
 }
-.cart-title-section .active-button-style {
+/* .cart-title-section .active-button-style {
   font-size: 1.5rem;
-}
+} */
 
 .cart-title-section h3 {
   color: var(--white);

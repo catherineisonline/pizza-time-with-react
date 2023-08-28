@@ -321,7 +321,11 @@ function App() {
 
   const clearCart = () => {
     setCartItems([]);
+    setProductsQuantity(0)
     setClearedCart(true);
+    sessionStorage.removeItem('cartItems');
+    sessionStorage.removeItem('cartQuantity');
+    ResetLocation();
   };
 
   const getTotalPrice = (cartItems) => {
@@ -409,9 +413,9 @@ function App() {
       if (cartItems !== nextCartItems) {
         getTotalPrice(nextCartItems);
       }
-      if (nextClearedCart) {
-        clearCart();
-      }
+      // if (nextClearedCart) {
+      //   clearCart();
+      // }
     };
 
     handleUpdate({
@@ -456,20 +460,21 @@ function App() {
                   cartItems={cartItems}
                   handleAddProduct={handleAddProduct}
                   handleRemoveProduct={handleRemoveProduct}
+                  cartTotals={
+                    <CartTotals
+                      className="cart-carttotals"
+                      totalPayment={totalPayment}
+                      productsQuantity={productsQuantity}
+                      taxes={taxes}
+                      validLogin={validLogin}
+                      showModal={showModal}
+                      isModalActive={isModalActive}
+                      activateLoginModal={activateLoginModal}
+                    />
+                  }
                 />
               }
-              cartTotals={
-                <CartTotals
-                  className="cart-carttotals"
-                  totalPayment={totalPayment}
-                  productsQuantity={productsQuantity}
-                  taxes={taxes}
-                  validLogin={validLogin}
-                  showModal={showModal}
-                  isModalActive={isModalActive}
-                  activateLoginModal={activateLoginModal}
-                />
-              }
+
               cartItems={cartItems}
               clearedCart={clearedCart}
             />

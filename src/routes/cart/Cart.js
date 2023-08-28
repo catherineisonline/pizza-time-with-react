@@ -10,7 +10,7 @@ const Cart = ({ cartItems, clearedCart, CartItem, cartTotals }) => {
     <main className="cart-container">
       <h2>Shopping cart</h2>
       {cartItems.length === 0 ? <EmptyCart /> : CartItem}
-      {clearedCart === true ? null : cartTotals}
+      {/* {clearedCart === true ? null : cartTotals} */}
       <ScrollBtn />
     </main>
   );
