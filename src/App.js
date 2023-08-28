@@ -329,18 +329,12 @@ function App() {
   };
 
   const getTotalPrice = (cartItems) => {
-    let totalPayment = 0;
-    let totalPrice = 0;
-
-    for (let item of cartItems) {
-      const correctPrice = item.ItemPrice;
-      totalPrice += correctPrice * item.quantity;
-    }
-
-    totalPayment = parseFloat(totalPrice.toFixed(2));
-
-    setTotalPayment(totalPayment);
-    setTaxes(((totalPayment * 10) / 100).toFixed(2));
+    let total = cartItems.reduce((prevState, currentItem) => {
+      const singleItemQuantity = currentItem.ItemPrice * currentItem.quantity;
+      return prevState + singleItemQuantity;
+    }, 0);
+    setTotalPayment(total);
+    setTaxes(((total * 10) / 100).toFixed(2));
   };
 
   const successMsg = () => {
@@ -406,24 +400,20 @@ function App() {
     getProductsByCategory(newCategory);
   };
 
-  useEffect(() => {
-    const handleUpdate = (nextState) => {
-      const { cartItems: nextCartItems, clearedCart: nextClearedCart, validLogin: nextValidLogin } = nextState;
+  // useEffect(() => {
+  //   const handleUpdate = (nextState) => {
+  //     const { cartItems: nextCartItems } = nextState;
+  //     if (cartItems !== nextCartItems) {
+  //       getTotalPrice(nextCartItems);
+  //     }
+  //   };
 
-      if (cartItems !== nextCartItems) {
-        getTotalPrice(nextCartItems);
-      }
-      // if (nextClearedCart) {
-      //   clearCart();
-      // }
-    };
-
-    handleUpdate({
-      cartItems,
-      clearedCart,
-      validLogin
-    });
-  }, [cartItems, clearedCart, validLogin]);
+  //   handleUpdate({
+  //     cartItems,
+  //     clearedCart,
+  //     validLogin
+  //   });
+  // }, [cartItems, clearedCart, validLogin]);
 
   return (
     <BrowserRouter>

@@ -21,8 +21,7 @@ const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLog
             </section>
             <section>
               <h4 className="cart-totals-sum">Total:</h4>
-              {/* COUNTING TWICE DUE TO STRICT MODE */}
-              <p>$ {(totalPayment / 2).toFixed(2)}</p>
+              <p>$ {totalPayment}</p>
             </section>
           </section>
           {className === "cart-carttotals" ? (
