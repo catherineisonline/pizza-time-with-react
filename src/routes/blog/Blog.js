@@ -29,38 +29,35 @@ const Blog = () => {
 
   }, [setEndOffset, endOffset, itemOffset]);
   return (
-    <motion.div
+    <motion.main
+      className="blog"
       initial={{ opacity: 0, translateX: -300 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}
     >
-      <main className="blog">
-        <article className="blog-section">
-          <h2>Blog</h2>
-          <p className="blog-intro">
-            Pizza makes everything better. These are some of our favorite pizza
-            blogs that are loaded with recipes and pizza-making tips.
-          </p>
-          <section className="blog-grid">
-            {currentBlogPosts.map((blogPost, index) => {
-              return <BlogPosts key={index} blogPost={blogPost} />;
-            })}
-          </section>
-        </article>
-        <ReactPaginate
-          className="pagination blog-pagination"
-          breakLabel="..."
-          nextLabel=" &#62;"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
-          pageCount={pageCountPosts}
-          previousLabel="&#60;"
-          renderOnZeroPageCount={null}
-        />
-        <ScrollBtn />
-      </main>
-    </motion.div>
+      <h2>Blog</h2>
+      <p className="blog-intro">
+        Pizza makes everything better. These are some of our favorite pizza
+        blogs that are loaded with recipes and pizza-making tips.
+      </p>
+      <section className="blog-grid">
+        {currentBlogPosts.map((blogPost, index) => {
+          return <BlogPosts key={index} blogPost={blogPost} />;
+        })}
+      </section>
+      <ReactPaginate
+        className="pagination blog-pagination"
+        breakLabel="..."
+        nextLabel=" &#62;"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={3}
+        pageCount={pageCountPosts}
+        previousLabel="&#60;"
+        renderOnZeroPageCount={null}
+      />
+      <ScrollBtn />
+    </motion.main>
   );
 }
 export default Blog;
