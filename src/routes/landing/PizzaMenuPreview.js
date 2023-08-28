@@ -8,9 +8,7 @@ import pizzaMenuPreview from '../../data/pizzaMenuPreview';
 
 const PizzaMenuPreview = () => {
   return (
-
     <article className="section-4 flex-container flex-column" >
-
       <section className="section-4-info txt-center">
         <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
         <p className="section-description">

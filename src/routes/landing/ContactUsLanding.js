@@ -6,30 +6,27 @@ import PizzaOne from '../../assets/images/contact-us/image-one-parallax.webp'
 const ContactUsLanding = () => {
   return (
     <section className="contact-us-landing flex-container flex-row txt-white" >
-      <motion.div
+      <motion.img
         initial={{ opacity: 0, translateX: 1000 }}
         whileInView={{ opacity: 0.8, translateX: 400, }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-      >
-        <img src={PizzaOne} alt="" className="parallax company-details-image" />
-      </motion.div>
-      <motion.div
+        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image"
+      />
+      <motion.img
         initial={{ opacity: 0, translateX: 1000 }}
         whileInView={{ opacity: 0.8, translateX: 600, }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-      >
-        <img src={PizzaOne} alt="" className="parallax company-details-image-two" />
-      </motion.div>
-      <motion.div
+        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image-two"
+      />
+      <motion.img
         initial={{ opacity: 0, translateX: 1000 }}
         whileInView={{ opacity: 0.8, translateX: 800, }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-      >
-        <img src={PizzaOne} alt="" className="parallax company-details-image-three" />
-      </motion.div>
+        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image-three"
+      />
       <section className='company-details'>
         <div>
           <h2>000 (000) 123 4567</h2>

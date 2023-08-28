@@ -38,49 +38,48 @@ const Menu = ({ allProducts,
 
   }, [allProducts, setEndOffset, endOffset, itemOffset, activeCategory]);
   return (
-    <motion.div
+    <motion.main
+      className="menu-main"
       initial={{ opacity: 0, translateX: -300 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}
     >
-      <main className="menu-main">
-        <MenuCategories
-          activeCategory={activeCategory}
-          allCategories={allCategories}
-          changeCategory={changeCategory}
-          resetPagination={resetPagination}
-          findMenuItem={findMenuItem}
-        />
-        {currentProducts.length === 0 ?
-          <article className="menu-grid">
-            <p className="nothing-found">No results found...</p>
-          </article> :
-          <article className="menu-grid">
-            {currentProducts.map((singleProduct) => (
-              <MenuGridItem
-                key={singleProduct.id}
-                singleProduct={singleProduct}
-                handleAddProduct={handleAddProduct}
-                handleRemoveProduct={handleRemoveProduct}
-              />
-            ))
-            }
-            <ScrollButton />
-          </article>}
+      <MenuCategories
+        activeCategory={activeCategory}
+        allCategories={allCategories}
+        changeCategory={changeCategory}
+        resetPagination={resetPagination}
+        findMenuItem={findMenuItem}
+      />
+      {currentProducts.length === 0 ?
+        <article className="menu-grid">
+          <p className="nothing-found">No results found...</p>
+        </article> :
+        <article className="menu-grid">
+          {currentProducts.map((singleProduct) => (
+            <MenuGridItem
+              key={singleProduct.id}
+              singleProduct={singleProduct}
+              handleAddProduct={handleAddProduct}
+              handleRemoveProduct={handleRemoveProduct}
+            />
+          ))
+          }
+          <ScrollButton />
+        </article>}
 
-        <ReactPaginate
-          className="pagination"
-          breakLabel="..."
-          nextLabel=" &#62;"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
-          pageCount={pageCountProducts}
-          previousLabel="&#60;"
-          renderOnZeroPageCount={null}
-        />
-      </main>
-    </motion.div>
+      <ReactPaginate
+        className="pagination"
+        breakLabel="..."
+        nextLabel=" &#62;"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={3}
+        pageCount={pageCountProducts}
+        previousLabel="&#60;"
+        renderOnZeroPageCount={null}
+      />
+    </motion.main>
   );
 }
 
