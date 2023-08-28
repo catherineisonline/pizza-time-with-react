@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { allBlogPosts } from "../../data/AllBlogPosts";
+import allBlogPosts from '../../data/allBlogPosts'
 
 const BlogPost = () => {
     const [blogPost, setBlogPost] = useState({});
