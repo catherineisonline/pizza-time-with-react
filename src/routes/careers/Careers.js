@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import ResetLocation from "../../helpers/ResetLocation";
-import careers from "../../data/careers";
 import { useEffect } from "react";
+//components
+import ResetLocation from "../../helpers/ResetLocation";
+//data
+import careers from "../../data/careers";
 
 const Careers = () => {
     useEffect(() => {
