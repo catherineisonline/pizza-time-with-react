@@ -151,17 +151,16 @@
     height: 40rem;
   }
   .pizza-one {
+    display: block;
     right: -40%;
     top: -20%;
     width: 23rem;
   }
   .pizza-two {
+    display: block;
     left: -40%;
     top: -20%;
     width: 23rem;
-  }
-  .pizza-motion {
-    display: inline-block;
   }
 }
 

@@ -12,30 +12,22 @@ const WelcomeSection = () => {
   return (
     <article className="welcome-section" >
       <section className="section-2-info flex-container flex-column txt-center pop-font">
-        <motion.div
-          className='pizza-motion'
+        <motion.img
+          src={PizzaTwo} alt="" className=" pizza-two"
           initial={{ opacity: 0, translateX: -200 }}
           whileInView={{
-            opacity: 1, translateX: -100,
-            translateY: '-12%'
+            opacity: 1, translateX: -100
           }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 3 }}
-        >
-          <img src={PizzaTwo} alt="" className=" pizza-two" />
-        </motion.div>
-        <motion.div
-          className='pizza-motion'
+          transition={{ duration: 5 }}
+        />
+        <motion.img
+          src={PizzaOne} alt="" className=" pizza-one"
           initial={{ opacity: 0, translateX: 200 }}
           whileInView={{
-            opacity: 1, translateX: 100,
-            translateY: '-12%'
+            opacity: 1, translateX: 100
           }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 4 }}
-        >
-          <img src={PizzaOne} alt="" className=" pizza-one" />
-        </motion.div>
+          transition={{ duration: 5 }}
+        />
         <h2 className="txt-white">
           Welcome to <span>Pizza Time</span> restaurant
         </h2>
