@@ -9,9 +9,9 @@ const StatsPreview = () => {
         {statsPreview.map((stats) => (
           <div key={stats.id} className="highligh-container">
             <motion.img
-              initial={{ opacity: 0, translateX: -300 }}
+              initial={{ opacity: 0, translateX: -100 }}
               whileInView={{ opacity: 1, translateX: 0 }}
-              exit={{ opacity: 0, translateX: -300 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 2 }}
               width="50"
               height="50"
@@ -20,10 +20,8 @@ const StatsPreview = () => {
               alt=""
               aria-hidden="true"
             />
-            <div>
-              <h3>{stats.stats}</h3>
-              <p className="pop-font txt-white">{stats.name}</p>
-            </div>
+            <h3>{stats.stats}</h3>
+            <p className="pop-font txt-white">{stats.name}</p>
           </div>
         ))}
       </section>
