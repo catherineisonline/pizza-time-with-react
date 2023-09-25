@@ -43,6 +43,7 @@ Pizza Time brings together delicious food and advanced technology, creating a us
 ## Contents
 
 - [Getting Started with Create React App](#gettingStarted)
+- [Database](#database)
 - [Available Scripts](#scripts)
 - [Goals](#goals)
 - [User Story](#userStory)
@@ -93,12 +94,15 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single-build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+
+## Getting Started with Create React App <a id="database"></a>
+To use the registration functionality for your own project, you need to use your own database. You can use any SQL database you wish and you adapt it to this project. I am using [Planetscape](https://planetscale.com/) serverless MySQL database. To have your own database you need to register and set it up by provided keys. I recommend you to use their [documentation](https://planetscale.com/docs).
 
 ## Goals <a id="goals"></a>
 The main goal of this project is to get better at React and experience what it's like to work on something that feels more like a real project. In the past, I've mostly worked on small pieces of code that didn't do much on their own. With this project, I want to step into different shoes – not just as a coder, but as someone who's building something useful and someone who's going to use it. 
