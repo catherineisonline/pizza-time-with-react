@@ -17,17 +17,29 @@ const validateForm = (form) => (value) => {
         else if (value.fullname.length < 3) {
             errors.fullname = "Name is too short"
         }
+        else if (value.fullname === "test" || value.fullname === "testtest" || value.fullname === "Test" || value.fullname === "admin" || value.fullname === "name" || value.fullname === "Name" || value.fullname === "Fullname") {
+            errors.fullname = "Invalid name!"
+        }
         if (!value.email) {
             errors.email = "Please enter email"
         }
         else if (!emailRegex.test(value.email)) {
             errors.email = "Please enter valid email"
         }
+        else if (value.email === "test@gmail.com" || value.email === "test@mail.com" || value.email === "test@hotmail.com" || value.email === "admin@gmail.com") {
+            errors.email = "Invalid email!"
+        }
         if (!value.password) {
             errors.password = "Please enter a valid password"
         }
         else if (value.password.length < 8 || value.repeatPassword.length < 8) {
             errors.password = "Password should be min. 8 characters"
+        }
+        else if (value.password === "12345678" || value.password === "qwerty1" || value.password === "test1234" || value.password === "abcd1234" || value.password === "123456789" || value.password === "1234567890") {
+            errors.password = "Insecure password!"
+        }
+        else if (/\s/.test(value.password)) {
+            errors.password = "Password should not have empty spaces";
         }
         if (!value.repeatPassword) {
             errors.repeatPassword = "Please repeat the password"
@@ -40,14 +52,23 @@ const validateForm = (form) => (value) => {
         if (value.fullname.length !== 0 && value.fullname.length < 3) {
             errors.fullname = "Full name is too short"
         }
+        else if (value.fullname === "test" || value.fullname === "testtest" || value.fullname === "Test" || value.fullname === "admin" || value.fullname === "name" || value.fullname === "Name" || value.fullname === "Fullname") {
+            errors.fullname = "Invalid name!"
+        }
         if (value.address.length !== 0 && value.address.length < 5) {
             errors.address = "Address is too short"
         }
         if (value.email.length !== 0 && !emailRegex.test(value.email)) {
             errors.email = "Please enter valid email"
         }
+        else if (value.email === "test@gmail.com" || value.email === "test@mail.com" || value.email === "test@hotmail.com" || value.email === "admin@gmail.com") {
+            errors.email = "Invalid email!"
+        }
         if (value.password.length !== 0 && value.password.length < 8) {
             errors.password = "Password should be min. 8 characters"
+        }
+        else if (value.password === "12345678" || value.password === "qwerty1" || value.password === "test1234" || value.password === "abcd1234" || value.password === "123456789" || value.password === "1234567890") {
+            errors.password = "Insecure password!"
         }
         if (value.number.length !== 0 && value.number.length < 5) {
             errors.number = "Phone number is not valid"
@@ -85,6 +106,9 @@ const validateForm = (form) => (value) => {
         }
         else if (!emailRegex.test(value.email)) {
             errors.email = "Please enter valid email"
+        }
+        else if (value.email === "test@gmail.com" || value.email === "test@mail.com" || value.email === "test@hotmail.com" || value.email === "admin@gmail.com") {
+            errors.email = "Invalid email!"
         }
         if (!value.message) {
             errors.message = "Please write a message"
