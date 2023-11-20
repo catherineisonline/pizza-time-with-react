@@ -20,7 +20,7 @@ export default class FooterLegal extends React.Component {
                         className="txt-white"
                         to="/careers"
                     >
-                        Carrers
+                        Careers
                     </NavLink>
                 </li>
                 <li>

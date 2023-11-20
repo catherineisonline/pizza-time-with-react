@@ -21,7 +21,7 @@ const ourServices = [
     {
         id: 3,
         img: ImgThree,
-        name: 'Unforgetable Taste',
+        name: 'Unforgettable Taste',
         description:
             'Our goal is to provide our customers with excellent service, great taste and unforgettable experiences. This will be a mind-blowing experience for your taste buds',
     },
