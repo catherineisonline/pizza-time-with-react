@@ -1,5 +1,4 @@
 import React from 'react'
-//Images
 import Visa from '../../assets/images/payment-methods/visa-icon.svg'
 import MasterCard from '../../assets/images/payment-methods/mastercard-icon.svg'
 import ApplePay from '../../assets/images/payment-methods/applepay-icon.svg'
