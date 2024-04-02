@@ -244,7 +244,6 @@ function App() {
       else {
         index = cartItems.findIndex(item => item.userSelectedAttributes[0]?.attributeValue === userSelectedAttributes[0].attributeValue && item.id === targetProduct.id);
       }
-      // console.log(userSelectedAttributes);
       if (index !== -1) {
         newQuantity = cartItems[index].quantity;
 

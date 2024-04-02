@@ -1,4 +1,4 @@
-import mysql from 'mysql2';
+// import mysql from 'mysql2';
 import dotenv from 'dotenv';
 import { createClient } from "@libsql/client";
 dotenv.config();
@@ -16,6 +16,5 @@ const client = createClient({
     url: databaseURL,
     authToken: authToken
 });
-
 
 export default client;

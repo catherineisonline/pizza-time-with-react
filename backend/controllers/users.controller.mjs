@@ -5,7 +5,7 @@ export const getUsers = (req, res) => {
         .then((result) => {
             res.status(200).json({
                 message: "Users retrieved",
-                data: result[0]
+                data: result.rows
             })
         }).catch((err) => {
             res.status(500).send(err)
@@ -17,7 +17,7 @@ export const getUser = (req, res) => {
         .then((result) => {
             res.status(200).json({
                 message: "User retrieved",
-                data: result[0]
+                data: result.rows
             })
         }).catch((err) => {
             res.status(500).send(err)
@@ -25,6 +25,7 @@ export const getUser = (req, res) => {
 };
 export const createUser = (req, res) => {
     const user = req.body;
+
     userServices.createUser(user)
         .then(() => {
             res.status(200).json({
