@@ -26,8 +26,8 @@ Employed React Paginate for user-friendly menu page division, optimizing explora
 🆔 Efficient Data Management:
 UUID for unique ID generation ensures robust menu item and order identification. React Lazy Load optimizes image/component loading, boosting site performance.
 
-💾 Data Integrity with MySQL2 and PlanetScale:
-Implemented MySQL2 for a reliable database backend, securing transactions and user data. PlanetScale ensures scalable MySQL database operations.
+💾 Data Integrity with Turso:
+Implemented libSQL client for a reliable database backend, securing transactions and user data. Turso ensures scalable SQLite database operations.
 
 🛒 Streamlined Ordering via Express.js:
 Developed Express.js-based ordering system for smooth cart management, item addition/removal, and quantity updates.
@@ -71,8 +71,8 @@ To get started you need to:
 - Next, you need to create the file name .env located outside src file
 
 - In the .env file I am using several variables:
-1. REACT_APP_DATABASE_URL & MYSQL_ATTR_SSL_CA - these variables contain information that will connect you to the PlanetScale database. You can use the following documentation https://planetscale.com/docs/tutorials/connect-nodejs-app. If you use any other database you need to use the accoridng information to connect to that database. 
-Note that the table for users in my case is named "users" and contains columns with the following data: id | email | password | fullname | address | number.
+1. REACT_APP_TURSO_DB_URL, REACT_APP_TURSO_DB_TOKEN & MYSQL_ATTR_SSL_CA - these variables contain information that will connect you to the Turso database. You can use the following [documentation](https://docs.turso.tech/sdk/ts/quickstart). If you use any other database you need to use the accoridng information to connect to that database. The token can be created after registration.
+Note that the table for users in my case is named "users" and contains the following data: id | email | password | fullname | address | number.
 2. REACT_APP_USERS_URL - these is a url for Node.js server. First, it's better to run it locally and only then switch to whatever you want. If you want to run the server locally the value of this variable should be http://localhost:3000/users. In this project I set up backend using Vercel. You can google "How to Deploy Your Node.js Backend Project to Vercel" and set up your own backend.
 3. REACT_APP_CAPTCHA_URL - the same logic works for this backedn url which this time is used for captcha verification. Locally, the url value should be http://localhost:3000/verify-recaptcha.
 4. REACT_APP_CAPTCHA_KEY & REACT_APP_CAPTCHA_SECRET - both values can be found once you create an account for reCaptcha at https://www.google.com/recaptcha/about/. Please use their documentation for better understanding.
@@ -118,7 +118,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 
 ## Database <a id="database"></a>
-To use the registration functionality for your own project, you need to use your own database. You can use any SQL database you wish and you adapt it to this project. I am using [Planetscape](https://planetscale.com/) serverless MySQL database. To have your own database you need to register and set it up by provided keys. I recommend you to use their [documentation](https://planetscale.com/docs).
+To use the registration functionality for your own project, you need to use your own database. You can use any SQL database you wish and you adapt it to this project. I am using [Turso](https://turso.tech/) database. To have your own database you need to register and set it up by provided information. I recommend you to use their [documentation](https://docs.turso.tech/sdk/ts/quickstart).
 
 ## Goals <a id="goals"></a>
 The main goal of this project is to get better at React and experience what it's like to work on something that feels more like a real project. In the past, I've mostly worked on small pieces of code that didn't do much on their own. With this project, I want to step into different shoes – not just as a coder, but as someone who's building something useful and someone who's going to use it. 
@@ -141,6 +141,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [React Lazy Load](https://www.npmjs.com/package/react-lazy-load-image-component)
 - [Framer Motion](https://www.framer.com/motion/)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
+- [libsql](https://www.npmjs.com/package/@libsql/client)
 
 
 ## Resources  <a id="resources"></a>
@@ -153,7 +154,6 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [TinyPNG](https://tinypng.com/) - smart lossy compression techniques to reduce the file size of your WEBP, JPEG and PNG files.
 - [React Lazy Load Image Component](https://www.npmjs.com/package/react-lazy-load-image-component) - React Component to lazy load images and other components/elements.
 - [React Icons](https://react-icons.github.io/react-icons) - Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
-- [PlanetScale](https://planetscale.com/docs/) - serverless MySQL database
 
 ## Contribution <a id="contribution"></a>
 
