@@ -14,6 +14,7 @@ const Register = ({ activateLoginModal }) => {
     try {
       const response = await fetch(process.env.REACT_APP_USERS_URL);
       const body = await response.json();
+
       return body.data;
     }
     catch (err) {
@@ -24,7 +25,9 @@ const Register = ({ activateLoginModal }) => {
   const createUser = async (user) => {
     const users = await getUsers();
     //check repetitive emails
+
     const repetitiveEmail = users.filter((u) => u.email === user.email);
+
     //cretae unique id
     const id = uuidv4();
     user.id = id;
@@ -44,7 +47,7 @@ const Register = ({ activateLoginModal }) => {
           return true;
         }
         else {
-          console.log('error with server')
+          console.log('Error in createUser')
           return false;
         }
       }
