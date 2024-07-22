@@ -36,6 +36,8 @@ export default class MenuPricingPreview extends React.Component {
                   className="pricing-img"
                   alt={menu.name}
                   src={menu.img375}
+                  width={96}
+                  height={96}
                 />
                 <section className="pricing-details flex-container flex-column">
                   <section className="name-and-price flex-container flex-row txt-center">

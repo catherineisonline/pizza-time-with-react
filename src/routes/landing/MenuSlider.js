@@ -2,10 +2,11 @@ import React from 'react'
 import { motion } from "framer-motion";
 import MenuSliderProducts from './MenuSliderProducts'
 import MenuSliderCategories from './MenuSliderCategories'
-import MenuSlide375 from '../../assets/images/section-eight/section-eight-375.webp'
-import MenuSlide700 from '../../assets/images/section-eight/section-eight-700.webp'
-import MenuSlide900 from '../../assets/images/section-eight/section-eight-900.webp'
-import MenuSlide1440 from '../../assets/images/section-eight/section-eight-1440.webp'
+import MenuSlide375 from '../../assets/images/landing/menu-slider/section-eight-375.webp'
+import MenuSlide700 from '../../assets/images/landing/menu-slider/section-eight-700.webp'
+import MenuSlide900 from '../../assets/images/landing/menu-slider/section-eight-900.webp'
+import MenuSlide1025 from '../../assets/images/landing/menu-slider/section-eight-1025.webp'
+import MenuSlide1440 from '../../assets/images/landing/menu-slider/section-eight-1440.webp'
 import { menuSliderCategories, menuSliderProducts } from '../../data/menuSliderContent';
 
 
@@ -112,13 +113,13 @@ export default class MenuSlider extends React.Component {
           exit={{ opacity: 0, translateX: 300 }}
           transition={{ duration: 2 }}
         >
-          <img
-            className="menu-slider-hero"
-            src={MenuSlide375}
-            srcSet={`${MenuSlide1440} 1440w, ${MenuSlide900} 900w, ${MenuSlide700} 700w, ${MenuSlide375} 375w`}
-            sizes="(min-width: 1440px) 1440px, (min-width: 900px) 900px, (min-width: 700px) 700px, 375px"
-            alt="restaurant interior"
-          />
+          <picture className='menu-slider-hero'>
+            <source srcSet={MenuSlide1440} media='(min-width: 1440px)' />
+            <source srcSet={MenuSlide1025} media='(min-width: 1025px)' />
+            <source srcSet={MenuSlide900} media='(min-width: 900px)' />
+            <source srcSet={MenuSlide700} media='(min-width: 700px)' />
+            <img src={MenuSlide375} alt='Restaurant interior' className='menu-slider-hero' width={375} height={281} />
+          </picture>
           <section className="dish-slider  flex-container flex-column txt-center">
             <section className="dish-categories flex-container flex-column">
               <ul>

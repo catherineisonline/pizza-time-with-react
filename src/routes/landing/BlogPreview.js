@@ -29,9 +29,9 @@ export default class BlogPreview extends React.Component {
             >
               <img
                 src={post.img}
-                // srcSet={`${post.img700} 400w, ${post.img375} 375w`}
-                // sizes="(min-width: 700px) 700px, 375px"
                 alt={post.name}
+                width={330}
+                height={220}
               />
               <p className="date">June 27, 2023</p>
               <Link onClick={ResetLocation} to={`/blog/${post.name.toLowerCase().replaceAll(' ', '-')}`}>
