@@ -2,18 +2,16 @@ import React, { lazy, Suspense, useEffect } from "react";
 import Header from "./Hero";
 import ScrollButton from "../../helpers/ScrollBtn";
 import ContactUsLanding from "./ContactUsLanding";
-import WelcomeSection from "./WelcomeSection";
-import OurServices from "./OurServices";
-import PizzaMenuPreview from "./PizzaMenuPreview";
-import MenuPricingPreview from "./MenuPricingPreview";
-import Gallery from "./Gallery";
-import StatsPreview from "./StatsPreview";
-import MenuSlider from "./MenuSlider";
-import BlogPreview from "./BlogPreview";
-import Newsletter from "./Newsletter";
+import WelcomeSection from "./welcome/WelcomeSection";
+import OurServices from "./our-service/OurServices";
+import PizzaMenuPreview from "./menu-preview/PizzaMenuPreview";
+import MenuPricingPreview from "./pricing-preview/MenuPricingPreview";
+import Gallery from "./gallery/Gallery";
+import StatsPreview from "./stats-preview/StatsPreview";
+import MenuSlider from "./menu-slider/MenuSlider";
+import BlogPreview from "./blog-preview/BlogPreview";
+import Newsletter from "./newsletter/Newsletter";
 import ResetLocation from "../../helpers/ResetLocation";
-// import ContactLanding from "./ContactLanding";
-
 const ContactLanding = lazy(() => import("./ContactLanding"));
 
 const RootSection = () => {

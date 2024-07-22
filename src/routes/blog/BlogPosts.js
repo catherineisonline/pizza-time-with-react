@@ -8,6 +8,7 @@ const BlogPosts = ({ blogPost }) => {
       <img
         src={blogPost.img}
         alt={blogPost.name}
+        loading="lazy"
       />
       <section className="credentials">
         <p>{blogPost.date}</p>

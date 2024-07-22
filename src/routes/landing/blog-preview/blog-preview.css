@@ -1,0 +1,52 @@
+/* Section 9 */
+.section-9 {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.section-9 h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.section-9 .active-button-style {
+    margin: 0 auto;
+}
+
+/* Blog Posts */
+.blog-posts-landing {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem 1.5rem;
+}
+.blog-posts-landing .post {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 1rem;
+}
+.blog-posts-landing .post h3 {
+    transition: all ease-in-out 0.3s;
+}
+
+.blog-posts-landing h3 {
+    font-weight: 500;
+}
+.blog-posts-landing img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.blog-posts-landing .intro {
+    gap: 1rem;
+}
+
+.blog-posts-landing .date,
+.blog-posts-landing .intro {
+    color: var(--whitish-gray);
+}

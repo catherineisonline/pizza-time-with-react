@@ -63,6 +63,9 @@
   .navigation-menu {
     display: flex;
   }
+  .header-info h1 {
+    font-size: 2.5rem;
+  }
   .section-10 {
     flex-direction: row !important;
   }
@@ -122,6 +125,16 @@
 
   .section-2-info img {
     display: block;
+  }
+  .logo-styling {
+    gap: 1rem;
+  }
+  .logo {
+    width: 80%;
+  }
+  .logo-styling h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
