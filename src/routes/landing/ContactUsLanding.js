@@ -12,20 +12,21 @@ const ContactUsLanding = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
         src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image"
+        loading='lazy'
       />
       <motion.img
         initial={{ opacity: 0, translateX: 1000 }}
         whileInView={{ opacity: 0.8, translateX: 600, }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image-two"
+        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image-two" loading='lazy'
       />
       <motion.img
         initial={{ opacity: 0, translateX: 1000 }}
         whileInView={{ opacity: 0.8, translateX: 800, }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image-three"
+        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image-three" loading='lazy'
       />
       <section className='company-details'>
         <div>
