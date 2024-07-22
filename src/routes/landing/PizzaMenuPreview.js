@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom'
 import ResetLocation from '../../helpers/ResetLocation'
@@ -7,6 +7,46 @@ import pizzaMenuPreview from '../../data/pizzaMenuPreview';
 
 
 const PizzaMenuPreview = () => {
+  const initialScreenSize = localStorage.getItem('screenSize') || 1440;
+  const [screenSize, setScreenSize] = useState(Number(initialScreenSize));
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Ekaterine Mitagvaria`;
+  }, []);
+  useEffect(() => {
+
+    // Function to handle window resize
+    const handleResize = () => {
+      const width = window.innerWidth;
+      // Check inner width and update state accordingly
+      if (width <= 375) {
+        setScreenSize(375);
+      }
+      else if (width <= 700) {
+        setScreenSize(700);
+      } else {
+        setScreenSize(1440);
+      }
+    };
+
+    // Call handleResize on initial mount
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Update local storage whenever screenSize changes
+  useEffect(() => {
+    localStorage.setItem('screenSize', screenSize);
+  }, [screenSize]);
+
+
   return (
     <article className="section-4 flex-container flex-column" >
       <section className="section-4-info txt-center">
@@ -28,11 +68,12 @@ const PizzaMenuPreview = () => {
             transition={{ duration: 3 }}
           >
             <img
-              src={pizza.img375}
-              srcSet={`${pizza.img1440} 300w, ${pizza.img700} 450w, ${pizza.img375} 375w`}
-              sizes="(min-width: 1440px) 1440px, (min-width: 700px) 700px, 375px"
               alt={pizza.name}
+              src={`${pizza.img375}`}
+              width={375}
+              height={250}
             />
+
             <section className="meal-item-details flex-container flex-column">
               <h3 className="txt-white">{pizza.name}</h3>
               <p>{pizza.description}</p>

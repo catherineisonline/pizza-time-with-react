@@ -3,7 +3,7 @@ import logo from '../../assets/images/logo.png'
 import openMenu from '../../assets/images/open-menu.svg'
 import closeMenu from '../../assets/images/close-menu.svg'
 import { Link, NavLink } from 'react-router-dom'
-import Cart from '../../assets/images/cart-icon.png'
+import Cart from '../../assets/images/cart-icon-dark.png'
 import SuccessMsg from '../../components/SuccessMsg'
 import ResetLocation from '../../helpers/ResetLocation'
 
@@ -27,8 +27,8 @@ const Header = ({ loginModal,
           className="logo-styling flex-container flex-row txt-center txt-white"
         >
           <img
-            width="50"
-            height="50"
+            width="100"
+            height="100"
             className="logo"
             src={logo}
             alt="Pizza Time logo"
@@ -199,8 +199,8 @@ const Header = ({ loginModal,
           </li>
         </ul>
         <img
-          width="50"
-          height="50"
+          width="80"
+          height="80"
           className="burger-bars"
           src={isModalActive ? closeMenu : openMenu}
           alt={isModalActive ? "Close menu" : "Open menu"}
