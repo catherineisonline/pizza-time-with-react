@@ -19,6 +19,7 @@ const StatsPreview = () => {
               src={stats.img}
               alt=""
               aria-hidden="true"
+              loading='lazy'
             />
             <h3>{stats.stats}</h3>
             <p className="pop-font txt-white">{stats.name}</p>

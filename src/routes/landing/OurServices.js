@@ -32,6 +32,7 @@ const OurServices = () => {
                 src={service.img}
                 alt=""
                 aria-hidden="true"
+                loading='lazy'
               />
 
               <section>

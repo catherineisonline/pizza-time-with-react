@@ -95,13 +95,12 @@ img {
   border-style: solid;
   border-width: 1px;
   padding: 0.5rem 1.2rem;
-  opacity: 0.8;
   background-color: var(--pizza-red);
   border-color: var(--pizza-red);
   letter-spacing: 1px;
   align-items: center;
   width: max-content;
-  color: var(--white);
+  color: var(--light-black);
   font-size: 1rem;
   font-weight: 400;
   font-family: var(--poppins-font);
@@ -1049,6 +1048,11 @@ hr {
   color: var(--white);
   border-color: var(--white);
 }
+.cart-btn:hover {
+  opacity: 0.8;
+  color: var(--light-black) !important;
+}
+
 .passive-button-style:hover {
   background-color: var(--pizza-red);
   border-color: var(--pizza-red);
