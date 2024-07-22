@@ -37,10 +37,6 @@
   footer {
     justify-content: space-evenly;
   }
-  .section-2-info {
-    width: 65%;
-    margin: 0 auto;
-  }
 }
 @media screen and (min-width: 800px) {
   .meals-grid {
@@ -61,19 +57,6 @@
   .meal-item-details {
     display: grid;
     grid-template-rows: 1fr;
-  }
-  .hero-section {
-    height: 30rem;
-  }
-  .pizza-one {
-    right: -22%;
-    top: -20%;
-    width: 20rem;
-  }
-  .pizza-two {
-    left: -22%;
-    top: -20%;
-    width: 20rem;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -136,32 +119,13 @@
     flex-direction: column;
     padding: 2rem;
   }
-  .hero-section {
-    height: 40rem;
-  }
-  .pizza-one {
+
+  .section-2-info img {
     display: block;
-    right: -40%;
-    top: -20%;
-    width: 23rem;
-  }
-  .pizza-two {
-    display: block;
-    left: -40%;
-    top: -20%;
-    width: 23rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .pizza-one {
-    right: -15%;
-    top: 3%;
-  }
-  .pizza-two {
-    left: -15%;
-    top: 3%;
-  }
   .meals-grid {
     gap: 1rem;
     overflow-y: hidden;

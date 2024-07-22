@@ -299,7 +299,7 @@ header {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  padding: 3rem;
+  padding: 1rem;
 }
 .section-2-info h2 {
   text-transform: uppercase;
@@ -321,6 +321,15 @@ header {
   margin: 0 auto;
 }
 
+.section-2-info img {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  width: 20%;
+  height: auto;
+  object-fit: contain;
+  top: 3rem;
+}
 /* Section 3 */
 
 .section-3-container {
@@ -624,7 +633,7 @@ header {
 }
 /* Hero Video */
 .hero-section {
-  height: 38rem;
+  height: 100vh;
   position: relative;
   z-index: 1;
   display: flex;
@@ -1202,21 +1211,6 @@ hr {
   object-fit: contain;
 }
 
-.pizza-one {
-  position: absolute;
-  top: -12%;
-  width: 20rem;
-  opacity: 0.8;
-  overflow: hidden;
-}
-.pizza-two {
-  position: absolute;
-  top: -12%;
-  width: 20rem;
-  opacity: 0.8;
-  overflow-y: hidden;
-}
-
 .company-details-image {
   position: absolute;
   width: 22rem;
@@ -1234,10 +1228,6 @@ hr {
   width: 22rem;
   opacity: 0.9;
   overflow-y: hidden;
-}
-
-.pizza-one {
-  display: none;
 }
 
 .terms {

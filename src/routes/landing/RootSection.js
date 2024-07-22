@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import Header from "./Hero";
 import ScrollButton from "../../helpers/ScrollBtn";
 import ContactUsLanding from "./ContactUsLanding";
@@ -12,7 +12,9 @@ import MenuSlider from "./MenuSlider";
 import BlogPreview from "./BlogPreview";
 import Newsletter from "./Newsletter";
 import ResetLocation from "../../helpers/ResetLocation";
-import ContactLanding from "./ContactLanding";
+// import ContactLanding from "./ContactLanding";
+
+const ContactLanding = lazy(() => import("./ContactLanding"));
 
 const RootSection = () => {
   useEffect(() => {
@@ -32,7 +34,9 @@ const RootSection = () => {
       <MenuSlider />
       <Newsletter />
       <BlogPreview />
-      <ContactLanding />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ContactLanding />
+      </Suspense>
       <ScrollButton />
     </React.Fragment>
   );

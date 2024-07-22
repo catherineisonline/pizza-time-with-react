@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.4af4cba7.css",
-    "main.js": "/static/js/main.c2d6c75a.js",
+    "main.css": "/static/css/main.506c9eb0.css",
+    "main.js": "/static/js/main.bfa8acab.js",
+    "static/js/36.9cd5b7dd.chunk.js": "/static/js/36.9cd5b7dd.chunk.js",
     "static/js/787.bd7c447a.chunk.js": "/static/js/787.bd7c447a.chunk.js",
+    "static/js/654.3f912b68.chunk.js": "/static/js/654.3f912b68.chunk.js",
     "static/media/hero-bg.mp4": "/static/media/hero-bg.9ebe262c40db09565add.mp4",
     "static/media/Sams Cola Soda.jpeg": "/static/media/Sams Cola Soda.5529523e7dde31b0f6ce.jpeg",
     "static/media/cheese-pizza-376.jpg": "/static/media/cheese-pizza-376.e2ada8708589061b8430.jpg",
@@ -30,6 +32,8 @@
     "static/media/pasta-6.jpeg": "/static/media/pasta-6.fc890f47ce1222ec9879.jpeg",
     "static/media/img-3.jpeg": "/static/media/img-3.6ee435b8ba5f07964244.jpeg",
     "static/media/post-6.jpeg": "/static/media/post-6.e5102a26e33fb2972999.jpeg",
+    "static/media/pizza-two-parallax.png": "/static/media/pizza-two-parallax.94a6dbea4160b8146024.png",
+    "static/media/pizza-one-parallax.png": "/static/media/pizza-one-parallax.33b2c3893b2efbbc24c3.png",
     "static/media/BBQ-chicken-pizza.jpg": "/static/media/BBQ-chicken-pizza.0fa497e3697ea470aeed.jpg",
     "static/media/Tomato-Pie.jpeg": "/static/media/Tomato-Pie.66ce6a9a0d47add5f5dc.jpeg",
     "static/media/pepperoni-pizza.jpg": "/static/media/pepperoni-pizza.9d2278479d94466dcb0d.jpg",
@@ -54,14 +58,12 @@
     "static/media/Pugliese.jpeg": "/static/media/Pugliese.d53ca71b62e654d73b32.jpeg",
     "static/media/img-three.jpeg": "/static/media/img-three.f39b11c10af067f03e2d.jpeg",
     "static/media/sushi-8.jpeg": "/static/media/sushi-8.d51c07ea5c4fa4198728.jpeg",
-    "static/media/pizza-two-parallax.webp": "/static/media/pizza-two-parallax.474c233498ec7d06783d.webp",
     "static/media/sushi-21.jpeg": "/static/media/sushi-21.e766bef9613f253d39c3.jpeg",
     "static/media/post-2.jpeg": "/static/media/post-2.ab5df1e104efaabb3971.jpeg",
     "static/media/unforgable-taste.webp": "/static/media/unforgable-taste.a128d59d533ea4500f4d.webp",
     "static/media/express-delivery.webp": "/static/media/express-delivery.da9094316fd844c282e5.webp",
     "static/media/sushi-10.jpeg": "/static/media/sushi-10.84e8df61ffc2b8357b35.jpeg",
     "static/media/di-zucca.jpeg": "/static/media/di-zucca.3ca437708543f817cfbf.jpeg",
-    "static/media/pizza-one-parallax.webp": "/static/media/pizza-one-parallax.d32254416abd6f7a5dba.webp",
     "static/media/section-eight-900.webp": "/static/media/section-eight-900.4acf14865a1a9face5de.webp",
     "static/media/organic-food.webp": "/static/media/organic-food.3862a2313648c4279468.webp",
     "static/media/Lamb Ragù.jpeg": "/static/media/Lamb Ragù.b0bb619e2c5812e2e756.jpeg",
@@ -188,12 +190,14 @@
     "static/media/mastercard-icon.svg": "/static/media/mastercard-icon.c66dbbec26938c040843d4706a1965e1.svg",
     "index.html": "/index.html",
     "static/media/close-menu.svg": "/static/media/close-menu.494cc16154e95b6ff5adcf65648b1cad.svg",
-    "main.4af4cba7.css.map": "/static/css/main.4af4cba7.css.map",
-    "main.c2d6c75a.js.map": "/static/js/main.c2d6c75a.js.map",
-    "787.bd7c447a.chunk.js.map": "/static/js/787.bd7c447a.chunk.js.map"
+    "main.506c9eb0.css.map": "/static/css/main.506c9eb0.css.map",
+    "main.bfa8acab.js.map": "/static/js/main.bfa8acab.js.map",
+    "36.9cd5b7dd.chunk.js.map": "/static/js/36.9cd5b7dd.chunk.js.map",
+    "787.bd7c447a.chunk.js.map": "/static/js/787.bd7c447a.chunk.js.map",
+    "654.3f912b68.chunk.js.map": "/static/js/654.3f912b68.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4af4cba7.css",
-    "static/js/main.c2d6c75a.js"
+    "static/css/main.506c9eb0.css",
+    "static/js/main.bfa8acab.js"
   ]
 }
