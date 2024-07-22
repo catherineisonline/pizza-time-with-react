@@ -4,29 +4,53 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import img375 from '../../assets/images/section-one/section-one-375.webp'
 import img700 from '../../assets/images/section-one/section-one-700.webp'
 import img1440 from '../../assets/images/section-one/section-one-1440.webp'
-import PizzaOne from '../../assets/images/welcome-section/pizza-one-parallax.webp'
-import PizzaTwo from '../../assets/images/welcome-section/pizza-two-parallax.webp'
+import PizzaOne from '../../assets/images/welcome-section/pizza-one-parallax.png'
+import PizzaTwo from '../../assets/images/welcome-section/pizza-two-parallax.png'
 import { motion } from "framer-motion";
+
+const imageParentVariant = {
+  initial: {},
+  whileInView: {}
+}
+
+
+const leftImageVariant = {
+  initial: { opacity: 0, left: -100 },
+  whileInView: {
+    opacity: 0.7, left: 0,
+    transition: { duration: 4 }
+  },
+
+}
+
+const rightImageVariant = {
+  initial: { opacity: 0, right: -100 },
+  whileInView: {
+    opacity: 0.7, right: 0,
+    transition: { duration: 4, }
+  },
+
+}
 
 const WelcomeSection = () => {
   return (
     <article className="welcome-section" >
-      <section className="section-2-info flex-container flex-column txt-center pop-font">
+      <motion.section className="section-2-info flex-container flex-column txt-center pop-font"
+        variants={imageParentVariant}
+        initial={"initial"}
+        whileInView={"whileInView"}>
         <motion.img
-          src={PizzaTwo} alt="" className=" pizza-two"
-          initial={{ opacity: 0, translateX: -200 }}
-          whileInView={{
-            opacity: 1, translateX: -100
-          }}
-          transition={{ duration: 5 }}
+
+          src={PizzaOne} alt="" className="pizza-one"
+          variants={leftImageVariant}
+          width={500}
+          height={499}
         />
         <motion.img
-          src={PizzaOne} alt="" className=" pizza-one"
-          initial={{ opacity: 0, translateX: 200 }}
-          whileInView={{
-            opacity: 1, translateX: 100
-          }}
-          transition={{ duration: 5 }}
+          src={PizzaTwo} alt="" className="pizza-two"
+          variants={rightImageVariant}
+          width={500}
+          height={499}
         />
         <h2 className="txt-white">
           Welcome to <span>Pizza Time</span> restaurant
@@ -42,7 +66,7 @@ const WelcomeSection = () => {
           options for corporate parties! At Pizaa Time we care about you
           because you are the one who makes us special!
         </p>
-      </section>
+      </motion.section>
       <LazyLoadImage
         className="section-two-img"
         src={img375}
