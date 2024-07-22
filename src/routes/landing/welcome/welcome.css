@@ -1,0 +1,41 @@
+.welcome-section {
+    overflow: hidden;
+}
+
+.section-2-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+.section-2-info h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.section-2-info h2 span {
+    font-family: var(--nothing-font);
+    color: var(--yellow);
+}
+
+.section-2-info p {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    line-height: 2rem;
+    width: 100%;
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.section-2-info img {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    width: 20%;
+    height: auto;
+    object-fit: contain;
+    top: 3rem;
+}

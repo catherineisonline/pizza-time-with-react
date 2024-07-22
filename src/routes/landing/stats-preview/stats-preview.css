@@ -1,0 +1,57 @@
+/* Section 7 */
+.section-7 {
+    position: relative;
+    /* background-image: url("../assets/images/section-7-bg.webp"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    gap: 1rem;
+    padding: 2rem;
+}
+.section-7::after {
+    content: "";
+    position: absolute;
+    background-color: var(--modal-glass-bg);
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.highlights {
+    z-index: 1;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.highligh-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.highlights img {
+    margin: 0 auto;
+    border: 2px solid var(--yellow);
+    padding: 0.7rem;
+    cursor: pointer;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 3rem;
+    height: auto;
+}
+
+.highlights h3 {
+    color: var(--yellow);
+    font-family: var(--poppins-font);
+    font-size: 2rem;
+}
+.highlights p {
+    font-weight: 600;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,48 @@
+.email-subscribtion {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    min-width: 375px;
+    max-width: 900px;
+    color: var(--white);
+    margin: 7rem auto;
+    overflow: hidden;
+}
+
+.email-label {
+    font-family: var(--poppins-font);
+    color: var(--whitish-gray);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 650px;
+}
+
+.error-msg {
+    font-family: var(--poppins-font);
+}
+
+.newsletter-success {
+    color: var(--green);
+    font-size: 1.5rem;
+    line-height: 160px;
+}
+
+.input-section {
+    min-width: calc(40% + 5rem);
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+.input-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}

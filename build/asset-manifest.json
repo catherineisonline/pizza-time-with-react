@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.506c9eb0.css",
-    "main.js": "/static/js/main.bfa8acab.js",
-    "static/js/36.9cd5b7dd.chunk.js": "/static/js/36.9cd5b7dd.chunk.js",
-    "static/js/787.bd7c447a.chunk.js": "/static/js/787.bd7c447a.chunk.js",
-    "static/js/654.3f912b68.chunk.js": "/static/js/654.3f912b68.chunk.js",
-    "static/media/hero-bg.mp4": "/static/media/hero-bg.9ebe262c40db09565add.mp4",
+    "main.css": "/static/css/main.d672c5b7.css",
+    "main.js": "/static/js/main.a2e76643.js",
+    "static/js/453.198d460e.chunk.js": "/static/js/453.198d460e.chunk.js",
+    "static/js/196.33f1bf65.chunk.js": "/static/js/196.33f1bf65.chunk.js",
+    "static/js/718.7ca25537.chunk.js": "/static/js/718.7ca25537.chunk.js",
     "static/media/Sams Cola Soda.jpeg": "/static/media/Sams Cola Soda.5529523e7dde31b0f6ce.jpeg",
+    "static/media/hero-bg.mp4": "/static/media/hero-bg.b670e549bb7d5f27f214.mp4",
+    "static/media/hero-bg-375.mp4": "/static/media/hero-bg-375.736f10be6dfe96c61ee3.mp4",
     "static/media/cheese-pizza-376.jpg": "/static/media/cheese-pizza-376.e2ada8708589061b8430.jpg",
     "static/media/Lipton Green Tea.jpeg": "/static/media/Lipton Green Tea.468aa016cc41286180e6.jpeg",
     "static/media/Toasted Ravioli.jpeg": "/static/media/Toasted Ravioli.1a7c85a491e2e1e8afdd.jpeg",
@@ -190,14 +191,14 @@
     "static/media/mastercard-icon.svg": "/static/media/mastercard-icon.c66dbbec26938c040843d4706a1965e1.svg",
     "index.html": "/index.html",
     "static/media/close-menu.svg": "/static/media/close-menu.494cc16154e95b6ff5adcf65648b1cad.svg",
-    "main.506c9eb0.css.map": "/static/css/main.506c9eb0.css.map",
-    "main.bfa8acab.js.map": "/static/js/main.bfa8acab.js.map",
-    "36.9cd5b7dd.chunk.js.map": "/static/js/36.9cd5b7dd.chunk.js.map",
-    "787.bd7c447a.chunk.js.map": "/static/js/787.bd7c447a.chunk.js.map",
-    "654.3f912b68.chunk.js.map": "/static/js/654.3f912b68.chunk.js.map"
+    "main.d672c5b7.css.map": "/static/css/main.d672c5b7.css.map",
+    "main.a2e76643.js.map": "/static/js/main.a2e76643.js.map",
+    "453.198d460e.chunk.js.map": "/static/js/453.198d460e.chunk.js.map",
+    "196.33f1bf65.chunk.js.map": "/static/js/196.33f1bf65.chunk.js.map",
+    "718.7ca25537.chunk.js.map": "/static/js/718.7ca25537.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.506c9eb0.css",
-    "static/js/main.bfa8acab.js"
+    "static/css/main.d672c5b7.css",
+    "static/js/main.a2e76643.js"
   ]
 }

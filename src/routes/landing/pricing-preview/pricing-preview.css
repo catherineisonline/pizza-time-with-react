@@ -1,0 +1,65 @@
+/* Section 5 */
+.section-5 {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+.section-5 h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.section-5 p {
+    color: var(--light-gray);
+    max-width: 1200px;
+}
+.pricing-grid {
+    gap: 2.5rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.pricing-grid-item {
+    gap: 1rem;
+}
+.pricing-details {
+    width: 100%;
+}
+.pricing-details p {
+    color: var(--light-gray);
+    text-align: left;
+}
+.name-and-price {
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    position: relative;
+    background-color: var(--light-black);
+}
+.name-and-price::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+    border-bottom: 1px solid var(--yellow);
+    height: 1px;
+}
+.name-and-price h3 {
+    position: relative;
+    color: var(--whitish-gray);
+    font-weight: 400;
+}
+
+.name-and-price p {
+    color: var(--yellow);
+}
+.pricing-img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+}
