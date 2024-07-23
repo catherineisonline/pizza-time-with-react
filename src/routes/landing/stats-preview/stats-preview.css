@@ -55,3 +55,16 @@
     font-weight: 600;
     font-size: 1.5rem;
 }
+
+@media screen and (min-width: 700px) {
+    .highlights {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .highlights {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

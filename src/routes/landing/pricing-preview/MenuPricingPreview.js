@@ -12,10 +12,10 @@ export default class MenuPricingPreview extends React.Component {
     return (
       <motion.article
         className="section-5 flex-container "
-        initial={{ opacity: 0, translateX: -300 }}
-        whileInView={{ opacity: 1, translateX: 0 }}
-        exit={{ opacity: 0, translateX: -300 }}
-        transition={{ duration: 2 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 3 }}
       >
         <h2 className="txt-center pop-font txt-white">Menu Pricing</h2>
         <p className="section-description">

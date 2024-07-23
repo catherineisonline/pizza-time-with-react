@@ -63,3 +63,14 @@
     width: 6rem;
     height: 6rem;
 }
+
+@media screen and (min-width: 700px) {
+    .pricing-grid {
+        gap: 2.5rem;
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

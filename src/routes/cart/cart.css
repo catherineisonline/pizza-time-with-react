@@ -8,7 +8,6 @@
   gap: 1rem;
   min-height: 100vh;
   padding-bottom: 10rem;
-  background-color: var(--light-black);
   color: var(--white);
   font-family: var(--poppins-font);
 }
@@ -32,7 +31,7 @@
 .cart-content p {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
-  color: white;
+  color: var(--white);
 }
 
 /*** Cart item ***/

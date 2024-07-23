@@ -7,6 +7,7 @@ import AboutCareers from "./AboutCareers";
 import AboutUs from "./AboutUs";
 import AboutDedication from "./AboutDedication";
 import AboutCustomers from "./AboutCustomers";
+import './about.css'
 
 const About = () => {
   useEffect(() => {

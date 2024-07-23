@@ -2,7 +2,7 @@ import React from "react";
 //components
 import CheckoutForm from "./CheckoutForm";
 import EmptyCart from "../cart/EmptyCart.js";
-
+import "./checkout.css"
 const Checkout = ({ cartItems,
   productsQuantity,
   totalPayment,

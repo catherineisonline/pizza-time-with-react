@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 //data
 import careers from "../../data/careers";
+import './careers.css'
 
 const Careers = () => {
     useEffect(() => {

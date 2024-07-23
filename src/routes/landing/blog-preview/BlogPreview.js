@@ -12,14 +12,12 @@ export default class BlogPreview extends React.Component {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 3 }}
       >
 
         <h2 className="txt-center pop-font txt-white">Recent from blog</h2>
         <p className="section-description">
-          Fresh, flavorful and maybe some healthy recipes made for real, actual,
-          every day life. You don't need to be a pro! Helping you celebrate the
-          joy of food in a totally non-intimidating way.
+          Fresh, flavorful, and maybe some healthy recipes made for real, actual, everyday life. You don't need to be a pro! Helping you celebrate the joy of food in a non-intimidating way.
         </p>
         <section className="blog-posts-landing">
           {blogPreview.map((post) => (

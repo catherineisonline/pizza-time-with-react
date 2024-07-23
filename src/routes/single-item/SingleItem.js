@@ -3,7 +3,7 @@ import AddToCartButton from "../cart/AddToCartButton";
 import Attribute from "../menu/Attribute";
 import { allProductsData } from "../../data/AllProductsData.js";
 import { Link } from "react-router-dom";
-
+import './single-item.css'
 const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
   const [singleProduct, setSingleProduct] = useState([]);
   const [selectedAttributes, setSelectedAttributes] = useState([]);

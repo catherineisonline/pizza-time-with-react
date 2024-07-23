@@ -106,7 +106,13 @@
 .dish-details-desc {
     color: var(--whitish-gray);
 }
-
+.dish-details a {
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
 /* Hover */
 @media (hover: hover) {
     .dish-categories h3:hover {
@@ -119,5 +125,29 @@
     .dish-categories h3:hover {
         background-color: var(--yellow);
         color: var(--light-black);
+    }
+    .dish-details a:hover {
+        background-color: var(--yellow);
+        color: var(--light-black);
+        -moz-transition: all ease-in-out 0.3s;
+        -o-transition: all ease-in-out 0.3s;
+        -webkit-transition: all ease-in-out 0.3s;
+        -ms-transition: all ease-in-out 0.3s;
+        transition: all ease-in-out 0.3s;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .dish-categories {
+        flex-direction: row !important;
+    }
+    .dish-categories button {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .section-8 {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

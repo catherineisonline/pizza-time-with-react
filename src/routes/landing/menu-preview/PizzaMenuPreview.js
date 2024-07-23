@@ -10,7 +10,6 @@ const PizzaMenuPreview = () => {
   const [screenSize, setScreenSize] = useState(Number(initialScreenSize));
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Ekaterine Mitagvaria`;
   }, []);
   useEffect(() => {
 
@@ -51,9 +50,7 @@ const PizzaMenuPreview = () => {
       <section className="section-4-info txt-center">
         <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
         <p className="section-description">
-          Pizza Time holds the market of the pizza industry and continuously
-          offers more than pizza. Check out our hottest menu options with
-          cheese, meat, chicken and veggies!
+          Pizza Time holds the market of the pizza industry and continuously offers more than pizza. Check out our hottest menu options with cheese, meat, chicken, and veggies!
         </p>
       </section>
       <section className="meals-grid flex-container flex-column" >
@@ -61,10 +58,10 @@ const PizzaMenuPreview = () => {
           <motion.div
             key={id}
             className="meal-item flex-container"
-            initial={{ opacity: 0, translateX: -300 }}
-            whileInView={{ opacity: 1, translateX: 0 }}
-            exit={{ opacity: 0, translateX: -300 }}
-            transition={{ duration: 1, transition: "ease-in-out" }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 3 }}
           >
             <img
               alt={pizza.name}

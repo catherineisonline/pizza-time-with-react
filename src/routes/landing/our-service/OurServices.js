@@ -4,28 +4,26 @@ import { motion } from "framer-motion";
 import ourServices from '../../../data/ourServices';
 import './our-service.css'
 
-
 const OurServices = () => {
   return (
-    <motion.article
+    <article
       className="section-3-container"
-      initial={{ opacity: 0, translateX: -200 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 2 }}
     >
       <h2 className="pop-font">Our Services</h2>
       <p className="pop-font section-description">
-        Pizza Time provides services across all states - various foods and
-        drinks, you choose! What makes us special is our teams of
-        professionals with extensive knowledge of all cuisine that we have to
-        offer.
+        Pizza Time provides services across all states - various foods and drinks, you choose! What makes us special is our teams of professionals with extensive knowledge of all the cuisine that we have to offer.
       </p>
       <section className="services-grid  flex-container flex-column">
         {ourServices.map((service) => (
           <Tilt key={service.id}>
             <section className="service-list flex-container flex-column">
-              <img
+              <motion.img
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  duration: 2
+                }}
                 width="50"
                 height="50"
                 className="service-img"
@@ -43,7 +41,7 @@ const OurServices = () => {
           </Tilt>
         ))}
       </section>
-    </motion.article>
+    </article>
   )
 }
 

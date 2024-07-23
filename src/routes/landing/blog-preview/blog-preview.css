@@ -50,3 +50,19 @@
 .blog-posts-landing .intro {
     color: var(--whitish-gray);
 }
+
+@media screen and (min-width: 700px) {
+    .blog-posts-landing {
+        flex-direction: row;
+    }
+}
+@media (hover: hover) {
+    .blog-posts-landing .post h3:hover {
+        color: var(--pizza-red);
+        -moz-transition: all ease-in-out 0.3s;
+        -o-transition: all ease-in-out 0.3s;
+        -webkit-transition: all ease-in-out 0.3s;
+        -ms-transition: all ease-in-out 0.3s;
+        transition: all ease-in-out 0.3s;
+    }
+}

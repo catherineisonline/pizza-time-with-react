@@ -154,7 +154,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-decoration: underline;
 }
 .promo-code p:hover {
-  color: white;
+  color: var(--white);
   transition: all ease-in-out 0.2s;
 }
 

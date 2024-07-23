@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import validateForm from "../../components/validateForm";
 import { v4 as uuidv4 } from 'uuid';
+import { motion } from "framer-motion";
 import ResetLocation from "../../helpers/ResetLocation";
+import './register.css'
 const Register = ({ activateLoginModal }) => {
 
   const [formValue, setFormValue] = useState({ id: '', email: '', password: '', repeatPassword: '', fullname: '', address: '', number: '' });
@@ -28,7 +30,7 @@ const Register = ({ activateLoginModal }) => {
 
     const repetitiveEmail = users.filter((u) => u.email === user.email);
 
-    //cretae unique id
+    //create unique id
     const id = uuidv4();
     user.id = id;
     try {
@@ -104,7 +106,12 @@ const Register = ({ activateLoginModal }) => {
     document.title = "Registration | Pizza Time";
   }, []);
   return (
-    <main className="register-main">
+    <motion.main className="register-main"
+      initial={{ opacity: 0, translateX: -300 }}
+      whileInView={{ opacity: 1, translateX: 0 }}
+      exit={{ opacity: 0, translateX: -300 }}
+      transition={{ duration: 1 }}
+    >
       <h2>{submit && Object.keys(formError).length === 0 ? 'Success!' : 'Registration'}</h2>
       {loading ? <div role="status" className="loader">
         <p>Almost there...</p>
@@ -164,7 +171,7 @@ const Register = ({ activateLoginModal }) => {
         </form>
       }
 
-    </main>
+    </motion.main>
   );
 }
 

@@ -6,6 +6,7 @@ import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import { motion } from "framer-motion";
+import './menu.css'
 
 const Menu = ({ allProducts,
   activeCategory,

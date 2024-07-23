@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import validateForm from "../../../components/validateForm";
 import './newsletter.css'
 const Newsletter = () => {
@@ -21,25 +20,16 @@ const Newsletter = () => {
   return (
 
     <section className="email-subscribtion">
-      <motion.div className="email-label"
-        initial={{ opacity: 0, translateX: -300 }}
-        whileInView={{ opacity: 1, translateX: 0 }}
-        exit={{ opacity: 0, translateX: -300 }}
-        transition={{ duration: 2 }}
+      <div className="email-label"
       >
         <label htmlFor="email-input">
-          Subscribe to our newsletter to recieve updates about menu and enjoy
-          awesome gifts!
+          Subscribe to our newsletter to receive updates about the menu and enjoy awesome gifts!
         </label>
-      </motion.div>
+      </div>
       {submit && Object.keys(formError).length === 0 ?
         <p className="newsletter-success">You have successfully subscribed to our newsletter!</p> :
-        <motion.div
+        <div
           className="input-section"
-          initial={{ opacity: 0, translateX: 300 }}
-          whileInView={{ opacity: 1, translateX: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 3 }}
         >
           <form onSubmit={handleSubmit}>
             <div
@@ -52,7 +42,7 @@ const Newsletter = () => {
               Sign me up
             </button>
           </form>
-        </motion.div>
+        </div>
       }
 
     </section>
