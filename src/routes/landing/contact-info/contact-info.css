@@ -1,0 +1,70 @@
+/* Section 10 */
+.section-10 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    gap: 1rem;
+    padding-bottom: 3rem;
+    max-width: 1440px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.section-10 h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+#map {
+    height: 30rem;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.contact-emails {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: var(--poppins-font);
+}
+.contact-emails h3 {
+    font-size: 2rem;
+}
+.contact-emails h3,
+.contact-emails h4 {
+    color: var(--white);
+    font-weight: 500;
+}
+.contact-emails p {
+    color: var(--light-gray);
+}
+.contact-emails ul {
+    color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+}
+
+.section-10 .active-button-style {
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+    .section-10 {
+        justify-content: space-evenly;
+        gap: 5rem;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .section-10 {
+        flex-direction: row !important;
+    }
+    .map {
+        height: auto;
+        width: 80%;
+    }
+}

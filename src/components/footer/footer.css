@@ -1,0 +1,77 @@
+/* Footer */
+footer {
+    background-color: var(--light-black);
+    gap: 2rem;
+    padding: 3rem 2rem;
+    position: absolute;
+    bottom: 0;
+    width: -webkit-fill-available;
+    height: max-content;
+    top: 100%;
+}
+
+.footer-menu {
+    gap: 1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    align-items: center;
+}
+
+.footer-menu a {
+    transition: all ease-in-out 0.2s;
+    letter-spacing: 1.5px;
+}
+
+.footer-menu a:hover {
+    color: var(--pizza-red);
+    transition: all ease-in-out 0.2s;
+}
+
+.footer-contact {
+    gap: 1rem;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.logo-styling.footer {
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+hr {
+    opacity: 0.2;
+}
+
+.accepted-payments {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0 auto;
+}
+.accepted-payments img {
+    width: 2rem;
+    max-width: 100%;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.socials span {
+    display: none;
+}
+
+.socials img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media screen and (min-width: 700px) {
+    footer {
+        flex-direction: row !important;
+        justify-content: space-evenly;
+    }
+}

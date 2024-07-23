@@ -49,7 +49,6 @@ export default class MenuSlider extends React.Component {
     try {
       const result = this.allProductsData
       this.setState({ allProducts: result })
-      // this.setState({activeCategory: "pizza"})
     } catch (error) {
       console.log(error)
     }
@@ -108,10 +107,10 @@ export default class MenuSlider extends React.Component {
       <article className="section-8">
         <motion.div
           className="section-8"
-          initial={{ opacity: 0, translateX: 300 }}
-          whileInView={{ opacity: 1, translateX: 0 }}
-          exit={{ opacity: 0, translateX: 300 }}
-          transition={{ duration: 2 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 3 }}
         >
           <picture className='menu-slider-hero'>
             <source srcSet={MenuSlide1440} media='(min-width: 1440px)' />

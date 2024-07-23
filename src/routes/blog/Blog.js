@@ -8,6 +8,7 @@ import allBlogPosts from '../../data/allBlogPosts'
 import ScrollBtn from "../../helpers/ScrollBtn";
 import ResetLocation from "../../helpers/ResetLocation";
 import BlogPosts from "./BlogPosts";
+import "./blog.css"
 
 const Blog = () => {
   const [itemOffset, setItemOffset] = useState(0);

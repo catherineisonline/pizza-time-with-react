@@ -1,29 +1,29 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import PizzaOne from '../../assets/images/contact-us/image-one-parallax.webp'
-
+import PizzaOne from '../../../assets/images/contact-us/image-one-parallax.webp'
+import './company-info.css'
 
 const ContactUsLanding = () => {
   return (
     <section className="contact-us-landing flex-container flex-row txt-white" >
       <motion.img
-        initial={{ opacity: 0, translateX: 1000 }}
-        whileInView={{ opacity: 0.8, translateX: 400, }}
+        initial={{ opacity: 0, right: 100 }}
+        whileInView={{ opacity: 0.8, right: 300, }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
         src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image"
         loading='lazy'
       />
       <motion.img
-        initial={{ opacity: 0, translateX: 1000 }}
-        whileInView={{ opacity: 0.8, translateX: 600, }}
+        initial={{ opacity: 0, right: 100 }}
+        whileInView={{ opacity: 0.8, right: 200, }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
         src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image-two" loading='lazy'
       />
       <motion.img
-        initial={{ opacity: 0, translateX: 1000 }}
-        whileInView={{ opacity: 0.8, translateX: 800, }}
+        initial={{ opacity: 0, right: 50 }}
+        whileInView={{ opacity: 0.8, right: 100, }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
         src={PizzaOne} alt="" aria-hidden="true" className="parallax company-details-image-three" loading='lazy'

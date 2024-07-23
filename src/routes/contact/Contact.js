@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 //components
 import validateForm from "../../components/validateForm";
 import ResetLocation from "../../helpers/ResetLocation";
+import './contact.css'
 
 const Contact = () => {
   const [formValue, setFormValue] = useState({ fullname: '', email: '', message: "" });

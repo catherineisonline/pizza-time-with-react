@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Header from './routes/landing/Header.js';
+import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer';
 import {
   About,
@@ -43,7 +43,12 @@ function App() {
   const [loginModalWindow, setLoginModalWindow] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
-
+  // Wrapping WebSocket creation to log usage
+  const OriginalWebSocket = WebSocket;
+  window.WebSocket = function (...args) {
+    console.log('WebSocket created with args:', args);
+    return new OriginalWebSocket(...args);
+  };
   const getUser = async (id) => {
     try {
       const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);

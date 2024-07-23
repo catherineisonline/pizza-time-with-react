@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import allBlogPosts from '../../data/allBlogPosts'
-
+import "./blog-post.css"
 const BlogPost = () => {
     const [blogPost, setBlogPost] = useState({});
     useEffect(() => {

@@ -9,7 +9,7 @@ const ourServices = [
         img: ImgOne,
         name: 'Organic Food',
         description:
-            'Pure and healthy organic food is our lifestyle. The products we consume has impact on out future and we do everything to keep the future healthy',
+            'Pure and healthy organic food is our lifestyle. The products we consume have an impact on our future and we do everything to keep the future healthy',
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ const ourServices = [
         img: ImgThree,
         name: 'Unforgettable Taste',
         description:
-            'Our goal is to provide our customers with excellent service, great taste and unforgettable experiences. This will be a mind-blowing experience for your taste buds',
+            'Our goal is to provide our customers with excellent service, great taste, and unforgettable experiences. This will be a mind-blowing experience for your taste buds',
     },
 ]
 

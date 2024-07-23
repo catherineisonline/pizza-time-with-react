@@ -1,7 +1,15 @@
 .welcome-section {
     overflow: hidden;
 }
-
+/* Section 2 */
+.section-two-img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 20rem;
+    height: 50%;
+    z-index: 2;
+    opacity: 0.8;
+}
 .section-2-info {
     position: relative;
     display: flex;
@@ -38,4 +46,9 @@
     height: auto;
     object-fit: contain;
     top: 3rem;
+}
+@media screen and (min-width: 1025px) {
+    .section-2-info img {
+        display: block;
+    }
 }
