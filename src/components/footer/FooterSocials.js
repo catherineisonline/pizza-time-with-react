@@ -24,24 +24,25 @@ const socials = [
   }
 ];
 
-export default class FooterSocials extends React.Component {
-  render() {
-    return (
-      <ul className="socials">
-        {socials.map(social =>
-          <li key={social.id}>
-            <a
-              href={social.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={social.name}
-            >
-              <span aria-hidden="true">{social.name}</span>
-              <img src={social.img} alt="" aria-hidden="true" width={50}
-                height={50} />
-            </a>
-          </li>)}
-      </ul>
-    );
-  }
+const FooterSocials = () => {
+
+  return (
+    <ul className="socials">
+      {socials.map(social =>
+        <li key={social.id}>
+          <a
+            href={social.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={social.name}
+          >
+            <span aria-hidden="true">{social.name}</span>
+            <img src={social.img} alt="" aria-hidden="true" width={50}
+              height={50} />
+          </a>
+        </li>)}
+    </ul>
+  );
 }
+
+export default FooterSocials

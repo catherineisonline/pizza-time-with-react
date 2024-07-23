@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 import MenuSliderProducts from './MenuSliderProducts'
 import MenuSliderCategories from './MenuSliderCategories'
@@ -11,139 +11,125 @@ import { menuSliderCategories, menuSliderProducts } from '../../../data/menuSlid
 import './menu-slider.css'
 
 
-export default class MenuSlider extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      activeCategory: 'pizza',
-      allProducts: [],
-      allCategories: [],
-    }
-    this.getAllProducts = this.getAllProducts.bind(this)
-    this.changeCategory = this.changeCategory.bind(this)
-    this.getProductsByCategory = this.getProductsByCategory.bind(this)
-  }
-  allCategoriesData = new Promise((resolve, reject) => {
-    if (true) {
-      resolve(menuSliderCategories)
-      return
-    }
-    reject('error, check the code!')
-  })
-  allProductsData = new Promise((resolve, reject) => {
-    if (true) {
-      resolve(menuSliderProducts)
-      return
-    }
-    reject('error, check the code!')
-  })
-  getCategories() {
-    try {
-      const result = this.allCategoriesData
-      this.setState({ allCategories: result })
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  getAllProducts() {
-    try {
-      const result = this.allProductsData
-      this.setState({ allProducts: result })
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  changeCategory(newCategory) {
-    this.setState({ activeCategory: newCategory })
-    this.getProductsByCategory(newCategory)
-  }
-  getProductsByCategory(category) {
-    let separateCategoriesByname = []
-    //Separate arrays by category names
+const MenuSlider = () => {
+  const [activeCategory, setActiveCategory] = useState("pizza");
+  const [allProducts, setAllProducts] = useState([]);
 
-    const separateCategories = menuSliderProducts.reduce(function (
-      singleCategory,
-      singleItem,
-    ) {
-      separateCategoriesByname = Object.keys(singleCategory)
+  // Function to fetch products data
+  const fetchProducts = async () => {
+    try {
+      const result = await new Promise((resolve, reject) => {
+        if (true) {
+          resolve(menuSliderProducts);
+        } else {
+          reject('Error, check the code!');
+        }
+      });
+      setAllProducts(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-      if (!singleCategory[singleItem.category])
-        singleCategory[singleItem.category] = singleItem
-      else
-        singleCategory[singleItem.category] = Array.isArray(
-          singleCategory[singleItem.category],
-        )
+  // Function to fetch all products
+  const fetchAllProducts = () => {
+    try {
+      // Simulate fetching data
+      const result = menuSliderProducts;
+      setAllProducts(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Function to fetch products by category
+  const fetchProductsByCategory = (category) => {
+    let separateCategoriesByName = [];
+    const separateCategories = menuSliderProducts.reduce((singleCategory, singleItem) => {
+      separateCategoriesByName = Object.keys(singleCategory);
+
+      if (!singleCategory[singleItem.category]) {
+        singleCategory[singleItem.category] = singleItem;
+      } else {
+        singleCategory[singleItem.category] = Array.isArray(singleCategory[singleItem.category])
           ? singleCategory[singleItem.category].concat(singleItem)
-          : [singleCategory[singleItem.category]].concat(singleItem)
+          : [singleCategory[singleItem.category]].concat(singleItem);
+      }
 
-      return singleCategory
-    },
-      {})
+      return singleCategory;
+    }, {});
 
     const productsOfCategories = Object.keys(separateCategories).map(
-      (e) => separateCategories[e],
-    )
+      (e) => separateCategories[e]
+    );
 
-    let singleCategoryArray = []
-    productsOfCategories.map((category) => {
-      return singleCategoryArray.push(category)
-    })
+    let singleCategoryArray = [];
+    productsOfCategories.forEach((category) => {
+      singleCategoryArray.push(category);
+    });
 
-    //Change products by category
-    separateCategoriesByname.forEach((cate) => {
+    // Change products by category
+    separateCategoriesByName.forEach((cate) => {
       if (cate === category) {
-        return this.setState({ allProducts: separateCategories[category] })
+        setAllProducts(separateCategories[category]);
       }
-    })
-  }
-  componentDidMount() {
-    this.getAllProducts()
-    this.getProductsByCategory(this.state.activeCategory)
-  }
+    });
+  };
 
-  render() {
-    const { allProducts } = this.state
-    return (
-      <article className="section-8">
-        <motion.div
-          className="section-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 3 }}
-        >
-          <picture className='menu-slider-hero'>
-            <source srcSet={MenuSlide1440} media='(min-width: 1440px)' />
-            <source srcSet={MenuSlide1025} media='(min-width: 1025px)' />
-            <source srcSet={MenuSlide900} media='(min-width: 900px)' />
-            <source srcSet={MenuSlide700} media='(min-width: 700px)' />
-            <img src={MenuSlide375} alt='Restaurant interior' className='menu-slider-hero' width={375} height={281} loading='lazy' />
-          </picture>
-          <section className="dish-slider  flex-container flex-column txt-center">
-            <section className="dish-categories flex-container flex-column">
-              <ul>
-                {menuSliderCategories.map((category) => (
-                  <MenuSliderCategories
-                    key={category.id}
-                    category={category}
-                    changeCategory={this.changeCategory}
-                  />
-                ))}
-              </ul>
-            </section>
-            <section className="menu-slider-products">
-              {allProducts.map((singleProduct) => {
-                return (
-                  <MenuSliderProducts
-                    key={singleProduct.id}
-                    singleProduct={singleProduct}
-                  />
-                )
-              })}
-            </section>
+  // Function to change category
+  const changeCategory = (newCategory) => {
+    setActiveCategory(newCategory);
+    fetchProductsByCategory(newCategory);
+  };
+
+  // Use useEffect to mimic componentDidMount
+  useEffect(() => {
+    fetchProducts();
+    fetchAllProducts();
+    fetchProductsByCategory(activeCategory);
+  }, [activeCategory]);
+
+  return (
+    <article className="section-8">
+      <motion.div
+        className="section-8"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 3 }}
+      >
+        <picture className='menu-slider-hero'>
+          <source srcSet={MenuSlide1440} media='(min-width: 1440px)' />
+          <source srcSet={MenuSlide1025} media='(min-width: 1025px)' />
+          <source srcSet={MenuSlide900} media='(min-width: 900px)' />
+          <source srcSet={MenuSlide700} media='(min-width: 700px)' />
+          <img src={MenuSlide375} alt='Restaurant interior' className='menu-slider-hero' width={375} height={281} loading='lazy' />
+        </picture>
+        <section className="dish-slider  flex-container flex-column txt-center">
+          <section className="dish-categories flex-container flex-column">
+            <ul>
+              {menuSliderCategories.map((category) => (
+                <MenuSliderCategories
+                  key={category.id}
+                  category={category}
+                  changeCategory={changeCategory}
+                />
+              ))}
+            </ul>
           </section>
-        </motion.div>
-      </article>
-    )
-  }
+          <section className="menu-slider-products">
+            {allProducts.map((singleProduct) => {
+              return (
+                <MenuSliderProducts
+                  key={singleProduct.id}
+                  singleProduct={singleProduct}
+                />
+              )
+            })}
+          </section>
+        </section>
+      </motion.div>
+    </article>
+  )
 }
+export default MenuSlider;
