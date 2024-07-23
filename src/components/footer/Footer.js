@@ -3,16 +3,17 @@ import FooterMenu from "./FooterMenu";
 import FooterContact from "./FooterContact";
 import FooterLegal from "./FooterLegal";
 import './footer.css'
-export default class Footer extends React.Component {
-  render() {
-    return (
-      <footer className=" flex-container flex-column txt-center txt-white pop-font">
-        <FooterMenu />
-        <hr />
-        <FooterLegal />
-        <hr />
-        <FooterContact />
-      </footer>
-    );
-  }
+
+const Footer = () => {
+  return (
+    <footer className="flex-container flex-column txt-center txt-white pop-font">
+      <FooterMenu />
+      <hr />
+      <FooterLegal />
+      <hr />
+      <FooterContact />
+    </footer>
+  );
 }
+
+export default Footer;

@@ -7,6 +7,7 @@ import Cart from '../../assets/images/cart-icon-dark.png'
 import SuccessMsg from '../../components/SuccessMsg'
 import ResetLocation from '../../helpers/ResetLocation'
 import './header.css'
+
 const Header = ({ loginModal,
   productsQuantity,
   handleLogout,

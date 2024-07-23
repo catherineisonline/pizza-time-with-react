@@ -32,9 +32,7 @@ const RootSection = () => {
       <MenuSlider />
       <Newsletter />
       <BlogPreview />
-      {/* <Suspense fallback={<div>Loading...</div>}> */}
       <ContactLanding />
-      {/* </Suspense> */}
       <ScrollButton />
     </React.Fragment>
   );
