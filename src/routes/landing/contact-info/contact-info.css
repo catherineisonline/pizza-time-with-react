@@ -44,9 +44,12 @@
     color: var(--light-gray);
 }
 .contact-emails ul {
-    color: var(--light-gray);
     display: flex;
     flex-direction: column;
+}
+.contact-emails ul li {
+    color: var(--light-gray);
+    text-decoration: none;
 }
 
 .section-10 .active-button-style {

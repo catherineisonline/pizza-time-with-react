@@ -35,6 +35,7 @@
 .company-details h2 {
     font-family: var(--poppins-font);
     font-weight: 400;
+    color: var(--white);
 }
 
 .company-details p {

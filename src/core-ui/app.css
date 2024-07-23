@@ -46,6 +46,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+  background-position: center;
 }
 body::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */

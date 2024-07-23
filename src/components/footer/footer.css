@@ -36,6 +36,9 @@ footer {
     margin: 0 auto;
     margin-top: 2rem;
 }
+.footer-contact p {
+    color: var(--white);
+}
 
 hr {
     opacity: 0.2;
