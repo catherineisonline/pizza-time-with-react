@@ -4,10 +4,6 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  background-image: url("../../assets/images/landing-bg.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   margin-top: 2rem;
   margin-bottom: 3rem;
   justify-content: center;

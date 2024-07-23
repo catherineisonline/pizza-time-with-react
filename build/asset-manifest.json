@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9de015c7.css",
-    "main.js": "/static/js/main.6c4f40d5.js",
+    "main.css": "/static/css/main.656a97c7.css",
+    "main.js": "/static/js/main.2f3ec323.js",
     "static/js/453.198d460e.chunk.js": "/static/js/453.198d460e.chunk.js",
     "static/media/Sams Cola Soda.jpeg": "/static/media/Sams Cola Soda.5529523e7dde31b0f6ce.jpeg",
     "static/media/hero-bg.mp4": "/static/media/hero-bg.b670e549bb7d5f27f214.mp4",
@@ -189,12 +189,12 @@
     "static/media/mastercard-icon.svg": "/static/media/mastercard-icon.c66dbbec26938c040843d4706a1965e1.svg",
     "index.html": "/index.html",
     "static/media/close-menu.svg": "/static/media/close-menu.494cc16154e95b6ff5adcf65648b1cad.svg",
-    "main.9de015c7.css.map": "/static/css/main.9de015c7.css.map",
-    "main.6c4f40d5.js.map": "/static/js/main.6c4f40d5.js.map",
+    "main.656a97c7.css.map": "/static/css/main.656a97c7.css.map",
+    "main.2f3ec323.js.map": "/static/js/main.2f3ec323.js.map",
     "453.198d460e.chunk.js.map": "/static/js/453.198d460e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9de015c7.css",
-    "static/js/main.6c4f40d5.js"
+    "static/css/main.656a97c7.css",
+    "static/js/main.2f3ec323.js"
   ]
 }

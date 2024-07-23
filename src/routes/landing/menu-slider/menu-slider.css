@@ -31,13 +31,14 @@
     border: 1px solid var(--yellow);
     padding: 0.5rem 1rem;
     color: var(--yellow);
-    font-family: var(--josefin-font);
+    font-family: var(--poppins-font);
     font-size: 1rem;
     list-style: none;
     cursor: pointer;
     background-color: transparent;
     text-transform: capitalize;
     transition: all ease-in-out 0.2s;
+    border-radius: 5px;
 }
 
 .dish-categories button:hover {
