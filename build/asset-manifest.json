@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.656a97c7.css",
-    "main.js": "/static/js/main.d1e6d36d.js",
+    "main.js": "/static/js/main.d15079e7.js",
     "static/js/453.198d460e.chunk.js": "/static/js/453.198d460e.chunk.js",
     "static/media/Sams Cola Soda.jpeg": "/static/media/Sams Cola Soda.5529523e7dde31b0f6ce.jpeg",
     "static/media/hero-bg.mp4": "/static/media/hero-bg.b670e549bb7d5f27f214.mp4",
@@ -182,19 +182,19 @@
     "static/media/applepay-icon.svg": "/static/media/applepay-icon.d86825ec989437ec2bcdcddee0aa695a.svg",
     "static/media/googlepay-icon.svg": "/static/media/googlepay-icon.bba8766b93fa9e485d769f3377a30f10.svg",
     "static/media/github.svg": "/static/media/github.98c9a6ec1ccef916f89b73c10e81b987.svg",
+    "index.html": "/index.html",
     "static/media/linkedin.svg": "/static/media/linkedin.c27dbbf859fe5628e76fe80c834e2526.svg",
     "static/media/visa-icon.svg": "/static/media/visa-icon.2a2de0f6ffb5dac7dea47b8594642fd6.svg",
     "static/media/open-menu.svg": "/static/media/open-menu.e6ef754cb57fa31ef3e70912436f8601.svg",
     "static/media/close-btn.svg": "/static/media/close-btn.9406173a1f5f73ca99f3.svg",
     "static/media/mastercard-icon.svg": "/static/media/mastercard-icon.c66dbbec26938c040843d4706a1965e1.svg",
-    "index.html": "/index.html",
     "static/media/close-menu.svg": "/static/media/close-menu.494cc16154e95b6ff5adcf65648b1cad.svg",
     "main.656a97c7.css.map": "/static/css/main.656a97c7.css.map",
-    "main.d1e6d36d.js.map": "/static/js/main.d1e6d36d.js.map",
+    "main.d15079e7.js.map": "/static/js/main.d15079e7.js.map",
     "453.198d460e.chunk.js.map": "/static/js/453.198d460e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.656a97c7.css",
-    "static/js/main.d1e6d36d.js"
+    "static/js/main.d15079e7.js"
   ]
 }
