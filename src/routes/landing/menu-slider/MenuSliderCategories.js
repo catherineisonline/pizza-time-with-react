@@ -1,7 +1,6 @@
 import React from "react";
 
-const MenuSliderCategories = () => {
-  const { category, changeCategory } = this.props;
+const MenuSliderCategories = ({ category, changeCategory }) => {
   return (
     <li>
       <button onClick={() => changeCategory(category.name)}>
