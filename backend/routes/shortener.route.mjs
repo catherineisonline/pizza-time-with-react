@@ -29,15 +29,16 @@ export const urlShortener = async (req, res) => {
             body: JSON.stringify(payload)
         })
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error(`HTTP error! Status: ${response.status} - ${errorText}`);
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            // const errorText = await response.text();
+            // console.error(`HTTP error! Status: ${response.status} - ${errorText}`);
+            return res.send({ response: `HTTP error! Status: ${response.status}` });
+            // throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = response.json();
         if (data.code === 0) {
             const shortenedUrl = await data.data.tiny_url;
-            res.json({ success: true, data: { url: shortenedUrl } });
+            res.send({ success: true, data: { url: shortenedUrl } });
         } else {
             console.error('Failed to shorten URL:', data);
             res.status(500).json({ success: false, message: 'Failed to shorten URL' });
