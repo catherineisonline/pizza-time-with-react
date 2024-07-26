@@ -5,7 +5,8 @@ const SHORTENER_API_KEY = process.env.SHORTENER_API_KEY;
 const shortenerRouter = Router();
 
 export const urlShortener = async (req, res) => {
-    const { inputValue } = req.query;
+    // const { inputValue } = req.query;
+    const { inputValue } = req.body;
     if (!inputValue) {
         return res.status(400).json({ success: false, message: 'URL parameter is required' });
     }

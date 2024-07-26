@@ -1,6 +1,8 @@
 import express, { json } from 'express';
 import cors from 'cors'; // Import the cors middleware
 import indexRouter from '../routes/index.route.mjs';
+
+
 const app = express();
 const port = 3000; // Choose a port for your server
 app.use(cors());
