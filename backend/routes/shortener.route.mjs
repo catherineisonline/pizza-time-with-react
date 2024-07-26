@@ -4,7 +4,7 @@ const SHORTENER_API_URL = process.env.SHORTENER_API_URL;
 const SHORTENER_API_KEY = process.env.SHORTENER_API_KEY;
 const shortenerRouter = Router();
 
-export const urlShortener = (req, res) => {
+export const urlShortener = async (req, res) => {
     const { inputValue } = req.query;
     if (!inputValue) {
         return res.status(400).json({ success: false, message: 'URL parameter is required' });
@@ -18,7 +18,7 @@ export const urlShortener = (req, res) => {
             url: inputValue,
             domain: "tinyurl.com",
         };
-        const response = fetch(apiUrl, {
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -28,14 +28,14 @@ export const urlShortener = (req, res) => {
             body: JSON.stringify(payload)
         })
         if (!response.ok) {
-            const errorText = response.text();
+            const errorText = await response.text();
             console.error(`HTTP error! Status: ${response.status} - ${errorText}`);
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = response.json();
         if (data.code === 0) {
-            const shortenedUrl = data.data.tiny_url;
+            const shortenedUrl = await data.data.tiny_url;
             res.json({ success: true, data: { url: shortenedUrl } });
         } else {
             console.error('Failed to shorten URL:', data);
