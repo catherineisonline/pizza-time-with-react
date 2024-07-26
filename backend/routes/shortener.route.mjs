@@ -1,0 +1,53 @@
+import { Router } from "express";
+import fetch from 'node-fetch';
+const SHORTENER_API_URL = process.env.SHORTENER_API_URL;
+const SHORTENER_API_KEY = process.env.SHORTENER_API_KEY;
+const shortenerRouter = Router();
+
+export const urlShortener = (req, res) => {
+    const { inputValue } = req.query;
+    if (!inputValue) {
+        return res.status(400).json({ success: false, message: 'URL parameter is required' });
+    }
+
+    try {
+
+        const apiUrl = SHORTENER_API_URL;
+        const apiKey = SHORTENER_API_KEY;
+        const payload = {
+            url: inputValue,
+            domain: "tinyurl.com",
+        };
+        const response = fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+        if (!response.ok) {
+            const errorText = response.text();
+            console.error(`HTTP error! Status: ${response.status} - ${errorText}`);
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = response.json();
+        if (data.code === 0) {
+            const shortenedUrl = data.data.tiny_url;
+            res.json({ success: true, data: { url: shortenedUrl } });
+        } else {
+            console.error('Failed to shorten URL:', data);
+            res.status(500).json({ success: false, message: 'Failed to shorten URL' });
+        }
+    } catch (error) {
+        res.status(500).json({ success: false, message: `Error with external service: ${error.message}` });
+    }
+};
+
+
+shortenerRouter.post('/', urlShortener);
+
+
+export default shortenerRouter;
