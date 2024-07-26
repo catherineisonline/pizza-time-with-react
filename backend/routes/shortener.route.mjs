@@ -1,5 +1,5 @@
 import { Router } from "express";
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 const SHORTENER_API_URL = process.env.SHORTENER_API_URL;
 const SHORTENER_API_KEY = process.env.SHORTENER_API_KEY;
 const shortenerRouter = Router();
@@ -29,16 +29,14 @@ export const urlShortener = async (req, res) => {
             body: JSON.stringify(payload)
         })
         if (!response.ok) {
-            // const errorText = await response.text();
-            // console.error(`HTTP error! Status: ${response.status} - ${errorText}`);
-            return res.send({ response: `HTTP error! Status: ${response.status}` });
-            // throw new Error(`HTTP error! Status: ${response.status}`);
+            const errorText = await response.text();
+            return res.status(response.status).json({ success: false, message: `HTTP error! Status: ${response.status} - ${errorText}` });
         }
 
-        const data = response.json();
+        const data = await response.json();
         if (data.code === 0) {
-            const shortenedUrl = await data.data.tiny_url;
-            res.send({ success: true, data: { url: shortenedUrl } });
+            const shortenedUrl = data.data.tiny_url;
+            res.json({ success: true, data: { url: shortenedUrl } });
         } else {
             console.error('Failed to shorten URL:', data);
             res.status(500).json({ success: false, message: 'Failed to shorten URL' });
