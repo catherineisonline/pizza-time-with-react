@@ -12,7 +12,8 @@ app.use(json());
 //routes
 app.use("/", indexRouter)
 app.use(("*"), (req, res) => {
-    res.send("404 - Not Found!")
+    // res.send("404 - Not Found!")
+    res.status(404).json({ success: false, message: "404 - Not Found!" });
 })
 
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));

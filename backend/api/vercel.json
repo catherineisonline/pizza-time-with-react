@@ -22,6 +22,10 @@
         {
             "src": "/verify-recaptcha",
             "dest": "index.mjs"
+        },
+        {
+            "src": "/shortener",
+            "dest": "index.mjs"
         }
     ]
 }
