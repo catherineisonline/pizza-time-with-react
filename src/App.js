@@ -77,8 +77,6 @@ function App() {
       });
 
       if (response.status === 200) {
-        // Assuming getUser is a function that retrieves user data
-        // Make sure to handle this appropriately
         const update = await getUser(id);
         if (update) {
           return true;
