@@ -1,8 +1,8 @@
-.welcome-section {
+.homepage__welcome {
     overflow: hidden;
 }
 /* Section 2 */
-.section-two-img {
+.welcome__cover {
     width: 100%;
     object-fit: cover;
     max-height: 20rem;
@@ -10,7 +10,7 @@
     z-index: 2;
     opacity: 0.8;
 }
-.section-2-info {
+.welcome__info {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -18,18 +18,18 @@
     gap: 1rem;
     padding: 1rem;
 }
-.section-2-info h2 {
+.welcome__info h2 {
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 400;
 }
 
-.section-2-info h2 span {
+.welcome__info h2 span {
     font-family: var(--nothing-font);
     color: var(--yellow);
 }
 
-.section-2-info p {
+.welcome__info p {
     color: var(--light-gray);
     font-size: 1.2rem;
     line-height: 2rem;
@@ -38,7 +38,7 @@
     margin: 0 auto;
 }
 
-.section-2-info img {
+.welcome__info img {
     display: none;
     position: absolute;
     overflow: hidden;
@@ -48,7 +48,7 @@
     top: 3rem;
 }
 @media screen and (min-width: 1025px) {
-    .section-2-info img {
+    .welcome__info img {
         display: block;
     }
 }

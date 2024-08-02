@@ -6,13 +6,13 @@ import ImgThree from "../../assets/images/about-us/img-3.jpeg";
 
 const AboutCustomers = () => {
   return (
-    <article className="about-customers">
-      <div className="images">
+    <article className="about__customers">
+      <div className="about__customers_gallery">
         <img src={ImgOne} alt="" aria-hidden="true" />
         <img src={ImgTwo} alt="" aria-hidden="true" />
         <img src={ImgThree} alt="" aria-hidden="true" />
       </div>
-      <section className="content">
+      <section className="about__customers__content">
         <h2 className="sub-title">Happy Customers</h2>
         <h3>Over 16000 positive feedback</h3>
         <p>

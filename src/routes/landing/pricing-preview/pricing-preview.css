@@ -1,36 +1,36 @@
 /* Section 5 */
-.section-5 {
+.homepage__pricing-preview {
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
 }
-.section-5 h2 {
+.homepage__pricing-preview h2 {
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 400;
 }
 
-.section-5 p {
+.homepage__pricing-preview p {
     color: var(--light-gray);
     max-width: 1200px;
 }
-.pricing-grid {
+.pricing-preview__items {
     gap: 2.5rem;
     max-width: 1440px;
     margin: 0 auto;
 }
 
-.pricing-grid-item {
+.pricing-preview__item {
     gap: 1rem;
 }
-.pricing-details {
+.pricing-preview__prices {
     width: 100%;
 }
-.pricing-details p {
+.pricing-preview__prices p {
     color: var(--light-gray);
     text-align: left;
 }
-.name-and-price {
+.pricing-preview__prices-details {
     justify-content: space-between;
     align-items: center;
     letter-spacing: 1px;
@@ -38,7 +38,7 @@
     position: relative;
     background-color: var(--light-black);
 }
-.name-and-price::after {
+.pricing-preview__prices-details::after {
     content: "";
     position: absolute;
     left: 0;
@@ -48,16 +48,16 @@
     border-bottom: 1px solid var(--yellow);
     height: 1px;
 }
-.name-and-price h3 {
+.pricing-preview__prices-details h3 {
     position: relative;
     color: var(--whitish-gray);
     font-weight: 400;
 }
 
-.name-and-price p {
+.pricing-preview__prices-details p {
     color: var(--yellow);
 }
-.pricing-img {
+.pricing-preview__img {
     object-fit: cover;
     border-radius: 50%;
     width: 6rem;
@@ -65,11 +65,8 @@
 }
 
 @media screen and (min-width: 700px) {
-    .pricing-grid {
+    .pricing-preview__items {
         gap: 2.5rem;
-    }
-
-    .pricing-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }

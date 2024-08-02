@@ -7,7 +7,7 @@
   padding-bottom: 10rem;
 }
 
-.contact-success {
+.contact__success-msg {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,14 +15,14 @@
   height: 460px;
   padding: 2rem;
 }
-.contact-success p {
+.contact__success-msg p {
   color: var(--green);
   font-family: var(--poppins-font);
   font-size: 1.5rem;
 
   text-align: center;
 }
-.contact-success section {
+.contact__success-msg section {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -61,7 +61,7 @@
 .contact form .webflow-style-input {
   margin: 0;
 }
-.contact-us-img {
+.contact__cover {
   background-image: url("../../assets/images/img-one.jpeg");
   background-position: center;
   background-size: cover;
@@ -71,21 +71,21 @@
 }
 
 /* Contact Content */
-.contact-us-content {
+.contact__inner {
   background-color: var(--yellow);
-  padding-bottom: 10rem;
-}
-
-.contact-us-content-txt {
-  padding: 2rem;
+  padding: 6rem 2rem;
   text-align: left;
   color: var(--white);
 }
-.contact-us-content-txt h2 {
+.contact__inner p {
+  width: 55vw;
+}
+
+.contact__inner h2 {
   font-size: 4rem;
   letter-spacing: 1px;
 }
-.contact-us-content-txt h3 {
+.contact__inner h3 {
   line-height: 2rem;
 }
 
@@ -124,7 +124,7 @@
   }
 }
 @media screen and (min-width: 1025px) {
-  .contact-us-img {
+  .contact__cover {
     position: absolute;
     width: 30%;
     height: 30%;
@@ -134,8 +134,5 @@
     top: 30%;
     right: 35%;
     border: 2px solid var(--yellow);
-  }
-  .contact-us-content-txt {
-    width: 30%;
   }
 }

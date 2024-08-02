@@ -1,4 +1,4 @@
-.email-subscribtion {
+.homepage__newsletter {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -11,25 +11,25 @@
     overflow: hidden;
 }
 
-.email-label {
+.newsletter__title {
     font-family: var(--poppins-font);
     color: var(--whitish-gray);
     font-size: 1.2rem;
     text-align: center;
     max-width: 650px;
+    font-weight: 400;
 }
 
-.error-msg {
-    font-family: var(--poppins-font);
-}
-
-.newsletter-success {
+.newsletter__success {
     color: var(--green);
     font-size: 1.5rem;
     line-height: 160px;
 }
-
-.input-section {
+.newsletter__error {
+    font-family: var(--poppins-font);
+    color: var(--pizza-red);
+}
+.newsletter__form {
     min-width: calc(40% + 5rem);
     max-width: 40%;
     display: flex;
@@ -38,8 +38,6 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
-}
-.input-section form {
     display: flex;
     flex-direction: column;
     gap: 2rem;

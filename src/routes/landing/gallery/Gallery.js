@@ -12,7 +12,7 @@ import ImgFour700 from '../../../assets/images/landing/img-four-700.webp'
 import './gallery.css'
 const Gallery = () => {
   return (
-    <article className="gallery flex-container flex-column">
+    <article className="homepage__gallery flex-container flex-column">
       <img
         src={ImgOne375}
         srcSet={` ${ImgOne700} 700w, ${ImgOne375} 375w`}

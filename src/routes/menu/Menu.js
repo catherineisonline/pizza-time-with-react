@@ -40,7 +40,7 @@ const Menu = ({ allProducts,
   }, [allProducts, setEndOffset, endOffset, itemOffset, activeCategory]);
   return (
     <motion.main
-      className="menu-main"
+      className="menu"
       initial={{ opacity: 0, translateX: -300 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
@@ -53,12 +53,9 @@ const Menu = ({ allProducts,
         resetPagination={resetPagination}
         findMenuItem={findMenuItem}
       />
-      {currentProducts.length === 0 ?
-        <article className="menu-grid">
-          <p className="nothing-found">No results found...</p>
-        </article> :
-        <article className="menu-grid">
-          {currentProducts.map((singleProduct) => (
+        <article className="menu__items">
+        {currentProducts.length === 0 ?  <p className="menu__not-found">No results found...</p> :
+          currentProducts.map((singleProduct) => (
             <MenuGridItem
               key={singleProduct.id}
               singleProduct={singleProduct}
@@ -68,7 +65,7 @@ const Menu = ({ allProducts,
           ))
           }
           <ScrollButton />
-        </article>}
+        </article> 
 
       <ReactPaginate
         className="pagination"

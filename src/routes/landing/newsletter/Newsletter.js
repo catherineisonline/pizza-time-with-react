@@ -19,32 +19,22 @@ const Newsletter = () => {
   const validate = validateForm("newsletter");
   return (
 
-    <section className="email-subscribtion">
-      <div className="email-label"
-      >
-        <label htmlFor="email-input">
+    <section className="homepage__newsletter">
+        <h3 className="newsletter__title">
           Subscribe to our newsletter to receive updates about the menu and enjoy awesome gifts!
-        </label>
-      </div>
+        </h3>
       {submit && Object.keys(formError).length === 0 ?
-        <p className="newsletter-success">You have successfully subscribed to our newsletter!</p> :
-        <div
-          className="input-section"
-        >
-          <form onSubmit={handleSubmit}>
-            <div
-              className="webflow-style-input"
-            >
-              <input name="email" onChange={handleValidation} value={formValue.email} className="input-field" placeholder="What's your email?" />
+        <p className="newsletter__success">You have successfully subscribed to our newsletter!</p> :
+          <form onSubmit={handleSubmit} className="newsletter__form">
+            <div className="webflow-style-input">
+              <input name="email" onChange={handleValidation} value={formValue.email} placeholder="What's your email?" />
             </div>
-            <span className="fullname-error-cpage">{formError.email}</span>
+            <span className="newsletter__error">{formError.email}</span>
             <button type="submit" className="active-button-style">
               Sign me up
             </button>
           </form>
-        </div>
       }
-
     </section>
   );
 }

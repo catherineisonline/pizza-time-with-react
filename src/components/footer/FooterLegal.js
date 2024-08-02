@@ -4,7 +4,7 @@ import ResetLocation from "../../helpers/ResetLocation";
 
 const FooterLegal = () => {
     return (
-        <ul className="footer-menu  flex-container flex-column">
+        <ul className="footer__menu  flex-container flex-column">
             <li>
                 <NavLink
                     style={({ isActive }) =>

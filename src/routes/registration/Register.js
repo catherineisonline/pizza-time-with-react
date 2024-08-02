@@ -106,7 +106,7 @@ const Register = ({ activateLoginModal }) => {
     document.title = "Registration | Pizza Time";
   }, []);
   return (
-    <motion.main className="register-main"
+    <motion.main className="register"
       initial={{ opacity: 0, translateX: -300 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
@@ -116,9 +116,10 @@ const Register = ({ activateLoginModal }) => {
       {loading ? <div role="status" className="loader">
         <p>Almost there...</p>
         <img alt="Processing request" src="https://media0.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif?cid=ecf05e472hf2wk1f2jou3s5fcnx1vek6ggnfcvhsjbeh7v5u&ep=v1_stickers_search&rid=giphy.gif&ct=s" />
-      </div> : submit && Object.keys(formError).length === 0 ?
-        <section className="registration-success">
-          <p className="form-submit-msg">You can now log in and make an order!</p>
+      </div> : 
+      submit && Object.keys(formError).length === 0 ?
+        <section className="register__success">
+          <p>You can now log in and make an order!</p>
           <button
             className="passive-button-style txt-white"
             onClick={() => {
@@ -132,42 +133,42 @@ const Register = ({ activateLoginModal }) => {
         </section>
 
         :
-        <form className="registration-form" onSubmit={handleSubmit}>
-          {registrationFail ? <p className="registration-input-err">Seems like this email has already been registered!</p> : null}
-          <section className="name-section">
+        <form className="register__form" onSubmit={handleSubmit}>
+          {registrationFail && <p className="register__error">Seems like this email has already been registered!</p>}
+          <section className="register__form__field">
             <input type="text" placeholder="Full name" name="fullname" value={formValue.fullname}
               onChange={handleValidation} />
-            <span className="registration-input-err">{formError.fullname}</span>
+            <span className="register__error">{formError.fullname}</span>
           </section>
-          <section className="email-section">
+          <section className="register__form__field">
             <input type="text" placeholder="Email" name="email" value={formValue.email}
               onChange={handleValidation} />
-            <span className="registration-input-err">{formError.email}</span>
+            <span className="register__error">{formError.email}</span>
           </section>
-          <section className="password-section">
+          <section className="register__form__field">
             <input type="password" placeholder="New password" name="password" value={formValue.password}
               onChange={handleValidation} />
-            <span className="registration-input-err">{formError.password}</span>
+            <span className="register__error">{formError.password}</span>
             <input type="password" placeholder="Repeat password" name="repeatPassword" value={formValue.repeatPassword}
               onChange={handleValidation} />
-            <span className="registration-input-err">{formError.repeatPassword}</span>
+            <span className="register__error">{formError.repeatPassword}</span>
           </section>
-          <section className="birthday">
+          <section className="register__form__field-b">
             <input type="text" placeholder="Address (optional)" name="address" value={formValue.address}
               onChange={handleValidation} />
-            <span className="registration-input-err">{formError.address}</span>
+            <span className="register__error">{formError.address}</span>
           </section>
-          <section className="birthday">
+          <section className="register__form__field-b">
             <input type="text" placeholder="Number (optional)" name="number" value={formValue.number}
               onChange={handleValidation} />
-            <span className="registration-input-err">{formError.number}</span>
+            <span className="register__error">{formError.number}</span>
           </section>
-          <p className="terms-warning">
+          <p className="terms-warning register__form__terms">
             By clicking Sign Up, you agree to our Terms, Data Policy and Cookies
             Policy. You may receive an email notification from us and can opt
             out any time.
           </p>
-          <button className="register-btn" type="submit">Sign up</button>
+          <button className="register__submit" type="submit">Sign up</button>
         </form>
       }
 

@@ -32,17 +32,17 @@ const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
   }, [singleProduct.ItemName]);
 
   return (
-    <main className="single-item-container">
-      <Link to="/menu" className="back-btn">
+    <main className="single-item">
+      <Link to="/menu" className="single-item__back">
         ← Back
       </Link>
-      <article className="single-item flex-container flex-column txt-white">
+      <article className="single-item__inner flex-container flex-column txt-white">
         <img
           src={singleProduct?.ItemImg}
           alt={`${singleProduct?.ItemName}`}
         />
-        <section className="single-item-info">
-          <section className="single-item-title">
+        <section className="single-item__info">
+          <section className="single-item__title">
             <h2>{singleProduct?.ItemName}</h2>
             <p>{singleProduct?.ItemIngredients}</p>
           </section>
@@ -50,21 +50,21 @@ const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
             singleProduct?.attributes?.map(attribute => (
               <Attribute
                 key={attribute.id}
-                className="single-item-attributes"
+                className="single-item__attributes"
                 handleSelectedAttributes={handleSelectedAttributes}
                 attribute={attribute}
                 targetAttribute={targetAttribute}
               />
             ))
           }
-          <section className="price">
+          <section className="single-item__pricing">
             {singleProduct.sale === true ?
-              <section className="sale-pricing">
-                <p className="price-num-before"><span>$</span>{singleProduct.ItemPriceBefore}</p>
-                <p className="price-num"><span>$</span>{singleProduct.ItemPrice}</p>
+              <section className="single-item__pricing-sale">
+                <p className="single-item__pricing-prev"><span>$</span>{singleProduct.ItemPriceBefore}</p>
+                <p className="single-item__pricing-curr"><span>$</span>{singleProduct.ItemPrice}</p>
               </section>
               :
-              <p className="price-num"><span>$</span>{singleProduct.ItemPrice}</p>
+              <p className="single-item__pricing-curr"><span>$</span>{singleProduct.ItemPrice}</p>
             }
             <AddToCartButton
               handleAddProduct={handleAddProduct}

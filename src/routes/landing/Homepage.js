@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Header from "./hero/Hero";
+import Hero from "./hero/Hero";
 import ScrollButton from "../../helpers/ScrollBtn";
 import ContactUsLanding from "./company-info/ContactUsLanding";
 import WelcomeSection from "./welcome/WelcomeSection";
@@ -14,14 +14,14 @@ import Newsletter from "./newsletter/Newsletter";
 import ResetLocation from "../../helpers/ResetLocation";
 import ContactLanding from "./contact-info/ContactLanding"
 
-const RootSection = () => {
+const Homepage = () => {
   useEffect(() => {
     document.title = "Pizza Time";
     ResetLocation();
   }, []);
   return (
     <React.Fragment>
-      <Header />
+      <Hero />
       <WelcomeSection />
       <ContactUsLanding />
       <OurServices />
@@ -38,4 +38,4 @@ const RootSection = () => {
   );
 }
 
-export default RootSection;
+export default Homepage;

@@ -32,10 +32,10 @@ const StatsPreview = () => {
     };
   }, []);
   return (
-    <article ref={ref} className="section-7 flex-container flex-column txt-center" >
-      <section className="highlights flex-container flex-column">
+    <article ref={ref} className="homepage__stats flex-container flex-column txt-center" >
+      <section className="stats__items flex-container flex-column">
         {statsPreview.map((stats) => (
-          <div key={stats.id} className="highligh-container">
+          <div key={stats.id} className="stats__item">
             <motion.img
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -43,7 +43,6 @@ const StatsPreview = () => {
               transition={{ duration: 1 }}
               width="50"
               height="50"
-              className="hightlight-img"
               src={stats.img}
               alt=""
               aria-hidden="true"

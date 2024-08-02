@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutDedication = () => {
   return (
-    <article className="about-dedication">
+    <article className="about__dedication">
       <section className="content">
         <h2 className="sub-title">Dedicated</h2>
         <h3>Changing the world together</h3>

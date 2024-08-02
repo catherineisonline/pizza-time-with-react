@@ -8,45 +8,46 @@ const CartItem = ({
   clearCart,
   cartItems, cartTotals }) => {
   return (
-    <React.Fragment>
+<React.Fragment>
+     
       {cartItems.map((cartItem, index) => {
         return (
-          <section className="cart-item" key={index}>
+          <section className="cart__items__single" key={index}>
             <img src={cartItem.ItemImg} alt={cartItem.ItemName} />
-            <section className="cart-item-content">
-              <section className="cart-item-info">
+            <section className="cart__items__content">
+              <section className="cart__items__info">
                 {cartItem.userSelectedAttributes.length === 0 ? (
-                  <h3 className="cart-item-title">{cartItem.ItemName}</h3>
+                  <h3 className="cart__items__title">{cartItem.ItemName}</h3>
                 ) : (
-                  <h3 className="cart-item-title">
+                  <h3 className="cart__items__title">
                     {cartItem.ItemName},{" "}
                     {cartItem.userSelectedAttributes.map((i, index) => {
                       return <span key={index}>{i.attributeValue}</span>;
                     })}
                   </h3>
                 )}
-                <p className="cart-item-ingredients">{cartItem.ItemIngredients}</p>
+                <p className="cart__items__ingredients">{cartItem.ItemIngredients}</p>
               </section>
 
-              <section className="cart-item-interaction">
+              <section className="cart__items__interaction">
                 <ChangeItemQuantity
                   handleAddProduct={handleAddProduct}
                   handleRemoveProduct={handleRemoveProduct}
                   cartItem={cartItem}
                 />
 
-                <p className="cart-item-price">${cartItem.ItemPrice}</p>
+                <p className="cart__items__pricing">${cartItem.ItemPrice}</p>
               </section>
             </section>
           </section>
         );
       })
       }
-      <button onClick={clearCart} className="cart-clear-btn">
+     {cartItems.length > 0 && <button onClick={clearCart} className="cart__items__clear-btns">
         remove all items from the cart
-      </button>
+      </button>}
       {cartTotals}
-    </React.Fragment>
+      </React.Fragment>
   );
 }
 

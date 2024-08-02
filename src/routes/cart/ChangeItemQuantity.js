@@ -2,7 +2,7 @@ import React from "react";
 
 const ChangeItemQuantity = ({ handleAddProduct, handleRemoveProduct, cartItem }) => {
   return (
-    <section className="cart-item-add-qty">
+    <section className="cart__add-items">
       <button
         onClick={() => {
           handleAddProduct(cartItem, cartItem.userSelectedAttributes);

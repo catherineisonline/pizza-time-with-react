@@ -7,16 +7,16 @@ import './our-service.css'
 const OurServices = () => {
   return (
     <article
-      className="section-3-container"
+      className="homepage__services"
     >
       <h2 className="pop-font">Our Services</h2>
       <p className="pop-font section-description">
         Pizza Time provides services across all states - various foods and drinks, you choose! What makes us special is our teams of professionals with extensive knowledge of all the cuisine that we have to offer.
       </p>
-      <section className="services-grid  flex-container flex-column">
+      <section className="services__items flex-container flex-column">
         {ourServices.map((service) => (
           <Tilt key={service.id}>
-            <section className="service-list flex-container flex-column">
+            <section className="services__item flex-container flex-column">
               <motion.img
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -26,7 +26,6 @@ const OurServices = () => {
                 }}
                 width="50"
                 height="50"
-                className="service-img"
                 src={service.img}
                 alt=""
                 aria-hidden="true"

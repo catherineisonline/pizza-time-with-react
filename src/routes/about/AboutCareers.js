@@ -5,8 +5,8 @@ import ResetLocation from "../../helpers/ResetLocation";
 
 const AboutCareers = () => {
   return (
-    <article className="about-careers">
-      <section className="content">
+    <article className="about__careers">
+      <section className="about__careers__content">
         <h2 className="sub-title">Careers</h2>
         <h3>Join the team</h3>
         <p>

@@ -10,24 +10,24 @@ footer {
     top: 100%;
 }
 
-.footer-menu {
+.footer__menu {
     gap: 1rem;
     font-weight: 400;
     font-size: 1rem;
     align-items: center;
 }
 
-.footer-menu a {
+.footer__menu a {
     transition: all ease-in-out 0.2s;
     letter-spacing: 1.5px;
 }
 
-.footer-menu a:hover {
+.footer__menu a:hover {
     color: var(--pizza-red);
     transition: all ease-in-out 0.2s;
 }
 
-.footer-contact {
+.footer__contact {
     gap: 1rem;
     font-weight: 400;
     font-size: 1rem;
@@ -36,7 +36,7 @@ footer {
     margin: 0 auto;
     margin-top: 2rem;
 }
-.footer-contact p {
+.footer__contact p {
     color: var(--white);
 }
 
@@ -44,28 +44,28 @@ hr {
     opacity: 0.2;
 }
 
-.accepted-payments {
+.footer__contact__payments {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     margin: 0 auto;
 }
-.accepted-payments img {
+.footer__contact__payments img {
     width: 2rem;
     max-width: 100%;
 }
 
-.socials {
+.footer__socials {
     display: flex;
     flex-direction: row;
     gap: 1rem;
 }
 
-.socials span {
+.footer__socials span {
     display: none;
 }
 
-.socials img {
+.footer__socials img {
     max-width: 100%;
     width: 100%;
     height: auto;

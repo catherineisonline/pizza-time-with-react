@@ -1,4 +1,4 @@
-.gallery img {
+.homepage__gallery img {
     max-width: 100%;
     width: 100%;
     object-fit: cover;
@@ -6,13 +6,13 @@
 }
 
 @media screen and (min-width: 700px) {
-    .gallery {
+    .homepage__gallery {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media screen and (min-width: 1025px) {
-    .gallery {
+    .homepage__gallery {
         grid-template-columns: repeat(4, 1fr);
     }
 }

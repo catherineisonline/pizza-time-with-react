@@ -1,5 +1,5 @@
 /* Section 4 */
-.section-4 {
+.homepage__menu-preview {
     gap: 2rem;
     padding-bottom: 3rem;
     max-width: 1440px;
@@ -7,23 +7,23 @@
     position: relative;
     overflow: hidden;
 }
-.section-4 .active-button-style {
+.homepage__menu-preview .active-button-style {
     margin: 0 auto;
 }
-.section-4-info {
+.menu-preview__info {
     padding: 2rem;
 }
-.section-4-info h2 {
+.menu-preview__info h2 {
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 400;
 }
-.section-4-info p {
+.menu-preview__info p {
     color: var(--light-gray);
     max-width: 1200px;
 }
 
-.meals-grid {
+.menu-preview__meals {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -32,7 +32,7 @@
     margin: 0 auto;
 }
 
-.meal-item {
+.menu-preview__meal {
     flex-direction: column;
     gap: 2rem;
     align-items: center;
@@ -40,40 +40,40 @@
     padding: 10px;
     background-color: var(--light-black);
 }
-.meal-item h3 {
+.menu-preview__meal h3 {
     font-weight: 400;
 }
-.meal-item img {
+.menu-preview__meal img {
     max-width: 100%;
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-.meal-item-details {
+.menu-preview__meal-details {
     gap: 0.5rem;
 }
-.meal-item-details p {
+.menu-preview__meal-details p {
     color: var(--light-gray);
 }
 
-.meal-item-order {
+.menu-preview__meal-pricing {
     gap: 1rem;
 
     align-items: center;
 }
 
-.meal-item-order p {
+.menu-preview__meal-pricing p {
     color: var(--yellow);
 }
 
-.meal-item-order a {
+.menu-preview__meal-pricing a {
     border: solid 1px var(--white);
     padding: 0.5rem 1rem;
     letter-spacing: 1.5px;
     letter-spacing: 1.5px;
 }
-.meal-item-order a {
+.menu-preview__meal-pricing a {
     -moz-transition: all ease-in-out 0.3s;
     -o-transition: all ease-in-out 0.3s;
     -webkit-transition: all ease-in-out 0.3s;
@@ -81,7 +81,7 @@
     transition: all ease-in-out 0.3s;
 }
 @media (hover: hover) {
-    .meal-item-order a:hover {
+    .menu-preview__meal-pricing a:hover {
         background-color: var(--yellow);
         border: 1px solid transparent;
         color: var(--light-black);
@@ -93,21 +93,21 @@
     }
 }
 @media screen and (min-width: 550px) {
-    .meal-item {
+    .menu-preview__meal {
         flex-direction: row;
         padding: 1rem;
     }
 }
 
 @media screen and (min-width: 800px) {
-    .meals-grid {
+    .menu-preview__meals {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         row-gap: 2rem;
         width: 800px;
     }
 
-    .meal-item {
+    .menu-preview__meal {
         gap: 1rem;
         padding: 0;
         display: grid;
@@ -116,14 +116,14 @@
         align-items: stretch;
     }
 
-    .meal-item-details {
+    .menu-preview__meal-details {
         display: grid;
         grid-template-rows: 1fr;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    .meals-grid {
+    .menu-preview__meals {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         row-gap: 2rem;
@@ -132,7 +132,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .meals-grid {
+    .menu-preview__meals {
         gap: 1rem;
         overflow-y: hidden;
         width: 1200px;

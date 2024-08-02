@@ -4,13 +4,13 @@ import ResetLocation from '../../helpers/ResetLocation'
 
 const BlogPosts = ({ blogPost }) => {
   return (
-    <section className="blog-grid-item">
+    <section className="blog__posts__single">
       <img
         src={blogPost.img}
         alt={blogPost.name}
         loading="lazy"
       />
-      <section className="credentials">
+      <section className="blog__posts__credentials">
         <p>{blogPost.date}</p>
         <p>by {blogPost.author}</p>
       </section>
@@ -20,7 +20,7 @@ const BlogPosts = ({ blogPost }) => {
       >
         <h3>{blogPost.name}</h3>
       </Link>
-      <p className="intro">{blogPost.intro}</p>
+      <p className="blog__posts__intro">{blogPost.intro}</p>
     </section>
   );
 }

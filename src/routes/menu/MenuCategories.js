@@ -5,15 +5,14 @@ import ResetLocation from "../../helpers/ResetLocation";
 
 const MenuCategories = ({ allCategories, changeCategory, resetPagination, findMenuItem }) => {
   return (
-    <article className="side-menu">
-      <section className="menu-search-section">
+    <article className="menu__categories">
+      <section className="menu__categories__search">
         <input
           type="text"
-          className="menu-search"
           placeholder="search..."
           onChange={findMenuItem}
         />
-        <img src={SearchIcon} alt="" aria-hidden="true" className="menu-search-icon" />
+        <img src={SearchIcon} alt="" aria-hidden="true"/>
       </section>
       <ul>
         {allCategories.map((category) => (

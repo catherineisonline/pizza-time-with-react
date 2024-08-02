@@ -13,7 +13,7 @@
   display: none;
 }
 
-.modal-main {
+.modal__inner {
   position: static;
   border-radius: 15px;
   background-color: var(--white);
@@ -29,7 +29,7 @@
   min-width: max-content;
   max-width: 600px;
 }
-.modal-content {
+.modal__content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
   display: none;
 }
 
-.close-modal-btn {
+.modal__inner__close {
   cursor: pointer;
   border: 1px solid transparent;
   background-color: transparent;
@@ -61,14 +61,14 @@
   cursor: pointer;
   z-index: 99999;
 }
-.modal-content h2 {
+.mmodal__content h2 {
   color: var(--pizza-red);
   font-family: var(--poppins-font);
   letter-spacing: 1px;
   font-weight: 400;
 }
 
-.modal-content form {
+.modal__content form {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@
   width: 100%;
 }
 
-.modal-content input {
+.modal__content input {
   width: 90%;
   background-color: transparent;
   border: 1px solid transparent;
@@ -84,10 +84,10 @@
   padding: 1rem;
 }
 
-.modal-content input:focus-visible {
+.modal__content input:focus-visible {
   outline: none;
 }
-.modal-content input::placeholder {
+.modal__content input::placeholder {
   color: var(--light-black);
   text-transform: capitalize;
   font-family: var(--poppins-font);
@@ -95,9 +95,9 @@
   font-size: 1rem;
 }
 
-.modal-content input[type="email"],
-.modal-content input[type="password"],
-.modal-content input[type="text"] {
+.modal__content input[type="email"],
+.modal__content input[type="password"],
+.modal__content input[type="text"] {
   color: var(--light-black);
   font-family: var(--poppins-font);
   font-weight: 400;
@@ -121,7 +121,7 @@
   letter-spacing: 1px;
 }
 
-.login-and-signup {
+.modal__buttons {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -129,8 +129,8 @@
   width: 100%;
 }
 
-.login-and-signup .modal-signup-btn,
-.login-and-signup .modal-login-btn {
+.modal__buttons .modal__buttons__signup,
+.modal__buttons .modal__buttons__login {
   cursor: pointer;
   font-size: 1rem;
   border: 1px solid transparent;
@@ -144,12 +144,12 @@
   transition: all ease-in-out 0.3s;
 }
 
-.login-and-signup .modal-signup-btn {
+.modal__buttons .modal__buttons__signup {
   background-color: var(--yellow);
   text-align: center;
 }
 
-.login-input-err {
+.modal__form__error {
   color: var(--red);
   text-align: left;
 }
@@ -172,11 +172,11 @@
 }
 
 @media (hover: hover) {
-  .login-and-signup .modal-signup-btn:hover {
+  .modal__buttons .modal__buttons__signup:hover {
     opacity: 0.7;
     transition: all ease-in-out 0.3s;
   }
-  .login-and-signup .modal-login-btn:hover {
+  .modal__buttons .modal__buttons__login:hover {
     border: 1px solid var(--yellow);
     transition: all ease-in-out 0.3s;
   }

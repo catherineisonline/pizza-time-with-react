@@ -34,21 +34,23 @@ const rightImageVariant = {
 
 const WelcomeSection = () => {
   return (
-    <article className="welcome-section" >
-      <motion.section className="section-2-info flex-container flex-column txt-center pop-font"
+    <article className="homepage__welcome">
+      <motion.section className="welcome__info flex-container flex-column txt-center pop-font"
         variants={imageParentVariant}
         initial={"initial"}
         whileInView={"whileInView"}>
         <motion.img
           loading='lazy'
-          src={PizzaOne} alt="" className="pizza-one"
+          src={PizzaOne} alt="" 
+          aria-hidden="true"
           variants={leftImageVariant}
           width={500}
           height={499}
         />
         <motion.img
           loading='lazy'
-          src={PizzaTwo} alt="" className="pizza-two"
+          src={PizzaTwo} alt=""
+           aria-hidden="true"
           variants={rightImageVariant}
           width={500}
           height={499}
@@ -61,7 +63,7 @@ const WelcomeSection = () => {
         </p>
       </motion.section>
       <LazyLoadImage
-        className="section-two-img"
+        className="welcome__cover"
         src={img375}
         srcSet={`${img1440} 1440w, ${img700} 700w, ${img375} 375w`}
         sizes="(min-width: 1440px) 1440px, (min-width: 700px) 700px, 375px"

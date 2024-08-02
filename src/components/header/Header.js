@@ -18,7 +18,7 @@ const Header = ({ loginModal,
   return (
     <header>
       {loginModal}
-      <nav className="main-nav flex-container flex-row txt-center">
+      <nav className="header__nav flex-container flex-row txt-center">
         <NavLink
           onClick={() => {
             ResetLocation()
@@ -38,7 +38,7 @@ const Header = ({ loginModal,
             Pizza <span>Time</span>
           </h1>
         </NavLink>
-        <ul className={`navigation-menu flex-row pop-font ${isModalActive ? 'active' : ''}`}>
+        <ul className={`header__nav__menu flex-row pop-font ${isModalActive ? 'active' : ''}`}>
           <li>
             <NavLink
               onClick={() => {
@@ -202,7 +202,7 @@ const Header = ({ loginModal,
         <img
           width="80"
           height="80"
-          className="burger-bars"
+          className="header__nav__hamburger"
           src={isModalActive ? closeMenu : openMenu}
           alt={isModalActive ? "Close menu" : "Open menu"}
           onClick={showModal}

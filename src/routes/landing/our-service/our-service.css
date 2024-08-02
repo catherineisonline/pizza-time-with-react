@@ -1,6 +1,6 @@
 /* Section 3 */
 
-.section-3-container {
+.homepage__services {
     text-align: center;
     background-color: var(--light-black);
     color: var(--white);
@@ -13,28 +13,28 @@
     max-width: 1440px;
     margin: 0 auto;
 }
-.section-3-container h2 {
+.homepage__services h2 {
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 400;
 }
-.section-3-container p {
+.homepage__services p {
     color: var(--light-gray);
     max-width: 1200px;
 }
 
-.services-grid {
+.services__items {
     gap: 2rem;
     margin-top: 8rem;
     margin: 0 auto;
 }
 
-.services-grid .service-list {
+.services__item {
     justify-content: center;
     position: relative;
     z-index: 1;
 }
-.service-list section {
+.services__item section {
     background-color: var(--lightish-black);
     padding: 1rem;
     position: absolute;
@@ -43,7 +43,7 @@
     border-radius: 5px;
 }
 
-.services-grid img {
+.services__items img {
     cursor: pointer;
     object-fit: cover;
     padding: 1rem;
@@ -64,13 +64,13 @@
     transform-style: preserve-3d;
 }
 
-.services-grid h3 {
+.services__items h3 {
     font-size: 1.5rem;
     font-weight: 400;
 }
 
 @media screen and (min-width: 1025px) {
-    .services-grid {
+    .services__items {
         display: flex;
         flex-direction: row;
     }

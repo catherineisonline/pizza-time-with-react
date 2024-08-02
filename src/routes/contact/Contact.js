@@ -98,7 +98,7 @@ const Contact = () => {
         </section>
         :
         submit && Object.keys(formError).length === 0 ?
-          <section className="contact-success">
+          <section className="contact__success-msg">
             <p>We have recieved your message and we will get back to you shortly! 🍕</p>
             <section>
               <Link className="active-button-style" to="/menu">Go to menu</Link>
@@ -118,7 +118,7 @@ const Contact = () => {
               />
             </div>
             <span className="input-validation-error">{formError.fullname}</span>
-            <div className=" webflow-style-input">
+            <div className="webflow-style-input">
               <input
                 onChange={handleValidation}
                 value={formValue.email}
@@ -146,15 +146,13 @@ const Contact = () => {
             </button>
           </form>
       }
-      <section className="contact-us-img"></section>
-      <section className="contact-us-content pop-font">
-        <section className="contact-us-content-txt">
+      <section className="contact__cover"></section>
+        <section className="contact__inner pop-font">
           <h2 className="">Contact us</h2>
           <p>
             We greatly anticipate your response and are eager to receive any inquiries you might have. Please do not hesitate to reach out to us should you require any further clarification or assistance. Your feedback and questions are of utmost importance to us, and we are here to provide the support you need. Looking forward to hearing from you!
           </p>
         </section>
-      </section>
     </motion.main>
   );
 }

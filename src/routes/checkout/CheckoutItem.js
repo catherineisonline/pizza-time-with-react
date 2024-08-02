@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const CheckoutItem = ({ cartItem }) => {
+const CheckoutItem = ({ cartItem  }) => {
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   useEffect(() => {
     cartItem.userSelectedAttributes.map((item) => {
@@ -9,9 +9,9 @@ const CheckoutItem = ({ cartItem }) => {
   }, [cartItem.userSelectedAttributes])
 
   return (
-    <section className='checkout-item'>
+    <section className='checkout__item'>
       <img src={cartItem.ItemImg} alt={cartItem.ItemName} />
-      <section className="checkout-item-info">
+      <section className="checkout__item__info">
         {cartItem.userSelectedAttributes.length === 0 ?
           <h3>{cartItem.ItemName}</h3> :
           <h3>{cartItem.ItemName}  <span>{selectedAttributes}</span></h3>

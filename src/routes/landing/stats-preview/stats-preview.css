@@ -1,14 +1,13 @@
 /* Section 7 */
-.section-7 {
+.homepage__stats {
     position: relative;
-    /* background-image: url("../assets/images/section-7-bg.webp"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     gap: 1rem;
     padding: 2rem;
 }
-.section-7::after {
+.homepage__stats::after {
     content: "";
     position: absolute;
     background-color: var(--modal-glass-bg);
@@ -19,7 +18,7 @@
     left: 0;
 }
 
-.highlights {
+.stats__items {
     z-index: 1;
     width: 100%;
     max-width: 1440px;
@@ -27,12 +26,12 @@
     gap: 3rem;
 }
 
-.highligh-container {
+.stats__item {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-.highlights img {
+.stats__items img {
     margin: 0 auto;
     border: 2px solid var(--yellow);
     padding: 0.7rem;
@@ -46,25 +45,25 @@
     height: auto;
 }
 
-.highlights h3 {
+.stats__items h3 {
     color: var(--yellow);
     font-family: var(--poppins-font);
     font-size: 2rem;
 }
-.highlights p {
+.stats__items p {
     font-weight: 600;
     font-size: 1.5rem;
 }
 
 @media screen and (min-width: 700px) {
-    .highlights {
+    .stats__items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (min-width: 1025px) {
-    .highlights {
+    .stats__items {
         grid-template-columns: repeat(4, 1fr);
     }
 }
