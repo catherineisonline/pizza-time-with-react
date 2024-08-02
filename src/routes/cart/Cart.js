@@ -16,7 +16,7 @@ const Cart = ({ cartItems, CartItem }) => {
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}>
       <h2>Shopping cart</h2>
-      <article className="cart-content">
+      <article className="cart__items">
         {cartItems.length === 0 ? <EmptyCart /> : CartItem}
       </article>
       <ScrollBtn />

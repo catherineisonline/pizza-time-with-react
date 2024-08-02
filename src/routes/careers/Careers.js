@@ -14,10 +14,10 @@ const Careers = () => {
         <main className="careers">
             <h2>Careers</h2>
             <h3>If you think you can add value with your expertise, passion, and hard work, you might be the ONE!</h3>
-            <section className="careers-section">
+            <section className="careers__inner">
                 {careers.map((career) =>
-                    <section key={career.id} className="careers-listing">
-                        <section className="single-listing">
+                    <section key={career.id} className="careers__listings">
+                        <section className="careers__listings__single">
                             <h4>{career.title}</h4>
                             <p>{career.description}</p>
                             <hr />

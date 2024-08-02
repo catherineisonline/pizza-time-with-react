@@ -23,7 +23,7 @@
     font-size: 1.5rem;
 }
 
-.profile-information {
+.profile__info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -32,10 +32,11 @@
     width: 90%;
     padding: 1rem;
 }
-.profile-information hr {
+.profile__info hr {
     width: 100%;
 }
-.profile-information-section {
+.profile__form__info,
+.profile__info__section {
     color: var(--white);
     font-family: var(--poppins-font);
     display: flex;
@@ -44,14 +45,16 @@
     gap: 3rem;
     width: 100%;
 }
-.profile-information-section h3 {
+.profile__form__info h3,
+.profile__info__section h3 {
     font-weight: 600;
 }
-.profile-information-section p {
+.profile__form__info p,
+.profile__info__section p {
     font-size: 1rem;
 }
 
-.profile-buttons {
+.profile__actions {
     padding: 1rem;
     display: flex;
     gap: 2rem;
@@ -59,7 +62,7 @@
     width: 90%;
 }
 
-.profile-form {
+.profile__form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -68,14 +71,16 @@
     width: 90%;
     padding: 1rem;
 }
-.profile-form hr {
+.profile__form hr {
     width: 100%;
 }
 
-.profile-information-section label {
+.profile__form__info label,
+.profile__info__section label {
     font-weight: 600;
 }
-.profile-information-section input {
+.profile__form__info input,
+.profile__info__section input {
     font-size: 1rem;
     border: 1px solid grey;
     font-size: 0.8rem;
@@ -84,13 +89,14 @@
     border-radius: 10px;
     padding: 10px;
 }
-.profile-information-section input::placeholder {
+.profile__form__info input::placeholder,
+.profile__info__section input::placeholder {
     color: var(--white);
     opacity: 0.7;
     font-size: 0.8rem;
 }
 
-.deletion-modal {
+.profile__delete-modal {
     top: 0;
     left: 0;
     position: fixed;
@@ -105,7 +111,7 @@
     z-index: 9999;
 }
 
-.deletion-window {
+.profile__delete-window {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -121,7 +127,7 @@
     background-color: var(--white);
 }
 
-.deletion-window h3 {
+.profile__delete-window h3 {
     color: var(--pizza-red);
     font-family: var(--poppins-font);
     letter-spacing: 1px;
@@ -129,19 +135,19 @@
     font-size: 2rem;
 }
 
-.deletion-window p {
+.profile__delete-window p {
     color: var(--light-black);
     font-family: var(--poppins-font);
     font-weight: 400;
     font-size: 1rem;
     text-align: left;
 }
-.deletion-window section {
+.profile__delete-window section {
     display: flex;
     flex-direction: row;
     gap: 1rem;
 }
-.cancel-deletion {
+.profile__delete-cancel {
     cursor: pointer;
     border-radius: 5px;
     border-style: solid;
@@ -158,7 +164,7 @@
     font-family: var(--poppins-font);
 }
 
-.confirm-deletion {
+.profile__delete-confirm {
     cursor: pointer;
     border-radius: 5px;
     border-style: solid;

@@ -7,7 +7,7 @@ import './blog-preview.css'
 
 const BlogPreview = () => {
   return (
-    <motion.div className="section-9 flex-container flex-column"
+    <motion.div className="homepage__blog flex-container flex-column"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -18,11 +18,11 @@ const BlogPreview = () => {
       <p className="section-description">
         Fresh, flavorful, and maybe some healthy recipes made for real, actual, everyday life. You don't need to be a pro! Helping you celebrate the joy of food in a non-intimidating way.
       </p>
-      <section className="blog-posts-landing">
+      <section className="homepage__blog-posts">
         {blogPreview.map((post) => (
           <section
             key={post.id}
-            className="post flex-container flex-column"
+            className="homepage__blog-post flex-container flex-column"
           >
             <img
               src={post.img}
@@ -35,7 +35,7 @@ const BlogPreview = () => {
             <Link onClick={ResetLocation} to={`/blog/${post.name.toLowerCase().replaceAll(' ', '-')}`}>
               <h3 className="pop-font txt-white">{post.name}</h3>
             </Link>
-            <p className="intro">{post.intro}</p>
+            <p className="homepage__blog-intro">{post.intro}</p>
           </section>
         ))}
       </section>

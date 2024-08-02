@@ -46,18 +46,18 @@ const PizzaMenuPreview = () => {
 
 
   return (
-    <article className="section-4 flex-container flex-column" >
-      <section className="section-4-info txt-center">
+    <article className="homepage__menu-preview flex-container flex-column" >
+      <section className="menu-preview__info txt-center">
         <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
         <p className="section-description">
           Pizza Time holds the market of the pizza industry and continuously offers more than pizza. Check out our hottest menu options with cheese, meat, chicken, and veggies!
         </p>
       </section>
-      <section className="meals-grid flex-container flex-column" >
+      <section className="menu-preview__meals flex-container flex-column" >
         {pizzaMenuPreview.map((pizza, id) => (
           <motion.div
             key={id}
-            className="meal-item flex-container"
+            className="menu-preview__meal flex-container"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -71,10 +71,10 @@ const PizzaMenuPreview = () => {
               loading='lazy'
             />
 
-            <section className="meal-item-details flex-container flex-column">
+            <section className="menu-preview__meal-details flex-container flex-column">
               <h3 className="txt-white">{pizza.name}</h3>
               <p>{pizza.description}</p>
-              <section className="meal-item-order flex-container flex-row txt-center">
+              <section className="menu-preview__meal-pricing flex-container flex-row txt-center">
                 <p>
                   <span>{pizza.currency}</span>
                   {pizza.price}

@@ -1,4 +1,4 @@
-.choose-payment {
+.payment__inner {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -8,7 +8,7 @@
     margin-bottom: 4rem;
     max-width: 700px;
 }
-.choose-payment input {
+.payment__inner input {
     color: var(--whitish-gray);
     font-family: var(--poppins-font);
     font-weight: 400;
@@ -20,13 +20,13 @@
     font-size: 1rem;
     width: 80%;
 }
-.payment-details {
+.payment__success__details {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     color: var(--light-gray);
 }
-.success-payment {
+.payment__success {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,79 +37,81 @@
     margin-top: 4rem;
     text-align: center;
 }
-.success-payment-title {
+.payment__success__title {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.success-payment-title h2 {
+.payment__success__title h2 {
     color: var(--green);
     font-weight: 300;
     font-size: 2rem;
     letter-spacing: 1px;
 }
-.payment-details h3 {
+.payment__success__details h3 {
     color: var(--green);
 }
-.success-payment-title p {
+.payment__success__title p {
     color: var(--light-gray);
 }
-.success-payment img {
+.payment__success img {
     max-width: 5%;
     border: 2px solid var(--green);
     border-radius: 50%;
     padding: 1rem;
 }
-.cvv-input,
-.date-input {
+.payment__form__section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.credit-card-form {
+.payment__form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: left;
 }
-
-.cvv-exp {
+.payment__form__error {
+    color: var(--red);
+    text-align: left;
+}
+.payment__form__cvv-exp {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     width: 80%;
 }
-.cvv {
+.payment__form__cvv {
     width: 5rem;
 }
-.expiration-date {
+.payment__form__expiration {
     display: flex;
     flex-direction: row;
 }
-.expiration-date input:first-child {
+.payment__form__expiration input:first-child {
     border-right: none;
     width: 1.7rem;
 }
-.expiration-date input {
+.payment__form__expiration input {
     outline: none;
     display: flex;
     flex-direction: column;
 }
-.expiration-date input:last-of-type {
+.payment__form__expiration input:last-of-type {
     border-left: none;
     width: 1.5rem;
 }
 
-.success-payment-redirection {
+.payment__success__interaction {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-.success-payment-redirection a:last-child {
+.payment__success__interaction a:last-child {
     text-decoration: underline;
     color: var(--whitish-gray);
 }
-.success-payment-redirection a:last-child:hover {
+.payment__success__interaction a:last-child:hover {
     color: var(--yellow);
     transition: var(--transition);
 }

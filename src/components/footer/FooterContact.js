@@ -6,12 +6,12 @@ import GooglePay from '../../assets/images/payment-methods/googlepay-icon.svg'
 
 const FooterContact = () => {
   return (
-    <section className="footer-contact  flex-container flex-column">
+    <section className="footer__contact flex-container flex-column">
       <h3>Have questions?</h3>
       <p>000 (000) 123 4567</p>
       <p>pizza@pizzatime.com</p>
       <p>8:00am - 9:00pm</p>
-      <section className="accepted-payments">
+      <section className="footer__contact__payments">
         <img width="50" height="50" src={Visa} alt="Visa card" />
         <img width="50" height="50" src={MasterCard} alt="Mastercard card" />
         <img width="50" height="50" src={ApplePay} alt="Apple pay" />

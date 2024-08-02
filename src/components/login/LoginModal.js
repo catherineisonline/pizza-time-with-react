@@ -89,9 +89,9 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
 
   return (
     <article className={`modal ${loginModalWindow ? 'active-modal' : null}`}>
-      <section className="modal-main">
+      <section className="modal__inner">
         <button
-          className="close-modal-btn"
+          className="modal__inner__close"
           type="button"
           onClick={() => {
             hideLoginModal();
@@ -100,7 +100,7 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
         >
           X
         </button>
-        <section className="modal-content">
+        <section className="modal__content">
           <h2>Log in</h2>
           {loading ?
             <div role="status" className="loader">
@@ -108,26 +108,26 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
               <img alt="Processing request" src="https://media0.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif?cid=ecf05e472hf2wk1f2jou3s5fcnx1vek6ggnfcvhsjbeh7v5u&ep=v1_stickers_search&rid=giphy.gif&ct=s" />
             </div> :
             <form onSubmit={handleLogin}>
-              {verificationError.length === 0 ? null : <p className="login-input-err">{verificationError}</p>}
+              {verificationError.length === 0 ? null : <p className="modal__form__error">{verificationError}</p>}
               <input onChange={handleValidation} value={formValue.email} name="email" type="text" placeholder="Email" />
-              <span className="login-input-err">{formError.email}</span>
+              <span className="modal__form__error">{formError.email}</span>
               <input onChange={handleValidation} value={formValue.password} name="password" type="password" autoComplete="true" placeholder="Password" />
-              <span className="login-input-err">{formError.password}</span>
+              <span className="modal__form__error">{formError.password}</span>
               {submit && Object.keys(formError).length === 0 && !validLogin ?
-                <p className="login-input-err">We couldn't find an account. Try another credentials</p> :
+                <p className="modal__form__error">We couldn't find an account. Try another credentials</p> :
                 null}
-              <section className="login-and-signup">
+              <section className="modal__buttons">
                 <LinkButton
                   onClick={() => {
                     hideLoginModal();
                     hideMenu();
                   }}
                   to="/register"
-                  className="modal-signup-btn"
+                  className="modal__buttons__signup"
                 >
                   Sign up
                 </LinkButton>
-                <button type="submit" className="modal-login-btn">Log in</button>
+                <button type="submit" className="modal__buttons__login">Log in</button>
               </section>
             </form>
           }

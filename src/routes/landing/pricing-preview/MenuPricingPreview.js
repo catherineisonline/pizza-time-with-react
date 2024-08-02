@@ -10,7 +10,7 @@ import './pricing-preview.css'
 const MenuPricingPreview = () => {
   return (
     <motion.article
-      className="section-5 flex-container "
+      className="homepage__pricing-preview flex-container "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -23,24 +23,24 @@ const MenuPricingPreview = () => {
         interesting for you. Discover every mouthwatering option we have to
         offer
       </p>
-      <section className="pricing-grid flex-container flex-column">
+      <section className="pricing-preview__items flex-container flex-column">
         {menuPricing.map((menu) => (
           <Tilt key={menu.id}>
             <Link
               onClick={ResetLocation}
               to="/menu"
-              className="pricing-grid-item flex-container flex-row"
+              className="pricing-preview__item flex-container flex-row"
             >
               <img
-                className="pricing-img"
+                className="pricing-preview__img"
                 alt={menu.name}
                 src={menu.img375}
                 width={96}
                 height={96}
                 loading='lazy'
               />
-              <section className="pricing-details flex-container flex-column">
-                <section className="name-and-price flex-container flex-row txt-center">
+              <section className="pricing-preview__prices flex-container flex-column">
+                <section className="pricing-preview__prices-details flex-container flex-row txt-center">
                   <h3 className="pop-font">{menu.name}</h3>
                   <p>
                     <span>{menu.currency}</span>

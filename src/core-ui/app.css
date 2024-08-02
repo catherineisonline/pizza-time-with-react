@@ -265,10 +265,10 @@ img {
 }
 
 /* Success Msg */
-.success-msg {
+.success {
   display: none;
 }
-.success-msg.visible {
+.success.visible {
   display: inline-block;
   position: absolute;
   top: 100%;
@@ -279,7 +279,7 @@ img {
   padding: 0.5rem;
   border-radius: 10px;
 }
-.success-msg.visible p {
+.success.visible p {
   font-family: var(--poppins-font);
   font-size: 1rem;
   color: var(--white);

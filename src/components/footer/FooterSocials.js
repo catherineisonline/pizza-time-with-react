@@ -27,7 +27,7 @@ const socials = [
 const FooterSocials = () => {
 
   return (
-    <ul className="socials">
+    <ul className="footer__socials">
       {socials.map(social =>
         <li key={social.id}>
           <a

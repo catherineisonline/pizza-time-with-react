@@ -1,5 +1,5 @@
 /* Section 10 */
-.section-10 {
+.homepage__contact {
     display: flex;
     flex-direction: column;
     padding-top: 4rem;
@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-.section-10 h2 {
+.homepage__contact h2 {
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 400;
@@ -24,7 +24,7 @@
     margin: 0 auto;
 }
 
-.contact-emails {
+.contact__info {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -32,38 +32,38 @@
     overflow: hidden;
     font-family: var(--poppins-font);
 }
-.contact-emails h3 {
+.contact__info h3 {
     font-size: 2rem;
 }
-.contact-emails h3,
-.contact-emails h4 {
+.contact__info h3,
+.contact__info h4 {
     color: var(--white);
     font-weight: 500;
 }
-.contact-emails p {
+.contact__info p {
     color: var(--light-gray);
 }
-.contact-emails ul {
+.contact__info ul {
     display: flex;
     flex-direction: column;
 }
-.contact-emails ul li {
+.contact__info ul li {
     color: var(--light-gray);
     text-decoration: none;
 }
 
-.section-10 .active-button-style {
+.homepage__contact .active-button-style {
     margin-top: 2rem;
 }
 
 @media screen and (min-width: 700px) {
-    .section-10 {
+    .homepage__contact {
         justify-content: space-evenly;
         gap: 5rem;
     }
 }
 @media screen and (min-width: 1025px) {
-    .section-10 {
+    .homepage__contact {
         flex-direction: row !important;
     }
     .map {

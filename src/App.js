@@ -8,7 +8,7 @@ import {
   Cart,
   Checkout,
   Contact,
-  RootSection,
+  Homepage,
   Menu,
   Payment,
   Register,
@@ -16,7 +16,7 @@ import {
 } from './routes/index';
 import { allProductsData } from './data/AllProductsData.js';
 import { AllCategories } from './data/AllCategories';
-import CheckoutSummary from './routes/checkout/CheckoutSummary.js';
+// import CheckoutSummary from './routes/checkout/CheckoutSummary.js';
 import CartTotals from './routes/cart/CartTotals.js';
 import LoginModal from './components/login/LoginModal.js';
 import CartItem from './routes/cart/CartItem.js';
@@ -340,7 +340,7 @@ function App() {
   };
 
   const successMsg = () => {
-    const alertMessage = document.querySelector('.success-msg')
+    const alertMessage = document.querySelector('.success')
     alertMessage.classList.add('visible')
     setTimeout(() => {
       alertMessage.classList.remove('visible')
@@ -425,7 +425,7 @@ function App() {
         productsQuantity={productsQuantity}
       />
       <Routes>
-        <Route path="/" element={<RootSection />} />
+        <Route path="/" element={<Homepage />} />
 
         <Route
           path="/cart"
@@ -439,7 +439,7 @@ function App() {
                   handleRemoveProduct={handleRemoveProduct}
                   cartTotals={
                     <CartTotals
-                      className="cart-carttotals"
+                      className="cart-totals"
                       totalPayment={totalPayment}
                       productsQuantity={productsQuantity}
                       taxes={taxes}
@@ -491,13 +491,13 @@ function App() {
           path="/checkout"
           element={
             <Checkout
-              checkoutSummary={
-                <CheckoutSummary
-                  cartItems={cartItems}
-                  handleAddProduct={handleAddProduct}
-                  handleRemoveProduct={handleRemoveProduct}
-                />
-              }
+              // checkoutSummary={
+              //   <CheckoutSummary
+              //     cartItems={cartItems}
+              //     handleAddProduct={handleAddProduct}
+              //     handleRemoveProduct={handleRemoveProduct}
+              //   />
+              // }
               totalPayment={totalPayment}
               cartItems={cartItems}
               productsQuantity={productsQuantity}

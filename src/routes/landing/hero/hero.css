@@ -1,5 +1,5 @@
 /* Hero Video */
-.hero-section {
+.homepage__hero {
     height: 100vh;
     position: relative;
     z-index: 1;
@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
 }
-.hero-video {
+.hero__video {
     display: none;
     position: relative;
     width: 100%;
@@ -16,10 +16,10 @@
     z-index: 2;
     object-fit: cover;
 }
-.hero-video.loaded {
+.hero__video.loaded {
     display: inline-block;
 }
-.hero-section::before {
+.homepage__hero::before {
     content: "";
     position: absolute;
     width: 100%;

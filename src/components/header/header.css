@@ -9,7 +9,7 @@ header {
     z-index: 999;
     padding: 1rem;
 }
-.main-nav {
+.header__nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -38,14 +38,14 @@ header {
 }
 
 /* NAVIGATION MENU */
-.navigation-menu {
+.header__nav__menu {
     display: none;
     gap: 2rem;
     font-weight: 400;
     font-size: 1.1rem;
     align-items: center;
 }
-.navigation-menu.active {
+.header__nav__menu.active {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@ header {
     width: 100%;
     height: 100vh;
 }
-.navigation-menu a {
+.header__nav__menu a {
     transition: all ease-in-out 0.2s;
 }
 /* Login & Cart */
@@ -80,7 +80,7 @@ header {
     height: 1.5rem;
 }
 
-.burger-bars {
+.header__nav__hamburger {
     width: 100%;
     max-width: 50px;
     height: auto;
@@ -88,13 +88,13 @@ header {
     margin-right: 0;
     object-fit: contain;
 }
-.main-nav .navigation-menu.active .burger-bars {
+.header__nav__menu.active .header__nav__hamburger {
     content: url("../../assets/images/close-btn.svg");
 }
-.header-info {
+.hero__info {
     padding: 1rem;
 }
-.header-info {
+.hero__info {
     position: absolute;
     z-index: 4;
     justify-content: center;
@@ -102,43 +102,43 @@ header {
     align-items: center;
     overflow-x: hidden;
 }
-.header-info span {
+.hero__info span {
     color: var(--pizza-red);
     font-family: var(--nothing-font);
     font-size: 2rem;
 }
 
-.header-info h1 {
+.hero__info h1 {
     text-transform: uppercase;
     font-size: 2rem;
     line-height: 3rem;
     color: var(--white);
 }
 
-.header-info p {
+.hero__info p {
     font-size: 1rem;
 }
 
-.header-btns {
+.hero__interaction {
     gap: 1.3rem;
     box-sizing: content-box;
 }
 
-.header-btns a:first-child {
+.hero__interaction a:first-child {
     color: var(--light-black);
     background-color: var(--yellow);
     border: 1px solid transparent;
 }
 
-.header-btns a:last-child {
+.hero__interaction a:last-child {
     border-width: 1px;
     border-color: var(--transparent-button);
     background-color: var(--transparent-button);
     color: var(--light-black);
 }
-.header-btns a:last-child,
-.header-btns a:first-child,
-.navigation-menu a,
+.hero__interaction a:last-child,
+.hero__interaction a:first-child,
+.header__nav__menu a,
 .logo,
 .login-and-cart .cart-btn {
     -moz-transition: all ease-in-out 0.3s;
@@ -149,29 +149,29 @@ header {
 }
 
 @media screen and (hover: hover) {
-    .navigation-menu a:hover,
+    .header__nav__menu a:hover,
     .logo:hover,
-    .header-btns a:last-child:hover,
-    .header-btns a:first-child:hover {
+    .hero__interaction a:last-child:hover,
+    .hero__interaction a:first-child:hover {
         -moz-transition: all ease-in-out 0.3s;
         -o-transition: all ease-in-out 0.3s;
         -webkit-transition: all ease-in-out 0.3s;
         -ms-transition: all ease-in-out 0.3s;
         transition: all ease-in-out 0.3s;
     }
-    .navigation-menu a:hover {
+    .header__nav__menu a:hover {
         color: var(--pizza-red);
     }
     .logo:hover {
         transform: rotate(30deg);
     }
 
-    .header-btns a:last-child:hover {
+    .hero__interaction a:last-child:hover {
         color: var(--light-black);
         background-color: var(--yellow);
         border: 1px solid transparent;
     }
-    .header-btns a:first-child:hover {
+    .hero__interaction a:first-child:hover {
         border: 1px solid var(--yellow);
         color: var(--light-black);
         background-color: transparent;
@@ -196,21 +196,21 @@ header {
 }
 
 @media screen and (min-width: 1025px) {
-    .navigation-menu {
+    .header__nav__menu {
         display: flex;
     }
-    .header-info h1 {
+    .hero__info h1 {
         font-size: 2.5rem;
     }
-    .burger-bars {
+    .header__nav__hamburger {
         display: none;
     }
-    .main-nav {
+    .header__nav {
         width: 100%;
         z-index: 999;
     }
 
-    .header-info p {
+    .hero__info p {
         width: 70%;
         margin: 0 auto;
     }

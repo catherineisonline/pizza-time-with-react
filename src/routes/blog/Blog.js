@@ -38,17 +38,17 @@ const Blog = () => {
       transition={{ duration: 1 }}
     >
       <h2>Blog</h2>
-      <p className="blog-intro">
+      <p className="blog__intro">
         Pizza makes everything better. These are some of our favorite pizza
         blogs that are loaded with recipes and pizza-making tips.
       </p>
-      <section className="blog-grid">
+      <section className="blog__posts">
         {currentBlogPosts.map((blogPost, index) => {
           return <BlogPosts key={index} blogPost={blogPost} />;
         })}
       </section>
       <ReactPaginate
-        className="pagination blog-pagination"
+        className="pagination blog__pagination"
         breakLabel="..."
         nextLabel=" &#62;"
         onPageChange={handlePageClick}

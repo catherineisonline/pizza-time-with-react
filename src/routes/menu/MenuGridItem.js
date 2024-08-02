@@ -27,8 +27,8 @@ const MenuGridItem = ({ singleProduct, handleAddProduct, handleRemoveProduct }) 
 
 
   return (
-    <article className="menu-grid-item flex-container flex-column txt-white">
-      <Link onClick={ResetLocation} to={`/menu/${singleProduct.id}`} className="menu-item-link">
+    <article className="menu-item txt-white">
+      <Link onClick={ResetLocation} to={`/menu/${singleProduct.id}`} className="menu-item__link">
         <img src={singleProduct.ItemImg} alt={`${singleProduct.ItemName}`} />
       </Link>
       <h3>{singleProduct.ItemName}</h3>
@@ -37,21 +37,21 @@ const MenuGridItem = ({ singleProduct, handleAddProduct, handleRemoveProduct }) 
         singleProduct.attributes?.map(attribute => (
           <Attribute
             key={attribute.id}
-            className="attributes"
+            className="menu-item__attributes"
             handleSelectedAttributes={handleSelectedAttributes}
             attribute={attribute}
             targetAttribute={targetAttribute}
           />
         ))
       }
-      <div className="price">
+      <div className="menu-item__pricing">
         {singleProduct.sale === true ?
-          <section className="sale-pricing">
-            <p className="price-num-before"><span>$</span>{singleProduct.ItemPriceBefore}</p>
-            <p className="price-num"><span>$</span>{singleProduct.ItemPrice}</p>
+          <section className="menu-item__pricing-sale">
+            <p className="menu-item__pricing-prev"><span>$</span>{singleProduct.ItemPriceBefore}</p>
+            <p className="menu-item__pricing-curr"><span>$</span>{singleProduct.ItemPrice}</p>
           </section>
           :
-          <p className="price-num"><span>$</span>{singleProduct.ItemPrice}</p>
+          <p className="menu-item__pricing-curr"><span>$</span>{singleProduct.ItemPrice}</p>
         }
         <AddToCartButton
           handleAddProduct={handleAddProduct}

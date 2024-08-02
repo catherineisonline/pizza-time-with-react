@@ -24,15 +24,15 @@ const Hero = () => {
     }
   }, []);
   return (
-    <section className="hero-section">
-      <video ref={videoRef} autoPlay loop muted playsInline preload="none" width="375" className={`hero-video ${isLoading ? '' : 'loaded'}`}>
+    <section className="homepage__hero">
+      <video ref={videoRef} autoPlay loop muted playsInline preload="none" width="375" className={`hero__video ${isLoading ? '' : 'loaded'}`}>
         <source src={HeroVideo_375} type="video/mp4" media="(max-width: 1024px)" />
         <source src={HeroVideo} type="video/mp4" media="(min-width: 1025px)" />
         Your browser does not support the video tag.
       </video>
 
 
-      <section className="header-info flex-container flex-column txt-center pop-font txt-white">
+      <section className="hero__info flex-container flex-column txt-center pop-font txt-white">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -47,11 +47,11 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        <div className="header-btns flex-container flex-row">
-          <Link className=" passive-button-style" to="/blog">
+        <div className="hero__interaction flex-container flex-row">
+          <Link className="passive-button-style" to="/blog">
             Read Blog
           </Link>
-          <Link className=" passive-button-style  " to="/menu">
+          <Link className="passive-button-style  " to="/menu">
             View Menu
           </Link>
         </div>

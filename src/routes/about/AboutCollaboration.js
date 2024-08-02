@@ -5,9 +5,9 @@ import ResetLocation from "../../helpers/ResetLocation";
 
 const AboutCollaboration = () => {
   return (
-    <article className="about-collaboration">
+    <article className="about__collaboration">
       <img src={OfficeTwo} alt="" aria-hidden="true" />
-      <section className="content">
+      <section className="about__collaboration__content">
         <h2 className="sub-title">Collaboration</h2>
         <h3>Join the business</h3>
         <p>

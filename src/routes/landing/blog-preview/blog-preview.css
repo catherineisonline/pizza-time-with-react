@@ -1,27 +1,27 @@
 /* Section 9 */
-.section-9 {
+.homepage__blog {
     max-width: 1440px;
     margin: 0 auto;
 }
 
-.section-9 h2 {
+.homepage__blog h2 {
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 400;
 }
 
-.section-9 .active-button-style {
+.homepage__blog .active-button-style {
     margin: 0 auto;
 }
 
 /* Blog Posts */
-.blog-posts-landing {
+.homepage__blog-posts {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 3rem 1.5rem;
 }
-.blog-posts-landing .post {
+.homepage__blog-post {
     width: 100%;
     max-width: 1400px;
     display: flex;
@@ -29,35 +29,35 @@
     align-items: left;
     gap: 1rem;
 }
-.blog-posts-landing .post h3 {
+.homepage__blog-post h3 {
     transition: all ease-in-out 0.3s;
 }
 
-.blog-posts-landing h3 {
+.homepage__blog-posts h3 {
     font-weight: 500;
 }
-.blog-posts-landing img {
+.homepage__blog-posts img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-.blog-posts-landing .intro {
+.homepage__blog-intro {
     gap: 1rem;
 }
 
-.blog-posts-landing .date,
-.blog-posts-landing .intro {
+.homepage__blog-posts .date,
+.homepage__blog-intro {
     color: var(--whitish-gray);
 }
 
 @media screen and (min-width: 700px) {
-    .blog-posts-landing {
+    .homepage__blog-posts {
         flex-direction: row;
     }
 }
 @media (hover: hover) {
-    .blog-posts-landing .post h3:hover {
+    .homepage__blog-post h3:hover {
         color: var(--pizza-red);
         -moz-transition: all ease-in-out 0.3s;
         -o-transition: all ease-in-out 0.3s;

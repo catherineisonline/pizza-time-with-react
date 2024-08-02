@@ -17,29 +17,20 @@
     text-align: center;
 }
 
-.careers-section {
+.careers__inner {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     max-width: 1100px;
     margin: 3rem;
 }
-.careers-listing {
+.careers__listings__single {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.single-listing {
-    display: flex;
-    flex-direction: column;
-    max-width: 75%;
-    gap: 1.5rem;
-}
-.single-listing p {
-    font-size: 0.8rem;
-    color: var(--light-gray);
-}
-.careers-section a {
+
+.careers__inner a {
     cursor: pointer;
     border-radius: 5px;
     border-style: solid;
@@ -60,7 +51,7 @@
 }
 
 @media (hover: hover) {
-    .careers-section a:hover {
+    .careers__inner a:hover {
         background-color: transparent;
         border-color: var(--white);
         color: var(--white);

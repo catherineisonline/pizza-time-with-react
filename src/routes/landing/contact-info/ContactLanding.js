@@ -50,7 +50,7 @@ const ContactLanding = () => {
     };
   }, []);
   return (
-    <motion.article className="section-10  flex-container flex-column" ref={ref}
+    <motion.article className="homepage__contact flex-container flex-column" ref={ref}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -74,7 +74,7 @@ const ContactLanding = () => {
         </MapContainer>
       </div>}
       <div
-        className="contact-emails"
+        className="contact__info"
       >
         <h3>Contact Us</h3>
         <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you!</p>
