@@ -45,6 +45,13 @@ const CheckoutForm = ({ currentUser, totalPayment, productsQuantity, taxes }) =>
     if (value.promoCode && value.promoCode.length < 5 && promoCode) {
       errors.promoCode = "Invalid promo code!"
     }
+    if (currentUser.address === null && value.chooseDelivery === "delivery") {
+      errors.address = "Please add your address"
+    }
+    if (currentUser.number === null) {
+      errors.number = "Please add your number"
+    }
+
 
     return errors;
   }
@@ -56,11 +63,11 @@ const CheckoutForm = ({ currentUser, totalPayment, productsQuantity, taxes }) =>
         <p>{currentUser.fullname}</p>
         <p>{currentUser.email}</p>
         {currentUser.address !== null ?
-          <p>{currentUser.address}</p> :
+          <p>Address: {currentUser.address}</p> :
           <p className="checkout__form__address">You haven't added address yet<span><Link onClick={ResetLocation} to="/profile">Add address</Link></span></p>}
         <span className="checkout__form__error">{formError.address}</span>
         {currentUser.number !== null ?
-          <p>{currentUser.number}</p> :
+          <p>Contact number: {currentUser.number}</p> :
           <p className="checkout__form__number">Please add you contact number<span><Link onClick={ResetLocation} to="/profile">Add number</Link></span></p>}
         <span className="checkout__form__error">{formError.number}</span>
       </section>
@@ -105,21 +112,21 @@ const CheckoutForm = ({ currentUser, totalPayment, productsQuantity, taxes }) =>
           )}
           <span className="checkout__form__error">{formError.promoCode}</span>
         </section>
-          {productsQuantity > 0 &&
-            <section className="checkout__totals">
-              <section className="checkout__totals__content">
-                <h4>Tax 10%:</h4>
-                <p>$ {taxes}</p>
-              </section>
-              <section className="checkout__totals__content">
-                <h4>Quantity:</h4>
-                <p> {productsQuantity}</p>
-              </section>
-              <section className="checkout__totals__content" >
-                <h4>Total:</h4>
-                <p>$ {totalPayment}</p>
-              </section>
-            </section>}
+        {productsQuantity > 0 &&
+          <section className="checkout__totals">
+            <section className="checkout__totals__content">
+              <h4>Tax 10%:</h4>
+              <p>$ {taxes}</p>
+            </section>
+            <section className="checkout__totals__content">
+              <h4>Quantity:</h4>
+              <p> {productsQuantity}</p>
+            </section>
+            <section className="checkout__totals__content" >
+              <h4>Total:</h4>
+              <p>$ {totalPayment}</p>
+            </section>
+          </section>}
         <button type="submit" className="active-button-style">
           Proceed to payment
         </button>
