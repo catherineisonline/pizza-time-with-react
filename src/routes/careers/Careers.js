@@ -17,7 +17,7 @@ const Careers = () => {
             <section className="careers__inner">
                 {careers.map((career) =>
                     <section key={career.id} className="careers__listings">
-                        <section className="careers__listings__single">
+                        <section>
                             <h4>{career.title}</h4>
                             <p>{career.description}</p>
                             <hr />

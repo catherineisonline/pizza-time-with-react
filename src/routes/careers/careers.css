@@ -24,7 +24,7 @@
     max-width: 1100px;
     margin: 3rem;
 }
-.careers__listings__single {
+.careers__listings {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,5 +56,12 @@
         border-color: var(--white);
         color: var(--white);
         transition: all ease-in-out 0.3s;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .careers__listings {
+        gap: 1rem;
+        flex-direction: column;
     }
 }
