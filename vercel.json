@@ -1,4 +1,10 @@
 {
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ],
     "headers": [
         {
             "source": "/assets/fonts/futura-std/:font*",

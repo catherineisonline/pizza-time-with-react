@@ -1,11 +1,11 @@
-import EmptyCart from "../cart/EmptyCart.js";
+import EmptyCart from "../cart/EmptyCart";
 import React, { useEffect, useState } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import { v4 as uuidv4 } from 'uuid';
 import validateForm from "../../components/validateForm";
 import './payment.css'
-import PaymentSuccess from "./PaymentSuccess.js";
-import Card from "./Cards.js";
+import PaymentSuccess from "./PaymentSuccess";
+import Card from "./Cards.jsx";
 
 const Payment = ({ cartItems, totalPayment }) => {
 
@@ -32,12 +32,12 @@ const Payment = ({ cartItems, totalPayment }) => {
     document.title = "Payment | Pizza Time";
   }, []);
   return (
-        <main>
-        {cartItems.length === 0 ? <EmptyCart /> : 
-          <React.Fragment>
-        {submit && Object.keys(formError).length === 0 ? <PaymentSuccess transactionId={transactionId} totalPayment={totalPayment}/> :
+    <main>
+      {cartItems.length === 0 ? <EmptyCart /> :
+        <React.Fragment>
+          {submit && Object.keys(formError).length === 0 ? <PaymentSuccess transactionId={transactionId} totalPayment={totalPayment} /> :
             <article className="payment__inner">
-             <Card formValue={formValue}/>
+              <Card formValue={formValue} />
               <form onSubmit={handleSubmit} className="payment__form">
                 <input onChange={handleValidation} value={formValue.firstname} name="firstname" type="text" placeholder="First name" />
                 <span className="payment__form__error">{formError.firstname}</span>
@@ -61,8 +61,8 @@ const Payment = ({ cartItems, totalPayment }) => {
                 <button type="submit" className=" active-button-style">Proceed</button>
               </form>
             </article>}
-            </React.Fragment>}
-        </main>
+        </React.Fragment>}
+    </main>
 
   );
 }

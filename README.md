@@ -42,10 +42,9 @@ Pizza Time brings together delicious food and advanced technology, creating a us
 
 ## Contents
 
-- [Getting Started with Create React App](#gettingStarted)
+- [Getting Started](#gettingStarted)
 - [Instructions](#instructions)
 - [Database](#database)
-- [Available Scripts](#scripts)
 - [Goals](#goals)
 - [User Story](#userStory)
 - [Used Dependencies](#dependencies)
@@ -53,68 +52,29 @@ Pizza Time brings together delicious food and advanced technology, creating a us
 - [Contribution](#contribution)
 - [License](#license)
 
-## Getting Started with Create React App <a id="gettingStarted"></a>
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started <a id="gettingStarted"></a>
 
 To get started you need to:
 
 1. Clone the project
-2. npm install
+2. pnpm install
 3. Install listed dependencies
-4. Use available scripts, like npm start
+4. Use available scripts, like pnpm dev
 
 ## Instructions <a id="instructions"></a>
 
-- When you fork or download the project install node modules using npm install and then any additional dependencies you don't have from <a id="dependencies">Dependencies</a> list
+- When you fork or download the project install node modules using pnpm install and then any additional dependencies you don't have from <a id="dependencies">Dependencies</a> list
 
 - Next, you need to create the file name .env located outside the src file
 
 - In the .env file I am using several variables:
-1. REACT_APP_TURSO_DB_URL, REACT_APP_TURSO_DB_TOKEN & MYSQL_ATTR_SSL_CA - these variables contain information that will connect you to the Turso database. You can use the following [documentation](https://docs.turso.tech/sdk/ts/quickstart). If you use any other database you need to use the according information to connect to that database. The token can be created after registration.
+1. VITE_TURSO_DB_URL, VITE_TURSO_DB_TOKEN & MYSQL_ATTR_SSL_CA - these variables contain information that will connect you to the Turso database. You can use the following [documentation](https://docs.turso.tech/sdk/ts/quickstart). If you use any other database you need to use the according information to connect to that database. The token can be created after registration.
 Note that the table for users in my case is named "users" and contains the following data: id | email | password | fullname | address | number.
-2. REACT_APP_USERS_URL - this is a url for Node.js server. First, it's better to run it locally and only then switch to whatever you want. If you want to run the server locally the value of this variable should be http://localhost:3000/users. In this project I set up backend using Vercel. You can google "How to Deploy Your Node.js Backend Project to Vercel" and set up your own backend.
-3. REACT_APP_CAPTCHA_URL - the same logic works for this backedn url which this time is used for captcha verification. Locally, the url value should be http://localhost:3000/verify-recaptcha.
-4. REACT_APP_CAPTCHA_KEY & REACT_APP_CAPTCHA_SECRET - both values can be found once you create an account for reCaptcha at https://www.google.com/recaptcha/about/. Please use their documentation for better understanding.
+2. VITE_USERS_URL - this is a url for Node.js server. First, it's better to run it locally and only then switch to whatever you want. If you want to run the server locally the value of this variable should be http://localhost:3000/users. In this project I set up backend using Vercel. You can google "How to Deploy Your Node.js Backend Project to Vercel" and set up your own backend.
+3. VITE_CAPTCHA_URL - the same logic works for this backedn url which this time is used for captcha verification. Locally, the url value should be http://localhost:3000/verify-recaptcha.
+4. VITE_CAPTCHA_KEY & VITE_CAPTCHA_SECRET - both values can be found once you create an account for reCaptcha at https://www.google.com/recaptcha/about/. Please use their documentation for better understanding.
 
 - Once you set up the variables, you can run the server on one port, if you use local server and the website on another port. 
-
-## Available Scripts <a id="scripts"></a>
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single-build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 
 ## Database <a id="database"></a>
@@ -157,12 +117,12 @@ I want to be able to sort the menu by categories, as well as be able to find som
 
 ## Contribution <a id="contribution"></a>
 
-This project serves as a personal portfolio website to show off my personal skills. I do not accept any contributions like pull requests to this project however if you have any suggestions or ideas feel free to message me, send me a message via a contact form on the website, or submit an idea in the [discussions](https://github.com/catherineisonline/pizza-time-with-react/discussions). Otherwise, you are free to fork this project and change it for your own purposes. 
+This project serves as a personal portfolio website to show off my personal skills. I do not accept any contributions like pull requests to this project however if you have any suggestions or ideas feel free to message me or submit an idea in the [discussions](https://github.com/catherineisonline/pizza-time-with-react/discussions). Otherwise, you are free to fork this project and change it for your own purposes. 
 
 ## License  <a id="license"></a>
 This project is released under the MIT [LICENSE](https://github.com/catherineisonline/pizza-time-with-react/blob/main/LICENSE). You can find the specific terms and conditions outlined in the LICENSE file. This means you're free to utilize, modify, and distribute the project according to the terms of the MIT License.
 
 #### Build Your Portfolio:
-Feel free to incorporate this project into your personal portfolio! Showcase your skills and creativity by featuring your adaptations or implementations of this project. Just make sure to follow the guidelines of the MIT License while doing so. At the same time, I do not recommend copy pasting this project into your portoflio and claiming it as your own until you read the code and understand the logic or rewrite it your own logic.
+Feel free to incorporate this project into your personal portfolio! Showcase your skills and creativity by featuring your adaptations or implementations of this project. Just make sure to follow the guidelines of the MIT License while doing so. At the same time, I do not recommend copy pasting this project into your portoflio and claiming it as your own until you read the code and understand the logic or rewrite it.
 
 Happy coding!

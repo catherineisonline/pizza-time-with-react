@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddToCartButton from "../cart/AddToCartButton";
 import Attribute from "../menu/Attribute";
-import { allProductsData } from "../../data/AllProductsData.js";
+import { allProductsData } from "../../data/AllProductsData";
 import { Link } from "react-router-dom";
 import './single-item.css'
 const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {

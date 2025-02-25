@@ -41,7 +41,7 @@ const Menu = ({ allProducts,
   useEffect(() => {
     document.title = `${activeCategory} | Pizza Time`;
     resetPagination()
-  },[activeCategory])
+  }, [activeCategory])
 
   return (
     <motion.main
@@ -58,30 +58,30 @@ const Menu = ({ allProducts,
         resetPagination={resetPagination}
         findMenuItem={findMenuItem}
       />
-        <article className="menu__items">
-        <AnimatePresence mode="wait">
-        {currentProducts.length === 0 ?
-        <p className="menu__not-found">No results found...</p> :
-          currentProducts.map((singleProduct) => (
-            <motion.div
+      <article className="menu__items">
+        <AnimatePresence mode="sync">
+          {currentProducts.length === 0 ?
+            <p className="menu__not-found">No results found...</p> :
+            currentProducts.map((singleProduct) => (
+              <motion.div
                 key={singleProduct.id}
-                initial={{ opacity: 0}}
+                initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-            <MenuGridItem
-              key={singleProduct.id}
-              singleProduct={singleProduct}
-              handleAddProduct={handleAddProduct}
-              handleRemoveProduct={handleRemoveProduct}
-            />
-            </motion.div>
-          ))
+                <MenuGridItem
+                  key={singleProduct.id}
+                  singleProduct={singleProduct}
+                  handleAddProduct={handleAddProduct}
+                  handleRemoveProduct={handleRemoveProduct}
+                />
+              </motion.div>
+            ))
           }
-          </AnimatePresence>
-          <ScrollButton />
-        </article> 
+        </AnimatePresence>
+        <ScrollButton />
+      </article>
 
       <ReactPaginate
         className="pagination"
@@ -89,8 +89,8 @@ const Menu = ({ allProducts,
         nextLabel=" &#62;"
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
-        pageCount={pageCountProducts}
-        forcePage = {currentPage}
+        pageCount={Math.max(1, pageCountProducts)}
+        forcePage={currentPage}
         previousLabel="&#60;"
         renderOnZeroPageCount={null}
       />
