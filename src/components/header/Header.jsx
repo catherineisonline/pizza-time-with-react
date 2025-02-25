@@ -4,7 +4,7 @@ import openMenu from '../../assets/images/open-menu.svg'
 import closeMenu from '../../assets/images/close-menu.svg'
 import { Link, NavLink } from 'react-router-dom'
 import Cart from '../../assets/images/cart-icon-dark.png'
-import SuccessMsg from '../../components/SuccessMsg'
+import SuccessMsg from '../SuccessMsg'
 import ResetLocation from '../../helpers/ResetLocation'
 import './header.css'
 

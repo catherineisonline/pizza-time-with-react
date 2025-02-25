@@ -2,9 +2,9 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 //components
 import CheckoutForm from "./CheckoutForm";
-import EmptyCart from "../cart/EmptyCart.js";
+import EmptyCart from "../cart/EmptyCart";
 import "./checkout.css"
-import CheckoutItem from "./CheckoutItem.js";
+import CheckoutItem from "./CheckoutItem";
 const Checkout = ({ cartItems,
   productsQuantity,
   totalPayment,
@@ -17,12 +17,12 @@ const Checkout = ({ cartItems,
         <EmptyCart />
       ) : (
         <article className="checkout__inner">
-      {cartItems.map((cartItem) => (
-        <CheckoutItem
-          key={uuidv4()}
-          cartItem={cartItem}
-        />
-      ))}
+          {cartItems.map((cartItem) => (
+            <CheckoutItem
+              key={uuidv4()}
+              cartItem={cartItem}
+            />
+          ))}
           <CheckoutForm
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}

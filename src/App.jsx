@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Header from './components/header/Header.js';
+import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import {
   About,
@@ -14,20 +14,19 @@ import {
   Register,
   SingleItem,
 } from './routes/index';
-import { allProductsData } from './data/AllProductsData.js';
+import { allProductsData } from './data/AllProductsData';
 import { AllCategories } from './data/AllCategories';
-// import CheckoutSummary from './routes/checkout/CheckoutSummary.js';
-import CartTotals from './routes/cart/CartTotals.js';
-import LoginModal from './components/login/LoginModal.js';
-import CartItem from './routes/cart/CartItem.js';
-import NotFound from './routes/not-found/NotFound.js';
-import Refunds from './routes/refunds/Refunds.js';
-import Terms from './routes/terms/Terms.js';
-import Privacy from './routes/privacy/Privacy.js';
-import Careers from './routes/careers/Careers.js';
-import BlogPost from './routes/blog-post/BlogPost.js';
-import Profile from './routes/profile/Profile.js';
-import ResetLocation from './helpers/ResetLocation.js';
+import CartTotals from './routes/cart/CartTotals';
+import LoginModal from './components/login/LoginModal';
+import CartItem from './routes/cart/CartItem';
+import NotFound from './routes/not-found/NotFound';
+import Refunds from './routes/refunds/Refunds';
+import Terms from './routes/terms/Terms';
+import Privacy from './routes/privacy/Privacy';
+import Careers from './routes/careers/Careers';
+import BlogPost from './routes/blog-post/BlogPost';
+import Profile from './routes/profile/Profile';
+import ResetLocation from './helpers/ResetLocation';
 
 function App() {
   const [allCategories, setAllCategories] = useState([]);
@@ -52,7 +51,7 @@ function App() {
   const getUser = async (id) => {
     try {
       const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
-      const body = await response.json();
+      const body = await responseon();
       setCurrentUser(body.data[0]);
       const jsonUser = JSON.stringify(body.data[0]);
       sessionStorage.setItem('currentUser', jsonUser);
