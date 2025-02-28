@@ -1,11 +1,11 @@
 import { Router } from "express";
 import fetch from 'node-fetch';
-
 const captchaRouter = Router();
+const captchaSecret = process.env.VITE_CAPTCHA_SECRET;
 
 export const checkCaptcha = (req, res) => {
     const { token } = req.body;
-    const secret = import.meta.env.VITE_CAPTCHA_SECRET; // Replace with your own reCAPTCHA secret key
+    const secret = captchaSecret; // Replace with your own reCAPTCHA secret key
     const uri = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`;
     fetch(uri, {
         method: "post",
