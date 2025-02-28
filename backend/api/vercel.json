@@ -20,7 +20,7 @@
             "dest": "index.mjs"
         },
         {
-            "src": "/users/:email",
+            "src": "/users/email/:email",
             "dest": "index.mjs"
         },
         {
