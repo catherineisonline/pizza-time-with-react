@@ -29,3 +29,77 @@
     top: 0;
     z-index: 3;
 }
+
+.hero__info {
+    padding: 1rem;
+}
+.hero__info {
+    position: absolute;
+    z-index: 4;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    overflow-x: hidden;
+}
+.hero__info span {
+    color: var(--pizza-red);
+    font-family: var(--nothing-font);
+    font-size: 2rem;
+}
+
+.hero__info h1 {
+    text-transform: uppercase;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    line-height: 3rem;
+    color: var(--white);
+}
+
+.hero__info p {
+    font-size: 1rem;
+}
+
+.hero__interaction {
+    gap: 1.3rem;
+    box-sizing: content-box;
+}
+
+.hero__interaction a:first-child {
+    color: var(--light-black);
+    background-color: var(--yellow);
+    border: 1px solid transparent;
+}
+
+.hero__interaction a:last-child {
+    border-width: 1px;
+    border-color: var(--transparent-button);
+    background-color: var(--transparent-button);
+    color: var(--light-black);
+}
+.hero__interaction a:last-child,
+.hero__interaction a:first-child {
+    transition:
+        color ease-in-out 0.3s,
+        border ease-in-out 0.3s,
+        background-color ease-in-out 0.3s;
+}
+
+@media screen and (hover: hover) {
+    .hero__interaction a:last-child:hover {
+        color: var(--light-black);
+        background-color: var(--yellow);
+        border: 1px solid transparent;
+    }
+    .hero__interaction a:first-child:hover {
+        border: 1px solid var(--yellow);
+        color: var(--light-black);
+        background-color: transparent;
+        border-color: var(--whitish-gray);
+        background-color: var(--whitish-gray);
+    }
+}
+@media screen and (min-width: 1025px) {
+    .hero__info p {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
