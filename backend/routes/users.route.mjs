@@ -1,16 +1,25 @@
 import { Router } from "express";
-import { createUser, deleteUser, getUser, getUsers, updateUser } from "../controllers/users.controller.mjs";
+import {
+  createUser,
+  deleteUser,
+  getUser,
+  getUserByEmail,
+  getUsers,
+  updateUser,
+} from "../controllers/users.controller.mjs";
 
 const usersRouter = Router();
 
-usersRouter.get('/', getUsers);
+usersRouter.get("/", getUsers);
 
-usersRouter.get('/:id', getUser);
+usersRouter.get("/:id", getUser);
 
-usersRouter.post('/', createUser);
+usersRouter.get("/:email", getUserByEmail);
 
-usersRouter.put('/:id', updateUser);
+usersRouter.post("/", createUser);
 
-usersRouter.delete('/:id', deleteUser);
+usersRouter.put("/:id", updateUser);
+
+usersRouter.delete("/:id", deleteUser);
 
 export default usersRouter;

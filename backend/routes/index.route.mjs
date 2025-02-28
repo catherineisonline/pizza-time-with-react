@@ -5,15 +5,13 @@ import shortenerRouter from "./shortener.route.mjs";
 
 const indexRouter = Router();
 
+indexRouter.get("/", (req, res) => {
+  res.send("Server Deployed 🥳");
+});
+indexRouter.use("/users", usersRouter);
 
-indexRouter.get('/', (req, res) => {
-    res.send('Server Deployed 🥳');
-})
-indexRouter.use('/users', usersRouter);
+indexRouter.use("/verify-recaptcha", captchaRouter);
 
-indexRouter.use('/verify-recaptcha', captchaRouter);
-
-indexRouter.use('/shortener', shortenerRouter);
-
+indexRouter.use("/shortener", shortenerRouter);
 
 export default indexRouter;
