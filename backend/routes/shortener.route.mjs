@@ -1,8 +1,8 @@
 import { Router } from "express";
 import fetch from "node-fetch";
-const SHORTENER_API_URL = import.meta.env.SHORTENER_API_URL;
-const SHORTENER_API_KEY = import.meta.env.SHORTENER_API_KEY;
 const shortenerRouter = Router();
+const SHORTENER_API_URL = process.env.SHORTENER_API_URL;
+const SHORTENER_API_KEY = process.env.SHORTENER_API_KEY;
 
 export const urlShortener = async (req, res) => {
     const { inputValue } = req.body;
@@ -37,7 +37,6 @@ export const urlShortener = async (req, res) => {
             const shortenedUrl = data.data.tiny_url;
             res.json({ success: true, data: { url: shortenedUrl } });
         } else {
-            console.error('Failed to shorten URL:', data);
             res.status(500).json({ success: false, message: 'Failed to shorten URL' });
         }
     } catch (error) {
