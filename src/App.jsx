@@ -66,7 +66,7 @@ function App() {
     console.log("hi");
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_USERS_URL}/${email}`
+        `${import.meta.env.VITE_USERS_URL}/email/${email}`
       );
       const body = await response();
       console.log(body);

@@ -2,7 +2,7 @@ import client from "../config/sql.mjs";
 const query = {
   getUsers: "SELECT * FROM users",
   getUser: "SELECT * FROM users WHERE id = ?",
-  getUserByEmail: "SELECT * FROM users WHERE email = $1 LIMIT 1",
+  getUserByEmail: "SELECT * FROM users WHERE email = ? LIMIT 1",
   deleteUser: "DELETE FROM users WHERE id = ?",
   insertUserWithAddress:
     "INSERT INTO users (id, email, password, fullname, address) VALUES(?, ?, ?, ?, ?)",
