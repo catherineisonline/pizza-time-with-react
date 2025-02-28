@@ -14,6 +14,7 @@
     "express": "^4.21.2",
     "framer-motion": "^12.4.7",
     "leaflet": "^1.9.4",
+    "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-alice-carousel": "^2.9.1",
     "react-dom": "^19.0.0",
