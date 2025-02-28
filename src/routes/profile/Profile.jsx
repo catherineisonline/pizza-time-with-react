@@ -32,12 +32,11 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
         }
         else {
             const updatedFields = {};
-            // Check each field to determine if it was modified
             for (const fieldName of Object.keys(formValue)) {
                 if (formValue[fieldName] !== '' && formValue[fieldName] !== currentUser[fieldName]) {
                     updatedFields[fieldName] = formValue[fieldName];
                 } else {
-                    updatedFields[fieldName] = currentUser[fieldName]; // Keep original value
+                    updatedFields[fieldName] = currentUser[fieldName];
                 }
             }
 
@@ -57,7 +56,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
 
     const deleteUser = async (id) => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_USERS_URL}/${id}`, {
                 method: 'DELETE'
             });
             if (response.status === 200) {
@@ -86,37 +85,37 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
                 </div> :
                 editForm ?
                     <form className="profile__form" onSubmit={handleSubmit}>
-                        <hr />
+                        <hr aria-hidden="true" />
                         <section className="profile__form__info">
                             <label htmlFor="email">Email</label>
                             <input name="email" type="text" value={formValue.email} placeholder={currentUser.email} onChange={handleValidation} />
                         </section>
                         <span className="input-validation-error">{formErrors.email}</span>
-                        <hr />
+                        <hr aria-hidden="true" />
                         <section className="profile__form__info">
                             <label htmlFor="password">Password</label>
                             <input name="password" type="password" value={formValue.password} placeholder="********" onChange={handleValidation} />
                         </section>
                         <span className="input-validation-error">{formErrors.password}</span>
-                        <hr />
+                        <hr aria-hidden="true" />
                         <section className="profile__form__info">
                             <label htmlFor="fullname">Fullname</label>
                             <input name="fullname" type="text" value={formValue.fullname} placeholder={currentUser.fullname} onChange={handleValidation} />
                         </section>
                         <span className="input-validation-error">{formErrors.fullname}</span>
-                        <hr />
+                        <hr aria-hidden="true" />
                         <section className="profile__form__info">
                             <label htmlFor="address">Address</label>
                             <input name="address" type="text" value={formValue.address} placeholder={currentUser.address !== null ? currentUser.address : 'Add address...'} onChange={handleValidation} />
                         </section>
                         <span className="input-validation-error">{formErrors.address}</span>
-                        <hr />
+                        <hr aria-hidden="true" />
                         <section className="profile__form__info">
                             <label htmlFor="number">Number</label>
                             <input name="number" type="text" value={formValue.number} placeholder={currentUser.number !== null ? currentUser.number : 'Add number...'} onChange={handleValidation} />
                         </section>
                         <span className="input-validation-error">{formErrors.number}</span>
-                        <hr />
+                        <hr aria-hidden="true" />
                         <section className="profile__actions">
                             <button type="button" className="active-button-style" onClick={() => { toggleForm(); ResetLocation() }}>Cancel edit</button>
                             <button className="passive-button-style">Save profile</button>
@@ -124,36 +123,36 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
                     </form> :
                     <React.Fragment>
                         <article className="profile__info">
-                            <hr />
+                            <hr aria-hidden="true" />
                             <section className="profile__info__section">
                                 <h3>Email</h3>
                                 <p>{currentUser.email}</p>
                             </section>
-                            <hr />
+                            <hr aria-hidden="true" />
                             <section className="profile__info__section">
                                 <h3>Password</h3>
                                 <p>*********</p>
                             </section>
-                            <hr />
+                            <hr aria-hidden="true" />
                             <section className="profile__info__section">
                                 <h3>Fullname</h3>
                                 <p>{currentUser.fullname}</p>
                             </section>
-                            <hr />
+                            <hr aria-hidden="true" />
                             <section className="profile__info__section">
                                 <h3>Address</h3>
                                 {currentUser.address !== null ?
                                     <p>{currentUser.address}</p> :
                                     <p>N/A</p>}
                             </section>
-                            <hr />
+                            <hr aria-hidden="true" />
                             <section className="profile__info__section">
                                 <h3>Number</h3>
                                 {currentUser.number !== null ?
                                     <p>{currentUser.number}</p> :
                                     <p>N/A</p>}
                             </section>
-                            <hr />
+                            <hr aria-hidden="true" />
                         </article>
                         <section className="profile__actions">
                             <button type="button" className="active-button-style" onClick={() => { toggleForm(); ResetLocation() }}>Edit profile</button>
@@ -172,7 +171,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
                         </section>
                     </section>
                 </section>
-                }
+            }
         </main>
     )
 }

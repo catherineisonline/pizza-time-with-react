@@ -32,6 +32,13 @@ footer {
     font-weight: 400;
     font-size: 1rem;
 }
+.footer-active-link {
+    text-decoration: none;
+    color: var(--pizza-red);
+}
+address a {
+    color: var(--white);
+}
 .logo-styling.footer {
     margin: 0 auto;
     margin-top: 2rem;

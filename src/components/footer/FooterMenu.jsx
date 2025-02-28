@@ -2,79 +2,38 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import FooterSocials from "./FooterSocials";
 import ResetLocation from "../../helpers/ResetLocation";
-
+const footerMenu = [
+  {
+    to: "/menu",
+    label: "Menu"
+  },
+  {
+    to: "/blog",
+    label: "Blog"
+  },
+  {
+    to: "/about",
+    label: "About"
+  },
+  {
+    to: "/contact",
+    label: "Contact"
+  }
+]
 const FooterMenu = () => {
   return (
     <ul className="footer__menu  flex-container flex-column">
-      <li>
-        <NavLink
-          style={({ isActive }) =>
-            isActive
-              ? {
-                textDecoration: "none",
-                color: "#ff6240",
-              }
-              : {}
-          }
-          onClick={ResetLocation}
-          className="txt-white"
-          to="/menu"
-        >
-          Menu
-        </NavLink>
-      </li>
-
-      <li>
-        <NavLink
-          style={({ isActive }) =>
-            isActive
-              ? {
-                textDecoration: "none",
-                color: "#ff6240",
-              }
-              : {}
-          }
-          onClick={ResetLocation}
-          className="txt-white"
-          to="/blog"
-        >
-          Blog
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          style={({ isActive }) =>
-            isActive
-              ? {
-                textDecoration: "none",
-                color: "#ff6240",
-              }
-              : {}
-          }
-          onClick={ResetLocation}
-          className="txt-white"
-          to="/about"
-        >
-          About
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          style={({ isActive }) =>
-            isActive
-              ? {
-                textDecoration: "none",
-                color: "#ff6240",
-              }
-              : {}
-          }
-          onClick={ResetLocation}
-          className="txt-white"
-          to="/contact"
-        >
-          Contact
-        </NavLink>
-      </li>
+      {footerMenu.map(({ to, label }) =>
+        <li key={to}>
+          <NavLink
+            className={({ isActive }) => `txt-white ${isActive ? "footer-active-link" : ""}`}
+            aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+            onClick={ResetLocation}
+            to={to}>
+            {label}
+          </NavLink>
+        </li>
+      )}
       <li>
         <FooterSocials />
       </li>

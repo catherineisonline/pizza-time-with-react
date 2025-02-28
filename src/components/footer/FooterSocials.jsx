@@ -33,7 +33,7 @@ const FooterSocials = () => {
           <a
             href={social.href}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             aria-label={social.name}
           >
             <span aria-hidden="true">{social.name}</span>

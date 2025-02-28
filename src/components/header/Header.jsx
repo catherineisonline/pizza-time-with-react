@@ -34,7 +34,7 @@ const Header = ({ loginModal,
             src={logo}
             alt="Pizza Time logo"
           />
-          <h1>
+          <h1 translate="no">
             Pizza <span>Time</span>
           </h1>
         </NavLink>

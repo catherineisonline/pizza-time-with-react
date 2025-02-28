@@ -58,7 +58,9 @@ ul {
 img {
   display: block;
 }
-
+address {
+  font-style: normal;
+}
 /* Flex */
 .flex-container {
   display: flex;

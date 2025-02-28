@@ -3,7 +3,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha"
 import { Link } from "react-router-dom";
-//components
 import validateForm from "../../components/validateForm";
 import ResetLocation from "../../helpers/ResetLocation";
 import './contact.css'
@@ -62,10 +61,10 @@ const Contact = () => {
   }
   const verifyCaptcha = async (captchaToken) => {
     try {
-      const response = await fetch(process.env.REACT_APP_CAPTCHA_URL, {
+      const response = await fetch(import.meta.env.VITE_CAPTCHA_URL, {
         method: 'POST',
         body: JSON.stringify({
-          secret: process.env.REACT_APP_CAPTCHA_SECRET,
+          secret: import.meta.env.VITE_CAPTCHA_SECRET,
           captchaToken
         }),
         headers: {
@@ -139,7 +138,7 @@ const Contact = () => {
               />
             </div>
             <span className="input-validation-error">{formError.message}</span>
-            <ReCAPTCHA ref={captchaRef} sitekey={process.env.REACT_APP_CAPTCHA_KEY} theme="dark" />
+            <ReCAPTCHA ref={captchaRef} sitekey={import.meta.env.VITE_CAPTCHA_KEY} theme="dark" />
             <span className="input-validation-error">{captchaError}</span>
             <button type="submit" className="active-button-style" >
               Send
@@ -147,12 +146,12 @@ const Contact = () => {
           </form>
       }
       <section className="contact__cover"></section>
-        <section className="contact__inner pop-font">
-          <h2 className="">Contact us</h2>
-          <p>
-            We greatly anticipate your response and are eager to receive any inquiries you might have. Please do not hesitate to reach out to us should you require any further clarification or assistance. Your feedback and questions are of utmost importance to us, and we are here to provide the support you need. Looking forward to hearing from you!
-          </p>
-        </section>
+      <section className="contact__inner pop-font">
+        <h2 className="">Contact us</h2>
+        <p>
+          We greatly anticipate your response and are eager to receive any inquiries you might have. Please do not hesitate to reach out to us should you require any further clarification or assistance. Your feedback and questions are of utmost importance to us, and we are here to provide the support you need. Looking forward to hearing from you!
+        </p>
+      </section>
     </motion.main>
   );
 }

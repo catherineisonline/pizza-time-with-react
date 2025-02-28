@@ -1,11 +1,10 @@
 import { Router } from "express";
 import fetch from "node-fetch";
-const SHORTENER_API_URL = process.env.SHORTENER_API_URL;
-const SHORTENER_API_KEY = process.env.SHORTENER_API_KEY;
+const SHORTENER_API_URL = import.meta.env.SHORTENER_API_URL;
+const SHORTENER_API_KEY = import.meta.env.SHORTENER_API_KEY;
 const shortenerRouter = Router();
 
 export const urlShortener = async (req, res) => {
-    // const { inputValue } = req.query;
     const { inputValue } = req.body;
     if (!inputValue) {
         return res.status(400).json({ success: false, message: 'URL parameter is required' });

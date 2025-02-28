@@ -16,7 +16,7 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
 
   const getUsers = async () => {
     try {
-      const response = await fetch(process.env.REACT_APP_USERS_URL);
+      const response = await fetch(import.meta.env.VITE_USERS_URL);
       const body = await response.json();
       return body.data;
     }
@@ -52,11 +52,8 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
       return;
     }
     else {
-      //find all users
       const existingUsers = await getUsers(formValue.email.toLowerCase());
-      //filter existence by email
       const findByEmail = existingUsers.filter((u) => u.email === formValue.email.toLowerCase());
-      // if user not found by email
       if (findByEmail.length === 0) {
         setLoading(false);
         setSubmit(false);

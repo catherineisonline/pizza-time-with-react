@@ -20,7 +20,7 @@ const Careers = () => {
                         <section>
                             <h4>{career.title}</h4>
                             <p>{career.description}</p>
-                            <hr />
+                            <hr aria-hidden="true" />
                         </section>
                         <Link to="/contact" onClick={ResetLocation}>Apply</Link>
                     </section>

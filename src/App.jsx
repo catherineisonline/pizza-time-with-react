@@ -42,7 +42,7 @@ function App() {
   const [loginModalWindow, setLoginModalWindow] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
-  // Wrapping WebSocket creation to log usage
+
   const OriginalWebSocket = WebSocket;
   window.WebSocket = function (...args) {
     console.log('WebSocket created with args:', args);
@@ -50,7 +50,7 @@ function App() {
   };
   const getUser = async (id) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`);
+      const response = await fetch(`${import.meta.env.VITE_USERS_URL}/${id}`);
       const body = await responseon();
       setCurrentUser(body.data[0]);
       const jsonUser = JSON.stringify(body.data[0]);
@@ -67,7 +67,7 @@ function App() {
 
   const updateUser = async (id, user) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_USERS_URL}/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_USERS_URL}/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -154,8 +154,7 @@ function App() {
   const getAllProducts = () => {
     setAllProducts(allProductsData);
   };
-  // CART LOGIC
-  /*******************************************************/
+
 
   const CheckRepeatableProducts = (cartItems, targetProduct, userSelectedAttributes) => {
 
@@ -347,11 +346,8 @@ function App() {
   };
 
 
-  // Other
-  /*******************************************************/
   const getProductsByCategory = (category) => {
     let separateCategoriesByname = []
-    //Separate arrays by category names
     const separateCategories = allProductsData.reduce(function (
       singleCategory,
       singleItem,
@@ -378,7 +374,7 @@ function App() {
     result.map((categories) => {
       return singleCategoryArray.push(categories)
     })
-    //Change products by category
+
     separateCategoriesByname.forEach((cate) => {
       if (cate === category) {
         return setAllProducts(separateCategories[category])
@@ -490,13 +486,6 @@ function App() {
           path="/checkout"
           element={
             <Checkout
-              // checkoutSummary={
-              //   <CheckoutSummary
-              //     cartItems={cartItems}
-              //     handleAddProduct={handleAddProduct}
-              //     handleRemoveProduct={handleRemoveProduct}
-              //   />
-              // }
               totalPayment={totalPayment}
               cartItems={cartItems}
               productsQuantity={productsQuantity}

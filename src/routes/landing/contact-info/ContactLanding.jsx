@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-//Leaflet
 import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
@@ -30,9 +29,7 @@ const ContactLanding = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setHideMap(false);
-          // console.log('ijooj')
-          // element.style.display = `inline-block`;
-          observer.unobserve(element); // Unobserve once loaded
+          observer.unobserve(element);
 
         }
       });
@@ -44,20 +41,19 @@ const ContactLanding = () => {
 
     return () => {
       if (element) {
-        // setHideMap(true)
         observer.unobserve(element);
       }
     };
   }, []);
   return (
-    <motion.article className="homepage__contact flex-container flex-column" ref={ref}
+    <motion.section aria-labelledby="contact-title" className="homepage__contact flex-container flex-column" ref={ref}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 3 }}
     >
-      {!hideMap && < div
-        className="map">
+      {!hideMap && <section
+        className="map" aria-label="Company Location">
         <MapContainer
           id="map"
           center={position}
@@ -72,37 +68,35 @@ const ContactLanding = () => {
           <Marker position={position}>
           </Marker>
         </MapContainer>
-      </div>}
-      <div
-        className="contact__info"
-      >
-        <h3>Contact Us</h3>
+      </section>}
+      <section className="contact__info">
+        <h3 id="contact-title">Contact Us</h3>
         <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you!</p>
-        <section>
+        <div>
           <h4>Customer Support:</h4>
           <p>Our dedicated customer support team is ready to assist you with any inquiries you may have.</p>
           <ul>
             <li>- Email: support@pizzatime.com</li>
             <li>- Phone: 000 (000) 123 4567</li>
-            <li>- Hours: Monday - Friday, 8:00am - 9:00pm (EST)</li>
+            <li>- Hours: Monday - Friday, <time dateTime="08:00">8:00am</time> - <time dateTime="21:00">9:00pm</time>(EST)</li>
           </ul>
-        </section>
-        <section>
+        </div>
+        <div>
           <h4>General Inquiries:</h4>
           <p>If you have general questions about our company, partnerships, or anything else, feel free to get in touch.</p>
           <ul>
             <li>- Email: info@pizzatime.com</li>
           </ul>
-        </section>
-        <section>
+        </div>
+        <div>
           <h4>Feedback and Suggestions:</h4>
           <p>We value your feedback and are always striving to improve. If you have any suggestions, comments, or ideas on how we can enhance our offerings, please let us know.</p>
           <ul>
             <li>- Email: feedback@pizzatime.com</li>
           </ul>
-        </section>
-      </div>
-    </motion.article>
+        </div>
+      </section>
+    </motion.section>
   );
 }
 

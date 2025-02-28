@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <footer className="flex-container flex-column txt-center txt-white pop-font">
       <FooterMenu />
-      <hr />
+      <hr aria-hidden="true" />
       <FooterLegal />
-      <hr />
+      <hr aria-hidden="true" />
       <FooterContact />
     </footer>
   );
