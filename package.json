@@ -10,6 +10,7 @@
     "preview": "pnpm serve -s dist"
   },
   "dependencies": {
+    "express": "^4.21.2",
     "framer-motion": "^12.4.7",
     "leaflet": "^1.9.4",
     "react": "^19.0.0",
