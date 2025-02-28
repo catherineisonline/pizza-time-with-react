@@ -7,10 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "pnpm serve -s dist"
+    "preview": "pnpm serve -s dist",
+    "check-deps": "npm-check"
   },
   "dependencies": {
+    "@libsql/client": "^0.14.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "framer-motion": "^12.4.7",
     "leaflet": "^1.9.4",
@@ -36,6 +39,9 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "globals": "^15.15.0",
-    "vite": "^6.2.0"
+    "npm-check": "^6.0.1",
+    "terser-webpack-plugin": "^5.3.12",
+    "vite": "^6.2.0",
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }
