@@ -6,6 +6,7 @@ import {
   getUserByEmail,
   getUsers,
   updateUser,
+  loginUsers,
 } from "../controllers/users.controller.mjs";
 
 const usersRouter = Router();
