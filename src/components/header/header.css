@@ -15,7 +15,10 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-/* Logo */
+.header-active-link {
+    text-decoration: none;
+    color: var(--pizza-red);
+}
 .logo-styling {
     align-items: center;
     width: 5rem;
@@ -87,8 +90,14 @@ header {
     cursor: pointer;
     margin-right: 0;
     object-fit: contain;
+    background-color: transparent;
+    border: none;
 }
-.header__nav__menu.active .header__nav__hamburger {
+.header__nav__hamburger img {
+    width: 100%;
+    height: auto;
+}
+.header__nav__menu.active .header__nav__hamburger img {
     content: url("../../assets/images/close-btn.svg");
 }
 .hero__info {
@@ -136,29 +145,21 @@ header {
     background-color: var(--transparent-button);
     color: var(--light-black);
 }
-.hero__interaction a:last-child,
-.hero__interaction a:first-child,
-.header__nav__menu a,
-.logo,
-.login-and-cart .cart-btn {
-    -moz-transition: all ease-in-out 0.3s;
-    -o-transition: all ease-in-out 0.3s;
-    -webkit-transition: all ease-in-out 0.3s;
-    -ms-transition: all ease-in-out 0.3s;
-    transition: all ease-in-out 0.3s;
-}
 
+.header__nav__menu a {
+    transition: color ease-in-out 0.3s;
+}
+.logo {
+    transition: transform ease-in-out 0.3s;
+}
+.hero__interaction a:last-child,
+.hero__interaction a:first-child {
+    transition:
+        color ease-in-out 0.3s,
+        border ease-in-out 0.3s,
+        background-color ease-in-out 0.3s;
+}
 @media screen and (hover: hover) {
-    .header__nav__menu a:hover,
-    .logo:hover,
-    .hero__interaction a:last-child:hover,
-    .hero__interaction a:first-child:hover {
-        -moz-transition: all ease-in-out 0.3s;
-        -o-transition: all ease-in-out 0.3s;
-        -webkit-transition: all ease-in-out 0.3s;
-        -ms-transition: all ease-in-out 0.3s;
-        transition: all ease-in-out 0.3s;
-    }
     .header__nav__menu a:hover {
         color: var(--pizza-red);
     }
@@ -183,11 +184,6 @@ header {
         border-color: var(--pizza-red);
         color: var(--white);
         opacity: 0.5;
-        -moz-transition: all ease-in-out 0.3s;
-        -o-transition: all ease-in-out 0.3s;
-        -webkit-transition: all ease-in-out 0.3s;
-        -ms-transition: all ease-in-out 0.3s;
-        transition: all ease-in-out 0.3s;
     }
     .cart-btn:hover {
         opacity: 0.8;
