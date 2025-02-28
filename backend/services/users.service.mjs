@@ -29,7 +29,13 @@ export const getUser = (id) => {
   return new Promise((resolve, reject) => {
     client
       .execute({ sql: query.getUser, args: [id] })
-      .then((result) => (result ? resolve(true) : resolve(false)))
+      .then((result) => {
+        if (!result || !result.rows.length) {
+          resolve(false); // User not found
+        } else {
+          resolve(true); // User exists, but we don't return the actual data
+        }
+      })
       .catch((err) => reject(err));
   });
 };
