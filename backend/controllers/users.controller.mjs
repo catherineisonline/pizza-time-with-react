@@ -34,7 +34,7 @@ export const getUserByEmail = (req, res) => {
     .then((result) => {
       res.status(200).json({
         message: "User by email retrieved",
-        data: result.rows,
+        data: result,
       });
     })
     .catch((err) => {

@@ -29,7 +29,7 @@ export const getUser = (id) => {
   return new Promise((resolve, reject) => {
     client
       .execute({ sql: query.getUser, args: [id] })
-      .then((result) => resolve(result))
+      .then((result) => (result ? resolve(true) : resolve(false)))
       .catch((err) => reject(err));
   });
 };
