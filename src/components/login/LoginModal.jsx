@@ -11,7 +11,7 @@ const LoginModal = ({
   hideMenu,
   validLogin,
   getUser,
-  getUserByEmail,
+  loginUser,
 }) => {
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({ email: "", password: "" });
@@ -55,7 +55,10 @@ const LoginModal = ({
       setLoading(false);
       return;
     }
-    const exists = await getUserByEmail(formValue.email.toLowerCase());
+    const exists = await loginUser(
+      formValue.email.toLowerCase(),
+      formValue.password
+    );
     console.log(exists);
     setLoading(false);
     // const findByEmail = existingUsers.find(

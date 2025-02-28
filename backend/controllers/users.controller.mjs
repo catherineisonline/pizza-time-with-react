@@ -1,4 +1,5 @@
 import * as userServices from "../services/users.service.mjs";
+import bcrypt from "bcrypt";
 
 export const getUsers = (req, res) => {
   userServices
@@ -27,20 +28,35 @@ export const getUser = (req, res) => {
       res.status(500).send(err);
     });
 };
-export const getUserByEmail = (req, res) => {
-  const { email } = req.params;
+
+export const loginUsers = (req, res) => {
+  const { email, password } = req.body;
+
   userServices
     .getUserByEmail(email)
     .then((result) => {
-      res.status(200).json({
-        message: "User by email retrieved",
-        data: result,
+      if (!result || !result.rows.length) {
+        return res.status(404).json({ message: "User not found" });
+      }
+      const user = result.rows[0];
+      bcrypt.compare(password, user.password, (err, isMatch) => {
+        if (err) {
+          return res.status(500).send(err);
+        }
+        if (!isMatch) {
+          return res.status(401).json({ message: "Invalid password" });
+        }
+        res.status(200).json({
+          message: "Login successful",
+          data: { id: user.id, email: user.email, fullname: user.fullname },
+        });
       });
     })
     .catch((err) => {
       res.status(500).send(err);
     });
 };
+
 export const createUser = (req, res) => {
   const user = req.body;
 

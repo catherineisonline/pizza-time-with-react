@@ -20,7 +20,7 @@
             "dest": "index.mjs"
         },
         {
-            "src": "/users/login",
+            "src": "/login",
             "dest": "index.mjs"
         },
         {

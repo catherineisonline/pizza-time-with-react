@@ -62,12 +62,14 @@ function App() {
       return false;
     }
   };
-  const getUserByEmail = async (email) => {
-    console.log("hi");
+  const loginUser = async (email, password) => {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_USERS_URL}/email/${email}`
-      );
+      const response = await fetch(`${import.meta.env.VITE_LOGIN_URL}/login`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
       const body = await response();
       console.log(body);
       // setCurrentUser(body.data[0]);
@@ -450,7 +452,7 @@ function App() {
             hideMenu={hideMenu}
             validLogin={validLogin}
             getUser={getUser}
-            getUserByEmail={getUserByEmail}
+            loginUser={loginUser}
           />
         }
         activateLoginModal={activateLoginModal}
