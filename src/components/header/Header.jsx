@@ -7,7 +7,28 @@ import Cart from '../../assets/images/cart-icon-dark.png'
 import SuccessMsg from '../SuccessMsg'
 import ResetLocation from '../../helpers/ResetLocation'
 import './header.css'
-
+const headerMenu = [
+  {
+    to: "/",
+    label: "Home"
+  },
+  {
+    to: "/menu",
+    label: "Menu"
+  },
+  {
+    to: "/blog",
+    label: "Blog"
+  },
+  {
+    to: "/about",
+    label: "About"
+  },
+  {
+    to: "/contact",
+    label: "Contact"
+  }
+]
 const Header = ({ loginModal,
   productsQuantity,
   handleLogout,
@@ -16,9 +37,9 @@ const Header = ({ loginModal,
   hideMenu,
   validLogin, activateLoginModal }) => {
   return (
-    <header>
+    <header aria-labelledby='title'>
       {loginModal}
-      <nav className="header__nav flex-container flex-row txt-center">
+      <nav className="header__nav flex-container flex-row txt-center" aria-label='Header Menu'>
         <NavLink
           onClick={() => {
             ResetLocation()
@@ -34,132 +55,38 @@ const Header = ({ loginModal,
             src={logo}
             alt="Pizza Time logo"
           />
-          <h1 translate="no">
+          <h1 id='title' translate="no">
             Pizza <span>Time</span>
           </h1>
         </NavLink>
         <ul className={`header__nav__menu flex-row pop-font ${isModalActive ? 'active' : ''}`}>
-          <li>
+          {headerMenu.map(({ to, label }) =>
+            <li key={to}>
+              <NavLink
+                onClick={() => {
+                  ResetLocation()
+                  hideMenu()
+                }}
+                className={({ isActive }) => `txt-white ${isActive ? "header-active-link" : ""}`}
+                aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+                to={to}
+              >
+                {label}
+              </NavLink>
+            </li>)}
+          {validLogin && <li>
             <NavLink
               onClick={() => {
                 ResetLocation()
                 hideMenu()
               }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                    textDecoration: 'none',
-                    color: '#ff6240',
-                  }
-                  : {}
-              }
-              className="txt-white"
-              to="/"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation()
-                hideMenu()
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                    textDecoration: 'none',
-                    color: '#ff6240',
-                  }
-                  : {}
-              }
-              className="txt-white"
-              to="/menu"
-            >
-              Menu
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation()
-                hideMenu()
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                    textDecoration: 'none',
-                    color: '#ff6240',
-                  }
-                  : {}
-              }
-              className="txt-white"
-              to="/blog"
-            >
-              Blog
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation()
-                hideMenu()
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                    textDecoration: 'none',
-                    color: '#ff6240',
-                  }
-                  : {}
-              }
-              className="txt-white"
-              to="/about"
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation()
-                hideMenu()
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                    textDecoration: 'none',
-                    color: '#ff6240',
-                  }
-                  : {}
-              }
-              className="txt-white"
-              to="/contact"
-            >
-              Contact
-            </NavLink>
-          </li>
-          {validLogin ? <li>
-            <NavLink
-              onClick={() => {
-                ResetLocation()
-                hideMenu()
-              }}
-              style={({ isActive }) =>
-                isActive
-                  ? {
-                    textDecoration: 'none',
-                    color: '#ff6240',
-                  }
-                  : {}
-              }
-              className="txt-white"
+              className={({ isActive }) => `txt-white ${isActive ? "header-active-link" : ""}`}
+              aria-current={({ isActive }) => (isActive ? "page" : undefined)}
               to="/profile"
             >
               Profile
             </NavLink>
-          </li> : null}
+          </li>}
           <li>
             <div className="login-and-cart">
               {validLogin ? (
@@ -174,7 +101,7 @@ const Header = ({ loginModal,
                   Log out
                 </Link>
               ) : (
-                <div
+                <button
                   className="passive-button-style txt-white"
                   onClick={() => {
                     ResetLocation()
@@ -182,7 +109,7 @@ const Header = ({ loginModal,
                   }}
                 >
                   Log in
-                </div>
+                </button>
               )}
               <NavLink
                 className="cart-btn active-button-style txt-white"
@@ -192,21 +119,23 @@ const Header = ({ loginModal,
                   hideMenu()
                 }}
               >
-                <img src={Cart} alt="" aria-hidden="true" />
+                <img src={Cart} alt="Shopping Cart" />
                 <p>Cart</p>
                 <p>({productsQuantity})</p>
               </NavLink>
             </div>
           </li>
         </ul>
-        <img
-          width="80"
-          height="80"
+        <button
           className="header__nav__hamburger"
-          src={isModalActive ? closeMenu : openMenu}
-          alt={isModalActive ? "Close menu" : "Open menu"}
+          aria-label={isModalActive ? "Close menu" : "Open menu"}
+          aria-expanded={isModalActive}
+          aria-controls="main-menu"
           onClick={showModal}
-        />
+        >
+          <img width="80" height="80" src={isModalActive ? closeMenu : openMenu} alt="" />
+        </button>
+
       </nav>
       <SuccessMsg />
     </header>
