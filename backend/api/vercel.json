@@ -20,6 +20,14 @@
             "dest": "index.mjs"
         },
         {
+            "src": "/users/:email",
+            "dest": "index.mjs"
+        },
+        {
+            "src": "/users/login",
+            "dest": "index.mjs"
+        },
+        {
             "src": "/verify-recaptcha",
             "dest": "index.mjs"
         },
