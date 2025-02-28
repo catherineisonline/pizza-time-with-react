@@ -8,19 +8,15 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "index.mjs"
-        },
-        {
             "src": "/users",
             "dest": "index.mjs"
         },
         {
-            "src": "/users/:id",
+            "src": "/users/email/:email",
             "dest": "index.mjs"
         },
         {
-            "src": "/users/email/:email",
+            "src": "/users/:id",
             "dest": "index.mjs"
         },
         {
@@ -33,6 +29,10 @@
         },
         {
             "src": "/shortener",
+            "dest": "index.mjs"
+        },
+        {
+            "src": "/(.*)",
             "dest": "index.mjs"
         }
     ]
