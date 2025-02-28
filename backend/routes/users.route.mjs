@@ -11,10 +11,8 @@ import {
 const usersRouter = Router();
 
 usersRouter.get("/", getUsers);
-
-usersRouter.get("/:id", getUser);
-
 usersRouter.get("/email/:email", getUserByEmail);
+usersRouter.get("/:id", getUser);
 
 usersRouter.post("/", createUser);
 
