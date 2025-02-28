@@ -14,6 +14,7 @@ export const getUsers = (req, res) => {
       res.status(500).send(err);
     });
 };
+
 export const getUser = (req, res) => {
   const { id } = req.params;
   userServices
@@ -28,7 +29,20 @@ export const getUser = (req, res) => {
       res.status(500).send(err);
     });
 };
-
+export const getUserByEmail = (req, res) => {
+  const { email } = req.params;
+  userServices
+    .getUser(email)
+    .then((result) => {
+      res.status(200).json({
+        message: "User by email retrieved",
+        data: result.rows,
+      });
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+};
 export const loginUsers = (req, res) => {
   const { email, password } = req.body;
 
