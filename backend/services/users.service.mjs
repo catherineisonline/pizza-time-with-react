@@ -39,7 +39,7 @@ export const getUserByEmail = (email) => {
       .catch((err) => reject(err));
   });
 };
-export const loginUsers = (req, res) => {
+export const loginUser = (req, res) => {
   const { email, password } = req.body;
   userServices
     .getUserByEmail(email)

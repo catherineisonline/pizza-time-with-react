@@ -6,14 +6,14 @@ import {
   getUserByEmail,
   getUsers,
   updateUser,
-  loginUsers,
+  loginUser,
 } from "../controllers/users.controller.mjs";
 
 const usersRouter = Router();
 
 usersRouter.get("/", getUsers);
 usersRouter.get("/email/:email", getUserByEmail);
-usersRouter.get("/login", loginUsers);
+usersRouter.get("/login", loginUser);
 usersRouter.get("/:id", getUser);
 usersRouter.post("/", createUser);
 usersRouter.put("/:id", updateUser);

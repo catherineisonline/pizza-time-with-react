@@ -43,7 +43,7 @@ export const getUserByEmail = (req, res) => {
       res.status(500).send(err);
     });
 };
-export const loginUsers = (req, res) => {
+export const loginUser = (req, res) => {
   const { email, password } = req.body;
 
   userServices
