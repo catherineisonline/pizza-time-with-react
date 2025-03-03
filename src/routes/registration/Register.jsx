@@ -32,14 +32,14 @@ const Register = ({ activateLoginModal }) => {
 
   const createUser = async (user) => {
     const users = await getUsers();
-    const repetitiveEmail = users.filter((u) => u.email === user.email);
+    const repetitiveEmail = users.some((u) => u.email === user.email);
     const id = uuidv4();
     user.id = id;
     try {
-      if (repetitiveEmail.length > 0) {
+      if (repetitiveEmail) {
         return false;
       } else {
-        const response = await fetch(`${import.meta.env.VITE_USERS_URL}`, {
+        const response = await fetch(import.meta.env.VITE_USERS_URL, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
