@@ -12,15 +12,7 @@
             "dest": "index.mjs"
         },
         {
-            "src": "/users/email/:email",
-            "dest": "index.mjs"
-        },
-        {
             "src": "/users/:id",
-            "dest": "index.mjs"
-        },
-        {
-            "src": "/users/login",
             "dest": "index.mjs"
         },
         {
