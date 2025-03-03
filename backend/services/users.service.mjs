@@ -67,7 +67,7 @@ export const createUser = (user) => {
 export const updateUser = (id, user) => {
   return new Promise((resolve, reject) => {
     const { email, password, fullname, address, number } = user;
-    let query, params;
+    let params;
     params = [email, password, fullname, address, number];
     client
       .execute({ sql: query.updateUser, args: [...params, id] })
