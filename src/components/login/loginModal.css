@@ -1,5 +1,4 @@
-.modal.active-modal {
-  display: inline-block;
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,9 +7,6 @@
   background-color: var(--modal-glass-bg);
   backdrop-filter: blur(5px);
   z-index: 999;
-}
-.modal {
-  display: none;
 }
 
 .modal__inner {
@@ -141,14 +137,16 @@
   color: var(--light-black);
   background-color: transparent;
   font-weight: 500;
-  transition: all ease-in-out 0.3s;
 }
 
 .modal__buttons .modal__buttons__signup {
   background-color: var(--yellow);
   text-align: center;
+  transition: opacity ease-in-out 0.3s;
 }
-
+.modal__buttons .modal__buttons__login {
+  transition: border ease-in-out 0.3s;
+}
 .modal__form__error {
   color: var(--red);
   text-align: left;
@@ -174,10 +172,8 @@
 @media (hover: hover) {
   .modal__buttons .modal__buttons__signup:hover {
     opacity: 0.7;
-    transition: all ease-in-out 0.3s;
   }
   .modal__buttons .modal__buttons__login:hover {
     border: 1px solid var(--yellow);
-    transition: all ease-in-out 0.3s;
   }
 }
