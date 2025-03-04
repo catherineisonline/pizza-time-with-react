@@ -404,13 +404,11 @@ function App() {
       <Header
         loginModal={
           <LoginModal
-            validLogin={validLogin}
             setValidLogin={setValidLogin}
             setLoginModalWindow={setLoginModalWindow}
             loginModalWindow={loginModalWindow}
             hideMenu={hideMenu}
             getUser={getUser}
-            setCurrentUser={setCurrentUser}
           />
         }
         activateLoginModal={activateLoginModal}
