@@ -3,16 +3,15 @@ import Img2 from "../assets/images/landing/blog-preview/blog-preview-375/post-2.
 import Img3 from "../assets/images/landing/blog-preview/blog-preview-375/post-3.jpeg";
 
 const blogPreview = [
-    {
-        img: Img1,
-        name: "Pizza crust types",
-        intro:
-            "Embark on a culinary adventure as we explore these delectable pizza crusts, each contributing its own character to the beloved dish we all know and love",
-        date: "July 12, 2023",
-        author: "Daniel Wilson",
-        id: 1,
-        content:
-            `When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience. From thin and crispy to thick and doughy, pizza crusts come in a variety of types, each with its own unique characteristics and regional influences. Join us as we dive into the delightful world of pizza crusts and explore the different types that have captured the hearts and taste buds of pizza enthusiasts around the globe.
+  {
+    img: Img1,
+    name: "Pizza crust types",
+    intro:
+      "Embark on a culinary adventure as we explore these delectable pizza crusts, each contributing its own character to the beloved dish we all know and love",
+    date: "July 12, 2023",
+    author: "Daniel Wilson",
+    id: 1,
+    content: `When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience. From thin and crispy to thick and doughy, pizza crusts come in a variety of types, each with its own unique characteristics and regional influences. Join us as we dive into the delightful world of pizza crusts and explore the different types that have captured the hearts and taste buds of pizza enthusiasts around the globe.
     
           1. Thin and Crispy: A Classic Delight
           Thin crust pizza is a time-honored favorite, known for its delicate crunch and ability to showcase the flavors of the toppings. This type of crust is rolled out thinly, creating a light and airy base that allows the cheese, sauce, and toppings to shine. Originating from places like New York and Italy, thin crust pizza is perfect for those who crave a balance between the toppings and the crust.
@@ -36,19 +35,18 @@ const blogPreview = [
           Drawing inspiration from the Italian flatbread, focaccia-style pizza crusts combine the best of both worlds. These crusts are soft, airy, and infused with olive oil and herbs, delivering a burst of flavor in every bite. Focaccia-style pizza allows for creative topping combinations that complement the rich flavors of the crust.
           
           Whether you're a fan of thin and crispy or have a penchant for deep-dish delights, the world of pizza crusts offers a multitude of options to satisfy every palate. From the nostalgic comfort of classic styles to the innovative creations that push culinary boundaries, pizza crusts play a pivotal role in shaping the way we enjoy this beloved dish. So, the next time you order a pizza, take a moment to savor the unique characteristics of the crust – the foundation that brings it all together in a perfect, cheesy harmony.
-          `
-    },
+          `,
+  },
 
-    {
-        img: Img2,
-        name:
-            "Different styles of pizza crust for 8 classic pies",
-        intro:
-            "When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience",
-        date: "July 1, 2023",
-        author: "Anna Anderson",
-        id: 2,
-        content: `When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience. From thin and crispy to thick and doughy, pizza crusts come in a variety of types, each with its own unique characteristics and regional influences. Join us as we dive into the delightful world of pizza crusts and explore the different styles that have captured the hearts and taste buds of pizza enthusiasts around the globe.
+  {
+    img: Img2,
+    name: "Different styles of pizza crust for 8 classic pies",
+    intro:
+      "When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience",
+    date: "July 1, 2023",
+    author: "Anna Anderson",
+    id: 2,
+    content: `When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience. From thin and crispy to thick and doughy, pizza crusts come in a variety of types, each with its own unique characteristics and regional influences. Join us as we dive into the delightful world of pizza crusts and explore the different styles that have captured the hearts and taste buds of pizza enthusiasts around the globe.
     
         Thin and Crispy: A Classic Delight\n
         Thin crust pizza is a time-honored favorite, known for its delicate crunch and ability to showcase the flavors of the toppings. This type of crust is rolled out thinly, creating a light and airy base that allows the cheese, sauce, and toppings to shine. Originating from places like New York and Italy, thin crust pizza is perfect for those who crave a balance between the toppings and the crust.\n
@@ -71,17 +69,17 @@ const blogPreview = [
         Focaccia Style: A Flavorful Twist\n
         Drawing inspiration from the Italian flatbread, focaccia-style pizza crusts combine the best of both worlds. These crusts are soft, airy, and infused with olive oil and herbs, delivering a burst of flavor in every bite. Focaccia-style pizza allows for creative topping combinations that complement the rich flavors of the crust.\n
         
-        Whether you're a fan of thin and crispy or have a penchant for deep-dish delights, the world of pizza crusts offers a multitude of options to satisfy every palate. From the nostalgic comfort of classic styles to the innovative creations that push culinary boundaries, pizza crusts play a pivotal role in shaping the way we enjoy this beloved dish. So, the next time you order a pizza, take a moment to savor the unique characteristics of the crust – the foundation that brings it all together in a perfect, cheesy harmony.`
-    },
-    {
-        img: Img3,
-        name: "What to do with leftover pizza dough",
-        intro:
-            "Discover the art of repurposing leftover pizza dough with our inventive ideas. From savory bites to sweet delights, your leftover dough has never been this exciting",
-        date: "June 27, 2023",
-        author: "Catherine Wright",
-        id: 3,
-        content: `Got some leftover pizza dough from your recent pizza-making adventure? Don't let it go to waste! Leftover pizza dough is a versatile ingredient that can be transformed into a variety of delicious creations. Whether you're in the mood for something savory or sweet, we've got you covered with creative ideas to make the most out of that extra dough. Let's dive into the wonderful world of repurposing pizza dough leftovers.
+        Whether you're a fan of thin and crispy or have a penchant for deep-dish delights, the world of pizza crusts offers a multitude of options to satisfy every palate. From the nostalgic comfort of classic styles to the innovative creations that push culinary boundaries, pizza crusts play a pivotal role in shaping the way we enjoy this beloved dish. So, the next time you order a pizza, take a moment to savor the unique characteristics of the crust – the foundation that brings it all together in a perfect, cheesy harmony.`,
+  },
+  {
+    img: Img3,
+    name: "What to do with leftover pizza dough",
+    intro:
+      "Discover the art of repurposing leftover pizza dough with our inventive ideas. From savory bites to sweet delights, your leftover dough has never been this exciting",
+    date: "June 27, 2023",
+    author: "Catherine Wright",
+    id: 3,
+    content: `Got some leftover pizza dough from your recent pizza-making adventure? Don't let it go to waste! Leftover pizza dough is a versatile ingredient that can be transformed into a variety of delicious creations. Whether you're in the mood for something savory or sweet, we've got you covered with creative ideas to make the most out of that extra dough. Let's dive into the wonderful world of repurposing pizza dough leftovers.
     
         1. Homemade Garlic Knots\n
         Turn your leftover pizza dough into irresistible garlic knots. Simply roll the dough into small pieces, tie them into knots, and bake them until golden brown. Once out of the oven, brush the knots with a mixture of melted butter, minced garlic, and chopped parsley for a flavorful treat that's perfect as a side dish or snack.\n
@@ -107,8 +105,8 @@ const blogPreview = [
         8. Pizza Scrolls\n
         Roll out the dough and spread a layer of tomato sauce, cheese, and your preferred pizza toppings. Roll the dough into a log and slice it into rounds. Bake the slices until they're golden and the cheese is melted, creating savory pizza scrolls that are perfect for snacking.\n
         
-        Don't let that extra pizza dough go to waste. With these creative ideas, you can transform your leftover dough into a range of delicious treats, both savory and sweet. Embrace your culinary creativity and enjoy every bite!\n`
-    },
-]
+        Don't let that extra pizza dough go to waste. With these creative ideas, you can transform your leftover dough into a range of delicious treats, both savory and sweet. Embrace your culinary creativity and enjoy every bite!\n`,
+  },
+];
 
 export default blogPreview;

@@ -7,29 +7,8 @@ import { Link, NavLink } from "react-router-dom";
 import Cart from "../../assets/images/cart-icon-dark.png";
 import SuccessMsg from "../SuccessMsg";
 import ResetLocation from "../../helpers/ResetLocation";
+import headerMenu from "../../data/header-menu";
 
-const headerMenu = [
-  {
-    to: "/",
-    label: "Home",
-  },
-  {
-    to: "/menu",
-    label: "Menu",
-  },
-  {
-    to: "/blog",
-    label: "Blog",
-  },
-  {
-    to: "/about",
-    label: "About",
-  },
-  {
-    to: "/contact",
-    label: "Contact",
-  },
-];
 const Header = ({
   loginModal,
   productsQuantity,

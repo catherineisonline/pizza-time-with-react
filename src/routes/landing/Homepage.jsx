@@ -6,7 +6,9 @@ const ContactUsLanding = lazy(() => import("./company-info/ContactUsLanding"));
 const WelcomeSection = lazy(() => import("./welcome/WelcomeSection"));
 const OurServices = lazy(() => import("./our-service/OurServices"));
 const PizzaMenuPreview = lazy(() => import("./menu-preview/PizzaMenuPreview"));
-const MenuPricingPreview = lazy(() => import("./pricing-preview/MenuPricingPreview"));
+const MenuPricingPreview = lazy(() =>
+  import("./pricing-preview/MenuPricingPreview")
+);
 const Gallery = lazy(() => import("./gallery/Gallery"));
 const StatsPreview = lazy(() => import("./stats-preview/StatsPreview"));
 const MenuSlider = lazy(() => import("./menu-slider/MenuSlider"));
@@ -37,6 +39,6 @@ const Homepage = () => {
       <ScrollButton />
     </React.Fragment>
   );
-}
+};
 
 export default Homepage;

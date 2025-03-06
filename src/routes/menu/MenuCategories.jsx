@@ -3,7 +3,12 @@ import { NavLink } from "react-router-dom";
 import SearchIcon from "../../assets/images/search-icon.png";
 import ResetLocation from "../../helpers/ResetLocation";
 
-const MenuCategories = ({ allCategories, changeCategory, resetPagination, findMenuItem }) => {
+const MenuCategories = ({
+  allCategories,
+  changeCategory,
+  resetPagination,
+  findMenuItem,
+}) => {
   return (
     <article className="menu__categories">
       <section className="menu__categories__search">
@@ -12,7 +17,11 @@ const MenuCategories = ({ allCategories, changeCategory, resetPagination, findMe
           placeholder="search..."
           onChange={findMenuItem}
         />
-        <img src={SearchIcon} alt="" aria-hidden="true"/>
+        <img
+          src={SearchIcon}
+          alt=""
+          aria-hidden="true"
+        />
       </section>
       <ul>
         {allCategories.map((category) => (
@@ -23,8 +32,7 @@ const MenuCategories = ({ allCategories, changeCategory, resetPagination, findMe
                 changeCategory(category.name);
                 ResetLocation();
                 resetPagination();
-              }}
-            >
+              }}>
               {category.name}
             </NavLink>
           </li>
@@ -32,5 +40,5 @@ const MenuCategories = ({ allCategories, changeCategory, resetPagination, findMe
       </ul>
     </article>
   );
-}
+};
 export default MenuCategories;

@@ -1,23 +1,27 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import ReactPaginate from 'react-paginate';
+import ReactPaginate from "react-paginate";
 //data
-import allBlogPosts from '../../data/allBlogPosts'
+import blogPosts from "../../data/blog-posts";
 //components
 import ScrollBtn from "../../helpers/ScrollBtn";
 import ResetLocation from "../../helpers/ResetLocation";
 import BlogPosts from "./BlogPosts";
-import "./blog.css"
+import "./blog.css";
 
 const Blog = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const [endOffset, setEndOffset] = useState(itemOffset + 5);
-  const [currentBlogPosts, setcurrentBlogPosts] = useState([...allBlogPosts].reverse().slice(itemOffset, endOffset));
-  const [pageCountPosts, setpageCountPosts] = useState(Math.ceil(allBlogPosts.length / 5));
+  const [currentBlogPosts, setcurrentBlogPosts] = useState(
+    [...blogPosts].reverse().slice(itemOffset, endOffset)
+  );
+  const [pageCountPosts, setpageCountPosts] = useState(
+    Math.ceil(blogPosts.length / 5)
+  );
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * 5) % allBlogPosts.length;
+    const newOffset = (event.selected * 5) % blogPosts.length;
     setItemOffset(newOffset);
     ResetLocation();
   };
@@ -25,9 +29,8 @@ const Blog = () => {
   useEffect(() => {
     document.title = "Blog | Pizza Time";
     setEndOffset(itemOffset + 5);
-    setcurrentBlogPosts([...allBlogPosts].reverse().slice(itemOffset, endOffset));
-    setpageCountPosts(Math.ceil(allBlogPosts.length / 5));
-
+    setcurrentBlogPosts([...blogPosts].reverse().slice(itemOffset, endOffset));
+    setpageCountPosts(Math.ceil(blogPosts.length / 5));
   }, [setEndOffset, endOffset, itemOffset]);
   return (
     <motion.main
@@ -35,8 +38,7 @@ const Blog = () => {
       initial={{ opacity: 0, translateX: -300 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}
-    >
+      transition={{ duration: 1 }}>
       <h2>Blog</h2>
       <p className="blog__intro">
         Pizza makes everything better. These are some of our favorite pizza
@@ -44,7 +46,12 @@ const Blog = () => {
       </p>
       <section className="blog__posts">
         {currentBlogPosts.map((blogPost, index) => {
-          return <BlogPosts key={index} blogPost={blogPost} />;
+          return (
+            <BlogPosts
+              key={index}
+              blogPost={blogPost}
+            />
+          );
         })}
       </section>
       <ReactPaginate
@@ -60,5 +67,5 @@ const Blog = () => {
       <ScrollBtn />
     </motion.main>
   );
-}
+};
 export default Blog;

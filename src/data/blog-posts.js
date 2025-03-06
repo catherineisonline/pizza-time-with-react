@@ -9,7 +9,7 @@ import Img8 from "../assets/images/blog/post-8.jpeg";
 import Img9 from "../assets/images/blog/post-9.jpeg";
 import Img10 from "../assets/images/blog/post-10.jpeg";
 
-const allBlogPosts = [
+const blogPosts = [
   {
     img: Img1,
     name: "Pizza crust types",
@@ -18,8 +18,7 @@ const allBlogPosts = [
     date: "July 12, 2023",
     author: "Daniel Wilson",
     id: 1,
-    content:
-      `When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience. From thin and crispy to thick and doughy, pizza crusts come in a variety of types, each with its own unique characteristics and regional influences. Join us as we dive into the delightful world of pizza crusts and explore the different types that have captured the hearts and taste buds of pizza enthusiasts around the globe.
+    content: `When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience. From thin and crispy to thick and doughy, pizza crusts come in a variety of types, each with its own unique characteristics and regional influences. Join us as we dive into the delightful world of pizza crusts and explore the different types that have captured the hearts and taste buds of pizza enthusiasts around the globe.
 
       1. Thin and Crispy: A Classic Delight
       Thin crust pizza is a time-honored favorite, known for its delicate crunch and ability to showcase the flavors of the toppings. This type of crust is rolled out thinly, creating a light and airy base that allows the cheese, sauce, and toppings to shine. Originating from places like New York and Italy, thin crust pizza is perfect for those who crave a balance between the toppings and the crust.
@@ -43,13 +42,12 @@ const allBlogPosts = [
       Drawing inspiration from the Italian flatbread, focaccia-style pizza crusts combine the best of both worlds. These crusts are soft, airy, and infused with olive oil and herbs, delivering a burst of flavor in every bite. Focaccia-style pizza allows for creative topping combinations that complement the rich flavors of the crust.
       
       Whether you're a fan of thin and crispy or have a penchant for deep-dish delights, the world of pizza crusts offers a multitude of options to satisfy every palate. From the nostalgic comfort of classic styles to the innovative creations that push culinary boundaries, pizza crusts play a pivotal role in shaping the way we enjoy this beloved dish. So, the next time you order a pizza, take a moment to savor the unique characteristics of the crust – the foundation that brings it all together in a perfect, cheesy harmony.
-      `
+      `,
   },
 
   {
     img: Img2,
-    name:
-      "Different styles of pizza crust for 8 classic pies",
+    name: "Different styles of pizza crust for 8 classic pies",
     intro:
       "When it comes to pizza, the crust is more than just a vessel for toppings – it's a canvas that can influence the entire dining experience",
     date: "July 1, 2023",
@@ -78,7 +76,7 @@ const allBlogPosts = [
     Focaccia Style: A Flavorful Twist\n
     Drawing inspiration from the Italian flatbread, focaccia-style pizza crusts combine the best of both worlds. These crusts are soft, airy, and infused with olive oil and herbs, delivering a burst of flavor in every bite. Focaccia-style pizza allows for creative topping combinations that complement the rich flavors of the crust.\n
     
-    Whether you're a fan of thin and crispy or have a penchant for deep-dish delights, the world of pizza crusts offers a multitude of options to satisfy every palate. From the nostalgic comfort of classic styles to the innovative creations that push culinary boundaries, pizza crusts play a pivotal role in shaping the way we enjoy this beloved dish. So, the next time you order a pizza, take a moment to savor the unique characteristics of the crust – the foundation that brings it all together in a perfect, cheesy harmony.`
+    Whether you're a fan of thin and crispy or have a penchant for deep-dish delights, the world of pizza crusts offers a multitude of options to satisfy every palate. From the nostalgic comfort of classic styles to the innovative creations that push culinary boundaries, pizza crusts play a pivotal role in shaping the way we enjoy this beloved dish. So, the next time you order a pizza, take a moment to savor the unique characteristics of the crust – the foundation that brings it all together in a perfect, cheesy harmony.`,
   },
   {
     img: Img3,
@@ -114,7 +112,7 @@ const allBlogPosts = [
     8. Pizza Scrolls\n
     Roll out the dough and spread a layer of tomato sauce, cheese, and your preferred pizza toppings. Roll the dough into a log and slice it into rounds. Bake the slices until they're golden and the cheese is melted, creating savory pizza scrolls that are perfect for snacking.\n
     
-    Don't let that extra pizza dough go to waste. With these creative ideas, you can transform your leftover dough into a range of delicious treats, both savory and sweet. Embrace your culinary creativity and enjoy every bite!\n`
+    Don't let that extra pizza dough go to waste. With these creative ideas, you can transform your leftover dough into a range of delicious treats, both savory and sweet. Embrace your culinary creativity and enjoy every bite!\n`,
   },
   {
     img: Img4,
@@ -158,7 +156,7 @@ const allBlogPosts = [
     The tangy dill pickles complement the rich cheese and savory toppings, creating a harmonious balance of flavors. The red onion adds a touch of sweetness and the fresh dill elevates the overall taste profile. The optional addition of ham or bacon adds a layer of umami and saltiness. The combination of ingredients might be unconventional, but it's an unexpectedly delicious treat for your taste buds.
     
     The Verdict:\n
-    Dill Pickle Pizza is a culinary adventure worth taking. Its bold flavors and unexpected pairing make for a memorable meal that will intrigue and delight your senses. Whether you're hosting a pizza night or simply want to try something new, this recipe is sure to spark curiosity and satisfy your cravings.`
+    Dill Pickle Pizza is a culinary adventure worth taking. Its bold flavors and unexpected pairing make for a memorable meal that will intrigue and delight your senses. Whether you're hosting a pizza night or simply want to try something new, this recipe is sure to spark curiosity and satisfy your cravings.`,
   },
   {
     img: Img5,
@@ -186,7 +184,7 @@ const allBlogPosts = [
     If you're planning to have pizzas delivered or you're making them ahead of time, pizza box warmers can keep your pies at the perfect temperature until they're ready to be enjoyed. These warmers are designed to maintain the heat and prevent the pizzas from getting soggy. Your guests will appreciate the attention to detail and the effort to serve them piping hot slices.
     
     In Conclusion:\n
-    Elevating your pizza party is all about the little details, and the right accessories can make a significant difference. From achieving the perfect crust to serving your slices with style, these accessories are essential for a memorable pizza party that your guests will be talking about for days to come.`
+    Elevating your pizza party is all about the little details, and the right accessories can make a significant difference. From achieving the perfect crust to serving your slices with style, these accessories are essential for a memorable pizza party that your guests will be talking about for days to come.`,
   },
   {
     img: Img6,
@@ -219,7 +217,7 @@ const allBlogPosts = [
     The key to a successful vegan pizza lies in choosing high-quality cheese and meat alternatives that capture the essence of traditional pizza toppings. Modern vegan products have come a long way in terms of flavor, texture, and meltability, making it easier than ever to create a pizza that satisfies your cravings.
     
     The Verdict:\n
-    With the right combination of vegan cheese and meat alternatives, you can create a pizza that's both delicious and compassionate. Whether you're catering to vegans, trying to reduce your animal product consumption, or simply curious about exploring new flavors, the world of plant-based pizza toppings offers endless possibilities for a satisfying meal.`
+    With the right combination of vegan cheese and meat alternatives, you can create a pizza that's both delicious and compassionate. Whether you're catering to vegans, trying to reduce your animal product consumption, or simply curious about exploring new flavors, the world of plant-based pizza toppings offers endless possibilities for a satisfying meal.`,
   },
   {
     img: Img7,
@@ -247,7 +245,7 @@ const allBlogPosts = [
     Take your grill to the next level with a BBQ pizza oven attachment. This ingenious accessory transforms your grill into a high-heat pizza oven, allowing you to achieve those coveted wood-fired flavors and charred crusts.
     
     In Conclusion:\n
-    National BBQ (Pizza) Month is the perfect opportunity to explore the magic of grilled pizzas. With the right gear, you can elevate your outdoor cooking experience and create restaurant-quality pies from the comfort of your backyard. From achieving the perfect crust to mastering the art of topping placement, these accessories will help you create memorable grilled pizzas that will have everyone coming back for seconds.`
+    National BBQ (Pizza) Month is the perfect opportunity to explore the magic of grilled pizzas. With the right gear, you can elevate your outdoor cooking experience and create restaurant-quality pies from the comfort of your backyard. From achieving the perfect crust to mastering the art of topping placement, these accessories will help you create memorable grilled pizzas that will have everyone coming back for seconds.`,
   },
   {
     img: Img8,
@@ -281,7 +279,7 @@ Pizza is all about balance, and that includes seasoning. Neglecting to season yo
 Once your pizza comes out of the oven, it's tempting to slice and serve immediately. However, allowing your pizza to rest for a few minutes before cutting gives the cheese and toppings a chance to settle, preventing a messy, slide-off-the-toppings situation.
 
 In Conclusion:\n
-Mistakes happen, but learning from them is what makes you a better pizza maker. By avoiding these common missteps, you can enhance your pizza-making skills and consistently create delicious, restaurant-quality pies in the comfort of your home.`
+Mistakes happen, but learning from them is what makes you a better pizza maker. By avoiding these common missteps, you can enhance your pizza-making skills and consistently create delicious, restaurant-quality pies in the comfort of your home.`,
   },
   {
     img: Img9,
@@ -309,7 +307,7 @@ Mistakes happen, but learning from them is what makes you a better pizza maker. 
     Whether you choose pre-shredded mozzarella or opt to slice it fresh, both options can yield delicious results. Pre-shredded mozzarella offers convenience, while slicing it fresh allows you to control the thickness and distribution of the cheese on your pizza.
     
     In Conclusion:\n
-    The perfect mozzarella for your cheese pizza ultimately depends on your preferences and the texture you desire. Whether you're aiming for a classic melt, a creamy indulgence, or a lighter option, each type of mozzarella has its unique qualities that can elevate your cheese pizza experience. Remember, the perfect mozzarella is the one that brings joy to your taste buds and makes your cheese pizza a true masterpiece.`
+    The perfect mozzarella for your cheese pizza ultimately depends on your preferences and the texture you desire. Whether you're aiming for a classic melt, a creamy indulgence, or a lighter option, each type of mozzarella has its unique qualities that can elevate your cheese pizza experience. Remember, the perfect mozzarella is the one that brings joy to your taste buds and makes your cheese pizza a true masterpiece.`,
   },
   {
     img: Img10,
@@ -349,9 +347,8 @@ Mistakes happen, but learning from them is what makes you a better pizza maker. 
     Breakfast pizza combines the richness of melted cheese, the savoriness of breakfast meats, the freshness of vegetables, and the comfort of eggs into one flavorful bite. The combination of textures and flavors makes it a satisfying and versatile morning meal.
     
     The Verdict:\n
-    Whether you're enjoying a leisurely weekend brunch or need a quick breakfast option on the go, breakfast pizza has you covered. It's a creative and customizable way to enjoy your favorite breakfast ingredients in a new and exciting format.`
+    Whether you're enjoying a leisurely weekend brunch or need a quick breakfast option on the go, breakfast pizza has you covered. It's a creative and customizable way to enjoy your favorite breakfast ingredients in a new and exciting format.`,
   },
 ];
 
-
-export default allBlogPosts;
+export default blogPosts;
