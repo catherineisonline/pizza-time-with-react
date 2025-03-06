@@ -1,20 +1,20 @@
-import React from 'react'
-import Tilt from 'react-parallax-tilt';
+import React from "react";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import ourServices from '../../../data/ourServices';
-import './our-service.css'
+import companyServices from "../../../data/company-services";
+import "./our-service.css";
 
 const OurServices = () => {
   return (
-    <article
-      className="homepage__services"
-    >
+    <article className="homepage__services">
       <h2 className="pop-font">Our Services</h2>
       <p className="pop-font section-description">
-        Pizza Time provides services across all states - various foods and drinks, you choose! What makes us special is our teams of professionals with extensive knowledge of all the cuisine that we have to offer.
+        Pizza Time provides services across all states - various foods and
+        drinks, you choose! What makes us special is our teams of professionals
+        with extensive knowledge of all the cuisine that we have to offer.
       </p>
       <section className="services__items flex-container flex-column">
-        {ourServices.map((service) => (
+        {companyServices.map((service) => (
           <Tilt key={service.id}>
             <section className="services__item flex-container flex-column">
               <motion.img
@@ -22,14 +22,14 @@ const OurServices = () => {
                 whileInView={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{
-                  duration: 2
+                  duration: 2,
                 }}
                 width="50"
                 height="50"
                 src={service.img}
                 alt=""
                 aria-hidden="true"
-                loading='lazy'
+                loading="lazy"
               />
 
               <section>
@@ -41,7 +41,7 @@ const OurServices = () => {
         ))}
       </section>
     </article>
-  )
-}
+  );
+};
 
 export default OurServices;

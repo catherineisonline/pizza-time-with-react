@@ -1,26 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom'
-import ResetLocation from '../../../helpers/ResetLocation'
-import pizzaMenuPreview from '../../../data/pizzaMenuPreview';
-import './menu-preview.css'
+import { Link } from "react-router-dom";
+import ResetLocation from "../../../helpers/ResetLocation";
+import pizzaMenuPreview from "../../../data/menu-preview";
+import "./menu-preview.css";
 
 const PizzaMenuPreview = () => {
-  const initialScreenSize = localStorage.getItem('screenSize') || 1440;
+  const initialScreenSize = localStorage.getItem("screenSize") || 1440;
   const [screenSize, setScreenSize] = useState(Number(initialScreenSize));
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-
     // Function to handle window resize
     const handleResize = () => {
       const width = window.innerWidth;
       // Check inner width and update state accordingly
       if (width <= 375) {
         setScreenSize(375);
-      }
-      else if (width <= 700) {
+      } else if (width <= 700) {
         setScreenSize(700);
       } else {
         setScreenSize(1440);
@@ -31,29 +29,30 @@ const PizzaMenuPreview = () => {
     handleResize();
 
     // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Clean up event listener on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   // Update local storage whenever screenSize changes
   useEffect(() => {
-    localStorage.setItem('screenSize', screenSize);
+    localStorage.setItem("screenSize", screenSize);
   }, [screenSize]);
 
-
   return (
-    <article className="homepage__menu-preview flex-container flex-column" >
+    <article className="homepage__menu-preview flex-container flex-column">
       <section className="menu-preview__info txt-center">
         <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
         <p className="section-description">
-          Pizza Time holds the market of the pizza industry and continuously offers more than pizza. Check out our hottest menu options with cheese, meat, chicken, and veggies!
+          Pizza Time holds the market of the pizza industry and continuously
+          offers more than pizza. Check out our hottest menu options with
+          cheese, meat, chicken, and veggies!
         </p>
       </section>
-      <section className="menu-preview__meals flex-container flex-column" >
+      <section className="menu-preview__meals flex-container flex-column">
         {pizzaMenuPreview.map((pizza, id) => (
           <motion.div
             key={id}
@@ -61,14 +60,13 @@ const PizzaMenuPreview = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 3 }}
-          >
+            transition={{ duration: 3 }}>
             <img
               alt={pizza.name}
               src={`${pizza.img375}`}
               width={375}
               height={250}
-              loading='lazy'
+              loading="lazy"
             />
 
             <section className="menu-preview__meal-details flex-container flex-column">
@@ -87,13 +85,11 @@ const PizzaMenuPreview = () => {
       <Link
         onClick={ResetLocation}
         to="/menu"
-        className="active-button-style txt-white"
-      >
+        className="active-button-style txt-white">
         More pizza
       </Link>
     </article>
-
-  )
-}
+  );
+};
 
 export default PizzaMenuPreview;

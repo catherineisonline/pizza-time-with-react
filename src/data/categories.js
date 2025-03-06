@@ -1,4 +1,4 @@
-export const AllCategories = [
+export const categories = [
   {
     name: "Menu",
     id: "Menu",

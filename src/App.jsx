@@ -14,8 +14,8 @@ import {
   Register,
   SingleItem,
 } from "./routes/index";
-import { allProductsData } from "./data/AllProductsData";
-import { AllCategories } from "./data/AllCategories";
+import { products } from "./data/products";
+import { categories } from "./data/categories";
 import CartTotals from "./routes/cart/CartTotals";
 import LoginModal from "./components/login/LoginModal";
 import CartItem from "./routes/cart/CartItem";
@@ -123,7 +123,7 @@ function App() {
   const findMenuItem = (e) => {
     e.preventDefault();
     const inputValue = e.target.value.toLowerCase();
-    const collectData = allProductsData.filter((product) =>
+    const collectData = products.filter((product) =>
       product.ItemName.toLowerCase().includes(inputValue)
     );
 
@@ -142,11 +142,11 @@ function App() {
   };
 
   const getAllCategories = async () => {
-    setAllCategories(AllCategories);
+    setAllCategories(categories);
   };
 
   const getAllProducts = () => {
-    setAllProducts(allProductsData);
+    setAllProducts(products);
   };
 
   const CheckRepeatableProducts = (
@@ -350,7 +350,7 @@ function App() {
 
   const getProductsByCategory = (category) => {
     let separateCategoriesByname = [];
-    const separateCategories = allProductsData.reduce(function (
+    const separateCategories = products.reduce(function (
       singleCategory,
       singleItem
     ) {
@@ -382,7 +382,7 @@ function App() {
         return setAllProducts(separateCategories[category]);
       }
       if (category === "Menu") {
-        return setAllProducts(allProductsData);
+        return setAllProducts(products);
       }
     });
   };
