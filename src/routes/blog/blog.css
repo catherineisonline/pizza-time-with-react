@@ -61,15 +61,20 @@
   height: 10rem;
   object-fit: cover;
 }
-
-.blog__posts__single h3 {
-  transition: all ease-in-out 0.3s;
+.blog__posts__single h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.blog__posts__single a {
+  color: var(--white);
+  transition: color ease-in-out 0.3s;
 }
 .blog__posts__credentials {
   color: var(--whitish-gray);
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  background-color: transparent;
 }
 
 .blog__posts__intro {
@@ -89,9 +94,8 @@
 /*** Responsive ***/
 
 @media (hover: hover) {
-  .blog__posts__single h3:hover {
+  .blog__posts__single a:hover {
     color: var(--pizza-red);
-    transition: all ease-in-out 0.3s;
   }
 }
 
