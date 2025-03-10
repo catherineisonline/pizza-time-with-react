@@ -22,11 +22,14 @@ const ScrollButton = () => {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    <div
+    <button
       className="scroll-button"
+      aria-label="Scroll to the top"
       onClick={scrollToTop}
-      style={{ display: visible ? "inline" : "none" }}
-    ></div>
+      style={{ display: visible ? "inline" : "none" }}>
+      {" "}
+      <span className="visually-hidden">Scroll to top</span>
+    </button>
   );
 };
 
