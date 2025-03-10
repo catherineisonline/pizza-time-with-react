@@ -20,7 +20,9 @@ const Header = ({
   activateLoginModal,
 }) => {
   return (
-    <header aria-labelledby="title">
+    <header
+      aria-labelledby="title"
+      className="header">
       {loginModal}
       <nav
         className="header__nav flex-container flex-row txt-center"

@@ -1,28 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ResetLocation from '../../helpers/ResetLocation'
+import ResetLocation from "../../helpers/ResetLocation";
 
 const BlogPosts = ({ blogPost }) => {
   return (
-    <section className="blog__posts__single">
+    <article className="blog__posts__single">
       <img
         src={blogPost.img}
-        alt={blogPost.name}
+        alt={`Thumbnail for ${blogPost.name} blog post`}
         loading="lazy"
+        fetchPriority="low"
       />
-      <section className="blog__posts__credentials">
-        <p>{blogPost.date}</p>
+      <header className="blog__posts__credentials">
+        <time dateTime={blogPost.date}>{blogPost.date}</time>
         <p>by {blogPost.author}</p>
-      </section>
-      <Link
-        onClick={ResetLocation}
-        to={`/blog/${blogPost.name.toLowerCase().replaceAll(' ', '-')}`}
-      >
-        <h3>{blogPost.name}</h3>
-      </Link>
+      </header>
+      <h2>
+        <Link
+          onClick={ResetLocation}
+          aria-label={`Continue reading: ${blogPost.name}`}
+          to={`/blog/${blogPost.name.toLowerCase().replaceAll(" ", "-")}`}>
+          {blogPost.name}
+        </Link>
+      </h2>
       <p className="blog__posts__intro">{blogPost.intro}</p>
-    </section>
+    </article>
   );
-}
+};
 
 export default BlogPosts;

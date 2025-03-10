@@ -1,14 +1,12 @@
+import "./blog.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ReactPaginate from "react-paginate";
-//data
 import blogPosts from "../../data/blog-posts";
-//components
 import ScrollBtn from "../../helpers/ScrollBtn";
 import ResetLocation from "../../helpers/ResetLocation";
 import BlogPosts from "./BlogPosts";
-import "./blog.css";
 
 const Blog = () => {
   const [itemOffset, setItemOffset] = useState(0);
@@ -44,15 +42,20 @@ const Blog = () => {
         Pizza makes everything better. These are some of our favorite pizza
         blogs that are loaded with recipes and pizza-making tips.
       </p>
-      <section className="blog__posts">
-        {currentBlogPosts.map((blogPost, index) => {
-          return (
-            <BlogPosts
-              key={index}
-              blogPost={blogPost}
-            />
-          );
-        })}
+      <section
+        className="blog__posts"
+        aria-labelledby="blog-posts-title">
+        <h2
+          id="blog-posts-title"
+          className="visually-hidden">
+          Recent Blog Posts
+        </h2>
+        {currentBlogPosts.map((blogPost, index) => (
+          <BlogPosts
+            key={index}
+            blogPost={blogPost}
+          />
+        ))}
       </section>
       <ReactPaginate
         className="pagination blog__pagination"
@@ -63,6 +66,7 @@ const Blog = () => {
         pageCount={pageCountPosts}
         previousLabel="&#60;"
         renderOnZeroPageCount={null}
+        aria-label="Blog pagination"
       />
       <ScrollBtn />
     </motion.main>
