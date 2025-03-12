@@ -3,41 +3,46 @@ import CheckoutBtn from "../checkout/CheckoutBtn";
 import LinkButton from "../../components/Button";
 import ResetLocation from "../../helpers/ResetLocation";
 
-const CartTotals = ({ totalPayment, productsQuantity, taxes, className, validLogin, showModal, activateLoginModal }) => {
+const CartTotals = ({
+  totalPayment,
+  productsQuantity,
+  taxes,
+  className,
+  validLogin,
+  showModal,
+  activateLoginModal,
+}) => {
   return (
-    <article className={className}>
-      {productsQuantity > 0 &&
-          <section className="cart-totals_content">
-            <section>
-              <h4>Tax 10%:</h4>
-              <p>$ {taxes}</p>
-            </section>
-            <section>
-              <h4>Quantity:</h4>
-              <p> {productsQuantity}</p>
-            </section>
-            <section>
-              <h4>Total:</h4>
-              <p>$ {totalPayment}</p>
-            </section>
-          </section>}
-            <section className="cart-totals__interaction">
-              <CheckoutBtn
-                className="active-button-style"
-                validLogin={validLogin}
-                showModal={showModal}
-                activateLoginModal={activateLoginModal}
-              />
-              <LinkButton
-                onClick={ResetLocation}
-                to="/menu"
-                className="back-to-menu"
-              >
-                Back to menu
-              </LinkButton>
-            </section>
-    </article>
+    <section className={className}>
+      <h2 id="cart-summary-title">Cart Summary</h2>
+      {productsQuantity > 0 && (
+        <dl className="cart-totals_content">
+          <dt>Tax 10%:</dt>
+          <dd>$ {taxes}</dd>
+          <dt>Quantity:</dt>
+          <dd> {productsQuantity}</dd>
+          <dt>Total:</dt>
+          <dd>$ {totalPayment}</dd>
+        </dl>
+      )}
+      <div className="cart-totals__interaction">
+        <CheckoutBtn
+          className="active-button-style"
+          aria-label="Contiue with checkout"
+          validLogin={validLogin}
+          showModal={showModal}
+          activateLoginModal={activateLoginModal}
+        />
+        <LinkButton
+          aria-label="Go back to menu"
+          onClick={ResetLocation}
+          to="/menu"
+          className="back-to-menu">
+          Back to menu
+        </LinkButton>
+      </div>
+    </section>
   );
-}
+};
 
 export default CartTotals;

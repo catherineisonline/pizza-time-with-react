@@ -1,13 +1,17 @@
 import React from "react";
 
-const ChangeItemQuantity = ({ handleAddProduct, handleRemoveProduct, cartItem }) => {
+const ChangeItemQuantity = ({
+  handleAddProduct,
+  handleRemoveProduct,
+  cartItem,
+}) => {
   return (
-    <section className="cart__add-items">
+    <div className="cart__add-items">
       <button
         onClick={() => {
           handleAddProduct(cartItem, cartItem.userSelectedAttributes);
         }}
-      >
+        aria-label={`Add ${cartItem.ItemName} to the cart`}>
         +
       </button>
       <p>{cartItem.quantity}</p>
@@ -15,11 +19,11 @@ const ChangeItemQuantity = ({ handleAddProduct, handleRemoveProduct, cartItem })
         onClick={() => {
           handleRemoveProduct(cartItem, cartItem.userSelectedAttributes);
         }}
-      >
+        aria-label={`Remove ${cartItem.ItemName} from the cart`}>
         -
       </button>
-    </section>
+    </div>
   );
-}
+};
 
 export default ChangeItemQuantity;
