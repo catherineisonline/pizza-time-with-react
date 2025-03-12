@@ -1,67 +1,67 @@
 .careers {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--white);
-    font-family: var(--poppins-font);
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+  font-family: var(--poppins-font);
+  width: 100%;
 }
 
 .careers h2 {
-    font-size: 4rem;
-    text-transform: uppercase;
+  font-size: 4rem;
+  text-transform: uppercase;
 }
 .careers h3 {
-    font-weight: 100;
-    max-width: 70%;
-    text-align: center;
+  font-weight: 100;
+  max-width: 70%;
+  text-align: center;
 }
 
 .careers__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 1100px;
-    margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 3rem;
 }
 .careers__listings {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .careers__inner a {
-    cursor: pointer;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 0.5rem;
-    opacity: 0.8;
-    background-color: var(--pizza-red);
-    border-color: var(--pizza-red);
-    letter-spacing: 1px;
-    align-items: center;
-    width: max-content;
-    height: max-content;
-    color: var(--white);
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: var(--poppins-font);
-    transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.5rem;
+  opacity: 0.8;
+  background-color: var(--pizza-red);
+  border-color: var(--pizza-red);
+  letter-spacing: 1px;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: var(--poppins-font);
+  transition: background-color ease-in-out 0.3s, border-color ease-in-out 0.3s,
+    color ease-in-out 0.3s;
 }
 
 @media (hover: hover) {
-    .careers__inner a:hover {
-        background-color: transparent;
-        border-color: var(--white);
-        color: var(--white);
-        transition: all ease-in-out 0.3s;
-    }
+  .careers__inner a:hover {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+  }
 }
 
 @media screen and (max-width: 850px) {
-    .careers__listings {
-        gap: 1rem;
-        flex-direction: column;
-    }
+  .careers__listings {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
