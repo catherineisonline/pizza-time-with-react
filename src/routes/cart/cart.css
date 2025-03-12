@@ -23,9 +23,7 @@
   gap: 2rem;
   margin: 0 auto;
   text-align: center;
-  padding: 1rem;
-  align-items: center;
-  max-width: 700px;
+  max-width: 80vw;
 }
 
 .cart__items p {
@@ -36,14 +34,15 @@
 
 /*** Cart item ***/
 .cart__items__single {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15rem 1fr;
+  justify-items: stretch;
 }
 
 .cart__items__single img {
-  width: 100%;
+  max-width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .cart__items__info {
@@ -55,11 +54,11 @@
 .cart__items__title {
   display: flex;
   flex-direction: row;
+  gap: 8px;
   font-family: var(--poppins-font);
   font-weight: 400;
-  color: var(--white);
+  color: var(--pizza-red);
   text-transform: capitalize;
-  font-size: 2rem;
 }
 .cart__items__interaction {
   display: flex;
@@ -116,16 +115,13 @@
   color: var(--whitish-gray);
   text-transform: uppercase;
   font-size: 1.2rem;
+  gap: 1rem;
 }
-.cart-totals_content > * {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.cart-totals_content h4 {
+
+.cart-totals_content dt {
   font-weight: 300;
 }
-.cart-totals_content p {
+.cart-totals_content dd {
   font-weight: 600;
   color: var(--yellow);
 }
@@ -148,7 +144,7 @@
   width: max-content;
   font-size: 1rem;
   font-family: var(--poppins-font);
-  transition: all ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s;
 }
 
 /* CLEAR CART */
@@ -174,17 +170,10 @@
 
   .back-to-menu:hover {
     color: var(--pizza-red);
-    transition: all ease-in-out 0.3s;
   }
 }
 
 @media screen and (min-width: 700px) {
-  .cart__items__single {
-    flex-direction: row;
-  }
-  .cart__items__single img {
-    max-width: 50%;
-  }
   .cart__items__content {
     justify-content: space-between;
   }
@@ -195,15 +184,13 @@
     flex-direction: row;
     padding: none;
   }
-  .cart-totals_content > * {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
 }
 
 @media screen and (min-width: 1025px) {
   .cart__items__interaction {
     gap: 2rem;
+  }
+  .cart__items__single {
+    grid-template-columns: 25rem 1fr;
   }
 }
