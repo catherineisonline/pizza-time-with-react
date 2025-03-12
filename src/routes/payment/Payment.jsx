@@ -1,15 +1,21 @@
+import "./payment.css";
 import EmptyCart from "../cart/EmptyCart";
 import React, { useEffect, useState } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import validateForm from "../../components/validateForm";
-import './payment.css'
 import PaymentSuccess from "./PaymentSuccess";
 import Card from "./Cards.jsx";
 
 const Payment = ({ cartItems, totalPayment }) => {
-
-  const [formValue, setFormValue] = useState({ firstname: '', lastname: '', cardNumber: "", cvv: '', month: '', year: '' });
+  const [formValue, setFormValue] = useState({
+    firstname: "",
+    lastname: "",
+    cardNumber: "",
+    cvv: "",
+    month: "",
+    year: "",
+  });
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
   const [transactionId, setTransactionId] = useState(0);
@@ -21,51 +27,154 @@ const Payment = ({ cartItems, totalPayment }) => {
     setSubmit(true);
     setTransactionId(uuidv4());
     ResetLocation();
-  }
+  };
 
   const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
-  }
+  };
 
   useEffect(() => {
     document.title = "Payment | Pizza Time";
   }, []);
   return (
     <main>
-      {cartItems.length === 0 ? <EmptyCart /> :
+      {cartItems.length === 0 ? (
+        <EmptyCart />
+      ) : (
         <React.Fragment>
-          {submit && Object.keys(formError).length === 0 ? <PaymentSuccess transactionId={transactionId} totalPayment={totalPayment} /> :
-            <article className="payment__inner">
+          {submit && Object.keys(formError).length === 0 ? (
+            <PaymentSuccess
+              transactionId={transactionId}
+              totalPayment={totalPayment}
+            />
+          ) : (
+            <section className="payment__inner">
               <Card formValue={formValue} />
-              <form onSubmit={handleSubmit} className="payment__form">
-                <input onChange={handleValidation} value={formValue.firstname} name="firstname" type="text" placeholder="First name" />
-                <span className="payment__form__error">{formError.firstname}</span>
-                <input onChange={handleValidation} value={formValue.lastname} name="lastname" placeholder="Last name" />
-                <span className="payment__form__error">{formError.lastname}</span>
-                <input onChange={handleValidation} value={formValue.cardNumber} name="cardNumber" placeholder="Card number" maxLength="16" />
-                <span className="payment__form__error">{formError.cardNumber}</span>
-                <section className="payment__form__cvv-exp">
-                  <section className="payment__form__section">
-                    <input className="payment__form__cvv" onChange={handleValidation} value={formValue.cvv} name="cvv" placeholder="CVV" maxLength="3" />
-                    <span className="payment__form__error">  {formError.cvv}</span>
-                  </section>
-                  <section className="payment__form__section">
-                    <div className="payment__form__expiration">
-                      <input autoComplete="off" id="month" name="month" placeholder="MM" type="text" maxLength="2" max="2" onChange={handleValidation} value={formValue.month} />
-                      <input autoComplete="off" id="year" name="year" placeholder="YY" type="text" maxLength="2" max="2" onChange={handleValidation} value={formValue.year} />
+              <form
+                onSubmit={handleSubmit}
+                className="payment__form">
+                <label htmlFor="firstname">First name</label>
+                <input
+                  onChange={handleValidation}
+                  value={formValue.firstname}
+                  name="firstname"
+                  id="firstname"
+                  type="text"
+                  placeholder="First name"
+                  aria-describedby="firstname-error"
+                  aria-invalid={!!formError.firstname}
+                />
+
+                <span
+                  id="firstname-error"
+                  aria-live="polite"
+                  className="payment__form__error">
+                  {formError.firstname}
+                </span>
+                <label htmlFor="lastname">Last name</label>
+                <input
+                  onChange={handleValidation}
+                  value={formValue.lastname}
+                  name="lastname"
+                  id="lastname"
+                  placeholder="Last name"
+                  aria-describedby="lastname-error"
+                  aria-invalid={!!formError.lastname}
+                />
+                <span
+                  id="lastname-error"
+                  aria-live="polite"
+                  className="payment__form__error">
+                  {formError.lastname}
+                </span>
+                <label htmlFor="cardNumber">Card number</label>
+                <input
+                  onChange={handleValidation}
+                  value={formValue.cardNumber}
+                  name="cardNumber"
+                  id="cardNumber"
+                  placeholder="Card number"
+                  maxLength="16"
+                  aria-describedby="cardNumber-error"
+                  aria-invalid={!!formError.cardNumber}
+                />
+                <span
+                  id="cardNumber-error"
+                  aria-live="polite"
+                  className="payment__form__error">
+                  {formError.cardNumber}
+                </span>
+                <div className="payment__form__cvv-exp">
+                  <div className="payment__form__section">
+                    <label htmlFor="cvv">CVV</label>
+                    <input
+                      className="payment__form__cvv"
+                      onChange={handleValidation}
+                      value={formValue.cvv}
+                      name="cvv"
+                      id="cvv"
+                      placeholder="CVV"
+                      maxLength="3"
+                      aria-describedby="cvv-error"
+                      aria-invalid={!!formError.cvv}
+                    />
+                    <span
+                      id="cvv-error"
+                      aria-live="polite"
+                      className="payment__form__error">
+                      {formError.cvv}
+                    </span>
+                  </div>
+                  <div className="payment__form__section">
+                    <label id="expiration-label">Expiration Date (MM/YY)</label>
+                    <div
+                      className="payment__form__expiration"
+                      aria-labelledby="expiration-label">
+                      <input
+                        autoComplete="off"
+                        id="month"
+                        name="month"
+                        placeholder="MM"
+                        type="text"
+                        maxLength="2"
+                        onChange={handleValidation}
+                        value={formValue.month}
+                      />
+                      <input
+                        autoComplete="off"
+                        id="year"
+                        name="year"
+                        placeholder="YY"
+                        type="text"
+                        maxLength="2"
+                        onChange={handleValidation}
+                        value={formValue.year}
+                        aria-describedby="year-error"
+                        aria-invalid={!!formError.year}
+                      />
                     </div>
-                    <span className="payment__form__error">{formError.year}</span>
-                  </section>
-                </section>
-                <button type="submit" className=" active-button-style">Proceed</button>
+                    <span
+                      id="year-error"
+                      aria-live="polite"
+                      className="payment__form__error">
+                      {formError.year}
+                    </span>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  aria-label="Proceed with payment"
+                  className=" active-button-style">
+                  Proceed
+                </button>
               </form>
-            </article>}
-        </React.Fragment>}
+            </section>
+          )}
+        </React.Fragment>
+      )}
     </main>
-
   );
-}
-
+};
 
 export default Payment;

@@ -145,7 +145,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 1rem;
   height: 1rem;
 }
+.checkout__form__delivery-details {
+  border: none;
+}
 /* PROMOCODE */
+.checkout__form-promo-code {
+  border: none;
+}
 .checkout__form-promo-code p {
   cursor: pointer;
   color: rgb(103, 15, 186);

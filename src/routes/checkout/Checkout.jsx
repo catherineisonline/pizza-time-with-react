@@ -1,22 +1,24 @@
 import React from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 //components
 import CheckoutForm from "./CheckoutForm";
 import EmptyCart from "../cart/EmptyCart";
-import "./checkout.css"
+import "./checkout.css";
 import CheckoutItem from "./CheckoutItem";
-const Checkout = ({ cartItems,
+const Checkout = ({
+  cartItems,
   productsQuantity,
   totalPayment,
   taxes,
-  currentUser }) => {
+  currentUser,
+}) => {
   return (
     <main className="checkout">
       <h2>Checkout</h2>
       {cartItems.length === 0 ? (
         <EmptyCart />
       ) : (
-        <article className="checkout__inner">
+        <section className="checkout__inner">
           {cartItems.map((cartItem) => (
             <CheckoutItem
               key={uuidv4()}
@@ -27,11 +29,12 @@ const Checkout = ({ cartItems,
             productsQuantity={productsQuantity}
             totalPayment={totalPayment}
             taxes={taxes}
-            currentUser={currentUser} />
-        </article>
+            currentUser={currentUser}
+          />
+        </section>
       )}
     </main>
-  )
-}
+  );
+};
 
 export default Checkout;
