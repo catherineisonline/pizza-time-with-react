@@ -4,7 +4,7 @@ import SearchIcon from "../../assets/images/search-icon.png";
 import ResetLocation from "../../helpers/ResetLocation";
 
 const MenuCategories = ({
-  allCategories,
+  categories,
   changeCategory,
   resetPagination,
   findMenuItem,
@@ -24,7 +24,7 @@ const MenuCategories = ({
         />
       </section>
       <ul>
-        {allCategories.map((category) => (
+        {categories.map((category) => (
           <li key={category.id}>
             <NavLink
               to="/menu"

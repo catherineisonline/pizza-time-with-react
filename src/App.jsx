@@ -14,8 +14,8 @@ import {
   Register,
   SingleItem,
 } from "./routes/index";
-import { products } from "./data/products";
-import { categories } from "./data/categories";
+import { products as productsData } from "./data/products";
+import { categories as categoriesData } from "./data/categories";
 import CartTotals from "./routes/cart/CartTotals";
 import LoginModal from "./components/login/LoginModal";
 import CartItem from "./routes/cart/CartItem";
@@ -27,36 +27,36 @@ import Careers from "./routes/careers/Careers";
 import BlogPost from "./routes/blog-post/BlogPost";
 import Profile from "./routes/profile/Profile";
 import ResetLocation from "./helpers/ResetLocation";
-
+import { useMemo } from "react";
+const USERS_URL = import.meta.env.VITE_USERS_URL;
 function App() {
-  const [allCategories, setAllCategories] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("Menu");
+  const [categories, setCategories] = useState({
+    all: [],
+    active: "Menu",
+  });
+  const [products, setProducts] = useState({ all: [], cart: [] });
   const [cartItems, setCartItems] = useState([]);
-  const [clearedCart, setClearedCart] = useState(false);
-  const [allProducts, setAllProducts] = useState([]);
-  const [productsQuantity, setProductsQuantity] = useState(0);
-  const [totalPayment, setTotalPayment] = useState(0);
-  const [taxes, setTaxes] = useState(0);
-  const [validLogin, setValidLogin] = useState(false);
-  const [isModalActive, setIsModalActive] = useState(false);
-  const [loginModalWindow, setLoginModalWindow] = useState(false);
+  const [orderSummary, setOrderSummary] = useState({
+    quantity: 0,
+    payment: 0,
+    taxes: 0,
+  });
+  const [isValidLogin, setIsValidLogin] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const activeCategory = useMemo(() => categories.active, [categories]);
 
-  const OriginalWebSocket = WebSocket;
-  window.WebSocket = function (...args) {
-    console.log("WebSocket created with args:", args);
-    return new OriginalWebSocket(...args);
-  };
   const getUser = async (id) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_USERS_URL}/${id}`);
-      const body = await response.json();
-      setCurrentUser(body.data[0]);
-      const jsonUser = JSON.stringify(body.data[0]);
-      sessionStorage.setItem("currentUser", jsonUser);
-      if (response.status === 200) {
-        return true;
+      const response = await fetch(`${USERS_URL}/${id}`);
+      const { data } = await response.json();
+      if (!response.ok) {
+        throw new Error(response.statusText);
       }
+      setCurrentUser(data[0]);
+      sessionStorage.setItem("currentUser", JSON.stringify(data[0]));
+      return true;
     } catch (err) {
       console.log(err.message);
       return false;
@@ -65,7 +65,7 @@ function App() {
 
   const updateUser = async (id, user) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_USERS_URL}/${id}`, {
+      const response = await fetch(`${USERS_URL}/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -73,16 +73,14 @@ function App() {
         body: JSON.stringify(user),
       });
 
-      if (response.status === 200) {
-        const update = await getUser(id);
-        if (update) {
-          return true;
-        }
-        return true;
-      } else {
-        console.log("Update failed with status:", response.status);
-        return false;
+      if (!response.ok) {
+        throw new Error(response.statusText);
       }
+      const update = await getUser(id);
+      if (!update) {
+        throw new Error(response.statusText);
+      }
+      return true;
     } catch (err) {
       console.log("Fetch error:", err.message);
       return false;
@@ -97,56 +95,57 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (validLogin && sessionStorage.getItem("validLogin") === null) {
+    if (isValidLogin && sessionStorage.getItem("validLogin") === null) {
       sessionStorage.setItem("validLogin", true);
     }
     if (sessionStorage.getItem("validLogin") !== null) {
-      setValidLogin(sessionStorage.getItem("validLogin"));
+      setIsValidLogin(sessionStorage.getItem("validLogin"));
     }
-  }, [validLogin]);
+  }, [isValidLogin]);
 
   const activateLoginModal = () => {
     hideMenu();
-    setLoginModalWindow(!loginModalWindow);
+    setIsLoginModalOpen(!isLoginModalOpen);
   };
 
   const handleLogout = () => {
-    setValidLogin(false);
+    setIsValidLogin(false);
     hideMenu();
     setCurrentUser({});
     ResetLocation();
     setCartItems([]);
-    setProductsQuantity(0);
+    setOrderSummary({
+      quantity: 0,
+      payment: 0,
+      taxes: 0,
+    });
     sessionStorage.clear();
   };
 
   const findMenuItem = (e) => {
     e.preventDefault();
     const inputValue = e.target.value.toLowerCase();
-    const collectData = products.filter((product) =>
+    const collectData = products.all.filter((product) =>
       product.ItemName.toLowerCase().includes(inputValue)
     );
 
     if (collectData.length > 0) {
-      setAllProducts(collectData);
+      setProducts((prev) => ({ ...prev, all: collectData }));
     } else {
-      setAllProducts([]);
+      setProducts((prev) => ({ ...prev, all: [] }));
     }
   };
 
-  const showModal = () => {
-    setIsModalActive(!isModalActive);
-  };
   const hideMenu = () => {
-    setIsModalActive(false);
+    setIsNavOpen(false);
   };
 
   const getAllCategories = async () => {
-    setAllCategories(categories);
+    setCategories((prev) => ({ ...prev, all: categoriesData }));
   };
 
   const getAllProducts = () => {
-    setAllProducts(products);
+    setProducts((prev) => ({ ...prev, all: productsData }));
   };
 
   const CheckRepeatableProducts = (
@@ -267,7 +266,10 @@ function App() {
     sessionStorage.setItem("cartItems", jsonUser);
     setCartItems(currentCartItems);
     sessionStorage.setItem("cartQuantity", totalCartQuantity);
-    setProductsQuantity(totalCartQuantity);
+    setOrderSummary((prev) => ({
+      ...prev,
+      quantity: totalCartQuantity,
+    }));
     successMsg();
   };
 
@@ -277,8 +279,12 @@ function App() {
       const cartItems = JSON.parse(jsonCartItems);
       setCartItems(cartItems);
     }
-    if (sessionStorage.getItem("cartQuantity") !== null) {
-      setProductsQuantity(sessionStorage.getItem("cartQuantity"));
+    const cartQuantitySession = sessionStorage.getItem("cartQuantity");
+    if (cartQuantitySession !== null) {
+      setOrderSummary((prev) => ({
+        ...prev,
+        quantity: cartQuantitySession,
+      }));
     }
   }, []);
 
@@ -297,10 +303,10 @@ function App() {
         userSelectedAttributes
       );
     } else {
-      const products = [...cartItems];
-      const indexOfProduct = products.indexOf(repeatableProduct);
-      products.splice(indexOfProduct, 1);
-      updatedProductList = products;
+      const productsAll = [...cartItems];
+      const indexOfProduct = productsAll.indexOf(repeatableProduct);
+      productsAll.splice(indexOfProduct, 1);
+      updatedProductList = productsAll;
     }
 
     setCartItems(updatedProductList);
@@ -308,36 +314,51 @@ function App() {
     sessionStorage.setItem("cartItems", jsonUser);
 
     if (updatedProductList.length <= 1) {
-      setProductsQuantity(updatedProductList[0]?.quantity || 0);
+      setOrderSummary((prev) => ({
+        ...prev,
+        quantity: updatedProductList[0]?.quantity || 0,
+      }));
     } else {
       const productListArray = updatedProductList.map((item) => item.quantity);
       const sum = productListArray.reduce((a, b) => a + b, 0);
       sessionStorage.setItem("cartQuantity", sum);
-      setProductsQuantity(sum);
+      setOrderSummary((prev) => ({
+        ...prev,
+        quantity: sum,
+      }));
     }
 
     if (updatedProductList.length === 0) {
       sessionStorage.setItem("cartQuantity", 0);
-      setProductsQuantity(0);
+      setOrderSummary({
+        quantity: 0,
+        payment: 0,
+        taxes: 0,
+      });
     }
   };
 
   const clearCart = () => {
     setCartItems([]);
-    setProductsQuantity(0);
-    setClearedCart(true);
+    setOrderSummary({
+      quantity: 0,
+      payment: 0,
+      taxes: 0,
+    });
     sessionStorage.removeItem("cartItems");
     sessionStorage.removeItem("cartQuantity");
     ResetLocation();
   };
 
   const getTotalPrice = (cartItems) => {
-    let total = cartItems.reduce((prevState, currentItem) => {
-      const singleItemQuantity = currentItem.ItemPrice * currentItem.quantity;
-      return prevState + singleItemQuantity;
+    let total = cartItems.reduce((acc, item) => {
+      return acc + item.ItemPrice * item.quantity;
     }, 0);
-    setTotalPayment(total.toFixed(2));
-    setTaxes(((total * 10) / 100).toFixed(2));
+    setOrderSummary((prev) => ({
+      ...prev,
+      total: total.toFixed(2),
+      taxes: ((total * 10) / 100).toFixed(2),
+    }));
   };
 
   const successMsg = () => {
@@ -348,43 +369,16 @@ function App() {
     }, 1000);
   };
 
-  const getProductsByCategory = (category) => {
-    let separateCategoriesByname = [];
-    const separateCategories = products.reduce(function (
-      singleCategory,
-      singleItem
-    ) {
-      separateCategoriesByname = Object.keys(singleCategory);
-
-      if (!singleCategory[singleItem.Category])
-        singleCategory[singleItem.Category] = singleItem;
-      else
-        singleCategory[singleItem.Category] = Array.isArray(
-          singleCategory[singleItem.Category]
-        )
-          ? singleCategory[singleItem.Category].concat(singleItem)
-          : [singleCategory[singleItem.Category]].concat(singleItem);
-      return singleCategory;
-    },
-    {});
-
-    const result = Object.keys(separateCategories).map(
-      (e) => separateCategories[e]
+  const getProductsByCategory = (targetCategory) => {
+    let filteredByCategory = productsData.filter(
+      (product) => product.Category === targetCategory
     );
-
-    let singleCategoryArray = [];
-    result.map((categories) => {
-      return singleCategoryArray.push(categories);
-    });
-
-    separateCategoriesByname.forEach((cate) => {
-      if (cate === category) {
-        return setAllProducts(separateCategories[category]);
-      }
-      if (category === "Menu") {
-        return setAllProducts(products);
-      }
-    });
+    targetCategory !== "Menu"
+      ? setProducts((prev) => ({
+          ...prev,
+          all: filteredByCategory,
+        }))
+      : getAllProducts();
   };
 
   useEffect(() => {
@@ -395,7 +389,7 @@ function App() {
   }, [activeCategory, cartItems]);
 
   const changeCategory = (newCategory) => {
-    setActiveCategory(newCategory);
+    setCategories((prev) => ({ ...prev, active: newCategory }));
     getProductsByCategory(newCategory);
   };
 
@@ -404,20 +398,20 @@ function App() {
       <Header
         loginModal={
           <LoginModal
-            setValidLogin={setValidLogin}
-            setLoginModalWindow={setLoginModalWindow}
-            loginModalWindow={loginModalWindow}
+            setIsValidLogin={setIsValidLogin}
+            setIsLoginModalOpen={setIsLoginModalOpen}
+            isLoginModalOpen={isLoginModalOpen}
             hideMenu={hideMenu}
             getUser={getUser}
           />
         }
         activateLoginModal={activateLoginModal}
-        showModal={showModal}
-        isModalActive={isModalActive}
+        setIsNavOpen={setIsNavOpen}
+        isNavOpen={isNavOpen}
         hideMenu={hideMenu}
         handleLogout={handleLogout}
-        validLogin={validLogin}
-        productsQuantity={productsQuantity}
+        isValidLogin={isValidLogin}
+        orderSummary={orderSummary}
       />
       <Routes>
         <Route
@@ -429,6 +423,7 @@ function App() {
           path="/cart"
           element={
             <Cart
+              cartItems={cartItems}
               CartItem={
                 <CartItem
                   clearCart={clearCart}
@@ -438,19 +433,13 @@ function App() {
                   cartTotals={
                     <CartTotals
                       className="cart-totals"
-                      totalPayment={totalPayment}
-                      productsQuantity={productsQuantity}
-                      taxes={taxes}
-                      validLogin={validLogin}
-                      showModal={showModal}
-                      isModalActive={isModalActive}
+                      orderSummary={orderSummary}
+                      isValidLogin={isValidLogin}
                       activateLoginModal={activateLoginModal}
                     />
                   }
                 />
               }
-              cartItems={cartItems}
-              clearedCart={clearedCart}
             />
           }
         />
@@ -461,12 +450,12 @@ function App() {
           element={
             <Menu
               findMenuItem={findMenuItem}
-              allProducts={allProducts}
-              allCategories={allCategories}
+              allProducts={products.all}
+              categories={categories.all}
               changeCategory={changeCategory}
               handleAddProduct={handleAddProduct}
               handleRemoveProduct={handleRemoveProduct}
-              activeCategory={activeCategory}
+              activeCategory={categories.active}
             />
           }
         />
@@ -499,7 +488,7 @@ function App() {
         <Route
           path="/register"
           element={
-            validLogin ? (
+            isValidLogin ? (
               <NotFound />
             ) : (
               <Register activateLoginModal={activateLoginModal} />
@@ -509,7 +498,7 @@ function App() {
         <Route
           path="/profile"
           element={
-            !validLogin ? (
+            !isValidLogin ? (
               <NotFound />
             ) : (
               <Profile
@@ -525,10 +514,8 @@ function App() {
           path="/checkout"
           element={
             <Checkout
-              totalPayment={totalPayment}
               cartItems={cartItems}
-              productsQuantity={productsQuantity}
-              taxes={taxes}
+              orderSummary={orderSummary}
               currentUser={currentUser}
             />
           }
@@ -538,7 +525,7 @@ function App() {
           element={
             <Payment
               cartItems={cartItems}
-              totalPayment={totalPayment}
+              orderSummary={orderSummary}
               currentUser={currentUser}
             />
           }

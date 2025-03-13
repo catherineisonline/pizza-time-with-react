@@ -11,14 +11,18 @@ import headerMenu from "../../data/header-menu";
 
 const Header = ({
   loginModal,
-  productsQuantity,
+  orderSummary,
   handleLogout,
-  showModal,
-  isModalActive,
+  // showModal,
+  isNavOpen,
+  setIsNavOpen,
   hideMenu,
-  validLogin,
+  isValidLogin,
   activateLoginModal,
 }) => {
+  const showModal = () => {
+    setIsNavOpen(!isNavOpen);
+  };
   return (
     <header
       aria-labelledby="title"
@@ -51,7 +55,7 @@ const Header = ({
         <ul
           id="main-menu"
           className={`header__nav__menu flex-row pop-font ${
-            isModalActive ? "active" : ""
+            isNavOpen ? "active" : ""
           }`}>
           {headerMenu.map(({ to, label }) => (
             <li key={to}>
@@ -71,7 +75,7 @@ const Header = ({
               </NavLink>
             </li>
           ))}
-          {validLogin && (
+          {isValidLogin && (
             <li>
               <NavLink
                 onClick={() => {
@@ -89,7 +93,7 @@ const Header = ({
           )}
           <li>
             <div className="login-and-cart">
-              {validLogin ? (
+              {isValidLogin ? (
                 <Link
                   to="/"
                   className="passive-button-style txt-white"
@@ -122,21 +126,21 @@ const Header = ({
                   aria-hidden="true"
                 />
                 <p>Cart</p>
-                <p>({productsQuantity})</p>
+                <p>({orderSummary.quantity})</p>
               </NavLink>
             </div>
           </li>
         </ul>
         <button
           className="header__nav__hamburger"
-          aria-label={isModalActive ? "Close menu" : "Open menu"}
-          aria-expanded={isModalActive}
+          aria-label={isNavOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isNavOpen}
           aria-controls="main-menu"
           onClick={showModal}>
           <img
             width="80"
             height="80"
-            src={isModalActive ? closeMenu : openMenu}
+            src={isNavOpen ? closeMenu : openMenu}
             alt=""
           />
         </button>

@@ -4,33 +4,29 @@ import LinkButton from "../../components/Button";
 import ResetLocation from "../../helpers/ResetLocation";
 
 const CartTotals = ({
-  totalPayment,
-  productsQuantity,
-  taxes,
+  orderSummary,
   className,
-  validLogin,
-  showModal,
+  isValidLogin,
   activateLoginModal,
 }) => {
   return (
     <section className={className}>
       <h2 id="cart-summary-title">Cart Summary</h2>
-      {productsQuantity > 0 && (
+      {orderSummary.quantity > 0 && (
         <dl className="cart-totals_content">
           <dt>Tax 10%:</dt>
-          <dd>$ {taxes}</dd>
+          <dd>$ {orderSummary.taxes}</dd>
           <dt>Quantity:</dt>
-          <dd> {productsQuantity}</dd>
+          <dd> {orderSummary.quantity}</dd>
           <dt>Total:</dt>
-          <dd>$ {totalPayment}</dd>
+          <dd>$ {orderSummary.total}</dd>
         </dl>
       )}
       <div className="cart-totals__interaction">
         <CheckoutBtn
           className="active-button-style"
           aria-label="Contiue with checkout"
-          validLogin={validLogin}
-          showModal={showModal}
+          isValidLogin={isValidLogin}
           activateLoginModal={activateLoginModal}
         />
         <LinkButton
