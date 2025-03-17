@@ -35,7 +35,6 @@ function App() {
     active: "Menu",
   });
   const [products, setProducts] = useState({ all: [], cart: [] });
-  const [cartItems, setCartItems] = useState([]);
   const [orderSummary, setOrderSummary] = useState({
     quantity: 0,
     payment: 0,
@@ -46,6 +45,7 @@ function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const activeCategory = useMemo(() => categories.active, [categories]);
+  const productsCart = useMemo(() => products.cart, [products]);
 
   const getUser = async (id) => {
     try {
@@ -58,7 +58,7 @@ function App() {
       sessionStorage.setItem("currentUser", JSON.stringify(data[0]));
       return true;
     } catch (err) {
-      console.log(err.message);
+      console.log(err.statusText);
       return false;
     }
   };
@@ -82,7 +82,7 @@ function App() {
       }
       return true;
     } catch (err) {
-      console.log("Fetch error:", err.message);
+      console.log("Fetch error:", err.statusText);
       return false;
     }
   };
@@ -113,7 +113,7 @@ function App() {
     hideMenu();
     setCurrentUser({});
     ResetLocation();
-    setCartItems([]);
+    setProducts((prev) => ({ ...prev, cart: [] }));
     setOrderSummary({
       quantity: 0,
       payment: 0,
@@ -148,100 +148,45 @@ function App() {
     setProducts((prev) => ({ ...prev, all: productsData }));
   };
 
-  const CheckRepeatableProducts = (
-    cartItems,
-    targetProduct,
-    userSelectedAttributes
-  ) => {
-    let item;
-    let productsById = cartItems.filter((item) => item.id === targetProduct.id);
-    productsById.forEach((targetItem) => {
-      if (MatchingAttributes(userSelectedAttributes, targetItem)) {
-        item = targetItem;
-      }
-      if (userSelectedAttributes.length === 0) {
-        item = targetItem;
-      }
-    });
-
-    return item;
-  };
-
-  const MatchingAttributes = (userSelectedAttributes, targetProduct) => {
-    const attributesMatch = (groupOne, groupTwo) => {
-      return Object.values(groupOne)[1] === Object.values(groupTwo)[1];
-    };
-
-    let truthyValuesCounter = 0;
-    let i = 0;
-    while (i < userSelectedAttributes.length) {
-      if (
-        attributesMatch(
-          userSelectedAttributes[i],
-          targetProduct?.userSelectedAttributes[i]
-        )
-      ) {
-        truthyValuesCounter += 1;
-      }
-      i += 1;
-    }
-
-    return truthyValuesCounter === userSelectedAttributes?.length;
-  };
-
-  const updateCartQuantity = (
-    actionToPerfrom,
-    productAlreadyInCart,
-    userSelectedAttributes
-  ) => {
-    const repeatableProduct = CheckRepeatableProducts(
-      cartItems,
-      productAlreadyInCart,
-      userSelectedAttributes
-    );
-    const indexOfRepeatableProduct = cartItems.indexOf(repeatableProduct);
-
-    const currentProductList = [...cartItems];
-    if (actionToPerfrom === "addProduct") {
-      currentProductList[indexOfRepeatableProduct].quantity += 1;
+  const CheckRepeatableProducts = (targetProduct, attributes) => {
+    let inCart = products.cart.some((item) => item.id === targetProduct.id);
+    if (!inCart) {
+      return undefined;
     } else {
-      currentProductList[indexOfRepeatableProduct].quantity -= 1;
+      let match = products.cart.filter((item) => item.id === targetProduct.id);
+      let target = match.filter((item) =>
+        item.userSelectedAttributes.length === 0
+          ? true
+          : item.userSelectedAttributes[0].attributeValue ===
+            attributes[0].attributeValue
+      );
+      if (target.length === 0) {
+        return undefined;
+      }
+      return target;
     }
-
-    return currentProductList;
   };
   const handleAddProduct = (targetProduct, userSelectedAttributes) => {
     const productAlreadyInCart = CheckRepeatableProducts(
-      cartItems,
       targetProduct,
       userSelectedAttributes
     );
-
-    let currentCartItems = [...cartItems];
+    let currentCartItems = [...products.cart];
     let newQuantity;
-    //if product doesn't exists yet
     if (productAlreadyInCart === undefined) {
       const itemToAdd = targetProduct;
-
       newQuantity = 1;
-
       currentCartItems.push({
         ...itemToAdd,
         userSelectedAttributes,
         quantity: newQuantity,
       });
-    }
-    //if product already exists
-    else {
+    } else {
       let index;
-      //if there are no attributes find index by id
       if (userSelectedAttributes.length === 0) {
-        index = cartItems.findIndex((item) => item.id === targetProduct.id);
-      }
-
-      //if there are attributes find index by attributes and id at the same time
-      else {
-        index = cartItems.findIndex(
+        index = products.cart.findIndex((item) => item.id === targetProduct.id);
+      } else {
+        index = products.cart.findIndex(
           (item) =>
             item.userSelectedAttributes[0]?.attributeValue ===
               userSelectedAttributes[0].attributeValue &&
@@ -249,10 +194,10 @@ function App() {
         );
       }
       if (index !== -1) {
-        newQuantity = cartItems[index].quantity;
+        newQuantity = products.cart[index].quantity;
 
         currentCartItems[index] = {
-          ...cartItems[index],
+          ...products.cart[index],
           quantity: newQuantity + 1,
         };
       }
@@ -264,7 +209,7 @@ function App() {
     );
     const jsonUser = JSON.stringify(currentCartItems);
     sessionStorage.setItem("cartItems", jsonUser);
-    setCartItems(currentCartItems);
+    setProducts((prev) => ({ ...prev, cart: currentCartItems }));
     sessionStorage.setItem("cartQuantity", totalCartQuantity);
     setOrderSummary((prev) => ({
       ...prev,
@@ -277,7 +222,7 @@ function App() {
     if (sessionStorage.getItem("cartItems") !== null) {
       const jsonCartItems = sessionStorage.getItem("cartItems");
       const cartItems = JSON.parse(jsonCartItems);
-      setCartItems(cartItems);
+      setProducts((prev) => ({ ...prev, cart: cartItems }));
     }
     const cartQuantitySession = sessionStorage.getItem("cartQuantity");
     if (cartQuantitySession !== null) {
@@ -288,58 +233,42 @@ function App() {
     }
   }, []);
 
-  const handleRemoveProduct = (targetProduct, userSelectedAttributes) => {
-    let updatedProductList;
-    let repeatableProduct = CheckRepeatableProducts(
-      cartItems,
-      targetProduct,
-      userSelectedAttributes
-    );
-
-    if (repeatableProduct.quantity > 1) {
-      updatedProductList = updateCartQuantity(
-        "removeProduct",
-        repeatableProduct,
-        userSelectedAttributes
-      );
+  const handleRemoveProduct = (target, targetAttr) => {
+    let productToUpdate = CheckRepeatableProducts(target, targetAttr);
+    const hasAttribute = productToUpdate[0].attributes.length > 0;
+    let productsCopy = [];
+    if (hasAttribute) {
+      productsCopy = products.cart
+        .map((item) =>
+          item.userSelectedAttributes[0]?.attributeValue ===
+          productToUpdate[0].userSelectedAttributes[0]?.attributeValue
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0);
     } else {
-      const productsAll = [...cartItems];
-      const indexOfProduct = productsAll.indexOf(repeatableProduct);
-      productsAll.splice(indexOfProduct, 1);
-      updatedProductList = productsAll;
+      productsCopy = products.cart
+        .map((item) =>
+          item.id === productToUpdate[0].id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0);
     }
-
-    setCartItems(updatedProductList);
-    const jsonUser = JSON.stringify(updatedProductList);
+    setProducts((prev) => ({ ...prev, cart: productsCopy }));
+    const jsonUser = JSON.stringify(productsCopy);
     sessionStorage.setItem("cartItems", jsonUser);
 
-    if (updatedProductList.length <= 1) {
-      setOrderSummary((prev) => ({
-        ...prev,
-        quantity: updatedProductList[0]?.quantity || 0,
-      }));
-    } else {
-      const productListArray = updatedProductList.map((item) => item.quantity);
-      const sum = productListArray.reduce((a, b) => a + b, 0);
-      sessionStorage.setItem("cartQuantity", sum);
-      setOrderSummary((prev) => ({
-        ...prev,
-        quantity: sum,
-      }));
-    }
-
-    if (updatedProductList.length === 0) {
-      sessionStorage.setItem("cartQuantity", 0);
-      setOrderSummary({
-        quantity: 0,
-        payment: 0,
-        taxes: 0,
-      });
-    }
+    const sum = [...productsCopy].reduce((a, b) => a + b.quantity, 0);
+    sessionStorage.setItem("cartQuantity", sum);
+    setOrderSummary((prev) => ({
+      ...prev,
+      quantity: sum,
+    }));
   };
 
   const clearCart = () => {
-    setCartItems([]);
+    setProducts((prev) => ({ ...prev, cart: [] }));
     setOrderSummary({
       quantity: 0,
       payment: 0,
@@ -350,8 +279,8 @@ function App() {
     ResetLocation();
   };
 
-  const getTotalPrice = (cartItems) => {
-    let total = cartItems.reduce((acc, item) => {
+  const getTotalPrice = (items) => {
+    let total = items.reduce((acc, item) => {
       return acc + item.ItemPrice * item.quantity;
     }, 0);
     setOrderSummary((prev) => ({
@@ -385,8 +314,8 @@ function App() {
     getAllCategories();
     getAllProducts();
     getProductsByCategory(activeCategory);
-    getTotalPrice(cartItems);
-  }, [activeCategory, cartItems]);
+    getTotalPrice(productsCart);
+  }, [activeCategory, productsCart]);
 
   const changeCategory = (newCategory) => {
     setCategories((prev) => ({ ...prev, active: newCategory }));
@@ -423,11 +352,11 @@ function App() {
           path="/cart"
           element={
             <Cart
-              cartItems={cartItems}
+              cartItems={products.cart}
               CartItem={
                 <CartItem
                   clearCart={clearCart}
-                  cartItems={cartItems}
+                  cartItems={products.cart}
                   handleAddProduct={handleAddProduct}
                   handleRemoveProduct={handleRemoveProduct}
                   cartTotals={
@@ -514,7 +443,7 @@ function App() {
           path="/checkout"
           element={
             <Checkout
-              cartItems={cartItems}
+              cartItems={products.cart}
               orderSummary={orderSummary}
               currentUser={currentUser}
             />
@@ -524,7 +453,7 @@ function App() {
           path="/payment"
           element={
             <Payment
-              cartItems={cartItems}
+              cartItems={products.cart}
               orderSummary={orderSummary}
               currentUser={currentUser}
             />
