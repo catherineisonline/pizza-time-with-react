@@ -1,10 +1,3 @@
-li {
-  list-style: none;
-}
-.menu::after {
-  content: "";
-  height: 10rem;
-}
 .menu {
   display: grid;
   grid-template-columns: 1fr;
@@ -76,8 +69,6 @@ input[type="search"]::-webkit-search-results-decoration {
   right: 15%;
 }
 
-/* ScrollBar */
-
 .menu__categories ul::-webkit-scrollbar {
   width: 1em;
 }
@@ -98,6 +89,7 @@ input[type="search"]::-webkit-search-results-decoration {
   font-size: 1.3rem;
   letter-spacing: 1px;
   text-align: center;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
   border: 1px solid var(--yellow);
@@ -115,20 +107,22 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .menu__items {
   display: grid;
-  grid-column: span 1;
   grid-template-columns: 1fr;
   width: 90vw;
+  gap: 1rem;
   margin: 0 auto;
 }
 .pagination {
+  margin: 0 auto;
   color: var(--white);
+  padding: 5rem 1rem;
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  margin-top: 15rem;
+  width: max-content;
 }
 .pagination li {
   cursor: pointer;
@@ -142,7 +136,6 @@ input[type="search"]::-webkit-search-results-decoration {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  margin-top: 30%;
   height: 100%;
   justify-content: space-around;
   position: relative;
@@ -244,15 +237,15 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-/***************  RESPONSIVE ***************/
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 850px) {
   .menu {
-    grid-template-columns: repeat(4, 1fr);
-    gap: none;
+    grid-template-columns: 25vw repeat(5, 1fr);
+    padding-top: 2rem;
   }
 
   .menu__categories {
     grid-column: span 1;
+    max-width: 25vw;
     position: sticky;
     top: 15%;
     display: flex;
@@ -291,14 +284,14 @@ input[type="search"]::-webkit-search-results-decoration {
     border-bottom: none;
   }
   .menu__items {
-    grid-column: span 3;
+    grid-column-start: 3;
+    grid-column-end: 5;
     gap: 2rem;
-    width: 70vw;
+    width: 60vw;
   }
   .pagination {
-    position: absolute;
-    bottom: 1%;
-    right: 30%;
+    grid-column-start: 3;
+    grid-column-end: 5;
   }
 }
 
@@ -306,25 +299,10 @@ input[type="search"]::-webkit-search-results-decoration {
   .menu__items {
     grid-template-columns: repeat(2, 1fr);
   }
-  .menu__categories {
-    width: 80%;
-  }
-  .menu__categories ul {
-    padding: 0;
-  }
-  .menu {
-    position: relative;
-  }
-  .pagination {
-    margin: initial;
-  }
-  .pagination li.selected {
-    color: var(--pizza-red);
-  }
 }
 
 @media screen and (min-width: 1440px) {
-  .menu__items {
-    grid-template-columns: repeat(3, 1fr);
+  .menu {
+    grid-template-columns: 15vw repeat(5, 1fr);
   }
 }

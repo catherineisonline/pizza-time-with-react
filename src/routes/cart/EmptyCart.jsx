@@ -4,7 +4,7 @@ import ResetLocation from "../../helpers/ResetLocation";
 
 const EmptyCart = () => {
   return (
-    <React.Fragment>
+    <section className="cart__items empty-cart">
       <h3>Oh, no, your cart is empty</h3>
       <p>Seems like you have not added anything to your cart yet.</p>
       <Link
@@ -14,7 +14,7 @@ const EmptyCart = () => {
         onClick={ResetLocation}>
         Explore menu
       </Link>
-    </React.Fragment>
+    </section>
   );
 };
 

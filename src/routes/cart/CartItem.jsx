@@ -9,7 +9,7 @@ const CartItem = ({
   cartTotals,
 }) => {
   return (
-    <React.Fragment>
+    <section className="cart__items">
       {cartItems.map((cartItem, index) => {
         return (
           <article
@@ -56,7 +56,7 @@ const CartItem = ({
         </button>
       )}
       {cartTotals}
-    </React.Fragment>
+    </section>
   );
 };
 

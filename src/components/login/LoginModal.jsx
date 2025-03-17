@@ -7,9 +7,9 @@ import { useRef } from "react";
 import { useEffect } from "react";
 
 const LoginModal = ({
-  setLoginModalWindow,
-  setValidLogin,
-  loginModalWindow,
+  setIsLoginModalOpen,
+  setIsValidLogin,
+  isLoginModalOpen,
   hideMenu,
   getUser,
 }) => {
@@ -39,7 +39,7 @@ const LoginModal = ({
   };
 
   const hideLoginModal = () => {
-    setLoginModalWindow(false);
+    setIsLoginModalOpen(false);
     setFormValue((prev) => ({ email: prev.email, password: "" }));
     setFormError({});
   };
@@ -78,17 +78,17 @@ const LoginModal = ({
       setFormValue((prev) => ({ email: prev.email, password: "" }));
       setFormError({});
       setVerificationError("");
-      setValidLogin(true);
+      setIsValidLogin(true);
       navigate("/menu");
     }
   };
   useEffect(() => {
-    if (loginModalWindow) {
+    if (isLoginModalOpen) {
       modalRef.current?.show();
     } else {
       modalRef.current?.close();
     }
-  }, [loginModalWindow]);
+  }, [isLoginModalOpen]);
 
   const handleBackdropClick = (event) => {
     if (event.target === modalRef.current) {

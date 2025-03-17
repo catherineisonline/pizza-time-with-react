@@ -3,6 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
   gap: 1rem;
@@ -25,7 +26,9 @@
   text-align: center;
   max-width: 80vw;
 }
-
+.cart__items.empty-cart {
+  align-items: center;
+}
 .cart__items p {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
@@ -131,6 +134,7 @@
   flex-direction: row;
   gap: 1rem;
   align-items: center;
+  justify-content: center;
 }
 .back-to-menu {
   cursor: pointer;

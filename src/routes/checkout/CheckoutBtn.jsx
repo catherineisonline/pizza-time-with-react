@@ -2,10 +2,10 @@ import React from "react";
 import LinkButton from "../../components/Button";
 import ResetLocation from "../../helpers/ResetLocation";
 
-const CheckoutBtn = ({ className, validLogin, activateLoginModal }) => {
+const CheckoutBtn = ({ className, isValidLogin, activateLoginModal }) => {
   return (
     <React.Fragment>
-      {validLogin ? (
+      {isValidLogin ? (
         <LinkButton
           onClick={ResetLocation}
           to="/checkout"

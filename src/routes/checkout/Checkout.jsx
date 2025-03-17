@@ -7,9 +7,9 @@ import "./checkout.css";
 import CheckoutItem from "./CheckoutItem";
 const Checkout = ({
   cartItems,
-  productsQuantity,
-  totalPayment,
-  taxes,
+  // productsQuantity,
+  // totalPayment,
+  orderSummary,
   currentUser,
 }) => {
   return (
@@ -26,9 +26,9 @@ const Checkout = ({
             />
           ))}
           <CheckoutForm
-            productsQuantity={productsQuantity}
-            totalPayment={totalPayment}
-            taxes={taxes}
+            productsQuantity={orderSummary.quantity}
+            totalPayment={orderSummary.total}
+            taxes={orderSummary.taxes}
             currentUser={currentUser}
           />
         </section>

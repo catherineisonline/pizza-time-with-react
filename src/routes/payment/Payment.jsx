@@ -7,7 +7,7 @@ import validateForm from "../../components/validateForm";
 import PaymentSuccess from "./PaymentSuccess";
 import Card from "./Cards.jsx";
 
-const Payment = ({ cartItems, totalPayment }) => {
+const Payment = ({ cartItems, orderSummary }) => {
   const [formValue, setFormValue] = useState({
     firstname: "",
     lastname: "",
@@ -46,7 +46,7 @@ const Payment = ({ cartItems, totalPayment }) => {
           {submit && Object.keys(formError).length === 0 ? (
             <PaymentSuccess
               transactionId={transactionId}
-              totalPayment={totalPayment}
+              orderSummary={orderSummary}
             />
           ) : (
             <section className="payment__inner">

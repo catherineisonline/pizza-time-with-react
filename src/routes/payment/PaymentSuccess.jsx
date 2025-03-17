@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 import Tick from "../../assets/images/success-tick.png";
-const PaymentSuccess = ({ totalPayment, transactionId }) => {
+const PaymentSuccess = ({ orderSummary, transactionId }) => {
   return (
     <section className="payment__success">
       <div className="payment__success__title">
@@ -18,7 +18,7 @@ const PaymentSuccess = ({ totalPayment, transactionId }) => {
       />
       <dl className="payment__success__details">
         <dt>Amount paid:</dt>
-        <dd>{totalPayment} </dd>
+        <dd>{orderSummary.total} </dd>
         <dt>Transaction id:</dt>
         <dd>{transactionId}</dd>
         <dt>Est. delivery time:</dt>

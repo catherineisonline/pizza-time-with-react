@@ -16,9 +16,7 @@ const Cart = ({ cartItems, CartItem }) => {
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}>
       <h2>Shopping cart</h2>
-      <section className="cart__items">
-        {cartItems.length === 0 ? <EmptyCart /> : CartItem}
-      </section>
+      {cartItems.length === 0 ? <EmptyCart /> : CartItem}
       <ScrollBtn />
     </motion.main>
   );
