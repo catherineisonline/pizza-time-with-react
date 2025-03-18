@@ -1,18 +1,26 @@
+import "./contact.css";
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ReCAPTCHA from "react-google-recaptcha"
+import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "react-router-dom";
 import validateForm from "../../components/validateForm";
 import ResetLocation from "../../helpers/ResetLocation";
-import './contact.css'
+
+const CAPTCHA_URL = import.meta.env.VITE_CAPTCHA_URL;
+const CAPTCHA_SECRET = import.meta.env.VITE_CAPTCHA_SECRET;
+const CAPTCHA_KEY = import.meta.env.VITE_CAPTCHA_KEY;
 
 const Contact = () => {
-  const [formValue, setFormValue] = useState({ fullname: '', email: '', message: "" });
+  const [formValue, setFormValue] = useState({
+    fullname: "",
+    email: "",
+    message: "",
+  });
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
   const [loading, setLoading] = useState(false);
-  const [captchaError, setCaptchaError] = useState('')
+  const [captchaError, setCaptchaError] = useState("");
   const validate = validateForm("contact");
   const captchaRef = useRef();
   useEffect(() => {
@@ -27,11 +35,10 @@ const Contact = () => {
       setLoading(false);
       setSubmit(false);
       return;
-    }
-    else {
+    } else {
       let captchaToken = captchaRef.current?.getValue();
       if (captchaToken.length === 0) {
-        setCaptchaError("reCaptcha is mandatory")
+        setCaptchaError("reCaptcha is mandatory");
         setLoading(false);
         setSubmit(false);
         return;
@@ -39,50 +46,41 @@ const Contact = () => {
       const verification = await verifyCaptcha(captchaToken);
       captchaRef.current?.reset();
       if (verification) {
-        setLoading(false);
         setSubmit(true);
-        ResetLocation()
-        setFormValue({ fullname: '', email: '', message: "" })
-        setCaptchaError("");
-      }
-      else {
-        ResetLocation()
-        setLoading(false);
+      } else {
         setSubmit(false);
-        setFormValue({ fullname: '', email: '', message: "" });
-        setCaptchaError("");
       }
-
+      ResetLocation();
+      setLoading(false);
+      setFormValue({ fullname: "", email: "", message: "" });
+      setCaptchaError("");
     }
-  }
+  };
   const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
-  }
+  };
   const verifyCaptcha = async (captchaToken) => {
     try {
-      const response = await fetch(import.meta.env.VITE_CAPTCHA_URL, {
-        method: 'POST',
+      const response = await fetch(CAPTCHA_URL, {
+        method: "POST",
         body: JSON.stringify({
-          secret: import.meta.env.VITE_CAPTCHA_SECRET,
-          captchaToken
+          secret: CAPTCHA_SECRET,
+          captchaToken,
         }),
         headers: {
-          'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       });
-      if (response.status === 200) {
-        return true;
+      if (!response.ok) {
+        throw new Error(response.statusText);
       }
-      else {
-        return false;
-      }
-    }
-    catch (error) {
-      console.error("Could not verify captcha!", error.message);
+      return true;
+    } catch (error) {
+      console.error("Could not verify captcha!", error.statusText);
       return false;
     }
-  }
+  };
   return (
     <motion.main
       className="contact"
@@ -90,71 +88,147 @@ const Contact = () => {
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}>
-      {loading ?
+      {loading ? (
         <section className="contact-loader">
-          <p>Almost there...</p>
-          <img alt="Processing request" src="https://media0.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif?cid=ecf05e472hf2wk1f2jou3s5fcnx1vek6ggnfcvhsjbeh7v5u&ep=v1_stickers_search&rid=giphy.gif&ct=s" />
+          <h2>Almost there...</h2>
+          <img
+            aria-hidden="true"
+            alt=""
+            src="https://media0.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif?cid=ecf05e472hf2wk1f2jou3s5fcnx1vek6ggnfcvhsjbeh7v5u&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+          />
         </section>
-        :
-        submit && Object.keys(formError).length === 0 ?
-          <section className="contact__success-msg">
-            <p>We have recieved your message and we will get back to you shortly! 🍕</p>
-            <section>
-              <Link className="active-button-style" to="/menu">Go to menu</Link>
-              <button className="passive-button-style" type="button" onClick={() => { setSubmit(false); }}>Send again</button>
-            </section>
-          </section>
-          :
-          <form onSubmit={handleSubmit} className="flex-container flex-column">
-            <div className="webflow-style-input">
-              <input
-                onChange={handleValidation}
-                value={formValue.fullname}
-                name="fullname"
-                className="pop-font"
-                type="text"
-                placeholder="Full Name"
-              />
-            </div>
-            <span className="input-validation-error">{formError.fullname}</span>
-            <div className="webflow-style-input">
-              <input
-                onChange={handleValidation}
-                value={formValue.email}
-                name="email"
-                className="pop-font"
-                type="text"
-                placeholder="Email"
-              />
-            </div>
-            <span className="input-validation-error">{formError.email}</span>
-            <div className=" webflow-style-input">
-              <textarea
-                onChange={handleValidation}
-                value={formValue.message}
-                name="message"
-                className="pop-font"
-                placeholder="Message"
-              />
-            </div>
-            <span className="input-validation-error">{formError.message}</span>
-            <ReCAPTCHA ref={captchaRef} sitekey={import.meta.env.VITE_CAPTCHA_KEY} theme="dark" />
-            <span className="input-validation-error">{captchaError}</span>
-            <button type="submit" className="active-button-style" >
-              Send
+      ) : submit && Object.keys(formError).length === 0 ? (
+        <section className="contact__success-msg">
+          <h2>
+            We have recieved your message and we will get back to you shortly!
+            🍕
+          </h2>
+          <div>
+            <Link
+              className="active-button-style"
+              to="/menu"
+              aria-label="Go to menu">
+              Go to menu
+            </Link>
+            <button
+              aria-label="Send message again"
+              className="passive-button-style"
+              type="button"
+              onClick={() => {
+                setSubmit(false);
+              }}>
+              Send again
             </button>
-          </form>
-      }
-      <section className="contact__cover"></section>
+          </div>
+        </section>
+      ) : (
+        <form
+          onSubmit={handleSubmit}
+          className="flex-container flex-column">
+          <h2>Send a message</h2>
+          <div className="webflow-style-input">
+            <label
+              htmlFor="fullname"
+              className="visually-hidden">
+              Full name
+            </label>
+            <input
+              onChange={handleValidation}
+              value={formValue.fullname}
+              name="fullname"
+              id="fullname"
+              className="pop-font"
+              type="text"
+              placeholder="Full Name"
+              autoComplete="name"
+              aria-describedby="fullname-error"
+            />
+          </div>
+          <span
+            className="input-validation-error"
+            aria-live="polite"
+            id="fullname-error">
+            {formError.fullname}
+          </span>
+          <div className="webflow-style-input">
+            <label
+              htmlFor="email"
+              className="visually-hidden">
+              Email address
+            </label>
+            <input
+              onChange={handleValidation}
+              value={formValue.email}
+              name="email"
+              id="email"
+              className="pop-font"
+              type="text"
+              placeholder="Email"
+              autoComplete="email"
+              aria-describedby="email-error"
+            />
+          </div>
+          <span
+            className="input-validation-error"
+            aria-live="assertive"
+            id="email-error">
+            {formError.email}
+          </span>
+          <div className=" webflow-style-input">
+            <label
+              htmlFor="message"
+              className="visually-hidden">
+              Your message
+            </label>
+            <textarea
+              onChange={handleValidation}
+              value={formValue.message}
+              name="message"
+              id="message"
+              className="pop-font"
+              placeholder="Message"
+              aria-describedby="message-error"
+            />
+          </div>
+          <span
+            className="input-validation-error"
+            aria-live="assertive"
+            id="message-error">
+            {formError.message}
+          </span>
+          <ReCAPTCHA
+            ref={captchaRef}
+            sitekey={CAPTCHA_KEY}
+            theme="dark"
+            aria-describedby="captcha-error"
+          />
+          <span
+            className="input-validation-error"
+            aria-live="assertive"
+            id="captcha-error">
+            {captchaError}
+          </span>
+          <button
+            type="submit"
+            className="active-button-style"
+            aria-label="Send the message">
+            Send
+          </button>
+        </form>
+      )}
+      <div className="contact__cover"></div>
       <section className="contact__inner pop-font">
-        <h2 className="">Contact us</h2>
+        <h3>Contact us</h3>
         <p>
-          We greatly anticipate your response and are eager to receive any inquiries you might have. Please do not hesitate to reach out to us should you require any further clarification or assistance. Your feedback and questions are of utmost importance to us, and we are here to provide the support you need. Looking forward to hearing from you!
+          We greatly anticipate your response and are eager to receive any
+          inquiries you might have. Please do not hesitate to reach out to us
+          should you require any further clarification or assistance. Your
+          feedback and questions are of utmost importance to us, and we are here
+          to provide the support you need. Looking forward to hearing from you!
         </p>
       </section>
     </motion.main>
   );
-}
-
+};
 
 export default Contact;

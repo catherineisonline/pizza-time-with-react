@@ -1,4 +1,4 @@
-/* Hide Calendar Icon In Chrome */
+/* Hide Calendar Icon*/
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
@@ -54,7 +54,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: 500;
   color: var(--yellow);
 }
-/* PERSONAL INFORMATION */
+
 .checkout__form h3 {
   font-size: 2.5rem;
   font-weight: 400;
@@ -106,7 +106,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 20%;
 }
 
-/* CHOOSE DELIVERY */
 .checkout-choose-delivery form label {
   display: flex;
   flex-direction: row;
@@ -172,8 +171,6 @@ input[type="password"] {
   font-weight: 400;
   font-size: 1rem;
 }
-
-/* CART TOTALS */
 
 .checkout__totals {
   display: flex;

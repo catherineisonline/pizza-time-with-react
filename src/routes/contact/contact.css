@@ -15,7 +15,7 @@
   height: 460px;
   padding: 2rem;
 }
-.contact__success-msg p {
+.contact__success-msg h2 {
   color: var(--green);
   font-family: var(--poppins-font);
   font-size: 1.5rem;
@@ -36,7 +36,8 @@
   height: 460px;
   padding: 2rem;
 }
-.contact-loader p {
+.contact-loader h2 {
+  font-size: 4rem;
   font-family: var(--poppins-font);
   color: var(--white);
 }
@@ -55,6 +56,11 @@
   margin-left: 2rem;
   margin-bottom: 2rem;
 }
+.contact form h2 {
+  color: var(--white);
+  font-family: var(--poppins-font);
+  font-size: 4rem;
+}
 .contact form textarea {
   resize: none;
 }
@@ -70,7 +76,6 @@
   border-radius: 10px;
 }
 
-/* Contact Content */
 .contact__inner {
   background-color: var(--yellow);
   padding: 6rem 2rem;
@@ -81,12 +86,9 @@
   width: 55vw;
 }
 
-.contact__inner h2 {
+.contact__inner h3 {
   font-size: 4rem;
   letter-spacing: 1px;
-}
-.contact__inner h3 {
-  line-height: 2rem;
 }
 
 .fullname-error-cpage,
@@ -117,7 +119,6 @@
   background-color: transparent;
 }
 
-/***************  RESPONSIVE ***************/
 @media screen and (min-width: 700px) {
   .contact form {
     width: 60%;

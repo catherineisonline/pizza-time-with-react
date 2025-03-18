@@ -18,7 +18,7 @@ const Checkout = ({
       {cartItems.length === 0 ? (
         <EmptyCart />
       ) : (
-        <section className="checkout__inner">
+        <div className="checkout__inner">
           {cartItems.map((cartItem) => (
             <CheckoutItem
               key={uuidv4()}
@@ -31,7 +31,7 @@ const Checkout = ({
             taxes={orderSummary.taxes}
             currentUser={currentUser}
           />
-        </section>
+        </div>
       )}
     </main>
   );
