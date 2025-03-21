@@ -1,72 +1,72 @@
 .homepage__contact {
-    display: flex;
-    flex-direction: column;
-    padding-top: 4rem;
-    gap: 1rem;
-    padding-bottom: 3rem;
-    max-width: 1440px;
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+  gap: 1rem;
+  padding-bottom: 3rem;
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .homepage__contact h2 {
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    font-weight: 400;
-    text-align: left;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: left;
 }
 
 #map {
-    height: 30rem;
-    max-width: 90%;
-    margin: 0 auto;
+  height: 30rem;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .contact__info {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-    font-family: var(--poppins-font);
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: var(--poppins-font);
 }
+.contact__info h2 {
+  font-size: 2rem;
+}
+.contact__info h2,
 .contact__info h3 {
-    font-size: 2rem;
-}
-.contact__info h3,
-.contact__info h4 {
-    color: var(--white);
-    font-weight: 500;
+  color: var(--white);
+  font-weight: 500;
 }
 .contact__info p {
-    color: var(--light-gray);
+  color: var(--light-gray);
 }
 .contact__info ul {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .contact__info ul li {
-    color: var(--light-gray);
-    text-decoration: none;
+  color: var(--light-gray);
+  text-decoration: none;
 }
 
 .homepage__contact .active-button-style {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 700px) {
-    .homepage__contact {
-        justify-content: space-evenly;
-        gap: 5rem;
-    }
+  .homepage__contact {
+    justify-content: space-evenly;
+    gap: 5rem;
+  }
 }
 @media screen and (min-width: 1025px) {
-    .homepage__contact {
-        flex-direction: row !important;
-    }
-    .map {
-        height: auto;
-        width: 80%;
-    }
+  .homepage__contact {
+    flex-direction: row !important;
+  }
+  .map {
+    height: auto;
+    width: 80%;
+  }
 }

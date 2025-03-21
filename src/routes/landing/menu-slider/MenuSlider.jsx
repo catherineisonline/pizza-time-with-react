@@ -2,93 +2,58 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import MenuSliderProducts from "./MenuSliderProducts";
 import MenuSliderCategories from "./MenuSliderCategories";
-import {
-  menuSliderCategories,
-  menuSliderProducts,
-} from "../../../data/menu-slider";
+import { menuSliderCategories, productsData } from "../../../data/menu-slider";
 import "./menu-slider.css";
 
 const MenuSlider = () => {
   const [activeCategory, setActiveCategory] = useState("pizza");
-  const [allProducts, setAllProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  // Function to fetch products by category
   const fetchProductsByCategory = (category) => {
-    let separateCategoriesByName = [];
-    const separateCategories = menuSliderProducts.reduce(
-      (singleCategory, singleItem) => {
-        separateCategoriesByName = Object.keys(singleCategory);
-
-        if (!singleCategory[singleItem.category]) {
-          singleCategory[singleItem.category] = singleItem;
-        } else {
-          singleCategory[singleItem.category] = Array.isArray(
-            singleCategory[singleItem.category]
-          )
-            ? singleCategory[singleItem.category].concat(singleItem)
-            : [singleCategory[singleItem.category]].concat(singleItem);
-        }
-
-        return singleCategory;
-      },
-      {}
-    );
-
-    const productsOfCategories = Object.keys(separateCategories).map(
-      (e) => separateCategories[e]
-    );
-
-    let singleCategoryArray = [];
-    productsOfCategories.forEach((category) => {
-      singleCategoryArray.push(category);
-    });
-
-    // Change products by category
-    separateCategoriesByName.forEach((cate) => {
-      if (cate === category) {
-        setAllProducts(separateCategories[category]);
+    let result = productsData.reduce((acc, obj) => {
+      if (obj.category === category) {
+        acc.push(obj);
       }
-    });
+      return acc;
+    }, []);
+    setProducts(result);
   };
 
-  // Function to change category
-  const changeCategory = (newCategory) => {
-    setActiveCategory(newCategory);
-    fetchProductsByCategory(newCategory);
-  };
-
-  // Use useEffect to mimic componentDidMount
   useEffect(() => {
     fetchProductsByCategory(activeCategory);
   }, [activeCategory]);
 
   return (
-    <motion.div
+    <motion.section
       className="homepage__menu-slider"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}>
-      <section className="menu-slider__categories flex-container flex-column">
-        <ul>
-          {menuSliderCategories.map((category) => (
-            <MenuSliderCategories
-              key={category.id}
-              category={category}
-              changeCategory={changeCategory}
-            />
-          ))}
-        </ul>
-      </section>
-      <section className="menu-slider__products">
-        {allProducts.map((singleProduct) => (
+      transition={{ duration: 3 }}
+      aria-labelledby="categories-title">
+      <h2
+        id="categories-title"
+        className="txt-center pop-font txt-white">
+        Meal Categories
+      </h2>
+      <ul className="menu-slider__categories flex-container">
+        {menuSliderCategories.map((category) => (
+          <MenuSliderCategories
+            key={category.id}
+            category={category}
+            setActiveCategory={setActiveCategory}
+          />
+        ))}
+      </ul>
+      <div className="menu-slider__products">
+        {products.map((singleProduct) => (
           <MenuSliderProducts
             key={singleProduct.id}
             singleProduct={singleProduct}
           />
         ))}
-      </section>
-    </motion.div>
+      </div>
+    </motion.section>
   );
 };
 export default MenuSlider;

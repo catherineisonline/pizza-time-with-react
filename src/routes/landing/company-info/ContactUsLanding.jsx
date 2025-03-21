@@ -1,51 +1,74 @@
-import React from 'react'
+import React from "react";
 import { motion } from "framer-motion";
-import PizzaOne from '../../../assets/images/contact-us/image-one-parallax.webp'
-import './company-info.css'
+import PizzaOne from "../../../assets/images/contact-us/image-one-parallax.webp";
+import "./company-info.css";
 
 const ContactUsLanding = () => {
   return (
-    <section className="homepage__company-info flex-container flex-row txt-white" >
+    <section
+      className="homepage__company-info flex-container flex-row txt-white"
+      aria-describedby="contact-title">
+      <h2
+        id="contact-title"
+        className="visually-hidden">
+        Contact us
+      </h2>
       <motion.img
         initial={{ opacity: 0, right: 100 }}
-        whileInView={{ opacity: 0.8, right: 300, }}
+        whileInView={{ opacity: 0.8, right: 300 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-info__img"
-        loading='lazy'
+        src={PizzaOne}
+        alt=""
+        aria-hidden="true"
+        className="parallax company-info__img"
+        loading="lazy"
       />
       <motion.img
         initial={{ opacity: 0, right: 100 }}
-        whileInView={{ opacity: 0.8, right: 200, }}
+        whileInView={{ opacity: 0.8, right: 200 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-info__img" loading='lazy'
+        src={PizzaOne}
+        alt=""
+        aria-hidden="true"
+        className="parallax company-info__img"
+        loading="lazy"
       />
       <motion.img
         initial={{ opacity: 0, right: 50 }}
-        whileInView={{ opacity: 0.8, right: 100, }}
+        whileInView={{ opacity: 0.8, right: 100 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-        src={PizzaOne} alt="" aria-hidden="true" className="parallax company-info__img" loading='lazy'
+        src={PizzaOne}
+        alt=""
+        aria-hidden="true"
+        className="parallax company-info__img"
+        loading="lazy"
       />
-      <section className='company-info__details'>
-        <div>
-          <h2>000 (000) 123 4567</h2>
-          <p>Contact us if you have any questions</p>
-        </div>
-        <div>
-          <h2>506 Roy Alley 80202 </h2>
-          <p>Colorado, Denver</p>
-        </div>
-        <div>
-          <h2>Open Monday-Friday</h2>
-          <p>8:00am - 9:00pm</p>
-        </div>
-      </section>
+      <address className="company-info__details">
+        <ul>
+          <li>
+            <h3>
+              <a href="tel:0000001234567">000 (000) 123 4567</a>
+            </h3>
+            <p>Contact us if you have any questions</p>
+          </li>
+          <li>
+            <h3>506 Roy Alley 80202</h3>
+            <p>Colorado, Denver</p>
+          </li>
+          <li>
+            <h3>Open Monday-Friday</h3>
+            <p>
+              <time dateTime="8:00">8:00</time>am -{" "}
+              <time dateTime="21:00">9:00</time>pm
+            </p>
+          </li>
+        </ul>
+      </address>
     </section>
   );
-
-}
-
+};
 
 export default ContactUsLanding;

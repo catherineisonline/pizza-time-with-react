@@ -12,6 +12,7 @@ const PizzaMenuPreview = () => {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
+    const controller = new AbortController();
     // Function to handle window resize
     const handleResize = () => {
       const width = window.innerWidth;
@@ -33,7 +34,7 @@ const PizzaMenuPreview = () => {
 
     // Clean up event listener on component unmount
     return () => {
-      window.removeEventListener("resize", handleResize);
+      controller.abort();
     };
   }, []);
 
@@ -43,19 +44,26 @@ const PizzaMenuPreview = () => {
   }, [screenSize]);
 
   return (
-    <article className="homepage__menu-preview flex-container flex-column">
-      <section className="menu-preview__info txt-center">
-        <h2 className="pop-font txt-white">Hot Pizza Meals</h2>
+    <section
+      className="homepage__menu-preview flex-container flex-column"
+      aria-labelledby="menu-title">
+      <div className="menu-preview__info txt-center">
+        <h2
+          className="pop-font txt-white"
+          id="menu-title">
+          Hot Pizza Meals
+        </h2>
         <p className="section-description">
           Pizza Time holds the market of the pizza industry and continuously
           offers more than pizza. Check out our hottest menu options with
           cheese, meat, chicken, and veggies!
         </p>
-      </section>
-      <section className="menu-preview__meals flex-container flex-column">
+      </div>
+      <div className="menu-preview__meals flex-container flex-column">
         {pizzaMenuPreview.map((pizza, id) => (
-          <motion.div
+          <motion.article
             key={id}
+            aria-labelledby="pizza-title"
             className="menu-preview__meal flex-container"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -68,27 +76,31 @@ const PizzaMenuPreview = () => {
               height={250}
               loading="lazy"
             />
-
-            <section className="menu-preview__meal-details flex-container flex-column">
-              <h3 className="txt-white">{pizza.name}</h3>
+            <div className="menu-preview__meal-details flex-container flex-column">
+              <h3
+                className="txt-white"
+                id="pizza-title">
+                {pizza.name}
+              </h3>
               <p>{pizza.description}</p>
-              <section className="menu-preview__meal-pricing flex-container flex-row txt-center">
+              <div className="menu-preview__meal-pricing flex-container flex-row txt-center">
                 <p>
                   <span>{pizza.currency}</span>
                   {pizza.price}
                 </p>
-              </section>
-            </section>
-          </motion.div>
+              </div>
+            </div>
+          </motion.article>
         ))}
-      </section>
+      </div>
       <Link
         onClick={ResetLocation}
         to="/menu"
+        aria-label="Check more pizzas in our menu"
         className="active-button-style txt-white">
         More pizza
       </Link>
-    </article>
+    </section>
   );
 };
 

@@ -17,7 +17,7 @@ const StatsPreview = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             element.style.backgroundImage = `url(${Background})`;
-            observer.unobserve(element); // Unobserve once loaded
+            observer.unobserve(element);
           }
         });
       },
@@ -35,12 +35,12 @@ const StatsPreview = () => {
     };
   }, []);
   return (
-    <article
+    <section
       ref={ref}
       className="homepage__stats flex-container flex-column txt-center">
-      <section className="stats__items flex-container flex-column">
+      <ul className="stats__items flex-container flex-column">
         {statsPreview.map((stats) => (
-          <div
+          <li
             key={stats.id}
             className="stats__item">
             <motion.img
@@ -55,12 +55,12 @@ const StatsPreview = () => {
               aria-hidden="true"
               loading="lazy"
             />
-            <h3>{stats.stats}</h3>
+            <h2>{stats.stats}</h2>
             <p className="pop-font txt-white">{stats.name}</p>
-          </div>
+          </li>
         ))}
-      </section>
-    </article>
+      </ul>
+    </section>
   );
 };
 
