@@ -8,7 +8,7 @@ import "./pricing-preview.css";
 
 const MenuPricingPreview = () => {
   return (
-    <motion.article
+    <motion.section
       className="homepage__pricing-preview flex-container "
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -20,36 +20,38 @@ const MenuPricingPreview = () => {
         bored and you will always be able to find something new and interesting
         for you. Discover every mouthwatering option we have to offer
       </p>
-      <section className="pricing-preview__items flex-container flex-column">
+      <ul className="pricing-preview__items flex-container flex-column">
         {menuPricing.map((menu) => (
-          <Tilt key={menu.id}>
-            <Link
-              onClick={ResetLocation}
-              to="/menu"
-              className="pricing-preview__item flex-container flex-row">
-              <img
-                className="pricing-preview__img"
-                alt={menu.name}
-                src={menu.img375}
-                width={96}
-                height={96}
-                loading="lazy"
-              />
-              <section className="pricing-preview__prices flex-container flex-column">
-                <section className="pricing-preview__prices-details flex-container flex-row txt-center">
-                  <h3 className="pop-font">{menu.name}</h3>
-                  <p>
-                    <span>{menu.currency}</span>
-                    {menu.price}
-                  </p>
-                </section>
-                <p>{menu.description}</p>
-              </section>
-            </Link>
-          </Tilt>
+          <li key={menu.id}>
+            <Tilt>
+              <Link
+                onClick={ResetLocation}
+                to="/menu"
+                className="pricing-preview__item flex-container flex-row">
+                <img
+                  className="pricing-preview__img"
+                  alt={menu.name}
+                  src={menu.img375}
+                  width={96}
+                  height={96}
+                  loading="lazy"
+                />
+                <div className="pricing-preview__prices flex-container flex-column">
+                  <section className="pricing-preview__prices-details flex-container flex-row txt-center">
+                    <h3 className="pop-font">{menu.name}</h3>
+                    <p>
+                      <span>{menu.currency}</span>
+                      {menu.price}
+                    </p>
+                  </section>
+                  <p>{menu.description}</p>
+                </div>
+              </Link>
+            </Tilt>
+          </li>
         ))}
-      </section>
-    </motion.article>
+      </ul>
+    </motion.section>
   );
 };
 export default MenuPricingPreview;

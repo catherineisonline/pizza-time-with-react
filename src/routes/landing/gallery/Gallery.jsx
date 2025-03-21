@@ -1,25 +1,29 @@
-import React from 'react'
-//375px
-import ImgOne375 from '../../../assets/images/landing/img-one-375.webp'
-import ImgTwo375 from '../../../assets/images/landing/img-two-375.webp'
-import ImgThree375 from '../../../assets/images/landing/img-three-375.webp'
-import ImgFour375 from '../../../assets/images/landing/img-four-375.webp'
-//700
-import ImgOne700 from '../../../assets/images/landing/img-one-700.webp'
-import ImgTwo700 from '../../../assets/images/landing/img-two-700.webp'
-import ImgThree700 from '../../../assets/images/landing/img-three-700.webp'
-import ImgFour700 from '../../../assets/images/landing/img-four-700.webp'
-import './gallery.css'
+import "./gallery.css";
+import React from "react";
+import {
+  ImgOne375,
+  ImgTwo375,
+  ImgThree375,
+  ImgFour375,
+  ImgOne700,
+  ImgTwo700,
+  ImgThree700,
+  ImgFour700,
+} from "./images";
+
 const Gallery = () => {
   return (
-    <article className="homepage__gallery flex-container flex-column">
+    <section
+      className="homepage__gallery flex-container flex-column"
+      aria-hidden="true">
       <img
         src={ImgOne375}
         srcSet={` ${ImgOne700} 700w, ${ImgOne375} 375w`}
         sizes="(min-width: 700px) 700px, 375px"
         alt=""
         aria-hidden="true"
-        loading='lazy'
+        loading="lazy"
+        fetchPriority="low"
       />
       <img
         src={ImgTwo375}
@@ -27,7 +31,8 @@ const Gallery = () => {
         sizes="(min-width: 700px) 700px, 375px"
         alt=""
         aria-hidden="true"
-        loading='lazy'
+        loading="lazy"
+        fetchPriority="low"
       />
       <img
         src={ImgThree375}
@@ -35,7 +40,8 @@ const Gallery = () => {
         sizes="(min-width: 700px) 700px, 375px"
         alt=""
         aria-hidden="true"
-        loading='lazy'
+        loading="lazy"
+        fetchPriority="low"
       />
       <img
         src={ImgFour375}
@@ -43,10 +49,11 @@ const Gallery = () => {
         sizes="(min-width: 700px) 700px, 375px"
         alt=""
         aria-hidden="true"
-        loading='lazy'
+        loading="lazy"
+        fetchPriority="low"
       />
-    </article>
-  )
-}
+    </section>
+  );
+};
 
-export default Gallery
+export default Gallery;

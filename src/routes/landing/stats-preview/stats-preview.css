@@ -1,69 +1,69 @@
 /* Section 7 */
 .homepage__stats {
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    gap: 1rem;
-    padding: 2rem;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 1rem;
+  padding: 2rem;
 }
 .homepage__stats::after {
-    content: "";
-    position: absolute;
-    background-color: var(--modal-glass-bg);
-    backdrop-filter: blur(5px);
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
+  content: "";
+  position: absolute;
+  background-color: var(--modal-glass-bg);
+  backdrop-filter: blur(5px);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .stats__items {
-    z-index: 1;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    gap: 3rem;
+  z-index: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 3rem;
 }
 
 .stats__item {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .stats__items img {
-    margin: 0 auto;
-    border: 2px solid var(--yellow);
-    padding: 0.7rem;
-    cursor: pointer;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    width: 3rem;
-    height: auto;
+  margin: 0 auto;
+  border: 2px solid var(--yellow);
+  padding: 0.7rem;
+  cursor: pointer;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 3rem;
+  height: auto;
 }
 
-.stats__items h3 {
-    color: var(--yellow);
-    font-family: var(--poppins-font);
-    font-size: 2rem;
+.stats__items h2 {
+  color: var(--yellow);
+  font-family: var(--poppins-font);
+  font-size: 2rem;
 }
 .stats__items p {
-    font-weight: 600;
-    font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 700px) {
-    .stats__items {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .stats__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (min-width: 1025px) {
-    .stats__items {
-        grid-template-columns: repeat(4, 1fr);
-    }
+  .stats__items {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

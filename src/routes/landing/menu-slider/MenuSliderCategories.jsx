@@ -1,14 +1,15 @@
 import React from "react";
 
-const MenuSliderCategories = ({ category, changeCategory }) => {
+const MenuSliderCategories = ({ category, setActiveCategory }) => {
   return (
     <li>
-      <button onClick={() => changeCategory(category.name)}>
+      <button
+        aria-label={`Change category to ${category.name}`}
+        onClick={() => setActiveCategory(category.name)}>
         {category.name}
       </button>
     </li>
   );
-}
+};
 
-
-export default MenuSliderCategories
+export default MenuSliderCategories;

@@ -1,63 +1,63 @@
 .homepage__company-info {
-    position: relative;
-    overflow-x: hidden;
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1440px;
+  position: relative;
+  overflow-x: hidden;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
 }
 .company-info__img {
-    display: none;
-    position: absolute;
-    max-width: 80%;
-    width: 22rem;
-    overflow-y: hidden;
+  display: none;
+  position: absolute;
+  max-width: 80%;
+  width: 22rem;
+  overflow-y: hidden;
 }
 
 .company-info__details {
-    gap: 1.5rem;
-    text-align: left;
-    justify-content: space-between;
-    font-family: var(--poppins-font);
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
+  gap: 1.5rem;
+  text-align: left;
+  justify-content: space-between;
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
 }
 
 .company-info__details > * {
-    text-align: center;
+  text-align: center;
 }
 
-.company-info__details h2 {
-    font-family: var(--poppins-font);
-    font-weight: 400;
-    color: var(--white);
+.company-info__details h3 {
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  color: var(--white);
 }
 
 .company-info__details p {
-    color: var(--light-gray);
-    font-family: var(--poppins-font);
-    font-weight: 400;
-    font-size: 1.2rem;
+  color: var(--light-gray);
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 
 @media screen and (min-width: 1025px) {
-    .homepage__company-info {
-        flex-direction: row;
-    }
+  .homepage__company-info {
+    flex-direction: row;
+  }
 
-    .company-info__details {
-        align-items: center;
-    }
-    .company-info__img {
-        display: block;
-    }
+  .company-info__details {
+    align-items: center;
+  }
+  .company-info__img {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 1025px) {
-    .company-info__details {
-        margin-left: 10%;
-    }
+  .company-info__details {
+    margin-left: 10%;
+  }
 }

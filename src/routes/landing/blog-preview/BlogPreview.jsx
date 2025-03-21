@@ -7,7 +7,7 @@ import "./blog-preview.css";
 
 const BlogPreview = () => {
   return (
-    <motion.div
+    <motion.section
       className="homepage__blog flex-container flex-column"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -19,28 +19,34 @@ const BlogPreview = () => {
         everyday life. You don't need to be a pro! Helping you celebrate the joy
         of food in a non-intimidating way.
       </p>
-      <section className="homepage__blog-posts">
+      <div className="homepage__blog-posts">
         {blogPreview.map((post) => (
-          <section
+          <article
             key={post.id}
             className="homepage__blog-post flex-container flex-column">
             <img
               src={post.img}
-              alt={post.name}
+              alt=""
+              aria-hidden="true"
               width={330}
               height={220}
               loading="lazy"
             />
-            <p className="date">June 27, 2023</p>
+            <time
+              className="date"
+              dateTime="2023.27.06">
+              June 27, 2023
+            </time>
             <Link
               onClick={ResetLocation}
-              to={`/blog/${post.name.toLowerCase().replaceAll(" ", "-")}`}>
+              to={`/blog/${post.name.toLowerCase().replaceAll(" ", "-")}`}
+              aria-label={`Continue reading ${post.name}`}>
               <h3 className="pop-font txt-white">{post.name}</h3>
             </Link>
             <p className="homepage__blog-intro">{post.intro}</p>
-          </section>
+          </article>
         ))}
-      </section>
+      </div>
 
       <Link
         onClick={ResetLocation}
@@ -48,7 +54,7 @@ const BlogPreview = () => {
         className="active-button-style txt-white">
         More posts
       </Link>
-    </motion.div>
+    </motion.section>
   );
 };
 export default BlogPreview;

@@ -33,11 +33,11 @@ const menuSliderCategories = [
     id: "pasta",
   },
 ];
-const menuSliderProducts = [
+const productsData = [
   {
     id: "pepperoni-pizza",
     name: "Pepperoni Pizza",
-    describtion:
+    description:
       "Pizza crust yeast, pepperoni, tomato paste, mozzarella cheese, sugar.",
     price: (5).toFixed(2),
     img375: pizzaOne375,
@@ -47,7 +47,7 @@ const menuSliderProducts = [
   {
     id: "bbq-chicken-pizza",
     name: "BBQ Chicken Pizza",
-    describtion:
+    description:
       "Rotisserie chicken, pizza dough, bbq sauce, smoked cheddar cheese, mozzarella cheese.",
     price: (10).toFixed(2),
     img375: pizzaTwo375,
@@ -57,7 +57,7 @@ const menuSliderProducts = [
   {
     id: "cheese-pizza",
     name: "Cheese Pizza",
-    describtion: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
+    description: "Pizza dough, pizza sauce, provolone cheese, mozzarella.",
     price: (5).toFixed(2),
     img375: pizzaThree375,
     img700: pizzaThree700,
@@ -68,7 +68,7 @@ const menuSliderProducts = [
     img375: SalmonPoke375,
     img700: SalmonPoke700,
     name: "Salmon Poke",
-    describtion:
+    description:
       "Salmon, Avocado, Rice, Cabbage, Carrots, Creen onions, Sesame.",
     price: (10).toFixed(2),
     category: "sushi",
@@ -79,7 +79,7 @@ const menuSliderProducts = [
     img375: VeggiePoke375,
     img700: VeggiePoke700,
     name: "Veggie Poke",
-    describtion: "Rice, Avocado, Cabage, Carrot, Ginger, Green Onion, Sesam.",
+    description: "Rice, Avocado, Cabage, Carrot, Ginger, Green Onion, Sesam.",
     price: (8).toFixed(2),
     category: "sushi",
   },
@@ -88,7 +88,7 @@ const menuSliderProducts = [
     img375: MiniSalmon375,
     img700: MiniSalmon700,
     name: "Mini Salmon Set",
-    describtion:
+    description:
       "Double Salmon Roll,Californication, Salmon Nigiri - 2Pcs, Eel Nigiri - 2Pcs,Vulcan Gunkan - 2Pcs",
     price: (35).toFixed(2),
     category: "sushi",
@@ -98,7 +98,7 @@ const menuSliderProducts = [
     img375: ChickenAlfredo375,
     img700: ChickenAlfredo700,
     name: "Chicken Alfredo",
-    describtion:
+    description:
       "Skinless chicken breast, heavy cream, olive oil, parmigiano reggiano, black pepper.",
     price: (2).toFixed(2),
     category: "pasta",
@@ -108,7 +108,7 @@ const menuSliderProducts = [
     img375: AllaGricia375,
     img700: AllaGricia700,
     name: "Pasta Alla Gricia",
-    describtion:
+    description:
       "Rigatoni pasta, pancetta, olive oil, pecorino romano, black pepper.",
     price: (9).toFixed(2),
     category: "pasta",
@@ -118,11 +118,11 @@ const menuSliderProducts = [
     img375: SheetPan375,
     img700: SheetPan700,
     name: "Burrata Caprese Gnocchi",
-    describtion:
+    description:
       "Penne pasta, sour cream, rotisserie chicken, cherry tomatoes, curly kale.",
     price: (5).toFixed(2),
     category: "pasta",
   },
 ];
 
-export { menuSliderProducts, menuSliderCategories };
+export { productsData, menuSliderCategories };

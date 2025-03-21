@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
 import { motion } from "framer-motion";
 
 const MenuSliderProducts = ({ singleProduct }) => {
   return (
-    <motion.div
+    <motion.article
+      aria-labelledby="product-title"
       initial={{ opacity: 0, translateY: -300 }}
       whileInView={{ opacity: 1, translateY: 0 }}
       exit={{ opacity: 0, translateY: -300 }}
@@ -15,18 +16,22 @@ const MenuSliderProducts = ({ singleProduct }) => {
         sizes="(min-width: 700px) 700px, 375px"
         alt={singleProduct.name}
       />
-      <section className="menu-slider__product-desc">
-        <h3 className="pop-font txt-white">{singleProduct.name}</h3>
+      <div className="menu-slider__product-desc">
+        <h3
+          id="product-title"
+          className="pop-font txt-white">
+          {singleProduct.name}
+        </h3>
         <p className="menu-slider__product-desc-txt pop-font">
-          {singleProduct.describtion}
+          {singleProduct.description}
         </p>
         <p className="menu-slider__product-price">
           <span>$</span>
           {singleProduct.price}
         </p>
-      </section>
-    </motion.div>
-  )
-}
+      </div>
+    </motion.article>
+  );
+};
 
 export default MenuSliderProducts;
