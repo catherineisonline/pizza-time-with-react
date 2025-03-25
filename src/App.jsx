@@ -29,7 +29,8 @@ import ResetLocation from "./helpers/ResetLocation";
 import { useMemo } from "react";
 import { CartProvider } from "./context/CartContext";
 import { ProductsProvider } from "./context/ProductsContext";
-const USERS_URL = import.meta.env.VITE_USERS_URL;
+import { USERS_URL } from "./data/constants";
+
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -99,7 +100,6 @@ function App() {
     hideMenu();
     setIsLoginModalOpen(!isLoginModalOpen);
   };
-  // const { setOrderSummary } = useCart();
 
   const handleLogout = () => {
     setUserConfig((prev) => ({
@@ -109,12 +109,6 @@ function App() {
     hideMenu();
     setUserConfig((prev) => ({ ...prev, user: {} }));
     ResetLocation();
-    //! setProducts((prev) => ({ ...prev, cart: [] }));
-    // ! setOrderSummary({
-    //   quantity: 0,
-    //   payment: 0,
-    //   taxes: 0,
-    // });
     sessionStorage.clear();
   };
 
@@ -123,7 +117,7 @@ function App() {
   };
 
   return (
-    <CartProvider>
+    <CartProvider isLogged={userConfig.loggedIn}>
       <BrowserRouter>
         <Header
           loginModal={
@@ -172,12 +166,26 @@ function App() {
             exact
             path="/menu"
             element={
-              <ProductsProvider>
+              <ProductsProvider isLogged={userConfig.loggedIn}>
                 <Menu />
               </ProductsProvider>
             }
           />
-
+          <Route
+            path="/profile"
+            element={
+              !loggedIn ? (
+                <NotFound />
+              ) : (
+                <Profile
+                  currentUser={userConfig.user}
+                  getUser={getUser}
+                  handleLogout={handleLogout}
+                  updateUser={updateUser}
+                />
+              )
+            }
+          />
           <Route
             path="/menu/:name"
             element={<SingleItem />}
@@ -215,21 +223,6 @@ function App() {
                 <NotFound />
               ) : (
                 <Register activateLoginModal={activateLoginModal} />
-              )
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              !loggedIn ? (
-                <NotFound />
-              ) : (
-                <Profile
-                  currentUser={userConfig.user}
-                  getUser={getUser}
-                  handleLogout={handleLogout}
-                  updateUser={updateUser}
-                />
               )
             }
           />

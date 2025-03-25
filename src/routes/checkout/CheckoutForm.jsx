@@ -6,7 +6,7 @@ import ResetLocation from "../../helpers/ResetLocation";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ currentUser }) => {
   const { orderSummary } = useCart();
   const [formValue, setFormValue] = useState({
     fullname: currentUser.fullname,

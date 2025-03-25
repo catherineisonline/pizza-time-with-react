@@ -6,10 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "react-router-dom";
 import validateForm from "../../components/validateForm";
 import ResetLocation from "../../helpers/ResetLocation";
-
-const CAPTCHA_URL = import.meta.env.VITE_CAPTCHA_URL;
-const CAPTCHA_SECRET = import.meta.env.VITE_CAPTCHA_SECRET;
-const CAPTCHA_KEY = import.meta.env.VITE_CAPTCHA_KEY;
+import { CAPTCHA_URL, CAPTCHA_SECRET, CAPTCHA_KEY } from "../../data/constants";
 
 const Contact = () => {
   const [formValue, setFormValue] = useState({

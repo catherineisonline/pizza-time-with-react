@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import validateForm from "../validateForm";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { USERS_URL } from "../../data/constants";
 
 const LoginModal = ({
   setIsLoginModalOpen,
@@ -22,7 +23,7 @@ const LoginModal = ({
   const modalRef = useRef();
   const getUsers = async () => {
     try {
-      const response = await fetch(import.meta.env.VITE_USERS_URL);
+      const response = await fetch(USERS_URL);
       const body = await response.json();
       return body.data;
     } catch (err) {
