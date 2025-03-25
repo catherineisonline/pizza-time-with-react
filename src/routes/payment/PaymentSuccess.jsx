@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 import Tick from "../../assets/images/success-tick.png";
-const PaymentSuccess = ({ orderSummary, transactionId }) => {
+import { useCart } from "../../context/CartContext";
+
+const PaymentSuccess = ({ transactionId }) => {
+  const { orderSummary } = useCart();
   return (
     <section className="payment__success">
       <div className="payment__success__title">

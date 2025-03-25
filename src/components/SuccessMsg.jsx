@@ -1,12 +1,14 @@
 import React from "react";
+import { useCart } from "../context/CartContext";
 
-const SuccessMsg = () => {
+const SuccessMsg = ({}) => {
+  const { isAddedToCart } = useCart();
   return (
     <section
-      className="success"
+      className={`success ${isAddedToCart ? "visible" : ""}`}
       role="alert"
-      aria-live="assertive">
-      <p>item added to cart!</p>
+      aria-live="polite">
+      <p>Item successfully added to cart!</p>
     </section>
   );
 };

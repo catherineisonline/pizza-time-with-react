@@ -7,27 +7,24 @@ import { useState, useEffect } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import { AnimatePresence, motion } from "framer-motion";
 import "./menu.css";
+import { useProducts } from "../../context/ProductsContext";
+import { slideInLeft } from "../../data/animations";
+const Menu = () => {
+  const [activeCategory, setActiveCategory] = useState("Menu");
+  const { getProductsByCategory } = useProducts();
 
-const Menu = ({
-  allProducts,
-  activeCategory,
-  categories,
-  changeCategory,
-  handleAddProduct,
-  handleRemoveProduct,
-  findMenuItem,
-}) => {
+  const { products } = useProducts();
   const [itemOffset, setItemOffset] = useState(0);
   const [endOffset, setEndOffset] = useState(itemOffset + 5);
   const [currentProducts, setcurrentProducts] = useState(
-    [...allProducts].reverse().slice(itemOffset, endOffset)
+    [...products].reverse().slice(itemOffset, endOffset)
   );
   const [pageCountProducts, setpageCountProducts] = useState(
-    Math.ceil(allProducts.length / 5)
+    Math.ceil(products.length / 5)
   );
   const [currentPage, setCurrentPage] = useState(0);
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * 5) % allProducts.length;
+    const newOffset = (event.selected * 5) % products.length;
     setItemOffset(newOffset);
     setCurrentPage(event.selected);
     ResetLocation();
@@ -39,28 +36,23 @@ const Menu = ({
   };
   useEffect(() => {
     setEndOffset(itemOffset + 5);
-    setcurrentProducts([...allProducts].reverse().slice(itemOffset, endOffset));
-    setpageCountProducts(Math.ceil(allProducts.length / 5));
-  }, [allProducts, setEndOffset, endOffset, itemOffset]);
+    setcurrentProducts([...products].reverse().slice(itemOffset, endOffset));
+    setpageCountProducts(Math.ceil(products.length / 5));
+  }, [products, setEndOffset, endOffset, itemOffset]);
   useEffect(() => {
     document.title = `${activeCategory} | Pizza Time`;
+    getProductsByCategory(activeCategory);
     resetPagination();
+    ResetLocation();
   }, [activeCategory]);
-
   return (
     <motion.main
       className="menu"
-      initial={{ opacity: 0, translateX: -300 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
-      <MenuCategories
-        activeCategory={activeCategory}
-        categories={categories}
-        changeCategory={changeCategory}
-        resetPagination={resetPagination}
-        findMenuItem={findMenuItem}
-      />
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
+      <MenuCategories setActiveCategory={setActiveCategory} />
       <article className="menu__items">
         <AnimatePresence mode="sync">
           {currentProducts.length === 0 ? (
@@ -76,8 +68,6 @@ const Menu = ({
                 <MenuGridItem
                   key={singleProduct.id}
                   singleProduct={singleProduct}
-                  handleAddProduct={handleAddProduct}
-                  handleRemoveProduct={handleRemoveProduct}
                 />
               </motion.div>
             ))

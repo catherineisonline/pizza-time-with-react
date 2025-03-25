@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import ResetLocation from "../../helpers/ResetLocation";
 import "./register.css";
+import { USERS_URL } from "../../data/constants";
+import { slideInLeft } from "../../data/animations";
 const Register = ({ activateLoginModal }) => {
   const [formValue, setFormValue] = useState({
     id: "",
@@ -21,7 +23,7 @@ const Register = ({ activateLoginModal }) => {
 
   const getUsers = async () => {
     try {
-      const response = await fetch(import.meta.env.VITE_USERS_URL);
+      const response = await fetch(USERS_URL);
       const body = await response.json();
 
       return body.data;
@@ -39,7 +41,7 @@ const Register = ({ activateLoginModal }) => {
       if (repetitiveEmail) {
         return false;
       } else {
-        const response = await fetch(import.meta.env.VITE_USERS_URL, {
+        const response = await fetch(USERS_URL, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -120,10 +122,10 @@ const Register = ({ activateLoginModal }) => {
   return (
     <motion.main
       className="register"
-      initial={{ opacity: 0, translateX: -300 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>
         {submit && Object.keys(formError).length === 0
           ? "Success!"

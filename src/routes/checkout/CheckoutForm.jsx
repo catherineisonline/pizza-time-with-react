@@ -4,13 +4,10 @@ import { FaShippingFast } from "react-icons/fa";
 import { RiShoppingBagLine } from "react-icons/ri";
 import ResetLocation from "../../helpers/ResetLocation";
 import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 
-const CheckoutForm = ({
-  currentUser,
-  totalPayment,
-  productsQuantity,
-  taxes,
-}) => {
+const CheckoutForm = ({ currentUser }) => {
+  const { orderSummary } = useCart();
   const [formValue, setFormValue] = useState({
     fullname: currentUser.fullname,
     email: currentUser.email,
@@ -180,19 +177,19 @@ const CheckoutForm = ({
             {formError.promoCode}
           </span>
         </fieldset>
-        {productsQuantity > 0 && (
+        {orderSummary.quantity > 0 && (
           <ul className="checkout__totals">
             <li className="checkout__totals__content">
               <h4>Tax 10%:</h4>
-              <p>$ {taxes}</p>
+              <p>$ {orderSummary.taxes}</p>
             </li>
             <li className="checkout__totals__content">
               <h4>Quantity:</h4>
-              <p> {productsQuantity}</p>
+              <p> {orderSummary.quantity}</p>
             </li>
             <li className="checkout__totals__content">
               <h4>Total:</h4>
-              <p>$ {totalPayment}</p>
+              <p>$ {orderSummary.total}</p>
             </li>
           </ul>
         )}

@@ -4,7 +4,9 @@ import Attribute from "../menu/Attribute";
 import { products } from "../../data/products";
 import { Link } from "react-router-dom";
 import "./single-item.css";
-const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
+const SingleItem = () => {
   const [singleProduct, setSingleProduct] = useState([]);
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [targetAttribute, setTargetAttribute] = useState("");
@@ -37,7 +39,12 @@ const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
   }, [singleProduct.ItemName]);
 
   return (
-    <main className="single-item">
+    <motion.main
+      className="single-item"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <Link
         to="/menu"
         className="single-item__back">
@@ -83,8 +90,6 @@ const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
               </p>
             )}
             <AddToCartButton
-              handleAddProduct={handleAddProduct}
-              handleRemoveProduct={handleRemoveProduct}
               singleProduct={singleProduct}
               selectedAttributes={selectedAttributes}
               targetAttribute={targetAttribute}
@@ -93,7 +98,7 @@ const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
           </section>
         </section>
       </article>
-    </main>
+    </motion.main>
   );
 };
 

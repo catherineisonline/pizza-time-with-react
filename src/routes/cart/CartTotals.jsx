@@ -2,13 +2,10 @@ import React from "react";
 import CheckoutBtn from "../checkout/CheckoutBtn";
 import LinkButton from "../../components/Button";
 import ResetLocation from "../../helpers/ResetLocation";
+import { useCart } from "../../context/CartContext";
 
-const CartTotals = ({
-  orderSummary,
-  className,
-  isValidLogin,
-  activateLoginModal,
-}) => {
+const CartTotals = ({ className, isValidLogin, activateLoginModal }) => {
+  const { orderSummary } = useCart();
   return (
     <section className={className}>
       <h2 id="cart-summary-title">Cart Summary</h2>

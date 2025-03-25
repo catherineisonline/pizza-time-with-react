@@ -6,8 +6,11 @@ import { v4 as uuidv4 } from "uuid";
 import validateForm from "../../components/validateForm";
 import PaymentSuccess from "./PaymentSuccess";
 import Card from "./Cards.jsx";
-
-const Payment = ({ cartItems, orderSummary }) => {
+import { useCart } from "../../context/CartContext.jsx";
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations.js";
+const Payment = () => {
+  const { cart } = useCart();
   const [formValue, setFormValue] = useState({
     firstname: "",
     lastname: "",
@@ -38,16 +41,17 @@ const Payment = ({ cartItems, orderSummary }) => {
     document.title = "Payment | Pizza Time";
   }, []);
   return (
-    <main>
-      {cartItems.length === 0 ? (
+    <motion.main
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
+      {cart.length === 0 ? (
         <EmptyCart />
       ) : (
         <React.Fragment>
           {submit && Object.keys(formError).length === 0 ? (
-            <PaymentSuccess
-              transactionId={transactionId}
-              orderSummary={orderSummary}
-            />
+            <PaymentSuccess transactionId={transactionId} />
           ) : (
             <section className="payment__inner">
               <Card formValue={formValue} />
@@ -173,7 +177,7 @@ const Payment = ({ cartItems, orderSummary }) => {
           )}
         </React.Fragment>
       )}
-    </main>
+    </motion.main>
   );
 };
 

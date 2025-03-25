@@ -1,16 +1,12 @@
 import React from "react";
 import ChangeItemQuantity from "./ChangeItemQuantity";
+import { useCart } from "../../context/CartContext";
 
-const CartItem = ({
-  handleAddProduct,
-  handleRemoveProduct,
-  clearCart,
-  cartItems,
-  cartTotals,
-}) => {
+const CartItem = ({ cartTotals }) => {
+  const { cart, clearCart } = useCart();
   return (
     <section className="cart__items">
-      {cartItems.map((cartItem, index) => {
+      {cart.map((cartItem, index) => {
         return (
           <article
             className="cart__items__single"
@@ -36,18 +32,14 @@ const CartItem = ({
                 </p>
               </header>
               <div className="cart__items__interaction">
-                <ChangeItemQuantity
-                  handleAddProduct={handleAddProduct}
-                  handleRemoveProduct={handleRemoveProduct}
-                  cartItem={cartItem}
-                />
+                <ChangeItemQuantity cartItem={cartItem} />
                 <p className="cart__items__pricing">${cartItem.ItemPrice}</p>
               </div>
             </div>
           </article>
         );
       })}
-      {cartItems.length > 0 && (
+      {cart.length > 0 && (
         <button
           onClick={clearCart}
           className="cart__items__clear-btns"

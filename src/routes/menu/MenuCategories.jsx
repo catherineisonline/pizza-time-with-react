@@ -1,14 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import SearchIcon from "../../assets/images/search-icon.png";
-import ResetLocation from "../../helpers/ResetLocation";
-
-const MenuCategories = ({
-  categories,
-  changeCategory,
-  resetPagination,
-  findMenuItem,
-}) => {
+import { categories as categoriesData } from "../../data/categories";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useProducts } from "../../context/ProductsContext";
+const MenuCategories = ({ setActiveCategory }) => {
+  const [categories, setCategories] = useState([]);
+  const { findMenuItem } = useProducts();
+  useEffect(() => {
+    setCategories(categoriesData);
+  }, []);
   return (
     <article className="menu__categories">
       <section className="menu__categories__search">
@@ -28,11 +30,7 @@ const MenuCategories = ({
           <li key={category.id}>
             <NavLink
               to="/menu"
-              onClick={() => {
-                changeCategory(category.name);
-                ResetLocation();
-                resetPagination();
-              }}>
+              onClick={() => setActiveCategory(category.name)}>
               {category.name}
             </NavLink>
           </li>

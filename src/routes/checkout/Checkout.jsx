@@ -5,35 +5,33 @@ import CheckoutForm from "./CheckoutForm";
 import EmptyCart from "../cart/EmptyCart";
 import "./checkout.css";
 import CheckoutItem from "./CheckoutItem";
-const Checkout = ({
-  cartItems,
-  // productsQuantity,
-  // totalPayment,
-  orderSummary,
-  currentUser,
-}) => {
+import { useCart } from "../../context/CartContext";
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
+const Checkout = ({ currentUser }) => {
+  const { cart } = useCart();
   return (
-    <main className="checkout">
+    <motion.main
+      className="checkout"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Checkout</h2>
-      {cartItems.length === 0 ? (
+      {cart.length === 0 ? (
         <EmptyCart />
       ) : (
         <div className="checkout__inner">
-          {cartItems.map((cartItem) => (
+          {cart.map((cartItem) => (
             <CheckoutItem
               key={uuidv4()}
               cartItem={cartItem}
             />
           ))}
-          <CheckoutForm
-            productsQuantity={orderSummary.quantity}
-            totalPayment={orderSummary.total}
-            taxes={orderSummary.taxes}
-            currentUser={currentUser}
-          />
+          <CheckoutForm currentUser={currentUser} />
         </div>
       )}
-    </main>
+    </motion.main>
   );
 };
 
