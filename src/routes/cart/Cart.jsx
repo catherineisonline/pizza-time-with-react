@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import ScrollBtn from "../../helpers/ScrollBtn";
 import EmptyCart from "./EmptyCart";
 import { useCart } from "../../context/CartContext";
-
+import { slideInLeft } from "../../data/animations";
 const Cart = ({ CartItem }) => {
   const { cart } = useCart();
   useEffect(() => {
@@ -13,10 +13,10 @@ const Cart = ({ CartItem }) => {
   return (
     <motion.main
       className="cart"
-      initial={{ opacity: 0, translateX: -300 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Shopping cart</h2>
       {cart.length === 0 ? <EmptyCart /> : CartItem}
       <ScrollBtn />

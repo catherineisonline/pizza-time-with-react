@@ -1,12 +1,18 @@
 import { useEffect } from "react";
 import refunds from "../../data/refunds";
-
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
 const Refunds = () => {
   useEffect(() => {
     document.title = "Refunds | Pizza Time";
   }, []);
   return (
-    <main className="terms">
+    <motion.main
+      className="terms"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Refunds</h2>
       <p>
         This Refund Policy ("Policy") outlines the terms and conditions for
@@ -23,7 +29,7 @@ const Refunds = () => {
           <p>{content.content}</p>
         </section>
       ))}
-    </main>
+    </motion.main>
   );
 };
 

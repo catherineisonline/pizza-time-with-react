@@ -2,7 +2,8 @@ import "./blog-post.css";
 import { useEffect, useState } from "react";
 import blogPosts from "../../data/blog-posts";
 import { useParams } from "react-router-dom";
-
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
 const BlogPost = () => {
   const { name } = useParams();
   const [blogPost, setBlogPost] = useState({});
@@ -19,7 +20,12 @@ const BlogPost = () => {
     document.title = `${blogPost.name} | Pizza Time`;
   }, [blogPost.name]);
   return (
-    <main className="blog-post">
+    <motion.main
+      className="blog-post"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <article>
         <img
           src={blogPost.img}
@@ -30,7 +36,7 @@ const BlogPost = () => {
         <h2>{blogPost.name}</h2>
         <p>{blogPost.content}</p>
       </article>
-    </main>
+    </motion.main>
   );
 };
 

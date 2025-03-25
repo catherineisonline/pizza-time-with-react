@@ -7,7 +7,8 @@ import AboutCareers from "./AboutCareers";
 import AboutUs from "./AboutUs";
 import AboutDedication from "./AboutDedication";
 import AboutCustomers from "./AboutCustomers";
-import './about.css'
+import "./about.css";
+import { slideInLeft } from "../../data/animations";
 
 const About = () => {
   useEffect(() => {
@@ -16,10 +17,10 @@ const About = () => {
   return (
     <motion.main
       className="about"
-      initial={{ opacity: 0, translateX: -300 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <AboutUs />
       <AboutDedication />
       <AboutCustomers />
@@ -28,6 +29,6 @@ const About = () => {
       <ScrollBtn />
     </motion.main>
   );
-}
+};
 
 export default About;

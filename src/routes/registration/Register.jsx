@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import ResetLocation from "../../helpers/ResetLocation";
 import "./register.css";
 import { USERS_URL } from "../../data/constants";
-
+import { slideInLeft } from "../../data/animations";
 const Register = ({ activateLoginModal }) => {
   const [formValue, setFormValue] = useState({
     id: "",
@@ -122,10 +122,10 @@ const Register = ({ activateLoginModal }) => {
   return (
     <motion.main
       className="register"
-      initial={{ opacity: 0, translateX: -300 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>
         {submit && Object.keys(formError).length === 0
           ? "Success!"

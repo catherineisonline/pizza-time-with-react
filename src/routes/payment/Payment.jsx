@@ -7,7 +7,8 @@ import validateForm from "../../components/validateForm";
 import PaymentSuccess from "./PaymentSuccess";
 import Card from "./Cards.jsx";
 import { useCart } from "../../context/CartContext.jsx";
-
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations.js";
 const Payment = () => {
   const { cart } = useCart();
   const [formValue, setFormValue] = useState({
@@ -40,7 +41,11 @@ const Payment = () => {
     document.title = "Payment | Pizza Time";
   }, []);
   return (
-    <main>
+    <motion.main
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       {cart.length === 0 ? (
         <EmptyCart />
       ) : (
@@ -172,7 +177,7 @@ const Payment = () => {
           )}
         </React.Fragment>
       )}
-    </main>
+    </motion.main>
   );
 };
 

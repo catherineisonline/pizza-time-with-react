@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import validateForm from "../../components/validateForm";
 import "./profile.css";
 import { USERS_URL } from "../../data/constants";
-
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
 const Profile = ({ currentUser, handleLogout, updateUser }) => {
   const [editForm, setEditForm] = useState(false);
   const [formValue, setFormValue] = useState({
@@ -89,7 +90,12 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
     document.title = "Profile | Pizza Time";
   }, []);
   return (
-    <main className="profile">
+    <motion.main
+      className="profile"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Profile information</h2>
       <p>Personal details and application</p>
       {loading ? (
@@ -273,7 +279,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           </section>
         </section>
       )}
-    </main>
+    </motion.main>
   );
 };
 

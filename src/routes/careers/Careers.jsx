@@ -3,13 +3,19 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import careers from "../../data/careers";
-
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
 const Careers = () => {
   useEffect(() => {
     document.title = "Careers | Pizza Time";
   }, []);
   return (
-    <main className="careers">
+    <motion.main
+      className="careers"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Careers</h2>
       <h3>
         If you think you can add value with your expertise, passion, and hard
@@ -34,7 +40,7 @@ const Careers = () => {
           </li>
         ))}
       </ul>
-    </main>
+    </motion.main>
   );
 };
 

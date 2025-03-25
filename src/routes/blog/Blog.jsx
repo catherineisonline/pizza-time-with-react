@@ -7,7 +7,7 @@ import blogPosts from "../../data/blog-posts";
 import ScrollBtn from "../../helpers/ScrollBtn";
 import ResetLocation from "../../helpers/ResetLocation";
 import BlogPosts from "./BlogPosts";
-
+import { slideInLeft } from "../../data/animations";
 const Blog = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const [endOffset, setEndOffset] = useState(itemOffset + 5);
@@ -33,10 +33,10 @@ const Blog = () => {
   return (
     <motion.main
       className="blog"
-      initial={{ opacity: 0, translateX: -300 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Blog</h2>
       <p className="blog__intro">
         Pizza makes everything better. These are some of our favorite pizza

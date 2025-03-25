@@ -1,12 +1,18 @@
 import { useEffect } from "react";
 import termsContent from "../../data/terms";
-
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
 const Terms = () => {
   useEffect(() => {
     document.title = "Terms | Pizza Time";
   }, []);
   return (
-    <main className="terms">
+    <motion.main
+      className="terms"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Terms & Conditions</h2>
       <p>
         Welcome to Pizza Time. These Terms of Service outline the rules and
@@ -22,7 +28,7 @@ const Terms = () => {
           <p>{content.content}</p>
         </section>
       ))}
-    </main>
+    </motion.main>
   );
 };
 

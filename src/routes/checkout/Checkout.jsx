@@ -6,10 +6,17 @@ import EmptyCart from "../cart/EmptyCart";
 import "./checkout.css";
 import CheckoutItem from "./CheckoutItem";
 import { useCart } from "../../context/CartContext";
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
 const Checkout = ({ currentUser }) => {
   const { cart } = useCart();
   return (
-    <main className="checkout">
+    <motion.main
+      className="checkout"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Checkout</h2>
       {cart.length === 0 ? (
         <EmptyCart />
@@ -24,7 +31,7 @@ const Checkout = ({ currentUser }) => {
           <CheckoutForm currentUser={currentUser} />
         </div>
       )}
-    </main>
+    </motion.main>
   );
 };
 

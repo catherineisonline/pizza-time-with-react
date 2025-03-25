@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import validateForm from "../../components/validateForm";
 import ResetLocation from "../../helpers/ResetLocation";
 import { CAPTCHA_URL, CAPTCHA_SECRET, CAPTCHA_KEY } from "../../data/constants";
-
+import { slideInLeft } from "../../data/animations";
 const Contact = () => {
   const [formValue, setFormValue] = useState({
     fullname: "",
@@ -81,10 +81,10 @@ const Contact = () => {
   return (
     <motion.main
       className="contact"
-      initial={{ opacity: 0, translateX: -300 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       {loading ? (
         <section className="contact-loader">
           <h2>Almost there...</h2>

@@ -8,7 +8,7 @@ import ResetLocation from "../../helpers/ResetLocation";
 import { AnimatePresence, motion } from "framer-motion";
 import "./menu.css";
 import { useProducts } from "../../context/ProductsContext";
-
+import { slideInLeft } from "../../data/animations";
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState("Menu");
   const { getProductsByCategory } = useProducts();
@@ -48,10 +48,10 @@ const Menu = () => {
   return (
     <motion.main
       className="menu"
-      initial={{ opacity: 0, translateX: -300 }}
-      whileInView={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <MenuCategories setActiveCategory={setActiveCategory} />
       <article className="menu__items">
         <AnimatePresence mode="sync">

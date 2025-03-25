@@ -1,12 +1,18 @@
 import { useEffect } from "react";
 import privacyContent from "../../data/privacy";
-
+import { motion } from "framer-motion";
+import { slideInLeft } from "../../data/animations";
 const Privacy = () => {
   useEffect(() => {
     document.title = "Privacy | Pizza Time";
   }, []);
   return (
-    <main className="terms">
+    <motion.main
+      className="terms"
+      initial={slideInLeft.initial}
+      whileInView={slideInLeft.whileInView}
+      exit={slideInLeft.exit}
+      transition={slideInLeft.transition}>
       <h2>Privacy</h2>
       <p>
         This Privacy Policy ("Policy") outlines how Pizza Time ("Pizza Time,"
@@ -28,7 +34,7 @@ const Privacy = () => {
         please contact us at info@pizzatime.com. Thank you for trusting Pizza
         Time with your personal information.
       </p>
-    </main>
+    </motion.main>
   );
 };
 
