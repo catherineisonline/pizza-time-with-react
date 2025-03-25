@@ -4,7 +4,7 @@ import Attribute from "../menu/Attribute";
 import { products } from "../../data/products";
 import { Link } from "react-router-dom";
 import "./single-item.css";
-const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
+const SingleItem = () => {
   const [singleProduct, setSingleProduct] = useState([]);
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [targetAttribute, setTargetAttribute] = useState("");
@@ -83,8 +83,6 @@ const SingleItem = ({ handleAddProduct, handleRemoveProduct }) => {
               </p>
             )}
             <AddToCartButton
-              handleAddProduct={handleAddProduct}
-              handleRemoveProduct={handleRemoveProduct}
               singleProduct={singleProduct}
               selectedAttributes={selectedAttributes}
               targetAttribute={targetAttribute}

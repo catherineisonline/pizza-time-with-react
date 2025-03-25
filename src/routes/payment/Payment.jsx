@@ -6,8 +6,10 @@ import { v4 as uuidv4 } from "uuid";
 import validateForm from "../../components/validateForm";
 import PaymentSuccess from "./PaymentSuccess";
 import Card from "./Cards.jsx";
+import { useCart } from "../../context/CartContext.jsx";
 
-const Payment = ({ cartItems, orderSummary }) => {
+const Payment = () => {
+  const { cart } = useCart();
   const [formValue, setFormValue] = useState({
     firstname: "",
     lastname: "",
@@ -39,15 +41,12 @@ const Payment = ({ cartItems, orderSummary }) => {
   }, []);
   return (
     <main>
-      {cartItems.length === 0 ? (
+      {cart.length === 0 ? (
         <EmptyCart />
       ) : (
         <React.Fragment>
           {submit && Object.keys(formError).length === 0 ? (
-            <PaymentSuccess
-              transactionId={transactionId}
-              orderSummary={orderSummary}
-            />
+            <PaymentSuccess transactionId={transactionId} />
           ) : (
             <section className="payment__inner">
               <Card formValue={formValue} />

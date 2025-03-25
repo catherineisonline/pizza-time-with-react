@@ -3,8 +3,10 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import ScrollBtn from "../../helpers/ScrollBtn";
 import EmptyCart from "./EmptyCart";
+import { useCart } from "../../context/CartContext";
 
-const Cart = ({ cartItems, CartItem }) => {
+const Cart = ({ CartItem }) => {
+  const { cart } = useCart();
   useEffect(() => {
     document.title = "Shopping Cart | Pizza Time";
   }, []);
@@ -16,7 +18,7 @@ const Cart = ({ cartItems, CartItem }) => {
       exit={{ opacity: 0, translateX: -300 }}
       transition={{ duration: 1 }}>
       <h2>Shopping cart</h2>
-      {cartItems.length === 0 ? <EmptyCart /> : CartItem}
+      {cart.length === 0 ? <EmptyCart /> : CartItem}
       <ScrollBtn />
     </motion.main>
   );

@@ -1,10 +1,8 @@
 import React from "react";
+import { useCart } from "../../context/CartContext";
 
-const ChangeItemQuantity = ({
-  handleAddProduct,
-  handleRemoveProduct,
-  cartItem,
-}) => {
+const ChangeItemQuantity = ({ cartItem }) => {
+  const { handleAddProduct, handleRemoveProduct } = useCart();
   return (
     <div className="cart__add-items">
       <button

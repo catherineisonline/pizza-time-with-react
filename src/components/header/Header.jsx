@@ -8,18 +8,18 @@ import Cart from "../../assets/images/cart-icon-dark.png";
 import SuccessMsg from "../SuccessMsg";
 import ResetLocation from "../../helpers/ResetLocation";
 import headerMenu from "../../data/header-menu";
+import { useCart } from "../../context/CartContext";
 
 const Header = ({
   loginModal,
-  orderSummary,
   handleLogout,
-  // showModal,
   isNavOpen,
   setIsNavOpen,
   hideMenu,
   isValidLogin,
   activateLoginModal,
 }) => {
+  const { orderSummary } = useCart();
   const showModal = () => {
     setIsNavOpen(!isNavOpen);
   };
