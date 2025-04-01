@@ -12,11 +12,15 @@ const MenuCategories = ({ setActiveCategory }) => {
     setCategories(categoriesData);
   }, []);
   return (
-    <article className="menu__categories">
-      <section className="menu__categories__search">
+    <section className="menu__categories">
+      <h2 className="visually-hidden">Menu Categories</h2>
+      <form
+        className="menu__categories__search"
+        role="search">
         <input
           type="text"
           placeholder="search..."
+          aria-label="Search products"
           onChange={findMenuItem}
         />
         <img
@@ -24,19 +28,20 @@ const MenuCategories = ({ setActiveCategory }) => {
           alt=""
           aria-hidden="true"
         />
-      </section>
+      </form>
       <ul>
         {categories.map((category) => (
           <li key={category.id}>
             <NavLink
               to="/menu"
+              aria-label={`Select category ${category.name}`}
               onClick={() => setActiveCategory(category.name)}>
               {category.name}
             </NavLink>
           </li>
         ))}
       </ul>
-    </article>
+    </section>
   );
 };
 export default MenuCategories;

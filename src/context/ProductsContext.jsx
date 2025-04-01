@@ -18,6 +18,7 @@ export const ProductsProvider = ({ children }) => {
       setProducts([]);
     }
   };
+
   const getAllProducts = () => {
     setProducts(productsData);
   };
