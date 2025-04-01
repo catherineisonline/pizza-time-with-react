@@ -188,7 +188,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .menu-item__pricing-prev {
   color: var(--pizza-red);
-  text-decoration: line-through;
 }
 
 .add-to-cart-buttons {

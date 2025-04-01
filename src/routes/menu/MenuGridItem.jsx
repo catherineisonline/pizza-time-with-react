@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import AddToCartButton from "../cart/AddToCartButton";
 import Attribute from "./Attribute";
 import ResetLocation from "../../helpers/ResetLocation";
-import { useCart } from "../../context/CartContext";
 
 const MenuGridItem = ({ singleProduct }) => {
   const [selectedAttributes, setSelectedAttributes] = useState([]);
@@ -40,29 +39,32 @@ const MenuGridItem = ({ singleProduct }) => {
       </Link>
       <h3>{singleProduct.ItemName}</h3>
       <p>{singleProduct.ItemIngredients}</p>
-      {singleProduct.attributes.length === 0
-        ? null
-        : singleProduct.attributes?.map((attribute) => (
-            <Attribute
-              key={attribute.id}
-              className="menu-item__attributes"
-              handleSelectedAttributes={handleSelectedAttributes}
-              attribute={attribute}
-              targetAttribute={targetAttribute}
-            />
-          ))}
+      {singleProduct.attributes.length > 0 &&
+        singleProduct.attributes.map((attribute) => (
+          <Attribute
+            key={attribute.id}
+            className="menu-item__attributes"
+            handleSelectedAttributes={handleSelectedAttributes}
+            attribute={attribute}
+            targetAttribute={targetAttribute}
+          />
+        ))}
       <div className="menu-item__pricing">
         {singleProduct.sale === true ? (
-          <section className="menu-item__pricing-sale">
-            <p className="menu-item__pricing-prev">
+          <div className="menu-item__pricing-sale">
+            <del
+              className="menu-item__pricing-prev"
+              aria-label="Previous price">
               <span>$</span>
               {singleProduct.ItemPriceBefore}
-            </p>
-            <p className="menu-item__pricing-curr">
+            </del>
+            <p
+              className="menu-item__pricing-curr"
+              aria-label="Current price">
               <span>$</span>
               {singleProduct.ItemPrice}
             </p>
-          </section>
+          </div>
         ) : (
           <p className="menu-item__pricing-curr">
             <span>$</span>

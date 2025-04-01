@@ -53,10 +53,13 @@ const Menu = () => {
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
       <MenuCategories setActiveCategory={setActiveCategory} />
-      <article className="menu__items">
+      <section className="menu__items">
+        <h2 className="visually-hidden">Menu</h2>
         <AnimatePresence mode="sync">
           {currentProducts.length === 0 ? (
-            <p className="menu__not-found">No results found...</p>
+            <p className="menu__not-found">
+              No products found. Try to search for something else.
+            </p>
           ) : (
             currentProducts.map((singleProduct) => (
               <motion.div
@@ -74,7 +77,7 @@ const Menu = () => {
           )}
         </AnimatePresence>
         <ScrollButton />
-      </article>
+      </section>
 
       <ReactPaginate
         className="pagination"
@@ -86,6 +89,7 @@ const Menu = () => {
         forcePage={currentPage}
         previousLabel="&#60;"
         renderOnZeroPageCount={null}
+        aria-label="Blog pagination"
       />
     </motion.main>
   );

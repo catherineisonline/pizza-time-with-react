@@ -1,6 +1,9 @@
-
-
-const Attribute = ({ attribute, handleSelectedAttributes, className, targetAttribute }) => {
+const Attribute = ({
+  attribute,
+  handleSelectedAttributes,
+  className,
+  targetAttribute,
+}) => {
   return (
     <ul className={className}>
       {attribute.attributeOptions?.map((item) => {
@@ -11,21 +14,18 @@ const Attribute = ({ attribute, handleSelectedAttributes, className, targetAttri
               handleSelectedAttributes(attribute.id, item.value);
             }}
             style={
-              targetAttribute === item.value
-                ? {
-                  transition: "all, ease-in-out, 0.3s",
-                  color: "white",
-                  borderColor: "#fac564",
-                }
-                : null
-            }
-          >
+              targetAttribute === item.value && {
+                transition: "all, ease-in-out, 0.3s",
+                color: "white",
+                borderColor: "#fac564",
+              }
+            }>
             {item.value}
           </li>
         );
       })}
     </ul>
   );
-}
+};
 
 export default Attribute;

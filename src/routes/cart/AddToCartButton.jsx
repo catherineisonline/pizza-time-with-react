@@ -23,7 +23,8 @@ const AddToCartButton = ({
         targetAttribute?.length > 0 || singleProduct?.attributes?.length === 0
           ? false
           : true
-      }>
+      }
+      aria-label="Add to cart">
       Add to cart
     </button>
   );
