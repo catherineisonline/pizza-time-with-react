@@ -6,9 +6,11 @@ import { useCart } from "../../context/CartContext";
 const PaymentSuccess = ({ transactionId }) => {
   const { orderSummary } = useCart();
   return (
-    <section className="payment__success">
+    <section
+      className="payment__success"
+      aria-labelledby="payment-success-title">
       <div className="payment__success__title">
-        <h2>Your food is on the way!</h2>
+        <h2 id="payment-success-title">Your food is on the way!</h2>
         <p>
           Thank you for the order. We will update your order status once the
           restaurant confirms it.

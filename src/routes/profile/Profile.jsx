@@ -22,6 +22,15 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
   const validate = validateForm("profile");
   const toggleForm = () => {
     setEditForm(!editForm);
+    setFormErrors({});
+    setFormValue({
+      email: "",
+      password: "",
+      fullname: "",
+      address: "",
+      number: "",
+    });
+    ResetLocation();
   };
 
   const handleValidation = (e) => {
@@ -113,47 +122,88 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           className="profile__form"
           onSubmit={handleSubmit}>
           <hr aria-hidden="true" />
-          <section className="profile__form__info">
-            <label htmlFor="email">Email</label>
+
+          <label
+            htmlFor="email"
+            className="profile__form__info">
+            Email
             <input
               name="email"
+              id="email"
               type="text"
               value={formValue.email}
               placeholder={currentUser.email}
+              autoComplete="email"
               onChange={handleValidation}
+              aria-describedby="email-error"
             />
-          </section>
-          <span className="input-validation-error">{formErrors.email}</span>
+          </label>
+
+          <span
+            id="email-error"
+            aria-live="polite"
+            className="input-validation-error">
+            {formErrors.email}
+          </span>
           <hr aria-hidden="true" />
-          <section className="profile__form__info">
-            <label htmlFor="password">Password</label>
+
+          <label
+            htmlFor="password"
+            className="profile__form__info">
+            Password
             <input
+              id="password"
               name="password"
               type="password"
+              autoComplete="new-password"
               value={formValue.password}
               placeholder="********"
               onChange={handleValidation}
+              aria-describedby="password-error"
             />
-          </section>
-          <span className="input-validation-error">{formErrors.password}</span>
+          </label>
+
+          <span
+            aria-live="polite"
+            id="password-error"
+            className="input-validation-error">
+            {formErrors.password}
+          </span>
           <hr aria-hidden="true" />
-          <section className="profile__form__info">
-            <label htmlFor="fullname">Fullname</label>
+
+          <label
+            htmlFor="fullname"
+            className="profile__form__info">
+            Fullname
             <input
               name="fullname"
+              id="fullname"
               type="text"
+              autoComplete="name"
               value={formValue.fullname}
               placeholder={currentUser.fullname}
               onChange={handleValidation}
+              aria-describedby="fullname-error"
             />
-          </section>
-          <span className="input-validation-error">{formErrors.fullname}</span>
+          </label>
+
+          <span
+            aria-live="polite"
+            id="fullname-error"
+            className="input-validation-error">
+            {formErrors.fullname}
+          </span>
           <hr aria-hidden="true" />
-          <section className="profile__form__info">
-            <label htmlFor="address">Address</label>
+
+          <label
+            htmlFor="address"
+            className="profile__form__info">
+            Address
             <input
+              id="address"
               name="address"
               type="text"
+              autoComplete="billing address-level1"
               value={formValue.address}
               placeholder={
                 currentUser.address !== null
@@ -161,109 +211,134 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
                   : "Add address..."
               }
               onChange={handleValidation}
+              aria-describedby="address-error"
             />
-          </section>
-          <span className="input-validation-error">{formErrors.address}</span>
+          </label>
+
+          <span
+            aria-live="polite"
+            id="address-error"
+            className="input-validation-error">
+            {formErrors.address}
+          </span>
           <hr aria-hidden="true" />
-          <section className="profile__form__info">
-            <label htmlFor="number">Number</label>
+
+          <label
+            htmlFor="number"
+            className="profile__form__info">
+            Number
             <input
+              id="number"
               name="number"
               type="text"
               value={formValue.number}
+              autoComplete="mobile tel"
               placeholder={
                 currentUser.number !== null
                   ? currentUser.number
                   : "Add number..."
               }
               onChange={handleValidation}
+              aria-describedby="number-error"
             />
-          </section>
-          <span className="input-validation-error">{formErrors.number}</span>
+          </label>
+          {/* </section> */}
+          <span
+            aria-live="polite"
+            id="number-error"
+            className="input-validation-error">
+            {formErrors.number}
+          </span>
           <hr aria-hidden="true" />
-          <section className="profile__actions">
+          <div className="profile__actions">
             <button
+              aria-label="Cancel editing"
               type="button"
               className="active-button-style"
               onClick={() => {
                 toggleForm();
-                ResetLocation();
               }}>
               Cancel edit
             </button>
-            <button className="passive-button-style">Save profile</button>
-          </section>
+            <button
+              type="submit"
+              aria-label="Save changes"
+              className="passive-button-style">
+              Save profile
+            </button>
+          </div>
         </form>
       ) : (
         <React.Fragment>
-          <article className="profile__info">
+          <section
+            className="profile__info"
+            aria-labelledby="profile-title">
+            <h3
+              id="profile-title"
+              className="visually-hidden">
+              Profile Information
+            </h3>
             <hr aria-hidden="true" />
-            <section className="profile__info__section">
+            <div className="profile__info__section">
               <h3>Email</h3>
               <p>{currentUser.email}</p>
-            </section>
+            </div>
             <hr aria-hidden="true" />
-            <section className="profile__info__section">
+            <div className="profile__info__section">
               <h3>Password</h3>
               <p>*********</p>
-            </section>
+            </div>
             <hr aria-hidden="true" />
-            <section className="profile__info__section">
+            <div className="profile__info__section">
               <h3>Fullname</h3>
               <p>{currentUser.fullname}</p>
-            </section>
+            </div>
             <hr aria-hidden="true" />
-            <section className="profile__info__section">
+            <div className="profile__info__section">
               <h3>Address</h3>
-              {currentUser.address !== null ? (
-                <p>{currentUser.address}</p>
-              ) : (
-                <p>N/A</p>
-              )}
-            </section>
+              <p>{currentUser.address ? currentUser.address : " N/A"}</p>
+            </div>
             <hr aria-hidden="true" />
-            <section className="profile__info__section">
+            <div className="profile__info__section">
               <h3>Number</h3>
-              {currentUser.number !== null ? (
-                <p>{currentUser.number}</p>
-              ) : (
-                <p>N/A</p>
-              )}
-            </section>
+              <p>{currentUser.number ? currentUser.number : "N/A"}</p>
+            </div>
             <hr aria-hidden="true" />
-          </article>
-          <section className="profile__actions">
+          </section>
+          <div className="profile__actions">
             <button
               type="button"
               className="active-button-style"
               onClick={() => {
                 toggleForm();
-                ResetLocation();
-              }}>
+              }}
+              aria-label="Edit profile">
               Edit profile
             </button>
             <button
               type="button"
               className="passive-button-style"
-              onClick={() => confirmDeleteUser()}>
+              onClick={() => confirmDeleteUser()}
+              aria-label="Delete account">
               Delete account
             </button>
-          </section>
+          </div>
         </React.Fragment>
       )}
       {confirmationModal && (
         <section className="profile__delete-modal">
-          <section className="profile__delete-window">
+          <div className="profile__delete-window">
             <h3>Delete account</h3>
             <p>
               Are you sure you want to delete your account? This action cannot
               be reversed and all the data will be lost
             </p>
-            <section>
+            <div>
               <button
                 type="button"
                 className="profile__delete-confirm"
-                onClick={() => deleteUser(currentUser.id)}>
+                onClick={() => deleteUser(currentUser.id)}
+                aria-label="Confirm account deletion">
                 Confirm
               </button>
               <button
@@ -272,11 +347,12 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
                 onClick={() => {
                   setConfirmationModal(false);
                   ResetLocation();
-                }}>
+                }}
+                aria-label="Cancel account deletion">
                 Cancel
               </button>
-            </section>
-          </section>
+            </div>
+          </div>
         </section>
       )}
     </motion.main>
