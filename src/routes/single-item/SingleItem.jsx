@@ -7,7 +7,7 @@ import "./single-item.css";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../data/animations";
 const SingleItem = () => {
-  const [singleProduct, setSingleProduct] = useState([]);
+  const [singleProduct, setSingleProduct] = useState(null);
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [targetAttribute, setTargetAttribute] = useState("");
 
@@ -30,14 +30,29 @@ const SingleItem = () => {
   };
 
   useEffect(() => {
-    document.title = `${singleProduct.ItemName}| Pizza Time`;
     setSingleProduct(
       products.filter(
         (item) => item.id === window.location.pathname.toString().substring(6)
       )[0]
     );
-  }, [singleProduct.ItemName]);
+    if (singleProduct) {
+      document.title = `${singleProduct.ItemName}| Pizza Time`;
+    }
+  }, [singleProduct?.ItemName]);
 
+  if (!singleProduct) {
+    return (
+      <motion.main
+        className="single-item loading"
+        initial={slideInLeft.initial}
+        whileInView={slideInLeft.whileInView}
+        exit={slideInLeft.exit}
+        transition={slideInLeft.transition}>
+        <h2 className="loading-product">Loading product details</h2>
+        <p>Please wait...</p>
+      </motion.main>
+    );
+  }
   return (
     <motion.main
       className="single-item"
@@ -48,37 +63,43 @@ const SingleItem = () => {
       <Link
         to="/menu"
         className="single-item__back">
-        ← Back
+        ← Go back
       </Link>
-      <article className="single-item__inner flex-container flex-column txt-white">
+      <article
+        className="single-item__inner flex-container flex-column txt-white"
+        aria-labelledby="item-name">
         <img
-          src={singleProduct?.ItemImg}
-          alt={`${singleProduct?.ItemName}`}
+          src={singleProduct.ItemImg}
+          alt={`${singleProduct.ItemName}`}
         />
-        <section className="single-item__info">
-          <section className="single-item__title">
-            <h2>{singleProduct?.ItemName}</h2>
+        <div className="single-item__info">
+          <div className="single-item__title">
+            <h2 id="item-name">{singleProduct.ItemName}</h2>
             <p>{singleProduct?.ItemIngredients}</p>
-          </section>
-          {singleProduct?.attributes?.length === 0
-            ? null
-            : singleProduct?.attributes?.map((attribute) => (
-                <Attribute
-                  key={attribute.id}
-                  className="single-item__attributes"
-                  handleSelectedAttributes={handleSelectedAttributes}
-                  attribute={attribute}
-                  targetAttribute={targetAttribute}
-                />
-              ))}
-          <section className="single-item__pricing">
+          </div>
+          {singleProduct.attributes &&
+            singleProduct.attributes.length > 0 &&
+            singleProduct.attributes.map((attribute) => (
+              <Attribute
+                key={attribute.id}
+                className="single-item__attributes"
+                handleSelectedAttributes={handleSelectedAttributes}
+                attribute={attribute}
+                targetAttribute={targetAttribute}
+              />
+            ))}
+          <div className="single-item__pricing">
             {singleProduct.sale === true ? (
               <section className="single-item__pricing-sale">
-                <p className="single-item__pricing-prev">
+                <del
+                  className="single-item__pricing-prev"
+                  aria-label="Previous price">
                   <span>$</span>
                   {singleProduct.ItemPriceBefore}
-                </p>
-                <p className="single-item__pricing-curr">
+                </del>
+                <p
+                  aria-label="Current price"
+                  className="single-item__pricing-curr">
                   <span>$</span>
                   {singleProduct.ItemPrice}
                 </p>
@@ -95,8 +116,8 @@ const SingleItem = () => {
               targetAttribute={targetAttribute}
               setTargetAttribute={setTargetAttribute}
             />
-          </section>
-        </section>
+          </div>
+        </div>
       </article>
     </motion.main>
   );
