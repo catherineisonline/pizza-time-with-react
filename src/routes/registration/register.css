@@ -32,7 +32,10 @@
 .register__form__field {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+  color: var(--white);
+  font-size: 1.2rem;
+  border: none;
 }
 
 .register input {
@@ -43,10 +46,7 @@
 }
 
 .register input::placeholder {
-  color: var(--white);
   font-family: var(--poppins-font);
-  font-size: 1rem;
-  font-weight: 400;
   letter-spacing: 1px;
 }
 
@@ -77,47 +77,16 @@
   border: 1px solid var(--yellow);
 }
 
-.register__form__field-b {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.register__form__field-b label {
-  color: var(--white);
-  font-family: var(--poppins-font);
-  font-size: 1.2rem;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.register__form__field-b select {
-  border: 1px solid transparent;
-  background-color: transparent;
-  color: var(--white);
-  font-family: var(--poppins-font);
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  width: 100%;
-  cursor: pointer;
-  border: 1px solid #fac56425;
-  padding: 0.7rem;
-  border-radius: 10px;
-}
-
-.register__form__field-b select:focus-visible {
-  outline: 1px solid transparent;
-}
-
 .register__form__terms {
   color: var(--whitish-gray);
   font-family: var(--poppins-font);
   font-size: 0.8rem;
   font-weight: 400;
   opacity: 0.5;
+}
+.register__form__terms a {
+  color: var(--whitish-gray);
+  font-weight: 600;
 }
 
 .register__submit {

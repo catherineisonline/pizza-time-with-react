@@ -6,6 +6,7 @@ import ResetLocation from "../../helpers/ResetLocation";
 import "./register.css";
 import { USERS_URL } from "../../data/constants";
 import { slideInLeft } from "../../data/animations";
+import { Link } from "react-router-dom";
 const Register = ({ activateLoginModal }) => {
   const [formValue, setFormValue] = useState({
     id: "",
@@ -150,7 +151,8 @@ const Register = ({ activateLoginModal }) => {
               ResetLocation();
               activateLoginModal();
               setSubmit(false);
-            }}>
+            }}
+            aria-label="Log in">
             Log in
           </button>
         </section>
@@ -163,72 +165,137 @@ const Register = ({ activateLoginModal }) => {
               Seems like this email has already been registered!
             </p>
           )}
-          <section className="register__form__field">
+          <label
+            htmlFor="fullname"
+            className="register__form__field">
+            Full name
             <input
+              id="fullname"
               type="text"
-              placeholder="Full name"
+              placeholder="Enter your full name"
               name="fullname"
               value={formValue.fullname}
               onChange={handleValidation}
+              aria-labelledby="fullname-error"
             />
-            <span className="register__error">{formError.fullname}</span>
-          </section>
-          <section className="register__form__field">
+          </label>
+          <span
+            id="fullname-error"
+            aria-live="polite"
+            className="register__error">
+            {formError.fullname}
+          </span>
+
+          <label
+            htmlFor="email"
+            className="register__form__field">
+            Email address
             <input
+              id="email"
               type="text"
-              placeholder="Email"
+              placeholder="Enter your email (e.g., name@example.com)"
               name="email"
               value={formValue.email}
               onChange={handleValidation}
+              aria-labelledby="email-error"
             />
-            <span className="register__error">{formError.email}</span>
-          </section>
-          <section className="register__form__field">
+          </label>
+          <span
+            id="email-error"
+            aria-live="polite"
+            className="register__error">
+            {formError.email}
+          </span>
+          <label
+            htmlFor="password"
+            className="register__form__field">
+            Password
             <input
+              id="password"
               type="password"
-              placeholder="New password"
+              placeholder="Create a strong password"
               name="password"
               value={formValue.password}
               onChange={handleValidation}
+              aria-labelledby="password-error"
             />
-            <span className="register__error">{formError.password}</span>
+          </label>
+          <span
+            id="password-error"
+            aria-live="polite"
+            className="register__error">
+            {formError.password}
+          </span>
+          <label
+            htmlFor="repeatPassword"
+            className="register__form__field">
+            Repeat Password
             <input
+              id="repeatPassword"
               type="password"
               placeholder="Repeat password"
               name="repeatPassword"
               value={formValue.repeatPassword}
               onChange={handleValidation}
+              aria-labelledby="repeatPassword-error"
             />
-            <span className="register__error">{formError.repeatPassword}</span>
-          </section>
-          <section className="register__form__field-b">
+          </label>
+          <span
+            id="repeatPassword-error"
+            aria-live="polite"
+            className="register__error">
+            {formError.repeatPassword}
+          </span>
+          <label
+            htmlFor="address"
+            className="register__form__field">
+            Address
             <input
+              id="address"
               type="text"
-              placeholder="Address (optional)"
+              placeholder="Enter your street address (optional)"
               name="address"
               value={formValue.address}
               onChange={handleValidation}
+              aria-labelledby="address-error"
             />
-            <span className="register__error">{formError.address}</span>
-          </section>
-          <section className="register__form__field-b">
+          </label>
+          <span
+            aria-live="polite"
+            id="address-error"
+            className="register__error">
+            {formError.address}
+          </span>
+          <label
+            htmlFor="number"
+            className="register__form__field">
+            Phone Number
             <input
+              id="number"
               type="text"
-              placeholder="Number (optional)"
+              placeholder="Enter your phone number (optional)"
               name="number"
               value={formValue.number}
               onChange={handleValidation}
+              aria-labelledby="number-error"
             />
-            <span className="register__error">{formError.number}</span>
-          </section>
+          </label>
+          <span
+            aria-live="polite"
+            id="number-error"
+            className="register__error">
+            {formError.number}
+          </span>
           <p className="terms-warning register__form__terms">
-            By clicking Sign Up, you agree to our Terms, Data Policy and Cookies
-            Policy. You may receive an email notification from us and can opt
-            out any time.
+            By clicking "Sign Up", you agree to our{" "}
+            <Link to="/terms">Terms</Link> and{" "}
+            <Link to="/privacy">Privacy Policy</Link>. You may receive an email
+            notification from us and can opt out any time.
           </p>
           <button
             className="register__submit"
-            type="submit">
+            type="submit"
+            aria-label="Sign up">
             Sign up
           </button>
         </form>
