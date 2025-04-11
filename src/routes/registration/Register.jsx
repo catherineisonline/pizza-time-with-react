@@ -7,6 +7,7 @@ import "./register.css";
 import { USERS_URL } from "../../data/constants";
 import { slideInLeft } from "../../data/animations";
 import { Link } from "react-router-dom";
+
 const Register = ({ activateLoginModal }) => {
   const [formValue, setFormValue] = useState({
     id: "",
@@ -133,9 +134,7 @@ const Register = ({ activateLoginModal }) => {
           : "Registration"}
       </h2>
       {loading ? (
-        <div
-          role="status"
-          className="loader">
+        <div role="status" className="loader">
           <p>Almost there...</p>
           <img
             alt="Processing request"
@@ -157,17 +156,13 @@ const Register = ({ activateLoginModal }) => {
           </button>
         </section>
       ) : (
-        <form
-          className="register__form"
-          onSubmit={handleSubmit}>
+        <form className="register__form" onSubmit={handleSubmit}>
           {registrationFail && (
             <p className="register__error">
               Seems like this email has already been registered!
             </p>
           )}
-          <label
-            htmlFor="fullname"
-            className="register__form__field">
+          <label htmlFor="fullname" className="register__form__field">
             Full name
             <input
               id="fullname"
@@ -186,9 +181,7 @@ const Register = ({ activateLoginModal }) => {
             {formError.fullname}
           </span>
 
-          <label
-            htmlFor="email"
-            className="register__form__field">
+          <label htmlFor="email" className="register__form__field">
             Email address
             <input
               id="email"
@@ -200,15 +193,10 @@ const Register = ({ activateLoginModal }) => {
               aria-labelledby="email-error"
             />
           </label>
-          <span
-            id="email-error"
-            aria-live="polite"
-            className="register__error">
+          <span id="email-error" aria-live="polite" className="register__error">
             {formError.email}
           </span>
-          <label
-            htmlFor="password"
-            className="register__form__field">
+          <label htmlFor="password" className="register__form__field">
             Password
             <input
               id="password"
@@ -226,9 +214,7 @@ const Register = ({ activateLoginModal }) => {
             className="register__error">
             {formError.password}
           </span>
-          <label
-            htmlFor="repeatPassword"
-            className="register__form__field">
+          <label htmlFor="repeatPassword" className="register__form__field">
             Repeat Password
             <input
               id="repeatPassword"
@@ -246,9 +232,7 @@ const Register = ({ activateLoginModal }) => {
             className="register__error">
             {formError.repeatPassword}
           </span>
-          <label
-            htmlFor="address"
-            className="register__form__field">
+          <label htmlFor="address" className="register__form__field">
             Address
             <input
               id="address"
@@ -266,9 +250,7 @@ const Register = ({ activateLoginModal }) => {
             className="register__error">
             {formError.address}
           </span>
-          <label
-            htmlFor="number"
-            className="register__form__field">
+          <label htmlFor="number" className="register__form__field">
             Phone Number
             <input
               id="number"

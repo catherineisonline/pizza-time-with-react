@@ -138,10 +138,7 @@ function App() {
         />
 
         <Routes>
-          <Route
-            path="/"
-            element={<Homepage />}
-          />
+          <Route path="/" element={<Homepage />} />
 
           <Route
             path="/cart"
@@ -186,10 +183,7 @@ function App() {
               )
             }
           />
-          <Route
-            path="/menu/:name"
-            element={<SingleItem />}
-          />
+          <Route path="/menu/:name" element={<SingleItem />} />
           <Route
             path="/checkout"
             element={<Checkout currentUser={userConfig.user} />}
@@ -199,23 +193,10 @@ function App() {
             element={<Payment currentUser={userConfig.user} />}
           />
 
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
-          <Route
-            exact
-            path="/blog"
-            element={<Blog />}
-          />
-          <Route
-            path="/blog/:name"
-            element={<BlogPost />}
-          />
-          <Route
-            path="/about"
-            element={<About />}
-          />
+          <Route path="/contact" element={<Contact />} />
+          <Route exact path="/blog" element={<Blog />} />
+          <Route path="/blog/:name" element={<BlogPost />} />
+          <Route path="/about" element={<About />} />
           <Route
             path="/register"
             element={
@@ -227,26 +208,11 @@ function App() {
             }
           />
 
-          <Route
-            path="/careers"
-            element={<Careers />}
-          />
-          <Route
-            path="*"
-            element={<NotFound />}
-          />
-          <Route
-            path="/refunds"
-            element={<Refunds />}
-          />
-          <Route
-            path="/terms"
-            element={<Terms />}
-          />
-          <Route
-            path="/privacy"
-            element={<Privacy />}
-          />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/refunds" element={<Refunds />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
 
         <Footer />

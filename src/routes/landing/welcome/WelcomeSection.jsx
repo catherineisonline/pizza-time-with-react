@@ -7,35 +7,15 @@ import img1440 from "../../../assets/images/section-one/section-one-1440.webp";
 import PizzaOne from "../../../assets/images/welcome-section/pizza-one-parallax.png";
 import PizzaTwo from "../../../assets/images/welcome-section/pizza-two-parallax.png";
 import { motion } from "framer-motion";
-
-const imageParentVariant = {
-  initial: {},
-  whileInView: {},
-};
-
-const leftImageVariant = {
-  initial: { opacity: 0, left: -100 },
-  whileInView: {
-    opacity: 0.7,
-    left: 0,
-    transition: { duration: 4 },
-  },
-};
-
-const rightImageVariant = {
-  initial: { opacity: 0, right: -100 },
-  whileInView: {
-    opacity: 0.7,
-    right: 0,
-    transition: { duration: 4 },
-  },
-};
+import {
+  imageParentVariant,
+  leftImageVariant,
+  rightImageVariant,
+} from "../../../data/animations";
 
 const WelcomeSection = () => {
   return (
-    <section
-      className="homepage__welcome"
-      aria-labelledby="welcome-title">
+    <section className="homepage__welcome" aria-labelledby="welcome-title">
       <motion.div
         className="welcome__info flex-container flex-column txt-center pop-font"
         variants={imageParentVariant}
@@ -59,9 +39,7 @@ const WelcomeSection = () => {
           width={500}
           height={499}
         />
-        <h2
-          id="welcome-title"
-          className="txt-white">
+        <h2 id="welcome-title" className="txt-white">
           Welcome to <strong>Pizza Time</strong> restaurant
         </h2>
         <p>

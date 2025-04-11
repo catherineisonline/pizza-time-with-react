@@ -114,9 +114,7 @@ const CheckoutForm = ({ currentUser }) => {
       <form onSubmit={handleSubmit}>
         <fieldset className="checkout__form__delivery-details">
           <legend>Delivery details</legend>
-          <label
-            htmlFor="takeaway"
-            className="checkout__form__takeaway">
+          <label htmlFor="takeaway" className="checkout__form__takeaway">
             <RiShoppingBagLine />
             Takeaway
             <input
@@ -128,9 +126,7 @@ const CheckoutForm = ({ currentUser }) => {
               onChange={handleValidation}
             />
           </label>
-          <label
-            htmlFor="delivery"
-            className="checkout__form__delivery">
+          <label htmlFor="delivery" className="checkout__form__delivery">
             <FaShippingFast />
             Delivery
             <input

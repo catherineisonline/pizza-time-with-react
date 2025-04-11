@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../../helpers/ResetLocation";
@@ -6,51 +6,12 @@ import pizzaMenuPreview from "../../../data/menu-preview";
 import "./menu-preview.css";
 
 const PizzaMenuPreview = () => {
-  const initialScreenSize = localStorage.getItem("screenSize") || 1440;
-  const [screenSize, setScreenSize] = useState(Number(initialScreenSize));
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  useEffect(() => {
-    const controller = new AbortController();
-    // Function to handle window resize
-    const handleResize = () => {
-      const width = window.innerWidth;
-      // Check inner width and update state accordingly
-      if (width <= 375) {
-        setScreenSize(375);
-      } else if (width <= 700) {
-        setScreenSize(700);
-      } else {
-        setScreenSize(1440);
-      }
-    };
-
-    // Call handleResize on initial mount
-    handleResize();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on component unmount
-    return () => {
-      controller.abort();
-    };
-  }, []);
-
-  // Update local storage whenever screenSize changes
-  useEffect(() => {
-    localStorage.setItem("screenSize", screenSize);
-  }, [screenSize]);
-
   return (
     <section
       className="homepage__menu-preview flex-container flex-column"
       aria-labelledby="menu-title">
       <div className="menu-preview__info txt-center">
-        <h2
-          className="pop-font txt-white"
-          id="menu-title">
+        <h2 className="pop-font txt-white" id="menu-title">
           Hot Pizza Meals
         </h2>
         <p className="section-description">
@@ -77,9 +38,7 @@ const PizzaMenuPreview = () => {
               loading="lazy"
             />
             <div className="menu-preview__meal-details flex-container flex-column">
-              <h3
-                className="txt-white"
-                id="pizza-title">
+              <h3 className="txt-white" id="pizza-title">
                 {pizza.name}
               </h3>
               <p>{pizza.description}</p>
