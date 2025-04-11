@@ -1,18 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-import L from "leaflet";
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import { MapContainer, TileLayer } from "react-leaflet";
-import { Marker } from "react-leaflet";
 import "./contact-info.css";
-
-let DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-});
-L.Marker.prototype.options.icon = DefaultIcon;
-const position = [37.0902, -93.7129];
+const Maps = lazy(() => import("./Maps"));
 
 const ContactLanding = () => {
   const ref = useRef(null);
@@ -54,24 +43,11 @@ const ContactLanding = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}>
+      transition={{ duration: 1 }}>
       {!hideMap && (
-        <div
-          className="map"
-          aria-label="Company Location">
-          <MapContainer
-            id="map"
-            center={position}
-            zoom={9}
-            scrollWheelZoom={false}
-            loading="lazy">
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={position}></Marker>
-          </MapContainer>
-        </div>
+        <Suspense fallback={<div id="#map">Loading location...</div>}>
+          <Maps />
+        </Suspense>
       )}
       <address className="contact__info">
         <h2 id="contact-title">Contact Us</h2>

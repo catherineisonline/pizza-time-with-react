@@ -15,8 +15,8 @@ const OurServices = () => {
       </p>
       <ul className="services__items flex-container flex-column">
         {companyServices.map((service) => (
-          <Tilt key={service.id}>
-            <li className="services__item flex-container flex-column">
+          <li key={service.id}>
+            <Tilt className="services__item flex-container flex-column">
               <motion.img
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -35,8 +35,8 @@ const OurServices = () => {
                 <h3 className="pop-font">{service.name}</h3>
                 <p>{service.description}</p>
               </div>
-            </li>
-          </Tilt>
+            </Tilt>
+          </li>
         ))}
       </ul>
     </section>
