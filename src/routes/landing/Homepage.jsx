@@ -1,7 +1,7 @@
 import React, { useEffect, lazy, Suspense } from "react";
 import ScrollButton from "../../helpers/ScrollBtn";
 import ResetLocation from "../../helpers/ResetLocation";
-const Hero = lazy(() => import("./hero/Hero"));
+import Hero from "./hero/Hero";
 const ContactUsLanding = lazy(() => import("./company-info/ContactUsLanding"));
 const WelcomeSection = lazy(() => import("./welcome/WelcomeSection"));
 const OurServices = lazy(() => import("./our-service/OurServices"));
@@ -23,8 +23,8 @@ const Homepage = () => {
   }, []);
   return (
     <React.Fragment>
+      <Hero />
       <Suspense fallback={<div className="loading-state">Loading...</div>}>
-        <Hero />
         <WelcomeSection />
         <ContactUsLanding />
         <OurServices />

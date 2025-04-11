@@ -1,4 +1,3 @@
-/* Hero Video */
 .homepage__hero {
   height: 100vh;
   position: relative;
@@ -52,6 +51,7 @@
   font-size: clamp(2rem, 4vw, 2.5rem);
   line-height: 3rem;
   color: var(--white);
+  font-display: swap;
 }
 
 .hero__info p {

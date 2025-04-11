@@ -250,6 +250,15 @@ address {
   background-color: var(--pizza-red);
   border-color: var(--pizza-red);
 }
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--lightish-black);
+}
 
 /* Hover */
 @media (hover: hover) {

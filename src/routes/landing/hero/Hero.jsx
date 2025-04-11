@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "react-alice-carousel/lib/alice-carousel.css";
 import HeroVideo from "../../../assets/images/hero/hero-bg.mp4";
@@ -10,12 +10,8 @@ const Hero = () => {
   const videoRef = useRef(null);
 
   return (
-    <section
-      className="homepage__hero"
-      aria-labelledby="hero-title">
-      <h2
-        id="hero-title"
-        className="visually-hidden">
+    <section className="homepage__hero" aria-labelledby="hero-title">
+      <h2 id="hero-title" className="visually-hidden">
         Welcome to Pizza Time!
       </h2>
       <video
@@ -32,11 +28,7 @@ const Hero = () => {
           type="video/mp4"
           media="(max-width: 1024px)"
         />
-        <source
-          src={HeroVideo}
-          type="video/mp4"
-          media="(min-width: 1025px)"
-        />
+        <source src={HeroVideo} type="video/mp4" media="(min-width: 1025px)" />
         Your browser does not support the video tag.
       </video>
 
@@ -45,7 +37,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 3 }}>
+          transition={{ duration: 1 }}>
           <span>Welcome</span>
           <h2 className="txt-white">try something amazing</h2>
           <p className="txt-white">
