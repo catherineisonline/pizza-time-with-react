@@ -1,10 +1,14 @@
-import { blockedEmails, blockedNames } from "../data/validations";
+import {
+  blockedEmails,
+  blockedNames,
+  blockedPasswords,
+} from "../data/validations";
 
 const validationMessages = {
   empty: (field) => `Please enter your ${field}`,
   short: (field) => `${field} is too short!`,
   invalid: (field) => `Please enter a valid ${field}`,
-  insecurePass: "Insecure password!",
+  insecurePass: "Insecure password! Include letters and numbers",
   shortPass: "Password should be min. 8 characters",
   shortText: "The message should be min. 10 characters",
   matchPass: "Passwords don't match",
