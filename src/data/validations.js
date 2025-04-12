@@ -61,3 +61,18 @@ export const blockedNames = [
   "security",
   "helpdesk",
 ];
+export const blockedPasswords = [
+  "123456",
+  "password",
+  "mypassword",
+  "12345678",
+  "qwerty",
+  "123456789",
+  "12345",
+  "1234",
+  "111111",
+  "1234567",
+  "123123",
+  "baseball",
+  "abc123",
+];
