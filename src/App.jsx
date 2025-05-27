@@ -39,6 +39,7 @@ function App() {
 
   const getUser = async (id) => {
     try {
+      // console.log(`${USERS_URL}/${id}`);
       const response = await fetch(`${USERS_URL}/${id}`);
       const { data } = await response.json();
       if (!response.ok) {

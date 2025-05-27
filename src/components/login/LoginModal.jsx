@@ -55,9 +55,15 @@ const LoginModal = ({
       return;
     } else {
       const existingUsers = await getUsers();
-      const emailExists = existingUsers.filter(
-        (u) => u.email === formValue.email.toLowerCase()
-      );
+      let emailExists = [];
+      if (existingUsers) {
+        emailExists = existingUsers.filter(
+          (u) => u.email === formValue.email.toLowerCase()
+        );
+      }
+      // const emailExists = existingUsers.filter(
+      //   (u) => u.email === formValue.email.toLowerCase()
+      // );
       if (emailExists.length === 0) {
         setLoading(false);
         setFormValue((prev) => ({ email: prev.email, password: "" }));
@@ -113,9 +119,7 @@ const LoginModal = ({
         <div className="modal__content">
           <h2 id="modal-title">Log in</h2>
           {loading ? (
-            <div
-              role="status"
-              className="loader">
+            <div role="status" className="loader">
               <p>Almost there...</p>
               <img
                 alt="Processing request"
@@ -142,9 +146,7 @@ const LoginModal = ({
                 aria-label="Email address"
                 aria-describedby={formError.email ? "email-error" : undefined}
               />
-              <span
-                id="email-error"
-                className="modal__form__error">
+              <span id="email-error" className="modal__form__error">
                 {formError.email}
               </span>
               <input
@@ -159,9 +161,7 @@ const LoginModal = ({
                   formError.password ? "password-error" : undefined
                 }
               />
-              <span
-                id="password-error"
-                className="modal__form__error">
+              <span id="password-error" className="modal__form__error">
                 {formError.password}
               </span>
               <div className="modal__buttons">
