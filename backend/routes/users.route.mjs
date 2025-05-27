@@ -11,12 +11,12 @@ const usersRouter = Router();
 
 usersRouter.get("/", getUsers);
 
-// usersRouter.get("/:id", getUser);
+usersRouter.get("/:id", getUser);
 
-// usersRouter.post("/", createUser);
+usersRouter.post("/", createUser);
 
-// usersRouter.put("/:id", updateUser);
+usersRouter.put("/:id", updateUser);
 
-// usersRouter.delete("/:id", deleteUser);
+usersRouter.delete("/:id", deleteUser);
 
 export default usersRouter;
