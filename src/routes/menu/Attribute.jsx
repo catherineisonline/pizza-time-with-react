@@ -14,11 +14,13 @@ const Attribute = ({
               handleSelectedAttributes(attribute.id, item.value);
             }}
             style={
-              targetAttribute === item.value && {
-                transition: "all, ease-in-out, 0.3s",
-                color: "white",
-                borderColor: "#fac564",
-              }
+              targetAttribute === item.value
+                ? {
+                    transition: "all 0.3s ease-in-out",
+                    color: "white",
+                    borderColor: "#fac564",
+                  }
+                : undefined
             }>
             {item.value}
           </li>

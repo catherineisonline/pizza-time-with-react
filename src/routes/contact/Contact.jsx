@@ -119,14 +119,10 @@ const Contact = () => {
           </div>
         </section>
       ) : (
-        <form
-          onSubmit={handleSubmit}
-          className="flex-container flex-column">
+        <form onSubmit={handleSubmit} className="flex-container flex-column">
           <h2>Send a message</h2>
           <div className="webflow-style-input">
-            <label
-              htmlFor="fullname"
-              className="visually-hidden">
+            <label htmlFor="fullname" className="visually-hidden">
               Full name
             </label>
             <input
@@ -148,9 +144,7 @@ const Contact = () => {
             {formError.fullname}
           </span>
           <div className="webflow-style-input">
-            <label
-              htmlFor="email"
-              className="visually-hidden">
+            <label htmlFor="email" className="visually-hidden">
               Email address
             </label>
             <input
@@ -172,9 +166,7 @@ const Contact = () => {
             {formError.email}
           </span>
           <div className=" webflow-style-input">
-            <label
-              htmlFor="message"
-              className="visually-hidden">
+            <label htmlFor="message" className="visually-hidden">
               Your message
             </label>
             <textarea
