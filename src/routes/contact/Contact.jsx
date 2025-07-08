@@ -18,8 +18,8 @@ const Contact = () => {
   const [formError, setFormError] = useState({});
   const [loading, setLoading] = useState(false);
   const [captchaError, setCaptchaError] = useState("");
-  const validate = validateForm("contact");
   const captchaRef = useRef();
+  const validate = validateForm("contact");
   useEffect(() => {
     document.title = "Contact | Pizza Time";
   }, []);
