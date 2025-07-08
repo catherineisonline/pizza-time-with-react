@@ -1,4 +1,3 @@
-/*** Cart ***/
 .cart {
   position: relative;
   display: flex;
@@ -35,7 +34,6 @@
   color: var(--white);
 }
 
-/*** Cart item ***/
 .cart__items__single {
   display: grid;
   grid-template-columns: 1fr;
@@ -99,7 +97,6 @@
   padding: 1rem;
 }
 
-/*** Cart totals ***/
 .cart-totals {
   display: flex;
   flex-direction: column;
@@ -151,7 +148,6 @@
   transition: color ease-in-out 0.3s;
 }
 
-/* CLEAR CART */
 .cart__items__clear-btns {
   color: var(--whitish-gray);
   background-color: transparent;

@@ -32,8 +32,6 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
 
-/* Menu Search */
-
 .menu__categories__search {
   position: relative;
   width: 80%;
@@ -131,7 +129,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .pagination li.selected {
   color: var(--pizza-red);
 }
-/* MENU ITEM */
+
 .menu-item {
   display: flex;
   flex-direction: column;
@@ -156,7 +154,7 @@ input[type="search"]::-webkit-search-results-decoration {
   font-weight: 400;
   letter-spacing: 1px;
 }
-/* MENU ITEM ATTRIBUTES */
+
 .menu-item__attributes {
   display: flex;
   flex-direction: row;

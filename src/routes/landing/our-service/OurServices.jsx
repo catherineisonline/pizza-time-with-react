@@ -1,8 +1,7 @@
-import React from "react";
+import "./our-service.css";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import companyServices from "../../../data/company-services";
-import "./our-service.css";
 
 const OurServices = () => {
   return (

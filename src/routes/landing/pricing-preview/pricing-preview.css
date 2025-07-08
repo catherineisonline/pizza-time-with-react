@@ -1,73 +1,72 @@
-/* Section 5 */
 .homepage__pricing-preview {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1rem;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
 }
 .homepage__pricing-preview h2 {
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    font-weight: 400;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 .homepage__pricing-preview p {
-    color: var(--light-gray);
-    max-width: 1200px;
+  color: var(--light-gray);
+  max-width: 1200px;
 }
 .pricing-preview__items {
-    gap: 2.5rem;
-    max-width: 1440px;
-    margin: 0 auto;
+  gap: 2.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .pricing-preview__item {
-    gap: 1rem;
+  gap: 1rem;
 }
 .pricing-preview__prices {
-    width: 100%;
+  width: 100%;
 }
 .pricing-preview__prices p {
-    color: var(--light-gray);
-    text-align: left;
+  color: var(--light-gray);
+  text-align: left;
 }
 .pricing-preview__prices-details {
-    justify-content: space-between;
-    align-items: center;
-    letter-spacing: 1px;
-    font-size: 1rem;
-    position: relative;
-    background-color: var(--light-black);
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  position: relative;
+  background-color: var(--light-black);
 }
 .pricing-preview__prices-details::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    bottom: 0;
-    border-bottom: 1px solid var(--yellow);
-    height: 1px;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  border-bottom: 1px solid var(--yellow);
+  height: 1px;
 }
 .pricing-preview__prices-details h3 {
-    position: relative;
-    color: var(--whitish-gray);
-    font-weight: 400;
+  position: relative;
+  color: var(--whitish-gray);
+  font-weight: 400;
 }
 
 .pricing-preview__prices-details p {
-    color: var(--yellow);
+  color: var(--yellow);
 }
 .pricing-preview__img {
-    object-fit: cover;
-    border-radius: 50%;
-    width: 6rem;
-    height: 6rem;
+  object-fit: cover;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
 }
 
 @media screen and (min-width: 700px) {
-    .pricing-preview__items {
-        gap: 2.5rem;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .pricing-preview__items {
+    gap: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

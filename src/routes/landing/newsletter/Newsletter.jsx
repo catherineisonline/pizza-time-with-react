@@ -1,7 +1,7 @@
-import React from "react";
+import "./newsletter.css";
 import { useState } from "react";
 import validateForm from "../../../components/validateForm";
-import "./newsletter.css";
+
 const Newsletter = () => {
   const [formValue, setFormValue] = useState({ email: "" });
   const [submit, setSubmit] = useState(false);
@@ -28,13 +28,9 @@ const Newsletter = () => {
           You have successfully subscribed to our newsletter!
         </p>
       ) : (
-        <form
-          onSubmit={handleSubmit}
-          className="newsletter__form">
+        <form onSubmit={handleSubmit} className="newsletter__form">
           <div className="webflow-style-input">
-            <label
-              htmlFor="email"
-              className="visually-hidden">
+            <label htmlFor="email" className="visually-hidden">
               Your email
             </label>
             <input

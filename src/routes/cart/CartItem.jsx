@@ -1,4 +1,3 @@
-import React from "react";
 import ChangeItemQuantity from "./ChangeItemQuantity";
 import { useCart } from "../../context/CartContext";
 
@@ -12,15 +11,10 @@ const CartItem = ({ cartTotals }) => {
             className="cart__items__single"
             key={index}
             aria-labelledby={`item-title-${index}`}>
-            <img
-              src={cartItem.ItemImg}
-              alt={cartItem.ItemName}
-            />
+            <img src={cartItem.ItemImg} alt={cartItem.ItemName} />
             <div className="cart__items__content">
               <header className="cart__items__info">
-                <h3
-                  id={`item-title-${index}`}
-                  className="cart__items__title">
+                <h3 id={`item-title-${index}`} className="cart__items__title">
                   {cartItem.ItemName}
                   {cartItem.userSelectedAttributes.length > 0 &&
                     cartItem.userSelectedAttributes.map((i, index) => {

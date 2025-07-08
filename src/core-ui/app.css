@@ -19,7 +19,6 @@
   --transparent-button: #ffffffa2;
 }
 
-/* Reset */
 html {
   font-size: 100%;
   background-color: var(--light-black);
@@ -31,8 +30,8 @@ html {
 }
 
 body {
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   overflow-y: scroll;
   box-sizing: border-box;
   display: flex;
@@ -46,7 +45,7 @@ body {
   background-position: center;
 }
 body::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
+  display: none;
 }
 a {
   text-decoration: none;
@@ -61,31 +60,27 @@ img {
 address {
   font-style: normal;
 }
-/* Flex */
+
 .flex-container {
   display: flex;
 }
 
-/* Flex Row */
 .flex-row {
   flex-direction: row;
 }
 
-/* Flex Column */
 .flex-column {
   flex-direction: column;
 }
-/* Text Center */
+
 .txt-center {
   text-align: center;
 }
 
-/* White */
 .txt-white {
   color: var(--white);
 }
 
-/* Poppins Font */
 .pop-font {
   font-family: var(--poppins-font);
   font-display: swap;
@@ -199,7 +194,6 @@ address {
   font-family: var(--poppins-font);
 }
 
-/* Scroll Button */
 .scroll-button {
   background-color: var(--light-black);
   border-radius: 50%;
@@ -229,7 +223,6 @@ address {
   border: 0;
 }
 
-/* Transitions */
 .txt-white,
 .active-button-style,
 .passive-button-style {
@@ -260,7 +253,6 @@ address {
   color: var(--lightish-black);
 }
 
-/* Hover */
 @media (hover: hover) {
   .active-button-style:hover,
   .passive-button-style:hover {
@@ -272,7 +264,6 @@ address {
   }
 }
 
-/* ADD TO CART BUTTON */
 .passive-button-style.active-add-to-cart {
   background-color: var(--green);
   border-color: var(--green);
@@ -290,7 +281,6 @@ address {
   cursor: not-allowed;
 }
 
-/* Success Msg */
 .success {
   display: none;
 }

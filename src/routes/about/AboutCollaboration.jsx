@@ -1,13 +1,10 @@
-import React from "react";
 import OfficeTwo from "../../assets/images/about-us/office-1.jpeg";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 
 const AboutCollaboration = () => {
   return (
-    <section
-      className="about__collaboration"
-      aria-labelledby="collab-title">
+    <section className="about__collaboration" aria-labelledby="collab-title">
       <img
         src={OfficeTwo}
         alt=""
@@ -16,9 +13,7 @@ const AboutCollaboration = () => {
         fetchPriority="low"
       />
       <article className="about__collaboration__content">
-        <h2
-          className="sub-title"
-          id="collab-title">
+        <h2 className="sub-title" id="collab-title">
           Collaboration
         </h2>
         <h3>Join the business</h3>

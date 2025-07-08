@@ -1,5 +1,5 @@
 import "./header.css";
-import React from "react";
+
 import logo from "../../assets/images/logo.png";
 import openMenu from "../../assets/images/open-menu.svg";
 import closeMenu from "../../assets/images/close-menu.svg";
@@ -24,9 +24,7 @@ const Header = ({
     setIsNavOpen(!isNavOpen);
   };
   return (
-    <header
-      aria-labelledby="title"
-      className="header">
+    <header aria-labelledby="title" className="header">
       {loginModal}
       <nav
         className="header__nav flex-container flex-row txt-center"
@@ -46,9 +44,7 @@ const Header = ({
             alt=""
             aria-hidden="true"
           />
-          <h1
-            id="title"
-            translate="no">
+          <h1 id="title" translate="no">
             Pizza <span>Time</span>
           </h1>
         </NavLink>
@@ -120,11 +116,7 @@ const Header = ({
                   ResetLocation();
                   hideMenu();
                 }}>
-                <img
-                  src={Cart}
-                  alt=""
-                  aria-hidden="true"
-                />
+                <img src={Cart} alt="" aria-hidden="true" />
                 <p>Cart</p>
                 <p>({orderSummary.quantity})</p>
               </NavLink>

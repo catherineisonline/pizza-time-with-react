@@ -1,16 +1,13 @@
-import React from "react";
+import "./company-info.css";
 import { motion } from "framer-motion";
 import PizzaOne from "../../../assets/images/contact-us/image-one-parallax.webp";
-import "./company-info.css";
 
 const ContactUsLanding = () => {
   return (
     <section
       className="homepage__company-info flex-container flex-row txt-white"
       aria-describedby="contact-title">
-      <h2
-        id="contact-title"
-        className="visually-hidden">
+      <h2 id="contact-title" className="visually-hidden">
         Contact us
       </h2>
       <motion.img

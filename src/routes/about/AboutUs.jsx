@@ -1,4 +1,3 @@
-import React from "react";
 import SlideOne from "../../assets/images/img-one.jpeg";
 import SlideTwo from "../../assets/images/carbonara.jpeg";
 import SlideThree from "../../assets/images/img-three.jpeg";
@@ -6,9 +5,7 @@ import SlideFour from "../../assets/images/img-four.jpeg";
 
 const AboutUs = () => {
   return (
-    <section
-      className="about__company"
-      aria-labelledby="about-title">
+    <section className="about__company" aria-labelledby="about-title">
       <article className="about__company__content">
         <h2 id="about-title">About us</h2>
         <h3 className="sub-title">More than delicious food</h3>

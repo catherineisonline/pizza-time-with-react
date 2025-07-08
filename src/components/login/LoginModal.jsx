@@ -1,5 +1,5 @@
 import "./loginModal.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import LinkButton from "../Button";
 import { useNavigate } from "react-router-dom";
 import validateForm from "../validateForm";
@@ -61,9 +61,6 @@ const LoginModal = ({
           (u) => u.email === formValue.email.toLowerCase()
         );
       }
-      // const emailExists = existingUsers.filter(
-      //   (u) => u.email === formValue.email.toLowerCase()
-      // );
       if (emailExists.length === 0) {
         setLoading(false);
         setFormValue((prev) => ({ email: prev.email, password: "" }));

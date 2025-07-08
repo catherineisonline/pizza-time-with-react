@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const MenuSliderProducts = ({ singleProduct }) => {
@@ -17,9 +16,7 @@ const MenuSliderProducts = ({ singleProduct }) => {
         alt={singleProduct.name}
       />
       <div className="menu-slider__product-desc">
-        <h3
-          id="product-title"
-          className="pop-font txt-white">
+        <h3 id="product-title" className="pop-font txt-white">
           {singleProduct.name}
         </h3>
         <p className="menu-slider__product-desc-txt pop-font">

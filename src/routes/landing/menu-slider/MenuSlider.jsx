@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import "./menu-slider.css";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import MenuSliderProducts from "./MenuSliderProducts";
 import MenuSliderCategories from "./MenuSliderCategories";
 import { menuSliderCategories, productsData } from "../../../data/menu-slider";
-import "./menu-slider.css";
 
 const MenuSlider = () => {
   const [activeCategory, setActiveCategory] = useState("pizza");
@@ -31,9 +31,7 @@ const MenuSlider = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 3 }}
       aria-labelledby="categories-title">
-      <h2
-        id="categories-title"
-        className="txt-center pop-font txt-white">
+      <h2 id="categories-title" className="txt-center pop-font txt-white">
         Meal Categories
       </h2>
       <ul className="menu-slider__categories flex-container">

@@ -1,4 +1,3 @@
-/* Section 8 */
 .homepage__menu-slider {
   width: 90vw;
   margin: 0 auto;
@@ -59,7 +58,6 @@
   transition: all ease-in-out 0.3s;
 }
 
-/* SLIDER PRODUCT */
 .menu-slider__product {
   display: grid;
   grid-template-rows: 10rem 1fr;
@@ -95,7 +93,7 @@
   -ms-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
 }
-/* Hover */
+
 @media (hover: hover) {
   .menu-slider__categories h3:hover {
     -moz-transition: all ease-in-out 0.3s;

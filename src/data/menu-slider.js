@@ -1,4 +1,3 @@
-//375
 import pizzaOne375 from "../assets/images/menu-slider/pizza-one-375.webp";
 import pizzaTwo375 from "../assets/images/menu-slider/pizza-two-375.webp";
 import pizzaThree375 from "../assets/images/menu-slider/pizza-three-375.webp";
@@ -8,7 +7,7 @@ import MiniSalmon375 from "../assets/images/menu-slider/sushi-three-375.webp";
 import ChickenAlfredo375 from "../assets/images/menu-slider/pasta-one-375.webp";
 import AllaGricia375 from "../assets/images/menu-slider/pasta-two-375.webp";
 import SheetPan375 from "../assets/images/menu-slider/pasta-three-375.webp";
-//700
+
 import pizzaOne700 from "../assets/images/menu-slider/pizza-one-700.webp";
 import pizzaTwo700 from "../assets/images/menu-slider/pizza-two-700.webp";
 import pizzaThree700 from "../assets/images/menu-slider/pizza-three-700.webp";

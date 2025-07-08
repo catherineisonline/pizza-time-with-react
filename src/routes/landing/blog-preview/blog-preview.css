@@ -1,68 +1,66 @@
-/* Section 9 */
 .homepage__blog {
-    max-width: 1440px;
-    margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .homepage__blog h2 {
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    font-weight: 400;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 .homepage__blog .active-button-style {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
-/* Blog Posts */
 .homepage__blog-posts {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem 1.5rem;
 }
 .homepage__blog-post {
-    width: 100%;
-    max-width: 1400px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    gap: 1rem;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
 }
 .homepage__blog-post h3 {
-    transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
 }
 
 .homepage__blog-posts h3 {
-    font-weight: 500;
+  font-weight: 500;
 }
 .homepage__blog-posts img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .homepage__blog-intro {
-    gap: 1rem;
+  gap: 1rem;
 }
 
 .homepage__blog-posts .date,
 .homepage__blog-intro {
-    color: var(--whitish-gray);
+  color: var(--whitish-gray);
 }
 
 @media screen and (min-width: 700px) {
-    .homepage__blog-posts {
-        flex-direction: row;
-    }
+  .homepage__blog-posts {
+    flex-direction: row;
+  }
 }
 @media (hover: hover) {
-    .homepage__blog-post h3:hover {
-        color: var(--pizza-red);
-        -moz-transition: all ease-in-out 0.3s;
-        -o-transition: all ease-in-out 0.3s;
-        -webkit-transition: all ease-in-out 0.3s;
-        -ms-transition: all ease-in-out 0.3s;
-        transition: all ease-in-out 0.3s;
-    }
+  .homepage__blog-post h3:hover {
+    color: var(--pizza-red);
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+  }
 }

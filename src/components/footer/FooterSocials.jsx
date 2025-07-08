@@ -1,4 +1,3 @@
-import React from "react";
 import socials from "../../data/socials";
 
 const FooterSocials = () => {
@@ -11,13 +10,7 @@ const FooterSocials = () => {
             target="_blank"
             rel="noreferrer noopener"
             aria-label={`Visit ${name}`}>
-            <img
-              src={img}
-              alt=""
-              aria-hidden="true"
-              width={50}
-              height={50}
-            />
+            <img src={img} alt="" aria-hidden="true" width={50} height={50} />
           </a>
         </li>
       ))}

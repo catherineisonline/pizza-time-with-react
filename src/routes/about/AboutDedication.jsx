@@ -1,14 +1,8 @@
-import React from "react";
-
 const AboutDedication = () => {
   return (
-    <section
-      className="about__dedication"
-      aria-labelledby="dedication-title">
+    <section className="about__dedication" aria-labelledby="dedication-title">
       <article className="content">
-        <h2
-          className="sub-title"
-          id="dedication-title">
+        <h2 className="sub-title" id="dedication-title">
           Dedicated
         </h2>
         <h3>Changing the world together</h3>

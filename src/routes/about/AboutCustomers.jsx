@@ -1,13 +1,10 @@
-import React from "react";
 import ImgOne from "../../assets/images/about-us/img-1.jpeg";
 import ImgTwo from "../../assets/images/about-us/img-2.jpeg";
 import ImgThree from "../../assets/images/about-us/img-3.jpeg";
 
 const AboutCustomers = () => {
   return (
-    <section
-      className="about__customers"
-      aria-labelledby="customers-title">
+    <section className="about__customers" aria-labelledby="customers-title">
       <div className="about__customers_gallery">
         <img
           src={ImgOne}
@@ -32,9 +29,7 @@ const AboutCustomers = () => {
         />
       </div>
       <article className="about__customers__content">
-        <h2
-          className="sub-title"
-          id="customers-title">
+        <h2 className="sub-title" id="customers-title">
           Happy Customers
         </h2>
         <h3>Over 16000 positive feedback</h3>

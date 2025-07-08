@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import "./stats-preview.css";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import statsPreview from "../../../data/company-statistics";
 import Background from "../../../assets/images/section-7-bg.webp";
-import "./stats-preview.css";
+
 const StatsPreview = () => {
   const ref = useRef(null);
 
@@ -40,9 +41,7 @@ const StatsPreview = () => {
       className="homepage__stats flex-container flex-column txt-center">
       <ul className="stats__items flex-container flex-column">
         {statsPreview.map((stats) => (
-          <li
-            key={stats.id}
-            className="stats__item">
+          <li key={stats.id} className="stats__item">
             <motion.img
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}

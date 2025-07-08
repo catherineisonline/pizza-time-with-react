@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const CheckoutItem = ({ cartItem }) => {
   const [selectedAttributes, setSelectedAttributes] = useState([]);
@@ -9,13 +9,8 @@ const CheckoutItem = ({ cartItem }) => {
   }, [cartItem.userSelectedAttributes]);
 
   return (
-    <article
-      className="checkout__item"
-      aria-labelledby="checkout-title">
-      <img
-        src={cartItem.ItemImg}
-        alt={cartItem.ItemName}
-      />
+    <article className="checkout__item" aria-labelledby="checkout-title">
+      <img src={cartItem.ItemImg} alt={cartItem.ItemName} />
       <div className="checkout__item__info">
         <h3 id="checkout-title">
           {cartItem.ItemName}{" "}

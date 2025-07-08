@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { FaShippingFast } from "react-icons/fa";
 import { RiShoppingBagLine } from "react-icons/ri";

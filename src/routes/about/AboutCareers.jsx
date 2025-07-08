@@ -1,17 +1,12 @@
-import React from "react";
 import OfficeTwo from "../../assets/images/about-us/office-2.jpeg";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 
 const AboutCareers = () => {
   return (
-    <section
-      className="about__careers"
-      aria-labelledby="careers-title">
+    <section className="about__careers" aria-labelledby="careers-title">
       <article className="about__careers__content">
-        <h2
-          className="sub-title"
-          id="careers-title">
+        <h2 className="sub-title" id="careers-title">
           Careers
         </h2>
         <h3>Join the team</h3>
