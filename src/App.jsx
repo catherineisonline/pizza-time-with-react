@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -39,7 +39,6 @@ function App() {
 
   const getUser = async (id) => {
     try {
-      // console.log(`${USERS_URL}/${id}`);
       const response = await fetch(`${USERS_URL}/${id}`);
       const { data } = await response.json();
       if (!response.ok) {

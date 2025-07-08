@@ -1,7 +1,8 @@
-import { useEffect } from "react";
 import "./not-found.css";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../data/animations";
+
 const NotFound = () => {
   useEffect(() => {
     document.title = "404 | Pizza Time";

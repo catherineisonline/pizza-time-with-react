@@ -1,6 +1,6 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "./welcome.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import img375 from "../../../assets/images/section-one/section-one-375.webp";
 import img700 from "../../../assets/images/section-one/section-one-700.webp";
 import img1440 from "../../../assets/images/section-one/section-one-1440.webp";

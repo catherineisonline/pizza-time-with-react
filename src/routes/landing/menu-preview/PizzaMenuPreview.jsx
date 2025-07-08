@@ -1,9 +1,8 @@
-import React from "react";
+import "./menu-preview.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../../helpers/ResetLocation";
 import pizzaMenuPreview from "../../../data/menu-preview";
-import "./menu-preview.css";
 
 const PizzaMenuPreview = () => {
   return (

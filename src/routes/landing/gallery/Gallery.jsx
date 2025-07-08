@@ -1,5 +1,4 @@
 import "./gallery.css";
-import React from "react";
 import {
   ImgOne375,
   ImgTwo375,

@@ -30,7 +30,6 @@
   margin: 0 auto;
   padding-bottom: 3rem;
 }
-/*** Blog grid ***/
 
 .blog__posts {
   display: grid;
@@ -46,7 +45,6 @@
   font-weight: 400;
 }
 
-/*** Blog grid item ***/
 .blog__posts__single {
   width: 100%;
   max-width: 1400px;
@@ -81,8 +79,6 @@
   color: var(--whitish-gray);
 }
 
-/*** Pagination ***/
-
 .blog__pagination {
   position: initial;
   display: flex;
@@ -90,8 +86,6 @@
   margin-top: 4rem;
   margin-bottom: 3rem;
 }
-
-/*** Responsive ***/
 
 @media (hover: hover) {
   .blog__posts__single a:hover {

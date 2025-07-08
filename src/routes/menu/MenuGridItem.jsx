@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import AddToCartButton from "../cart/AddToCartButton";
 import Attribute from "./Attribute";
@@ -32,10 +32,7 @@ const MenuGridItem = ({ singleProduct }) => {
         onClick={ResetLocation}
         to={`/menu/${singleProduct.id}`}
         className="menu-item__link">
-        <img
-          src={singleProduct.ItemImg}
-          alt={`${singleProduct.ItemName}`}
-        />
+        <img src={singleProduct.ItemImg} alt={`${singleProduct.ItemName}`} />
       </Link>
       <h3>{singleProduct.ItemName}</h3>
       <p>{singleProduct.ItemIngredients}</p>
@@ -58,9 +55,7 @@ const MenuGridItem = ({ singleProduct }) => {
               <span>$</span>
               {singleProduct.ItemPriceBefore}
             </del>
-            <p
-              className="menu-item__pricing-curr"
-              aria-label="Current price">
+            <p className="menu-item__pricing-curr" aria-label="Current price">
               <span>$</span>
               {singleProduct.ItemPrice}
             </p>

@@ -1,5 +1,5 @@
 import "./cart.css";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import ScrollBtn from "../../helpers/ScrollBtn";
 import EmptyCart from "./EmptyCart";

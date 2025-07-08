@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState, lazy, Suspense } from "react";
-import { motion } from "framer-motion";
 import "./contact-info.css";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
+import { motion } from "framer-motion";
+
 const Maps = lazy(() => import("./Maps"));
 
 const ContactLanding = () => {

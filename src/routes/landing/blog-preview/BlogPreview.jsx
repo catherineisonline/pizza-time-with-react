@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import ResetLocation from "../../../helpers/ResetLocation";
@@ -32,9 +31,7 @@ const BlogPreview = () => {
               height={220}
               loading="lazy"
             />
-            <time
-              className="date"
-              dateTime="2023.27.06">
+            <time className="date" dateTime="2023.27.06">
               June 27, 2023
             </time>
             <Link

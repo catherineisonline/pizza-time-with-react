@@ -1,5 +1,4 @@
 import "./blog.css";
-import React from "react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ReactPaginate from "react-paginate";
@@ -42,19 +41,12 @@ const Blog = () => {
         Pizza makes everything better. These are some of our favorite pizza
         blogs that are loaded with recipes and pizza-making tips.
       </p>
-      <section
-        className="blog__posts"
-        aria-labelledby="blog-posts-title">
-        <h2
-          id="blog-posts-title"
-          className="visually-hidden">
+      <section className="blog__posts" aria-labelledby="blog-posts-title">
+        <h2 id="blog-posts-title" className="visually-hidden">
           Recent Blog Posts
         </h2>
         {currentBlogPosts.map((blogPost, index) => (
-          <BlogPosts
-            key={index}
-            blogPost={blogPost}
-          />
+          <BlogPosts key={index} blogPost={blogPost} />
         ))}
       </section>
       <ReactPaginate

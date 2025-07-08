@@ -1,4 +1,4 @@
-import React from "react";
+import "./menu.css";
 import MenuCategories from "./MenuCategories";
 import ScrollButton from "../../helpers/ScrollBtn";
 import MenuGridItem from "./MenuGridItem";
@@ -6,9 +6,9 @@ import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import { AnimatePresence, motion } from "framer-motion";
-import "./menu.css";
 import { useProducts } from "../../context/ProductsContext";
 import { slideInLeft } from "../../data/animations";
+
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState("Menu");
   const { getProductsByCategory } = useProducts();

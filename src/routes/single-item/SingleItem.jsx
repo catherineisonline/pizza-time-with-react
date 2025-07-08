@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AddToCartButton from "../cart/AddToCartButton";
 import Attribute from "../menu/Attribute";
 import { products } from "../../data/products";
@@ -60,18 +60,13 @@ const SingleItem = () => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <Link
-        to="/menu"
-        className="single-item__back">
+      <Link to="/menu" className="single-item__back">
         ← Go back
       </Link>
       <article
         className="single-item__inner flex-container flex-column txt-white"
         aria-labelledby="item-name">
-        <img
-          src={singleProduct.ItemImg}
-          alt={`${singleProduct.ItemName}`}
-        />
+        <img src={singleProduct.ItemImg} alt={`${singleProduct.ItemName}`} />
         <div className="single-item__info">
           <div className="single-item__title">
             <h2 id="item-name">{singleProduct.ItemName}</h2>

@@ -1,4 +1,3 @@
-import React from "react";
 import CheckoutBtn from "../checkout/CheckoutBtn";
 import LinkButton from "../../components/Button";
 import ResetLocation from "../../helpers/ResetLocation";

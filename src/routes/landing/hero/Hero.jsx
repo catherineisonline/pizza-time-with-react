@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import "react-alice-carousel/lib/alice-carousel.css";
 import HeroVideo from "../../../assets/images/hero/hero-bg.mp4";
@@ -7,7 +7,6 @@ import HeroVideo_375 from "../../../assets/images/hero/hero-bg-375.mp4";
 import "./hero.css";
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const videoRef = useRef(null);
 
   return (
     <section className="homepage__hero" aria-labelledby="hero-title">
@@ -15,13 +14,13 @@ const Hero = () => {
         Welcome to Pizza Time!
       </h2>
       <video
-        ref={videoRef}
+        preload="auto"
         autoPlay
         loop
         muted
         playsInline
         width="375"
-        className={`hero__video ${isLoading && "loaded"}`}
+        className={`hero__video ${!isLoading && "loaded"}`}
         onLoadedData={() => setIsLoading(false)}>
         <source
           src={HeroVideo_375}

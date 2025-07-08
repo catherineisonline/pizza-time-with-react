@@ -1,10 +1,9 @@
-import React from "react";
+import "./pricing-preview.css";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../../helpers/ResetLocation";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import menuPricing from "../../../data/menu-pricing";
-import "./pricing-preview.css";
 
 const MenuPricingPreview = () => {
   return (

@@ -1,6 +1,4 @@
-import React from "react";
 import { v4 as uuidv4 } from "uuid";
-//components
 import CheckoutForm from "./CheckoutForm";
 import EmptyCart from "../cart/EmptyCart";
 import "./checkout.css";
@@ -23,10 +21,7 @@ const Checkout = ({ currentUser }) => {
       ) : (
         <div className="checkout__inner">
           {cart.map((cartItem) => (
-            <CheckoutItem
-              key={uuidv4()}
-              cartItem={cartItem}
-            />
+            <CheckoutItem key={uuidv4()} cartItem={cartItem} />
           ))}
           <CheckoutForm currentUser={currentUser} />
         </div>

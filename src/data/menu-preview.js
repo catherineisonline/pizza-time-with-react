@@ -1,18 +1,17 @@
-//375px
 import imgOne375 from "../assets/images/landing/menu-preview/menu-preview-375/img-one-375.jpg";
 import imgTwo375 from "../assets/images/landing/menu-preview/menu-preview-375/img-two-375.jpg";
 import imgThree375 from "../assets/images/landing/menu-preview/menu-preview-375/img-three-375.jpg";
 import imgFour375 from "../assets/images/landing/menu-preview/menu-preview-375/img-four-375.jpg";
 import imgFive375 from "../assets/images/landing/menu-preview/menu-preview-375/img-five-375.jpg";
 import imgSix375 from "../assets/images/landing/menu-preview/menu-preview-375/img-six-375.jpg";
-//700px
+
 import imgOne700 from "../assets/images/landing/menu-preview/menu-preview-700/img-one-700.jpg";
 import imgTwo700 from "../assets/images/landing/menu-preview/menu-preview-700/img-two-700.jpg";
 import imgThree700 from "../assets/images/landing/menu-preview/menu-preview-700/img-three-700.jpg";
 import imgFour700 from "../assets/images/landing/menu-preview/menu-preview-700/img-four-700.jpg";
 import imgFive700 from "../assets/images/landing/menu-preview/menu-preview-700/img-five-700.jpg";
 import imgSix700 from "../assets/images/landing/menu-preview/menu-preview-700/img-six-700.jpg";
-//1440
+
 import imgOne1440 from "../assets/images/landing/menu-preview/menu-preview-1440/img-one-1440.jpg";
 import imgTwo1440 from "../assets/images/landing/menu-preview/menu-preview-1440/img-two-1440.jpg";
 import imgThree1440 from "../assets/images/landing/menu-preview/menu-preview-1440/img-three-1440.jpg";

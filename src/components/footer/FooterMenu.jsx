@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import ResetLocation from "../../helpers/ResetLocation";
 import footerMenu from "../../data/footer-menu";

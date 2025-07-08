@@ -1,5 +1,5 @@
 import "./contact.css";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
