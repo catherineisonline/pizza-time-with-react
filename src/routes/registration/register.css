@@ -110,9 +110,11 @@
   color: var(--yellow);
   transition: all ease-in-out 0.3s;
 }
-.register__error {
+.register__error,
+.captcha-input-validation-error {
   color: var(--red);
 }
+
 .register__success p {
   color: var(--green);
   font-family: var(--poppins-font);

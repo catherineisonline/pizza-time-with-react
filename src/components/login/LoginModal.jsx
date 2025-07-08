@@ -79,7 +79,7 @@ const LoginModal = ({
       getUser(user.id);
       setLoading(false);
       hideLoginModal();
-      setFormValue((prev) => ({ email: prev.email, password: "" }));
+      setFormValue({ email: "", password: "" });
       setFormError({});
       setVerificationError("");
       setUserConfig((prev) => ({ ...prev, loggedIn: true }));

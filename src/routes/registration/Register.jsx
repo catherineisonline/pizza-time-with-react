@@ -4,24 +4,37 @@ import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import ResetLocation from "../../helpers/ResetLocation";
 import "./register.css";
-import { USERS_URL } from "../../data/constants";
+import {
+  CAPTCHA_KEY,
+  CAPTCHA_SECRET,
+  CAPTCHA_URL,
+  USERS_URL,
+} from "../../data/constants";
 import { slideInLeft } from "../../data/animations";
 import { Link } from "react-router-dom";
-
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
+const initialFormValue = {
+  id: "",
+  email: "",
+  password: "",
+  repeatPassword: "",
+  fullname: "",
+  address: "",
+  number: "",
+};
 const Register = ({ activateLoginModal }) => {
-  const [formValue, setFormValue] = useState({
-    id: "",
-    email: "",
-    password: "",
-    repeatPassword: "",
-    fullname: "",
-    address: "",
-    number: "",
-  });
+  const [formValue, setFormValue] = useState(initialFormValue);
   const [formError, setFormError] = useState({});
   const [submit, setSubmit] = useState(false);
   const [registrationFail, setRegistrationFail] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
+
+  const captchaRef = useRef();
+  useEffect(() => {
+    document.title = "Registration | Pizza Time";
+  }, []);
 
   const getUsers = async () => {
     try {
@@ -63,64 +76,78 @@ const Register = ({ activateLoginModal }) => {
     }
   };
   const handleSubmit = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
+    ResetLocation();
     setFormError(validate(formValue));
-    window.scrollTo(0, 0);
     if (Object.keys(validate(formValue)).length > 0) {
       setLoading(false);
       return;
-    } else {
-      let currForm = { ...formValue };
-      if (currForm.repeatPassword.length > 0) {
-        delete currForm.repeatPassword;
-      }
-      if (currForm.address !== undefined) {
-        delete currForm.address;
-      }
-      if (currForm.number !== undefined) {
-        delete currForm.number;
-      }
-      currForm.email = currForm.email.toLowerCase();
-      const accCreation = await createUser(currForm);
-      if (accCreation === false) {
-        setLoading(false);
-        setSubmit(false);
-        setRegistrationFail(true);
-        setFormValue({
-          id: "",
-          email: "",
-          password: "",
-          repeatPassword: "",
-          fullname: "",
-          address: "",
-          number: "",
-        });
-      } else {
-        setLoading(false);
-        setRegistrationFail(false);
-        setSubmit(true);
-        setFormValue({
-          id: "",
-          email: "",
-          password: "",
-          repeatPassword: "",
-          fullname: "",
-          address: "",
-          number: "",
-        });
-      }
     }
+    let captchaToken = captchaRef.current?.getValue();
+    const captchaVerified = await verifyCaptcha(captchaToken);
+    if (!captchaVerified) {
+      setCaptchaError("reCaptcha is mandatory");
+      setLoading(false);
+      setSubmit(false);
+      return;
+    }
+    let currForm = { ...formValue };
+    if (currForm.repeatPassword.length > 0) {
+      delete currForm.repeatPassword;
+    }
+    if (currForm.address !== undefined) {
+      delete currForm.address;
+    }
+    if (currForm.number !== undefined) {
+      delete currForm.number;
+    }
+    currForm.email = currForm.email.toLowerCase();
+    const accCreation = await createUser(currForm);
+    if (!accCreation) {
+      setRegistrationFail(true);
+      setSubmit(false);
+    } else {
+      setRegistrationFail(false);
+      setSubmit(true);
+    }
+    setLoading(false);
+    setCaptchaError("");
+    setFormValue(initialFormValue);
   };
-  const handleValidation = (e) => {
+  const updateForm = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   };
   const validate = validateForm("registration");
 
-  useEffect(() => {
-    document.title = "Registration | Pizza Time";
-  }, []);
+  const verifyCaptcha = async (captchaToken) => {
+    if (captchaToken.length === 0) {
+      captchaRef.current?.reset();
+      return false;
+    }
+    try {
+      const response = await fetch(CAPTCHA_URL, {
+        method: "POST",
+        body: JSON.stringify({
+          secret: CAPTCHA_SECRET,
+          captchaToken,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return true;
+    } catch (error) {
+      console.error("Could not verify captcha!", error.statusText);
+      return false;
+    } finally {
+      captchaRef.current?.reset();
+    }
+  };
   return (
     <motion.main
       className="register"
@@ -170,7 +197,7 @@ const Register = ({ activateLoginModal }) => {
               placeholder="Enter your full name"
               name="fullname"
               value={formValue.fullname}
-              onChange={handleValidation}
+              onChange={updateForm}
               aria-labelledby="fullname-error"
             />
           </label>
@@ -189,7 +216,7 @@ const Register = ({ activateLoginModal }) => {
               placeholder="Enter your email (e.g., name@example.com)"
               name="email"
               value={formValue.email}
-              onChange={handleValidation}
+              onChange={updateForm}
               aria-labelledby="email-error"
             />
           </label>
@@ -204,7 +231,7 @@ const Register = ({ activateLoginModal }) => {
               placeholder="Create a strong password"
               name="password"
               value={formValue.password}
-              onChange={handleValidation}
+              onChange={updateForm}
               aria-labelledby="password-error"
             />
           </label>
@@ -222,7 +249,7 @@ const Register = ({ activateLoginModal }) => {
               placeholder="Repeat password"
               name="repeatPassword"
               value={formValue.repeatPassword}
-              onChange={handleValidation}
+              onChange={updateForm}
               aria-labelledby="repeatPassword-error"
             />
           </label>
@@ -240,7 +267,7 @@ const Register = ({ activateLoginModal }) => {
               placeholder="Enter your street address (optional)"
               name="address"
               value={formValue.address}
-              onChange={handleValidation}
+              onChange={updateForm}
               aria-labelledby="address-error"
             />
           </label>
@@ -258,7 +285,7 @@ const Register = ({ activateLoginModal }) => {
               placeholder="Enter your phone number (optional)"
               name="number"
               value={formValue.number}
-              onChange={handleValidation}
+              onChange={updateForm}
               aria-labelledby="number-error"
             />
           </label>
@@ -274,6 +301,18 @@ const Register = ({ activateLoginModal }) => {
             <Link to="/privacy">Privacy Policy</Link>. You may receive an email
             notification from us and can opt out any time.
           </p>
+          <ReCAPTCHA
+            ref={captchaRef}
+            sitekey={CAPTCHA_KEY}
+            theme="dark"
+            aria-describedby="captcha-error"
+          />
+          <span
+            className="captcha-input-validation-error"
+            aria-live="assertive"
+            id="captcha-error">
+            {captchaError}
+          </span>
           <button
             className="register__submit"
             type="submit"
