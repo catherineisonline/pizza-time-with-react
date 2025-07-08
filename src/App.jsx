@@ -40,10 +40,11 @@ function App() {
   const getUser = async (id) => {
     try {
       const response = await fetch(`${USERS_URL}/${id}`);
-      const { data } = await response.json();
       if (!response.ok) {
         throw new Error(response.statusText);
       }
+
+      const { data } = await response.json();
       setUserConfig((prev) => ({ ...prev, user: data[0] }));
       sessionStorage.setItem("currentUser", JSON.stringify(data[0]));
       return true;

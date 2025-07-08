@@ -6,6 +6,14 @@ import {
   getUsers,
   updateUser,
 } from "../controllers/users.controller.mjs";
+import rateLimit from "express-rate-limit";
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000,
+  limit: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  ipv6Subnet: 56,
+});
 
 const usersRouter = Router();
 
@@ -13,7 +21,7 @@ usersRouter.get("/", getUsers);
 
 usersRouter.get("/:id", getUser);
 
-usersRouter.post("/", createUser);
+usersRouter.post("/", limiter, createUser);
 
 usersRouter.put("/:id", updateUser);
 

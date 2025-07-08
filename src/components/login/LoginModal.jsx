@@ -24,6 +24,9 @@ const LoginModal = ({
   const getUsers = async () => {
     try {
       const response = await fetch(USERS_URL);
+      if (response.status === 429) {
+        throw new Error("Too many requests. Please wait and try again later.");
+      }
       const body = await response.json();
       return body.data;
     } catch (err) {
