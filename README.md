@@ -102,6 +102,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [Framer Motion](https://www.framer.com/motion/)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
 - [libsql](https://www.npmjs.com/package/@libsql/client)
+- [Express rate limit](https://express-rate-limit.mintlify.app/quickstart/usage)
 
 
 ## Resources  <a id="resources"></a>

@@ -39,6 +39,9 @@ const Register = ({ activateLoginModal }) => {
   const getUsers = async () => {
     try {
       const response = await fetch(USERS_URL);
+      if (response.status === 429) {
+        throw new Error("Too many requests. Please wait and try again later.");
+      }
       const body = await response.json();
 
       return body.data;
@@ -63,6 +66,11 @@ const Register = ({ activateLoginModal }) => {
           },
           body: JSON.stringify(user),
         });
+        if (response.status === 429) {
+          throw new Error(
+            "Too many requests. Please wait and try again later."
+          );
+        }
         if (response.status === 200) {
           return true;
         } else {

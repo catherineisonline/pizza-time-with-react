@@ -108,9 +108,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
       <h2>Profile information</h2>
       <p>Personal details and application</p>
       {loading ? (
-        <div
-          role="status"
-          className="loader">
+        <div role="status" className="loader">
           <p>Almost there...</p>
           <img
             alt="Processing request"
@@ -118,14 +116,10 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           />
         </div>
       ) : editForm ? (
-        <form
-          className="profile__form"
-          onSubmit={handleSubmit}>
+        <form className="profile__form" onSubmit={handleSubmit}>
           <hr aria-hidden="true" />
 
-          <label
-            htmlFor="email"
-            className="profile__form__info">
+          <label htmlFor="email" className="profile__form__info">
             Email
             <input
               name="email"
@@ -147,9 +141,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           </span>
           <hr aria-hidden="true" />
 
-          <label
-            htmlFor="password"
-            className="profile__form__info">
+          <label htmlFor="password" className="profile__form__info">
             Password
             <input
               id="password"
@@ -171,9 +163,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           </span>
           <hr aria-hidden="true" />
 
-          <label
-            htmlFor="fullname"
-            className="profile__form__info">
+          <label htmlFor="fullname" className="profile__form__info">
             Fullname
             <input
               name="fullname"
@@ -195,9 +185,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           </span>
           <hr aria-hidden="true" />
 
-          <label
-            htmlFor="address"
-            className="profile__form__info">
+          <label htmlFor="address" className="profile__form__info">
             Address
             <input
               id="address"
@@ -223,9 +211,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           </span>
           <hr aria-hidden="true" />
 
-          <label
-            htmlFor="number"
-            className="profile__form__info">
+          <label htmlFor="number" className="profile__form__info">
             Number
             <input
               id="number"
@@ -270,12 +256,8 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
         </form>
       ) : (
         <React.Fragment>
-          <section
-            className="profile__info"
-            aria-labelledby="profile-title">
-            <h3
-              id="profile-title"
-              className="visually-hidden">
+          <section className="profile__info" aria-labelledby="profile-title">
+            <h3 id="profile-title" className="visually-hidden">
               Profile Information
             </h3>
             <hr aria-hidden="true" />
