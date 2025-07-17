@@ -6,8 +6,8 @@ import indexRouter from "../routes/index.route.mjs";
 const app = express();
 app.set("trust proxy", 1); // for Vercel
 dotenv.config({ path: ".env.backend" });
-export const databaseURL = process.env.TURSO_DB_URL;
-export const authToken = process.env.TURSO_DB_TOKEN;
+const databaseURL = process.env.TURSO_DB_URL;
+const authToken = process.env.TURSO_DB_TOKEN;
 const port = 3000;
 
 app.use(cors());
@@ -20,3 +20,5 @@ app.use("*", (req, res) => {
 app.listen(port, () =>
   console.log(`Server is running on http://localhost:${port}`)
 );
+
+export { databaseURL, authToken };
