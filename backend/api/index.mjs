@@ -1,9 +1,13 @@
 import express, { json } from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 import indexRouter from "../routes/index.route.mjs";
 
 const app = express();
 app.set("trust proxy", 1); // for Vercel
+dotenv.config({ path: ".env.backend" });
+export const databaseURL = process.env.TURSO_DB_URL;
+export const authToken = process.env.TURSO_DB_TOKEN;
 const port = 3000;
 
 app.use(cors());
