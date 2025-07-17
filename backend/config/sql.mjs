@@ -1,5 +1,6 @@
 import { createClient } from "@libsql/client";
-import { authToken, databaseURL } from "../api/index.mjs";
+const databaseURL = process.env.TURSO_DB_URL;
+const authToken = process.env.TURSO_DB_TOKEN;
 
 const client = createClient({
   url: databaseURL,
