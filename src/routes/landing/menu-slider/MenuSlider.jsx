@@ -32,7 +32,7 @@ const MenuSlider = () => {
       transition={{ duration: 3 }}
       aria-labelledby="categories-title">
       <h2 id="categories-title" className="txt-center pop-font txt-white">
-        Meal Categories
+        Categorías de Comidas
       </h2>
       <ul className="menu-slider__categories flex-container">
         {menuSliderCategories.map((category) => (

@@ -20,18 +20,17 @@ const Newsletter = () => {
   return (
     <section className="homepage__newsletter">
       <h2 className="newsletter__title">
-        Subscribe to our newsletter to receive updates about the menu and enjoy
-        awesome gifts!
+        ¡Suscríbete a nuestro boletín para recibir actualizaciones sobre el menú y disfrutar de regalos increíbles!
       </h2>
       {submit && Object.keys(formError).length === 0 ? (
         <p className="newsletter__success">
-          You have successfully subscribed to our newsletter!
+          ¡Te has suscrito exitosamente a nuestro boletín!
         </p>
       ) : (
         <form onSubmit={handleSubmit} className="newsletter__form">
           <div className="webflow-style-input">
             <label htmlFor="email" className="visually-hidden">
-              Your email
+              Tu correo electrónico
             </label>
             <input
               id="email"
@@ -39,7 +38,7 @@ const Newsletter = () => {
               onChange={handleValidation}
               value={formValue.email}
               autoComplete="email"
-              placeholder="What's your email?"
+              placeholder="¿Cuál es tu correo electrónico?"
               aria-errormessage="email-error"
               aria-invalid={formError.email ? "true" : "false"}
             />
@@ -53,8 +52,8 @@ const Newsletter = () => {
           <button
             type="submit"
             className="active-button-style"
-            aria-label="Sign me up">
-            Sign me up
+            aria-label="Inscribirme">
+            Inscribirme
           </button>
         </form>
       )}

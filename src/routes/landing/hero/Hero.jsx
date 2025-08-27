@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section className="homepage__hero" aria-labelledby="hero-title">
       <h2 id="hero-title" className="visually-hidden">
-        Welcome to Pizza Time!
+        ¡Bienvenido a Pizza Time!
       </h2>
       <video
         preload="auto"
@@ -28,7 +28,7 @@ const Hero = () => {
           media="(max-width: 1024px)"
         />
         <source src={HeroVideo} type="video/mp4" media="(min-width: 1025px)" />
-        Your browser does not support the video tag.
+        Tu navegador no soporta la etiqueta de video.
       </video>
 
       <div className="hero__info flex-container flex-column txt-center pop-font txt-white">
@@ -37,11 +37,10 @@ const Hero = () => {
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}>
-          <span>Welcome</span>
-          <h2 className="txt-white">try something amazing</h2>
+          <span>Bienvenido</span>
+          <h2 className="txt-white">prueba algo increíble</h2>
           <p className="txt-white">
-            Ordering your fave Pizza is quick and easy with our app or on our
-            website.
+            Pedir tu pizza favorita es rápido y fácil con nuestra aplicación o en nuestro sitio web.
           </p>
         </motion.div>
 
@@ -49,14 +48,14 @@ const Hero = () => {
           <Link
             className="passive-button-style"
             to="/blog"
-            aria-label="Read our blog">
-            Read Blog
+            aria-label="Lee nuestro blog">
+            Leer Blog
           </Link>
           <Link
             className="passive-button-style  "
             to="/menu"
-            aria-label="View our menu">
-            View Menu
+            aria-label="Ve nuestro menú">
+            Ver Menú
           </Link>
         </div>
       </div>

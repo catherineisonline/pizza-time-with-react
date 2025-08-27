@@ -15,7 +15,7 @@ const Checkout = ({ currentUser }) => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>Checkout</h2>
+      <h2>Revisar</h2>
       {cart.length === 0 ? (
         <EmptyCart />
       ) : (

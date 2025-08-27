@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { slideInLeft } from "../../data/animations";
 const Terms = () => {
   useEffect(() => {
-    document.title = "Terms | Pizza Time";
+    document.title = "Términos | Pizza Time";
   }, []);
   return (
     <motion.main
@@ -13,12 +13,12 @@ const Terms = () => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>Terms & Conditions</h2>
+      <h2>Términos y Condiciones</h2>
       <p>
-        Welcome to Pizza Time. These Terms of Service outline the rules and
-        guidelines for using our website and services. By accessing or using our
-        website, you agree to abide by these terms. Please read them carefully
-        before proceeding.
+        Bienvenido a Pizza Time. Estos Términos de Servicio describen las reglas y
+        directrices para usar nuestro sitio web y nuestros servicios. Al acceder o utilizar nuestro
+        sitio web, usted acepta cumplir con estos términos. Por favor, léalos atentamente
+        antes de continuar.
       </p>
       {termsContent.map((content) => (
         <section key={content.title}>

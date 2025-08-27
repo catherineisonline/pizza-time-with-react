@@ -8,7 +8,7 @@ const ChangeItemQuantity = ({ cartItem }) => {
         onClick={() => {
           handleAddProduct(cartItem, cartItem.userSelectedAttributes);
         }}
-        aria-label={`Add ${cartItem.ItemName} to the cart`}>
+        aria-label={`Añadir ${cartItem.ItemName} al carrito`}>
         +
       </button>
       <p>{cartItem.quantity}</p>
@@ -16,7 +16,7 @@ const ChangeItemQuantity = ({ cartItem }) => {
         onClick={() => {
           handleRemoveProduct(cartItem, cartItem.userSelectedAttributes);
         }}
-        aria-label={`Remove ${cartItem.ItemName} from the cart`}>
+        aria-label={`Quitar ${cartItem.ItemName} del carrito`}>
         -
       </button>
     </div>

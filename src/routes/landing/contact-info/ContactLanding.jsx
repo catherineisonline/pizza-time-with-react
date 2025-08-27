@@ -46,25 +46,23 @@ const ContactLanding = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}>
       {!hideMap && (
-        <Suspense fallback={<div id="#map">Loading location...</div>}>
+        <Suspense fallback={<div id="#map">Cargando ubicación...</div>}>
           <Maps />
         </Suspense>
       )}
       <address className="contact__info">
-        <h2 id="contact-title">Contact Us</h2>
+        <h2 id="contact-title">Contáctanos</h2>
         <p>
-          Have a question, suggestion, or just want to say hello? We'd love to
-          hear from you!
+          ¿Tienes alguna pregunta, sugerencia o simplemente quieres saludar? ¡Nos encantaría saber de ti!
         </p>
         <div>
-          <h3>Customer Support:</h3>
+          <h3>Atención al cliente:</h3>
           <p>
-            Our dedicated customer support team is ready to assist you with any
-            inquiries you may have.
+            Nuestro dedicado equipo de atención al cliente está listo para ayudarte con cualquier consulta que puedas tener.
           </p>
           <ul>
             <li>
-              - Email: {""}
+              - Correo electrónico: {""}
               <a
                 href="mailto:support@pizzatime.com"
                 target="_blank"
@@ -73,23 +71,22 @@ const ContactLanding = () => {
               </a>
             </li>
             <li>
-              - <a href="tel:0000001234567">Phone: 000 (000) 123 4567</a>
+              - <a href="tel:0000001234567">Teléfono: 000 (000) 123 4567</a>
             </li>
             <li>
-              - Hours: Monday - Friday, <time dateTime="08:00">8:00am</time> -{" "}
+              - Horario: Lunes a Viernes, <time dateTime="08:00">8:00am</time> -{" "}
               <time dateTime="21:00">9:00pm</time>(EST)
             </li>
           </ul>
         </div>
         <div>
-          <h3>General Inquiries:</h3>
+          <h3>Consultas generales:</h3>
           <p>
-            If you have general questions about our company, partnerships, or
-            anything else, feel free to get in touch.
+            Si tienes preguntas generales sobre nuestra empresa, asociaciones o cualquier otra cosa, no dudes in ponerte en contacto.
           </p>
           <ul>
             <li>
-              - Email: {""}
+              - Correo electrónico: {""}
               <a
                 href="mailto:info@pizzatime.com"
                 target="_blank"
@@ -100,15 +97,13 @@ const ContactLanding = () => {
           </ul>
         </div>
         <div>
-          <h3>Feedback and Suggestions:</h3>
+          <h3>Comentarios y sugerencias:</h3>
           <p>
-            We value your feedback and are always striving to improve. If you
-            have any suggestions, comments, or ideas on how we can enhance our
-            offerings, please let us know.
+            Valoramos tus comentarios y siempre nos esforzamos por mejorar. Si tienes alguna sugerencia, comentario o idea sobre cómo podemos mejorar nuestras ofertas, háznoslo saber.
           </p>
           <ul>
             <li>
-              - Email: {""}
+              - Correo electrónico: {""}
               <a
                 href="mailto:feedback@pizzatime.com"
                 target="_blank"

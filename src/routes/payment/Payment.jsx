@@ -38,7 +38,7 @@ const Payment = () => {
   };
 
   useEffect(() => {
-    document.title = "Payment | Pizza Time";
+    document.title = "Pago | Pizza Time";
   }, []);
   return (
     <motion.main
@@ -58,14 +58,14 @@ const Payment = () => {
               <form
                 onSubmit={handleSubmit}
                 className="payment__form">
-                <label htmlFor="firstname">First name</label>
+                <label htmlFor="firstname">Nombre</label>
                 <input
                   onChange={handleValidation}
                   value={formValue.firstname}
                   name="firstname"
                   id="firstname"
                   type="text"
-                  placeholder="First name"
+                  placeholder="Nombre"
                   aria-describedby="firstname-error"
                   aria-invalid={!!formError.firstname}
                 />
@@ -76,13 +76,13 @@ const Payment = () => {
                   className="payment__form__error">
                   {formError.firstname}
                 </span>
-                <label htmlFor="lastname">Last name</label>
+                <label htmlFor="lastname">Apellido</label>
                 <input
                   onChange={handleValidation}
                   value={formValue.lastname}
                   name="lastname"
                   id="lastname"
-                  placeholder="Last name"
+                  placeholder="Apellido"
                   aria-describedby="lastname-error"
                   aria-invalid={!!formError.lastname}
                 />
@@ -92,13 +92,13 @@ const Payment = () => {
                   className="payment__form__error">
                   {formError.lastname}
                 </span>
-                <label htmlFor="cardNumber">Card number</label>
+                <label htmlFor="cardNumber">Número de tarjeta</label>
                 <input
                   onChange={handleValidation}
                   value={formValue.cardNumber}
                   name="cardNumber"
                   id="cardNumber"
-                  placeholder="Card number"
+                  placeholder="Número de tarjeta"
                   maxLength="16"
                   aria-describedby="cardNumber-error"
                   aria-invalid={!!formError.cardNumber}
@@ -131,7 +131,7 @@ const Payment = () => {
                     </span>
                   </div>
                   <div className="payment__form__section">
-                    <label id="expiration-label">Expiration Date (MM/YY)</label>
+                    <label id="expiration-label">Fecha de vencimiento (MM/AA)</label>
                     <div
                       className="payment__form__expiration"
                       aria-labelledby="expiration-label">
@@ -149,7 +149,7 @@ const Payment = () => {
                         autoComplete="off"
                         id="year"
                         name="year"
-                        placeholder="YY"
+                        placeholder="AA"
                         type="text"
                         maxLength="2"
                         onChange={handleValidation}
@@ -168,9 +168,9 @@ const Payment = () => {
                 </div>
                 <button
                   type="submit"
-                  aria-label="Proceed with payment"
+                  aria-label="Proceder con el pago"
                   className=" active-button-style">
-                  Proceed
+                  Proceder
                 </button>
               </form>
             </section>

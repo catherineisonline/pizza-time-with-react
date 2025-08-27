@@ -44,7 +44,7 @@ const Menu = () => {
     getProductsByCategory(activeCategory);
     resetPagination();
     ResetLocation();
-  }, [activeCategory]);
+  }, [activeCategory, getProductsByCategory]);
   return (
     <motion.main
       className="menu"
@@ -54,11 +54,11 @@ const Menu = () => {
       transition={slideInLeft.transition}>
       <MenuCategories setActiveCategory={setActiveCategory} />
       <section className="menu__items">
-        <h2 className="visually-hidden">Menu</h2>
+        <h2 className="visually-hidden">Menú</h2>
         <AnimatePresence mode="sync">
           {currentProducts.length === 0 ? (
             <p className="menu__not-found">
-              No products found. Try to search for something else.
+              No se encontraron productos. Intenta buscar algo más.
             </p>
           ) : (
             currentProducts.map((singleProduct) => (
@@ -82,14 +82,14 @@ const Menu = () => {
       <ReactPaginate
         className="pagination"
         breakLabel="..."
-        nextLabel=" &#62;"
+        nextLabel="Siguiente"
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
         pageCount={Math.max(1, pageCountProducts)}
         forcePage={currentPage}
-        previousLabel="&#60;"
+        previousLabel="Anterior"
         renderOnZeroPageCount={null}
-        aria-label="Blog pagination"
+        aria-label="Paginación del menú"
       />
     </motion.main>
   );

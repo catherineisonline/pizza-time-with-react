@@ -19,12 +19,10 @@ const AddToCartButton = ({
           : "inactive-add-to-cart"
       }`}
       disabled={
-        targetAttribute?.length > 0 || singleProduct?.attributes?.length === 0
-          ? false
-          : true
+        !(targetAttribute?.length > 0 || singleProduct?.attributes?.length === 0)
       }
-      aria-label="Add to cart">
-      Add to cart
+      aria-label="Añadir al carrito">
+      Añadir al carrito
     </button>
   );
 };

@@ -14,24 +14,23 @@ const AboutCollaboration = () => {
       />
       <article className="about__collaboration__content">
         <h2 className="sub-title" id="collab-title">
-          Collaboration
+          Colaboración
         </h2>
-        <h3>Join the business</h3>
+        <h3>Únete al negocio</h3>
         <p>
-          Whether it's catering for a corporate event, providing lunch for a
-          business meeting, or simply offering a delicious meal for employees to
-          enjoy, we are committed to meeting the unique needs of businesses in
-          our area. Our menu features a wide range of options, from classic
-          pizzas and salads to sandwiches and pasta dishes, so you can be sure
-          there's something for everyone to enjoy. Don't forget, Pizza Time is a
-          fictional pizza restaurant made by Ekaterine Mitagvaria.
+          Ya sea que se trate de catering para un evento corporativo, proporcionar almuerzos para una
+          reunión de negocios o simplemente ofrecer una deliciosa comida para que los empleados disfruten,
+          estamos comprometidos a satisfacer las necesidades únicas de las empresas en nuestra área. Nuestro
+          menú ofrece una amplia gama de opciones, desde pizzas y ensaladas clásicas hasta sándwiches y
+          platos de pasta, para que puedas estar seguro de que hay algo para que todos disfruten. No olvides
+          que Pizza Time es un restaurante de pizza ficticio creado por Ekaterine Mitagvaria.
         </p>
         <Link
           to="/contact"
           onClick={ResetLocation}
-          aria-label="Request a call"
+          aria-label="Solicitar una llamada"
           className="active-button-style">
-          Request a call
+          Solicitar una llamada
         </Link>
       </article>
     </section>

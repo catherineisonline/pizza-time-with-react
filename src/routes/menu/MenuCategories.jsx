@@ -13,12 +13,12 @@ const MenuCategories = ({ setActiveCategory }) => {
   }, []);
   return (
     <section className="menu__categories">
-      <h2 className="visually-hidden">Menu Categories</h2>
+      <h2 className="visually-hidden">Categorías del Menú</h2>
       <form className="menu__categories__search" role="search">
         <input
           type="text"
-          placeholder="search..."
-          aria-label="Search products"
+          placeholder="buscar..."
+          aria-label="Buscar productos"
           onChange={findMenuItem}
         />
         <img src={SearchIcon} alt="" aria-hidden="true" />
@@ -28,7 +28,7 @@ const MenuCategories = ({ setActiveCategory }) => {
           <li key={category.id}>
             <NavLink
               to="/menu"
-              aria-label={`Select category ${category.name}`}
+              aria-label={`Seleccionar categoría ${category.name}`}
               onClick={() => setActiveCategory(category.name)}>
               {category.name}
             </NavLink>

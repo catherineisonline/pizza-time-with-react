@@ -51,11 +51,11 @@ const MenuGridItem = ({ singleProduct }) => {
           <div className="menu-item__pricing-sale">
             <del
               className="menu-item__pricing-prev"
-              aria-label="Previous price">
+              aria-label="Precio anterior">
               <span>$</span>
               {singleProduct.ItemPriceBefore}
             </del>
-            <p className="menu-item__pricing-curr" aria-label="Current price">
+            <p className="menu-item__pricing-curr" aria-label="Precio actual">
               <span>$</span>
               {singleProduct.ItemPrice}
             </p>

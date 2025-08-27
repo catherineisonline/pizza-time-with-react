@@ -8,7 +8,7 @@ import { slideInLeft } from "../../data/animations";
 const Cart = ({ CartItem }) => {
   const { cart } = useCart();
   useEffect(() => {
-    document.title = "Shopping Cart | Pizza Time";
+    document.title = "Carrito de Compras | Pizza Time";
   }, []);
   return (
     <motion.main
@@ -17,7 +17,7 @@ const Cart = ({ CartItem }) => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>Shopping cart</h2>
+      <h2>Carrito de compras</h2>
       {cart.length === 0 ? <EmptyCart /> : CartItem}
       <ScrollBtn />
     </motion.main>

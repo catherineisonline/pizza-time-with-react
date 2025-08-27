@@ -12,11 +12,9 @@ const BlogPreview = () => {
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 3 }}>
-      <h2 className="txt-center pop-font txt-white">Recent from blog</h2>
+      <h2 className="txt-center pop-font txt-white">Reciente del blog</h2>
       <p className="section-description">
-        Fresh, flavorful, and maybe some healthy recipes made for real, actual,
-        everyday life. You don't need to be a pro! Helping you celebrate the joy
-        of food in a non-intimidating way.
+        Recetas frescas, sabrosas y quizás algunas saludables hechas para la vida real, actual y cotidiana. ¡No necesitas ser un profesional! Ayudándote a celebrar la alegría de la comida de una manera no intimidante.
       </p>
       <div className="homepage__blog-posts">
         {blogPreview.map((post) => (
@@ -32,12 +30,12 @@ const BlogPreview = () => {
               loading="lazy"
             />
             <time className="date" dateTime="2023.27.06">
-              June 27, 2023
+              Junio 27, 2023
             </time>
             <Link
               onClick={ResetLocation}
               to={`/blog/${post.name.toLowerCase().replaceAll(" ", "-")}`}
-              aria-label={`Continue reading ${post.name}`}>
+              aria-label={`Continuar leyendo ${post.name}`}>
               <h3 className="pop-font txt-white">{post.name}</h3>
             </Link>
             <p className="homepage__blog-intro">{post.intro}</p>
@@ -49,7 +47,7 @@ const BlogPreview = () => {
         onClick={ResetLocation}
         to="/blog"
         className="active-button-style txt-white">
-        More posts
+        Más publicaciones
       </Link>
     </motion.section>
   );

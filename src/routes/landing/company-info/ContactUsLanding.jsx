@@ -8,7 +8,7 @@ const ContactUsLanding = () => {
       className="homepage__company-info flex-container flex-row txt-white"
       aria-describedby="contact-title">
       <h2 id="contact-title" className="visually-hidden">
-        Contact us
+        Contáctanos
       </h2>
       <motion.img
         initial={{ opacity: 0, right: 100 }}
@@ -49,14 +49,14 @@ const ContactUsLanding = () => {
             <h3>
               <a href="tel:0000001234567">000 (000) 123 4567</a>
             </h3>
-            <p>Contact us if you have any questions</p>
+            <p>Contáctanos si tienes alguna pregunta</p>
           </li>
           <li>
             <h3>506 Roy Alley 80202</h3>
             <p>Colorado, Denver</p>
           </li>
           <li>
-            <h3>Open Monday-Friday</h3>
+            <h3>Abierto de Lunes a Viernes</h3>
             <p>
               <time dateTime="8:00">8:00</time>am -{" "}
               <time dateTime="21:00">9:00</time>pm

@@ -11,7 +11,7 @@ import { slideInLeft } from "../../data/animations";
 
 const About = () => {
   useEffect(() => {
-    document.title = "About | Pizza Time";
+    document.title = "Sobre Nosotros | Pizza Time";
   }, []);
   return (
     <motion.main

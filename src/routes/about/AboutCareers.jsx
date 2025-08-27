@@ -7,25 +7,25 @@ const AboutCareers = () => {
     <section className="about__careers" aria-labelledby="careers-title">
       <article className="about__careers__content">
         <h2 className="sub-title" id="careers-title">
-          Careers
+          Carreras
         </h2>
-        <h3>Join the team</h3>
+        <h3>Únete al equipo</h3>
         <p>
-          Are you passionate about great food, exceptional customer service, and
-          working with a fun and dynamic team? If so, we would love to have you
-          join our team at Pizza Time! We are always on the lookout for talented
-          and motivated individuals to join our team in a variety of roles, from
-          servers and chefs to kitchen staff and management. Whether you're just
-          starting out in the food service industry or have years of experience
-          under your belt, we offer a supportive and collaborative work
-          environment that encourages personal and professional growth.
+          ¿Te apasiona la buena comida, el servicio al cliente excepcional y
+          trabajar con un equipo divertido y dinámico? Si es así, ¡nos encantaría que te
+          unieras a nuestro equipo en Pizza Time! Siempre estamos buscando
+          personas con talento y motivadas para que se unan a nuestro equipo en una variedad de
+          puestos, desde camareros y chefs hasta personal de cocina y gerencia.
+          Tanto si estás empezando en el sector de la restauración como si tienes años de
+          experiencia, te ofrecemos un entorno de trabajo solidario y colaborativo
+          que fomenta el crecimiento personal y profesional.
         </p>
         <Link
           to="/careers"
           onClick={ResetLocation}
-          aria-label="Explore open positions"
+          aria-label="Explorar puestos vacantes"
           className="active-button-style">
-          Explore Careers
+          Explorar Carreras
         </Link>
       </article>
       <img

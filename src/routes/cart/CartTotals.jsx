@@ -7,12 +7,12 @@ const CartTotals = ({ className, isValidLogin, activateLoginModal }) => {
   const { orderSummary } = useCart();
   return (
     <section className={className}>
-      <h2 id="cart-summary-title">Cart Summary</h2>
+      <h2 id="cart-summary-title">Resumen del Carrito</h2>
       {orderSummary.quantity > 0 && (
         <dl className="cart-totals_content">
-          <dt>Tax 10%:</dt>
+          <dt>Impuesto 10%:</dt>
           <dd>$ {orderSummary.taxes}</dd>
-          <dt>Quantity:</dt>
+          <dt>Cantidad:</dt>
           <dd> {orderSummary.quantity}</dd>
           <dt>Total:</dt>
           <dd>$ {orderSummary.total}</dd>
@@ -21,16 +21,16 @@ const CartTotals = ({ className, isValidLogin, activateLoginModal }) => {
       <div className="cart-totals__interaction">
         <CheckoutBtn
           className="active-button-style"
-          aria-label="Contiue with checkout"
+          aria-label="Continuar con el pago"
           isValidLogin={isValidLogin}
           activateLoginModal={activateLoginModal}
         />
         <LinkButton
-          aria-label="Go back to menu"
+          aria-label="Volver al menú"
           onClick={ResetLocation}
           to="/menu"
           className="back-to-menu">
-          Back to menu
+          Volver al menú
         </LinkButton>
       </div>
     </section>

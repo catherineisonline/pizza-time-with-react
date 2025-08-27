@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { slideInLeft } from "../../data/animations";
 const Privacy = () => {
   useEffect(() => {
-    document.title = "Privacy | Pizza Time";
+    document.title = "Privacidad | Pizza Time";
   }, []);
   return (
     <motion.main
@@ -13,13 +13,13 @@ const Privacy = () => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>Privacy</h2>
+      <h2>Privacidad</h2>
       <p>
-        This Privacy Policy ("Policy") outlines how Pizza Time ("Pizza Time,"
-        "we," "our," or "us") collects, uses, and protects your personal
-        information when you use our Instagram growth services. By using our
-        services, you ("you," "your," or "user") consent to the practices
-        described in this Policy.
+        Esta Política de Privacidad ("Política") describe cómo Pizza Time ("Pizza Time",
+        "nosotros", "nuestro" o "nos") recopila, utiliza y protege su información personal
+        cuando utiliza nuestros servicios de crecimiento de Instagram. Al utilizar nuestros
+        servicios, usted ("usted", "su" o "usuario") consiente las prácticas
+        descritas in esta Política.
       </p>
       {privacyContent.map((content) => (
         <section key={content.title}>
@@ -30,9 +30,9 @@ const Privacy = () => {
         </section>
       ))}
       <p>
-        If you have any questions or concerns regarding our Privacy Policy,
-        please contact us at info@pizzatime.com. Thank you for trusting Pizza
-        Time with your personal information.
+        Si tiene alguna pregunta o inquietud con respecto a nuestra Política de Privacidad,
+        póngase en contacto con nosotros en info@pizzatime.com. Gracias por confiar en Pizza
+        Time su información personal.
       </p>
     </motion.main>
   );

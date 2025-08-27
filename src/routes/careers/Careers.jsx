@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { slideInLeft } from "../../data/animations";
 const Careers = () => {
   useEffect(() => {
-    document.title = "Careers | Pizza Time";
+    document.title = "Carreras | Pizza Time";
   }, []);
   return (
     <motion.main
@@ -16,10 +16,10 @@ const Careers = () => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>Careers</h2>
+      <h2>Carreras</h2>
       <h3>
-        If you think you can add value with your expertise, passion, and hard
-        work, you might be the ONE!
+        Si crees que puedes agregar valor con tu experiencia, pasión y trabajo
+        duro, ¡podrías ser el INDICADO!
       </h3>
       <ul className="careers__inner">
         {careers.map((career) => (
@@ -33,9 +33,9 @@ const Careers = () => {
             </div>
             <Link
               to="/contact"
-              aria-label={`Apply for ${career.title}`}
+              aria-label={`Aplicar para ${career.title}`}
               onClick={ResetLocation}>
-              Apply
+              Aplicar
             </Link>
           </li>
         ))}

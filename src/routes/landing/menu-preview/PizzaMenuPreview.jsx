@@ -11,12 +11,10 @@ const PizzaMenuPreview = () => {
       aria-labelledby="menu-title">
       <div className="menu-preview__info txt-center">
         <h2 className="pop-font txt-white" id="menu-title">
-          Hot Pizza Meals
+          Pizzas Calientes
         </h2>
         <p className="section-description">
-          Pizza Time holds the market of the pizza industry and continuously
-          offers more than pizza. Check out our hottest menu options with
-          cheese, meat, chicken, and veggies!
+          Pizza Time domina el mercado de la industria de la pizza y ofrece continuamente más que pizza. ¡Echa un vistazo a nuestras opciones de menú más populares con queso, carne, pollo y verduras!
         </p>
       </div>
       <div className="menu-preview__meals flex-container flex-column">
@@ -54,9 +52,9 @@ const PizzaMenuPreview = () => {
       <Link
         onClick={ResetLocation}
         to="/menu"
-        aria-label="Check more pizzas in our menu"
+        aria-label="Ver más pizzas en nuestro menú"
         className="active-button-style txt-white">
-        More pizza
+        Más pizza
       </Link>
     </section>
   );

@@ -4,14 +4,14 @@ import ResetLocation from "../../helpers/ResetLocation";
 const EmptyCart = () => {
   return (
     <section className="cart__items empty-cart">
-      <h3>Oh, no, your cart is empty</h3>
-      <p>Seems like you have not added anything to your cart yet.</p>
+      <h3>Oh, no, tu carrito está vacío</h3>
+      <p>Parece que aún no has agregado nada a tu carrito.</p>
       <Link
         to="/menu"
         className="active-button-style"
-        aria-label="Explore the menu"
+        aria-label="Explorar el menú"
         onClick={ResetLocation}>
-        Explore menu
+        Explorar menú
       </Link>
     </section>
   );

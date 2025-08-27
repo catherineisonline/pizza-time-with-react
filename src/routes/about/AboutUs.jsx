@@ -7,27 +7,27 @@ const AboutUs = () => {
   return (
     <section className="about__company" aria-labelledby="about-title">
       <article className="about__company__content">
-        <h2 id="about-title">About us</h2>
-        <h3 className="sub-title">More than delicious food</h3>
+        <h2 id="about-title">Sobre nosotros</h2>
+        <h3 className="sub-title">Más que comida deliciosa</h3>
         <p>
-          Founded in 1982 we bring pizza slice by slice to the next level!
-          Unique branding and being in the pizza industry is the formula to our
-          success. We do understand what people want and convert desires to
-          unique experiences of taste.
+          Fundada en 1982, ¡llevamos la pizza porción por porción al siguiente nivel!
+          Una marca única y estar en la industria de la pizza es la fórmula de nuestro
+          éxito. Entendemos lo que la gente quiere y convertimos los deseos en
+          experiencias de sabor únicas.
         </p>
         <ul>
-          <li>🥬 Freshness, originality, and quality are our priorities.</li>
-          <li>💰 Affordable costs, located almost anywhere.</li>
-          <li>📱 Amazing online ordering system – order food in one click.</li>
-          <li>📆 Easy-to-navigate pre-order options.</li>
-          <li>🎈 Great options for corporate parties!</li>
+          <li>🥬 Frescura, originalidad y calidad son nuestras prioridades.</li>
+          <li>💰 Costos asequibles, ubicados en casi cualquier lugar.</li>
+          <li>📱 Increíble sistema de pedidos en línea: pida comida con un solo clic.</li>
+          <li>📆 Opciones de pre-pedido fáciles de navegar.</li>
+          <li>🎈 ¡Excelentes opciones para fiestas corporativas!</li>
         </ul>
         <p>
-          At Pizza Time we always care about you because you are the one who
-          makes us special!
+          ¡En Pizza Time siempre nos preocupamos por ti porque eres tú quien
+          nos hace especiales!
         </p>
         <p>
-          The Pizza Time project was made with love for pizza by Ekaterine
+          El proyecto Pizza Time fue hecho con amor por la pizza por Ekaterine
           Mitagvaria.
         </p>
         <div className="about__company__glass"></div>

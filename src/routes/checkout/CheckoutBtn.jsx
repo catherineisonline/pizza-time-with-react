@@ -9,19 +9,19 @@ const CheckoutBtn = ({ className, isValidLogin, activateLoginModal }) => {
         <LinkButton
           onClick={ResetLocation}
           to="/checkout"
-          aria-label="Proceed to checkout"
+          aria-label="Proceder al pago"
           className={className}>
-          Checkout
+          Revisar
         </LinkButton>
       ) : (
         <button
           className={className}
-          aria-label="Proceed to checkout"
+          aria-label="Proceder al pago"
           onClick={() => {
             ResetLocation();
             activateLoginModal();
           }}>
-          Checkout
+          Revisar
         </button>
       )}
     </React.Fragment>

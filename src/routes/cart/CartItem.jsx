@@ -37,8 +37,8 @@ const CartItem = ({ cartTotals }) => {
         <button
           onClick={clearCart}
           className="cart__items__clear-btns"
-          aria-label="remove all items from the cart">
-          remove all items from the cart
+          aria-label="eliminar todos los artículos del carrito">
+          eliminar todos los artículos del carrito
         </button>
       )}
       {cartTotals}

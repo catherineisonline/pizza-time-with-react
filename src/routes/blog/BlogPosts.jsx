@@ -6,18 +6,18 @@ const BlogPosts = ({ blogPost }) => {
     <article className="blog__posts__single">
       <img
         src={blogPost.img}
-        alt={`Thumbnail for ${blogPost.name} blog post`}
+        alt={`Miniatura para la entrada de blog ${blogPost.name}`}
         loading="lazy"
         fetchPriority="low"
       />
       <header className="blog__posts__credentials">
         <time dateTime={blogPost.date}>{blogPost.date}</time>
-        <p>by {blogPost.author}</p>
+        <p>por {blogPost.author}</p>
       </header>
       <h2>
         <Link
           onClick={ResetLocation}
-          aria-label={`Continue reading: ${blogPost.name}`}
+          aria-label={`Continuar leyendo: ${blogPost.name}`}
           to={`/blog/${blogPost.name.toLowerCase().replaceAll(" ", "-")}`}>
           {blogPost.name}
         </Link>

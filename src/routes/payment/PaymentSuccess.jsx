@@ -10,10 +10,9 @@ const PaymentSuccess = ({ transactionId }) => {
       className="payment__success"
       aria-labelledby="payment-success-title">
       <div className="payment__success__title">
-        <h2 id="payment-success-title">Your food is on the way!</h2>
+        <h2 id="payment-success-title">¡Tu comida está en camino!</h2>
         <p>
-          Thank you for the order. We will update your order status once the
-          restaurant confirms it.
+          Gracias por tu pedido. Actualizaremos el estado de tu pedido una vez que el restaurante lo confirme.
         </p>
       </div>
       <img
@@ -22,14 +21,14 @@ const PaymentSuccess = ({ transactionId }) => {
         aria-hidden="true"
       />
       <dl className="payment__success__details">
-        <dt>Amount paid:</dt>
+        <dt>Monto pagado:</dt>
         <dd>{orderSummary.total} </dd>
-        <dt>Transaction id:</dt>
+        <dt>ID de transacción:</dt>
         <dd>{transactionId}</dd>
-        <dt>Est. delivery time:</dt>
+        <dt>Tiempo estimado de entrega:</dt>
         <dd>
           <time dateTime={new Date(Date.now() + 24 * 60 * 1000).toISOString()}>
-            24 minutes
+            24 minutos
           </time>
         </dd>
       </dl>
@@ -37,15 +36,15 @@ const PaymentSuccess = ({ transactionId }) => {
         <Link
           className="active-button-style"
           to="/order"
-          aria-label="Track my order"
+          aria-label="Rastrear mi pedido"
           onClick={ResetLocation}>
-          Track my order
+          Rastrear mi pedido
         </Link>
         <Link
           to="/menu"
-          aria-label="Order something else"
+          aria-label="Pedir algo más"
           onClick={ResetLocation}>
-          Order something else
+          Pedir algo más
         </Link>
       </div>
     </section>

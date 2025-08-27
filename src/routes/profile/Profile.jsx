@@ -45,7 +45,6 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
     window.scrollTo(0, 0);
     if (Object.keys(validate(formValue)).length > 0) {
       setLoading(false);
-      return;
     } else {
       const updatedFields = {};
       for (const fieldName of Object.keys(formValue)) {
@@ -96,7 +95,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
   };
 
   useEffect(() => {
-    document.title = "Profile | Pizza Time";
+    document.title = "Perfil | Pizza Time";
   }, []);
   return (
     <motion.main
@@ -105,13 +104,13 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>Profile information</h2>
-      <p>Personal details and application</p>
+      <h2>Información del perfil</h2>
+      <p>Detalles personales y aplicación</p>
       {loading ? (
         <div role="status" className="loader">
-          <p>Almost there...</p>
+          <p>Casi listo...</p>
           <img
-            alt="Processing request"
+            alt="Procesando solicitud"
             src="https://media0.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif?cid=ecf05e472hf2wk1f2jou3s5fcnx1vek6ggnfcvhsjbeh7v5u&ep=v1_stickers_search&rid=giphy.gif&ct=s"
           />
         </div>
@@ -120,7 +119,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           <hr aria-hidden="true" />
 
           <label htmlFor="email" className="profile__form__info">
-            Email
+            Correo electrónico
             <input
               name="email"
               id="email"
@@ -142,7 +141,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           <hr aria-hidden="true" />
 
           <label htmlFor="password" className="profile__form__info">
-            Password
+            Contraseña
             <input
               id="password"
               name="password"
@@ -164,7 +163,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           <hr aria-hidden="true" />
 
           <label htmlFor="fullname" className="profile__form__info">
-            Fullname
+            Nombre completo
             <input
               name="fullname"
               id="fullname"
@@ -186,7 +185,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           <hr aria-hidden="true" />
 
           <label htmlFor="address" className="profile__form__info">
-            Address
+            Dirección
             <input
               id="address"
               name="address"
@@ -196,7 +195,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
               placeholder={
                 currentUser.address !== null
                   ? currentUser.address
-                  : "Add address..."
+                  : "Añadir dirección..."
               }
               onChange={handleValidation}
               aria-describedby="address-error"
@@ -212,7 +211,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           <hr aria-hidden="true" />
 
           <label htmlFor="number" className="profile__form__info">
-            Number
+            Número
             <input
               id="number"
               name="number"
@@ -222,7 +221,7 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
               placeholder={
                 currentUser.number !== null
                   ? currentUser.number
-                  : "Add number..."
+                  : "Añadir número..."
               }
               onChange={handleValidation}
               aria-describedby="number-error"
@@ -238,19 +237,19 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
           <hr aria-hidden="true" />
           <div className="profile__actions">
             <button
-              aria-label="Cancel editing"
+              aria-label="Cancelar edición"
               type="button"
               className="active-button-style"
               onClick={() => {
                 toggleForm();
               }}>
-              Cancel edit
+              Cancelar edición
             </button>
             <button
               type="submit"
-              aria-label="Save changes"
+              aria-label="Guardar cambios"
               className="passive-button-style">
-              Save profile
+              Guardar perfil
             </button>
           </div>
         </form>
@@ -258,32 +257,32 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
         <React.Fragment>
           <section className="profile__info" aria-labelledby="profile-title">
             <h3 id="profile-title" className="visually-hidden">
-              Profile Information
+              Información del Perfil
             </h3>
             <hr aria-hidden="true" />
             <div className="profile__info__section">
-              <h3>Email</h3>
+              <h3>Correo electrónico</h3>
               <p>{currentUser.email}</p>
             </div>
             <hr aria-hidden="true" />
             <div className="profile__info__section">
-              <h3>Password</h3>
+              <h3>Contraseña</h3>
               <p>*********</p>
             </div>
             <hr aria-hidden="true" />
             <div className="profile__info__section">
-              <h3>Fullname</h3>
+              <h3>Nombre completo</h3>
               <p>{currentUser.fullname}</p>
             </div>
             <hr aria-hidden="true" />
             <div className="profile__info__section">
-              <h3>Address</h3>
-              <p>{currentUser.address ? currentUser.address : " N/A"}</p>
+              <h3>Dirección</h3>
+              <p>{currentUser.address ? currentUser.address : " N/D"}</p>
             </div>
             <hr aria-hidden="true" />
             <div className="profile__info__section">
-              <h3>Number</h3>
-              <p>{currentUser.number ? currentUser.number : "N/A"}</p>
+              <h3>Número</h3>
+              <p>{currentUser.number ? currentUser.number : "N/D"}</p>
             </div>
             <hr aria-hidden="true" />
           </section>
@@ -294,15 +293,15 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
               onClick={() => {
                 toggleForm();
               }}
-              aria-label="Edit profile">
-              Edit profile
+              aria-label="Editar perfil">
+              Editar perfil
             </button>
             <button
               type="button"
               className="passive-button-style"
               onClick={() => confirmDeleteUser()}
-              aria-label="Delete account">
-              Delete account
+              aria-label="Eliminar cuenta">
+              Eliminar cuenta
             </button>
           </div>
         </React.Fragment>
@@ -310,18 +309,17 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
       {confirmationModal && (
         <section className="profile__delete-modal">
           <div className="profile__delete-window">
-            <h3>Delete account</h3>
+            <h3>Eliminar cuenta</h3>
             <p>
-              Are you sure you want to delete your account? This action cannot
-              be reversed and all the data will be lost
+              ¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede revertir y todos los datos se perderán
             </p>
             <div>
               <button
                 type="button"
                 className="profile__delete-confirm"
                 onClick={() => deleteUser(currentUser.id)}
-                aria-label="Confirm account deletion">
-                Confirm
+                aria-label="Confirmar eliminación de cuenta">
+                Confirmar
               </button>
               <button
                 type="button"
@@ -330,8 +328,8 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
                   setConfirmationModal(false);
                   ResetLocation();
                 }}
-                aria-label="Cancel account deletion">
-                Cancel
+                aria-label="Cancelar eliminación de cuenta">
+                Cancelar
               </button>
             </div>
           </div>

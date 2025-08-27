@@ -38,12 +38,12 @@ const Blog = () => {
       transition={slideInLeft.transition}>
       <h2>Blog</h2>
       <p className="blog__intro">
-        Pizza makes everything better. These are some of our favorite pizza
-        blogs that are loaded with recipes and pizza-making tips.
+        La pizza lo mejora todo. Estos son algunos de nuestros blogs de pizza
+        favoritos que están cargados de recetas y consejos para hacer pizza.
       </p>
       <section className="blog__posts" aria-labelledby="blog-posts-title">
         <h2 id="blog-posts-title" className="visually-hidden">
-          Recent Blog Posts
+          Entradas de blog recientes
         </h2>
         {currentBlogPosts.map((blogPost, index) => (
           <BlogPosts key={index} blogPost={blogPost} />
@@ -52,13 +52,13 @@ const Blog = () => {
       <ReactPaginate
         className="pagination blog__pagination"
         breakLabel="..."
-        nextLabel=" &#62;"
+        nextLabel="Siguiente"
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
         pageCount={pageCountPosts}
-        previousLabel="&#60;"
+        previousLabel="Anterior"
         renderOnZeroPageCount={null}
-        aria-label="Blog pagination"
+        aria-label="Paginación del blog"
       />
       <ScrollBtn />
     </motion.main>

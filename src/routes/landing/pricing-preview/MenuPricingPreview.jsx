@@ -13,11 +13,9 @@ const MenuPricingPreview = () => {
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 3 }}>
-      <h2 className="txt-center pop-font txt-white">Menu Pricing</h2>
+      <h2 className="txt-center pop-font txt-white">Precios del Menú</h2>
       <p className="section-description">
-        Every bite of every meal is different and special. You will never get
-        bored and you will always be able to find something new and interesting
-        for you. Discover every mouthwatering option we have to offer
+        Cada bocado de cada comida es diferente y especial. Nunca te aburrirás y siempre podrás encontrar algo nuevo e interesante para ti. Descubre cada deliciosa opción que tenemos para ofrecer.
       </p>
       <ul className="pricing-preview__items flex-container flex-column">
         {menuPricing.map((menu) => (
