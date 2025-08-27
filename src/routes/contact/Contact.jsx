@@ -21,7 +21,7 @@ const Contact = () => {
   const captchaRef = useRef();
   const validate = validateForm("contact");
   useEffect(() => {
-    document.title = "Contact | Pizza Time";
+    document.title = "Contacto | Pizza Time";
   }, []);
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -31,11 +31,10 @@ const Contact = () => {
     if (Object.keys(validate(formValue)).length > 0) {
       setLoading(false);
       setSubmit(false);
-      return;
     } else {
       let captchaToken = captchaRef.current?.getValue();
       if (captchaToken.length === 0) {
-        setCaptchaError("reCaptcha is mandatory");
+        setCaptchaError("reCaptcha es obligatorio");
         setLoading(false);
         setSubmit(false);
         return;
@@ -87,7 +86,7 @@ const Contact = () => {
       transition={slideInLeft.transition}>
       {loading ? (
         <section className="contact-loader">
-          <h2>Almost there...</h2>
+          <h2>Casi listo...</h2>
           <img
             aria-hidden="true"
             alt=""
@@ -97,33 +96,32 @@ const Contact = () => {
       ) : submit && Object.keys(formError).length === 0 ? (
         <section className="contact__success-msg">
           <h2>
-            We have recieved your message and we will get back to you shortly!
-            🍕
+            ¡Hemos recibido tu mensaje y nos pondremos en contacto contigo en breve! 🍕
           </h2>
           <div>
             <Link
               className="active-button-style"
               to="/menu"
-              aria-label="Go to menu">
-              Go to menu
+              aria-label="Ir al menú">
+              Ir al menú
             </Link>
             <button
-              aria-label="Send message again"
+              aria-label="Enviar mensaje de nuevo"
               className="passive-button-style"
               type="button"
               onClick={() => {
                 setSubmit(false);
               }}>
-              Send again
+              Enviar de nuevo
             </button>
           </div>
         </section>
       ) : (
         <form onSubmit={handleSubmit} className="flex-container flex-column">
-          <h2>Send a message</h2>
+          <h2>Enviar un mensaje</h2>
           <div className="webflow-style-input">
             <label htmlFor="fullname" className="visually-hidden">
-              Full name
+              Nombre completo
             </label>
             <input
               onChange={handleValidation}
@@ -132,7 +130,7 @@ const Contact = () => {
               id="fullname"
               className="pop-font"
               type="text"
-              placeholder="Full Name"
+              placeholder="Nombre Completo"
               autoComplete="name"
               aria-describedby="fullname-error"
             />
@@ -145,7 +143,7 @@ const Contact = () => {
           </span>
           <div className="webflow-style-input">
             <label htmlFor="email" className="visually-hidden">
-              Email address
+              Dirección de correo electrónico
             </label>
             <input
               onChange={handleValidation}
@@ -154,7 +152,7 @@ const Contact = () => {
               id="email"
               className="pop-font"
               type="text"
-              placeholder="Email"
+              placeholder="Correo electrónico"
               autoComplete="email"
               aria-describedby="email-error"
             />
@@ -167,7 +165,7 @@ const Contact = () => {
           </span>
           <div className=" webflow-style-input">
             <label htmlFor="message" className="visually-hidden">
-              Your message
+              Tu mensaje
             </label>
             <textarea
               onChange={handleValidation}
@@ -175,7 +173,7 @@ const Contact = () => {
               name="message"
               id="message"
               className="pop-font"
-              placeholder="Message"
+              placeholder="Mensaje"
               aria-describedby="message-error"
             />
           </div>
@@ -200,20 +198,16 @@ const Contact = () => {
           <button
             type="submit"
             className="active-button-style"
-            aria-label="Send the message">
-            Send
+            aria-label="Enviar el mensaje">
+            Enviar
           </button>
         </form>
       )}
       <div className="contact__cover"></div>
       <section className="contact__inner pop-font">
-        <h3>Contact us</h3>
+        <h3>Contáctanos</h3>
         <p>
-          We greatly anticipate your response and are eager to receive any
-          inquiries you might have. Please do not hesitate to reach out to us
-          should you require any further clarification or assistance. Your
-          feedback and questions are of utmost importance to us, and we are here
-          to provide the support you need. Looking forward to hearing from you!
+          Anticipamos enormemente su respuesta y estamos ansiosos por recibir cualquier consulta que pueda tener. No dude en comunicarse con nosotros si necesita alguna aclaración o ayuda adicional. Sus comentarios y preguntas son de suma importancia para nosotros, y estamos aquí para brindarle el apoyo que necesita. ¡Esperamos con interés escuchar de usted!
         </p>
       </section>
     </motion.main>
