@@ -2,7 +2,7 @@
 
 ![Pizza Time preview](https://github.com/catherineisonline/pizza-time-with-react/blob/main/src/assets/images/project-preview.png?raw=true)
 
-I designed and built a full-stack food ordering platform for the gastronomy industry using React, Express.js, and Turso (libSQL).
+I designed and built a full-stack food ordering platform for the gastronomy industry using React, Express.js, and Supabase (PostgreSQL).
 
 [![GitHub license](https://img.shields.io/github/license/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/travel-with-catherine/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/travel-with-catherine/issues)
@@ -16,7 +16,7 @@ Live Version:
 
 - Fast & Clean Browsing: Used React Paginate and Lazy Load for faster menu browsing and performance.
 
-- Secure & Scalable: Managed user data and menu items with UUID and Turso (SQLite).
+- Secure & Scalable: Managed user data and menu items with UUID and Supabase (PostgreSQL).
 
 - Cart + Auth System: Express.js backend handles user login/register, profile updates, and reCAPTCHA-protected contact & registration form.
 
@@ -53,7 +53,7 @@ To get started you need to:
 
 1. .env.backend (in the backend folder)
 
-- TURSO_DB_URL, TURSO_DB_TOKEN - these variables contain information that will connect you to the Turso database. You can use the following [documentation](https://docs.turso.tech/sdk/ts/quickstart). If you use any other database you need to use the according information to connect to that database. The token can be created after registration.
+- SUPABASE_URL, SUPABASE_API_KEY - these variables contain information that will connect you to the Supabase database. You can use the following [documentation](https://supabase.com/docs/reference/javascript/initializing). If you use any other database you need to use the according information to connect to that database. The API key can be created in the Supabase dashboard after registration.
   Note that the table for users in my case is named "users" and contains the following data: id | email | password | fullname | address | number.
 
 2. .env.frontend
@@ -66,7 +66,18 @@ Once you set up the variables, you can run the server on one port, if you use lo
 
 ## Database <a id="database"></a>
 
-To use the registration functionality for your own project, you need to use your own database. You can use any SQL database you wish and you adapt it to this project. I am using [Turso](https://turso.tech/) database. To have your own database you need to register and set it up by provided information. I recommend you to use their [documentation](https://docs.turso.tech/sdk/ts/quickstart).
+To use the registration functionality for your own project, you need to use your own database. You can use any SQL database you wish and you adapt it to this project. I am using [Supabase](https://supabase.com/) database, which is a PostgreSQL database with a REST API. To have your own database you need to register and set it up by provided information. I recommend you to use their [documentation](https://supabase.com/docs/reference/javascript/initializing).
+
+### Migrating from Turso to Supabase
+
+This project was originally built with Turso (libSQL), but has been migrated to Supabase. The migration involved:
+
+1. Installing the Supabase JavaScript client: `@supabase/supabase-js`
+2. Creating a new configuration file for Supabase: `backend/config/supabase.mjs`
+3. Updating the database queries to use Supabase's API
+4. Updating the environment variables for Supabase
+
+If you're deploying on Vercel, you can take advantage of the Supabase integration for easier setup and management.
 
 ## Goals <a id="goals"></a>
 
@@ -88,8 +99,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [Tilt](https://micku7zu.github.io/vanilla-tilt.js/)
 - [React Lazy Load](https://www.npmjs.com/package/react-lazy-load-image-component)
 - [Framer Motion](https://www.framer.com/motion/)
-- [MySQL2](https://www.npmjs.com/package/mysql2)
-- [libsql](https://www.npmjs.com/package/@libsql/client)
+- [Supabase JS Client](https://www.npmjs.com/package/@supabase/supabase-js)
 - [Express rate limit](https://express-rate-limit.mintlify.app/quickstart/usage)
 
 ## Resources <a id="resources"></a>
