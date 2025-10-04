@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import ScrollBtn from "../../helpers/ScrollBtn";
+import ScrollBtn from "../../components/ScrollBtn";
 import AboutCollaboration from "./AboutCollaboration";
 import AboutCareers from "./AboutCareers";
 import AboutUs from "./AboutUs";
 import AboutDedication from "./AboutDedication";
 import AboutCustomers from "./AboutCustomers";
 import "./about.css";
-import { slideInLeft } from "../../data/animations";
+import { slideInLeft } from "../../utils/animations";
 
 const About = () => {
   useEffect(() => {

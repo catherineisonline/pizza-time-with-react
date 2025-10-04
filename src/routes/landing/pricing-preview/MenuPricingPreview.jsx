@@ -1,6 +1,6 @@
 import "./pricing-preview.css";
 import { Link } from "react-router-dom";
-import ResetLocation from "../../../helpers/ResetLocation";
+import ResetLocation from "../../../utils/ResetLocation";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import menuPricing from "../../../data/menu-pricing";
@@ -15,18 +15,14 @@ const MenuPricingPreview = () => {
       transition={{ duration: 3 }}>
       <h2 className="txt-center pop-font txt-white">Menu Pricing</h2>
       <p className="section-description">
-        Every bite of every meal is different and special. You will never get
-        bored and you will always be able to find something new and interesting
-        for you. Discover every mouthwatering option we have to offer
+        Every bite of every meal is different and special. You will never get bored and you will always be able to find
+        something new and interesting for you. Discover every mouthwatering option we have to offer
       </p>
       <ul className="pricing-preview__items flex-container flex-column">
         {menuPricing.map((menu) => (
           <li key={menu.id}>
             <Tilt>
-              <Link
-                onClick={ResetLocation}
-                to="/menu"
-                className="pricing-preview__item flex-container flex-row">
+              <Link onClick={ResetLocation} to="/menu" className="pricing-preview__item flex-container flex-row">
                 <img
                   className="pricing-preview__img"
                   alt={menu.name}

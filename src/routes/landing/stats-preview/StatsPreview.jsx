@@ -1,7 +1,7 @@
 import "./stats-preview.css";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import statsPreview from "../../../data/company-statistics";
+import statsPreview from "./data/company-statistics";
 import Background from "../../../assets/images/section-7-bg.webp";
 
 const StatsPreview = () => {

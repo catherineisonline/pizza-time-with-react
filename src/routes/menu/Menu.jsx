@@ -1,13 +1,13 @@
 import "./menu.css";
 import MenuCategories from "./MenuCategories";
-import ScrollButton from "../../helpers/ScrollBtn";
+import ScrollButton from "../../components/ScrollBtn";
 import MenuGridItem from "./MenuGridItem";
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
-import ResetLocation from "../../helpers/ResetLocation";
+import ResetLocation from "../../utils/ResetLocation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useProducts } from "../../context/ProductsContext";
-import { slideInLeft } from "../../data/animations";
+import { slideInLeft } from "../../utils/animations";
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState("Menu");
@@ -16,12 +16,8 @@ const Menu = () => {
   const { products } = useProducts();
   const [itemOffset, setItemOffset] = useState(0);
   const [endOffset, setEndOffset] = useState(itemOffset + 5);
-  const [currentProducts, setcurrentProducts] = useState(
-    [...products].reverse().slice(itemOffset, endOffset)
-  );
-  const [pageCountProducts, setpageCountProducts] = useState(
-    Math.ceil(products.length / 5)
-  );
+  const [currentProducts, setcurrentProducts] = useState([...products].reverse().slice(itemOffset, endOffset));
+  const [pageCountProducts, setpageCountProducts] = useState(Math.ceil(products.length / 5));
   const [currentPage, setCurrentPage] = useState(0);
   const handlePageClick = (event) => {
     const newOffset = (event.selected * 5) % products.length;
@@ -57,9 +53,7 @@ const Menu = () => {
         <h2 className="visually-hidden">Menu</h2>
         <AnimatePresence mode="sync">
           {currentProducts.length === 0 ? (
-            <p className="menu__not-found">
-              No products found. Try to search for something else.
-            </p>
+            <p className="menu__not-found">No products found. Try to search for something else.</p>
           ) : (
             currentProducts.map((singleProduct) => (
               <motion.div
@@ -68,10 +62,7 @@ const Menu = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}>
-                <MenuGridItem
-                  key={singleProduct.id}
-                  singleProduct={singleProduct}
-                />
+                <MenuGridItem key={singleProduct.id} singleProduct={singleProduct} />
               </motion.div>
             ))
           )}

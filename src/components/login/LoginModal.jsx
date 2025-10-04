@@ -1,19 +1,13 @@
 import "./loginModal.css";
 import { useState } from "react";
-import LinkButton from "../Button";
+import LinkButton from "../LinkButton";
 import { useNavigate } from "react-router-dom";
-import validateForm from "../validateForm";
+import validateForm from "../../utils/validate-form";
 import { useRef } from "react";
 import { useEffect } from "react";
 import { USERS_URL } from "../../data/constants";
 
-const LoginModal = ({
-  setIsLoginModalOpen,
-  setUserConfig,
-  isLoginModalOpen,
-  hideMenu,
-  getUser,
-}) => {
+const LoginModal = ({ setIsLoginModalOpen, setUserConfig, isLoginModalOpen, hideMenu, getUser }) => {
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({ email: "", password: "" });
   const [formError, setFormError] = useState({});
@@ -60,9 +54,7 @@ const LoginModal = ({
       const existingUsers = await getUsers();
       let emailExists = [];
       if (existingUsers) {
-        emailExists = existingUsers.filter(
-          (u) => u.email === formValue.email.toLowerCase()
-        );
+        emailExists = existingUsers.filter((u) => u.email === formValue.email.toLowerCase());
       }
       if (emailExists.length === 0) {
         setLoading(false);
@@ -103,17 +95,9 @@ const LoginModal = ({
     }
   };
   return (
-    <dialog
-      className="modal"
-      ref={modalRef}
-      onClick={handleBackdropClick}
-      aria-labelledby="modal-title">
+    <dialog className="modal" ref={modalRef} onClick={handleBackdropClick} aria-labelledby="modal-title">
       <div className="modal__inner">
-        <button
-          className="modal__inner__close"
-          type="button"
-          aria-label="Close login modal"
-          onClick={hideLoginModal}>
+        <button className="modal__inner__close" type="button" aria-label="Close login modal" onClick={hideLoginModal}>
           X
         </button>
         <div className="modal__content">
@@ -129,10 +113,7 @@ const LoginModal = ({
           ) : (
             <form onSubmit={handleLogin}>
               {verificationError.length > 0 && (
-                <p
-                  className="modal__form__error"
-                  role="alert"
-                  aria-live="polite">
+                <p className="modal__form__error" role="alert" aria-live="polite">
                   {verificationError}
                 </p>
               )}
@@ -157,9 +138,7 @@ const LoginModal = ({
                 autoComplete="true"
                 placeholder="Password"
                 aria-label="Password"
-                aria-describedby={
-                  formError.password ? "password-error" : undefined
-                }
+                aria-describedby={formError.password ? "password-error" : undefined}
               />
               <span id="password-error" className="modal__form__error">
                 {formError.password}

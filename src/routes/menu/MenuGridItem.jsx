@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import AddToCartButton from "../cart/AddToCartButton";
+import AddToCartButton from "../../features/cart/components/AddToCartButton";
 import Attribute from "./Attribute";
-import ResetLocation from "../../helpers/ResetLocation";
+import ResetLocation from "../../utils/ResetLocation";
 
 const MenuGridItem = ({ singleProduct }) => {
   const [selectedAttributes, setSelectedAttributes] = useState([]);
@@ -13,8 +13,7 @@ const MenuGridItem = ({ singleProduct }) => {
     const newSelectedAttribute = { attributeId, attributeValue };
     setSelectedAttributes((prevAttributes) => {
       const existingAttributeIndex = prevAttributes.findIndex(
-        (attribute) =>
-          attribute.attributeId === newSelectedAttribute.attributeId
+        (attribute) => attribute.attributeId === newSelectedAttribute.attributeId
       );
       if (existingAttributeIndex !== -1) {
         const updatedAttributes = [...prevAttributes];
@@ -28,10 +27,7 @@ const MenuGridItem = ({ singleProduct }) => {
 
   return (
     <article className="menu-item txt-white">
-      <Link
-        onClick={ResetLocation}
-        to={`/menu/${singleProduct.id}`}
-        className="menu-item__link">
+      <Link onClick={ResetLocation} to={`/menu/${singleProduct.id}`} className="menu-item__link">
         <img src={singleProduct.ItemImg} alt={`${singleProduct.ItemName}`} />
       </Link>
       <h3>{singleProduct.ItemName}</h3>
@@ -49,9 +45,7 @@ const MenuGridItem = ({ singleProduct }) => {
       <div className="menu-item__pricing">
         {singleProduct.sale === true ? (
           <div className="menu-item__pricing-sale">
-            <del
-              className="menu-item__pricing-prev"
-              aria-label="Previous price">
+            <del className="menu-item__pricing-prev" aria-label="Previous price">
               <span>$</span>
               {singleProduct.ItemPriceBefore}
             </del>

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import AddToCartButton from "../cart/AddToCartButton";
+import AddToCartButton from "../../features/cart/components/AddToCartButton";
 import Attribute from "../menu/Attribute";
 import { products } from "../../data/products";
 import { Link } from "react-router-dom";
 import "./single-item.css";
 import { motion } from "framer-motion";
-import { slideInLeft } from "../../data/animations";
+import { slideInLeft } from "../../utils/animations";
 const SingleItem = () => {
   const [singleProduct, setSingleProduct] = useState(null);
   const [selectedAttributes, setSelectedAttributes] = useState([]);
@@ -16,8 +16,7 @@ const SingleItem = () => {
     const newSelectedAttribute = { attributeId, attributeValue };
     setSelectedAttributes((prevAttributes) => {
       const existingAttributeIndex = prevAttributes.findIndex(
-        (attribute) =>
-          attribute.attributeId === newSelectedAttribute.attributeId
+        (attribute) => attribute.attributeId === newSelectedAttribute.attributeId
       );
       if (existingAttributeIndex !== -1) {
         const updatedAttributes = [...prevAttributes];
@@ -30,11 +29,7 @@ const SingleItem = () => {
   };
 
   useEffect(() => {
-    setSingleProduct(
-      products.filter(
-        (item) => item.id === window.location.pathname.toString().substring(6)
-      )[0]
-    );
+    setSingleProduct(products.filter((item) => item.id === window.location.pathname.toString().substring(6))[0]);
     if (singleProduct) {
       document.title = `${singleProduct.ItemName}| Pizza Time`;
     }
@@ -63,9 +58,7 @@ const SingleItem = () => {
       <Link to="/menu" className="single-item__back">
         ← Go back
       </Link>
-      <article
-        className="single-item__inner flex-container flex-column txt-white"
-        aria-labelledby="item-name">
+      <article className="single-item__inner flex-container flex-column txt-white" aria-labelledby="item-name">
         <img src={singleProduct.ItemImg} alt={`${singleProduct.ItemName}`} />
         <div className="single-item__info">
           <div className="single-item__title">
@@ -86,15 +79,11 @@ const SingleItem = () => {
           <div className="single-item__pricing">
             {singleProduct.sale === true ? (
               <section className="single-item__pricing-sale">
-                <del
-                  className="single-item__pricing-prev"
-                  aria-label="Previous price">
+                <del className="single-item__pricing-prev" aria-label="Previous price">
                   <span>$</span>
                   {singleProduct.ItemPriceBefore}
                 </del>
-                <p
-                  aria-label="Current price"
-                  className="single-item__pricing-curr">
+                <p aria-label="Current price" className="single-item__pricing-curr">
                   <span>$</span>
                   {singleProduct.ItemPrice}
                 </p>

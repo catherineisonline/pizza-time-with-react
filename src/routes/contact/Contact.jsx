@@ -4,10 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "react-router-dom";
-import validateForm from "../../components/validateForm";
-import ResetLocation from "../../helpers/ResetLocation";
+import validateForm from "../../utils/validate-form";
+import ResetLocation from "../../utils/ResetLocation";
 import { CAPTCHA_URL, CAPTCHA_SECRET, CAPTCHA_KEY } from "../../data/constants";
-import { slideInLeft } from "../../data/animations";
+import { slideInLeft } from "../../utils/animations";
 const Contact = () => {
   const [formValue, setFormValue] = useState({
     fullname: "",
@@ -96,15 +96,9 @@ const Contact = () => {
         </section>
       ) : submit && Object.keys(formError).length === 0 ? (
         <section className="contact__success-msg">
-          <h2>
-            We have recieved your message and we will get back to you shortly!
-            🍕
-          </h2>
+          <h2>We have recieved your message and we will get back to you shortly! 🍕</h2>
           <div>
-            <Link
-              className="active-button-style"
-              to="/menu"
-              aria-label="Go to menu">
+            <Link className="active-button-style" to="/menu" aria-label="Go to menu">
               Go to menu
             </Link>
             <button
@@ -137,10 +131,7 @@ const Contact = () => {
               aria-describedby="fullname-error"
             />
           </div>
-          <span
-            className="input-validation-error"
-            aria-live="polite"
-            id="fullname-error">
+          <span className="input-validation-error" aria-live="polite" id="fullname-error">
             {formError.fullname}
           </span>
           <div className="webflow-style-input">
@@ -159,10 +150,7 @@ const Contact = () => {
               aria-describedby="email-error"
             />
           </div>
-          <span
-            className="input-validation-error"
-            aria-live="assertive"
-            id="email-error">
+          <span className="input-validation-error" aria-live="assertive" id="email-error">
             {formError.email}
           </span>
           <div className=" webflow-style-input">
@@ -179,28 +167,14 @@ const Contact = () => {
               aria-describedby="message-error"
             />
           </div>
-          <span
-            className="input-validation-error"
-            aria-live="assertive"
-            id="message-error">
+          <span className="input-validation-error" aria-live="assertive" id="message-error">
             {formError.message}
           </span>
-          <ReCAPTCHA
-            ref={captchaRef}
-            sitekey={CAPTCHA_KEY}
-            theme="dark"
-            aria-describedby="captcha-error"
-          />
-          <span
-            className="input-validation-error"
-            aria-live="assertive"
-            id="captcha-error">
+          <ReCAPTCHA ref={captchaRef} sitekey={CAPTCHA_KEY} theme="dark" aria-describedby="captcha-error" />
+          <span className="input-validation-error" aria-live="assertive" id="captcha-error">
             {captchaError}
           </span>
-          <button
-            type="submit"
-            className="active-button-style"
-            aria-label="Send the message">
+          <button type="submit" className="active-button-style" aria-label="Send the message">
             Send
           </button>
         </form>
@@ -209,11 +183,10 @@ const Contact = () => {
       <section className="contact__inner pop-font">
         <h3>Contact us</h3>
         <p>
-          We greatly anticipate your response and are eager to receive any
-          inquiries you might have. Please do not hesitate to reach out to us
-          should you require any further clarification or assistance. Your
-          feedback and questions are of utmost importance to us, and we are here
-          to provide the support you need. Looking forward to hearing from you!
+          We greatly anticipate your response and are eager to receive any inquiries you might have. Please do not
+          hesitate to reach out to us should you require any further clarification or assistance. Your feedback and
+          questions are of utmost importance to us, and we are here to provide the support you need. Looking forward to
+          hearing from you!
         </p>
       </section>
     </motion.main>

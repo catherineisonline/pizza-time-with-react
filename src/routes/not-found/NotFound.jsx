@@ -1,7 +1,7 @@
 import "./not-found.css";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { slideInLeft } from "../../data/animations";
+import { slideInLeft } from "../../utils/animations";
 
 const NotFound = () => {
   useEffect(() => {

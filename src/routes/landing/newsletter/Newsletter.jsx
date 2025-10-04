@@ -1,6 +1,6 @@
 import "./newsletter.css";
 import { useState } from "react";
-import validateForm from "../../../components/validateForm";
+import validateForm from "../../../utils/validate-form";
 
 const Newsletter = () => {
   const [formValue, setFormValue] = useState({ email: "" });
@@ -20,13 +20,10 @@ const Newsletter = () => {
   return (
     <section className="homepage__newsletter">
       <h2 className="newsletter__title">
-        Subscribe to our newsletter to receive updates about the menu and enjoy
-        awesome gifts!
+        Subscribe to our newsletter to receive updates about the menu and enjoy awesome gifts!
       </h2>
       {submit && Object.keys(formError).length === 0 ? (
-        <p className="newsletter__success">
-          You have successfully subscribed to our newsletter!
-        </p>
+        <p className="newsletter__success">You have successfully subscribed to our newsletter!</p>
       ) : (
         <form onSubmit={handleSubmit} className="newsletter__form">
           <div className="webflow-style-input">
@@ -44,16 +41,10 @@ const Newsletter = () => {
               aria-invalid={formError.email ? "true" : "false"}
             />
           </div>
-          <span
-            id="email-error"
-            aria-live="assertive"
-            className="newsletter__error">
+          <span id="email-error" aria-live="assertive" className="newsletter__error">
             {formError.email}
           </span>
-          <button
-            type="submit"
-            className="active-button-style"
-            aria-label="Sign me up">
+          <button type="submit" className="active-button-style" aria-label="Sign me up">
             Sign me up
           </button>
         </form>
