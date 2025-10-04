@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AddToCartButton from "../../features/cart/components/AddToCartButton";
-import Attribute from "../menu/Attribute";
+import Attribute from "../../features/menu/components/Attribute";
 import { products } from "../../data/products";
 import { Link } from "react-router-dom";
 import "./single-item.css";

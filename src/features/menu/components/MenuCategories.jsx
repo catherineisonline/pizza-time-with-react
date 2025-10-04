@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import SearchIcon from "../../assets/images/search-icon.png";
-import { categories as categoriesData } from "../../data/categories";
+import SearchIcon from "../assets/search-icon.png";
+import { categories as categoriesData } from "../../../data/categories";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useProducts } from "../../context/ProductsContext";
+import { useProducts } from "../../../context/ProductsContext";
 
 const MenuCategories = ({ setActiveCategory }) => {
   const [categories, setCategories] = useState([]);
@@ -15,12 +15,7 @@ const MenuCategories = ({ setActiveCategory }) => {
     <section className="menu__categories">
       <h2 className="visually-hidden">Menu Categories</h2>
       <form className="menu__categories__search" role="search">
-        <input
-          type="text"
-          placeholder="search..."
-          aria-label="Search products"
-          onChange={findMenuItem}
-        />
+        <input type="text" placeholder="search..." aria-label="Search products" onChange={findMenuItem} />
         <img src={SearchIcon} alt="" aria-hidden="true" />
       </form>
       <ul>

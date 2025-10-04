@@ -1,7 +1,7 @@
-import "./menu.css";
-import MenuCategories from "./MenuCategories";
+import "./assets/menu.css";
+import MenuCategories from "./components/MenuCategories";
 import ScrollButton from "../../components/ScrollBtn";
-import MenuGridItem from "./MenuGridItem";
+import MenuGridItem from "./components/MenuGridItem";
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
 import ResetLocation from "../../utils/ResetLocation";
