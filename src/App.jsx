@@ -2,18 +2,30 @@ import { useState, useEffect } from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
-import { About, Blog, Cart, Checkout, Contact, Homepage, Menu, Payment, Register, SingleItem } from "./routes/index";
+import {
+  AboutPage,
+  BlogPage,
+  CartPage,
+  CheckoutPage,
+  ContactPage,
+  HomePage,
+  MenuPage,
+  PaymentPage,
+  RegistrationPage,
+  MenuItemPage,
+  NotFoundPage,
+  ProfilePage,
+  BlogPostPage,
+  CareersPage,
+  RefundsPage,
+  TermsPage,
+  PrivacyPage,
+} from "./routes/index";
 
 import CartTotals from "./features/cart/components/CartTotals";
 import LoginModal from "./components/login/LoginModal";
 import CartItem from "./features/cart/components/CartItem";
-import NotFound from "./routes/not-found/NotFound";
-import Refunds from "./routes/refunds/Refunds";
-import Terms from "./routes/terms/Terms";
-import Privacy from "./routes/privacy/Privacy";
-import Careers from "./routes/careers/Careers";
-import BlogPost from "./routes/blog-post/BlogPost";
-import Profile from "./features/profile/Profile";
+
 import ResetLocation from "./utils/ResetLocation";
 import { useMemo } from "react";
 import { CartProvider } from "./context/CartContext";
@@ -128,12 +140,12 @@ function App() {
         />
 
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<HomePage />} />
 
           <Route
             path="/cart"
             element={
-              <Cart
+              <CartPage
                 CartItem={
                   <CartItem
                     cartTotals={
@@ -154,7 +166,7 @@ function App() {
             path="/menu"
             element={
               <ProductsProvider isLogged={userConfig.loggedIn}>
-                <Menu />
+                <MenuPage />
               </ProductsProvider>
             }
           />
@@ -162,9 +174,9 @@ function App() {
             path="/profile"
             element={
               !loggedIn ? (
-                <NotFound />
+                <NotFoundPage />
               ) : (
-                <Profile
+                <ProfilePage
                   currentUser={userConfig.user}
                   getUser={getUser}
                   handleLogout={handleLogout}
@@ -173,26 +185,24 @@ function App() {
               )
             }
           />
-          <Route path="/menu/:name" element={<SingleItem />} />
-          <Route path="/checkout" element={<Checkout currentUser={userConfig.user} />} />
-          <Route path="/payment" element={<Payment currentUser={userConfig.user} />} />
+          <Route path="/menu/:name" element={<MenuItemPage />} />
+          <Route path="/checkout" element={<CheckoutPage currentUser={userConfig.user} />} />
+          <Route path="/payment" element={<PaymentPage currentUser={userConfig.user} />} />
 
-          <Route path="/contact" element={<Contact />} />
-          <Route exact path="/blog" element={<Blog />} />
-          <Route path="/blog/:name" element={<BlogPost />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route exact path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:name" element={<BlogPostPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route
             path="/register"
-            element={loggedIn ? <NotFound /> : <Register activateLoginModal={activateLoginModal} />}
+            element={loggedIn ? <NotFoundPage /> : <RegistrationPage activateLoginModal={activateLoginModal} />}
           />
-
-          <Route path="/careers" element={<Careers />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/refunds" element={<Refunds />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/refunds" element={<RefundsPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </CartProvider>

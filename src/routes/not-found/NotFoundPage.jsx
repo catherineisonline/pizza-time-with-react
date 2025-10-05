@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
 
-const NotFound = () => {
+const NotFoundPage = () => {
   useEffect(() => {
     document.title = "404 | Pizza Time";
   }, []);
@@ -25,4 +25,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;

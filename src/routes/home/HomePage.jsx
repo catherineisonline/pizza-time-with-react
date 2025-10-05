@@ -14,7 +14,7 @@ const BlogPreview = lazy(() => import("./blog-preview/BlogPreview"));
 const Newsletter = lazy(() => import("./newsletter/Newsletter"));
 const ContactLanding = lazy(() => import("./contact-info/ContactLanding"));
 
-const Homepage = () => {
+const HomePage = () => {
   useEffect(() => {
     document.title = "Pizza Time";
     ResetLocation();
@@ -40,4 +40,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;

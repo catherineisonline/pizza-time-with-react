@@ -9,7 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useProducts } from "../../context/ProductsContext";
 import { slideInLeft } from "../../utils/animations";
 
-const Menu = () => {
+const MenuPage = () => {
   const [activeCategory, setActiveCategory] = useState("Menu");
   const { getProductsByCategory } = useProducts();
 
@@ -86,4 +86,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuPage;

@@ -9,7 +9,7 @@ import Card from "./components/Cards.jsx";
 import { useCart } from "../../context/CartContext.jsx";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations.js";
-const Payment = () => {
+const PaymentPage = () => {
   const { cart } = useCart();
   const [formValue, setFormValue] = useState({
     firstname: "",
@@ -159,4 +159,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default PaymentPage;

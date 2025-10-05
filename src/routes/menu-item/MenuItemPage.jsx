@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./single-item.css";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
-const SingleItem = () => {
+const MenuItemPage = () => {
   const [singleProduct, setSingleProduct] = useState(null);
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [targetAttribute, setTargetAttribute] = useState("");
@@ -107,4 +107,4 @@ const SingleItem = () => {
   );
 };
 
-export default SingleItem;
+export default MenuItemPage;

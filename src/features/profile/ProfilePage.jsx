@@ -6,7 +6,7 @@ import "./assets/profile.css";
 import { USERS_URL } from "../../data/constants";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
-const Profile = ({ currentUser, handleLogout, updateUser }) => {
+const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
   const [editForm, setEditForm] = useState(false);
   const [formValue, setFormValue] = useState({
     email: "",
@@ -311,4 +311,4 @@ const Profile = ({ currentUser, handleLogout, updateUser }) => {
   );
 };
 
-export default Profile;
+export default ProfilePage;

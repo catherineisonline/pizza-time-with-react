@@ -7,7 +7,7 @@ import ScrollBtn from "../../components/ScrollBtn";
 import ResetLocation from "../../utils/ResetLocation";
 import BlogPosts from "./BlogPosts";
 import { slideInLeft } from "../../utils/animations";
-const Blog = () => {
+const BlogPage = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const [endOffset, setEndOffset] = useState(itemOffset + 5);
   const [currentBlogPosts, setcurrentBlogPosts] = useState([...blogPosts].reverse().slice(itemOffset, endOffset));
@@ -60,4 +60,4 @@ const Blog = () => {
     </motion.main>
   );
 };
-export default Blog;
+export default BlogPage;

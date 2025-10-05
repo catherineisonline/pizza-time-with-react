@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import ScrollBtn from "../../components/ScrollBtn";
 import AboutCollaboration from "./AboutCollaboration";
 import AboutCareers from "./AboutCareers";
-import AboutUs from "./AboutUs";
-import AboutDedication from "./AboutDedication";
-import AboutCustomers from "./AboutCustomers";
+import AboutUs from "./components/AboutUs";
+import AboutDedication from "./components/AboutDedication";
+import AboutCustomers from "./components/AboutCustomers";
 import "./about.css";
 import { slideInLeft } from "../../utils/animations";
 
-const About = () => {
+const AboutPage = () => {
   useEffect(() => {
     document.title = "About | Pizza Time";
   }, []);
@@ -30,4 +30,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;

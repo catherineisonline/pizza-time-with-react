@@ -5,7 +5,7 @@ import ScrollBtn from "../../components/ScrollBtn";
 import EmptyCart from "./components/EmptyCart";
 import { useCart } from "../../context/CartContext";
 import { slideInLeft } from "../../utils/animations";
-const Cart = ({ CartItem }) => {
+const CartPage = ({ CartItem }) => {
   const { cart } = useCart();
   useEffect(() => {
     document.title = "Shopping Cart | Pizza Time";
@@ -24,4 +24,4 @@ const Cart = ({ CartItem }) => {
   );
 };
 
-export default Cart;
+export default CartPage;

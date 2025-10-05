@@ -18,7 +18,7 @@ const initialFormValue = {
   address: "",
   number: "",
 };
-const Register = ({ activateLoginModal }) => {
+const RegistrationPage = ({ activateLoginModal }) => {
   const [formValue, setFormValue] = useState(initialFormValue);
   const [formError, setFormError] = useState({});
   const [submit, setSubmit] = useState(false);
@@ -291,4 +291,4 @@ const Register = ({ activateLoginModal }) => {
   );
 };
 
-export default Register;
+export default RegistrationPage;

@@ -6,7 +6,7 @@ import CheckoutItem from "./components/CheckoutItem";
 import { useCart } from "../../context/CartContext";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
-const Checkout = ({ currentUser }) => {
+const CheckoutPage = ({ currentUser }) => {
   const { cart } = useCart();
   return (
     <motion.main
@@ -30,4 +30,4 @@ const Checkout = ({ currentUser }) => {
   );
 };
 
-export default Checkout;
+export default CheckoutPage;

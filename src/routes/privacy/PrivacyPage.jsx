@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import privacyContent from "./data/privacy";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
-const Privacy = () => {
+const PrivacyPage = () => {
   useEffect(() => {
     document.title = "Privacy | Pizza Time";
   }, []);
@@ -35,4 +35,4 @@ const Privacy = () => {
   );
 };
 
-export default Privacy;
+export default PrivacyPage;

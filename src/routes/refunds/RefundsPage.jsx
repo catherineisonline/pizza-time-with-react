@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import termsContent from "../../data/terms";
+import refunds from "../../data/refunds";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
-const Terms = () => {
+const RefundsPage = () => {
   useEffect(() => {
-    document.title = "Terms | Pizza Time";
+    document.title = "Refunds | Pizza Time";
   }, []);
   return (
     <motion.main
@@ -13,13 +13,13 @@ const Terms = () => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>Terms & Conditions</h2>
+      <h2>Refunds</h2>
       <p>
-        Welcome to Pizza Time. These Terms of Service outline the rules and guidelines for using our website and
-        services. By accessing or using our website, you agree to abide by these terms. Please read them carefully
-        before proceeding.
+        This Refund Policy ("Policy") outlines the terms and conditions for requesting a refund for the Instagram growth
+        services provided by Pizza Time ("Pizaa Time," "we," "our," or "us"). By using our services, you ("you," "your,"
+        or "user") agree to comply with this Policy regarding refund requests.
       </p>
-      {termsContent.map((content) => (
+      {refunds.map((content) => (
         <section key={content.title}>
           <h3>
             {content.id}. {content.title}:
@@ -31,4 +31,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default RefundsPage;

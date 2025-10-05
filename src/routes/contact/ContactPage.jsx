@@ -8,7 +8,7 @@ import validateForm from "../../utils/validate-form";
 import ResetLocation from "../../utils/ResetLocation";
 import { CAPTCHA_URL, CAPTCHA_SECRET, CAPTCHA_KEY } from "../../data/constants";
 import { slideInLeft } from "../../utils/animations";
-const Contact = () => {
+const ContactPage = () => {
   const [formValue, setFormValue] = useState({
     fullname: "",
     email: "",
@@ -193,4 +193,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;

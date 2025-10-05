@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ResetLocation from "../../utils/ResetLocation";
+import ResetLocation from "../../../utils/ResetLocation";
 
 const BlogPosts = ({ blogPost }) => {
   return (

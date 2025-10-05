@@ -5,7 +5,7 @@ import ResetLocation from "../../utils/ResetLocation";
 import careers from "./data/careers";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
-const Careers = () => {
+const CareersPage = () => {
   useEffect(() => {
     document.title = "Careers | Pizza Time";
   }, []);
@@ -36,4 +36,4 @@ const Careers = () => {
   );
 };
 
-export default Careers;
+export default CareersPage;

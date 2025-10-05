@@ -4,7 +4,7 @@ import blogPosts from "../../data/blog-posts";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
-const BlogPost = () => {
+const BlogPostPage = () => {
   const { name } = useParams();
   const [blogPost, setBlogPost] = useState({});
 
@@ -31,4 +31,4 @@ const BlogPost = () => {
   );
 };
 
-export default BlogPost;
+export default BlogPostPage;
