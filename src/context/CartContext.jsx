@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import ResetLocation from "../helpers/ResetLocation";
+import ResetLocation from "../utils/ResetLocation";
 
 const CartContext = createContext();
 
@@ -22,10 +22,7 @@ export const CartProvider = ({ children, isLogged }) => {
     }
   }, [isLogged]);
   const handleAddProduct = (targetProduct, userSelectedAttributes) => {
-    const productAlreadyInCart = CheckRepeatableProducts(
-      targetProduct,
-      userSelectedAttributes
-    );
+    const productAlreadyInCart = CheckRepeatableProducts(targetProduct, userSelectedAttributes);
     let currentCartItems = [...cart];
     let newQuantity;
     if (productAlreadyInCart === undefined) {
@@ -43,8 +40,7 @@ export const CartProvider = ({ children, isLogged }) => {
       } else {
         index = cart.findIndex(
           (item) =>
-            item.userSelectedAttributes[0]?.attributeValue ===
-              userSelectedAttributes[0].attributeValue &&
+            item.userSelectedAttributes[0]?.attributeValue === userSelectedAttributes[0].attributeValue &&
             item.id === targetProduct.id
         );
       }
@@ -58,10 +54,7 @@ export const CartProvider = ({ children, isLogged }) => {
       }
     }
 
-    const totalCartQuantity = currentCartItems.reduce(
-      (total, item) => total + item.quantity,
-      0
-    );
+    const totalCartQuantity = currentCartItems.reduce((total, item) => total + item.quantity, 0);
     const jsonUser = JSON.stringify(currentCartItems);
     sessionStorage.setItem("cartItems", jsonUser);
     setCart(currentCartItems);
@@ -88,11 +81,7 @@ export const CartProvider = ({ children, isLogged }) => {
         .filter((item) => item.quantity > 0);
     } else {
       productsCopy = cart
-        .map((item) =>
-          item.id === productToUpdate[0].id
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
+        .map((item) => (item.id === productToUpdate[0].id ? { ...item, quantity: item.quantity - 1 } : item))
         .filter((item) => item.quantity > 0);
     }
     setCart(productsCopy);
@@ -126,8 +115,7 @@ export const CartProvider = ({ children, isLogged }) => {
       let target = match.filter((item) =>
         item.userSelectedAttributes.length === 0
           ? true
-          : item.userSelectedAttributes[0].attributeValue ===
-            attributes[0].attributeValue
+          : item.userSelectedAttributes[0].attributeValue === attributes[0].attributeValue
       );
       if (target.length === 0) {
         return undefined;

@@ -1,0 +1,139 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-black);
+  background-image: none;
+  padding-top: 2rem;
+  padding-bottom: 10rem;
+}
+
+.contact__success-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  height: 460px;
+  padding: 2rem;
+}
+.contact__success-msg h2 {
+  color: var(--green);
+  font-family: var(--poppins-font);
+  font-size: 1.5rem;
+
+  text-align: center;
+}
+.contact__success-msg section {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.contact-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  height: 460px;
+  padding: 2rem;
+}
+.contact-loader h2 {
+  font-size: 4rem;
+  font-family: var(--poppins-font);
+  color: var(--white);
+}
+.contact-loader img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+.contact form {
+  height: max-content;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+.contact form h2 {
+  color: var(--white);
+  font-family: var(--poppins-font);
+  font-size: 4rem;
+}
+.contact form textarea {
+  resize: none;
+}
+.contact form .webflow-style-input {
+  margin: 0;
+}
+.contact__cover {
+  background-image: url("./img-one.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 15rem;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.contact__inner {
+  background-color: var(--yellow);
+  padding: 6rem 2rem;
+  text-align: left;
+  color: var(--white);
+}
+.contact__inner p {
+  width: 55vw;
+}
+
+.contact__inner h3 {
+  font-size: 4rem;
+  letter-spacing: 1px;
+}
+
+.fullname-error-cpage,
+.input-validation-error,
+.email-error-cpage,
+.textarea-error-cpage {
+  font-family: var(--poppins-font);
+  color: var(--pizza-red);
+}
+
+.button-msg-cpage {
+  font-family: var(--poppins-font);
+  color: var(--white);
+  padding-top: 1rem;
+}
+
+.contact .active-button-style,
+.contact .active-button-style:hover {
+  -moz-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.contact .active-button-style:hover {
+  border-color: var(--white);
+  background-color: transparent;
+}
+
+@media screen and (min-width: 700px) {
+  .contact form {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .contact__cover {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(85%, 50%);
+    top: 30%;
+    right: 35%;
+    border: 2px solid var(--yellow);
+  }
+}

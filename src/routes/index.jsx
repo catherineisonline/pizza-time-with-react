@@ -1,12 +1,37 @@
-import About from "./about/About";
-import Blog from "./blog/Blog";
-import Cart from "./cart/Cart";
-import Checkout from "./checkout/Checkout";
-import Contact from "./contact/Contact";
-import Homepage from "./landing/Homepage";
-import Menu from "./menu/Menu";
-import Payment from "./payment/Payment";
-import Register from './registration/Register';
-import SingleItem from './single-item/SingleItem';
+import AboutPage from "./about/AboutPage";
+import BlogPage from "./blog/BlogPage";
+import CartPage from "../features/cart/CartPage";
+import CheckoutPage from "../features/checkout/CheckoutPage";
+import ContactPage from "./contact/ContactPage";
+import HomePage from "./home/HomePage";
+import MenuPage from "../features/menu/MenuPage";
+import PaymentPage from "../features/payment/PaymentPage";
+import RegistrationPage from "../features/registration/RegistrationPage";
+import MenuItemPage from "./menu-item/MenuItemPage";
+import NotFoundPage from "./not-found/NotFoundPage";
+import RefundsPage from "./refunds/RefundsPage";
+import TermsPage from "./terms/TermsPage";
+import PrivacyPage from "./privacy/PrivacyPage";
+import CareersPage from "./careers/CareersPage";
+import BlogPostPage from "./blog-post/BlogPostPage";
+import ProfilePage from "../features/profile/ProfilePage";
 
-export { About, Blog, Cart, Checkout, Contact, Homepage, Menu, Payment, Register, SingleItem };
+export {
+  AboutPage,
+  BlogPage,
+  CartPage,
+  CheckoutPage,
+  ContactPage,
+  HomePage,
+  MenuPage,
+  PaymentPage,
+  RegistrationPage,
+  MenuItemPage,
+  NotFoundPage,
+  RefundsPage,
+  TermsPage,
+  PrivacyPage,
+  CareersPage,
+  BlogPostPage,
+  ProfilePage,
+};

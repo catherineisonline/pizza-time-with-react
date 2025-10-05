@@ -1,0 +1,139 @@
+.header {
+  height: 3rem;
+  top: 0;
+  background-color: var(--light-black);
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 999;
+  padding: 1rem;
+}
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-active-link {
+  text-decoration: none;
+  color: var(--pizza-red);
+}
+.logo-styling {
+  align-items: center;
+  width: 5rem;
+  height: 3rem;
+}
+.logo {
+  width: clamp(50%, 5vw, 80%);
+  height: auto;
+}
+
+.logo-styling h1 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-family: var(--josefin-font);
+  line-height: clamp(1.2rem, 2vw, 2rem);
+  letter-spacing: 2px;
+}
+.logo-styling h1 span {
+  display: block;
+  color: var(--pizza-yellow);
+}
+
+.header__nav__menu {
+  display: none;
+  gap: 2rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  align-items: center;
+}
+.header__nav__menu.active {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  background-color: var(--light-black);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login-and-cart {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cart-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-weight: 600;
+}
+.cart-btn img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header__nav__hamburger {
+  width: 100%;
+  max-width: 50px;
+  height: auto;
+  cursor: pointer;
+  margin-right: 0;
+  object-fit: contain;
+  background-color: transparent;
+  border: none;
+}
+.header__nav__hamburger img {
+  width: 100%;
+  height: auto;
+}
+.header__nav__menu.active .header__nav__hamburger img {
+  content: url("./close-btn.svg");
+}
+
+.header__nav__menu a {
+  transition: color ease-in-out 0.3s;
+}
+
+.logo {
+  transition: transform ease-in-out 0.3s;
+}
+
+@media screen and (hover: hover) {
+  .header__nav__menu a:hover {
+    color: var(--pizza-red);
+  }
+  .logo:hover {
+    transform: rotate(30deg);
+  }
+
+  .login-and-cart a:hover {
+    background-color: var(--pizza-red);
+    border-color: var(--pizza-red);
+    color: var(--white);
+    opacity: 0.5;
+  }
+  .cart-btn:hover {
+    opacity: 0.8;
+    color: var(--light-black) !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .header__nav__menu {
+    display: flex;
+  }
+  .header__nav__hamburger {
+    display: none;
+  }
+  .header__nav {
+    width: 100%;
+  }
+  .logo-styling {
+    gap: 1rem;
+  }
+}
