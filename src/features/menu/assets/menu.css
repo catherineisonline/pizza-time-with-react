@@ -64,7 +64,7 @@ input[type="search"]::-webkit-search-results-decoration {
   position: absolute;
   display: block;
   top: 50%;
-  right: 15%;
+  right: 17%;
 }
 
 .menu__categories ul::-webkit-scrollbar {

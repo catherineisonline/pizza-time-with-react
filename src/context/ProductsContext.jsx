@@ -5,17 +5,15 @@ const ProductsContext = createContext();
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
-  const findMenuItem = (e) => {
-    e.preventDefault();
-    const inputValue = e.target.value.toLowerCase();
-    const collectData = products.filter((product) =>
-      product.ItemName.toLowerCase().includes(inputValue)
-    );
+  const findMenuItem = (value) => {
+    const inputValue = value.toLowerCase();
+    const collectData = products.filter((product) => product.ItemName.toLowerCase().includes(inputValue));
 
     if (collectData.length > 0) {
       setProducts(collectData);
     } else {
       setProducts([]);
+      getAllProducts();
     }
   };
 
@@ -26,13 +24,9 @@ export const ProductsProvider = ({ children }) => {
     getAllProducts();
   }, []);
   const getProductsByCategory = (targetCategory) => {
-    let filteredByCategory = productsData.filter(
-      (product) => product.Category === targetCategory
-    );
+    let filteredByCategory = productsData.filter((product) => product.Category === targetCategory);
 
-    targetCategory !== "Menu"
-      ? setProducts(filteredByCategory)
-      : getAllProducts();
+    targetCategory !== "Menu" ? setProducts(filteredByCategory) : getAllProducts();
   };
 
   return (
