@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import ResetLocation from "../../utils/ResetLocation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useProducts } from "../../context/ProductsContext";
-import { slideInLeft } from "../../utils/animations";
+import { fadeIn, slideInLeft } from "../../utils/animations";
 
 const MenuPage = () => {
   const [activeCategory, setActiveCategory] = useState("Menu");
@@ -58,10 +58,10 @@ const MenuPage = () => {
             currentProducts.map((singleProduct) => (
               <motion.div
                 key={singleProduct.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}>
+                initial={fadeIn.initial}
+                whileInView={fadeIn.whileInView}
+                exit={fadeIn.exit}
+                transition={fadeIn.transition}>
                 <MenuGridItem key={singleProduct.id} singleProduct={singleProduct} />
               </motion.div>
             ))
