@@ -109,6 +109,7 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 90vw;
   gap: 1rem;
   margin: 0 auto;
+  margin-top: 1rem;
 }
 .pagination {
   margin: 0 auto;
@@ -131,21 +132,26 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .menu-item {
-  display: flex;
+  display: grid;
+  grid-template-rows: 15rem 3.5rem 3rem 2rem;
+  /* display: flex;
   flex-direction: column;
-  align-items: stretch;
-  height: 100%;
-  justify-content: space-around;
+  align-items: stretch; */
+  /* height: 100%; */
+  /* justify-content: space-around; */
+
   position: relative;
+  gap: 1rem;
 }
 .menu-item__link {
   max-width: 100%;
-  height: 21rem;
-  max-height: 70%;
+  /* height: 21rem; */
+  /* max-height: 70%; */
 }
 .menu-item__link img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
 }
 .menu-item h3 {
@@ -158,7 +164,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .menu-item__attributes {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .menu-item__attributes li {
@@ -295,6 +301,9 @@ input[type="search"]::-webkit-search-results-decoration {
 @media screen and (min-width: 1110px) {
   .menu__items {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .menu-item__attributes {
+    justify-content: space-between;
   }
 }
 
