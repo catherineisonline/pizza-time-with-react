@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import MenuSliderProducts from "./MenuSliderProducts";
 import MenuSliderCategories from "./MenuSliderCategories";
-import { menuSliderCategories, productsData } from "../../../data/menu-slider";
+import { menuSliderCategories, productsData } from "../../../../data/menu-slider";
 
 const MenuSlider = () => {
   const [activeCategory, setActiveCategory] = useState("pizza");
@@ -36,19 +36,12 @@ const MenuSlider = () => {
       </h2>
       <ul className="menu-slider__categories flex-container">
         {menuSliderCategories.map((category) => (
-          <MenuSliderCategories
-            key={category.id}
-            category={category}
-            setActiveCategory={setActiveCategory}
-          />
+          <MenuSliderCategories key={category.id} category={category} setActiveCategory={setActiveCategory} />
         ))}
       </ul>
       <div className="menu-slider__products">
         {products.map((singleProduct) => (
-          <MenuSliderProducts
-            key={singleProduct.id}
-            singleProduct={singleProduct}
-          />
+          <MenuSliderProducts key={singleProduct.id} singleProduct={singleProduct} />
         ))}
       </div>
     </motion.section>

@@ -1,6 +1,6 @@
 import "./newsletter.css";
 import { useState } from "react";
-import validateForm from "../../../utils/validate-form";
+import validateForm from "../../../../utils/validate-form";
 
 const Newsletter = () => {
   const [formValue, setFormValue] = useState({ email: "" });

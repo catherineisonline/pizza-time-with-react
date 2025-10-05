@@ -1,10 +1,10 @@
-import "./stats-preview.css";
+import "./statistics.css";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import statsPreview from "./data/company-statistics";
-import Background from "../../../assets/images/section-7-bg.webp";
+import Background from "../../../../assets/images/section-7-bg.webp";
 
-const StatsPreview = () => {
+const Statistics = () => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -36,9 +36,7 @@ const StatsPreview = () => {
     };
   }, []);
   return (
-    <section
-      ref={ref}
-      className="homepage__stats flex-container flex-column txt-center">
+    <section ref={ref} className="homepage__stats flex-container flex-column txt-center">
       <ul className="stats__items flex-container flex-column">
         {statsPreview.map((stats) => (
           <li key={stats.id} className="stats__item">
@@ -63,4 +61,4 @@ const StatsPreview = () => {
   );
 };
 
-export default StatsPreview;
+export default Statistics;

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import ResetLocation from "../../../utils/ResetLocation";
+import ResetLocation from "../../../../utils/ResetLocation";
 import blogPreview from "./data/blog-preview";
-import "./blog-preview.css";
+import "./blog.css";
 
-const BlogPreview = () => {
+const Blog = () => {
   return (
     <motion.section
       className="homepage__blog flex-container flex-column"
@@ -41,4 +41,4 @@ const BlogPreview = () => {
     </motion.section>
   );
 };
-export default BlogPreview;
+export default Blog;

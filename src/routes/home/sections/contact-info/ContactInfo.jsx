@@ -1,12 +1,10 @@
-import "./company-info.css";
+import "./contact-info.css";
 import { motion } from "framer-motion";
-import PizzaOne from "../../../assets/images/contact-us/image-one-parallax.webp";
+import PizzaOne from "../../../../assets/images/contact-us/image-one-parallax.webp";
 
-const ContactUsLanding = () => {
+const ContactInfo = () => {
   return (
-    <section
-      className="homepage__company-info flex-container flex-row txt-white"
-      aria-describedby="contact-title">
+    <section className="homepage__company-info flex-container flex-row txt-white" aria-describedby="contact-title">
       <h2 id="contact-title" className="visually-hidden">
         Contact us
       </h2>
@@ -58,8 +56,7 @@ const ContactUsLanding = () => {
           <li>
             <h3>Open Monday-Friday</h3>
             <p>
-              <time dateTime="8:00">8:00</time>am -{" "}
-              <time dateTime="21:00">9:00</time>pm
+              <time dateTime="8:00">8:00</time>am - <time dateTime="21:00">9:00</time>pm
             </p>
           </li>
         </ul>
@@ -68,4 +65,4 @@ const ContactUsLanding = () => {
   );
 };
 
-export default ContactUsLanding;
+export default ContactInfo;

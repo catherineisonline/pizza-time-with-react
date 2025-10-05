@@ -1,16 +1,15 @@
-import "./our-service.css";
+import "./services.css";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import companyServices from "../../../data/company-services";
+import companyServices from "../../../../data/company-services";
 
-const OurServices = () => {
+const Services = () => {
   return (
     <section className="homepage__services">
       <h2 className="pop-font">Our Services</h2>
       <p className="pop-font section-description">
-        Pizza Time provides services across all states - various foods and
-        drinks, you choose! What makes us special is our teams of professionals
-        with extensive knowledge of all the cuisine that we have to offer.
+        Pizza Time provides services across all states - various foods and drinks, you choose! What makes us special is
+        our teams of professionals with extensive knowledge of all the cuisine that we have to offer.
       </p>
       <ul className="services__items flex-container flex-column">
         {companyServices.map((service) => (
@@ -42,4 +41,4 @@ const OurServices = () => {
   );
 };
 
-export default OurServices;
+export default Services;

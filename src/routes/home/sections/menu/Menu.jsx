@@ -1,10 +1,10 @@
-import "./menu-preview.css";
+import "./menu.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import ResetLocation from "../../../utils/ResetLocation";
-import pizzaMenuPreview from "../../../data/menu-preview";
+import ResetLocation from "../../../../utils/ResetLocation";
+import pizzaMenuPreview from "../../../../data/menu-preview";
 
-const PizzaMenuPreview = () => {
+const Menu = () => {
   return (
     <section className="homepage__menu-preview flex-container flex-column" aria-labelledby="menu-title">
       <div className="menu-preview__info txt-center">
@@ -53,4 +53,4 @@ const PizzaMenuPreview = () => {
   );
 };
 
-export default PizzaMenuPreview;
+export default Menu;

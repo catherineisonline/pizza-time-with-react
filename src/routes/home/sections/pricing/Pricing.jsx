@@ -1,11 +1,11 @@
-import "./pricing-preview.css";
+import "./pricing.css";
 import { Link } from "react-router-dom";
-import ResetLocation from "../../../utils/ResetLocation";
+import ResetLocation from "../../../../utils/ResetLocation";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import menuPricing from "../../../data/menu-pricing";
+import menuPricing from "../../../../data/menu-pricing";
 
-const MenuPricingPreview = () => {
+const Pricing = () => {
   return (
     <motion.section
       className="homepage__pricing-preview flex-container "
@@ -49,4 +49,4 @@ const MenuPricingPreview = () => {
     </motion.section>
   );
 };
-export default MenuPricingPreview;
+export default Pricing;

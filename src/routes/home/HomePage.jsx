@@ -1,18 +1,18 @@
 import React, { useEffect, lazy, Suspense } from "react";
 import ScrollButton from "../../components/ScrollBtn";
 import ResetLocation from "../../utils/ResetLocation";
-import Hero from "./hero/Hero";
-const ContactUsLanding = lazy(() => import("./company-info/ContactUsLanding"));
-const WelcomeSection = lazy(() => import("./welcome/WelcomeSection"));
-const OurServices = lazy(() => import("./our-service/OurServices"));
-const PizzaMenuPreview = lazy(() => import("./menu-preview/PizzaMenuPreview"));
-const MenuPricingPreview = lazy(() => import("./pricing-preview/MenuPricingPreview"));
-const Gallery = lazy(() => import("./gallery/Gallery"));
-const StatsPreview = lazy(() => import("./stats-preview/StatsPreview"));
-const MenuSlider = lazy(() => import("./menu-slider/MenuSlider"));
-const BlogPreview = lazy(() => import("./blog-preview/BlogPreview"));
-const Newsletter = lazy(() => import("./newsletter/Newsletter"));
-const ContactLanding = lazy(() => import("./contact-info/ContactLanding"));
+import Hero from "./sections/hero/Hero";
+const ContactInfo = lazy(() => import("./sections/contact-info/ContactInfo"));
+const Welcome = lazy(() => import("./sections/welcome/Welcome"));
+const Services = lazy(() => import("./sections/services/Services"));
+const Menu = lazy(() => import("./sections/menu/Menu"));
+const Pricing = lazy(() => import("./sections/pricing/Pricing"));
+const Gallery = lazy(() => import("./sections/gallery/Gallery"));
+const Statistics = lazy(() => import("./sections/statistics/Statistics"));
+const MenuSlider = lazy(() => import("./sections/menu-slider/MenuSlider"));
+const Blog = lazy(() => import("./sections/blog/Blog"));
+const Newsletter = lazy(() => import("./sections/newsletter/Newsletter"));
+const Contact = lazy(() => import("./sections/contact/Contact"));
 
 const HomePage = () => {
   useEffect(() => {
@@ -23,17 +23,17 @@ const HomePage = () => {
     <React.Fragment>
       <Hero />
       <Suspense fallback={<div className="loading-state">Loading...</div>}>
-        <WelcomeSection />
-        <ContactUsLanding />
-        <OurServices />
-        <PizzaMenuPreview />
-        <MenuPricingPreview />
+        <Welcome />
+        <ContactInfo />
+        <Services />
+        <Menu />
+        <Pricing />
         <Gallery />
-        <StatsPreview />
+        <Statistics />
         <MenuSlider />
         <Newsletter />
-        <BlogPreview />
-        <ContactLanding />
+        <Blog />
+        <Contact />
         <ScrollButton />
       </Suspense>
     </React.Fragment>
