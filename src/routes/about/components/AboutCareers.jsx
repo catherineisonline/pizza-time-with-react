@@ -1,4 +1,4 @@
-import OfficeTwo from "../../../assets/images/about-us/office-2.jpeg";
+import OfficeTwo from "../assets/office-2.jpeg";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../../utils/ResetLocation";
 
