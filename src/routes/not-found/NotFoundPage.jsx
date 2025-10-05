@@ -1,4 +1,4 @@
-import "./not-found.css";
+import "./assets/not-found.css";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";

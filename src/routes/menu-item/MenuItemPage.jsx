@@ -3,7 +3,7 @@ import AddToCartButton from "../../features/cart/components/AddToCartButton";
 import Attribute from "../../features/menu/components/Attribute";
 import { products } from "../../data/products";
 import { Link } from "react-router-dom";
-import "./single-item.css";
+import "./assets/single-item.css";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
 const MenuItemPage = () => {

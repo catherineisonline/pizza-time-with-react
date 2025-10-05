@@ -1,4 +1,4 @@
-import "./blog-post.css";
+import "./assets/blog-post.css";
 import { useEffect, useState } from "react";
 import blogPosts from "../../data/blog-posts";
 import { useParams } from "react-router-dom";

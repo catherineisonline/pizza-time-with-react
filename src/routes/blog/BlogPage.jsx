@@ -1,11 +1,11 @@
-import "./blog.css";
+import "./assets/blog.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ReactPaginate from "react-paginate";
 import blogPosts from "../../data/blog-posts";
 import ScrollBtn from "../../components/ScrollBtn";
 import ResetLocation from "../../utils/ResetLocation";
-import BlogPosts from "./BlogPosts";
+import BlogPosts from "./components/BlogPosts";
 import { slideInLeft } from "../../utils/animations";
 const BlogPage = () => {
   const [itemOffset, setItemOffset] = useState(0);

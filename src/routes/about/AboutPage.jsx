@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import ScrollBtn from "../../components/ScrollBtn";
-import AboutCollaboration from "./AboutCollaboration";
-import AboutCareers from "./AboutCareers";
+import AboutCollaboration from "./components/AboutCollaboration";
+import AboutCareers from "./components/AboutCareers";
 import AboutUs from "./components/AboutUs";
 import AboutDedication from "./components/AboutDedication";
 import AboutCustomers from "./components/AboutCustomers";
-import "./about.css";
+import "./assets/about.css";
 import { slideInLeft } from "../../utils/animations";
 
 const AboutPage = () => {

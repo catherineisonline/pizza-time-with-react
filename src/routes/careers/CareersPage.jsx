@@ -1,4 +1,4 @@
-import "./careers.css";
+import "./assets/careers.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import ResetLocation from "../../utils/ResetLocation";

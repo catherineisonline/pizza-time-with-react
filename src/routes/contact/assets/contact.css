@@ -68,7 +68,7 @@
   margin: 0;
 }
 .contact__cover {
-  background-image: url("../../assets/images/img-one.jpeg");
+  background-image: url("../../../assets/images/img-one.jpeg");
   background-position: center;
   background-size: cover;
   height: 15rem;
