@@ -1,6 +1,6 @@
-import "./contact-info.css";
+import "./assets/contact-info.css";
 import { motion } from "framer-motion";
-import PizzaOne from "../../../../assets/images/contact-us/image-one-parallax.webp";
+import PizzaOne from "./assets/image-one-parallax.webp";
 
 const ContactInfo = () => {
   return (

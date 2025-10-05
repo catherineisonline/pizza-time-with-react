@@ -1,8 +1,8 @@
-import "./statistics.css";
+import "./assets/statistics.css";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import statsPreview from "./data/company-statistics";
-import Background from "../../../../assets/images/section-7-bg.webp";
+import Background from "./assets/section-7-bg.webp";
 
 const Statistics = () => {
   const ref = useRef(null);

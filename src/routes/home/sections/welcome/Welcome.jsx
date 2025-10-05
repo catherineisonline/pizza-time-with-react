@@ -1,11 +1,11 @@
-import "./welcome.css";
+import "./assets/welcome.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import img375 from "../../../../assets/images/section-one/section-one-375.webp";
-import img700 from "../../../../assets/images/section-one/section-one-700.webp";
-import img1440 from "../../../../assets/images/section-one/section-one-1440.webp";
-import PizzaOne from "../../../../assets/images/welcome-section/pizza-one-parallax.png";
-import PizzaTwo from "../../../../assets/images/welcome-section/pizza-two-parallax.png";
+import img375 from "./assets/section-one-375.webp";
+import img700 from "./assets/section-one-700.webp";
+import img1440 from "./assets/section-one-1440.webp";
+import PizzaOne from "./assets/pizza-one-parallax.png";
+import PizzaTwo from "./assets/pizza-two-parallax.png";
 import { motion } from "framer-motion";
 import { imageParentVariant, leftImageVariant, rightImageVariant } from "../../../../utils/animations";
 

@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "react-alice-carousel/lib/alice-carousel.css";
-import HeroVideo from "../../../../assets/images/hero/hero-bg.mp4";
-import HeroVideo_375 from "../../../../assets/images/hero/hero-bg-375.mp4";
-import "./hero.css";
+import HeroVideo from "./assets/hero-bg.mp4";
+import HeroVideo_375 from "./assets/hero-bg-375.mp4";
+import "./assets/hero.css";
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
 
