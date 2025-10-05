@@ -1,10 +1,15 @@
 export const slideInLeft = {
-  initial: { translateX: -300 },
-  whileInView: { translateX: 0 },
-  exit: { translateX: -300 },
+  initial: { translateX: -300, opacity: 0 },
+  whileInView: { translateX: 0, opacity: 1 },
+  exit: { translateX: -300, opacity: 0 },
   transition: { duration: 0.7, ease: "easeOut" },
 };
-
+export const fadeIn = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 0.5, ease: "easeIn" },
+};
 export const imageParentVariant = {
   initial: {},
   whileInView: {},
