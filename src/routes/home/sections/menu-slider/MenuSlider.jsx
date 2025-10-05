@@ -1,9 +1,9 @@
-import "./menu-slider.css";
+import "./assets/menu-slider.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import MenuSliderProducts from "./MenuSliderProducts";
 import MenuSliderCategories from "./MenuSliderCategories";
-import { menuSliderCategories, productsData } from "../../../../data/menu-slider";
+import { menuSliderCategories, productsData } from "./data/menu-slider";
 
 const MenuSlider = () => {
   const [activeCategory, setActiveCategory] = useState("pizza");

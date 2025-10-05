@@ -1,7 +1,7 @@
-import "./services.css";
+import "./assets/services.css";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import companyServices from "../../../../data/company-services";
+import companyServices from "./data/company-services";
 
 const Services = () => {
   return (

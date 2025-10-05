@@ -92,7 +92,7 @@
   height: auto;
 }
 .header__nav__menu.active .header__nav__hamburger img {
-  content: url("../../assets/images/close-btn.svg");
+  content: url("./close-btn.svg");
 }
 
 .header__nav__menu a {

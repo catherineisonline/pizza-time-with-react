@@ -1,7 +1,7 @@
-import SlideOne from "../../../assets/images/img-one.jpeg";
-import SlideTwo from "../../../assets/images/carbonara.jpeg";
-import SlideThree from "../../../assets/images/img-three.jpeg";
-import SlideFour from "../../../assets/images/img-four.jpeg";
+import SlideOne from "../assets/img-one.jpeg";
+import SlideTwo from "../assets/carbonara.jpeg";
+import SlideThree from "../assets/img-three.jpeg";
+import SlideFour from "../assets/img-four.jpeg";
 
 const AboutUs = () => {
   return (
