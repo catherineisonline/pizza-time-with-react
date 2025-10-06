@@ -4,23 +4,19 @@
 
 I designed and built a full-stack food ordering platform for the gastronomy industry using React, Express.js, and Turso (libSQL).
 
-[![GitHub license](https://img.shields.io/github/license/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/travel-with-catherine/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/travel-with-catherine/issues)
-[![GitHub stars](https://img.shields.io/github/stars/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/travel-with-catherine/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-Non--Commercial-blue)](https://github.com/catherineisonline/pizza-time-with-react/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/pizza-time-with-react/issues)
+[![GitHub stars](https://img.shields.io/github/stars/catherineisonline/pizza-time-with-react)](https://github.com/catherineisonline/pizza-time-with-react/stargazers)
 
-Live Version:
+Live Version: [Pizza Time](https://pizza-time-with-react.vercel.app/)
 
-[Pizza Time](https://pizza-time-with-react.vercel.app/)
-
-- Dynamic UI: Features a fictional restaurant with pizzas, sushi, and pasta. Built with React Router, Icons, Carousels, and Framer Motion for smooth navigation and animations.
+- Dynamic UI: Features a fictional restaurant with pizzas, sushi, and pasta. Built with React Router, Carousels, and Framer Motion for smooth navigation and animations.
 
 - Fast & Clean Browsing: Used React Paginate and Lazy Load for faster menu browsing and performance.
 
 - Secure & Scalable: Managed user data and menu items with UUID and Turso (SQLite).
 
 - Cart + Auth System: Express.js backend handles user login/register, profile updates, and reCAPTCHA-protected contact & registration form.
-
-A fun, performance-optimized food app where great UX meets real tech.
 
 ## Contents
 
@@ -29,6 +25,7 @@ A fun, performance-optimized food app where great UX meets real tech.
 - [Database](#database)
 - [Goals](#goals)
 - [User Story](#userStory)
+- [Project Decisions](#projectD)
 - [Used Dependencies](#dependencies)
 - [Useful Resources](#resources)
 - [Contribution](#contribution)
@@ -51,12 +48,12 @@ To get started you need to:
 
 - I am using several variables:
 
-1. .env.backend (in the backend folder)
+1. .env (in the backend folder)
 
 - TURSO_DB_URL, TURSO_DB_TOKEN - these variables contain information that will connect you to the Turso database. You can use the following [documentation](https://docs.turso.tech/sdk/ts/quickstart). If you use any other database you need to use the according information to connect to that database. The token can be created after registration.
   Note that the table for users in my case is named "users" and contains the following data: id | email | password | fullname | address | number.
 
-2. .env.frontend
+2. .env for the frontend
 
 - VITE_USERS_URL - this is a url for Node.js server. First, it's better to run it locally and only then switch to whatever you want. If you want to run the server locally the value of this variable should be http://localhost:3000/users. In this project I set up backend using Vercel. You can google "How to Deploy Your Node.js Backend Project to Vercel" and set up your own backend.
 - VITE_CAPTCHA_URL - the same logic works for this backedn url which this time is used for captcha verification. Locally, the url value should be http://localhost:3000/verify-recaptcha.
@@ -77,9 +74,15 @@ The main goal of this project is to get better at React and experience what it's
 As a user, I want to be able to add items to cart even if I am not logged in/registered. When navigating to the menu page, I want to see menu items that have pictures, name, ingredients, pricing.
 I want to be able to sort the menu by categories, as well as be able to find something specific by writing it in the search bar. I want to be able to add items to cart, indicate the amount or delete the items from the cart. In the cart section, I want to be able to see how much I have to pay total and have the possibility to navigate to payments. Before paying, I want to add a special request to my order, like, "no spicy, please".
 
+## Project Decisions <a id="projectD"></a>
+
+- **React**: I chose React for learning purposes as my first JavaScript library. There wasn’t a specific technical requirement, but during my research, I found it very popular and beginner-friendly.
+- **Framer Motion**: I enjoy using Framer Motion, especially with React, because it offers easy setup, good documentation, and impressive animation capabilities. The downside is that it’s not very lightweight, but as the project grew, I wanted to include it to keep learning.
+- **CSS**: My go-to is always plain CSS because I believe that mastering CSS makes other libraries or preprocessors easier to learn. It also gives me more control while I’m learning and experimenting.
+- **Turso**: Even though backend isn’t my specialty, I needed a fully functional website and wanted something easy to use without deep knowledge. Turso also provides an interface to view tables, making database interaction simpler.
+
 ## Used Dependencies <a id="dependencies"></a>
 
-- [React Icons](https://www.npmjs.com/package/react-icons)
 - [React Router DOM](https://www.npmjs.com/package/react-router-dom)
 - [React Alice Carousel](https://www.npmjs.com/package/react-alice-carousel)
 - [Leaflet Maps](https://react-leaflet.js.org/docs/start-installation/)
@@ -88,7 +91,6 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [Tilt](https://micku7zu.github.io/vanilla-tilt.js/)
 - [React Lazy Load](https://www.npmjs.com/package/react-lazy-load-image-component)
 - [Framer Motion](https://www.framer.com/motion/)
-- [MySQL2](https://www.npmjs.com/package/mysql2)
 - [libsql](https://www.npmjs.com/package/@libsql/client)
 - [Express rate limit](https://express-rate-limit.mintlify.app/quickstart/usage)
 
@@ -97,7 +99,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - [HTML to JSX](https://magic.reactjs.net/htmltojsx.htm) - a great tool to compile HTML to JSX.
 - [Lorem Ipsum](https://www.lipsum.com/feed/html) - dummy text generator, there no need to think of big articles on your own.
 - [Leaflet](https://react-leaflet.js.org/) - map API. It's a second project where I use it and I like it a lot. It's free and doesn't require any credit card info if you want to use it for some small projects.
-- [Icons8](https://icons8.com/) - []() - very good collection of icons, in case you cannot find what you needed on FontAwesome.
+- [Icons8](https://icons8.com/) - very good collection of icons, in case you cannot find what you needed on FontAwesome.
 - [React Alice Carousel](https://www.npmjs.com/package/react-alice-carousel) - React Alice Carousel is a React component for building content galleries, content rotators and any React carousels.
 - [TinyPNG](https://tinypng.com/) - smart lossy compression techniques to reduce the file size of your WEBP, JPEG and PNG files.
 - [React Lazy Load Image Component](https://www.npmjs.com/package/react-lazy-load-image-component) - React Component to lazy load images and other components/elements.
