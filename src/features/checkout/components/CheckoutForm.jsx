@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { FaShippingFast } from "react-icons/fa";
-import { RiShoppingBagLine } from "react-icons/ri";
 import ResetLocation from "../../../utils/ResetLocation";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../../context/CartContext";
@@ -105,7 +103,21 @@ const CheckoutForm = ({ currentUser }) => {
         <fieldset className="checkout__form__delivery-details">
           <legend>Delivery details</legend>
           <label htmlFor="takeaway" className="checkout__form__takeaway">
-            <RiShoppingBagLine />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5rem"
+              height="1.5rem"
+              viewBox="0 0 1.5rem 1.5rem"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-hand-helping-icon lucide-hand-helping">
+              <path d="M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14" />
+              <path d="m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
+              <path d="m2 13 6 6" />
+            </svg>
             Takeaway
             <input
               id="takeaway"
@@ -117,7 +129,23 @@ const CheckoutForm = ({ currentUser }) => {
             />
           </label>
           <label htmlFor="delivery" className="checkout__form__delivery">
-            <FaShippingFast />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5rem"
+              height="1.5rem"
+              viewBox="0 0 1.5rem 1.5rem"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-truck-icon lucide-truck">
+              <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+              <path d="M15 18H9" />
+              <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+              <circle cx="17" cy="18" r="2" />
+              <circle cx="7" cy="18" r="2" />
+            </svg>
             Delivery
             <input
               id="delivery"
