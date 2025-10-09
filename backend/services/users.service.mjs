@@ -67,8 +67,8 @@ export const createUser = (user) => {
         sql: userQuery,
         args: [...params],
       })
-      .then((result) => {
-        resolve({ done: true, message: "User created", result: result });
+      .then(() => {
+        resolve({ done: true, message: "User created" });
       })
       .catch((err) => {
         reject(err);

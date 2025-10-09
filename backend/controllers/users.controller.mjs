@@ -29,22 +29,8 @@ export const getUser = (req, res) => {
       res.status(500).send(err);
     });
 };
-export const createUser = (req, res) => {
-  const user = req.body;
-  userServices
-    .createUser(user)
-    .then(() => {
-      res.status(200).json({
-        message: "User created",
-      });
-    })
 
-    .catch((err) => {
-      res.status(500).send(err);
-    });
-};
-
-export const createUserTest = async (req, res) => {
+export const createUser = async (req, res) => {
   const user = req.body;
   const { email, password } = req.body;
   userServices

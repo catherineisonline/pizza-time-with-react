@@ -1,12 +1,5 @@
 import { Router } from "express";
-import {
-  createUser,
-  createUserTest,
-  deleteUser,
-  getUser,
-  getUsers,
-  updateUser,
-} from "../controllers/users.controller.mjs";
+import { createUser, deleteUser, getUser, getUsers, updateUser } from "../controllers/users.controller.mjs";
 import rateLimit from "express-rate-limit";
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000,
@@ -22,8 +15,7 @@ usersRouter.get("/", getUsers);
 
 usersRouter.get("/:id", getUser);
 
-// usersRouter.post("/", limiter, createUser);
-usersRouter.post("/", limiter, createUserTest);
+usersRouter.post("/", limiter, createUser);
 
 usersRouter.put("/:id", updateUser);
 
