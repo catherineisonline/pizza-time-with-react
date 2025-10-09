@@ -29,7 +29,32 @@ export const getUser = (req, res) => {
       res.status(500).send(err);
     });
 };
+export const loginUser = (req, res) => {
+  const { email, password } = req.body;
+  userServices
+    .getUserByEmail(email)
+    .then(async (result) => {
+      if (!result.exists) {
+        return res.status(400).json({ message: result.message });
+      }
+      const { hashed_password } = result.user;
 
+      return bcrypt.compare(password, hashed_password).then((isValid) => {
+        if (!isValid) {
+          return res.status(401).json({ message: "Invalid password" });
+        }
+        const { email, fullname, address, number, id } = result.user;
+        return res.status(200).json({
+          message: "Login successful",
+          user: { email: email, fullname: fullname, address: address, number: number, id: id },
+        });
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+      return res.status(500).json({ message: "Server error" });
+    });
+};
 export const createUser = async (req, res) => {
   const user = req.body;
   const { email, password } = req.body;

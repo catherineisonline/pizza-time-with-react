@@ -205,7 +205,7 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
               aria-describedby="number-error"
             />
           </label>
-          {/* </section> */}
+
           <span aria-live="polite" id="number-error" className="input-validation-error">
             {formErrors.number}
           </span>

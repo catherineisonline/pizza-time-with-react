@@ -5,26 +5,41 @@ import { useNavigate } from "react-router-dom";
 import validateForm from "../../utils/validate-form";
 import { useRef } from "react";
 import { useEffect } from "react";
-import { USERS_URL } from "../../data/constants";
+import { LOGIN_URL } from "../../data/constants";
 
-const LoginModal = ({ setIsLoginModalOpen, setUserConfig, isLoginModalOpen, hideMenu, getUser }) => {
+const LoginModal = ({ setIsLoginModalOpen, setUser, setUserConfig, isLoginModalOpen, hideMenu }) => {
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({ email: "", password: "" });
   const [formError, setFormError] = useState({});
   const [loading, setLoading] = useState(false);
   const [verificationError, setVerificationError] = useState("");
+
   const validate = validateForm("login");
   const modalRef = useRef();
-  const getUsers = async () => {
+  const loginUser = async () => {
     try {
-      const response = await fetch(USERS_URL);
+      const response = await fetch(LOGIN_URL, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ email: formValue.email, password: formValue.password }),
+      });
+
       if (response.status === 429) {
         throw new Error("Too many requests. Please wait and try again later.");
       }
-      const body = await response.json();
-      return body.data;
+      const data = await response.json();
+
+      if (response.status === 200) {
+        return data;
+      } else {
+        console.log("Error in loginUser");
+        return false;
+      }
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
+      return false;
     }
   };
 
@@ -50,29 +65,17 @@ const LoginModal = ({ setIsLoginModalOpen, setUserConfig, isLoginModalOpen, hide
     if (Object.keys(validate(formValue)).length > 0) {
       setLoading(false);
       return;
-    } else {
-      const existingUsers = await getUsers();
-      let emailExists = [];
-      if (existingUsers) {
-        emailExists = existingUsers.filter((u) => u.email === formValue.email.toLowerCase());
-      }
-      if (emailExists.length === 0) {
-        setLoading(false);
-        setFormValue((prev) => ({ email: prev.email, password: "" }));
-        setFormError({});
-        setVerificationError("Can't find accounts with this email");
-        return;
-      }
-      const user = emailExists[0];
-      if (user.password !== formValue.password) {
-        setLoading(false);
-        setFormValue((prev) => ({ email: prev.email, password: "" }));
-        setFormError({});
-        setVerificationError("Wrong password, try again");
-        return;
-      }
-      getUser(user.id);
+    }
+
+    const response = await loginUser();
+    if (!response) {
+      setVerificationError("Login failed");
       setLoading(false);
+      setFormError({});
+      setFormValue((prev) => ({ ...prev, password: "" }));
+      return;
+    } else {
+      setUser(response.user);
       hideLoginModal();
       setFormValue({ email: "", password: "" });
       setFormError({});
@@ -80,6 +83,8 @@ const LoginModal = ({ setIsLoginModalOpen, setUserConfig, isLoginModalOpen, hide
       setUserConfig((prev) => ({ ...prev, loggedIn: true }));
       navigate("/menu");
     }
+
+    setLoading(false);
   };
   useEffect(() => {
     if (isLoginModalOpen) {

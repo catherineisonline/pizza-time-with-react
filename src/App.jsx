@@ -36,6 +36,7 @@ function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [userConfig, setUserConfig] = useState({ user: {}, loggedIn: false });
+  const [user, setUser] = useState(null);
   const loggedIn = useMemo(() => userConfig.loggedIn, [userConfig]);
 
   const getUser = async (id) => {
@@ -125,10 +126,10 @@ function App() {
           loginModal={
             <LoginModal
               setUserConfig={setUserConfig}
+              setUser={setUser}
               setIsLoginModalOpen={setIsLoginModalOpen}
               isLoginModalOpen={isLoginModalOpen}
               hideMenu={hideMenu}
-              getUser={getUser}
             />
           }
           activateLoginModal={activateLoginModal}
@@ -176,12 +177,7 @@ function App() {
               !loggedIn ? (
                 <NotFoundPage />
               ) : (
-                <ProfilePage
-                  currentUser={userConfig.user}
-                  getUser={getUser}
-                  handleLogout={handleLogout}
-                  updateUser={updateUser}
-                />
+                <ProfilePage currentUser={user} getUser={getUser} handleLogout={handleLogout} updateUser={updateUser} />
               )
             }
           />

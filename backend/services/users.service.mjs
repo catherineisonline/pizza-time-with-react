@@ -11,6 +11,21 @@ const query = {
   insertUserBasic: "INSERT INTO users (id, email, password, hashed_password, fullname) VALUES(?, ?, ?, ?, ?)",
   updateUser: "UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?",
 };
+export const getUserByEmail = (email) => {
+  return new Promise((resolve, reject) => {
+    client
+      .execute({ sql: query.getUserByEmail, args: [email] })
+      .then((result) => {
+        if (result?.rows?.length > 0) {
+          resolve({ exists: true, message: "User found", user: result.rows[0] });
+        } else {
+          resolve({ exists: false, message: "User doesn't exist" });
+        }
+      })
+      .catch((err) => reject(err));
+  });
+};
+
 export const getUserEmail = (email) => {
   return new Promise((resolve, reject) => {
     client
