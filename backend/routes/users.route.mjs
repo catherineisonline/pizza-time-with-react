@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createUser,
+  createUserTest,
   deleteUser,
   getUser,
   getUsers,
@@ -21,7 +22,8 @@ usersRouter.get("/", getUsers);
 
 usersRouter.get("/:id", getUser);
 
-usersRouter.post("/", limiter, createUser);
+// usersRouter.post("/", limiter, createUser);
+usersRouter.post("/", limiter, createUserTest);
 
 usersRouter.put("/:id", updateUser);
 

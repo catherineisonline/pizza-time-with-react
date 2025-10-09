@@ -2,17 +2,29 @@ import client from "../config/sql.mjs";
 const query = {
   getUsers: "SELECT * FROM users",
   getUser: "SELECT * FROM users WHERE id = ?",
+  getUserByEmail: "SELECT * FROM users WHERE email = ?",
   deleteUser: "DELETE FROM users WHERE id = ?",
   insertUserWithAddress:
-    "INSERT INTO users (id, email, password, fullname, address) VALUES(?, ?, ?, ?, ?)",
+    "INSERT INTO users (id, email, password, hashed_password, fullname, address) VALUES(?, ?, ?, ?, ?, ?)",
   insertUserWithNumber:
-    "INSERT INTO users (id, email, password, fullname, number) VALUES(?, ?, ?, ?, ?)",
-  insertUserBasic:
-    "INSERT INTO users (id, email, password, fullname) VALUES(?, ?, ?, ?)",
-  updateUser:
-    "UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?",
+    "INSERT INTO users (id, email, password, hashed_password, fullname, number) VALUES(?, ?, ?, ? ,?, ?)",
+  insertUserBasic: "INSERT INTO users (id, email, password, hashed_password, fullname) VALUES(?, ?, ?, ?, ?)",
+  updateUser: "UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?",
 };
-
+export const getUserEmail = (email) => {
+  return new Promise((resolve, reject) => {
+    client
+      .execute({ sql: query.getUserByEmail, args: [email] })
+      .then((result) => {
+        if (result?.rows?.length > 0) {
+          resolve({ exists: true, message: "Email already exists" });
+        } else {
+          resolve({ exists: false, message: "Email available" });
+        }
+      })
+      .catch((err) => reject(err));
+  });
+};
 export const getUsers = () => {
   return new Promise((resolve, reject) => {
     client
@@ -37,18 +49,18 @@ export const getUser = (id) => {
 
 export const createUser = (user) => {
   return new Promise((resolve, reject) => {
-    const { id, email, password, fullname, address, number } = user;
+    const { id, email, password, hashed_password, fullname, address, number } = user;
     let userQuery, params;
 
     if (address === undefined && number === undefined) {
       userQuery = query.insertUserBasic;
-      params = [id, email, password, fullname];
+      params = [id, email, password, hashed_password, fullname];
     } else if (address === undefined) {
       userQuery = query.insertUserWithNumber;
-      params = [id, email, password, fullname, number];
+      params = [id, email, password, hashed_password, fullname, number];
     } else {
       userQuery = query.insertUserWithAddress;
-      params = [id, email, password, fullname, address];
+      params = [id, email, password, hashed_password, fullname, address];
     }
     client
       .execute({
@@ -56,7 +68,7 @@ export const createUser = (user) => {
         args: [...params],
       })
       .then((result) => {
-        resolve(result);
+        resolve({ done: true, message: "User created", result: result });
       })
       .catch((err) => {
         reject(err);

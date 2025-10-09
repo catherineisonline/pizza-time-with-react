@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import validateForm from "../../utils/validate-form";
-import { v4 as uuidv4 } from "uuid";
+
 import { motion } from "framer-motion";
 import ResetLocation from "../../utils/ResetLocation";
 import "./assets/register.css";
 import { CAPTCHA_KEY, CAPTCHA_SECRET, CAPTCHA_URL, USERS_URL } from "../../data/constants";
+
 import { slideInLeft } from "../../utils/animations";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -31,51 +32,31 @@ const RegistrationPage = ({ activateLoginModal }) => {
     document.title = "Registration | Pizza Time";
   }, []);
 
-  const getUsers = async () => {
+  const createUser = async (user) => {
     try {
-      const response = await fetch(USERS_URL);
+      const response = await fetch(USERS_URL, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
       if (response.status === 429) {
         throw new Error("Too many requests. Please wait and try again later.");
       }
-      const body = await response.json();
-
-      return body.data;
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
-
-  const createUser = async (user) => {
-    const users = await getUsers();
-    const repetitiveEmail = users.some((u) => u.email === user.email);
-    const id = uuidv4();
-    user.id = id;
-    try {
-      if (repetitiveEmail) {
-        return false;
+      if (response.status === 200) {
+        return true;
       } else {
-        const response = await fetch(USERS_URL, {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        });
-        if (response.status === 429) {
-          throw new Error("Too many requests. Please wait and try again later.");
-        }
-        if (response.status === 200) {
-          return true;
-        } else {
-          console.log("Error in createUser");
-          return false;
-        }
+        console.log("Error in createUser");
+        return false;
       }
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
       return false;
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -85,8 +66,8 @@ const RegistrationPage = ({ activateLoginModal }) => {
       setLoading(false);
       return;
     }
-    let captchaToken = captchaRef.current?.getValue();
-    const captchaVerified = await verifyCaptcha(captchaToken);
+
+    const captchaVerified = await verifyCaptcha();
     if (!captchaVerified) {
       setCaptchaError("reCaptcha is mandatory");
       setLoading(false);
@@ -122,7 +103,8 @@ const RegistrationPage = ({ activateLoginModal }) => {
   };
   const validate = validateForm("registration");
 
-  const verifyCaptcha = async (captchaToken) => {
+  const verifyCaptcha = async () => {
+    let captchaToken = captchaRef.current?.getValue();
     if (captchaToken.length === 0) {
       captchaRef.current?.reset();
       return false;
