@@ -3,7 +3,7 @@ import ResetLocation from "../utils/ResetLocation";
 
 const CartContext = createContext();
 
-export const CartProvider = ({ children, isLogged }) => {
+export const CartProvider = ({ children, isLoggedIn }) => {
   const [cart, setCart] = useState([]);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [orderSummary, setOrderSummary] = useState({
@@ -12,7 +12,7 @@ export const CartProvider = ({ children, isLogged }) => {
     taxes: 0,
   });
   useEffect(() => {
-    if (!isLogged) {
+    if (!isLoggedIn) {
       setOrderSummary({
         quantity: 0,
         payment: 0,
@@ -20,7 +20,7 @@ export const CartProvider = ({ children, isLogged }) => {
       });
       setCart([]);
     }
-  }, [isLogged]);
+  }, [isLoggedIn]);
   const handleAddProduct = (targetProduct, userSelectedAttributes) => {
     const productAlreadyInCart = CheckRepeatableProducts(targetProduct, userSelectedAttributes);
     let currentCartItems = [...cart];

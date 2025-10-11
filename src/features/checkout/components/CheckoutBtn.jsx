@@ -2,10 +2,10 @@ import React from "react";
 import LinkButton from "../../../components/LinkButton";
 import ResetLocation from "../../../utils/ResetLocation";
 
-const CheckoutBtn = ({ className, isValidLogin, activateLoginModal }) => {
+const CheckoutBtn = ({ isLoggedIn, className, activateLoginModal }) => {
   return (
     <React.Fragment>
-      {isValidLogin ? (
+      {isLoggedIn ? (
         <LinkButton onClick={ResetLocation} to="/checkout" aria-label="Proceed to checkout" className={className}>
           Checkout
         </LinkButton>

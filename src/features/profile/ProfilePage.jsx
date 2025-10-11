@@ -234,7 +234,7 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
             <hr aria-hidden="true" />
             <div className="profile__info__section">
               <h3>Email</h3>
-              <p>{currentUser.email}</p>
+              <p>{currentUser?.email || ""}</p>
             </div>
             <hr aria-hidden="true" />
             <div className="profile__info__section">
@@ -244,17 +244,17 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
             <hr aria-hidden="true" />
             <div className="profile__info__section">
               <h3>Fullname</h3>
-              <p>{currentUser.fullname}</p>
+              <p>{currentUser?.fullname || ""}</p>
             </div>
             <hr aria-hidden="true" />
             <div className="profile__info__section">
               <h3>Address</h3>
-              <p>{currentUser.address ? currentUser.address : " N/A"}</p>
+              <p>{currentUser?.address ? currentUser?.address : " N/A"}</p>
             </div>
             <hr aria-hidden="true" />
             <div className="profile__info__section">
               <h3>Number</h3>
-              <p>{currentUser.number ? currentUser.number : "N/A"}</p>
+              <p>{currentUser?.number ? currentUser?.number : "N/A"}</p>
             </div>
             <hr aria-hidden="true" />
           </section>

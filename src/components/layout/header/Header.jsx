@@ -10,7 +10,7 @@ import ResetLocation from "../../../utils/ResetLocation";
 import headerMenu from "./data/header-menu";
 import { useCart } from "../../../context/CartContext";
 
-const Header = ({ loginModal, handleLogout, isNavOpen, setIsNavOpen, hideMenu, isValidLogin, activateLoginModal }) => {
+const Header = ({ isLoggedIn, loginModal, handleLogout, isNavOpen, setIsNavOpen, hideMenu, activateLoginModal }) => {
   const { orderSummary } = useCart();
   const showModal = () => {
     setIsNavOpen(!isNavOpen);
@@ -46,7 +46,7 @@ const Header = ({ loginModal, handleLogout, isNavOpen, setIsNavOpen, hideMenu, i
               </NavLink>
             </li>
           ))}
-          {isValidLogin && (
+          {isLoggedIn && (
             <li>
               <NavLink
                 onClick={() => {
@@ -62,7 +62,7 @@ const Header = ({ loginModal, handleLogout, isNavOpen, setIsNavOpen, hideMenu, i
           )}
           <li>
             <div className="login-and-cart">
-              {isValidLogin ? (
+              {isLoggedIn ? (
                 <Link
                   to="/"
                   className="passive-button-style txt-white"

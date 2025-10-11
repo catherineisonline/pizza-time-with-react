@@ -7,7 +7,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { LOGIN_URL } from "../../data/constants";
 
-const LoginModal = ({ setIsLoginModalOpen, setUser, setUserConfig, isLoginModalOpen, hideMenu }) => {
+const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalOpen, hideMenu }) => {
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({ email: "", password: "" });
   const [formError, setFormError] = useState({});
@@ -23,6 +23,7 @@ const LoginModal = ({ setIsLoginModalOpen, setUser, setUserConfig, isLoginModalO
         headers: {
           "Content-type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify({ email: formValue.email, password: formValue.password }),
       });
 
@@ -80,7 +81,7 @@ const LoginModal = ({ setIsLoginModalOpen, setUser, setUserConfig, isLoginModalO
       setFormValue({ email: "", password: "" });
       setFormError({});
       setVerificationError("");
-      setUserConfig((prev) => ({ ...prev, loggedIn: true }));
+      setIsLoggedIn(true);
       navigate("/menu");
     }
 

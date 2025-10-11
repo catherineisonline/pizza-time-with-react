@@ -1,6 +1,10 @@
 import * as userServices from "../services/users.service.mjs";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import { v4 as uuidv4 } from "uuid";
+const secret = process.env.JWT_SECRET;
+const expires = process.env.JWT_EXPIRES_IN;
+
 export const getUsers = (req, res) => {
   userServices
     .getUsers()
@@ -29,6 +33,43 @@ export const getUser = (req, res) => {
       res.status(500).send(err);
     });
 };
+
+export const authToken = (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).json({ message: "No token found" });
+  }
+  try {
+    const decoded = jwt.verify(token, secret);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    return res.status(403).json({ message: "Invalid or expired token" });
+  }
+};
+export const authUser = (req, res) => {
+  try {
+    const userEmail = req.user.email;
+    userServices
+      .getUserByEmail(userEmail)
+      .then((result) => {
+        if (!result.exists) {
+          return res.status(400).json({ message: result.message });
+        }
+        const { email, fullname, address, number, id } = result.user;
+        return res.status(200).json({
+          message: "Authenticated",
+          user: { email: email, fullname: fullname, address: address, number: number, id: id },
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+        return res.status(500).json({ message: "Database error" });
+      });
+  } catch (error) {
+    return res.status(500).json({ message: "Server error" });
+  }
+};
 export const loginUser = (req, res) => {
   const { email, password } = req.body;
   userServices
@@ -43,7 +84,17 @@ export const loginUser = (req, res) => {
         if (!isValid) {
           return res.status(401).json({ message: "Invalid password" });
         }
+
         const { email, fullname, address, number, id } = result.user;
+        const token = jwt.sign({ id: id, email: email }, secret, {
+          expiresIn: expires || "1d",
+        });
+        res.cookie("token", token, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+          sameSite: "strict",
+          maxAge: 24 * 60 * 60 * 1000,
+        });
         return res.status(200).json({
           message: "Login successful",
           user: { email: email, fullname: fullname, address: address, number: number, id: id },

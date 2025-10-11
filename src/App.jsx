@@ -27,17 +27,16 @@ import LoginModal from "./components/login/LoginModal";
 import CartItem from "./features/cart/components/CartItem";
 
 import ResetLocation from "./utils/ResetLocation";
-import { useMemo } from "react";
 import { CartProvider } from "./context/CartContext";
 import { ProductsProvider } from "./context/ProductsContext";
-import { USERS_URL } from "./data/constants";
+import { USERS_URL, AUTH_URL } from "./data/constants";
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [userConfig, setUserConfig] = useState({ user: {}, loggedIn: false });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
-  const loggedIn = useMemo(() => userConfig.loggedIn, [userConfig]);
 
   const getUser = async (id) => {
     try {
@@ -45,10 +44,8 @@ function App() {
       if (!response.ok) {
         throw new Error(response.statusText);
       }
-
       const { data } = await response.json();
       setUserConfig((prev) => ({ ...prev, user: data[0] }));
-      sessionStorage.setItem("currentUser", JSON.stringify(data[0]));
       return true;
     } catch (err) {
       console.log(err.statusText);
@@ -79,25 +76,30 @@ function App() {
       return false;
     }
   };
-
   useEffect(() => {
-    if (sessionStorage.getItem("currentUser") !== null) {
-      const user = JSON.parse(sessionStorage.getItem("currentUser"));
-      setUserConfig((prev) => ({ ...prev, user: user }));
-    }
+    const checkAuth = async () => {
+      try {
+        const res = await fetch(AUTH_URL, {
+          method: "GET",
+          credentials: "include",
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setIsLoggedIn(true);
+          setUser(data.user);
+          sessionStorage.setItem("loggedIn", true);
+        } else {
+          setIsLoggedIn(false);
+          localStorage.removeItem("loggedIn");
+        }
+      } catch (error) {
+        setIsLoggedIn(false);
+      }
+    };
+
+    checkAuth();
   }, []);
-
-  useEffect(() => {
-    if (loggedIn && sessionStorage.getItem("validLogin") === null) {
-      sessionStorage.setItem("validLogin", true);
-    }
-    if (sessionStorage.getItem("validLogin") !== null) {
-      setUserConfig((prev) => ({
-        ...prev,
-        loggedIn: sessionStorage.getItem("validLogin"),
-      }));
-    }
-  }, [loggedIn]);
 
   const activateLoginModal = () => {
     hideMenu();
@@ -105,10 +107,7 @@ function App() {
   };
 
   const handleLogout = () => {
-    setUserConfig((prev) => ({
-      ...prev,
-      loggedIn: false,
-    }));
+    setIsLoggedIn(false);
     hideMenu();
     setUserConfig((prev) => ({ ...prev, user: {} }));
     ResetLocation();
@@ -120,13 +119,13 @@ function App() {
   };
 
   return (
-    <CartProvider isLogged={userConfig.loggedIn}>
+    <CartProvider isLogged={isLoggedIn}>
       <BrowserRouter>
         <Header
           loginModal={
             <LoginModal
-              setUserConfig={setUserConfig}
               setUser={setUser}
+              setIsLoggedIn={setIsLoggedIn}
               setIsLoginModalOpen={setIsLoginModalOpen}
               isLoginModalOpen={isLoginModalOpen}
               hideMenu={hideMenu}
@@ -137,7 +136,7 @@ function App() {
           isNavOpen={isNavOpen}
           hideMenu={hideMenu}
           handleLogout={handleLogout}
-          isValidLogin={loggedIn}
+          isLoggedIn={isLoggedIn}
         />
 
         <Routes>
@@ -152,7 +151,7 @@ function App() {
                     cartTotals={
                       <CartTotals
                         className="cart-totals"
-                        isValidLogin={loggedIn}
+                        isLoggedIn={isLoggedIn}
                         activateLoginModal={activateLoginModal}
                       />
                     }
@@ -166,7 +165,7 @@ function App() {
             exact
             path="/menu"
             element={
-              <ProductsProvider isLogged={userConfig.loggedIn}>
+              <ProductsProvider isLoggedIn={isLoggedIn}>
                 <MenuPage />
               </ProductsProvider>
             }
@@ -174,7 +173,7 @@ function App() {
           <Route
             path="/profile"
             element={
-              !loggedIn ? (
+              !isLoggedIn ? (
                 <NotFoundPage />
               ) : (
                 <ProfilePage currentUser={user} getUser={getUser} handleLogout={handleLogout} updateUser={updateUser} />
@@ -182,8 +181,8 @@ function App() {
             }
           />
           <Route path="/menu/:name" element={<MenuItemPage />} />
-          <Route path="/checkout" element={<CheckoutPage currentUser={userConfig.user} />} />
-          <Route path="/payment" element={<PaymentPage currentUser={userConfig.user} />} />
+          <Route path="/checkout" element={<CheckoutPage currentUser={user} />} />
+          <Route path="/payment" element={<PaymentPage currentUser={user} />} />
 
           <Route path="/contact" element={<ContactPage />} />
           <Route exact path="/blog" element={<BlogPage />} />
@@ -191,7 +190,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route
             path="/register"
-            element={loggedIn ? <NotFoundPage /> : <RegistrationPage activateLoginModal={activateLoginModal} />}
+            element={isLoggedIn ? <NotFoundPage /> : <RegistrationPage activateLoginModal={activateLoginModal} />}
           />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="*" element={<NotFoundPage />} />

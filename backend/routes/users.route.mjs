@@ -1,5 +1,14 @@
 import { Router } from "express";
-import { createUser, deleteUser, getUser, getUsers, loginUser, updateUser } from "../controllers/users.controller.mjs";
+import {
+  authToken,
+  authUser,
+  createUser,
+  deleteUser,
+  getUser,
+  getUsers,
+  loginUser,
+  updateUser,
+} from "../controllers/users.controller.mjs";
 import rateLimit from "express-rate-limit";
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000,
@@ -12,13 +21,10 @@ const limiter = rateLimit({
 const usersRouter = Router();
 
 usersRouter.get("/", getUsers);
-
-usersRouter.get("/:id", getUser);
-
-usersRouter.post("/", limiter, createUser);
-
+usersRouter.get("/auth", authToken, authUser);
 usersRouter.post("/login", loginUser);
-
+usersRouter.get("/:id", getUser);
+usersRouter.post("/", limiter, createUser);
 usersRouter.put("/:id", updateUser);
 
 usersRouter.delete("/:id", deleteUser);
