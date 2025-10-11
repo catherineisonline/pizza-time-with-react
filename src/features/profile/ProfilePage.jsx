@@ -56,8 +56,8 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
         }
       }
 
-      const update = await updateUser(currentUser.id, updatedFields);
-      if (update) {
+      const updated = await updateUser(updatedFields);
+      if (updated) {
         setLoading(false);
         setEditForm(false);
         setFormValue({
@@ -82,6 +82,7 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
         method: "DELETE",
         credentials: "include",
       });
+
       if (response.status === 200) {
         navigate("/");
         handleLogout();

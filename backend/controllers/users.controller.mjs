@@ -144,19 +144,45 @@ export const createUser = async (req, res) => {
       return res.status(500).json({ message: "Server error" });
     });
 };
-export const updateUser = (req, res) => {
+
+export const updateUser = async (req, res) => {
   const user = req.body;
-  const { id } = req.params;
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).json({ message: "No token found" });
+  }
+  const decoded = jwt.verify(token, secret);
+  const targetEmail = decoded.email;
+
+  if (user.password) {
+    const hashed = await bcrypt.hash(user.password, 10);
+    user.hashed_password = hashed;
+    delete user.password;
+  }
+
   userServices
-    .updateUser(id, user)
-    .then(() => {
+    .updateUser(targetEmail, user)
+    .then((result) => {
+      const { email, fullname, address, number, id } = result.user;
+      if (targetEmail !== email) {
+        const updatedToken = jwt.sign({ id: id, email: email }, secret, {
+          expiresIn: expires || "1d",
+        });
+        res.cookie("token", updatedToken, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+          sameSite: "strict",
+          maxAge: 24 * 60 * 60 * 1000,
+        });
+      }
       res.status(200).json({
         message: `User updated`,
-        data: user,
+        data: { email, fullname, address, number, id },
       });
     })
     .catch((err) => {
-      res.status(500).send(err);
+      console.error("Error in update user:", err);
+      res.status(500).json({ message: "Error in update user", error: err.message });
     });
 };
 export const deleteUser = (req, res) => {

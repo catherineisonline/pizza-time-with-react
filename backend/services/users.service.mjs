@@ -9,7 +9,6 @@ const query = {
   insertUserWithNumber:
     "INSERT INTO users (id, email, password, hashed_password, fullname, number) VALUES(?, ?, ?, ? ,?, ?)",
   insertUserBasic: "INSERT INTO users (id, email, password, hashed_password, fullname) VALUES(?, ?, ?, ?, ?)",
-  updateUser: "UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?",
 };
 export const getUserByEmail = (email) => {
   return new Promise((resolve, reject) => {
@@ -91,14 +90,17 @@ export const createUser = (user) => {
   });
 };
 
-export const updateUser = (id, user) => {
+export const updateUser = (targetEmail, user) => {
   return new Promise((resolve, reject) => {
-    const { email, password, fullname, address, number } = user;
-    let params;
-    params = [email, password, fullname, address, number];
+    const updates = Object.entries(user).filter(([_, v]) => v != null);
+    const setClause = updates.map(([k]) => `${k} = ?`).join(", ");
+    const args = [...updates.map(([_, v]) => v), targetEmail];
+
+    const sql = `UPDATE users SET ${setClause} WHERE email = ?`;
     client
-      .execute({ sql: query.updateUser, args: [...params, id] })
-      .then((result) => resolve(result))
+      .execute({ sql, args })
+      .then(() => client.execute({ sql: "SELECT * FROM users WHERE email = ?", args: [user.email || targetEmail] }))
+      .then((result) => resolve({ done: true, message: "User updated", user: result.rows[0] }))
       .catch((err) => reject(err));
   });
 };

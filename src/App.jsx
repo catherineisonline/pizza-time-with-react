@@ -27,52 +27,33 @@ import LoginModal from "./components/login/LoginModal";
 import CartItem from "./features/cart/components/CartItem";
 
 import ResetLocation from "./utils/ResetLocation";
-import { CartProvider, useCart } from "./context/CartContext";
+import { CartProvider } from "./context/CartContext";
 import { ProductsProvider } from "./context/ProductsContext";
-import { USERS_URL, AUTH_URL, LOGOUT_URL } from "./data/constants";
+import { UPDATE_URL, AUTH_URL, LOGOUT_URL } from "./data/constants";
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [userConfig, setUserConfig] = useState({ user: {}, loggedIn: false });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
-  const getUser = async (id) => {
+  const updateUser = async (user) => {
     try {
-      const response = await fetch(`${USERS_URL}/${id}`);
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-      const { data } = await response.json();
-      setUserConfig((prev) => ({ ...prev, user: data[0] }));
-      return true;
-    } catch (err) {
-      console.log(err.statusText);
-      return false;
-    }
-  };
-
-  const updateUser = async (id, user) => {
-    try {
-      const response = await fetch(`${USERS_URL}/${id}`, {
+      const response = await fetch(UPDATE_URL, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(user),
       });
-
-      if (!response.ok) {
-        throw new Error(response.statusText);
+      if (response.status === 200) {
+        const { data } = await response.json();
+        setUser(data);
+        return true;
       }
-      const update = await getUser(id);
-      if (!update) {
-        throw new Error(response.statusText);
-      }
-      return true;
     } catch (err) {
-      console.log("Fetch error:", err.statusText);
+      console.log("Fetch error:", err.statusText, err);
       return false;
     }
   };
@@ -186,7 +167,7 @@ function App() {
               !isLoggedIn ? (
                 <NotFoundPage />
               ) : (
-                <ProfilePage currentUser={user} getUser={getUser} handleLogout={handleLogout} updateUser={updateUser} />
+                <ProfilePage currentUser={user} handleLogout={handleLogout} updateUser={updateUser} />
               )
             }
           />

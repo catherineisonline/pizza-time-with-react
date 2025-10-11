@@ -25,9 +25,9 @@ usersRouter.get("/", getUsers);
 usersRouter.get("/auth", authToken, authUser);
 usersRouter.post("/login", loginUser);
 usersRouter.post("/logout", logoutUser);
+usersRouter.put("/update", updateUser);
 usersRouter.get("/:id", getUser);
 usersRouter.post("/", limiter, createUser);
-usersRouter.put("/:id", updateUser);
 
 usersRouter.delete("/:id", deleteUser);
 
