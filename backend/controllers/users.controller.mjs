@@ -70,6 +70,20 @@ export const authUser = (req, res) => {
     return res.status(500).json({ message: "Server error" });
   }
 };
+export const logoutUser = (req, res) => {
+  try {
+    res.cookie("token", "", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 0,
+    });
+    return res.json({ message: "Logged out successfully" });
+  } catch (error) {
+    console.error("Logout error:", error);
+    return res.status(500).json({ message: "Something went wrong during logout" });
+  }
+};
 export const loginUser = (req, res) => {
   const { email, password } = req.body;
   userServices

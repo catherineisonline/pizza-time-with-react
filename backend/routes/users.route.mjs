@@ -7,6 +7,7 @@ import {
   getUser,
   getUsers,
   loginUser,
+  logoutUser,
   updateUser,
 } from "../controllers/users.controller.mjs";
 import rateLimit from "express-rate-limit";
@@ -23,6 +24,7 @@ const usersRouter = Router();
 usersRouter.get("/", getUsers);
 usersRouter.get("/auth", authToken, authUser);
 usersRouter.post("/login", loginUser);
+usersRouter.post("/logout", logoutUser);
 usersRouter.get("/:id", getUser);
 usersRouter.post("/", limiter, createUser);
 usersRouter.put("/:id", updateUser);

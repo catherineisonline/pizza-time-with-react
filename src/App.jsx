@@ -27,9 +27,9 @@ import LoginModal from "./components/login/LoginModal";
 import CartItem from "./features/cart/components/CartItem";
 
 import ResetLocation from "./utils/ResetLocation";
-import { CartProvider } from "./context/CartContext";
+import { CartProvider, useCart } from "./context/CartContext";
 import { ProductsProvider } from "./context/ProductsContext";
-import { USERS_URL, AUTH_URL } from "./data/constants";
+import { USERS_URL, AUTH_URL, LOGOUT_URL } from "./data/constants";
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -106,12 +106,22 @@ function App() {
     setIsLoginModalOpen(!isLoginModalOpen);
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    hideMenu();
-    setUserConfig((prev) => ({ ...prev, user: {} }));
-    ResetLocation();
-    sessionStorage.clear();
+  const handleLogout = async () => {
+    try {
+      await fetch(LOGOUT_URL, {
+        method: "POST",
+        credentials: "include",
+      });
+
+      setIsLoggedIn(false);
+      setUser(null);
+      hideMenu();
+      ResetLocation();
+
+      sessionStorage.clear();
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
   };
 
   const hideMenu = () => {
@@ -119,7 +129,7 @@ function App() {
   };
 
   return (
-    <CartProvider isLogged={isLoggedIn}>
+    <CartProvider isLoggedIn={isLoggedIn}>
       <BrowserRouter>
         <Header
           loginModal={
