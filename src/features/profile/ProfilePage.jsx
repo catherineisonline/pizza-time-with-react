@@ -80,6 +80,7 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
     try {
       const response = await fetch(`${USERS_URL}/${id}`, {
         method: "DELETE",
+        credentials: "include",
       });
       if (response.status === 200) {
         navigate("/");

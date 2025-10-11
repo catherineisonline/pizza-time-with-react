@@ -160,15 +160,26 @@ export const updateUser = (req, res) => {
     });
 };
 export const deleteUser = (req, res) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).json({ message: "No token found" });
+  }
   const { id } = req.params;
   userServices
     .deleteUser(id)
     .then(() => {
+      res.cookie("token", "", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict",
+        maxAge: 0,
+      });
       res.status(200).json({
         message: "User deleted",
       });
     })
     .catch((err) => {
-      res.status(500).send(err);
+      console.log(err);
+      res.status(500).json({ message: "Failed to delete user" });
     });
 };
