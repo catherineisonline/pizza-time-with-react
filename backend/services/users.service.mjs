@@ -39,27 +39,27 @@ export const getUserEmail = (email) => {
       .catch((err) => reject(err));
   });
 };
-export const getUsers = () => {
-  return new Promise((resolve, reject) => {
-    client
-      .execute(query.getUsers)
-      .then((result) => {
-        resolve(result);
-      })
-      .catch((err) => reject(err));
-  });
-};
+// export const getUsers = () => {
+//   return new Promise((resolve, reject) => {
+//     client
+//       .execute(query.getUsers)
+//       .then((result) => {
+//         resolve(result);
+//       })
+//       .catch((err) => reject(err));
+//   });
+// };
 
-export const getUser = (id) => {
-  return new Promise((resolve, reject) => {
-    client
-      .execute({ sql: query.getUser, args: [id] })
-      .then((result) => {
-        resolve(result);
-      })
-      .catch((err) => reject(err));
-  });
-};
+// export const getUser = (id) => {
+//   return new Promise((resolve, reject) => {
+//     client
+//       .execute({ sql: query.getUser, args: [id] })
+//       .then((result) => {
+//         resolve(result);
+//       })
+//       .catch((err) => reject(err));
+//   });
+// };
 
 export const createUser = (user) => {
   return new Promise((resolve, reject) => {
@@ -109,7 +109,7 @@ export const deleteUser = (id) => {
   return new Promise((resolve, reject) => {
     client
       .execute({ sql: query.deleteUser, args: [id] })
-      .then((result) => resolve(result))
+      .then(() => resolve({ done: true }))
       .catch((err) => reject(err));
   });
 };
