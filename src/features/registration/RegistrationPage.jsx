@@ -121,11 +121,11 @@ const RegistrationPage = ({ activateLoginModal }) => {
         },
       });
       if (!response.ok) {
-        throw new Error(response.statusText);
+        throw new Error(response.message);
       }
       return true;
     } catch (error) {
-      console.error("Could not verify captcha!", error.statusText);
+      console.error("Could not verify captcha!", error.message);
       return false;
     } finally {
       captchaRef.current?.reset();
