@@ -5,7 +5,7 @@ import shortenerRouter from "./shortener.route.mjs";
 
 const indexRouter = Router();
 
-indexRouter.get("/", (req, res) => {
+indexRouter.get("/", (_, res) => {
   res.send("Server Deployed 🥳");
 });
 indexRouter.use("/users", usersRouter);

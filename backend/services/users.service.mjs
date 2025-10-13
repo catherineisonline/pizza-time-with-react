@@ -1,86 +1,90 @@
 import client from "../config/sql.mjs";
 const query = {
-  getUsers: "SELECT * FROM users",
-  getUser: "SELECT * FROM users WHERE id = ?",
+  getUserByEmail: "SELECT * FROM users WHERE email = ?",
   deleteUser: "DELETE FROM users WHERE id = ?",
-  insertUserWithAddress:
-    "INSERT INTO users (id, email, password, fullname, address) VALUES(?, ?, ?, ?, ?)",
-  insertUserWithNumber:
-    "INSERT INTO users (id, email, password, fullname, number) VALUES(?, ?, ?, ?, ?)",
-  insertUserBasic:
-    "INSERT INTO users (id, email, password, fullname) VALUES(?, ?, ?, ?)",
-  updateUser:
-    "UPDATE users SET email = ?, password = ?, fullname = ?, address = ?, number = ? WHERE id = ?",
 };
-
-export const getUsers = () => {
-  return new Promise((resolve, reject) => {
-    client
-      .execute(query.getUsers)
-      .then((result) => {
-        resolve(result);
-      })
-      .catch((err) => reject(err));
-  });
-};
-
-export const getUser = (id) => {
-  return new Promise((resolve, reject) => {
-    client
-      .execute({ sql: query.getUser, args: [id] })
-      .then((result) => {
-        resolve(result);
-      })
-      .catch((err) => reject(err));
-  });
-};
-
-export const createUser = (user) => {
-  return new Promise((resolve, reject) => {
-    const { id, email, password, fullname, address, number } = user;
-    let userQuery, params;
-
-    if (address === undefined && number === undefined) {
-      userQuery = query.insertUserBasic;
-      params = [id, email, password, fullname];
-    } else if (address === undefined) {
-      userQuery = query.insertUserWithNumber;
-      params = [id, email, password, fullname, number];
+export const getUserByEmail = async (email) => {
+  try {
+    const response = await client.execute({ sql: query.getUserByEmail, args: [email] });
+    if (response?.rows?.length > 0) {
+      return { success: true, user: response.rows[0] };
     } else {
-      userQuery = query.insertUserWithAddress;
-      params = [id, email, password, fullname, address];
+      return { success: false };
     }
-    client
-      .execute({
-        sql: userQuery,
-        args: [...params],
-      })
-      .then((result) => {
-        resolve(result);
-      })
-      .catch((err) => {
-        reject(err);
-      });
-  });
+  } catch (error) {
+    console.log("Error in getUserByEmail:", error);
+    throw new Error("Database query failed while fetching user by email");
+  }
 };
 
-export const updateUser = (id, user) => {
-  return new Promise((resolve, reject) => {
-    const { email, password, fullname, address, number } = user;
-    let params;
-    params = [email, password, fullname, address, number];
-    client
-      .execute({ sql: query.updateUser, args: [...params, id] })
-      .then((result) => resolve(result))
-      .catch((err) => reject(err));
-  });
+export const getUserEmail = async (email) => {
+  try {
+    const response = await client.execute({ sql: query.getUserByEmail, args: [email] });
+    if (response?.rows?.length > 0) {
+      return { success: true };
+    } else {
+      return { success: false };
+    }
+  } catch (error) {
+    console.log("Error in getUserEmail:", error);
+    throw new Error("Database query failed while fetching user's email");
+  }
 };
 
-export const deleteUser = (id) => {
-  return new Promise((resolve, reject) => {
-    client
-      .execute({ sql: query.deleteUser, args: [id] })
-      .then((result) => resolve(result))
-      .catch((err) => reject(err));
-  });
+export const createUser = async (user) => {
+  const updates = Object.entries(user).filter(([_, v]) => v != null);
+  const setClause = updates.map(([k]) => `${k}`).join(", ");
+  const setValues = updates.map((_) => `?`).join(", ");
+  const args = [...updates.map(([_, v]) => v)];
+  const sql = `INSERT INTO users (${setClause}) VALUES(${setValues})`;
+  try {
+    const response = await client.execute({
+      sql,
+      args,
+    });
+    if (response?.rowsAffected === 1) {
+      return { success: true };
+    } else {
+      return { success: false };
+    }
+  } catch (error) {
+    console.log("Error in createUser:", error);
+    throw new Error("Database query failed while creating the user");
+  }
+};
+
+export const updateUser = async (targetEmail, user) => {
+  const updates = Object.entries(user).filter(([_, v]) => v != null);
+  const setClause = updates.map(([k]) => `${k} = ?`).join(", ");
+  const args = [...updates.map(([_, v]) => v), targetEmail];
+  const sql = `UPDATE users SET ${setClause} WHERE email = ?`;
+  try {
+    await client.execute({ sql, args });
+
+    const response = await client.execute({
+      sql: "SELECT * FROM users WHERE email = ?",
+      args: [user.email || targetEmail],
+    });
+
+    if (response?.rows?.length > 0) {
+      return { success: true, user: response.rows[0] };
+    }
+    return { success: false };
+  } catch (error) {
+    console.log("Error in updateUser:", error);
+    throw new Error("Database query failed while updating the user");
+  }
+};
+
+export const deleteUser = async (id) => {
+  try {
+    const response = await client.execute({ sql: query.deleteUser, args: [id] });
+    if (response?.rows?.length === 0) {
+      return { success: true };
+    }
+    return { success: false };
+  } catch (error) {
+    console.log("Error in deleteUser:", error);
+    throw new Error("Database query failed while deleting the user");
+  }
 };

@@ -12,6 +12,22 @@
             "dest": "index.mjs"
         },
         {
+            "src": "/users/auth",
+            "dest": "index.mjs"
+        },
+        {
+            "src": "/users/login",
+            "dest": "index.mjs"
+        },
+        {
+            "src": "/users/logout",
+            "dest": "index.mjs"
+        },
+        {
+            "src": "/users/update",
+            "dest": "index.mjs"
+        },
+        {
             "src": "/users/:id",
             "dest": "index.mjs"
         },

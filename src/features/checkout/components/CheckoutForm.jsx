@@ -6,13 +6,14 @@ import { useCart } from "../../../context/CartContext";
 const CheckoutForm = ({ currentUser }) => {
   const { orderSummary } = useCart();
   const [formValue, setFormValue] = useState({
-    fullname: currentUser.fullname,
-    email: currentUser.email,
-    address: currentUser.address,
-    number: currentUser.number,
+    fullname: currentUser?.fullname || "",
+    email: currentUser?.email || "",
+    address: currentUser?.address || "",
+    number: currentUser?.number || "",
     chooseDelivery: "",
     promoCode: "",
   });
+
   const [submit, setSubmit] = useState(false);
   const [promoCode, setPromoCode] = useState(false);
   const [formError, setFormError] = useState({});
@@ -70,9 +71,9 @@ const CheckoutForm = ({ currentUser }) => {
         </span>
       </h3>
       <div>
-        <p>{currentUser.fullname}</p>
-        <p>{currentUser.email}</p>
-        {currentUser.address ? (
+        <p>{currentUser?.fullname || ""}</p>
+        <p>{currentUser?.email || ""}</p>
+        {currentUser?.address ? (
           <p>Address: {currentUser.address}</p>
         ) : (
           <p className="checkout__form__address">
@@ -85,7 +86,7 @@ const CheckoutForm = ({ currentUser }) => {
           </p>
         )}
         <span className="checkout__form__error">{formError.address}</span>
-        {currentUser.number !== null ? (
+        {currentUser?.number ? (
           <p>Contact number: {currentUser.number}</p>
         ) : (
           <p className="checkout__form__number">

@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import validateForm from "../../utils/validate-form";
-import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import ResetLocation from "../../utils/ResetLocation";
 import "./assets/register.css";
-import { CAPTCHA_KEY, CAPTCHA_SECRET, CAPTCHA_URL, USERS_URL } from "../../data/constants";
+import { CAPTCHA_KEY, CAPTCHA_URL } from "../../data/constants";
+const ENVIRONMENT = import.meta.env.MODE;
 import { slideInLeft } from "../../utils/animations";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
+import { createUser } from "./api/createUser";
 const initialFormValue = {
   id: "",
   email: "",
@@ -31,51 +32,6 @@ const RegistrationPage = ({ activateLoginModal }) => {
     document.title = "Registration | Pizza Time";
   }, []);
 
-  const getUsers = async () => {
-    try {
-      const response = await fetch(USERS_URL);
-      if (response.status === 429) {
-        throw new Error("Too many requests. Please wait and try again later.");
-      }
-      const body = await response.json();
-
-      return body.data;
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
-
-  const createUser = async (user) => {
-    const users = await getUsers();
-    const repetitiveEmail = users.some((u) => u.email === user.email);
-    const id = uuidv4();
-    user.id = id;
-    try {
-      if (repetitiveEmail) {
-        return false;
-      } else {
-        const response = await fetch(USERS_URL, {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        });
-        if (response.status === 429) {
-          throw new Error("Too many requests. Please wait and try again later.");
-        }
-        if (response.status === 200) {
-          return true;
-        } else {
-          console.log("Error in createUser");
-          return false;
-        }
-      }
-    } catch (err) {
-      console.log(err.message);
-      return false;
-    }
-  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -85,12 +41,12 @@ const RegistrationPage = ({ activateLoginModal }) => {
       setLoading(false);
       return;
     }
-    let captchaToken = captchaRef.current?.getValue();
-    const captchaVerified = await verifyCaptcha(captchaToken);
-    if (!captchaVerified) {
-      setCaptchaError("reCaptcha is mandatory");
+
+    const isCaptchaValid = await verifyCaptcha();
+    if (!isCaptchaValid.success) {
       setLoading(false);
       setSubmit(false);
+      setCaptchaError(isCaptchaValid.message);
       return;
     }
     let currForm = { ...formValue };
@@ -104,8 +60,8 @@ const RegistrationPage = ({ activateLoginModal }) => {
       delete currForm.number;
     }
     currForm.email = currForm.email.toLowerCase();
-    const accCreation = await createUser(currForm);
-    if (!accCreation) {
+    const response = await createUser(currForm);
+    if (!response.success) {
       setRegistrationFail(true);
       setSubmit(false);
     } else {
@@ -122,29 +78,27 @@ const RegistrationPage = ({ activateLoginModal }) => {
   };
   const validate = validateForm("registration");
 
-  const verifyCaptcha = async (captchaToken) => {
-    if (captchaToken.length === 0) {
+  const verifyCaptcha = async () => {
+    let token = captchaRef.current?.getValue();
+    if (token.length === 0) {
       captchaRef.current?.reset();
-      return false;
+      return { success: false, message: "reCaptcha is mandatory" };
     }
     try {
       const response = await fetch(CAPTCHA_URL, {
         method: "POST",
-        body: JSON.stringify({
-          secret: CAPTCHA_SECRET,
-          captchaToken,
-        }),
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({ token }),
       });
       if (!response.ok) {
-        throw new Error(response.statusText);
+        throw new Error(response.message);
       }
-      return true;
+      return { success: true };
     } catch (error) {
-      console.error("Could not verify captcha!", error.statusText);
-      return false;
+      if (ENVIRONMENT === "development") console.log("Error in verifyCaptcha:", error.message);
+      return { success: false, message: "Server error: failed to verify CAPTCHA. Please try again later." };
     } finally {
       captchaRef.current?.reset();
     }

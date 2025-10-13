@@ -1,20 +1,25 @@
 import express, { json } from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import indexRouter from "../routes/index.route.mjs";
+import cookieParser from "cookie-parser";
 
 const app = express();
-app.set("trust proxy", 1); // for Vercel
-dotenv.config({ path: ".env.backend" });
-const port = 3000;
+app.set("trust proxy", 1);
 
-app.use(cors());
+const port = 3000;
+const allowedOrigins =
+  process.env.NODE_ENV === "production" ? ["https://pizza-time-with-react.vercel.app/"] : ["http://localhost:5173"];
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
 app.use(json());
+app.use(cookieParser());
 app.use("/", indexRouter);
-app.use("*", (req, res) => {
+app.use("*", (_, res) => {
   res.status(404).json({ success: false, message: "404 - Not Found!" });
 });
 
-app.listen(port, () =>
-  console.log(`Server is running on http://localhost:${port}`)
-);
+app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));

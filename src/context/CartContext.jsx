@@ -3,7 +3,7 @@ import ResetLocation from "../utils/ResetLocation";
 
 const CartContext = createContext();
 
-export const CartProvider = ({ children, isLogged }) => {
+export const CartProvider = ({ children, isLoggedIn }) => {
   const [cart, setCart] = useState([]);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [orderSummary, setOrderSummary] = useState({
@@ -12,7 +12,7 @@ export const CartProvider = ({ children, isLogged }) => {
     taxes: 0,
   });
   useEffect(() => {
-    if (!isLogged) {
+    if (!isLoggedIn) {
       setOrderSummary({
         quantity: 0,
         payment: 0,
@@ -20,7 +20,7 @@ export const CartProvider = ({ children, isLogged }) => {
       });
       setCart([]);
     }
-  }, [isLogged]);
+  }, [isLoggedIn]);
   const handleAddProduct = (targetProduct, userSelectedAttributes) => {
     const productAlreadyInCart = CheckRepeatableProducts(targetProduct, userSelectedAttributes);
     let currentCartItems = [...cart];
@@ -56,9 +56,9 @@ export const CartProvider = ({ children, isLogged }) => {
 
     const totalCartQuantity = currentCartItems.reduce((total, item) => total + item.quantity, 0);
     const jsonUser = JSON.stringify(currentCartItems);
-    sessionStorage.setItem("cartItems", jsonUser);
+    localStorage.setItem("cartItems", jsonUser);
     setCart(currentCartItems);
-    sessionStorage.setItem("cartQuantity", totalCartQuantity);
+    localStorage.setItem("cartQuantity", totalCartQuantity);
     setOrderSummary((prev) => ({
       ...prev,
       quantity: totalCartQuantity,
@@ -86,10 +86,10 @@ export const CartProvider = ({ children, isLogged }) => {
     }
     setCart(productsCopy);
     const jsonUser = JSON.stringify(productsCopy);
-    sessionStorage.setItem("cartItems", jsonUser);
+    localStorage.setItem("cartItems", jsonUser);
 
     const sum = [...productsCopy].reduce((a, b) => a + b.quantity, 0);
-    sessionStorage.setItem("cartQuantity", sum);
+    localStorage.setItem("cartQuantity", sum);
     setOrderSummary((prev) => ({
       ...prev,
       quantity: sum,
@@ -102,8 +102,8 @@ export const CartProvider = ({ children, isLogged }) => {
       payment: 0,
       taxes: 0,
     });
-    sessionStorage.removeItem("cartItems");
-    sessionStorage.removeItem("cartQuantity");
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("cartQuantity");
     ResetLocation();
   };
   const CheckRepeatableProducts = (targetProduct, attributes) => {
@@ -138,12 +138,12 @@ export const CartProvider = ({ children, isLogged }) => {
   }, [cart]);
 
   useEffect(() => {
-    if (sessionStorage.getItem("cartItems") !== null) {
-      const jsonCartItems = sessionStorage.getItem("cartItems");
+    if (localStorage.getItem("cartItems") !== null) {
+      const jsonCartItems = localStorage.getItem("cartItems");
       const cartItems = JSON.parse(jsonCartItems);
       setCart(cartItems);
     }
-    const cartQuantitySession = sessionStorage.getItem("cartQuantity");
+    const cartQuantitySession = localStorage.getItem("cartQuantity");
     if (cartQuantitySession !== null) {
       setOrderSummary((prev) => ({
         ...prev,
