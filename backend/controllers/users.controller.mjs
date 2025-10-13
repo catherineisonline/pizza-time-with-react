@@ -23,7 +23,7 @@ export const authUser = async (req, res) => {
   const userEmail = req.user.email;
   try {
     const response = await userServices.getUserByEmail(userEmail);
-    if (!response.exists) {
+    if (!response.success) {
       return res.status(400).json({ message: "User doesn't exist" });
     }
     const { email, fullname, address, number, id } = response.user;
@@ -54,7 +54,7 @@ export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
     const response = await userServices.getUserByEmail(email);
-    if (!response.exists) {
+    if (!response.success) {
       return res.status(400).json({ message: "User doesn't exist" });
     }
     const { hashed_password } = response.user;
@@ -86,14 +86,15 @@ export const createUser = async (req, res) => {
   const { email, password } = req.body;
   try {
     const response = await userServices.getUserEmail(email);
-    if (response.exists) {
+    if (response.success) {
       return res.status(400).json({ message: "Email already exists" });
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     const id = uuidv4();
+    delete user.password;
     const userWithHash = { ...user, hashed_password: hashedPassword, id: id };
     const newUser = await userServices.createUser(userWithHash);
-    if (newUser.done) {
+    if (newUser.success) {
       return res.status(200).json({ message: "User created successfully" });
     }
     return res.status(400).json({ message: "User could not be created" });
@@ -118,7 +119,7 @@ export const updateUser = async (req, res) => {
       delete user.password;
     }
     const response = await userServices.updateUser(targetEmail, user);
-    if (response.done) {
+    if (response.success) {
       const { email, fullname, address, number, id } = response.user;
       if (targetEmail !== email) {
         const updatedToken = jwt.sign({ id, email }, secret, {
@@ -155,7 +156,7 @@ export const deleteUser = async (req, res) => {
       return res.status(403).json({ message: "You can only delete your own account" });
     }
     const response = await userServices.deleteUser(id);
-    if (response.done) {
+    if (response.success) {
       res.cookie("token", "", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
