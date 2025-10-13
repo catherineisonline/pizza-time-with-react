@@ -25,11 +25,12 @@ import {
 import CartTotals from "./features/cart/components/CartTotals";
 import LoginModal from "./components/login/LoginModal";
 import CartItem from "./features/cart/components/CartItem";
-
 import ResetLocation from "./utils/ResetLocation";
 import { CartProvider } from "./context/CartContext";
 import { ProductsProvider } from "./context/ProductsContext";
-import { UPDATE_URL, AUTH_URL, LOGOUT_URL } from "./data/constants";
+import { updateUser } from "./api/updateUser";
+import { logoutUser } from "./api/logoutUser";
+import { validateJWT } from "./api/validateJWT";
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -37,72 +38,49 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
-  const updateUser = async (user) => {
-    try {
-      const response = await fetch(UPDATE_URL, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify(user),
-      });
-      if (response.status === 200) {
-        const { data } = await response.json();
-        setUser(data);
-        return true;
-      }
-    } catch (err) {
-      console.log("Fetch error:", err.statusText, err);
-      return false;
+  const handleUpdateUser = async (user) => {
+    const response = await updateUser(user);
+    if (response.success) {
+      setUser(response.user);
     }
+    return response;
   };
+
   useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const res = await fetch(AUTH_URL, {
-          method: "GET",
-          credentials: "include",
-        });
-
-        if (res.ok) {
-          const data = await res.json();
-          setIsLoggedIn(true);
-          setUser(data.user);
-          sessionStorage.setItem("loggedIn", true);
-        } else {
-          setIsLoggedIn(false);
-          localStorage.removeItem("loggedIn");
-        }
-      } catch (error) {
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (!loggedIn) return;
+    let isMounted = true;
+    (async () => {
+      const response = await validateJWT();
+      if (!response.success) {
         setIsLoggedIn(false);
+        localStorage.removeItem("loggedIn");
+      } else {
+        setIsLoggedIn(true);
+        setUser(response.user);
+        localStorage.setItem("loggedIn", true);
       }
-    };
+    })();
 
-    checkAuth();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const activateLoginModal = () => {
     hideMenu();
     setIsLoginModalOpen(!isLoginModalOpen);
   };
-
-  const handleLogout = async () => {
-    try {
-      await fetch(LOGOUT_URL, {
-        method: "POST",
-        credentials: "include",
-      });
-
+  const handleLogoutUser = async () => {
+    const response = await logoutUser();
+    if (response.success) {
       setIsLoggedIn(false);
       setUser(null);
       hideMenu();
       ResetLocation();
-
-      sessionStorage.clear();
-    } catch (error) {
-      console.error("Logout failed:", error);
+      localStorage.clear();
     }
+    return response;
   };
 
   const hideMenu = () => {
@@ -126,7 +104,7 @@ function App() {
           setIsNavOpen={setIsNavOpen}
           isNavOpen={isNavOpen}
           hideMenu={hideMenu}
-          handleLogout={handleLogout}
+          handleLogoutUser={handleLogoutUser}
           isLoggedIn={isLoggedIn}
         />
 
@@ -167,7 +145,11 @@ function App() {
               !isLoggedIn ? (
                 <NotFoundPage />
               ) : (
-                <ProfilePage currentUser={user} handleLogout={handleLogout} updateUser={updateUser} />
+                <ProfilePage
+                  currentUser={user}
+                  handleLogoutUser={handleLogoutUser}
+                  handleUpdateUser={handleUpdateUser}
+                />
               )
             }
           />

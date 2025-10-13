@@ -10,7 +10,15 @@ import ResetLocation from "../../../utils/ResetLocation";
 import headerMenu from "./data/header-menu";
 import { useCart } from "../../../context/CartContext";
 
-const Header = ({ isLoggedIn, loginModal, handleLogout, isNavOpen, setIsNavOpen, hideMenu, activateLoginModal }) => {
+const Header = ({
+  isLoggedIn,
+  loginModal,
+  handleLogoutUser,
+  isNavOpen,
+  setIsNavOpen,
+  hideMenu,
+  activateLoginModal,
+}) => {
   const { orderSummary } = useCart();
   const showModal = () => {
     setIsNavOpen(!isNavOpen);
@@ -63,13 +71,7 @@ const Header = ({ isLoggedIn, loginModal, handleLogout, isNavOpen, setIsNavOpen,
           <li>
             <div className="login-and-cart">
               {isLoggedIn ? (
-                <Link
-                  to="/"
-                  className="passive-button-style txt-white"
-                  onClick={() => {
-                    ResetLocation();
-                    handleLogout();
-                  }}>
+                <Link to="/" className="passive-button-style txt-white" onClick={handleLogoutUser}>
                   Log out
                 </Link>
               ) : (

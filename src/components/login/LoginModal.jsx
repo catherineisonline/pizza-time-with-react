@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import validateForm from "../../utils/validate-form";
 import { useRef } from "react";
 import { useEffect } from "react";
-import { LOGIN_URL } from "../../data/constants";
+import { loginUser } from "./api/loginUser";
 
 const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalOpen, hideMenu }) => {
   const navigate = useNavigate();
@@ -16,33 +16,6 @@ const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalO
 
   const validate = validateForm("login");
   const modalRef = useRef();
-  const loginUser = async () => {
-    try {
-      const response = await fetch(LOGIN_URL, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({ email: formValue.email, password: formValue.password }),
-      });
-
-      if (response.status === 429) {
-        throw new Error("Too many requests. Please wait and try again later.");
-      }
-      const data = await response.json();
-
-      if (response.status === 200) {
-        return data;
-      } else {
-        console.log("Error in loginUser");
-        return false;
-      }
-    } catch (err) {
-      console.log(err);
-      return false;
-    }
-  };
 
   const handleValidation = (e) => {
     const { name, value } = e.target;
@@ -68,13 +41,11 @@ const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalO
       return;
     }
 
-    const response = await loginUser();
-    if (!response) {
-      setVerificationError("Login failed");
-      setLoading(false);
+    const response = await loginUser(formValue.email, formValue.password);
+    if (!response.success) {
+      setVerificationError(response.message);
       setFormError({});
       setFormValue((prev) => ({ ...prev, password: "" }));
-      return;
     } else {
       setUser(response.user);
       hideLoginModal();
@@ -83,6 +54,7 @@ const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalO
       setVerificationError("");
       setIsLoggedIn(true);
       navigate("/menu");
+      localStorage.setItem("loggedIn", true);
     }
 
     setLoading(false);

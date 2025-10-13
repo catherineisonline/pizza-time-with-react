@@ -1,7 +1,7 @@
 import { Router } from "express";
 import fetch from "node-fetch";
 const captchaRouter = Router();
-const captchaSecret = process.env.VITE_CAPTCHA_SECRET; // Replace with your own reCAPTCHA secret key
+const captchaSecret = process.env.CAPTCHA_SECRET; // Replace with your own reCAPTCHA secret key
 
 export const checkCaptcha = async (req, res) => {
   const { token } = req.body;
@@ -16,8 +16,8 @@ export const checkCaptcha = async (req, res) => {
     }
     return res.status(400).json({ message: "CAPTCHA failed" });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error" });
+    console.log("Error in checkCaptcha:", error);
+    res.status(500).json({ message: "Server error: verifying CAPTCHA" });
   }
 };
 

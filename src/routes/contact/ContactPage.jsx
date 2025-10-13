@@ -6,7 +6,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "react-router-dom";
 import validateForm from "../../utils/validate-form";
 import ResetLocation from "../../utils/ResetLocation";
-import { CAPTCHA_URL, CAPTCHA_SECRET, CAPTCHA_KEY } from "../../data/constants";
+import { CAPTCHA_URL, CAPTCHA_KEY } from "../../data/constants";
+const ENVIRONMENT = import.meta.env.MODE;
 import { slideInLeft } from "../../utils/animations";
 const ContactPage = () => {
   const [formValue, setFormValue] = useState({
@@ -32,50 +33,49 @@ const ContactPage = () => {
       setLoading(false);
       setSubmit(false);
       return;
-    } else {
-      let captchaToken = captchaRef.current?.getValue();
-      if (captchaToken.length === 0) {
-        setCaptchaError("reCaptcha is mandatory");
-        setLoading(false);
-        setSubmit(false);
-        return;
-      }
-      const verification = await verifyCaptcha(captchaToken);
-      captchaRef.current?.reset();
-      if (verification) {
-        setSubmit(true);
-      } else {
-        setSubmit(false);
-      }
-      ResetLocation();
-      setLoading(false);
-      setFormValue({ fullname: "", email: "", message: "" });
-      setCaptchaError("");
     }
+    const isCaptchaValid = await verifyCaptcha();
+    if (isCaptchaValid.success) {
+      setSubmit(true);
+    } else {
+      setCaptchaError(isCaptchaValid.message);
+      setSubmit(false);
+      setLoading(false);
+      return;
+    }
+    ResetLocation();
+    setLoading(false);
+    setFormValue({ fullname: "", email: "", message: "" });
+    setCaptchaError("");
   };
   const handleValidation = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   };
-  const verifyCaptcha = async (captchaToken) => {
+  const verifyCaptcha = async () => {
+    let token = captchaRef.current?.getValue();
+    if (token.length === 0) {
+      captchaRef.current?.reset();
+      return { success: false, message: "reCaptcha is mandatory" };
+    }
     try {
       const response = await fetch(CAPTCHA_URL, {
         method: "POST",
-        body: JSON.stringify({
-          secret: CAPTCHA_SECRET,
-          captchaToken,
-        }),
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({ token }),
       });
+      const result = await response.json();
       if (!response.ok) {
-        throw new Error(response.message);
+        throw new Error(result.message);
       }
-      return true;
+      return { success: true };
     } catch (error) {
-      console.error("Could not verify captcha!", error.message);
-      return false;
+      if (ENVIRONMENT === "development") console.log("Error in verifyCaptcha:", error.message);
+      return { success: false, message: "Server error: failed to verify CAPTCHA. Please try again later." };
+    } finally {
+      captchaRef.current?.reset();
     }
   };
   return (
@@ -171,9 +171,11 @@ const ContactPage = () => {
             {formError.message}
           </span>
           <ReCAPTCHA ref={captchaRef} sitekey={CAPTCHA_KEY} theme="dark" aria-describedby="captcha-error" />
-          <span className="input-validation-error" aria-live="assertive" id="captcha-error">
-            {captchaError}
-          </span>
+          {captchaError && (
+            <span className="input-validation-error" aria-live="assertive" id="captcha-error">
+              {captchaError}
+            </span>
+          )}
           <button type="submit" className="active-button-style" aria-label="Send the message">
             Send
           </button>

@@ -3,10 +3,11 @@ import ResetLocation from "../../utils/ResetLocation";
 import { useNavigate } from "react-router-dom";
 import validateForm from "../../utils/validate-form";
 import "./assets/profile.css";
-import { USERS_URL } from "../../data/constants";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
-const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
+import { deleteUser } from "./api/deleteUser";
+
+const ProfilePage = ({ currentUser, handleLogoutUser, handleUpdateUser }) => {
   const [editForm, setEditForm] = useState(false);
   const [formValue, setFormValue] = useState({
     email: "",
@@ -16,12 +17,14 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
     number: "",
   });
   const [formErrors, setFormErrors] = useState({});
+  const [formError, setFormError] = useState("");
   const [loading, setLoading] = useState(false);
   const [confirmationModal, setConfirmationModal] = useState(false);
   const navigate = useNavigate();
   const validate = validateForm("profile");
   const toggleForm = () => {
     setEditForm(!editForm);
+    setFormError("");
     setFormErrors({});
     setFormValue({
       email: "",
@@ -40,6 +43,7 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
 
   const handleSubmit = async (e) => {
     setLoading(true);
+    setFormError("");
     e.preventDefault();
     setFormErrors(validate(formValue));
     window.scrollTo(0, 0);
@@ -56,9 +60,8 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
         }
       }
 
-      const updated = await updateUser(updatedFields);
-      if (updated) {
-        setLoading(false);
+      const result = await handleUpdateUser(updatedFields);
+      if (result.success) {
         setEditForm(false);
         setFormValue({
           email: "",
@@ -67,7 +70,10 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
           address: "",
           number: "",
         });
+      } else {
+        setFormError(result.message);
       }
+      setLoading(false);
     }
   };
 
@@ -75,22 +81,19 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
     ResetLocation();
     setConfirmationModal(true);
   };
-
-  const deleteUser = async (id) => {
-    try {
-      const response = await fetch(`${USERS_URL}/${id}`, {
-        method: "DELETE",
-        credentials: "include",
-      });
-
-      if (response.status === 200) {
+  const handleDeleteUser = async (id) => {
+    const response = await deleteUser(id);
+    if (response.success) {
+      const isLoggedOut = await handleLogoutUser();
+      if (isLoggedOut.success) {
+        setFormError("");
         navigate("/");
-        handleLogout();
-        return true;
+      } else {
+        setFormError(isLoggedOut.message);
       }
-    } catch (err) {
-      console.log(err.message);
-      return false;
+    } else {
+      setFormError(response.message);
+      setConfirmationModal(false);
     }
   };
 
@@ -116,8 +119,12 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
         </div>
       ) : editForm ? (
         <form className="profile__form" onSubmit={handleSubmit}>
+          {formError && (
+            <span aria-live="polite" className="input-validation-error">
+              {formError}
+            </span>
+          )}
           <hr aria-hidden="true" />
-
           <label htmlFor="email" className="profile__form__info">
             Email
             <input
@@ -233,7 +240,13 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
             <h3 id="profile-title" className="visually-hidden">
               Profile Information
             </h3>
+            {formError && (
+              <span aria-live="polite" className="input-validation-error">
+                {formError}
+              </span>
+            )}
             <hr aria-hidden="true" />
+
             <div className="profile__info__section">
               <h3>Email</h3>
               <p>{currentUser?.email || ""}</p>
@@ -291,7 +304,7 @@ const ProfilePage = ({ currentUser, handleLogout, updateUser }) => {
               <button
                 type="button"
                 className="profile__delete-confirm"
-                onClick={() => deleteUser(currentUser.id)}
+                onClick={() => handleDeleteUser(currentUser.id)}
                 aria-label="Confirm account deletion">
                 Confirm
               </button>
