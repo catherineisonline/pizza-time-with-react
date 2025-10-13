@@ -18,7 +18,7 @@ app.use(
 app.use(json());
 app.use(cookieParser());
 app.use("/", indexRouter);
-app.use("*", (req, res) => {
+app.use("*", (_, res) => {
   res.status(404).json({ success: false, message: "404 - Not Found!" });
 });
 

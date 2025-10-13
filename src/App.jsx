@@ -52,6 +52,7 @@ function App() {
     let isMounted = true;
     (async () => {
       const response = await validateJWT();
+      if (!isMounted) return;
       if (!response.success) {
         setIsLoggedIn(false);
         localStorage.removeItem("loggedIn");
