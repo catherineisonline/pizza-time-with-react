@@ -84,7 +84,7 @@ I want to be able to sort the menu by categories, as well as be able to find som
 - **CSS**: My go-to is always plain CSS because I believe that mastering CSS makes other libraries or preprocessors easier to learn. It also gives me more control while I'm learning and experimenting.
 - **Turso**: Even though backend isn't my specialty, I needed a fully functional website and wanted something easy to use without deep knowledge. Turso also provides an interface to view tables, making database interaction simpler.
 - **Express**: To build a more complete backend, I'm currently learning and improving it as I go. I chose Express because it works well with React and is easy to use since it's based on JavaScript.
-  I haven't experimented much with folder structures before, but I recently switched to a partially feature-based structure. I don't have a strong argument for why I chose it, but I liked the idea and wanted to try it out.
+- **Feature-based folder structure**: I haven't experimented much with folder structures before, but I recently switched to a partially feature-based structure. I don't have a strong argument for why I chose it, but I liked the idea and wanted to try it out.
 
 ## Used Dependencies <a id="dependencies"></a>
 
