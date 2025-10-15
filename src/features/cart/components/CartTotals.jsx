@@ -1,34 +1,26 @@
-import CheckoutBtn from "../../checkout/components/CheckoutBtn";
-import LinkButton from "../../../components/LinkButton";
-import ResetLocation from "../../../utils/ResetLocation";
 import { useCart } from "../../../context/CartContext";
 
-const CartTotals = ({ isLoggedIn, className, activateLoginModal }) => {
+const CartTotals = ({ className }) => {
   const { orderSummary } = useCart();
   return (
     <section className={className}>
-      <h2 id="cart-summary-title">Cart Summary</h2>
+      <h3 id="cart-summary-title">Cart Summary</h3>
       {orderSummary.quantity > 0 && (
         <dl className="cart-totals_content">
-          <dt>Tax 10%:</dt>
-          <dd>$ {orderSummary.taxes}</dd>
-          <dt>Quantity:</dt>
-          <dd> {orderSummary.quantity}</dd>
-          <dt>Total:</dt>
-          <dd>$ {orderSummary.total}</dd>
+          <div className="cart-totals_item">
+            <dt>Tax 10%:</dt>
+            <dd>${orderSummary.taxes}</dd>
+          </div>
+          <div className="cart-totals_item">
+            <dt>Quantity:</dt>
+            <dd>{orderSummary.quantity}</dd>
+          </div>
+          <div className="cart-totals_item">
+            <dt>Total:</dt>
+            <dd>${orderSummary.total}</dd>
+          </div>
         </dl>
       )}
-      <div className="cart-totals__interaction">
-        <CheckoutBtn
-          className="active-button-style"
-          aria-label="Contiue with checkout"
-          isLoggedIn={isLoggedIn}
-          activateLoginModal={activateLoginModal}
-        />
-        <LinkButton aria-label="Go back to menu" onClick={ResetLocation} to="/menu" className="back-to-menu">
-          Back to menu
-        </LinkButton>
-      </div>
     </section>
   );
 };
