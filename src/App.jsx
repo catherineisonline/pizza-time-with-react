@@ -116,17 +116,9 @@ function App() {
             path="/cart"
             element={
               <CartPage
-                CartItem={
-                  <CartItem
-                    cartTotals={
-                      <CartTotals
-                        className="cart-totals"
-                        isLoggedIn={isLoggedIn}
-                        activateLoginModal={activateLoginModal}
-                      />
-                    }
-                  />
-                }
+                isLoggedIn={isLoggedIn}
+                activateLoginModal={activateLoginModal}
+                CartItem={<CartItem cartTotals={<CartTotals className="cart-totals" />} />}
               />
             }
           />
