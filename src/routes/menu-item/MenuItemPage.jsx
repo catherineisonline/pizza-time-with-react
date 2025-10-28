@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import AddToCartButton from "../../features/cart/components/AddToCartButton";
 import Attribute from "../../features/menu/components/Attribute";
 import { products } from "../../data/products";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./assets/single-item.css";
 import { motion } from "framer-motion";
 import { slideInLeft } from "../../utils/animations";
+import { useMemo } from "react";
 const MenuItemPage = () => {
-  const [singleProduct, setSingleProduct] = useState(null);
+  let params = useParams();
   const [selectedAttributes, setSelectedAttributes] = useState([]);
   const [targetAttribute, setTargetAttribute] = useState("");
 
@@ -27,9 +28,12 @@ const MenuItemPage = () => {
       }
     });
   };
+  const singleProduct = useMemo(() => {
+    if (!products || !params.id) return null;
+    return products.find((item) => item.id === params.id);
+  }, [params.id]);
 
   useEffect(() => {
-    setSingleProduct(products.filter((item) => item.id === window.location.pathname.toString().substring(6))[0]);
     if (singleProduct) {
       document.title = `${singleProduct.ItemName}| Pizza Time`;
     }

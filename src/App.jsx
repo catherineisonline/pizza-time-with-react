@@ -132,6 +132,7 @@ function App() {
               </ProductsProvider>
             }
           />
+          <Route path="/menu/:id" element={<MenuItemPage />} />
           <Route
             path="/profile"
             element={
@@ -146,7 +147,7 @@ function App() {
               )
             }
           />
-          <Route path="/menu/:name" element={<MenuItemPage />} />
+
           <Route path="/checkout" element={<CheckoutPage currentUser={user} />} />
           <Route path="/payment" element={<PaymentPage currentUser={user} />} />
 
