@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import ResetLocation from "../../../utils/ResetLocation";
-import Tick from "../assets/success-tick.png";
-import { useCart } from "../../../context/CartContext";
+import ResetLocation from "../../../../utils/ResetLocation";
+import Tick from "../../assets/success-tick.png";
+import { useCart } from "../../../../context/CartContext";
 
 const PaymentSuccess = ({ transactionId }) => {
   const { orderSummary } = useCart();
