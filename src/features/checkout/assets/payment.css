@@ -22,7 +22,6 @@
   background-color: transparent;
   font-weight: 400;
   font-size: 1rem;
-  width: 80%;
 }
 .payment__success__details {
   display: flex;
@@ -88,21 +87,17 @@
 }
 .payment__form__cvv-exp {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1rem;
-  width: 80%;
 }
-.payment__form__cvv {
-  width: 5rem;
-}
+
 .payment__form__expiration {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 8rem 1fr;
   border: none;
 }
 .payment__form__expiration input:first-child {
   border-right: none;
-  width: 3rem;
 }
 .payment__form__expiration input {
   outline: none;
@@ -111,7 +106,6 @@
 }
 .payment__form__expiration input:last-of-type {
   border-left: none;
-  width: 3rem;
 }
 
 .payment__success__interaction {
@@ -129,7 +123,9 @@
 }
 
 .card {
-  width: 400px;
+  position: relative;
+  max-width: 400px;
+  width: 100%;
   height: 250px;
 }
 
@@ -298,4 +294,14 @@
   padding: 20px;
   font-size: 10px;
   text-align: justify;
+}
+
+@media screen and (min-width: 600px) {
+  .payment__form__cvv-exp {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .payment__form__expiration {
+    grid-template-columns: 8rem 8rem;
+  }
 }
