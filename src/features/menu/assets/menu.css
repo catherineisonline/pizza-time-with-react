@@ -134,19 +134,12 @@ input[type="search"]::-webkit-search-results-decoration {
 .menu-item {
   display: grid;
   grid-template-rows: 15rem 3.5rem 3rem 2rem;
-  /* display: flex;
-  flex-direction: column;
-  align-items: stretch; */
-  /* height: 100%; */
-  /* justify-content: space-around; */
 
   position: relative;
   gap: 1rem;
 }
 .menu-item__link {
   max-width: 100%;
-  /* height: 21rem; */
-  /* max-height: 70%; */
 }
 .menu-item__link img {
   width: 100%;
