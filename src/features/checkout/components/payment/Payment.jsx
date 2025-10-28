@@ -1,15 +1,17 @@
-import "./assets/payment.css";
-import EmptyCart from "../cart/components/EmptyCart.jsx";
+import "../../assets/payment.css";
+import EmptyCart from "../../../cart/components/EmptyCart.jsx";
 import React, { useEffect, useState } from "react";
-import ResetLocation from "../../utils/ResetLocation.js";
+import ResetLocation from "../../../../utils/ResetLocation.js";
 import { v4 as uuidv4 } from "uuid";
-import validateForm from "../../utils/validate-form.js";
-import PaymentSuccess from "./components/PaymentSuccess.jsx";
-import Card from "./components/Cards.jsx";
-import { useCart } from "../../context/CartContext.jsx";
+import validateForm from "../../../../utils/validate-form.js";
+import PaymentSuccess from "./PaymentSuccess.jsx";
+import Card from "./Cards.jsx";
+import { useCart } from "../../../../context/CartContext.jsx";
 import { motion } from "framer-motion";
-import { slideInLeft } from "../../utils/animations.js";
-const PaymentPage = () => {
+import { slideInLeft } from "../../../../utils/animations.js";
+import LinkButton from "../../../../components/LinkButton.jsx";
+
+const Payment = () => {
   const { cart } = useCart();
   const [formValue, setFormValue] = useState({
     firstname: "",
@@ -147,9 +149,14 @@ const PaymentPage = () => {
                     </span>
                   </div>
                 </div>
-                <button type="submit" aria-label="Proceed with payment" className=" active-button-style">
-                  Proceed
-                </button>
+                <div>
+                  <button type="submit" aria-label="Proceed with payment" className=" active-button-style">
+                    Proceed
+                  </button>
+                  <LinkButton aria-label="Go back" onClick={ResetLocation} to="/checkout" className="back-to-menu">
+                    Go back
+                  </LinkButton>
+                </div>
               </form>
             </section>
           )}
@@ -159,4 +166,4 @@ const PaymentPage = () => {
   );
 };
 
-export default PaymentPage;
+export default Payment;

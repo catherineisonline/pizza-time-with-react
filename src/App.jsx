@@ -10,7 +10,6 @@ import {
   ContactPage,
   HomePage,
   MenuPage,
-  PaymentPage,
   RegistrationPage,
   MenuItemPage,
   NotFoundPage,
@@ -31,6 +30,8 @@ import { ProductsProvider } from "./context/ProductsContext";
 import { updateUser } from "./api/updateUser";
 import { logoutUser } from "./api/logoutUser";
 import { validateJWT } from "./api/validateJWT";
+import Checkout from "./features/checkout/components/checkout/Checkout";
+import Payment from "./features/checkout/components/payment/Payment";
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -132,6 +133,7 @@ function App() {
               </ProductsProvider>
             }
           />
+          <Route path="/menu/:id" element={<MenuItemPage />} />
           <Route
             path="/profile"
             element={
@@ -146,10 +148,11 @@ function App() {
               )
             }
           />
-          <Route path="/menu/:name" element={<MenuItemPage />} />
-          <Route path="/checkout" element={<CheckoutPage currentUser={user} />} />
-          <Route path="/payment" element={<PaymentPage currentUser={user} />} />
 
+          <Route path="checkout" element={<CheckoutPage />}>
+            <Route index element={<Checkout currentUser={user} />} />
+            <Route path="payment" element={<Payment currentUser={user} />} />
+          </Route>
           <Route path="/contact" element={<ContactPage />} />
           <Route exact path="/blog" element={<BlogPage />} />
           <Route path="/blog/:name" element={<BlogPostPage />} />

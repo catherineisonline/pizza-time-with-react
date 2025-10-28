@@ -7,7 +7,7 @@ import { useCart } from "../../context/CartContext";
 import { slideInLeft } from "../../utils/animations";
 import ResetLocation from "../../utils/ResetLocation";
 import LinkButton from "../../components/LinkButton";
-import CheckoutBtn from "../checkout/components/CheckoutBtn";
+import CheckoutBtn from "../checkout/components/checkout/CheckoutBtn";
 const CartPage = ({ CartItem, activateLoginModal, isLoggedIn }) => {
   const { cart } = useCart();
   useEffect(() => {

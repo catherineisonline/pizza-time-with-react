@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import ResetLocation from "../../../utils/ResetLocation";
 import { Link, useNavigate } from "react-router-dom";
-import { useCart } from "../../../context/CartContext";
+import ResetLocation from "../../../../utils/ResetLocation";
+import { useCart } from "../../../../context/CartContext";
 
 const CheckoutForm = ({ currentUser }) => {
   const { orderSummary } = useCart();
@@ -31,7 +31,7 @@ const CheckoutForm = ({ currentUser }) => {
   };
   useEffect(() => {
     if (submit && Object.keys(formError).length === 0) {
-      return navigate("/payment");
+      return navigate("/checkout/payment");
     }
   }, [submit, formError, navigate]);
 

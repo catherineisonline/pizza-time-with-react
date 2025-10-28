@@ -1,6 +1,6 @@
 import React from "react";
-import LinkButton from "../../../components/LinkButton";
-import ResetLocation from "../../../utils/ResetLocation";
+import LinkButton from "../../../../components/LinkButton";
+import ResetLocation from "../../../../utils/ResetLocation";
 
 const CheckoutBtn = ({ isLoggedIn, className, activateLoginModal }) => {
   return (
