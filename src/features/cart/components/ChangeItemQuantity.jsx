@@ -5,6 +5,7 @@ const ChangeItemQuantity = ({ cartItem }) => {
   return (
     <div className="cart__add-items">
       <button
+        type="button"
         onClick={() => {
           handleAddProduct(cartItem, cartItem.userSelectedAttributes);
         }}

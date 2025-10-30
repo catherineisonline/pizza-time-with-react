@@ -94,9 +94,13 @@
   font-size: 2rem;
   padding: 0.5rem 1.5rem;
   background-color: transparent;
-  transition: all ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s, border-color ease-in-out 0.3s;
 }
-
+.cart__add-items button:focus-visible {
+  color: var(--yellow);
+  border-color: var(--yellow);
+  outline: none;
+}
 .cart__items__content {
   display: flex;
   flex-direction: column;
@@ -156,6 +160,10 @@
   font-family: var(--poppins-font);
   transition: color ease-in-out 0.3s;
 }
+.back-to-menu:focus-visible {
+  color: var(--pizza-red);
+  outline: none;
+}
 
 .cart__items__clear-btns {
   color: var(--whitish-gray);
@@ -167,17 +175,22 @@
   width: max-content;
   text-align: right;
   letter-spacing: 1px;
-  transition: all ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s;
 }
-
+.cart__items__clear-btns:focus-visible {
+  color: var(--pizza-red);
+  outline: none;
+}
 @media (hover: hover) {
   .cart__add-items button:hover {
     color: var(--yellow);
     border-color: var(--yellow);
-    transition: all ease-in-out 0.3s;
   }
 
   .back-to-menu:hover {
+    color: var(--pizza-red);
+  }
+  .cart__items__clear-btns:hover {
     color: var(--pizza-red);
   }
 }

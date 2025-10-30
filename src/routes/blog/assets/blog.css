@@ -63,9 +63,14 @@
   font-size: 1.5rem;
   font-weight: 400;
 }
+
 .blog__posts__single a {
   color: var(--white);
   transition: color ease-in-out 0.3s;
+  outline: none;
+}
+.blog__posts__single a:focus-visible {
+  color: var(--pizza-red);
 }
 .blog__posts__credentials {
   color: var(--whitish-gray);

@@ -61,7 +61,7 @@ const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalO
   };
   useEffect(() => {
     if (isLoginModalOpen) {
-      modalRef.current?.show();
+      modalRef.current?.showModal();
     } else {
       modalRef.current?.close();
     }
