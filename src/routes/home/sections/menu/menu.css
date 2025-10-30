@@ -35,10 +35,10 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-
   padding: 10px;
   background-color: var(--light-black);
 }
+
 .menu-preview__meal h3 {
   font-weight: 400;
 }

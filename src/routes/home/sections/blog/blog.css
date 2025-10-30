@@ -27,6 +27,14 @@
   align-items: left;
   gap: 1rem;
 }
+.homepage__blog-post a {
+  outline: none;
+}
+.homepage__blog-post:focus-within {
+  outline-color: var(--pizza-red);
+  outline-style: outset;
+  outline-width: 3px;
+}
 .homepage__blog-post h3 {
   transition: all ease-in-out 0.3s;
 }

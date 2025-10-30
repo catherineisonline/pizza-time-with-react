@@ -37,7 +37,9 @@
   border-radius: 5px;
 }
 
-.menu-slider__categories button:hover {
+.menu-slider__categories button:hover,
+.menu-slider__categories button:focus-visible {
+  outline: none;
   background-color: var(--yellow);
   color: var(--white);
   transition: all ease-in-out 0.2s;

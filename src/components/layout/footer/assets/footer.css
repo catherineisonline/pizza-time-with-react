@@ -12,6 +12,7 @@ footer {
   gap: 1rem;
   align-items: center;
 }
+
 .footer__menu {
   gap: 1rem;
   font-weight: 400;
@@ -23,7 +24,11 @@ footer {
   transition: color ease-in-out 0.2s;
   letter-spacing: 1.5px;
 }
-
+.footer__menu a:focus-visible,
+.footer__contact a:focus-visible {
+  outline: none;
+  color: var(--pizza-red);
+}
 .footer__contact {
   gap: 1rem;
   font-weight: 400;
@@ -69,6 +74,11 @@ hr {
   gap: 1rem;
 }
 
+.footer__socials li:focus-within {
+  outline-color: var(--pizza-red);
+  outline-style: outset;
+  outline-width: 3px;
+}
 .footer__socials span {
   display: none;
 }

@@ -101,6 +101,13 @@ address {
   font-weight: 400;
   font-family: var(--poppins-font);
 }
+.active-button-style:focus-visible {
+  border-color: var(--white);
+  outline: none;
+  p {
+    color: var(--light-black);
+  }
+}
 .passive-button-style {
   cursor: pointer;
   border-radius: 5px;
@@ -117,7 +124,11 @@ address {
   font-size: 1rem;
   font-family: var(--poppins-font);
 }
-
+.passive-button-style:focus-visible {
+  background-color: var(--pizza-red);
+  border-color: var(--pizza-red);
+  outline: none;
+}
 .section-description {
   color: var(--light-gray);
   font-family: var(--poppins-font);
@@ -167,15 +178,7 @@ address {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-position: 0% 0%;
-  background: linear-gradient(
-    to right,
-    #f56456,
-    #dfe657,
-    #ee5e41,
-    #ffff10,
-    #b294ff,
-    #57e6e6
-  );
+  background: linear-gradient(to right, #f56456, #dfe657, #ee5e41, #ffff10, #b294ff, #57e6e6);
   background-size: 500% auto;
   -webkit-animation: gradient 3s linear infinite;
   animation: gradient 3s linear infinite;
@@ -210,7 +213,13 @@ address {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 35%;
-  opacity: 0.5;
+  opacity: 0.8;
+}
+.scroll-button:focus-visible {
+  outline: 2px solid var(--pizza-red);
+  outline-width: 1px;
+  outline-style: outset;
+  opacity: 1;
 }
 .visually-hidden {
   position: absolute;

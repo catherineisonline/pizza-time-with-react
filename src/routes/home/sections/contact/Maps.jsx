@@ -14,12 +14,7 @@ const position = [37.0902, -93.7129];
 const Maps = () => {
   return (
     <div className="map" aria-label="Company Location">
-      <MapContainer
-        id="map"
-        center={position}
-        zoom={9}
-        scrollWheelZoom={false}
-        loading="lazy">
+      <MapContainer id="map" center={position} zoom={9} scrollWheelZoom={false} loading="lazy">
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

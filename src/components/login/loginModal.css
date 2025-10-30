@@ -80,9 +80,6 @@
   padding: 1rem;
 }
 
-.modal__content input:focus-visible {
-  outline: none;
-}
 .modal__content input::placeholder {
   color: var(--light-black);
   text-transform: capitalize;
