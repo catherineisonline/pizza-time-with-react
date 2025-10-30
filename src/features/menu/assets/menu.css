@@ -59,6 +59,9 @@ input[type="search"]::-webkit-search-results-decoration {
   font-size: 1rem;
   padding: 1rem;
 }
+.menu__categories__search input:focus {
+  border: 1px solid var(--pizza-red);
+}
 .menu__categories__search img {
   cursor: pointer;
   position: absolute;
@@ -99,8 +102,10 @@ input[type="search"]::-webkit-search-results-decoration {
 .menu__categories ul a {
   color: var(--white);
 }
-.menu__categories ul a:hover {
+.menu__categories ul a:hover,
+.menu__categories ul a:focus-visible {
   color: var(--pizza-red);
+  outline: none;
 }
 
 .menu__items {
@@ -126,7 +131,10 @@ input[type="search"]::-webkit-search-results-decoration {
 .pagination li {
   cursor: pointer;
 }
-
+.pagination li a:focus-visible {
+  outline: none;
+  color: var(--pizza-red);
+}
 .pagination li.selected {
   color: var(--pizza-red);
 }
@@ -134,13 +142,18 @@ input[type="search"]::-webkit-search-results-decoration {
 .menu-item {
   display: grid;
   grid-template-rows: 15rem 3.5rem 3rem 2rem;
-
   position: relative;
   gap: 1rem;
+  padding: 0.5rem;
+}
+.menu-item:focus-within h3 {
+  color: var(--pizza-red);
 }
 .menu-item__link {
   max-width: 100%;
+  outline: none;
 }
+
 .menu-item__link img {
   width: 100%;
   height: 100%;
@@ -160,13 +173,23 @@ input[type="search"]::-webkit-search-results-decoration {
   gap: 1rem;
 }
 
-.menu-item__attributes li {
+.menu-item__attributes li button {
   border: 1px solid rgba(255, 255, 255, 0.113);
+  color: var(--whitish-gray);
+  background-color: transparent;
   opacity: 0.7;
   cursor: pointer;
   text-transform: uppercase;
   font-size: 0.7rem;
   padding: 0.5rem;
+}
+
+.menu-item__attributes li button:focus-visible {
+  border: 1px solid var(--pizza-red);
+  background-color: var(--pizza-red);
+  opacity: 1;
+  color: var(--white);
+  outline: none;
 }
 .menu-item__pricing {
   display: flex;
@@ -229,6 +252,14 @@ input[type="search"]::-webkit-search-results-decoration {
 @media (hover: hover) {
   .add-to-cart-buttons button:hover {
     color: var(--yellow);
+    transition: all ease-in-out 0.2s;
+  }
+  .menu-item__attributes li button:hover {
+    border: 1px solid var(--pizza-red);
+    background-color: var(--pizza-red);
+    opacity: 1;
+    color: var(--white);
+    outline: none;
     transition: all ease-in-out 0.2s;
   }
 }

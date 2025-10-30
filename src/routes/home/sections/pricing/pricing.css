@@ -3,6 +3,7 @@
   gap: 2rem;
   padding: 1rem;
 }
+
 .homepage__pricing-preview h2 {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -21,6 +22,11 @@
 
 .pricing-preview__item {
   gap: 1rem;
+}
+.pricing-preview__item:focus-visible {
+  outline-color: var(--pizza-red);
+  outline-style: outset;
+  outline-width: 3px;
 }
 .pricing-preview__prices {
   width: 100%;

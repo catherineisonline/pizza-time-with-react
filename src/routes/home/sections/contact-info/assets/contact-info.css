@@ -25,6 +25,10 @@
   flex-direction: column;
   max-width: 500px;
 }
+.company-info__details a:focus-visible {
+  outline: none;
+  color: var(--pizza-red);
+}
 
 .company-info__details > * {
   text-align: center;

@@ -50,10 +50,6 @@
   letter-spacing: 1px;
 }
 
-.register input:focus-visible {
-  outline: 1px solid var(--yellow);
-}
-
 .register input[type="text"],
 .register input[type="password"] {
   color: var(--white);

@@ -1,5 +1,5 @@
 .header {
-  height: 3rem;
+  height: auto;
   top: 0;
   background-color: var(--light-black);
   position: sticky;
@@ -18,12 +18,19 @@
   color: var(--pizza-red);
 }
 .logo-styling {
+  display: flex;
   align-items: center;
-  width: 5rem;
-  height: 3rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+}
+.logo-styling:focus-visible {
+  outline-color: var(--pizza-red);
+  outline-style: outset;
+  outline-width: 3px; 
 }
 .logo {
-  width: clamp(50%, 5vw, 80%);
+  width: clamp(30%, 5vw, 50%);
   height: auto;
 }
 
@@ -44,6 +51,10 @@
   font-weight: 400;
   font-size: 1.1rem;
   align-items: center;
+}
+.header__nav__menu a:focus-visible {
+  color: var(--pizza-red);
+  outline: none;
 }
 .header__nav__menu.active {
   position: absolute;

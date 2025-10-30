@@ -4,6 +4,7 @@ const AddToCartButton = ({ singleProduct, selectedAttributes, targetAttribute, s
   const { handleAddProduct } = useCart();
   return (
     <button
+      type="button"
       onClick={() => {
         handleAddProduct(singleProduct, selectedAttributes);
         setTargetAttribute(false);

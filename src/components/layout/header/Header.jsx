@@ -85,7 +85,7 @@ const Header = ({
                 </button>
               )}
               <NavLink
-                className="cart-btn active-button-style txt-white"
+                className="cart-btn active-button-style"
                 to="/cart"
                 onClick={() => {
                   ResetLocation();

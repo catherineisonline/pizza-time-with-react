@@ -26,6 +26,7 @@ const MenuCategories = ({ setActiveCategory }) => {
       <form className="menu__categories__search" role="search" onSubmit={(e) => e.preventDefault()}>
         <input
           value={input}
+          name="search"
           type="text"
           placeholder="search..."
           aria-label="Search products"

@@ -31,6 +31,10 @@
   overflow: hidden;
   font-family: var(--poppins-font);
 }
+.contact__info a:focus-visible {
+  outline: none;
+  color: var(--pizza-red);
+}
 .contact__info h2 {
   font-size: 2rem;
 }

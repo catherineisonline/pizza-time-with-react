@@ -75,10 +75,15 @@
   background-color: var(--transparent-button);
   color: var(--light-black);
 }
+.hero__interaction a:last-child:focus-visible,
+.hero__interaction a:first-child:focus-visible {
+  outline: none;
+  border-color: var(--pizza-red);
+  background-color: var(--pizza-red);
+}
 .hero__interaction a:last-child,
 .hero__interaction a:first-child {
-  transition: color ease-in-out 0.3s, border ease-in-out 0.3s,
-    background-color ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s, border ease-in-out 0.3s, background-color ease-in-out 0.3s;
 }
 
 @media screen and (hover: hover) {

@@ -25,20 +25,21 @@ const Pricing = () => {
               <Link onClick={ResetLocation} to="/menu" className="pricing-preview__item flex-container flex-row">
                 <img
                   className="pricing-preview__img"
-                  alt={menu.name}
+                  alt=""
+                  aria-hidden="true"
                   src={menu.img375}
                   width={96}
                   height={96}
                   loading="lazy"
                 />
                 <div className="pricing-preview__prices flex-container flex-column">
-                  <section className="pricing-preview__prices-details flex-container flex-row txt-center">
+                  <div className="pricing-preview__prices-details flex-container flex-row txt-center">
                     <h3 className="pop-font">{menu.name}</h3>
                     <p>
                       <span>{menu.currency}</span>
                       {menu.price}
                     </p>
-                  </section>
+                  </div>
                   <p>{menu.description}</p>
                 </div>
               </Link>
