@@ -331,3 +331,13 @@ address {
 .terms h3 {
   color: var(--light-gray);
 }
+
+.active-add-to-cart:focus-visible {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+.passive-add-to-cart:focus-visible {
+  background-color: var(--pizza-red);
+  border-color: var(--pizza-red);
+}
