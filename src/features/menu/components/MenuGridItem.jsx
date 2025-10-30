@@ -28,7 +28,7 @@ const MenuGridItem = ({ singleProduct }) => {
   return (
     <article className="menu-item txt-white">
       <Link onClick={ResetLocation} to={`/menu/${singleProduct.id}`} className="menu-item__link">
-        <img src={singleProduct.ItemImg} alt={`${singleProduct.ItemName}`} />
+        <img src={singleProduct.ItemImg} alt={`View ${singleProduct.ItemName}`} />
       </Link>
       <h3>{singleProduct.ItemName}</h3>
       <p>{singleProduct.ItemIngredients}</p>
