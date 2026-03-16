@@ -92,6 +92,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
         },
         body: JSON.stringify({ token }),
       });
+      console.log(response);
       if (!response.ok) {
         throw new Error(response.message);
       }

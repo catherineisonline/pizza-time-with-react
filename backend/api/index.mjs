@@ -8,12 +8,12 @@ app.set("trust proxy", 1);
 
 const port = 3000;
 const allowedOrigins =
-  process.env.NODE_ENV === "production" ? ["https://pizza-time-with-react.vercel.app/"] : ["http://localhost:5173"];
+  process.env.NODE_ENV === "production" ? ["https://pizza-time-with-react.vercel.app"] : ["http://localhost:5173"];
 app.use(
   cors({
     origin: allowedOrigins,
     credentials: true,
-  })
+  }),
 );
 app.use(json());
 app.use(cookieParser());
